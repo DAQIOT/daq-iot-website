@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAQ-IOT 内容管理后台</title>
+    <style>
+      html, body, #nc-root { height: 100%; }
+      #nc-root { overflow: hidden; }
+      /* Decap i18n 双栏真实类名为 .Pane（默认只有 height:100% 没有 overflow）。
+         只给它和直接内容容器加 overflow-y:auto + 正确高度，
+         让浏览器原生滚轮自己找最近的可滚容器，绝不接管 wheel 事件。 */
+      .Pane,
+      .Pane > div {
+        overflow-y: auto !important;
+        height: 100% !important;
+        max-height: 100% !important;
+      }
+      [class*="split-pane"],
+      [class*="SplitPane"] { height: 100% !important; }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- marked：预览模板里把 body 的 Markdown 渲染成带表格/列表的 HTML -->
+    <script src="https://unpkg.com/marked/marked.min.js"></script>
+    <!-- aiiot 自定义 Preview 模板（产品/博客），依赖上面的 h/createClass 与 marked -->
+    <script src="./preview.js"></script>
+    <script>
+      // 仅兜底：确保动态生成的 .Pane 拿到 overflow-y:auto，不接管滚轮
+      (function () {
+        function fixPanes() {
+          document.querySelectorAll('.Pane').forEach(function (p) {
+            if (p.dataset.scrollFixed) return;
+            p.style.overflowY = 'auto';
+            p.dataset.scrollFixed = '1';
+            var child = p.firstElementChild;
+            if (child) {
+              child.style.overflowY = 'auto';
+              child.style.height = '100%';
+            }
+          });
+        }
+        // 集合列表页没有 .Pane，需要让 #nc-root 本身可滚动；编辑页有 .Pane 时保持 hidden
+        function fixRootScroll() {
+          var root = document.getElementById('nc-root');
+          if (!root) return;
+          var hasPanes = document.querySelectorAll('.Pane').length > 0;
+          root.style.overflow = hasPanes ? 'hidden' : 'auto';
+        }
+        function runAll() {
+          fixPanes();
+          fixRootScroll();
+        }
+        if (window.MutationObserver) {
+          new MutationObserver(runAll).observe(document.body, { childList: true, subtree: true });
+        }
+        setInterval(runAll, 1000);
+        runAll();
+      })();
+
+      // 把 Decap 预览面板里那句容易误会的“点击以预览”改成“产品页预览”
+      // （Decap 自带中文文案，不在小眼睛旁边、不像按钮，常让人误点。仅改显示文字，不改功能）
+      (function () {
+        function relabel() {
+          var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+          var node;
+          while ((node = walker.nextNode())) {
+            if (node.nodeValue && node.nodeValue.indexOf('点击以预览') !== -1) {
+              node.nodeValue = node.nodeValue.replace('点击以预览', '产品页预览');
+            }
+          }
+        }
+        if (window.MutationObserver) {
+          new MutationObserver(relabel).observe(document.body, { childList: true, subtree: true, characterData: true });
+        }
+        setInterval(relabel, 1500);
+        relabel();
+      })();
+    </script>
+  </body>
+</html>

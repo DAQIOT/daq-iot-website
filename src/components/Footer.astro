@@ -1,0 +1,66 @@
+---
+import { getTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/config';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = await getTranslations(lang);
+const base = '/' + lang;
+
+const productCats = [
+  { key: 'software', href: base + '/products?cat=software' },
+  { key: 'edge', href: base + '/products?cat=edge' },
+  { key: 'sensor', href: base + '/products?cat=sensor' },
+  { key: 'connect', href: base + '/products?cat=connect' },
+  { key: 'auto', href: base + '/products?cat=auto' },
+];
+---
+<footer class="bg-brand-dark text-slate-300">
+  <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- 品牌 -->
+    <div class="col-span-2 md:col-span-1">
+      <div class="text-white font-bold text-xl">DAQ<span class="text-brand">-IOT</span></div>
+      <p class="mt-3 text-sm text-slate-400 max-w-xs">{t('footer.tagline')}</p>
+    </div>
+
+    <!-- 产品 -->
+    <div>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.products')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        {productCats.map((c) => (
+          <li><a href={c.href} class="hover:text-brand transition">{t('cat.' + c.key)}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- 公司 -->
+    <div>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.company')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href={base + '/solutions'} class="hover:text-brand transition">{t('nav.solutions')}</a></li>
+        <li><a href={base + '/services'} class="hover:text-brand transition">{t('nav.services')}</a></li>
+        <li><a href={base + '/partners'} class="hover:text-brand transition">{t('nav.partners')}</a></li>
+        <li><a href={base + '/about'} class="hover:text-brand transition">{t('nav.about')}</a></li>
+        <li><a href={base + '/contact'} class="hover:text-brand transition">{t('nav.contact')}</a></li>
+      </ul>
+    </div>
+
+    <!-- 联系方式 -->
+    <div>
+      <div class="text-white font-semibold text-sm mb-3">{t('footer.contact')}</div>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li>Email: export@daq-iot.com</li>
+        <li>Tel: 400-9677-032</li>
+        <li>WhatsApp: +86 152 7563 5861</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-4 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-2">
+      <span>{t('footer.rights')}</span>
+    </div>
+  </div>
+</footer>

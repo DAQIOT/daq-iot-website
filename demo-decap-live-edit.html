@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Decap 预览模板 · 实时编辑演示（改左边看右边）</title>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:#f1f5f9;}
+  .topbar{background:#0a2a43;color:#fff;padding:.8rem 1.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+  .topbar h1{font-size:1rem;margin:0;font-weight:600;}
+  .topbar select{background:#fff;color:#0a2a43;border:none;border-radius:.35rem;padding:.35rem .6rem;font-size:.85rem;}
+  .topbar .hint{font-size:.78rem;color:#94a3b8;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:0;height:calc(100vh - 52px);}
+  @media(max-width:860px){.split{grid-template-columns:1fr;height:auto;}}
+  .left{background:#fff;padding:1.2rem;overflow:auto;border-right:1px solid #e2e8f0;}
+  .left h2{font-size:.9rem;color:#0a2a43;margin:.2rem 0 .8rem;}
+  .field{margin-bottom:1rem;}
+  .field label{display:block;font-size:.78rem;color:#475569;margin-bottom:.3rem;font-weight:600;}
+  .field input,.field textarea,.field select{width:100%;border:1px solid #cbd5e1;border-radius:.4rem;padding:.55rem .7rem;font-size:.88rem;font-family:inherit;color:#1e293b;}
+  .field textarea{height:11rem;resize:vertical;line-height:1.6;}
+  .field .tip{font-size:.72rem;color:#94a3b8;margin-top:.25rem;}
+  /* 右侧预览 = 复用 preview.js 的同款样式 */
+  .right{overflow:auto;background:#fff;}
+  .aiiot-preview{color:#334155;}
+  .aiiot-preview .locale-bar{background:#e6f4fb;color:#0a2a43;font-size:.78rem;padding:.45rem 1rem;display:flex;gap:.4rem;align-items:center;}
+  .aiiot-preview .locale-bar b{color:#0096d6;}
+  .aiiot-preview .hero{background:#0a2a43;padding:2rem 1rem;}
+  .aiiot-preview .hero .inner{max-width:64rem;margin:0 auto;}
+  .aiiot-preview .hero nav{color:#94a3b8;font-size:.8rem;margin-bottom:.5rem;}
+  .aiiot-preview .hero nav a{color:#0096d6;text-decoration:none;}
+  .aiiot-preview .hero h1{color:#fff;font-size:1.8rem;font-weight:700;margin:0;line-height:1.3;}
+  .aiiot-preview .body-wrap{max-width:64rem;margin:0 auto;padding:2rem 1rem;}
+  .aiiot-preview .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+  @media(max-width:680px){.aiiot-preview .grid{grid-template-columns:1fr;}}
+  .aiiot-preview img.thumb{width:100%;height:20rem;object-fit:contain;background:#f8fafc;border-radius:1rem;box-shadow:0 1px 3px rgba(0,0,0,.12);}
+  .aiiot-preview .badge{display:inline-block;font-size:.7rem;font-weight:500;color:#0096d6;background:#e6f4fb;padding:.25rem .6rem;border-radius:.35rem;}
+  .aiiot-preview .summary{margin-top:1rem;font-size:1.05rem;color:#475569;line-height:1.75;}
+  .aiiot-preview .cta{margin-top:1.5rem;display:inline-block;background:#0096d6;color:#fff;padding:.7rem 1.75rem;border-radius:.4rem;text-decoration:none;font-weight:500;}
+  .aiiot-preview .prose{margin-top:3rem;border-top:1px solid #e2e8f0;padding-top:2rem;line-height:1.85;font-size:.95rem;}
+  .aiiot-preview .prose h1,.aiiot-preview .prose h2,.aiiot-preview .prose h3{color:#0a2a43;margin:1.6rem 0 .7rem;line-height:1.4;}
+  .aiiot-preview .prose h2{font-size:1.35rem;border-bottom:2px solid #0096d6;padding-bottom:.3rem;display:inline-block;}
+  .aiiot-preview .prose p{margin:.6rem 0;}
+  .aiiot-preview .prose table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem;}
+  .aiiot-preview .prose th{background:#0a2a43;color:#fff;text-align:left;padding:.55rem .8rem;}
+  .aiiot-preview .prose td{border:1px solid #cbd5e1;padding:.5rem .8rem;}
+  .aiiot-preview .prose tbody tr:nth-child(even){background:#f1f5f9;}
+  .aiiot-preview .prose img{max-width:100%;border-radius:.5rem;margin:.5rem 0;border:1px solid #e2e8f0;}
+  .aiiot-preview .prose ul,.aiiot-preview .prose ol{padding-left:1.5rem;margin:.6rem 0;}
+  .aiiot-preview .prose li{margin:.25rem 0;}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Decap 预览模板 · 实时编辑演示</h1>
+    <span class="hint">在左侧任意字段打字 → 右侧立刻跟着变（这就是线上后台的真实行为）</span>
+    <select id="lang" title="切换语言示例内容">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <div class="split">
+    <!-- 左：可编辑字段 -->
+    <div class="left">
+      <h2>① 编辑区（对应 Decap 后台左边的字段）</h2>
+      <div class="field">
+        <label>标题 title</label>
+        <input id="f_title" type="text" />
+        <div class="tip">改这里，右侧大标题秒变</div>
+      </div>
+      <div class="field">
+        <label>摘要 summary</label>
+        <textarea id="f_summary" style="height:5rem;"></textarea>
+      </div>
+      <div class="field">
+        <label>分类 category</label>
+        <select id="f_category">
+          <option value="software">AI+软件</option>
+          <option value="edge">AI+边缘计算机</option>
+          <option value="sensor">AI+传感器</option>
+          <option value="connect">AI+智能连接</option>
+          <option value="auto">AI+自动化</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>正文 body（支持 Markdown：## 标题、- 列表、| 表格 |、**加粗**）</label>
+        <textarea id="f_body"></textarea>
+        <div class="tip">试把第一行改成 ## 你好世界，或加一行 - 新列表项</div>
+      </div>
+    </div>
+
+    <!-- 右：实时预览 -->
+    <div class="right">
+      <div id="preview" class="aiiot-preview"></div>
+    </div>
+  </div>
+
+<script>
+/* ===== 极简 Markdown 解析（不依赖外部 CDN，file:// 直接打开也能用）===== */
+function md(src){
+  if(!src) return '';
+  var lines = String(src).replace(/\r/g,'').split('\n');
+  var html = [], i=0;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function inline(s){
+    return esc(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+  }
+  while(i<lines.length){
+    var ln = lines[i];
+    if(/^\s*#{1,3}\s+/.test(ln)){
+      var lvl = ln.match(/^\s*(#+)/)[1].length;
+      html.push('<h'+lvl+'>'+inline(ln.replace(/^\s*#+\s+/,''))+'</h'+lvl+'>');
+      i++; continue;
+    }
+    if(/^\s*[-*]\s+/.test(ln)){
+      var items=[];
+      while(i<lines.length && /^\s*[-*]\s+/.test(lines[i])){
+        items.push('<li>'+inline(lines[i].replace(/^\s*[-*]\s+/,''))+'</li>'); i++;
+      }
+      html.push('<ul>'+items.join('')+'</ul>'); continue;
+    }
+    if(ln.indexOf('|')>-1 && i+1<lines.length && /^\s*\|?[\s:|-]+\|?\s*$/.test(lines[i+1])){
+      var head = ln.split('|').map(function(x){return x.trim();}).filter(function(x){return x;});
+      i+=2; var rows=[];
+      while(i<lines.length && lines[i].indexOf('|')>-1){
+        var cells = lines[i].split('|').map(function(x){return x.trim();}).filter(function(x){return x;});
+        if(cells.length) rows.push('<tr>'+cells.map(function(c){return '<td>'+inline(c)+'</td>';}).join('')+'</tr>');
+        i++;
+      }
+      html.push('<table><thead><tr>'+head.map(function(h){return '<th>'+inline(h)+'</th>';}).join('')+'</tr></thead><tbody>'+rows.join('')+'</tbody></table>');
+      continue;
+    }
+    if(ln.trim()===''){ i++; continue; }
+    html.push('<p>'+inline(ln)+'</p>'); i++;
+  }
+  return html.join('');
+}
+
+/* ===== 右：渲染函数（对应 preview.js 的 render）===== */
+var LOCALE = {zh:'中文',en:'English',de:'Deutsch'};
+var CAT = {software:'AI+软件',edge:'AI+边缘计算机',sensor:'AI+传感器',connect:'AI+智能连接',auto:'AI+自动化'};
+function render(){
+  var title = document.getElementById('f_title').value || '（未命名产品）';
+  var summary = document.getElementById('f_summary').value;
+  var category = document.getElementById('f_category').value;
+  var body = document.getElementById('f_body').value;
+  var locale = document.getElementById('lang').value;
+  document.getElementById('preview').innerHTML =
+    '<div class="locale-bar">正在预览语言：<b>'+LOCALE[locale]+'</b> · 改左边任意字段，本区实时更新</div>'+
+    '<section class="hero"><div class="inner">'+
+      '<nav><a href="#">产品</a> <span style="margin:0 .5rem">/</span> <span>'+CAT[category]+'</span></nav>'+
+      '<h1>'+title+'</h1>'+
+    '</div></section>'+
+    '<div class="body-wrap"><div class="grid">'+
+      '<div></div>'+
+      '<div><span class="badge">'+CAT[category]+'</span>'+
+      '<p class="summary">'+summary+'</p>'+
+      '<a class="cta" href="#">获取报价 →</a></div>'+
+    '</div>'+
+    '<div class="prose">'+md(body)+'</div></div>';
+}
+
+/* ===== 语言下拉：载入对应示例内容 ===== */
+var SAMPLES = {
+  zh:{title:'SCADA 数据采集系统',summary:'面向工业现场的实时数据采集与监控软件，支持 Modbus、OPC UA 等协议。',category:'software',
+      body:'## 核心功能\n\n- 实时采集现场设备数据\n- 历史数据存库与趋势分析\n- 报警与事件管理\n\n| 项目 | 参数 |\n| --- | --- |\n| 协议 | Modbus / OPC UA |\n| 部署 | 边缘 / 云端 |'},
+  en:{title:'SCADA Data Acquisition System',summary:'Real-time data acquisition and monitoring software for industrial sites, supporting Modbus, OPC UA and more.',category:'software',
+      body:'## Key Features\n\n- Real-time device data collection\n- History storage & trend analysis\n- Alarm & event management\n\n| Item | Spec |\n| --- | --- |\n| Protocol | Modbus / OPC UA |\n| Deploy | Edge / Cloud |'},
+  de:{title:'SCADA Datenerfassungssystem',summary:'Echtzeit-Datenerfassungs- und Überwachungssoftware für Industriestandorte, unterstützt Modbus, OPC UA u. a.',category:'software',
+      body:'## Hauptfunktionen\n\n- Echtzeit-Datenerfassung von Geräten\n- Verlaufspeicherung & Trendanalyse\n- Alarm- & Ereignisverwaltung\n\n| Punkt | Wert |\n| --- | --- |\n| Protokoll | Modbus / OPC UA |\n| Bereitst. | Edge / Cloud |'}
+};
+function loadLang(l){
+  var s = SAMPLES[l];
+  document.getElementById('f_title').value = s.title;
+  document.getElementById('f_summary').value = s.summary;
+  document.getElementById('f_category').value = s.category;
+  document.getElementById('f_body').value = s.body;
+  render();
+}
+
+['f_title','f_summary','f_body'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', render);
+});
+document.getElementById('f_category').addEventListener('change', render);
+document.getElementById('lang').addEventListener('change', function(e){ loadLang(e.target.value); });
+loadLang('zh');
+</script>
+</body>
+</html>

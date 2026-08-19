@@ -1,0 +1,592 @@
+backend:
+  name: github
+  repo: DAQ-IOT/daq-iot-website
+  branch: main
+  base_url: https://daq-iot.com
+  auth_endpoint: /oauth/auth
+locale: zh_Hans
+media_folder: public/images
+public_folder: /images
+# ── 图片物理分类约定 ──
+# 语言相关的产品图请用文件名前缀区分：en-（英文）/ zh-（中文）/ de-（德文），如 en-scada-cover.jpg
+# 也可手动归入 public/images/en、public/images/zh、public/images/de 子文件夹（已建好，含 .gitkeep）
+# 说明：Decap 默认媒体库是平铺的，上传只能进 public/images 根目录，不会自动按语言分文件夹；
+# 若想要"在后台点进子文件夹再上传"，需安装 decap-cms-media-library-folders 插件（ESM 接入，
+# 与当前 CDN 式后台有兼容性风险，且无法本地登录实测，需上线后登录后台确认）。
+
+i18n:
+  structure: multiple_folders
+  locales:
+    - en
+    - zh
+    - de
+  default_locale: zh
+collections:
+  - name: products
+    label: 产品
+    folder: src/content/products
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    fields:
+      - label: 产品名称
+        name: title
+        widget: string
+        i18n: true
+      - label: 一句话描述
+        name: summary
+        widget: text
+        i18n: true
+      - label: 产品图片
+        name: image
+        widget: image
+        required: false
+        i18n: true
+      - label: 排序
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        i18n: duplicate
+      - label: 产品分类
+        name: category
+        widget: select
+        i18n: duplicate
+        default: software
+        options:
+          - label: AI+软件
+            value: software
+          - label: AI+边缘计算机
+            value: edge
+          - label: AI+传感器
+            value: sensor
+          - label: AI+智能连接
+            value: connect
+          - label: AI+自动化
+            value: auto
+      - label: 详细介绍
+        name: body
+        widget: markdown
+        i18n: true
+  - name: posts
+    label: 博客文章
+    folder: src/content/posts
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    fields:
+      - label: 标题
+        name: title
+        widget: string
+        i18n: true
+      - label: 描述
+        name: description
+        widget: text
+        i18n: true
+      - label: 发布日期
+        name: pubDate
+        widget: datetime
+        date_format: YYYY-MM-DD
+        time_format: false
+        i18n: duplicate
+      - label: 作者
+        name: author
+        widget: string
+        required: false
+        i18n: duplicate
+      - label: 封面图
+        name: image
+        widget: image
+        required: false
+        i18n: true
+      - label: 正文
+        name: body
+        widget: markdown
+        i18n: true
+  - name: site
+    label: 网站基础文案
+    folder: src/content/site
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - label: 导航栏
+        name: nav
+        widget: object
+        fields:
+          - name: home
+            label: 首页
+            widget: string
+          - name: about
+            label: 关于我们
+            widget: string
+          - name: products
+            label: 产品中心
+            widget: string
+          - name: solutions
+            label: 解决方案
+            widget: string
+          - name: services
+            label: 服务
+            widget: string
+          - name: partners
+            label: 合作伙伴
+            widget: string
+          - name: support
+            label: 支持
+            widget: string
+          - name: contact
+            label: 联系我们
+            widget: string
+          - name: cta
+            label: 右上角按钮(获取报价)
+            widget: string
+      - label: 产品分类名
+        name: cat
+        widget: object
+        fields:
+          - name: software
+            label: AI+软件
+            widget: string
+          - name: edge
+            label: AI+边缘计算机
+            widget: string
+          - name: sensor
+            label: AI+传感器
+            widget: string
+          - name: connect
+            label: AI+智能连接
+            widget: string
+          - name: auto
+            label: AI+自动化
+            widget: string
+      - label: 网站标题与描述(SEO)
+        name: hero
+        widget: object
+        fields:
+          - name: title
+            label: 网站标题
+            widget: string
+          - name: subtitle
+            label: 网站描述
+            widget: text
+          - name: ctaPrimary
+            label: 主按钮文字
+            widget: string
+          - name: ctaSecondary
+            label: 次按钮文字
+            widget: string
+      - label: 首页
+        name: home
+        widget: object
+        fields:
+          - name: eyebrow
+            label: 顶部小标签
+            widget: string
+          - name: heroTitle
+            label: 大标题
+            widget: string
+          - name: heroSubtitle
+            label: 大标题下方描述
+            widget: text
+          - name: heroCta1
+            label: 按钮1文字
+            widget: string
+          - name: heroCta2
+            label: 按钮2文字
+            widget: string
+          - name: categoriesTitle
+            label: 五大产品矩阵标题
+            widget: string
+          - name: categoriesSubtitle
+            label: 副标题
+            widget: text
+          - name: viewAll
+            label: 查看全部产品
+            widget: string
+          - name: catDescSoftware
+            label: AI+软件 卡片描述
+            widget: text
+          - name: catDescEdge
+            label: AI+边缘计算机 卡片描述
+            widget: text
+          - name: catDescSensor
+            label: AI+传感器 卡片描述
+            widget: text
+          - name: catDescConnect
+            label: AI+智能连接 卡片描述
+            widget: text
+          - name: catDescAuto
+            label: AI+自动化 卡片描述
+            widget: text
+          - name: solutionsTitle
+            label: 行业解决方案标题
+            widget: string
+          - name: solutionsSubtitle
+            label: 副标题
+            widget: text
+          - label: 行业列表(可增删)
+            name: industries
+            widget: list
+            fields:
+              - name: label
+                label: 行业名称
+                widget: string
+          - name: statsTitle
+            label: 数据基石标题
+            widget: string
+          - label: 数据指标(可增删)
+            name: stats
+            widget: list
+            fields:
+              - name: value
+                label: 数值
+                widget: string
+              - name: label
+                label: 说明文字
+                widget: string
+          - name: partnersTitle
+            label: 合作伙伴标题
+            widget: string
+          - name: partnersSubtitle
+            label: 副标题
+            widget: text
+          - name: ctaTitle
+            label: 底部CTA标题
+            widget: string
+          - name: ctaSubtitle
+            label: 副标题
+            widget: text
+          - name: ctaButton
+            label: 按钮文字
+            widget: string
+      - label: 为什么选择(首页特色)
+        name: features
+        widget: object
+        fields:
+          - name: title
+            label: 标题
+            widget: string
+          - name: subtitle
+            label: 副标题
+            widget: text
+          - name: feature1Title
+            label: 特色1标题
+            widget: string
+          - name: feature1Desc
+            label: 特色1描述
+            widget: text
+          - name: feature2Title
+            label: 特色2标题
+            widget: string
+          - name: feature2Desc
+            label: 特色2描述
+            widget: text
+          - name: feature3Title
+            label: 特色3标题
+            widget: string
+          - name: feature3Desc
+            label: 特色3描述
+            widget: text
+          - name: feature4Title
+            label: 特色4标题
+            widget: string
+          - name: feature4Desc
+            label: 特色4描述
+            widget: text
+          - name: feature5Title
+            label: 特色5标题
+            widget: string
+          - name: feature5Desc
+            label: 特色5描述
+            widget: text
+          - name: feature6Title
+            label: 特色6标题
+            widget: string
+          - name: feature6Desc
+            label: 特色6描述
+            widget: text
+      - label: 通用CTA区块
+        name: cta
+        widget: object
+        fields:
+          - name: title
+            label: 标题
+            widget: string
+          - name: subtitle
+            label: 副标题
+            widget: text
+          - name: button
+            label: 按钮文字
+            widget: string
+      - label: 产品页
+        name: products
+        widget: object
+        fields:
+          - name: title
+            label: 标题
+            widget: string
+          - name: subtitle
+            label: 副标题
+            widget: text
+          - name: back
+            label: 返回产品
+            widget: string
+          - name: all
+            label: 全部产品
+            widget: string
+          - name: empty
+            label: 空分类提示
+            widget: string
+      - label: 页脚
+        name: footer
+        widget: object
+        fields:
+          - name: contact
+            label: 联系方式标题
+            widget: string
+          - name: products
+            label: 产品标题
+            widget: string
+          - name: solutions
+            label: 解决方案标题
+            widget: string
+          - name: company
+            label: 公司标题
+            widget: string
+          - name: rights
+            label: 版权信息
+            widget: string
+          - name: tagline
+            label: 标语
+            widget: string
+  - name: solutions
+    label: 解决方案
+    folder: src/content/solutions
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - name: p1
+        label: 段落
+        widget: text
+      - label: 方案列表(可增删)
+        name: items
+        widget: list
+        fields:
+          - name: title
+            label: 方案标题
+            widget: string
+          - name: desc
+            label: 方案描述
+            widget: text
+  - name: services
+    label: 服务与支持
+    folder: src/content/services
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: 服务列表(可增删)
+        name: items
+        widget: list
+        fields:
+          - name: title
+            label: 服务标题
+            widget: string
+          - name: desc
+            label: 服务描述
+            widget: text
+  - name: partners
+    label: 合作伙伴
+    folder: src/content/partners
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: 合作伙伴类型(可增删)
+        name: items
+        widget: list
+        fields:
+          - name: title
+            label: 类型标题
+            widget: string
+          - name: desc
+            label: 类型描述
+            widget: text
+      - name: resourcesTitle
+        label: 资料区标题
+        widget: string
+      - name: resourcesSubtitle
+        label: 资料区副标题
+        widget: text
+      - label: 资料列表(可增删)
+        name: resources
+        widget: list
+        fields:
+          - name: title
+            label: 资料标题
+            widget: string
+          - name: desc
+            label: 资料描述
+            widget: text
+  - name: support
+    label: 技术支持
+    folder: src/content/support
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: 支持列表(可增删)
+        name: items
+        widget: list
+        fields:
+          - name: title
+            label: 支持标题
+            widget: string
+          - name: desc
+            label: 支持描述
+            widget: text
+  - name: about
+    label: 关于我们
+    folder: src/content/about
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - label: 标题
+        name: title
+        widget: string
+      - label: 段落1
+        name: p1
+        widget: text
+      - label: 段落2
+        name: p2
+        widget: text
+      - label: 段落3
+        name: p3
+        widget: text
+  - name: contact
+    label: 联系我们
+    folder: src/content/contact
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - label: 标题
+        name: title
+        widget: string
+      - label: 副标题
+        name: subtitle
+        widget: text
+      - label: 联系信息标题
+        name: infoTitle
+        widget: string
+      - label: 姓名框占位
+        name: name
+        widget: string
+      - label: 邮箱框占位
+        name: email
+        widget: string
+      - label: 公司框占位
+        name: company
+        widget: string
+      - label: 留言框占位
+        name: message
+        widget: string
+      - label: 提交按钮
+        name: submit
+        widget: string
+      - label: 提交成功提示
+        name: success
+        widget: string
+      - label: 电话标签
+        name: phone
+        widget: string
+      - label: 手机/WhatsApp标签
+        name: mobile
+        widget: string
+      - label: 联系人标签
+        name: person
+        widget: string
+      - label: 地址标签
+        name: address
+        widget: string
+      - label: 联系人姓名(真实值)
+        name: personName
+        widget: string
+      - label: 联系邮箱(真实值)
+        name: emailValue
+        widget: string
+      - label: 电话(真实值)
+        name: phoneValue
+        widget: string
+      - label: 手机/WhatsApp(真实值)
+        name: mobileValue
+        widget: string
+      - label: 地址1
+        name: address1
+        widget: string
+      - label: 地址2
+        name: address2
+        widget: string
+      - label: 地址3
+        name: address3
+        widget: string
+      - label: 地址4
+        name: address4
+        widget: string
+      - label: 地址5
+        name: address5
+        widget: string

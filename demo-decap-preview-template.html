@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decap 预览模板 · 效果演示（aiiot）</title>
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; background: #eef2f7; }
+    .topbar { background: #0a2a43; color: #fff; padding: .9rem 1.2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .topbar h2 { margin: 0; font-size: 1rem; font-weight: 600; }
+    .topbar .hint { font-size: .8rem; color: #9bc4dd; }
+    .topbar select { padding: .35rem .6rem; border-radius: .4rem; border: 1px solid #2a5f7d; background: #0e3550; color: #fff; font-size: .85rem; }
+    .frame { background: #fff; margin: 1.2rem; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+    .preview-panel { display: none; }
+    .preview-panel.active { display: block; }
+    /* 以下样式与 public/admin/preview.js 中的 PREVIEW_CSS 完全一致 */
+    .aiiot-preview{font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;color:#334155;}
+    .aiiot-preview .locale-bar{background:#e6f4fb;color:#0a2a43;font-size:.78rem;padding:.45rem 1rem;display:flex;gap:.4rem;align-items:center;}
+    .aiiot-preview .locale-bar b{color:#0096d6;}
+    .aiiot-preview .hero{background:#0a2a43;padding:2rem 1rem;}
+    .aiiot-preview .hero nav{color:#94a3b8;font-size:.8rem;margin-bottom:.5rem;}
+    .aiiot-preview .hero nav a{color:#0096d6;text-decoration:none;}
+    .aiiot-preview .hero h1{color:#fff;font-size:1.8rem;font-weight:700;margin:0;line-height:1.3;}
+    .aiiot-preview .body-wrap{max-width:64rem;margin:0 auto;padding:2rem 1rem;}
+    .aiiot-preview .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
+    @media(max-width:680px){.aiiot-preview .grid{grid-template-columns:1fr;}}
+    .aiiot-preview img.thumb{width:100%;height:20rem;object-fit:contain;background:#f8fafc;border-radius:1rem;box-shadow:0 1px 3px rgba(0,0,0,.12);}
+    .aiiot-preview .badge{display:inline-block;font-size:.7rem;font-weight:500;color:#0096d6;background:#e6f4fb;padding:.25rem .6rem;border-radius:.35rem;}
+    .aiiot-preview .summary{margin-top:1rem;font-size:1.05rem;color:#475569;line-height:1.75;}
+    .aiiot-preview .cta{margin-top:1.5rem;display:inline-block;background:#0096d6;color:#fff;padding:.7rem 1.75rem;border-radius:.4rem;text-decoration:none;font-weight:500;}
+    .aiiot-preview .prose{margin-top:3rem;border-top:1px solid #e2e8f0;padding-top:2rem;line-height:1.85;font-size:.95rem;}
+    .aiiot-preview .prose h1,.aiiot-preview .prose h2,.aiiot-preview .prose h3{color:#0a2a43;margin:1.6rem 0 .7rem;line-height:1.4;}
+    .aiiot-preview .prose h2{font-size:1.35rem;border-bottom:2px solid #0096d6;padding-bottom:.3rem;display:inline-block;}
+    .aiiot-preview .prose h3{font-size:1.1rem;}
+    .aiiot-preview .prose p{margin:.6rem 0;}
+    .aiiot-preview .prose table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.88rem;}
+    .aiiot-preview .prose th{background:#0a2a43;color:#fff;text-align:left;padding:.55rem .8rem;}
+    .aiiot-preview .prose td{border:1px solid #cbd5e1;padding:.5rem .8rem;}
+    .aiiot-preview .prose tbody tr:nth-child(even){background:#f1f5f9;}
+    .aiiot-preview .prose img{max-width:100%;border-radius:.5rem;margin:.5rem 0;border:1px solid #e2e8f0;}
+    .aiiot-preview .prose ul,.aiiot-preview .prose ol{padding-left:1.5rem;margin:.6rem 0;}
+    .aiiot-preview .prose li{margin:.25rem 0;}
+    .aiiot-preview .prose a{color:#0096d6;}
+    .aiiot-preview .prose code{background:#eef2f7;padding:.1rem .35rem;border-radius:.25rem;font-size:.85em;}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h2>Decap 预览模板演示</h2>
+    <span class="hint">这是后台「右侧预览区」会显示的样子。切换语言看实时效果：</span>
+    <select id="lang">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <div class="frame">
+    <!-- 中文 -->
+    <div class="preview-panel active" data-lang="zh">
+      <div class="aiiot-preview">
+        <div class="locale-bar">正在预览语言：<b>中文</b> · 用上方「使用哪个语言撰写」下拉切换中 / 英 / 德，右侧预览会实时更新</div>
+        <section class="hero"><div style="max-width:64rem;margin:0 auto;">
+          <nav><a href="#">产品</a><span style="margin:0 .5rem;">/</span><span>AI+软件</span></nav>
+          <h1>SCADA 数据采集与监控系统</h1>
+        </div></section>
+        <div class="body-wrap">
+          <div class="grid">
+            <img class="thumb" src="https://x-aiiot.com/images/scada-manual/aiiot-logo.jpg" alt="SCADA 数据采集与监控系统">
+            <div>
+              <span class="badge">AI+软件</span>
+              <p class="summary">面向工业现场的 SCADA 软件，实时采集、监控并可视化您的设备与产线数据。</p>
+              <a class="cta" href="#">获取报价 →</a>
+            </div>
+          </div>
+          <div class="prose">
+            <h2>核心功能</h2>
+            <ul>
+              <li>实时数据采集与协议转换（Modbus / OPC UA / MQTT）</li>
+              <li>可视化组态画面与告警管理</li>
+              <li>历史数据存储与趋势分析</li>
+            </ul>
+            <h2>技术规格</h2>
+            <table>
+              <thead><tr><th>项目</th><th>参数</th></tr></thead>
+              <tbody>
+                <tr><td>支持协议</td><td>Modbus TCP/RTU, OPC UA, MQTT</td></tr>
+                <tr><td>采集点位</td><td>单节点 ≥ 10,000 点</td></tr>
+                <tr><td>部署方式</td><td>私有化 / 边缘一体机</td></tr>
+              </tbody>
+            </table>
+            <img src="https://x-aiiot.com/images/scada-manual/image2.png" alt="组态画面示例">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- English -->
+    <div class="preview-panel" data-lang="en">
+      <div class="aiiot-preview">
+        <div class="locale-bar">正在预览语言：<b>English</b> · 用上方「使用哪个语言撰写」下拉切换中 / 英 / 德，右侧预览会实时更新</div>
+        <section class="hero"><div style="max-width:64rem;margin:0 auto;">
+          <nav><a href="#">Products</a><span style="margin:0 .5rem;">/</span><span>AI+Software</span></nav>
+          <h1>SCADA Data Acquisition & Monitoring System</h1>
+        </div></section>
+        <div class="body-wrap">
+          <div class="grid">
+            <img class="thumb" src="https://x-aiiot.com/images/scada-manual/aiiot-logo.jpg" alt="SCADA Data Acquisition & Monitoring System">
+            <div>
+              <span class="badge">AI+Software</span>
+              <p class="summary">Industrial SCADA software for real-time acquisition, monitoring and visualization of your devices and production lines.</p>
+              <a class="cta" href="#">Get a Quote →</a>
+            </div>
+          </div>
+          <div class="prose">
+            <h2>Key Features</h2>
+            <ul>
+              <li>Real-time data acquisition & protocol conversion (Modbus / OPC UA / MQTT)</li>
+              <li>Visual HMI screens and alarm management</li>
+              <li>Historical data storage and trend analysis</li>
+            </ul>
+            <h2>Technical Specs</h2>
+            <table>
+              <thead><tr><th>Item</th><th>Spec</th></tr></thead>
+              <tbody>
+                <tr><td>Protocols</td><td>Modbus TCP/RTU, OPC UA, MQTT</td></tr>
+                <tr><td>Tags</td><td>≥ 10,000 per node</td></tr>
+                <tr><td>Deployment</td><td>On-premise / Edge appliance</td></tr>
+              </tbody>
+            </table>
+            <img src="https://x-aiiot.com/images/scada-manual/image2.png" alt="HMI example">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deutsch -->
+    <div class="preview-panel" data-lang="de">
+      <div class="aiiot-preview">
+        <div class="locale-bar">正在预览语言：<b>Deutsch</b> · 用上方「使用哪个语言撰写」下拉切换中 / 英 / 德，右侧预览会实时更新</div>
+        <section class="hero"><div style="max-width:64rem;margin:0 auto;">
+          <nav><a href="#">Produkte</a><span style="margin:0 .5rem;">/</span><span>AI+Software</span></nav>
+          <h1>SCADA Datenerfassungs- und Überwachungssystem</h1>
+        </div></section>
+        <div class="body-wrap">
+          <div class="grid">
+            <img class="thumb" src="https://x-aiiot.com/images/scada-manual/aiiot-logo.jpg" alt="SCADA Datenerfassungs- und Überwachungssystem">
+            <div>
+              <span class="badge">AI+Software</span>
+              <p class="summary">Industrielle SCADA-Software zur Echtzeit-Erfassung, Überwachung und Visualisierung Ihrer Geräte und Fertigungslinien.</p>
+              <a class="cta" href="#">Angebot anfordern →</a>
+            </div>
+          </div>
+          <div class="prose">
+            <h2>Kernfunktionen</h2>
+            <ul>
+              <li>Echtzeit-Datenerfassung & Protokollumsetzung (Modbus / OPC UA / MQTT)</li>
+              <li>Visualisierte Leitbilder und Alarmverwaltung</li>
+              <li>Historische Datenspeicherung und Trendanalyse</li>
+            </ul>
+            <h2>Technische Daten</h2>
+            <table>
+              <thead><tr><th>Position</th><th>Wert</th></tr></thead>
+              <tbody>
+                <tr><td>Protokolle</td><td>Modbus TCP/RTU, OPC UA, MQTT</td></tr>
+                <tr><td>Datenpunkte</td><td>≥ 10.000 pro Knoten</td></tr>
+                <tr><td>Bereitstellung</td><td>Lokal / Edge-Appliance</td></tr>
+              </tbody>
+            </table>
+            <img src="https://x-aiiot.com/images/scada-manual/image2.png" alt="Leitbild Beispiel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchLang(locale) {
+      document.querySelectorAll('.preview-panel').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.lang === locale);
+      });
+    }
+    document.getElementById('lang').addEventListener('change', function (e) { switchLang(e.target.value); });
+  </script>
+</body>
+</html>
