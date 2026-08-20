@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: DAQ-IOT/daq-iot-website
+  repo: DAQIOT/daq-iot-website
   branch: main
-  base_url: https://daq-iot.com
+  base_url: https://daq-iot.pages.dev
   auth_endpoint: /oauth/auth
 locale: zh_Hans
 media_folder: public/images
