@@ -2,7 +2,7 @@
 title: Landis+Gyr E650 Electricity Meters industrial and commercial three-phase multi-function high-precision settlement gateway meter E650 E850 ZMQ202 ZMD402
 summary: >-
   ⚡ Landis+Gyr E650 Electricity Meter – Product Advantages
-image: https://www.daq-iot.com/static/upload/image/20260604/1780562815451779.jpg
+image: /images/products/1780562815451779.jpg
 order: 9
 category: instrumentacquisition
 ---

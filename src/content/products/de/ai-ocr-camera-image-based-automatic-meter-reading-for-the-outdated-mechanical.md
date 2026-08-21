@@ -2,7 +2,7 @@
 title: AI OCR camera Image-based Automatic Meter Reading for the Outdated Mechanical Instruments
 summary: >-
   1Product overviewThe SC-LP-CAM series battery-powered wireless timing photo camera meter reading terminal, introduced by Shanghai Shucai IoT Technology Co., Ltd., is designed to quickly read data from traditional and outdated mechanical instruments (such as water meters, electricit
-image: https://www.daq-iot.com/static/upload/image/20250731/1753941881590077.png
+image: /images/products/1753941881590077.png
 order: 37
 category: wirelesstimingphotography
 ---

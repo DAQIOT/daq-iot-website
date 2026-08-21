@@ -2,7 +2,7 @@
 title: IIOT Battery-Powered Infrared Temperature Measurement
 summary: >-
   🌡️ IIoT Battery-Powered Infrared Temperature Measurement Sensor – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260608/1780891030821962.png
+image: /images/products/1780891030821962.png
 order: 35
 category: wirelesssensor
 ---

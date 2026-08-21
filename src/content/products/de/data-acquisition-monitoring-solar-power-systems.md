@@ -2,7 +2,7 @@
 title: Data Acquisition & Monitoring Solar Power Systems
 summary: >-
   Photovoltaic Data Acquisition & Monitoring Solution
-image: https://www.daq-iot.com/static/upload/image/20250818/1755485670656224.jpg
+image: /images/products/1755485670656224.jpg
 order: 20
 category: instrumentation
 ---

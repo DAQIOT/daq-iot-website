@@ -2,7 +2,7 @@
 title: Industrial IoT Data Acquisition & Monitoring System
 summary: >-
   Industrial IoT Data Acquisition & Management System for real-time monitoring, remote device management, and data collection. Integrate sensors, meters, PLCs, and industrial equipment with SCADA and cloud platforms.
-image: https://www.daq-iot.com/static/upload/image/20250813/1755068741975141.jpg
+image: /images/products/1755068741975141.jpg
 order: 2
 category: dataacquisitionsoftware
 ---

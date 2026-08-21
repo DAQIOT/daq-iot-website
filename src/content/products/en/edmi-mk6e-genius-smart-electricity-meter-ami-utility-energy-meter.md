@@ -2,7 +2,7 @@
 title: EDMI Mk6E Genius Smart Electricity Meter | AMI Utility Energy Meter
 summary: >-
   ⚡ EDMI Mk6E Genius Smart Electricity Meter – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260608/1780901539583612.png
+image: /images/products/1780901539583612.png
 order: 7
 category: instrumentacquisition
 ---

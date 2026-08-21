@@ -2,7 +2,7 @@
 title: Industrial Power Quality Monitor | Multifunctional PQ Analyzer for Substation & Grid Monitoring
 summary: >-
   ⚙️ Product Specifications
-image: https://www.daq-iot.com/static/upload/image/20250813/1755071685238536.png
+image: /images/products/1755071685238536.png
 order: 17
 category: instrumentacquisition
 ---

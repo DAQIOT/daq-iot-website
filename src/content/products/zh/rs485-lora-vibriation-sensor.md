@@ -2,7 +2,7 @@
 title: RS485 & Lora Vibriation Sensor
 summary: >-
   ⚡ RS485 & LoRa Vibration Sensor – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260608/1780910981409813.png
+image: /images/products/1780910981409813.png
 order: 11
 category: instrumentacquisition
 ---

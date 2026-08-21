@@ -2,7 +2,7 @@
 title: EDMI Mk6Es
 summary: >-
   🔌EDMI MK6E(s) Smart Electricity Meter – Product Specifications
-image: https://www.daq-iot.com/static/upload/image/20250814/1755141806978431.png
+image: /images/products/1755141806978431.png
 order: 18
 category: instrumentacquisition
 ---

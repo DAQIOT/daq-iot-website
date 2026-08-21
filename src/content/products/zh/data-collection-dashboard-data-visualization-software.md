@@ -2,7 +2,7 @@
 title: Data Collection Dashboard - Data Visualization Software
 summary: >-
   This product enables enterprise users to easily implement data visualization for scenarios such as report analysis, data reporting, leadership cockpit dashboards, IoT data display, industrial cloud configuration, and corporate promotion. It addresses the following pain points:
-image: https://www.daq-iot.com/static/upload/image/20250813/1755068175810044.jpg
+image: /images/products/1755068175810044.jpg
 order: 1
 category: dataacquisitionsoftware
 ---

@@ -2,7 +2,7 @@
 title: Industrial IIOT data platform
 summary: >-
   Industrial IoT Data Visualization Dashboard Software | Real-Time Data Monitoring & Reporting Platform with Drag-and-Drop Design (Private Deployment)
-image: https://www.daq-iot.com/static/upload/image/20250814/1755137572660991.png
+image: /images/products/1755137572660991.png
 order: 5
 category: dataacquisitionsoftware
 ---

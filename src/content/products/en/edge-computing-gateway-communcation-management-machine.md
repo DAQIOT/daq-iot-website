@@ -2,7 +2,7 @@
 title: Edge Computing Gateway Communcation Management Machine
 summary: >-
   Key Features
-image: https://www.daq-iot.com/static/upload/image/20250813/1755057431638453.png
+image: /images/products/1755057431638453.png
 order: 25
 category: plcacquisition
 ---

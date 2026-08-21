@@ -2,7 +2,7 @@
 title: Vision-Based Meter Reading OCR Software
 summary: >-
   📊 Vision-Based Meter Reading OCR Software – Product Specifications
-image: https://www.daq-iot.com/static/upload/image/20250814/1755137746482795.png
+image: /images/products/1755137746482795.png
 order: 4
 category: dataacquisitionsoftware
 ---

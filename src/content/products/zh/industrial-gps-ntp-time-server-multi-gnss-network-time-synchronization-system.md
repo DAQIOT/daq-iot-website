@@ -2,7 +2,7 @@
 title: Industrial GPS NTP Time Server | Multi-GNSS Network Time Synchronization System (UTC Precision Clock)
 summary: >-
   ⚙️ Product Specifications
-image: https://www.daq-iot.com/static/upload/image/20250813/1755072189227191.png
+image: /images/products/1755072189227191.png
 order: 28
 category: plcacquisition
 ---

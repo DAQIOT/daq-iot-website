@@ -2,7 +2,7 @@
 title: WiFi + RS485 Smart Single Phase Energy Meter | DIN Rail IoT Electricity Meter with Modbus RTU/TCP
 summary: >-
   High-Precision Energy Measurement
-image: https://www.daq-iot.com/static/upload/image/20260609/1780972505236180.jpg
+image: /images/products/1780972505236180.jpg
 order: 23
 category: instrumentation
 ---

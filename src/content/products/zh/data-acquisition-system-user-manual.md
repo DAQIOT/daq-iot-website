@@ -2,7 +2,7 @@
 title: Data Acquisition System User Manual
 summary: >-
   Industrial Data Acquisition System Solution | Real-Time IIoT Data Logging, SCADA Integration & Remote Monitoring Platform
-image: https://www.daq-iot.com/static/upload/image/20250814/1755140656339119.jpg
+image: /images/products/1755140656339119.jpg
 order: 6
 category: dataacquisitionsoftware
 ---

@@ -2,7 +2,7 @@
 title: Industrial IoT Timelapse Camera with WiFi & FTP Upload | Remote Monitoring Gauge Reading Camera
 summary: >-
   ⚡ Industrial IoT Timelapse Camera – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260605/1780631429385198.png
+image: /images/products/1780631429385198.png
 order: 41
 category: wirelesstimingphotography
 ---

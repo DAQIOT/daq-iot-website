@@ -2,7 +2,7 @@
 title: LoraWan Wireless Dew Point Transmitter
 summary: >-
   ⚙️ Product Advantages – Dew point transmitter/meter
-image: https://www.daq-iot.com/static/upload/image/20260604/1780562922271143.png
+image: /images/products/1780562922271143.png
 order: 32
 category: wirelesssensor
 ---

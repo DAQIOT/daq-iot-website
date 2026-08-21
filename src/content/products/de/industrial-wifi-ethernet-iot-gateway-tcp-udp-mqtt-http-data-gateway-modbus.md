@@ -2,7 +2,7 @@
 title: Industrial WiFi Ethernet IoT Gateway | TCP UDP MQTT HTTP Data Gateway | Modbus RS485 to Cloud
 summary: >-
   Industrial WiFi and Ethernet IoT Gateway supporting TCP, UDP, MQTT, HTTP, ARP, ICMP, DHCP, and DNS protocols. Designed for remote monitoring, industrial automation, PLC communication, SCADA integration, and Industrial IoT applications.
-image: https://www.daq-iot.com/static/upload/image/20260617/1781662101462408.jpg
+image: /images/products/1781662101462408.jpg
 order: 24
 category: instrumentation
 ---

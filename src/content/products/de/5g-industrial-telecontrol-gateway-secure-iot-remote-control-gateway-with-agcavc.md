@@ -2,7 +2,7 @@
 title: 5G Industrial Telecontrol Gateway | Secure IoT Remote Control Gateway with AGC/AVC
 summary: >-
   High-speed 5G Industrial Telecontrol Gateway for secure IoT remote control. Features AGC/AVC technology, robust encryption, and reliable connectivity for industrial automation and critical infrastructure.
-image: https://www.daq-iot.com/static/upload/image/20250813/1755069732437922.png
+image: /images/products/1755069732437922.png
 order: 27
 category: plcacquisition
 ---

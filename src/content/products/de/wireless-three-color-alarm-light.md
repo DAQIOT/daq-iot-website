@@ -2,7 +2,7 @@
 title: Wireless Three-color Alarm Light
 summary: >-
   ⚡ Key Product Advantages
-image: https://www.daq-iot.com/static/upload/image/20260604/1780562258728639.png
+image: /images/products/1780562258728639.png
 order: 10
 category: instrumentacquisition
 ---

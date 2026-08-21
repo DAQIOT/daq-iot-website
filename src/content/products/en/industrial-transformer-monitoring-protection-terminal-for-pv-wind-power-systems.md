@@ -2,7 +2,7 @@
 title: Industrial Transformer Monitoring & Protection Terminal for PV & Wind Power Systems (Smart Measurement & Control Device)
 summary: >-
   ⚙️ Product Specifications
-image: https://www.daq-iot.com/static/upload/image/20250813/1755075658553666.png
+image: /images/products/1755075658553666.png
 order: 29
 category: plcacquisition
 ---

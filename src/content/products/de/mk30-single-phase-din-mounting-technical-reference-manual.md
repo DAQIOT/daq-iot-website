@@ -2,7 +2,7 @@
 title: Mk30 Single-Phase (DIN Mounting) Technical Reference Manual
 summary: >-
   Electrical Parameters
-image: https://www.daq-iot.com/static/upload/image/20260610/1781081054381862.jpg
+image: /images/products/1781081054381862.jpg
 order: 8
 category: instrumentacquisition
 ---

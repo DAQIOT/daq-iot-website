@@ -2,7 +2,7 @@
 title: Rack Mount Industrial Protocol Gateway | 16-Port Serial + 4-Port Ethernet IoT Data Collector
 summary: >-
   Rack Mount Industrial Protocol Gateway | 16-Port Serial + 4-Port Ethernet IoT Data Collector
-image: https://www.daq-iot.com/static/upload/image/20250813/1755076006514754.png
+image: /images/products/1755076006514754.png
 order: 30
 category: plcacquisition
 ---

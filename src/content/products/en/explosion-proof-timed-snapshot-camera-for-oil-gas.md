@@ -2,7 +2,7 @@
 title: Explosion-proof Timed Snapshot Camera for oil & gas
 summary: >-
   Core Features & Design
-image: https://www.daq-iot.com/static/upload/image/20250815/1755244811711967.png
+image: /images/products/1755244811711967.png
 order: 39
 category: wirelesstimingphotography
 ---

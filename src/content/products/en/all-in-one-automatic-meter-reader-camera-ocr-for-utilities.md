@@ -2,7 +2,7 @@
 title: All-in-One Automatic Meter Reader Camera (OCR) for Utilities
 summary: >-
   ⚡ All-in-One OCR Meter Reader Camera – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260604/1780567691403469.png
+image: /images/products/1780567691403469.png
 order: 12
 category: instrumentacquisition
 ---

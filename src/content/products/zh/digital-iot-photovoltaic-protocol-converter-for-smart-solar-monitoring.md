@@ -2,7 +2,7 @@
 title: Digital IoT Photovoltaic Protocol Converter for smart solar monitoring
 summary: >-
   Seamless Data Integration Between Photovoltaic Systems and IoT Platforms
-image: https://www.daq-iot.com/static/upload/image/20250813/1755069132282380.png
+image: /images/products/1755069132282380.png
 order: 16
 category: instrumentacquisition
 ---

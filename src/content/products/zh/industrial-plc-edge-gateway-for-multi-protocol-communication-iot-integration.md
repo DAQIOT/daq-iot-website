@@ -2,7 +2,7 @@
 title: Industrial PLC Edge Gateway for Multi-Protocol Communication & IoT Integration
 summary: >-
   Multi-Protocol Communication;
-image: https://www.daq-iot.com/static/upload/image/20260605/1780648808529009.png
+image: /images/products/1780648808529009.png
 order: 21
 category: instrumentation
 ---

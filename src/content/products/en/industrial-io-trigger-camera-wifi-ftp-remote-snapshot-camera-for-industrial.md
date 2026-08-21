@@ -2,7 +2,7 @@
 title: Industrial IO Trigger Camera | WiFi & FTP Remote Snapshot Camera for Industrial Monitoring
 summary: >-
   💡 Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20260605/1780641391255609.png
+image: /images/products/1780641391255609.png
 order: 42
 category: wirelesstimingphotography
 ---

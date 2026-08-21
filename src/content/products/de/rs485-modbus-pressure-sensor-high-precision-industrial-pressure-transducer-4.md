@@ -2,7 +2,7 @@
 title: RS485 Modbus Pressure Sensor | High Precision Industrial Pressure Transducer | 4-20mA & Modbus RTU Output
 summary: >-
   High-accuracy RS485 Modbus pressure transducer sensor for industrial automation, water treatment, HVAC, hydraulic systems, pumps, pipelines, and remote monitoring applications. Supports Modbus RTU communication with reliable long-distance transmission.
-image: https://www.daq-iot.com/static/upload/image/20260617/1781660530940977.jpg
+image: /images/products/1781660530940977.jpg
 order: 36
 category: wirelesssensor
 ---

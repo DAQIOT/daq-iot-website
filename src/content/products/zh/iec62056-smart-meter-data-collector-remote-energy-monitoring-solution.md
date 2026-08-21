@@ -2,7 +2,7 @@
 title: IEC62056 Smart Meter Data Collector | Remote Energy Monitoring Solution
 summary: >-
   SC-LP-IRLoRaWAN
-image: https://www.daq-iot.com/static/upload/image/20260605/1780651882140821.png
+image: /images/products/1780651882140821.png
 order: 22
 category: instrumentation
 ---

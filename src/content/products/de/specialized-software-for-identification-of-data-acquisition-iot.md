@@ -2,7 +2,7 @@
 title: Specialized Software for Identification of Data Acquisition & IoT Meters/Instruments
 summary: >-
   Automatically Detect, Configure, and Monitor Your Industrial IoT Devices
-image: https://www.daq-iot.com/static/upload/image/20250813/1755068889938831.jpg
+image: /images/products/1755068889938831.jpg
 order: 3
 category: dataacquisitionsoftware
 ---

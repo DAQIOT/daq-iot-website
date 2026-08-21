@@ -2,7 +2,7 @@
 title: Portable WiFi/Ethernet Cleanroom Particle Counter for Real-time Airborne Particle Monitoring
 summary: >-
   DAQ-GP-CL
-image: https://www.daq-iot.com/static/upload/image/20260604/1780565101321474.png
+image: /images/products/1780565101321474.png
 order: 34
 category: wirelesssensor
 ---

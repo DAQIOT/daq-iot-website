@@ -2,7 +2,7 @@
 title: Solar powered wireless sensors for liquid level, wind, temperature, humidity outdoor
 summary: >-
   Solar powered wireless sensors for outdoor monitoring of liquid level, wind, temperature, and humidity. Easy installation, real-time IoT data transmission, and reliable performance in harsh environments.
-image: https://www.daq-iot.com/static/upload/image/20250813/1755068622395710.png
+image: /images/products/1755068622395710.png
 order: 26
 category: plcacquisition
 ---

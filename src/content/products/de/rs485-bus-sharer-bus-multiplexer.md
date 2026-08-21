@@ -2,7 +2,7 @@
 title: RS485 bus sharer & Bus Multiplexer
 summary: >-
   🔹DAQ-GP-485HUB RS485 Bus Multiplexer – Key Advantages
-image: https://www.daq-iot.com/static/upload/image/20250813/1755066762930894.png
+image: /images/products/1755066762930894.png
 order: 14
 category: instrumentacquisition
 ---
