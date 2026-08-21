@@ -54,26 +54,31 @@ collections:
         field: category
         pattern: dataacquisitionsoftware
     fields:
-      - label: 产品名称
+      - label: 产品名称（必填）
         name: title
         widget: string
+        required: true
+        hint: 每个语言都要填，例如 Instrument Acquisition
         i18n: true
-      - label: 一句话描述
+      - label: 一句话描述（必填）
         name: summary
         widget: text
+        required: true
+        hint: 产品一句话介绍，20-50 字左右
         i18n: true
-      - label: 产品图片
+      - label: 产品图片（选填）
         name: image
         widget: image
         required: false
         i18n: true
-      - label: 排序
+      - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
         value_type: int
         default: 0
+        pattern: ['^[0-9]+$', '只能填数字']
         i18n: duplicate
-      - label: 产品分类
+      - label: 产品分类（必填，先到"产品分类"里确认分类已存在）
         name: category
         widget: relation
         collection: categories
@@ -82,9 +87,11 @@ collections:
         value_field: slug
         required: true
         i18n: duplicate
-      - label: 详细介绍
+      - label: 详细介绍（必填）
         name: body
         widget: markdown
+        required: true
+        hint: 产品详细介绍，支持 Markdown 格式
         i18n: true
   - name: categories
     label: 产品分类
@@ -96,20 +103,25 @@ collections:
     format: frontmatter
     slug: '{{slug}}'
     fields:
-      - label: URL标识(slug，只能英文小写和连字符)
+      - label: URL标识 slug（必填，只能英文小写，不能用空格）
         name: slug
         widget: string
+        required: true
+        pattern: ['^[a-z0-9]+$', '只能小写字母和数字，例如 instrumentation']
+        hint: 填一次即可，产品里的"产品分类"靠它关联
       - label: 排序(数字越小越靠前)
         name: order
         widget: number
         value_type: int
         default: 0
-      - label: 分类名称(英文)
+      - label: 分类名称(英文，必填)
         name: name
         widget: string
-      - label: 分类说明(英文)
+        required: true
+      - label: 分类说明(英文，选填)
         name: description
         widget: text
+        required: false
   - name: posts
     label: 博客文章
     folder: src/content/posts
