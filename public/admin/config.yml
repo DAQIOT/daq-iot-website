@@ -53,26 +53,38 @@ collections:
         i18n: duplicate
       - label: 产品分类
         name: category
-        widget: select
+        widget: relation
+        collection: categories
+        display_fields: [name]
+        search_fields: [name]
+        value_field: slug
+        required: true
         i18n: duplicate
-        default: instrumentation
-        options:
-          - label: Instrumentation
-            value: instrumentation
-          - label: Instrument Acquisition
-            value: instrumentacquisition
-          - label: Wireless Sensor
-            value: wirelesssensor
-          - label: Wireless Timing Photography
-            value: wirelesstimingphotography
-          - label: PLC Acquisition
-            value: plcacquisition
-          - label: Data Acquisition Software
-            value: dataacquisitionsoftware
       - label: 详细介绍
         name: body
         widget: markdown
         i18n: true
+  - name: categories
+    label: 产品分类
+    folder: src/content/categories
+    i18n: false
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{name}}'
+    fields:
+      - label: 排序(数字越小越靠前)
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+      - label: 分类名称(英文)
+        name: name
+        widget: string
+      - label: 分类说明(英文)
+        name: description
+        widget: text
   - name: posts
     label: 博客文章
     folder: src/content/posts
@@ -152,25 +164,6 @@ collections:
           - name: cta
             label: 右上角按钮(获取报价)
             widget: string
-      - label: 产品分类名
-        name: cat
-        widget: object
-        fields:
-          - name: software
-            label: AI+软件
-            widget: string
-          - name: edge
-            label: AI+边缘计算机
-            widget: string
-          - name: sensor
-            label: AI+传感器
-            widget: string
-          - name: connect
-            label: AI+智能连接
-            widget: string
-          - name: auto
-            label: AI+自动化
-            widget: string
       - label: 网站标题与描述(SEO)
         name: hero
         widget: object
@@ -215,21 +208,6 @@ collections:
           - name: viewAll
             label: 查看全部产品
             widget: string
-          - name: catDescSoftware
-            label: AI+软件 卡片描述
-            widget: text
-          - name: catDescEdge
-            label: AI+边缘计算机 卡片描述
-            widget: text
-          - name: catDescSensor
-            label: AI+传感器 卡片描述
-            widget: text
-          - name: catDescConnect
-            label: AI+智能连接 卡片描述
-            widget: text
-          - name: catDescAuto
-            label: AI+自动化 卡片描述
-            widget: text
           - name: solutionsTitle
             label: 行业解决方案标题
             widget: string

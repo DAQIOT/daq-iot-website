@@ -12,13 +12,6 @@ nav:
   blog: News
   contact: Contact
   cta: Get a Quote
-cat:
-  instrumentation: Instrumentation
-  instrumentacquisition: Instrument Acquisition
-  wirelesssensor: Wireless Sensor
-  wirelesstimingphotography: Wireless Timing Photography
-  plcacquisition: PLC Acquisition
-  dataacquisitionsoftware: Data Acquisition Software
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
   subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
@@ -30,15 +23,9 @@ home:
   heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
   heroCta1: Get a Quote
   heroCta2: View Products
-  categoriesTitle: AI+ Five Product Families
+  categoriesTitle: Our Product Categories
   categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
   viewAll: View All Products
-  catDescInstrumentation: Precision instruments and measurement modules for industrial data
-  catDescInstrumentacquisition: Instrument data acquisition and signal collection systems
-  catDescWirelesssensor: Wireless sensors for temperature, vibration, level and more
-  catDescWirelesstimingphotography: Wireless timing and photography capture devices
-  catDescPlcacquisition: PLC data acquisition and protocol communication managers
-  catDescDataacquisitionsoftware: SCADA · Meter Reading · Data Dashboards · EMS · PV O&M Cloud
   solutionsTitle: Industry Solutions
   solutionsSubtitle: Deep expertise in smart manufacturing and new energy for digital transformation
   industries:

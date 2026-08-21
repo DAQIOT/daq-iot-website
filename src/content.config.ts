@@ -36,13 +36,22 @@ const contact = defineCollection({
   schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
+const categories = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/categories' }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string().optional().default(''),
+    order: z.number().default(0)
+  })
+});
+
 const products = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/products' }),
   schema: z.object({
     title: z.string(),
     summary: z.string(),
     image: z.string().optional().default(''),
-    category: z.enum(['software', 'edge', 'sensor', 'connect', 'auto']).default('software'),
+    category: z.string().default('instrumentation'),
     order: z.number().default(0)
   })
 });
@@ -66,6 +75,7 @@ export const collections = {
   support,
   about,
   contact,
+  categories,
   products,
   posts
 };

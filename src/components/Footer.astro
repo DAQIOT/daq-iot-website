@@ -1,6 +1,7 @@
 ---
 import { getTranslations } from '../i18n/utils';
 import type { Lang } from '../i18n/config';
+import { getCollection } from 'astro:content';
 
 interface Props {
   lang: Lang;
@@ -9,13 +10,9 @@ const { lang } = Astro.props;
 const t = await getTranslations(lang);
 const base = '/' + lang;
 
-const productCats = [
-  { key: 'software', href: base + '/products?cat=software' },
-  { key: 'edge', href: base + '/products?cat=edge' },
-  { key: 'sensor', href: base + '/products?cat=sensor' },
-  { key: 'connect', href: base + '/products?cat=connect' },
-  { key: 'auto', href: base + '/products?cat=auto' },
-];
+const productCats = (await getCollection('categories'))
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .map((c) => ({ key: c.id, name: c.data.name, href: base + '/products?cat=' + c.id }));
 ---
 <footer class="bg-brand-dark text-slate-300">
   <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -30,7 +27,7 @@ const productCats = [
       <div class="text-white font-semibold text-sm mb-3">{t('footer.products')}</div>
       <ul class="space-y-2 text-sm text-slate-400">
         {productCats.map((c) => (
-          <li><a href={c.href} class="hover:text-brand transition">{t('cat.' + c.key)}</a></li>
+          <li><a href={c.href} class="hover:text-brand transition">{c.name}</a></li>
         ))}
       </ul>
     </div>

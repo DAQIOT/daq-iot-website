@@ -17,14 +17,11 @@ const activeCat = Astro.url.searchParams.get('cat') || 'all';
 const all = await getCollection('products', (entry) => entry.id.startsWith(lang + '/'));
 const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
+const categories = (await getCollection('categories')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+const catName = Object.fromEntries(categories.map((c) => [c.id, c.data.name]));
 const cats = [
   { key: 'all', label: t('products.all') },
-  { key: 'instrumentation', label: t('cat.instrumentation') },
-  { key: 'instrumentacquisition', label: t('cat.instrumentacquisition') },
-  { key: 'wirelesssensor', label: t('cat.wirelesssensor') },
-  { key: 'wirelesstimingphotography', label: t('cat.wirelesstimingphotography') },
-  { key: 'plcacquisition', label: t('cat.plcacquisition') },
-  { key: 'dataacquisitionsoftware', label: t('cat.dataacquisitionsoftware') },
+  ...categories.map((c) => ({ key: c.id, label: c.data.name }))
 ];
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
@@ -57,7 +54,7 @@ const cats = [
            class="product-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
           {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-contain bg-slate-50" />}
           <div class="p-6">
-            <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{t('cat.' + p.data.category)}</span>
+            <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{catName[p.data.category] ?? p.data.category}</span>
             <h3 class="text-xl font-semibold text-brand-dark">{p.data.title}</h3>
             <p class="mt-2 text-slate-600 text-sm leading-relaxed">{p.data.summary}</p>
           </div>

@@ -1,6 +1,7 @@
 ---
 import { getTranslations } from '../i18n/utils';
 import type { Lang } from '../i18n/config';
+import { getCollection } from 'astro:content';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
@@ -11,13 +12,9 @@ const t = await getTranslations(lang);
 const base = '/' + lang;
 const path = Astro.url.pathname;
 
-const categories = [
-  { key: 'software', href: base + '/products?cat=software' },
-  { key: 'edge', href: base + '/products?cat=edge' },
-  { key: 'sensor', href: base + '/products?cat=sensor' },
-  { key: 'connect', href: base + '/products?cat=connect' },
-  { key: 'auto', href: base + '/products?cat=auto' },
-];
+const categories = (await getCollection('categories'))
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .map((c) => ({ key: c.id, name: c.data.name, href: base + '/products?cat=' + c.id }));
 
 const nav = [
   { href: base + '/', label: t('nav.home') },
@@ -58,7 +55,7 @@ function isActive(href: string) {
                 {item.dropdown.map((c) => (
                   <a href={c.href} class="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-brand-light hover:text-brand transition">
                     <span class="w-1.5 h-1.5 rounded-full bg-brand shrink-0"></span>
-                    {t('cat.' + c.key)}
+                    {c.name}
                   </a>
                 ))}
               </div>
@@ -92,7 +89,7 @@ function isActive(href: string) {
             <div class="px-2 py-2 text-sm font-semibold text-slate-900">{item.label}</div>
             <div class="pl-3 grid grid-cols-1">
               {item.dropdown.map((c) => (
-                <a href={c.href} class="px-2 py-2 text-sm text-slate-600 hover:text-brand">{t('cat.' + c.key)}</a>
+                <a href={c.href} class="px-2 py-2 text-sm text-slate-600 hover:text-brand">{c.name}</a>
               ))}
             </div>
           </div>

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getTranslations, getSiteData } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
+import { getCollection } from 'astro:content';
 
 export function getStaticPaths() {
   return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
@@ -11,14 +12,13 @@ const t = await getTranslations(lang);
 const site = await getSiteData(lang);
 const base = '/' + lang;
 
-const families = [
-  { key: 'instrumentation', href: base + '/products?cat=instrumentation' },
-  { key: 'instrumentacquisition', href: base + '/products?cat=instrumentacquisition' },
-  { key: 'wirelesssensor', href: base + '/products?cat=wirelesssensor' },
-  { key: 'wirelesstimingphotography', href: base + '/products?cat=wirelesstimingphotography' },
-  { key: 'plcacquisition', href: base + '/products?cat=plcacquisition' },
-  { key: 'dataacquisitionsoftware', href: base + '/products?cat=dataacquisitionsoftware' },
-];
+const categories = (await getCollection('categories')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+const families = categories.map((c) => ({
+  slug: c.id,
+  name: c.data.name,
+  description: c.data.description,
+  href: base + '/products?cat=' + c.id
+}));
 
 const industries = (site.home?.industries ?? []).map((it: { label: string }, i: number) => ({
   n: String(i + 1).padStart(2, '0'),
@@ -61,10 +61,10 @@ const stats = (site.home?.stats ?? []).map((s: { value: string; label: string })
       {families.map((f) => (
         <a href={f.href} class="card-hover group block bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand">
           <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-4">
-            <span class="text-brand font-bold text-lg">AI+</span>
+            <span class="text-brand font-bold text-lg">{f.name.charAt(0)}</span>
           </div>
-            <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{t('cat.' + f.key)}</h3>
-            <p class="mt-2 text-sm text-slate-500 leading-relaxed">{t('home.catDesc' + f.key.charAt(0).toUpperCase() + f.key.slice(1))}</p>
+            <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{f.name}</h3>
+            <p class="mt-2 text-sm text-slate-500 leading-relaxed">{f.description}</p>
           <span class="mt-4 inline-flex items-center text-sm font-medium text-brand">{t('home.viewAll')} →</span>
         </a>
       ))}

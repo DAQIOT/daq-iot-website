@@ -22,6 +22,7 @@ const t = await getTranslations(lang);
 const { Content } = await render(entry);
 const productsHref = '/' + lang + '/products';
 const contactHref = '/' + lang + '/contact';
+const catName = Object.fromEntries((await getCollection('categories')).map((c) => [c.id, c.data.name]));
 ---
 <BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.summary}>
   <section class="bg-brand-dark">
@@ -29,7 +30,7 @@ const contactHref = '/' + lang + '/contact';
       <nav class="text-sm text-slate-400 mb-3">
         <a href={productsHref} class="hover:text-brand">{t('nav.products')}</a>
         <span class="mx-2">/</span>
-        <span class="text-slate-200">{t('cat.' + entry.data.category)}</span>
+        <span class="text-slate-200">{catName[entry.data.category] ?? entry.data.category}</span>
       </nav>
       <h1 class="text-3xl md:text-4xl font-bold text-white">{entry.data.title}</h1>
     </div>
@@ -41,7 +42,7 @@ const contactHref = '/' + lang + '/contact';
         <img src={entry.data.image} alt={entry.data.title} class="w-full h-80 object-contain bg-slate-50 rounded-2xl shadow" />
       )}
       <div>
-        <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{t('cat.' + entry.data.category)}</span>
+        <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{catName[entry.data.category] ?? entry.data.category}</span>
         <p class="mt-4 text-lg text-slate-600 leading-relaxed">{entry.data.summary}</p>
         <a href={contactHref} class="mt-6 inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('nav.cta', '获取报价')}</a>
       </div>
