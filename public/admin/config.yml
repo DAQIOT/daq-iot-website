@@ -31,6 +31,9 @@ collections:
     extension: md
     format: frontmatter
     slug: '{{title}}'
+    view_groups:
+      - label: 产品分类
+        field: category
     fields:
       - label: 产品名称
         name: title
