@@ -58,19 +58,20 @@ collections:
         name: title
         widget: string
         required: true
-        hint: 每个语言都要填，例如 Instrument Acquisition
-        i18n: true
+        hint: 用英文填写即可，会自动同步到中文和德文页面
+        i18n: duplicate
       - label: 一句话描述（必填）
         name: summary
         widget: text
         required: true
-        hint: 产品一句话介绍，20-50 字左右
-        i18n: true
+        hint: 产品一句话介绍，20-50 字左右；用英文填写即可
+        i18n: duplicate
       - label: 产品图片（选填）
         name: image
         widget: image
         required: false
-        i18n: true
+        hint: 只需上传一次，三语页面共用
+        i18n: duplicate
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
@@ -91,8 +92,8 @@ collections:
         name: body
         widget: markdown
         required: true
-        hint: 产品详细介绍，支持 Markdown 格式
-        i18n: true
+        hint: 产品详细介绍，支持 Markdown 格式；用英文填写即可
+        i18n: duplicate
   - name: categories
     label: 产品分类
     folder: src/content/categories
