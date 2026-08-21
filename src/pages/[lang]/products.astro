@@ -19,11 +19,12 @@ const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const cats = [
   { key: 'all', label: t('products.all') },
-  { key: 'software', label: t('cat.software') },
-  { key: 'edge', label: t('cat.edge') },
-  { key: 'sensor', label: t('cat.sensor') },
-  { key: 'connect', label: t('cat.connect') },
-  { key: 'auto', label: t('cat.auto') },
+  { key: 'instrumentation', label: t('cat.instrumentation') },
+  { key: 'instrumentacquisition', label: t('cat.instrumentacquisition') },
+  { key: 'wirelesssensor', label: t('cat.wirelesssensor') },
+  { key: 'wirelesstimingphotography', label: t('cat.wirelesstimingphotography') },
+  { key: 'plcacquisition', label: t('cat.plcacquisition') },
+  { key: 'dataacquisitionsoftware', label: t('cat.dataacquisitionsoftware') },
 ];
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>

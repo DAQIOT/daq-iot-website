@@ -13,11 +13,12 @@ nav:
   contact: Contact
   cta: Get a Quote
 cat:
-  software: AI+ Software
-  edge: AI+ Edge Computing
-  sensor: AI+ Sensors
-  connect: AI+ Connectivity
-  auto: AI+ Automation
+  instrumentation: Instrumentation
+  instrumentacquisition: Instrument Acquisition
+  wirelesssensor: Wireless Sensor
+  wirelesstimingphotography: Wireless Timing Photography
+  plcacquisition: PLC Acquisition
+  dataacquisitionsoftware: Data Acquisition Software
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
   subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
@@ -32,11 +33,12 @@ home:
   categoriesTitle: AI+ Five Product Families
   categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
   viewAll: View All Products
-  catDescSoftware: SCADA · Meter Reading · Data Dashboards · EMS · PV O&M Cloud
-  catDescEdge: Edge Gateways · Protocol Communication Managers
-  catDescSensor: CT Current · IR Temperature · Level · Wireless Vibration · Speed
-  catDescConnect: Industrial Switches · Cellular Routers · Serial Servers · Optical Modules
-  catDescAuto: Wireless Andon · IO Servers · RS485 Splitters
+  catDescInstrumentation: Precision instruments and measurement modules for industrial data
+  catDescInstrumentacquisition: Instrument data acquisition and signal collection systems
+  catDescWirelesssensor: Wireless sensors for temperature, vibration, level and more
+  catDescWirelesstimingphotography: Wireless timing and photography capture devices
+  catDescPlcacquisition: PLC data acquisition and protocol communication managers
+  catDescDataacquisitionsoftware: SCADA · Meter Reading · Data Dashboards · EMS · PV O&M Cloud
   solutionsTitle: Industry Solutions
   solutionsSubtitle: Deep expertise in smart manufacturing and new energy for digital transformation
   industries:
