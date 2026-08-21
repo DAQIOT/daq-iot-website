@@ -31,9 +31,28 @@ collections:
     extension: md
     format: frontmatter
     slug: '{{title}}'
-    view_groups:
-      - label: 产品分类
+    view_filters:
+      - label: 全部
         field: category
+        pattern: '.*'
+      - label: Instrumentation
+        field: category
+        pattern: instrumentation
+      - label: Instrument Acquisition
+        field: category
+        pattern: instrumentacquisition
+      - label: Wireless Sensor
+        field: category
+        pattern: wirelesssensor
+      - label: Wireless Timing Photography
+        field: category
+        pattern: wirelesstimingphotography
+      - label: PLC Acquisition
+        field: category
+        pattern: plcacquisition
+      - label: Data Acquisition Software
+        field: category
+        pattern: dataacquisitionsoftware
     fields:
       - label: 产品名称
         name: title
