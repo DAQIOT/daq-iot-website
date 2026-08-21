@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Data Acquisition & Monitoring Solar Power Systems
 summary: >-
   Photovoltaic Data Acquisition & Monitoring Solution

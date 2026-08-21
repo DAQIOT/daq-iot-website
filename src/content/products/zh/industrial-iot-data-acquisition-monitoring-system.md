@@ -1,145 +1,186 @@
 ---
-title: Industrial IoT Data Acquisition & Monitoring System
+title: 通用工业物联网数据采集系统DAQ for IIOT
 summary: >-
-  Industrial IoT Data Acquisition & Management System for real-time monitoring, remote device management, and data collection. Integrate sensors, meters, PLCs, and industrial equipment with SCADA and cloud platforms.
-image: /images/products/1755068741975141.jpg
+  1 软件概述1.1 功能概述DAQ for IIOT通用工业数据采集系统是一套运行在边缘计算机、工业网关或普通电脑上的设备数据采集管理软件，主要用于对各
+  种工业仪器设备、PLC、注塑机、数控机床等数据的采集、控制、存储、统计以及上传。1.2 运行环境项目要求操作系统Windows、Linux软件基础环境.
+  NET5客户端浏览器Edge、Chrome、Fire
+image: /images/products/1692951414317855.jpg
 order: 2
 category: dataacquisitionsoftware
+hidden: false
 ---
-**1 System overview**
+**产品详情**
 
-## 
+1 **系统概述**
 
-##  1.1 Function Overview DAQ for IIoT General Industrial Data Acquisition System is a set of equipment data acquisition and management software running on edge computers, mainly used for the acquisition, control, storage, query, display and upload of data from various instruments and equipment (PLC, injection molding machines, CNC machine tools, electric meters, flow meters, etc.). The main functions of the system include: l Flexible transmission configuration (link, storage, device, factor, upload service) l Data acquisition and upload l Real-time monitoring (device, upload) l Alarm configuration and monitoring l Data storage and query (table, chart, Web API) l Configuration and visualization design l User and permission management l Interface multi-language support
+##  1.1 **功能概述**
 
-##   
+DAQ for IIOT通用工业数据采集系统是一套运行在边缘计算机上的设备数据采集与管理软件，主要用于对各种仪器设备（PLC、注塑机、数控机床、电表、流量计等）数据的采集、控制、存储、查询、展示以及上传。
 
-## 1.2 **Operating environment**
+系统主体功能包括：
 
-| **Project**                      | **Requirement**                      |
-|----------------------------------|--------------------------------------|
-| **Operating system**             |  Windows、Linux                       |
-| ****Runtime Environment****      | .NET 6                               |
-| **Client-side Browser**          |  Edge、Chrome、Firefox、Safari、Opera等   |
-| **System Access Link**           |  http://localhost:16801/scada.html   |
-| **HMI Visualization Access URL** |  http://localhost:16804/diagram.html |
+l 灵活的传输配置（链路、存储、设备、因子、上传服务）
 
-## 1.3 **Supported devices**
+l 数据采集和上传
+
+l 实时监控（设备、上传）
+
+l 告警配置和监控
+
+l 数据存储和查询（表格、图表、Web API）
+
+l 组态和可视化设计
+
+l 用户及权限管理
+
+l 界面多语言支持
+
+## 1.2 **运行环境**
+
+**项目**| **要求**  
+---|---  
+**操作系统**|  Windows、Linux  
+**软件基础环境**| .NET 6  
+**客户端浏览器**|  Edge、Chrome、Firefox、Safari、Opera等  
+**采集系统访问地址**|  http://localhost:16801/scada.html  
+**组态可视化访问地址**|  http://localhost:16804/diagram.html  
+  
+## 1.3 **支持设备**
 
 ## ****  
 
-### 1.3.1 Support communication links
+### 1.3.1 支持通信链路
 
-Some of the communication links supported by the system include:
+系统支持的部分通信链路包括：
 
-| **Link Type**   | **Communication Link** |
-|-----------------|------------------------|
-| **TCP**         |  TCP Client            |
-|                 |
-|                 | TCP Server             |
-| **Serial Port** |  Serial Port UART      |
-| **UDP**         |  UDP                   |
-| **HTTP**        |  HTTP Server           |
-|                 |
-|                 | HTTP Client            |
-| **OPC**         |  OPC-UA                |
-|                 |
-|                 | OPC-DA                 |
-| **MQTT**        |  MQTT-TCP              |
-|                 |
-|                 | MQTT-WebSocket         |
+**链路类型**| **通信链路**  
+---|---  
+**TCP**|  TCP客户端  
+  
+| TCP服务端  
+**串口**|  串口UART  
+**UDP**|  UDP  
+**HTTP**|  HTTP服务端  
+  
+| HTTP客户端  
+**OPC**|  OPC-UA  
+  
+| OPC-DA  
+**MQTT**|  MQTT-TCP  
+  
+| MQTT-WebSocket  
+  
+### 1.3.2 **支持通信协议**
 
-### 1.3.2 **Support communication protocols**
+系统支持的部分通信协议包括：
 
-Some of the communication protocols supported by the system include:
+**协议类型**| **主协议**| **子协议**  
+---|---|---  
+**PLC通信协议**|  Modbus| Modbus-RTU  
+  
+|   
+| Modbus-TCP  
+  
+|   
+| Modbus-ASCII  
+  
+| 西门子Siemens S7|   
+  
+  
+| 三菱MELSEC通信协议| MELSEC-1E  
+  
+|   
+| MELSEC-3C  
+  
+|   
+| MELSEC-3E  
+  
+|   
+| MELSEC-4C  
+  
+|   
+| MELSEC-4D  
+  
+|   
+| Mitsubishi-Fx  
+**OPC通信协议**|  OPC-UA|   
+  
+  
+| OPC-DA|   
+  
+**MQTT通信协议**|  MQTT-JSON|   
+  
+**电能表通信协议**|  DL/T645|   
+  
+  
+| DLMS| DLMS-LN  
+  
+|   
+| DLMS-SN  
+  
+| IEC62056-21|   
+  
+  
+| Edmi Command-Line|   
+  
+**IEC通信协议**|  IEC103|   
+  
+  
+| IEC104|   
+  
+**环境监测通信协议**|  HJ212|   
+  
+  
+| SL651|   
+  
+  
+| SZY206|   
+  
+  
+## 1.4 **名词解释**
 
-| **Protocol Type**                     | **Primary Protocol** | **Sub-Protocol** |
-|---------------------------------------|----------------------|------------------|
-| **PLC Protocol**                      |  Modbus              | Modbus-RTU       |
-|                                       |
-|                                       |                      |
-|                                       | Modbus-TCP           |
-|                                       |
-|                                       |                      |
-|                                       | Modbus-ASCII         |
-|                                       |
-|                                       | Siemens S7           |                  |
-|                                       |
-|                                       |
-|                                       | MELSEC Protocol      | MELSEC-1E        |
-|                                       |
-|                                       |                      |
-|                                       | MELSEC-3C            |
-|                                       |
-|                                       |                      |
-|                                       | MELSEC-3E            |
-|                                       |
-|                                       |                      |
-|                                       | MELSEC-4C            |
-|                                       |
-|                                       |                      |
-|                                       | MELSEC-4D            |
-|                                       |
-|                                       |                      |
-|                                       | Mitsubishi-Fx        |
-| **OPC Protocol**                      |  OPC-UA              |                  |
-|                                       |
-|                                       |
-|                                       | OPC-DA               |                  |
-|                                       |
-| **MQTT Protocol**                     |  MQTT-JSON           |                  |
-|                                       |
-| **Electric Meter Protocol**           |  DL/T645             |                  |
-|                                       |
-|                                       |
-|                                       | DLMS                 | DLMS-LN          |
-|                                       |
-|                                       |                      |
-|                                       | DLMS-SN              |
-|                                       |
-|                                       | IEC62056-21          |                  |
-|                                       |
-|                                       |
-|                                       | Edmi Command-Line    |                  |
-|                                       |
-| **IEC Protocol**                      |  IEC103              |                  |
-|                                       |
-|                                       |
-|                                       | IEC104               |                  |
-|                                       |
-| **Environmental Monitoring Protocol** |  HJ212               |                  |
-|                                       |
-|                                       |
-|                                       | SL651                |                  |
-|                                       |
-|                                       |
-|                                       | SZY206               |                  |
-|                                       |
+## ****  
 
-## 1.4 Noun Explanations 1.4.1 Device The system collects data from a device, which must have a communication interface and use a specific communication protocol for communication. A device can be a testing instrument, a small meter, a sensor, or even a separate PLC. 1.4.2 Factor A factor is an attribute of a device, including the device's measured value, status, control unit, etc. For example, for a measuring instrument, the following attributes can be called a factor: \- Latest measured value (measured value) \- Current device status: measuring, standby, fault, etc. (status) \- Start measurement, stop measurement (control unit) 1.4.3 Link The physical connection method between the system and the device as well as the basic communication protocol, that is, the part below the data link layer in the communication process. For example, it can be using a serial communication cable with the UART communication protocol; or using a network cable with the TCP/IP communication protocol. Multiple devices are supported to share one link. 1.4.4 Driver A functional module that realizes functions such as collection, upload, storage, etc. According to functional division, it includes acquisition driver (realizing acquisition communication protocol parsing), upload driver (realizing upload communication protocol parsing), link driver (realizing connection and data sending/receiving of specific links), storage driver (realizing storage and operation of specific databases), etc. 1.4.5 Upload Service The system uploads data to a platform or other devices using a specific link and communication protocol. 1.4.6 Upload Factor The factor to be uploaded to a platform or other devices. 2 Service Philosophy Our company solemnly promises: What you purchase is not just a product, but also meticulous and thoughtful technical support services!!!( =^_^= ) For most of our wireless products, on-site installation only requires ordinary workers to connect the power supply! No debugging is needed! We provide free remote guidance and remote configuration and debugging services to send data to the cloud platform designated by the user. (Hardware) Free IoT solution consulting services are provided!
+### 1.4.1 **设备**
 
-###   
+### ****  
 
-### 1\. What devices can be connected?
+系统采集来自一台设备的数据，设备需具有通信接口，以及使用特定的通信协议进行通信。设备可以是一台检测仪器、一个小型仪表、一个传感器，甚至是一块单独的 PLC。
 
-PLCs, sensors, meters, actuators, and industrial instruments.
+### 1.4.2 **因子**
 
-### 2\. Which protocols are supported?
+因子是设备的属性，包括设备的测量值、状态、控制单元等。例如对于一台测量仪器来说，以下属性可以称为一个因子：
 
-Modbus RTU/TCP, MQTT, OPC UA, TCP/IP and more.
+l 最新测量值（测量值）
 
-### 3\. Can it integrate with SCADA systems?
+l 当前设备状态：测量中、待机中、故障等（状态）
 
-Yes, it fully supports SCADA, MES, ERP, and cloud platforms.
+l 启动测量、停止测量（控制单元）
 
-### 4\. Does it support remote monitoring?
+### 1.4.3 **链路**
 
-Yes, real-time remote monitoring and control are supported.
+系统与设备的物理连接方式以及基础通信协议，即通信过程中链路层以下的部分。例如可以是使用串口通信线，使用UART通信协议；或是使用网线，使用TCP/IP通信协议。支持多设备共用一条链路。
 
-### 5\. Is it suitable for large-scale systems?
+### 1.4.4 **驱动**
 
-Yes, it is scalable for both small factories and large industrial networks.
+一个功能模块，实现采集、上传、存储等功能。根据功能划分，包括采集驱动（实现采集通信协议解析）、上传驱动（实现上传通信协议解析）、链路驱动（实现特定链路的连接与数据收发）、存储驱动（实现特定数据库的存储与操作）等。
 
-### 6\. Is the system difficult to install?
+### 1.4.5 **上传服务**
 
-No, it supports automatic device detection and fast deployment.
+系统向平台或其他设备上传数据，使用特定的链路和通信协议。
+
+### 1.4.6 **上传因子**
+
+要上传至平台或其他设备的因子。
+
+# 2  **服务理念**
+
+**我司郑重承诺 :**
+
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
+
+对于我司大部分无线产品，现场只需普通工人接电安装即可! 无需调试！
+
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。（硬件）
+
+免费提供物联网方案咨询服务！

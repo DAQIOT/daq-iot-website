@@ -1,182 +1,112 @@
 ---
-title: RS485 & Lora Vibriation Sensor
+title: 无线LoRa振动加速度传感器电机风机水泵震动三轴位移速度监测检测变送器仪
 summary: >-
-  ⚡ RS485 & LoRa Vibration Sensor – Key Advantages
-image: /images/products/1780910981409813.png
+  1产品概述RS485振动传感器：DAQ-LP-VTLORA无线振动速度（加速度）传感器采用不锈钢壳体设计，内部主要由供电模块、振动采集单元、数据处理与发
+  送模块等组成，设备振动值经传感器采集处理后通过485通讯传输到接收终端进行集中监控。LoRa无线振动传感器：DAQ-GP-VT485 振动速度（加速度）
+  传感器采用不
+image: /images/products/1768268485649409.jpg
 order: 11
 category: instrumentacquisition
+hidden: false
 ---
-# 1 **Product Overview**
+**产品详情**
 
-**RS485 vibration sensor：**
+# 1 **产品概述**
 
-The DAQ-GP-VT485 vibration speed (acceleration) sensor features a stainless steel housing design. Internally, it primarily consists of a power supply module, a vibration acquisition unit, and a data processing and transmission module. The sensor collects and processes vibration values from the device, which are then transmitted to the receiving terminal via 485 communication for centralized monitoring.
+**RS485振动传感器：**
 
-LoRa wireless vibration sensor:
+DAQ-LP-VTLORA无线振动速度（加速度）传感器采用不锈钢壳体设计，内部主要由供电模块、振动采集单元、数据处理与发送模块等组成，设备振动值经传感器采集处理后通过 485通讯传输到接收终端进行集中监控。
 
-The DAQ-LP-VTLORA wireless vibration velocity (acceleration) sensor features a stainless steel housing design. Internally, it primarily consists of a battery, a vibration acquisition unit, and a data processing and transmission module. The vibration values collected and processed by the sensor are transmitted to a wireless receiving terminal via LoRa wireless communication for centralized monitoring. Each sensor possesses a unique communication ID number.
+**LoRa无线振动传感器：**
 
-It can be applied to online measurement of vibration speed, acceleration, and temperature of motor equipment, reducers, fans, generators, air compressors, centrifuges, water pumps, and other equipment in various fields such as coal mining, chemical industry, metallurgy, electric power, building materials, automobiles, and machinery manufacturing.
+DAQ-GP-VT485 振动速度（加速度）传感器采用不锈钢壳体设计，内部主要由电池、振动采集单元、数据处理与发送模块等组成，设备振动值经传感器采集处理后通过LoRa 无线通讯方式传输到无线接收终端进行集中监控，每只传感器具有唯一通信 ID 号。
 
-# 2 **Service Philosophy**
+可应用于煤矿、化工、冶金、电力、建材、汽车、机械制造等诸多领域的电机设备、减速机风机、发电机、空压机、离心机、水泵等设备振动速度、加速度和温度的在线测量。
 
-**Our company solemnly promises:**
+# 2 **服务理念**
 
-# **What you have purchased is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= )**
+**我司郑重承诺:**
 
-# **This product only requires ordinary workers to connect the power and install it on site! No debugging is needed!**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！(** =^_^=**)**
 
-# **We provide free remote guidance and remote configuration and debugging services, and send the data to the cloud platform specified by the user.**
+本产品，现场只需普通工人接电安装即可! 无需调试！
 
-# **Free IoT solution consulting services!**
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-#  3 **Product Features**
+免费提供物联网方案咨询服务！
 
-##  3.1 **RS485Vibration sensor characteristics**
+# 3 **产品特性**
 
-Dedicated MEMS chip technology, precise integration calculation;
+##  3.1 **RS485振动传感器****特性**
 
-The power supply is stable, eliminating the need for frequent maintenance of the power source and ensuring an exceptionally long working life;
+专用mems芯片技术,精准积分计算；
 
-The data transmission is efficient with low latency and strong anti-interference capability.
+供电稳定，无需频繁维护电源，超长工作寿命；
 
-Adopting RS485 communication and Modbus communication protocol
+数据传输效率高、延迟低，抗干扰能力强。
 
-## 3.2 **RS485Structural characteristics of vibration sensor**
+采用RS485通讯，modbus通信协议
 
-Power supply mode: DC12~24V external power supply
+## 3.2 **RS485振动传感器****结构特性**
 
-Standby current: ≤5mA
+供电方式：DC12～24V 外置电源
 
-Detection cycle: 800ms
+待机电流：≤5mA
 
-Measurement range: Acceleration: 0~10g; Speed: 0~60mm/s; Amplitude: 0~50000um; Frequency (effective value): 0~2000Hz
+检测周期：800ms
 
-Ambient temperature: -40~85℃ (relative humidity: ≤90%)
+测量范围：加速度：0～10g；速度：0～60mm/s；振幅：0～50000um；频率（有效值）：0～2000Hz
 
-Protection level: IP67
+环境温度：-40～85℃（相对湿度：≤90%）
 
-Measurement method: vertical or horizontal
+防护等级：IP67
 
-Installation method: magnetic attraction or screw hole M10×1.5×10 (deep)
+测量方法：垂直或水平
 
-## 3.3 **LoRa Characteristics of wireless vibration sensors**
+安装方式：磁吸或螺孔 M10×1.5×10（深）
 
-Dedicated MEMS chip technology, precise integration calculation;
+## 3.3 **LoRa无线振动传感器****特性**
 
-9000mAh lithium-ion battery, replaceable, with an ultra-long working life;
+专用mems芯片技术,精准积分计算；
 
-433M free frequency band, external antenna, ultra-long transmission distance.
+9000mAh锂亚电池，可更换,超长工作寿命；
 
-## 3.4 **LoRa Structural characteristics of wireless vibration sensors**
+433M免费频段,外置天线,超远传输距离。
 
-Power supply: Lithium-ion battery 9000mAh (default, optional 19000mAh or DC12~24V external power supply)
+## 3.4 **LoRa无线振动传感器****结构特性**
 
-Standby current: ≤3uA
+供电方式：锂亚电池9000mAh（默认，可选19000mAh或DC12～24V 外置电源）
 
-Detection cycle: default 30s, adjustable from 1 to 60s
+待机电流：≤3uA
 
-Measurement range: 50mm/s (effective value)
+检测周期：默认30s，1～60s可设置
 
-Sensitivity: 0.05mm/s ±5% (measured at 80Hz and 20℃)
+测量范围：50mm/s（有效值）
 
-Ambient temperature: -40 to 85℃ (relative humidity: ≤90%)
+灵敏度：0.05mm/s ±5%（温度20℃时，80Hz时测试）
 
-Protection level: IP67
+环境温度：-40～85℃（相对湿度：≤90%）
 
-Measurement method: vertical or horizontal
+防护等级：IP67
 
-Installation method: magnetic attraction or screw hole M10×1.5×10 (deep)
+测量方法：垂直或水平
 
-Transmission distance: ≥300 meters (up to 500 meters or more with an external suction cup antenna, depending on the site)
+安装方式：磁吸或螺孔 M10×1.5×10（深）
 
-Transmission mode: Wireless communication via LoRa at 433MHz
+传输距离：≥300 米 （外置吸盘天线可达 500 米以上，视现场）
 
-# 4 **communication routine**
+传输方式：无线通讯 LoRa 433MHz
 
-##  4.1 **register address**
+# 4 **通信例程**
 
-Modbus Protocol 03 function code
+##  4.1 **寄存器地址**
 
-| register address | PLC or configuration address | content                       | operation | byte length |
-|------------------|------------------------------|-------------------------------|-----------|-------------|
-| 00 01            | 40001                        | Xpeak acceleration            | read-only | 2           |
-| 00 02            | 40002                        | Ypeak acceleration            | read-only | 2           |
-| 00 03            | 40003                        | Zpeak acceleration            | read-only | 2           |
-| 00 04            | 40004                        | Xspeed effective value        | read-only | 2           |
-| 00 05            | 40005                        | Yspeed effective value        | read-only | 2           |
-| 00 06            | 40006                        | Zspeed effective value        | read-only | 2           |
-| 00 07            | 40007                        | temperature                   | read-only | 2           |
-| 00 08            | 40008                        | ZEquivalent Shaft FrequencyHz | read-only | 2           |
-| 00 09            | 40009                        | Xdisplacement                 | read-only | 2           |
-| 00 0A            | 40010                        | Ydisplacement                 | read-only | 2           |
-| 00 0B            | 40011                        | Zdisplacement                 | read-only | 2           |
+Modbus协议03功能码
 
-## 4.2 **Description of the value in the baud rate register (0x0D):**
+## 4.2 **波特率寄存器（0x0D）值说明：**
 
-| register address | register value | Attribute (Baud rate) |
-|------------------|----------------|-----------------------|
-| 0x0D             | 00 06          | 600                   |
-| 00 0C            | 1200           |
-| 00 18            | 2400           |
-| 00 30            | 4800           |
-| 00 60            | 9600           |
-| 00 C0            | 19200          |
+说明：设置值为真实波特率÷100。
 
-Note: The setting value is the actual baud rate ÷ 100.
+## 4.3 **协议定制**
 
-## 4.3 **Protocol Customization**
-
-If you need to customize other communication protocols, please contact our business personnel for communication.
-
-# ❓ RS485 & LoRa Vibration Sensor – FAQ
-
-* * *
-
-### 1\. What is this vibration sensor used for?
-
-It is used to monitor vibration speed and acceleration in industrial equipment, helping detect mechanical faults and prevent unexpected downtime.
-
-* * *
-
-### 2\. What communication protocols does the sensor support?
-
-It supports **RS485 for wired industrial networks** and **LoRa for long-range wireless monitoring** , offering flexible deployment options.
-
-* * *
-
-### 3\. Can the sensor provide real-time monitoring?
-
-Yes. The sensor transmits vibration data in real time to a receiving terminal or IoT platform for centralized monitoring and analysis.
-
-* * *
-
-### 4\. What environments is the sensor suitable for?
-
-The stainless steel housing and industrial-grade components make it suitable for **factories, production lines, machinery, and harsh industrial environments**.
-
-* * *
-
-### 5\. How accurate is the vibration measurement?
-
-The sensor provides **high-precision vibration speed and acceleration measurements** , enabling reliable condition monitoring and predictive maintenance.
-
-* * *
-
-### 6\. Can it integrate with existing industrial systems?
-
-Yes. It is compatible with **PLCs, SCADA systems, and IoT monitoring platforms** , making integration into existing industrial networks seamless.
-
-* * *
-
-### 7\. Does it support both wired and wireless deployment?
-
-Yes. RS485 supports wired industrial network connections, while LoRa enables **long-range wireless monitoring** , suitable for remote or hard-to-reach equipment.
-
-* * *
-
-### 8\. Can the sensor help reduce maintenance costs?
-
-Absolutely. By providing **early vibration alerts and real-time monitoring** , it allows predictive maintenance, reduces unexpected downtime, and lowers maintenance costs.
-
-* * *
+如需定制其他通信协议，可联系业务人员沟通。

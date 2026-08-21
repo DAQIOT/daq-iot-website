@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Industrial RS485 Modbus DC Current Sensor for Solar Battery and Energy Monitoring
 summary: >-
   RS485 Modbus DC Current Sensor for precise and non-intrusive DC current monitoring. Ideal for solar energy, battery storage, energy management, and industrial automation applications. Supports Hall effect measurement, real-time data acquisition, and seamless integration with PLC, SCADA, and IoT systems. Industrial-grade design ensures reliable, continuous operation and easy installation without interrupting power circuits.

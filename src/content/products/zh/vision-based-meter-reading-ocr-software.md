@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Vision-Based Meter Reading OCR Software
 summary: >-
   📊 Vision-Based Meter Reading OCR Software – Product Specifications

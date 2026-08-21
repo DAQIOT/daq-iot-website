@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Explosion-proof Timed Snapshot Camera for oil & gas
 summary: >-
   Core Features & Design

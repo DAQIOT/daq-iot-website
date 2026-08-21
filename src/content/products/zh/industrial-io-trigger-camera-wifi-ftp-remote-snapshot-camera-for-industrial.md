@@ -1,133 +1,70 @@
 ---
-title: Industrial IO Trigger Camera | WiFi & FTP Remote Snapshot Camera for Industrial Monitoring
+title: 无线开关量信号触发定时拍照摄像机
 summary: >-
-  💡 Key Advantages
-image: /images/products/1780641391255609.png
+  1产品概述SC-GP-CAMIO是上海数采物联网科技有限公司推出的一款基于4G或wifi的无线开关量信号继电器触发定时拍照/抓拍录像FTP邮件上传照片的
+  相机摄像头。支持定时抓拍图片与事件抓拍图片功能，可广泛应用于仪器仪表的示数抓拍识别，农作物、文物、岩土、水文水利领域的照片抓拍和视频监控。本产品支持wi
+  fi或以太网方式
+image: /images/products/1692947081361673.jpg
 order: 42
 category: wirelesstimingphotography
+hidden: false
 ---
-The SC-GP-CAMIO is a wireless camera based on LAN or WiFi, featuring switch signal relay-triggered timed photography and video capture with FTP and email photo upload, developed by Shanghai Data Acquisition IoT Technology Co., Ltd. It supports timed snapshots and event-triggered snapshots, making it widely applicable for instrument reading capture and recognition, as well as photo capture and video monitoring in agriculture, cultural relics, geotechnical, hydrology, and water conservancy fields.
+**产品详情**
 
-This product supports network access via WiFi or Ethernet, timed photography, and uploading photos to a specified FTP Server or storing them on an SD card. When paired with a WiFi wireless network card, it can be used in outdoor environments without WiFi coverage.
+# 1 产品概述
 
-# 1 **Service Philosophy**
+SC-GP-CAMIO是上海数采物联网科技有限公司推出的一款基于4G或wifi的无线开关量信号继电器触发定时拍照/抓拍录像FTP邮件上传照片的相机摄像头。支持定时抓拍图片与事件抓拍图片功能，可广泛应用于仪器仪表的示数抓拍识别，农作物、文物、岩土、水文水利领域的照片抓拍和视频监控。
 
-**Our company in Zhengzhou guarantees:**
+本产品支持wifi或以太网方式接入网络，定时拍照并将照片上传到指定的FTP服务器或存储于SD卡中。配合4G无线网卡，可用于户外没有wifi网络的场景。
 
-You are purchasing not only a product but also comprehensive and attentive technical support services.
+# 2 服务理念
 
-We provide free remote guidance and remote configuration and debugging services, transmitting data to the customer-designated server.
+我司郑重承诺:
 
-Free IoT solution consulting services are available!
+您购买的不仅仅是产品，还有细致、周到的技术支持服务。
 
-# 2 **Product Features and Specifications**
+我们免费提供远程指导，远程配置调试服务，将数据发送至客户指定的服务器。
 
-##  2.1 **Camera Parameters and Selection**
+免费提供物联网方案咨询服务！
 
-Resolution: options of 2MP, 3MP, and 5MP; default is 2MP.
+# 3 产品特性参数
 
-Lens: 2.8mm / 4mm / 6mm
+## 3.1 相机参数及选型
 
-| **Lens Specifications** | **2.8mm** | **4mm** | **6mm** |
-|-------------------------|-----------|---------|---------|
-| Monitoring Angle        | 90°       | 80°     | 70°     |
-| Monitoring Distance     | 0~5m      | 0~10m   | 6~20m   |
+像素：200万、300万、500万可选，默认200万
 
-Memory Card Function: Supported
+镜头：2.8mm/4mm/6mm
 
-Power Supply: 12V DC
+内存卡功能：支持
 
-Weight: 0.35 kg
+供电：12V 直流
 
-## 2.2 **Electrical Characteristics**
+重量：0.35kg
 
-Power Supply Mode: 12V DC or Battery Powered
+## 3.2 电气特性
 
-( Power Interface: DC5.5×2.1 mm Female Socket, Center Positive, Outer Negative )
+供电方式：12V直流 或电池供电
 
-## 2.3 **Communication****Characteristics**
+（电源接口：DC5.5*2.1mm 母头插座，内正外负）
 
-Default Network Mode: Ethernet/WiFi
+## 3.3 通信特性
 
-Image Upload: FTP Server
+默认联网方式：以太网/WiFi、4G
 
-Antenna Type: Rubber Duck External Antenna
+图片上传：FTP服务器
 
-Material: PC Plastic (Housing)
+## 3.4 工作环境
 
-Main Protection Rating: IP65
+环境温度-30°C～70°C，湿度0～95%（非冷凝）
 
-Dimensions: 185 mm × 85 mm × 80 mm
+# 4 产品核心优势
 
-## 2.4 **Operating****Environment**
+u 安装简单，快速部署，助力物联网项目快速落地
 
-Ambient Temperature: -30°C to 70°C, Humidity: 0–95% (Non-Condensing)
+u 体积小巧
 
-# 3 **Application Cases**
+u 防雨设计，适用于室外环境
 
-# 
+u 自带补光，适用于夜间拍照
 
-# ❓ Frequently Asked Questions (FAQ)
-
-### 1\. What is an IO trigger industrial camera used for?
-
-It is used for automatic image capture triggered by relay or IO signals in industrial automation and monitoring systems.
-
-* * *
-
-### 2\. Does the camera support remote image upload?
-
-Yes. The camera supports FTP upload and Email notification for remote image transmission and alarm reporting.
-
-* * *
-
-### 3\. Can the camera work outdoors?
-
-Yes. It features a waterproof industrial enclosure suitable for outdoor and harsh industrial environments.
-
-* * *
-
-### 4\. Does it support low-light or night monitoring?
-
-Yes. The built-in IR fill light allows clear image capture in dark or low-light environments.
-
-* * *
-
-### 5\. Can it integrate with PLC or industrial control systems?
-
-Yes. The camera supports IO trigger input and can work with PLCs, relays, and industrial automation systems.
-
-* * *
-
-### 6\. What happens when a trigger signal is received?
-
-The camera automatically captures images and uploads them via FTP or Email according to preset configurations.
-
-* * *
-
-### 7\. Is the camera suitable for long-term continuous operation?
-
-Yes. It is designed for stable 24/7 industrial monitoring applications.
-
-* * *
-
-### 8\. What industries commonly use this camera?
-
-It is widely used in factories, power systems, smart manufacturing, remote infrastructure monitoring, and industrial automation projects.
-
-* * *
-
-# 🚀 Call To Action (CTA)
-
-Upgrade your industrial monitoring system with smart IO-triggered image capture technology.
-
-✅ Automatic Snapshot Triggering  
-✅ WiFi Remote Monitoring  
-✅ FTP & Email Alarm Upload  
-✅ Industrial Waterproof Design
-
-👉 Request Technical Datasheet  
-👉 Get OEM / Custom Integration Support  
-👉 Ask for Project Solution & Pricing
-
-📩 Contact us today to build your intelligent industrial monitoring solution.
+u 支持远程配置参数

@@ -1,180 +1,122 @@
 ---
-title: All-in-One Automatic Meter Reader Camera (OCR) for Utilities
+title: 以太网/RS485OCR图像识别相机燃气表压力表识别数据采集转MODBUS
 summary: >-
-  ⚡ All-in-One OCR Meter Reader Camera – Key Advantages
-image: /images/products/1780567691403469.png
+  1 产品概述DAQ-GP-OCR500一体式图像识别相机是上海数采物联网科技有限公司推出的500万像素工业级智能视觉采集终端，集高清图像采集、OCR数字
+  识别、指针表盘识别、智能分析、有线网络传输于一体，专为仪器仪表、配电柜、机房设备、工业现场等场景提供非接触式自动读数、远程监控、异常报警一体化解决方案。
+  设备采用偏振增透镜
+image: /images/products/1776841256336735.jpg
 order: 12
 category: instrumentacquisition
+hidden: false
 ---
-# **1 Product Overview**
+**产品详情**
 
-**DAQ-GP-OCR500 All-in-One Image Recognition Camera****** Launched by **Shanghai Data Acquisition IoT Technology Co., Ltd.** , the DAQ-GP-OCR500 is a 5-megapixel industrial-grade intelligent visual acquisition terminal. Integrating high-definition image capture, OCR character recognition, pointer dial identification, intelligent analysis, and wired network transmission, it provides an integrated solution for **non-contact automatic reading, remote monitoring, and anomaly alerting** tailored to scenarios such as **instruments & meters, power distribution cabinets, equipment in computer rooms, and industrial sites**.
+# **1 产品概述**
 
-Featuring a **polarization anti-reflection lens** \+ **VCM auto-focus** , the device effectively eliminates screen reflections and glare, ensuring sharp imaging at close distances. It supports **Ethernet/RS485 wired transmission** and outputs recognition data via **Modbus RTU/TCP standard protocols**. This enables **unattended operation** , automatic meter reading, real-time status monitoring, energy management, and safety pre-alerting.
+DAQ-GP-OCR500一体式图像识别相机是上海数采物联网科技有限公司推出的500万像素工业级智能视觉采集终端，集高清图像采集、OCR数字识别、指针表盘识别、智能分析、有线网络传输于一体，专为仪器仪表、配电柜、机房设备、工业现场等场景提供非接触式自动读数、远程监控、异常报警一体化解决方案。
 
-**2 Service Concept**
+设备采用偏振增透镜头+VCM自动聚焦，可有效消除屏幕反光与炫光，近距离清晰成像；支持以太网/RS485有线传输，识别数据以ModbusRTU/TCP标准协议输出，实现无人值守、自动抄表、状态监控、能耗管理与安全预警。
 
-**Our company solemnly promises:**
+# **2服务理念**
 
-You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
+**我司郑重承诺 :**
 
-This product only needs ordinary workers to connect the power and install it on site! No debugging is required!
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！(**=^_^=**)**
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform.
+本产品，现场只需普通工人接电安装即可!无需调试！
 
-As an expert in industrial data collection, Shucai IoT provides free IoT solution consulting services!
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-# **3 Implementation Standard**
+免费提供物联网方案咨询服务！
 
-GB/T 28181—2016 Technical Requirements for Information Transmission, Exchange and Control in Public Security Video Surveillance Networking Systems.
+# **3执行标准**
 
-# **4 Product Specifications & Features**
+GB/T28181—2016公共安全视频监控联网系统信息传输、交换、控制技术要求
 
-## **4****.1****Image & Recognition Features**
+# **4产品特性参数**
 
-l Image Sensor: 1/2.7-inch CMOS
+## **4****.1 图像与识别特性**
 
-l Effective Pixels: 5 Megapixels (2880×1620@25fps)
+l 图像传感器：1/2.7英寸CMOS
 
-l Lens: 2.8mm fixed focus, VCM auto-focus, clear macro imaging at 10-50cm 2.8mm
+l 有效像素：500万（2880×1620@25fps）
 
-l Optical Characteristics: Polarizing Lens + AR Anti-Reflection Coating, which suppresses reflections and glare
+l 镜头：2.8mm定焦，VCM自动聚焦，10–50cm微距清晰成像
 
-l Recognition Capability: OCR digital recognition, pointer dial recognition, supporting various meter recognition OCR
+l 光学特性：偏振镜头+AR增透，抑制反光、炫光
 
-l Image Enhancement: 3D Digital Noise Reduction, Backlight Compensation, Strong Light Suppression, Electronic Shutter
+l 识别能力：OCR数字识别、指针表盘识别，支持多种仪表识别
 
-l Encoding Format: H.265/H.264 Dual Encoding, Bit Rate Adjustable from 64Kbps to 3MbpsH.265/H.264
+l 图像增强：3D数字降噪、背光补偿、强光抑制、电子快门
 
-l Storage: Supports MicroSD Card Local Storage
+l 编码格式：H.265/H.264双编码，码率64Kbps~3Mbps可调
 
-## **4****.2****Electrical Characteristics**
+l 存储：支持MicroSD卡本地存储
 
-l Power Supply: DC12V
+## **4****.2 电气特性**
 
-l Power Consumption:≤5W
+l 供电：DC12V
 
-l Interfaces:RJ45 10/100M、RS485、Alarm Input/Output
+l 功耗：≤5W
 
-## **4****.3****Communication Characteristics**
+l 接口：RJ45 10/100M、RS485、报警输入/输出
 
-l Network: Wired Ethernet
+## **4****.3 通信特性**
 
-l Serial Port: Wired RS485RS485
+l 网络：以太网有线
 
-l Communication Protocol: Modbus RTU、Modbus TCP
+l 串口：RS485有线
 
-l Data Reporting: Multi-Host/Multi-Platform Access Supported
+l 通信协议：ModbusRTU、ModbusTCP
 
-l Remote Management: Remote Parameter Configuration, Remote Upgrade, Remote Preview
+l 数据上报：支持多主机/多平台接入
 
-## **4****.4****Structural Characteristics**
+l 远程管理：远程参数配置、远程升级、远程预览
 
-l Material: ABS + Metal BracketABS
+## **4****.4 结构特性**
 
-l Protection Level: IP67 (Dustproof and Waterproof)
+l 材质：ABS+金属支架
 
-l Installation Method: U-shaped Bracket, Adapter Bracket, Back Adhesion/Wall Mounting
+l 防护等级：IP67防尘防水
 
-l Dimensions: Approximately 57.9mm×57.9mm×30.1mm, compact and easy to install
+l 安装方式：U型支架、转接支架、背面粘贴/壁挂
 
-## **4****.5****Working Environment**
+l 尺寸：约57.9mm×57.9mm×30.1mm，小巧易安装
 
-l Temperature: -30℃～70℃
+## **4****.5 工作环境**
 
-l Humidity: 0～95% (No Condensation)
+l 温度：-30℃～70℃
 
-# **5 Core Advantages of Product**
+l 湿度：0～95%（无冷凝）
 
-u **Non-contact Recognition: No unpacking, no wire breaking, no impact on equipment operation, safe and compliant**
+# **5产品核心优势**
 
-u **Strong Anti-interference Imaging: Polarization anti-glare, auto-focus, clear readability of instrument panels/LED screens**
+u **非接触式识别：不拆封、不破线、不影响设备运行，安全合规**
 
-u **Stable and Reliable Recognition: Supports multi-type instrument recognition such as digital, pointer, and barcode**
+u **强抗干扰成像：偏振防炫、自动聚焦，仪表盘 /LED屏清晰可读**
 
-u **Standard Modbus Output: Compatible with PLC, configuration software, acquisition modules, and industrial gateways, plug-and-play**
+u **识别稳定可靠：支持数字、指针、条码等多类型仪表识别**
 
-u **Remote Maintenance-free: Remote configuration, remote upgrade, automatic capture and alarm for abnormalities**
+u **标准 Modbus输出：兼容PLC、组态软件、采集模块、工业网关，即插即用**
 
-u **Minimal Deployment: Small size, quick installation, stable wired transmission, reducing construction costs**
+u **远程免维护：远程配置、远程升级、异常自动抓拍报警**
 
-# **6 Application Scenarios**
+u **极简部署：体积小、安装快，有线稳定传输，降低施工成本**
 
-Remote visual meter reading for State Grid/commercial and industrial electricity meters, computer room power distribution cabinets, UPS, battery pack status monitoring, industrial instruments, pressure gauges, flow meters, temperature gauge unattended operation, remote collection of gas/water/heat station instruments, photovoltaic power stations, visual monitoring of energy storage system operation status, factory production lines, and digital recognition of equipment panels.
+# **6应用场景**
 
-# **7 Installation Notes**
+国网/工商业电表远程视觉抄表、机房配电柜、UPS、电池组状态监控、工业仪表、压力表、流量计、温度表无人值守、燃气/水务/热力站仪表远程采集、光伏电站、储能系统运行状态视觉监测、工厂生产线、设备面板数字化识别
 
-1) Before installation, confirm that the power supply is DC12V and the positive and negative poles must not be reversed;
+# **7安装注意事项**
 
-2) The lens should be directly facing the instrument display area, with a distance of 10–50cm, preferably installed at a vertical angle, and strong backlight should be avoided;
+1）安装前确认供电为DC12V，正负极不可接反；
 
-3) Ensure that the Ethernet/RS485 wiring is correct and the network is smooth; remote configuration can be performed after the device is online;
+2）镜头正对仪表显示区域，距离10–50cm，角度垂直为佳，避免强逆光；
 
-4) Avoid installing in places with severe vibration and strong electromagnetic interference;
+3）确保以太网/RS485接线正确、网络通畅，设备上线后可远程配置；
 
-5) For outdoor installation, it is recommended to take sunshade and rainproof measures to make full use of the device's IP67 protection performance;
+4）避免安装在剧烈震动、强电磁干扰场所；
 
-6) It is recommended to set a frame for the recognition area to reduce interference and improve accuracy;
+5）室外安装建议做好遮阳防雨，充分利用IP67防护性能；
 
-# ❓ All-in-One OCR Meter Reader Camera – FAQ
-
-* * *
-
-### 1\. What is an OCR meter reader camera used for?
-
-It is used for automatic reading of instrument data such as electricity, water, gas meters, and industrial gauges using AI-based image recognition technology.
-
-* * *
-
-### 2\. Does the system require wiring changes or meter modification?
-
-No. It is a non-contact solution that does not require rewiring, dismantling, or modifying existing equipment.
-
-* * *
-
-### 3\. What types of meters can it recognize?
-
-It supports digital meters, analog pointer meters, LED/LCD displays, and barcode-based instrument panels.
-
-* * *
-
-### 4\. How does the system output data?
-
-The system supports **standard Modbus output** , making it compatible with PLCs, SCADA systems, industrial gateways, and data acquisition platforms.
-
-* * *
-
-### 5\. Can it work in low-light or complex environments?
-
-Yes. It uses anti-glare polarization imaging and auto-focus technology to ensure clear recognition even under strong light reflection or poor lighting conditions.
-
-* * *
-
-### 6\. Is remote management supported?
-
-Yes. The system supports remote configuration, remote upgrades, and centralized monitoring, reducing the need for on-site maintenance.
-
-* * *
-
-### 7\. Can it be integrated into existing industrial systems?
-
-Yes. It is designed for plug-and-play integration with industrial automation systems, configuration software, and IoT platforms.
-
-* * *
-
-### 8\. What are the main application industries?
-
-It is widely used in **power utilities, water treatment plants, gas systems, factories, and smart city monitoring projects**.
-
-* * *
-
-# 🚀 Call To Action (CTA)
-
-Upgrade your industrial metering system with AI-powered OCR technology.
-
-👉 Request Technical Datasheet  
-👉 Get Integration Support for PLC / SCADA Systems  
-👉 Ask for Live Demo or Sample Project  
-👉 OEM / ODM Custom Solutions Available
-
-📩 Contact us today to build your smart, non-contact automatic meter reading system.
+6）识别区域建议画框设置，减少干扰，提升准确率；

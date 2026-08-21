@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Data Acquisition System User Manual
 summary: >-
   Industrial Data Acquisition System Solution | Real-Time IIoT Data Logging, SCADA Integration & Remote Monitoring Platform

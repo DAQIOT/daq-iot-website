@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Industrial PLC Edge Gateway for Multi-Protocol Communication & IoT Integration
 summary: >-
   Multi-Protocol Communication;

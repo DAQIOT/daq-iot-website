@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Wireless Three-color Alarm Light
 summary: >-
   ⚡ Key Product Advantages

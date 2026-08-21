@@ -1,225 +1,144 @@
 ---
-title: Industrial GPS NTP Time Server | Multi-GNSS Network Time Synchronization System (UTC Precision Clock)
+title: 授时服务系统
 summary: >-
-  ⚙️ Product Specifications
-image: /images/products/1755072189227191.png
+  1产品概述DAQ-GP-CKS授时服务系统，由上海数采物联网科技有限公司推出的一款高精度的时间同步设备。该产品采用表面贴装技术及高速芯片控制，具备高精度
+  、高稳定性、低积累误差、环境适应性强的特点。该NTP 网络时间服务器可接收 GPS，北斗，GLONASS，Galileo 和 QZSS 等卫星定时信号，
+  能提供基于 UTC 标准时间及
+image: /images/products/1747039141282391.png
 order: 28
 category: plcacquisition
+hidden: false
 ---
-# 1 **Product Overview**
+**产品详情**
 
-DAQ- GP- CKS timing service system is a high-precision time synchronization device launched by Shanghai Shucai IoT Technology Co., Ltd. This product adopts surface mount technology and high-speed chip control, and has the characteristics of high precision, high stability, low accumulated error and strong environmental adaptability .
+# 1 **产品概述**
 
-The NTP network time server can receive satellite timing signals such as GPS, Beidou, GLONASS, Galileo and QZSS, and can provide highly stable first-level clock synchronization signals based on UTC standard time and self-perfection monitoring. It adopts closed-loop control timekeeping technology. The system has a self-learning function and obtains the aging drift and other characteristics of the high-stable constant temperature crystal oscillator. Even if the satellite signal is interrupted or an interference failure occurs, it can still output accurate time synchronization signals within a certain period of time to achieve high-precision timekeeping. The device provides a variety of interface forms (including RS232, RS422/485, IRIG-B (DC/AC), TTL pulse, differential pulse, open contact pulse, NTP network synchronization, etc.), supports interface expansion and multi-channel second, minute, and hour pulse output (the format can be flexibly converted), which is convenient for one-way or two-way communication with various types of equipment. It can be widely used in power systems, network synchronization, communications, traffic management, national defense and other fields. It is easy to operate, cost-effective, and supports unattended operation .
+DAQ-GP-CKS授时服务系统，由上海数采物联网科技有限公司推出的一款高精度的时间同步设备。该产品采用表面贴装技术及高速芯片控制，具备高精度、高稳定性、低积累误差、环境适应性强的特点。
 
-# 2 **Service Concept**
+该NTP 网络时间服务器可接收 GPS，北斗，GLONASS，Galileo 和 QZSS 等卫星定时信号，能提供基于 UTC 标准时间及自我完善性监控的、高稳定的一级时钟同步信号。采用了闭环控制守时技术，系统具有自我学习功能，获取高稳恒温晶振的老化漂移等特性，即便卫星信号中断或出现干扰故障后，仍能在一定时间内输出精确的时间同步信号，实现高精度的守时。装置提供丰富的接口形式（包括RS232、RS422/485、IRIG-B（DC/AC）、TTL脉冲、差分脉冲、空接点脉冲、NTP网络对时等），支持接口扩展及多路秒、分、时脉冲输出（格式可灵活转换），便于与各类设备单向或双向通讯。可广泛应用于电力系统、网络同步、通讯、交通管理、国防等领域。其操作简便、性价比高，支持无人值守运行。
 
-**Our company solemnly promises:**
+# 2 **服务理念**
 
-You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
+**我司郑重承诺 :**
 
-This product only needs ordinary workers to connect the power and install it on site! No debugging is required!
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform.
+本产品，现场只需普通工人接电安装即可! 无需调试！
 
-Free IoT solution consulting services!
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-# 3 **How it works**
+免费提供物联网方案咨询服务！
 
-This product adopts modern closed-loop control timekeeping theory and Kalman digital filtering technology, and uses an external time reference to control the constant temperature crystal oscillator or rubidium clock. The 1PPS signal output by the system is obtained by dividing the internal clock source, so that the output 1PPS signal is synchronized with the long-term stable value of the 1PPS signal output by the external time reference, overcoming the influence caused by the jump of the second pulse signal of the external time reference. Therefore, the output time signal is not only synchronized with the external time reference signal but also more stable. The closed-loop control timekeeping technology is adopted. The system has a self-learning function and automatically memorizes the drift characteristics of the constant temperature crystal oscillator such as aging. Even if the reference signal of the timing module is interrupted or an interference failure occurs, it can still output accurate time synchronization signals and frequency standard signals within a certain period of time to achieve high-precision timekeeping.
+# 3 **工作原理**
 
-# 4 **Product Features**
+此产品采用现代闭环控制守时理论和卡尔曼数字滤波技术，利用外部时间基准对恒温晶振或铷钟进行控制。系统输出的 1PPS 信号由内部时钟源分频得到，使输出的 1PPS 信号同步于外部时间基准输出的 1PPS 信号的长期稳定值，克服了由于外部时间基准的秒脉冲信号跳变所带来的影响，因此输出的时间信号不但与外部时间基准信号保持同步而且更加稳定。采用了闭环控制守时技术，系统具有自我学习功能，自动记忆恒温晶振的老化等漂移特性，即便授时模块参考信号中断或出现干扰故障后，仍能在一定时间内输出精确的时间同步信号和频率标准信号，实现高精度的守时。
 
-##  4.1 **GNSS********Satellite receiver**
+# 4 **产品特性**
 
-Reception type: Beidou/GPS/GLONASS
+##  4.1 **GNSS********卫星接收机**
 
-Timing accuracy: ≤30ns,
+接收类型： 北斗/GPS/GLONASS
 
-Tracking sensitivity: ≤-160dBm,
+定时精度：≤30ns，
 
-## 4.2 **IRIG-B (DC) input**
+跟踪灵敏度：≤-160dBm，
 
-Hardware Interface: 2 road RS422/485 (optical fiber input optional ),
+## 4.2 **IRIG-B(DC) 输入**
 
-Synchronization error : ≤200ns,
+硬件接口：2 路 RS422/485（可选光纤输入），
 
-## 4.3 **IRIG-B (DC) output**
+同步误差：≤200ns，
 
-Hardware interface: 5-way RS422/485 (optical fiber output optional),
+## 4.3 **IRIG-B(DC) 输出**
 
-Synchronization accuracy : ≤200ns,
+硬件接口：5 路 RS422/485（可选光纤输出），
 
-## 4.4 **NTP********Timing output**
+同步精度：≤200ns，
 
-Hardware interface: 1 road RJ45 Electrical port (multiple channels can be expanded ),
+## 4.4 **NTP********授时输出**
 
-Timing accuracy ： 0～10ms（Typical 1ms ）
+硬件接口：1 路 RJ45 电口（可扩展多路），
 
-Throughput : ≥4000 Times/second
+授时精度 ：0～10ms（典型值 1ms），
 
-## 4.5 **1PPS********/****1PPM empty contact**
+吞吐量：≥4000 次/秒
 
-Interfaces: 5 Road and empty contact,
+## 4.5 **1PPS********/****1PPM 空接点**
 
-Synchronization error : ≤3us,
+接口：5 路空接点，
 
-External voltage : ≤220VDC,
+同步误差：≤3us，
 
-Current : ≤20mA
+外接电压：≤220VDC，
 
-## 4.6 **Environmental characteristics**
+电流：≤20mA
 
-Working temperature : 0℃~+50℃,
+## 4.6 **环境特性**
 
-Storage temperature : -30℃~+70℃ ,
+工作温度: 0℃~+50℃ , 
 
-Relative humidity : ≤90% (40°C)
+存储温度:-30℃~+70℃ ,
 
-## 4.7 **Power supply**
+相对湿度:≤90%（40℃)
 
-AC/DC : 220V±10%, 50Hz±5%,
+## 4.7 **供电电源**
 
-Power less than 30W (dual power supply redundant configuration optional)
+交直流 ：220V±10%， 50Hz±5%，
 
-# 5 **Features**
+功率小于 30W（可选双电源冗余配置）
 
-High cost performance and wide application;
+# 5 **产品特点**
 
-High timing accuracy;
+性价比高，应用广泛；
 
-Completely guarantee data security, all settings can be One network segment or different network segments, supporting multiple Popular time publishing protocols;
+授时精度高；
 
-A variety of timing interface outputs, which can be freely combined. A maximum of 120 groups of timing interfaces can be output simultaneously;
+完全保证数据安全性，可全设置同 一个网段或者不同网段，支持多种 流行的时间发布协议；
 
-The overall power consumption is small, it adopts fanless design, and it runs reliably and stably.
+多种授时接口输出，可自由组合， 最多可同时输出120组授时接口；
 
-# 6 **Precautions**
+整体功耗小，采用无风扇设计，运行可靠稳定的特点。
 
-Beidou/ GPS signals cannot penetrate buildings, mountains and obstacles. When choosing the installation location of the antenna, you should follow
+# 6 **注意事项**
 
-The following standards:
+北斗/GPS信号不能穿透建筑物、高山和障碍物。当选择天线的安装位置时应遵循
 
-1) The antenna should be placed on a platform, away from electronic devices such as elevators, air conditioners or other electrical appliances.
+以下标准：
 
-2) The antenna should be as unobstructed as possible in the horizontal field of view.
+1） 天线最好在一个平台上，远离如电梯、空调电子设备或其他电器。
 
-3) The unit surface on the antenna platform may generate reflected signals, which will reduce the reception performance.
+2） 天线尽可能在水平视野里无阻挡。
 
-4) The antenna should be located at least 4 meters away from any metal objects.
+3） 天线平台上的单元表面可能产生反射信号，会降低接收性能。
 
-5) The distance between the two antennas should be at least 3 meters.
+4） 天线位置应当至少远离金属物体 4 米远。
 
-Note: The following should be taken into consideration when installing the antenna:
+5） 两个天线之间至少间隔 3 米。
 
-1) High power radar signals shining directly on the antenna may affect the antenna's preamplifier.
+注：当安装天线时下列情况应当考虑到：
 
-2) High-power broadcast transmitters generate carrier frequency harmonic signals in the MHz range (1.6 GHz) which may cause
+1) 直接照射到天线上的高功率雷达信号可能影响天线的前置放大器。
 
-Receiver blocked.
+2) 高功率广播发射机产生的频率在几兆赫的载频谐波信号(1.6GHz)可能会使
 
-3) When installing an antenna under high-voltage lines, be especially careful not to touch these lines to avoid damaging the antenna.
+接收机阻塞。
 
-Lines and equipment.
+3) 在高压线下安装天线时，应特别小心注意不要和这些线接触，以免损伤天
 
-4) Antenna system grounding and coaxial cable introduction protection.
+线和设备。
 
-5) In addition to considering location and installation factors, in order to avoid voltage inrush and electrostatic discharge, the grounding system should
+4) 天线系统接地和同轴电缆引入保护。
 
-Consider. Ground wire specifications and installation should follow local building requirements and telecommunications engineering grounding specifications. Minimum
+5) 除了考虑位置和安装因素，为了避免电压涌入和静电泄放，地线系统应当
 
-The diameter of the ground wire is 2.5 to 3 mm. Note: The antenna system grounding cannot be connected to the air conditioner, motor, water pump motor, etc.
+考虑。接地线规格和安装应遵循本地建筑物要求和电信工程接地规范。建议最小
 
-The ground conductors connected to the antenna should be connected together, otherwise they will introduce noise into the antenna system.
+的地线线径是Ф2.5～3mm。注意：天线系统接地不能和空调、电动机、水泵马
 
-A separate grounding system is necessary.
+达的地导体接在一起，否则它们将把噪声引入天线系统。为了设备的正常工
 
-# 7 **Typical Applications**
+作，分离的地线系统是必要的。
 
-It is widely used in electricity, transportation, communication, finance, national defense and other fields that require time synchronization and punctuality.
+# 7 **典型应用**
 
-**❓ NTP Time Server FAQ – Industrial GPS Network Time Synchronization System**
-
-**1\. What is an NTP Time Server?**
-
-An NTP (Network Time Protocol) Time Server is a device that provides accurate and synchronized time to all connected devices in a network. It ensures that computers, PLCs, SCADA systems, and industrial equipment operate with the same UTC-based time reference.
-
-**2\. How does a GPS NTP Time Server work?**
-
-A GPS NTP Time Server receives precise time signals from satellite systems such as GPS or other GNSS networks. It then distributes this accurate time over a network using the NTP protocol or via hardware interfaces such as IRIG-B and pulse outputs.
-
-**3\. What is the accuracy of an industrial NTP time server?**
-
-Industrial-grade NTP time servers typically provide microsecond to millisecond-level accuracy, depending on system configuration, GNSS signal quality, and network conditions.
-
-**4\. What is the difference between NTP, GPS time, and IRIG-B?**
-
-GPS time: Time received directly from satellite signals
-
-NTP time: Time distributed over Ethernet/IP networks
-
-IRIG-B: Hardware-based time code used in substations and power systems
-
-These three methods are often used together in industrial time synchronization systems.
-
-**5\. Can an NTP time server work without GPS signal?**
-
-Yes. Most industrial NTP time servers include a holdover function using a high-stability oscillator (OCXO/TCXO). This allows the system to maintain accurate time temporarily even if GNSS signals are lost.
-
-**6\. Where are NTP time servers commonly used?**
-
-NTP time servers are widely used in:
-
-Power substations and smart grids
-
-Renewable energy systems (PV and wind farms)
-
-Telecom base stations
-
-Industrial automation systems
-
-Transportation and railway systems
-
-Data centers and IT networks
-
-**7\. How many devices can connect to an NTP time server?**
-
-A single industrial NTP time server can typically support hundreds to thousands of network clients, depending on system capacity and network design.
-
-**8\. What communication interfaces are supported?**
-
-Industrial NTP time servers may support:
-
-Ethernet (NTP/SNTP over IP network)
-
-RS232 / RS485 serial interfaces
-
-IRIG-B (AC/DC) time code output
-
-TTL or pulse outputs
-
-Optional Modbus or custom protocols
-
-**9\. Is the NTP time server suitable for power substations?**
-
-Yes. It is widely used in substation automation systems to ensure accurate synchronization between protection relays, SCADA systems, and control equipment.
-
-10\. Can the system be integrated into SCADA or EMS platforms?
-
-Yes. NTP time servers are fully compatible with SCADA, EMS, and other industrial monitoring systems through Ethernet, Modbus, or standard network protocols.
-
-**11\. What happens if GNSS signals are interrupted?**
-
-When GNSS signals are interrupted, the system enters holdover mode and continues generating accurate time using its internal high-stability oscillator until satellite signals are restored.
-
-**12\. Is customization available for industrial projects?**
-
-Yes. OEM/ODM customization is available, including:
-
-Custom interfaces (IRIG-B, RS485, etc.)
-
-Protocol integration
-
-Hardware design adjustments
-
-Project-specific firmware functions
+广泛应用于电力，交通 ，通信，金融，国防等需要对时，守时的领域。

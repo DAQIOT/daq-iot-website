@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Digital IoT Photovoltaic Protocol Converter for smart solar monitoring
 summary: >-
   Seamless Data Integration Between Photovoltaic Systems and IoT Platforms

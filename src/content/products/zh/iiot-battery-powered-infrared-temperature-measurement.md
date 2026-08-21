@@ -1,214 +1,158 @@
 ---
-title: IIOT Battery-Powered Infrared Temperature Measurement
+title: 工业低功耗无线红外测温传感器无线pt100测温传感器非接触测温探头
 summary: >-
-  🌡️ IIoT Battery-Powered Infrared Temperature Measurement Sensor – Key Advantages
-image: /images/products/1780891030821962.png
+  v安装简单，快速部署，助力物联网项目快速落地
+image: /images/products/1764918350627112.jpg
 order: 35
 category: wirelesssensor
+hidden: false
 ---
-#  1 **Product Introduction**
+**产品详情**
 
-DAQ - LP - IRT LoRaWAN low-power wireless infrared temperature sensor is a wireless infrared temperature measurement product for the industrial field launched by Shanghai Shucai IoT Technology Co., Ltd. This product can calculate the surface temperature of an object by receiving the infrared radiation intensity emitted by the target without contacting the target , and report the data regularly through LoRaWAN and other methods. Non-contact acquisition is the biggest advantage of infrared temperature measurement, allowing users to easily measure targets that are difficult to approach or move. As a new generation of temperature measurement data cloud product, it can widely adapt to various industrial scene requirements.
+# 1 **产品概述**
 
-The sensor terminal supports LoRaWAN/LoRa/WiFi communication , overcoming the wireless communication obstruction caused by the special environment on site, greatly simplifying the on-site deployment time and reducing construction costs . This terminal supports 12V voltage input , reverse connection protection , high measurement accuracy, and easy installation.
+DAQ-LP-IRT4G低功耗无线红外测温传感器是上海数采物联网科技有限公司推出的一款针对工业领域的无线红外测温产品。本产品可以不接触目标而通过接受目标发射的红外辐射强度计算出物体的表面温度，并以4G等方式定时上报数据。非接触式采集是红外测温的最大优点，使用户可以方便测量难以接近或者移动的目标，将作为新一代测温数据上云产品可广泛适应各种工业场景需求。  
 
-| **model**                             | **Features**                                                                                                                                                                                                                                                                                                                |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DAQ -LP- IRT LoRaDAQ -LP- IRT LoRaWAN |  loRa / LoRaWAN communication, long-life lithium battery power supply, suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                           |
-| DAQ -GP- IRT LoRaWAN                  | LoRaWAN communication, 220V AC/12V DC power supply, suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online by default, it can support remote configuration parameter debugging, and only needs to be installed and connected to the power supply on site. |
+传感器终端支持采用4G/NB-IOT/LoRa/WiFi通信方式，克服现场特殊环境导致的无线通信遮挡，大大简化现场部署时间和降低施工费用。本终端可支持支持 12V电压输入，支持反接保护，测量精度高，易于安装。
 
-2 **Service Concept**
+# 2 **服务理念**
 
-******Our company solemnly promises:**
+**我司郑重承诺 :**
 
-You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-This product only needs ordinary workers to connect the power and install it on site! No debugging is required!
+本产品，现场只需普通工人接电安装即可! 无需调试！
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform.
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-Free IoT solution consulting services!
+免费提供物联网方案咨询服务！
 
-# 3 **Product Features**
+# 3 **产品特性**
 
-##  3.1 **Infrared****temperature****acquisition characteristics**
+##  3.1 **红外****温度****采集特性**
 
-Collection type: non-contact temperature measurement
+采集类型：非接触测温
 
-Measuring range: default 0-500°C ( higher temperature range can be customized )
+测量范围：默认0-500°C（更高温度量程可定制）
 
-Distance factor: 20:1
+距离系数：20：1
 
-Measurement error: ±1.5% of measured value or ±2.5°C whichever is greater
+测量误差： 测量值的±1.5%或±2.5°C取最大值
 
-Collection frequency: once every 12 hours by default, supports remote configuration
+采集频率：默认12小时一次，支持远程配置
 
-## 3.2 **PT100****temperature****acquisition characteristics**
+## 3.2 **PT100****温度****采集特性**
 
-Acquisition type: pt100 temperature probe temperature measurement
+采集类型：pt100温度探头测温
 
-Measuring range: Default -200 ~800 °C ( higher temperature range can be customized with K-type thermocouple probe )
+测量范围：默认-200~800°C（更高温度量程可定制K型热电偶探头）
 
-Measurement error: ± 0.5 °
+测量误差： ±0.5°
 
-Collection frequency: once every 12 hours by default, supports remote configuration
+采集频率：默认12小时一次，支持远程配置
 
-## 3.3 **Electrical Characteristics**
+## 3.3 **电气特性**
 
-Power supply: Long-life lithium battery (DC power supply optional)
+供电方式： 长寿命锂电池供电（可选直流电源供电）
 
-Standby current: 4.17u A
+待机电流：4.17uA
 
-Standby power: 15.029u W
+待机功率：15.029uW
 
-## 3.4 **Communication****characteristics**
+## 3.4 **通信****特性**
 
-Wireless transmission method: LoRaWAN/LoRa/WiFi
+无线传输方式：4G/NB-IOT/LoRa/WiFi
 
-Communication protocol: MQTT/TCP/UDP/HTTP/SSL/ModBus RTU, other protocols can be customized
+通信协议：MQTT/TCP/UDP/HTTP/SSL/ModBus RTU,可定制其他协议
 
-Data forwarding: any public network server
+数据转发：任意公网服务器
 
-Number of server centers: Supports reporting data to up to 7 cloud servers at the same time.
+服务器中心数量：最多可支持同时向7个云服务器同时上报数据。
 
-Heartbeat packet: supports custom heartbeat packets, which can be set to signal strength.
+心跳包：支持自定义心跳包，可设置为信号强度。
 
-Registration package: supports custom registration package, which can be set to IMEI code.
+注册包：支持自定义注册包，可设置为IMEI码。
 
-Positioning: Support LBS base station positioning, convenient for querying device location.
+定位：支持LBS基站定位，方便查询设备位置。
 
-## 3.5 **Structural characteristics**
+## 3.5 **结构特性**
 
-Antenna type: built-in antenna (external antenna optional) 
+天线类型：内置天线（可选配外接天线）
 
-Material: PC/ABS/PMMA (housing)
+材质：PC/ABS/PMMA（外壳）
 
-Main protection level: IP65
+主体防护等级：IP65
 
-Dimensions: 122 mm x 92 mm x 42 mm (length x width x height)
+尺寸：122mmx92mmx42mm（长*宽*高）
 
-Distance measuring probe structure: non-contact
+测距探头结构：非接触式
 
-Main installation method: wall hanging or screw fastening
+主体安装方式：壁挂或螺丝紧固
 
-Probe installation method: Paste or screw fastening, cable tie binding installation
+探头安装方式：粘贴或螺钉紧固、扎带捆绑式安装
 
-# 4 **Data reporting communication protocol**
+# 4 **产品核心优势**
 
-##  4.1 **Protocol analysis instructions**
+v **安装简单，快速部署，助力物联网项目快速落地**
 
-There are multiple push methods such as UDP/TCP/MQTT/HTTP. To receive data, users need to provide the public IP (or domain name) address and port number of the cloud server.
+v **支持自定义注册包和心跳包，方便平台区分设备**
 
-**Example of a data message in JSON format:**
+v **支持任意私有物联网云平台和组态软件，提供数据协议对接**
 
-{" temp ": 56 . 7 2, "ID": "860344048491162"}
+v **支持阿里云、百度天工、 OneNet、腾讯云等主流云平台**
 
-**Message analysis:**
+v **支持外接多路传感器**
+
+v **非侵入式测量，不影响设备正常工作**
+
+v **支持远程配置参数， FOTA远程升级，最大限度减少现场施工维护的人员成本**
+
+# 5 **数据上报通信协议**
+
+##  5.1 **协议解析说明**
+
+UDP/TCP/MQTT/HTTP等多种推送方式，用户接收数据需提供云端服务器公网IP（或域名）地址和端口号。
+
+**JSON 格式数据报文示例：**
+
+{"temp":56.72,"ID":"860344048491162"}
+
+**报文解析：**
 
 {
 
-"temp" : 16.72 , //distance, in meters
+"temp": 16.72, //距离，单位米
 
-"ID" : "860344048491162" //Device ID
+"ID": "860344048491162" //设备ID
 
 }
 
-## 4.2 **Protocol customization**
+## 5.2 **协议定制**
 
-If you need to customize other communication protocols, please contact our sales staff.
+如需定制其他通信协议，可联系业务人员沟通。
 
-# 5 **Platform docking**
+# 6 **平台对接**
 
-##  5.1 **Default Platform**
+##  6.1 **默认平台**
 
-The product is connected to our designated industrial Internet of Things platform by default when it leaves the factory. The platform interface is as follows:
+产品出厂默认连接我司指定工业物联网平台，平台界面如下：
 
-Computer browser interface
+电脑端浏览器界面
 
-WeChat access interface on mobile phone
+手机端微信访问界面
 
-## 6.1 **User-specified platform**
+## 6.2 **用户指定平台**
 
-Taking the Alibaba Cloud platform docking as an example, after the user creates a product and adds a device on the Alibaba Cloud IoT platform, the user needs to provide a triple: {ProductKey, DeviceName, DeviceSecret} and the MQTT topic to be published.
+以阿里云平台对接为例，用户在阿里云物联网平台创建产品和添加设备后，用户需提供一个三元组：{ProductKey , DeviceName , DeviceSecret }和要发布的MQTT主题。
 
-For example, the values of the triples are:
+例如三元组的值分别为：
 
-ProductKey = b0FMK1Ga5cp
+ProductKey = b0FMK1Ga5cp 
 
-DeviceName = 862991419835241
+DeviceName = 862991419835241 
 
 DeviceSecret = y7MTCG6Gk33Ux26bbWSpANl4OaI0bg5Q
 
-# ❓ IIoT Battery-Powered Infrared Temperature Measurement Sensor – FAQ
+# 7 **注意事项**
 
- _(For Power Utilities / Factory / EPC / Industrial Projects)_
-
-* * *
-
-### 1\. What is this infrared temperature sensor used for in industrial applications?
-
-It is used for **non-contact temperature monitoring of electrical and mechanical equipment** , helping detect overheating risks in real time for safety and maintenance.
-
-* * *
-
-### 2\. Can it be used for high-voltage equipment in power systems?
-
-Yes. It is widely used in **power utilities, substations, and electrical cabinets** for safe non-contact temperature monitoring of high-voltage components.
-
-* * *
-
-### 3\. Does the sensor require wiring or external power supply?
-
-No. It is **battery-powered and fully wireless** , making it ideal for remote, hard-to-access, or large-scale industrial deployments.
-
-* * *
-
-### 4\. What communication methods does the sensor support?
-
-It supports **NB-IoT, LoRa, 4G, and WiFi (optional)** , ensuring flexible integration with IoT platforms, SCADA systems, and cloud monitoring systems.
-
-* * *
-
-### 5\. Can it integrate with SCADA or EPC monitoring systems?
-
-Yes. The sensor can easily integrate into **SCADA, EMS, and EPC project platforms** for centralized temperature monitoring and data analysis.
-
-* * *
-
-### 6\. Is it suitable for harsh industrial environments?
-
-Yes. It is designed for **high temperature, dust, vibration, and outdoor environments** , commonly found in factories, substations, and oil & gas facilities.
-
-* * *
-
-### 7\. How does it help with predictive maintenance?
-
-By continuously monitoring temperature trends, it can **detect abnormal heating early** , helping prevent equipment failure and reducing downtime.
-
-* * *
-
-### 8\. What is the battery life of the sensor?
-
-Depending on the reporting interval, the battery can last **1–5 years** , making it ideal for long-term unattended monitoring.
-
-* * *
-
-### 9\. Can it monitor multiple devices in a factory or EPC project?
-
-Yes. It supports large-scale deployment, making it suitable for **multi-point temperature monitoring across factories, plants, and infrastructure projects**.
-
-* * *
-
-### 10\. What industries typically use this infrared temperature sensor?
-
-It is widely used in **power transmission systems, manufacturing plants, steel industry, oil & gas, EPC engineering projects, and smart factories**.
-
-## 💰 Inquiry & Purchase 
-
-  * **📩 Get a Free Quote Now**
-
-  * **⚡ Request Project Pricing**
-
-  * **🧾 Get Bulk Order Offer**
-
-  * **💬 Ask for Best Price Today**
+(1) 本产品出厂默认内置物联网SIM卡，首年免费，次年起流量费约20元每年，含免费技术支持费用及终身维护费用。 如需采用用户自己的SIM卡，请提前告知。

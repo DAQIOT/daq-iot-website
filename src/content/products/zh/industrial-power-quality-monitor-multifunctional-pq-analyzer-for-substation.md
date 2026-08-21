@@ -1,223 +1,179 @@
 ---
-title: Industrial Power Quality Monitor | Multifunctional PQ Analyzer for Substation & Grid Monitoring
+title: 电能质量在线监测仪
 summary: >-
-  ⚙️ Product Specifications
-image: /images/products/1755071685238536.png
+  1产品概述在交流供电系统中，由于电力电子转流设备、电气化铁路、电弧炉等等冲击性和非线性负荷容量的不断增长，使得电力系统的电能质量日益恶化。使得电网发生波
+  形畸变、电压波动与闪变和三相不平衡等电能质量问题情况日趋严重。从而引起变压器过热、网损增加、计量仪表误差、通讯干扰，不但使得供用电设备本身安全性
+image: /images/products/1745227708881825.png
 order: 17
 category: instrumentacquisition
+hidden: false
 ---
-# 1 **Product Overview**
+**产品详情**
 
-With the vigorous development of my country's national economy, the power load has increased dramatically, especially the continuous growth of impact and nonlinear load capacity of power electronic switching equipment, electrified railways, arc furnaces, etc., which has caused the power quality of the power system to deteriorate. The power quality problems such as waveform distortion, voltage fluctuation and flicker, and three-phase imbalance in the power grid are becoming more and more serious. As a result, transformer overheating, increased network loss, metering instrument errors, and communication interference will not only reduce the safety of the power supply and use equipment itself, but also seriously threaten the safety and economic operation of the power system. In order to protect the safe operation of the power system, all countries currently attach great importance to the management of power quality and have formulated relevant standards. my country has also successively promulgated national standards involving seven aspects of power quality, and relevant departments have also formulated corresponding "Power Quality Management Measures" - Appendix.
+# 1 **产品概述**
 
-After a thorough investigation of power quality measurement and control, a careful analysis of the current status of similar products at home and abroad, and tracking the advanced level of international peers, our company has successfully developed a new generation of SC-GP-PQM power quality online monitoring device.
+在交流供电系统中，由于电力电子转流设备、电气化铁路、电弧炉等等冲击性和非线性负荷容量的不断增长，使得电力系统的电能质量日益恶化。使得电网发生波形畸变、电压波动与闪变和三相不平衡等电能质量问题情况日趋严重。从而引起变压器过热、网损增加、计量仪表误差、通讯干扰，不但使得供用电设备本身安全性降低，而且严重威胁着电力系统的安全和经济运行。
 
-This device is a high-performance multifunctional power quality test and analysis instrument. It adopts DSP+ARM+CPLD core, 4.3-inch large-screen color LCD display, more compact structure and more powerful functions. It is suitable for 220KV, 110KV and 35KV substations, power plants and large electricity users.
+DAQ-GP-PQM是上海数采物联网科技推出的一款电能质量在线监测装置仪器。该装置是一台高性能的多功能电能质量测试分析仪器，它采用DSP+ARM+CPLD 内核，4.3寸大屏幕彩色液晶显示屏，结构更紧凑，功能更强大。适用于220KV、110KV和35KV变电站、电厂及用电大户。广泛应用于开关柜、并网柜、低压进线柜等场景。
 
-# 2 **Service Concept**
+# 2 **服务理念**
 
-**Our company solemnly promises:**
+**我司郑重承诺 :**
 
-You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-This product only needs ordinary workers to connect the power and install it on site! No debugging is required!
+无线产品，现场只需普通工人接电安装即可! 无需调试！
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform.
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-Free IoT solution consulting services!
+免费提供物联网方案咨询服务！
 
-# 3 **Product Features**
+# 3 **产品特性**
 
-##  3.1 **Main Application**
+##  3.1 **主要用途**
 
-(1) Measurement and analysis of the quality of AC power supplied from the public power grid to the user end.
+（1） 测量分析公用电网供到用户端的交流电能质量，其测量分析。
 
-(2) Apply wavelet transform to measure and analyze the harmonics of non-stationary time-varying signals.
+（2） 应用小波变换测量分析非平稳时变信号的谐波。
 
-(3) Measure and analyze the power quality of the public power grid affected by various electrical equipment under different operating conditions.
+（3） 测量分析各种用电设备在不同运行状态下对公用电网电能质量。
 
-(4) Regularly record and store changes in power parameters such as voltage, current, reactive power, frequency, and phase.
+（4）定时记录和存储电压、电流、有无功功率、频率、相位等电力参数的变化。
 
-(5) Dynamic monitoring of power equipment to help users solve problems that arise during the adjustment and commissioning of power equipment.
+（5） 电力设备动态监视，帮助用户解决电力设备调整及投运过程中出现的问题。
 
-(6) Test and analyze the causes of power system failures such as circuit breaker operation, transformer overheating, motor burnout, and automatic device malfunction.
+（6） 测试分析电力系统中断路器动作、变压器过热、电机烧毁、自动装置误动作等故障原因。
 
-(7) The characteristics of online, multi-parameter and high precision make the instrument widely used in power transmission and distribution, power electronics, motor drive and other fields.
+（7） 在线式、多参数、高精度等特点，使仪器可广泛地应用于输配电、电力电子、电机拖动等领域。
 
-## 3.2 **Technical indicators of detection device**
+## 3.2 **检测装置技术指标**
 
-(1) Frequency measurement
+（1）频率测量
 
-Measuring range: 45～55Hz, center frequency 50Hz, measuring condition: signal fundamental component is not less than 80% FS
+测量范围：45～55Hz，中心频率50Hz，测量条件：信号基波分量不小于80％F.S.
 
-Measurement error: ≤0.01Hz
+测量误差: ≤0.01Hz
 
-(4) The allowable error of fundamental voltage is ≤0.5%FS; the allowable error of fundamental current is ≤1%FS
+（4）基波电压允许误差≤0.5％F.S.；基波电流允许误差≤1％F.S.
 
-(5) Measurement error of the phase difference between fundamental voltage and current: ≤0.5°
+（5）基波电压和电流之间相位差的测量误差：≤0.5°
 
-(6) Harmonic voltage content measurement error: ≤0.1%
+（6）谐波电压含有率测量误差：≤0.1％
 
-(7) Harmonic current content measurement error: ≤0.2%
+（7）谐波电流含有率测量误差：≤0.2％
 
-(8) Three-phase voltage unbalance error: ≤0.2%
+（8）三相电压不平衡度误差：≤0.2％
 
-(9) Three-phase current imbalance: ≤1%;
+（9）三相电流不平衡度：≤1%；
 
-(10) Voltage deviation error: ≤0.2%
+（10）电压偏差误差：≤0.2％
 
-(11) Voltage variation error: ≤0.2%
+（11）电压变动误差：≤0.2％
 
-(12) Power error: ≤0.5%
+（12）功率误差：≤0.5％
 
-(13) Flicker error: ≤5%
+（13）闪变误差：≤5％
 
-## 3.3 **Electrical Characteristics**
+## 3.3 **电气特性**
 
-Voltage and current accuracy level 0.1
+电压电流准确等级0.1级
 
-Input characteristics: voltage range 400v
+输入特性：电压量程400v
 
-Current: 5A/1A
+电流：5A/1A
 
-Working temperature: -25°— 50°
+工作温度：-25°~ 50°
 
-Frequency measurement range: 45HZ~55HZ
+频率测量范围：45Hz~55Hz
 
-Hardware interface: RS485, Ethernet port, USB port, switch input (remote signal): DIC, DI1, DI2, etc.
+硬件接口：RS485，网口，USB口，开关量输入 (遥信)：DIC,DI1,DI2 等
 
-## 3.4 **Communication****characteristics**
+## 3.4 **通信****特性**
 
-Port 485: used for online communication with background software, with two communication protocols: 103 and modbus.
+RS485接口：用于与后台软件联机通讯工作，有103和modbus两种通讯规约。
 
-USB port: used to connect USB flash drive and statistical reports. (The device can save one year of historical records)
+USB接口：用于连接优盘，统计报表。（设备可保存一年历史记录）
 
-Switch input (remote signal): DIC, DI1, DI2.
+开关量输入(遥信)：DIC,DI1,DI2。
 
-Network port: used for online communication with background software, with modbus communication protocol.
+网口：用于与后台软件联机通讯工作，有modbus通讯规约。
 
-## 3.5 **Wiring Schematic**
+## 3.5 **接线原理图**
 
-Three-phase four-wire system
+三相四线制
 
-Three-phase three-wire system
+三相三线制
 
-## 3.6 **Wiring method**
+## 3.6 ** 接线方法 **
 
-(1) Three-component wiring (Y-connection, three-phase four-wire)
+(1)三元件接线（Y形接法 ，三相四线）
 
-① Connect the Ua, Ub, Uc and N terminals of the instrument to the three-phase voltages A, B and C on the secondary side of the field voltage transformer and the neutral line N respectively.
+①将仪器的Ua、Ub、Uc、N接线端子分别接到现场电压互感器二次侧A、B、C三相电压和零线N上。
 
-② *Ia, *Ib, *Ic of the instrument are the current inputs; Ia, Ib, Ic are the current outputs.
+②仪器的*Ia，*Ib，*Ic，为电流的输入；Ia，Ib，Ic，为电流的输出端。
 
-(2) Two-component wiring (V-shaped connection, three-phase three-wire)
+(2) 两元件接线（V形接法,三相三线）
 
-① Connect the Ua and Uc terminals of the instrument to the A and C voltages of the secondary side of the on-site voltage transformer respectively, connect the on-site B phase voltage to the rear terminal N of the instrument, and do not connect the Ub of the instrument.
+①将仪器的Ua、Uc接线端子分别接到现场电压互感器二次侧A、C电压，现场B相电压接仪器后端子N上，仪器Ub不接。
 
-② *Ia, *Ic of the instrument are the input terminals of current, Ia, Ic are the output terminals of current, and Ib is not connected.
+②仪器的*Ia，*Ic，为电流的输入端，Ia，Ic，为电流的输出，Ib不接。
 
-(3) Relay contact connection
+(3)继电器接点接法
 
-According to the configuration requirements, this instrument is equipped with 2 relay alarm contacts, with the contact capacity of AC 250V/8A or DC30V/8A. Each group of relay contacts is defined as: BJ1 line crossing alarm, BJ2 power failure alarm, BJCOM common terminal.
+本仪器根据配置要求，分别配置2路继电器报警接点，接点容量为AC 250V/8A或DC30V/8A，各组继电器接点定义为： BJ1越线报警 、BJ2失电报警 、BJCOM公共端。
 
-# 4 **Core advantages of products**
+# 4 **产品核心优势**
 
-v **The input adopts high voltage isolation and high-precision current transmitter, which greatly improves the anti-interference of the instrument and is safe and reliable to use.**
+v **输入采用高电压隔离，高精度电流变送器，仪器抗干扰****能力强****，使用安全可靠**
 
-v **Chinese interface, key operation, easy to use**
+v **中文界面，按键操作，使用方便**
 
-v **Meet the national standard****A-****level instrument requirements, high precision**
+v **符合国标****A****级仪器要求,精度高**
 
-v **Adopt****DSP+ARM+CPLD****core, fast processing speed and powerful software functions**
+v **采用****DSP+ARM+CPLD****内核，处理速度快，软件功能强**
 
-v **Multiple test parameters, grid harmonics, system frequency, voltage fundamental wave, deviation, etc.**
+v **测试参数多，电网谐波，系统频率，电压基波，偏差等**
 
-v **Large storage capacity, built-in****512M****memory, single channel 5 minutes frequency can be saved for one year**
+v **大容量存储，内置****512M****内存，单通道5分钟频率可保存一年**
 
-v **Can measure up to 3-phase voltage signal, 3-phase current signal**
+v **最多可测量3相电压信号， 3相电流信号**
 
-#  5 **Communication Protocol**
+#  5 **通信协议**
 
-IEC103 protocol
+串口支持IEC103协议和modbus RTU协议，网口支持IEC104协议和modbus TCP 协议
 
-Modbus protocol
+注：如需定制其他通信协议，可联系业务人员沟通。
 
-Note: If you need to customize other communication protocols, please contact the business personnel.
+# 6 **应用案例**
 
-# 6 **Application Cases**
+光伏并网电能质量在线监测
 
-7 **Precautions**
+# 7 **注意事项**
 
-(1) Please connect and operate the instrument according to this instruction manual.
+（1）使用仪器时请按本说明书接线和操作。
 
-(2) Please enter the correct setting parameters before starting the test. The calibration calculations inside the instrument are dependent on the input setting parameters.
+（2）测试开始前请输入正确的设置参数，仪器内部的校正运算都要依赖于输入的设置参数。
 
-(3) The test menu item selection must be consistent with the actual test items and wiring.
+（3）测试菜单项选择和实际测试项目及接线要一致。
 
-(4) The measurement results can be stored continuously for up to 12 months. If the period exceeds 12 months, the earliest record will be overwritten. Please output it in time.
+（4）最多可连续储存12个月次测量结果，超过12个月时最早的记录将被覆盖，请及时输出。
 
-(5) If the instrument malfunctions, please contact our company immediately and do not start or disassemble it by yourself.
+（5）仪器出现故障，请及时和本公司联系，不要自行开机拆卸。
 
-# 8 **Contact Details**
+# 8 **附录**
 
-Website: www.daq-iot.com
+《电能质量管理办法》
 
-Tel: +8619936624847
+Ø 《GB/T 15945-2008 电能质量 电力系统频率允许偏差》
 
-Email: shengrunan@daq-iot.com
+Ø 《GB 12325-2008 电能质量 供电电压允许偏差》
 
-# 9 **appendix**
+Ø 《GB/T 15543-2008 电能质量 三相电压允许不平衡度》
 
-Power Quality Management Measures
+Ø 《GB/T 30137-2013 电能质量 电压暂降与短时中断》
 
-Ø GB /T 15945-2008 Power quality Permissible deviation of power system frequency
+Ø 《GB/T 14549-93 电能质量 公用电网谐波》
 
-Ø GB 12325-2008 Power quality Supply voltage tolerance》
+Ø 《GB 12326-2008 电能质量 电压波动与闪变》
 
-Ø GB /T 15543-2008 Power quality Three-phase voltage allowable unbalance degree》
-
-Ø GB/T 30137-2013 Power Quality Voltage Sags and Short Interruptions》
-
-Ø GB /T 14549-93 Power Quality Utility Grid Harmonics》
-
-Ø GB 12326-2008 Power quality Voltage Fluctuation and Flicker》
-
-Ø GB 24337-2009 Power Quality Public Grid Interharmonics 》
-
-**❓ Frequently Asked Questions (FAQ)**
-
-**1\. What is a power quality monitor used for?**
-
-A power quality monitor is used to analyze and monitor electrical parameters such as voltage, current, harmonics, frequency, and power disturbances in industrial power systems and substations.
-
-**2\. What power quality issues can the device detect?**
-
-The device can detect:
-
-Voltage sag and swell
-
-Harmonic distortion (THD)
-
-Power interruptions
-
-Voltage imbalance
-
-Frequency fluctuations
-
-Flicker and transient events
-
-**3\. Does the analyzer support harmonic monitoring?**
-
-Yes. The system supports real-time harmonic analysis for both voltage and current, helping identify power quality problems caused by nonlinear loads and industrial equipment.
-
-**4\. Can the power quality monitor be integrated with SCADA systems?**
-
-Yes. The device supports RS485, Modbus RTU, Modbus TCP, and optional Ethernet communication for integration with SCADA, EMS, and industrial monitoring platforms.
-
-**5\. Is the device suitable for renewable energy applications?**
-
-Yes. It is widely used in solar PV systems, wind farms, and smart grid projects to monitor grid stability and electrical power quality.
-
-**6\. Can historical power quality events be recorded?**
-
-Yes. The system supports event logging, historical waveform recording, alarm storage, and trend analysis for long-term power quality evaluation and reporting.
+Ø 《GB 24337-2009 电能质量公用电网间谐波》

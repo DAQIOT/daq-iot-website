@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: LoraWan Wireless Dew Point Transmitter
 summary: >-
   ⚙️ Product Advantages – Dew point transmitter/meter

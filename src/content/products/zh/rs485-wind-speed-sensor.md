@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: RS485 Wind Speed Sensor
 summary: >-
   ⚙️ Product Advantages – RS485 Wind Speed Sensor (Cup Anemometer)

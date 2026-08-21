@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: RS485 bus sharer & Bus Multiplexer
 summary: >-
   🔹DAQ-GP-485HUB RS485 Bus Multiplexer – Key Advantages

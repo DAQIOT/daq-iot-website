@@ -1,65 +1,110 @@
 ---
-title: Industrial Solar-Powered Outdoor Wireless Time-Lapse Camera for Remote Monitoring
+title: 太阳能无线定时拍照摄像机
 summary: >-
-  The Industrial Solar Powered 4G Wireless Time-Lapse Camerais a next-generation remote monitoring solution designed for construction sites, infrastructure projects, solar farms, and other harsh outdoor environments where continuous human inspection is costly and inefficient.
-image: /images/products/1755244606881004.png
+  1产品概述SC-LP-CAM4G是上海数采物联网科技有限公司推出的一款基于微功耗4G太阳能无线定时拍照摄像机，支持4G以太网方式接入网络，定时拍照并将照
+  片上传到指定的FTP服务器或存储于SD卡中。产品主要应用于野外以及城市不方便布线的区域，例如：各类物业服务场所的清洁情况抓拍、铁路沿线、高速沿线、建筑工
+  地、水库大坝
+image: /images/products/1766477909526131.png
 order: 38
 category: wirelesstimingphotography
+hidden: false
 ---
-1 Product Overview
+**产品详情**
 
-SC-LP-CAM4G is a low-power 4G solar-powered wireless launched by Shanghai Shucai Internet of Things Technology Co., Ltd. It supports 4G Ethernet access to the network, takes photos at regular intervals and uploads them to a designated FTP server or stores them in an SD card. The product is mainly used in wild areas and urban areas where wiring is inconvenient, such as: capture of cleaning conditions in various property service places, railway lines, highway lines, construction sites, reservoirs and dams, river water sources, mining areas and scenic spots, forest fire prevention, cultural relics and historic sites, village roads, fishing grounds, forest farms and pastures, wildlife reserves, farmland and fruit forests, factory peripheries, villas, islands, etc. Advantages of this product: environmental protection and energy saving, no need for digging trenches or erecting power racks, no need for a large number of wires and pipes, no need for power transmission and transformation equipment, short construction period, no consumption of municipal electricity and no electricity bills, no restriction by geographical location, low maintenance costs, low voltage without electric shock risk and many other advantages. 2 Service Concept Our company solemnly promises: What you buy is not only the product, but also meticulous and thoughtful technical support services. We provide free remote guidance, remote configuration and debugging services, and send data to the server designated by the customer. Free IoT solution consulting services! 3 Product Features and Parameters 3.1 Camera Parameters and Selection Resolution: 2560X1440P Sensitivity (optional): High sensitivity (4000mV/luxS) Starlight level (4800mV/luxS) Lens focal length (optional): 16mm (8mm and 25mm optional) 2.5mm-10mm zoom, auto-focus 2.5mm-12mm zoom, auto-focus 5mm-50mm zoom, auto-focus 850 infrared lamp: 4X0.5W, with IR_CUT, which can only be turned on during photo taking, detection and 4G real-time monitoring Angle: 60 degrees (effective distance 10-30 meters, 45 degrees optional; effective 20-50 meters) Rotary PTZ (optional): 250 degrees left and right, 60 degrees up and down Recording storage: 32G, video: 720P, 1080P; photo: 1440P (interval can be set to 2-60s) Overall power consumption: continuous video recording < 0.3W; photo mode (every 2 seconds) < 0.2W; 4G remote < 1W; Motion detection < 0.2W, standby < 8MA; infrared light on: +0.2-0.5W Motion detection: when an object is detected to move continuously within the set arming time, it will actively report and record Battery capacity: 3.7V 24AH LI-POL, built-in Solar charging: 6V 5W integrated (can also be external, select power according to actual application) Weight: 1.25 kg 3.2 Electrical Characteristics Power supply mode: solar or battery powered 3.3 Communication Characteristics 4G communication module: Huawei ME909S; frequency band: (other options available if not in the following frequency bands) FDD LTE: B1/3/8; TDD LTE: B38-41; TD-SCDMA: B34/39; DC-HSPA+/HSPA+/HSPA/WCDMA: B1/5/8/9; GSM/GPRS/EDGE; 4G upload mode: real-time: 720P, 1080P, 1440P Low power consumption; remote playback of videos or photos Image upload: FTP server 3.4 Structural Characteristics Antenna type: rubber rod external antenna Material: PC plastic (shell) Main body protection level: IP66 Dimensions (mm): Solar cover: 250X120; main body: 160X85X85 3.5 Working Environment Operation: -20～50℃, charging: -10～50℃; humidity: 0～95% (non-condensing) 4 Core Advantages of the Product 5 Application Cases The low-power 4G solar-powered wireless is mainly developed and designed to meet the needs of the outdoor civil monitoring market, which is a low-cost and high-efficiency integrated monitoring and transmission product. The low-power 4G camera is powered by solar panels and lithium batteries. Through the built-in 4G module, it perfectly solves the monitoring problem in application scenarios without wired network and direct power supply; 4G coverage is more stable, and the cost of wired network deployment is saved at the same time. At present, this solution is in a leading position in the industry in terms of stability, reliability and performance, and has been widely used in rural breeding, planting industry, tourist attractions, rural courtyard monitoring, rural road bright project, reservoir and dam projects, electric power, water projects, as well as urban construction sites, roads, monitoring of cleaning conditions in various property service places and other scenarios.
+# 1 产品概述
 
-❓**Frequently Asked Questions (FAQ)**
+# 
 
-**1\. What is a solar powered time-lapse camera used for?**
+SC-LP-CAM4G是上海数采物联网科技有限公司推出的一款基于微功耗4G太阳能无线定时拍照摄像机，支持4G以太网方式接入网络，定时拍照并将照片上传到指定的FTP服务器或存储于SD卡中。产品主要应用于野外以及城市不方便布线的区域，例如：各类物业服务场所的清洁情况抓拍、铁路沿线、高速沿线、建筑工地、水库大坝、河道水源、矿区景区、森林防火、文物古迹、村庄道路、渔场林场牧场、野生动物保护区、农田果林、厂区周边、别墅、岛屿等等。
 
-A solar powered time-lapse camera is mainly used for long-term remote visual monitoring of projects such as construction sites, solar farms, infrastructure development, and environmental observation. It automatically captures images at set intervals and generates time-lapse records for project tracking and reporting.
+本产品优势：环保节能，无需挖沟或架设电力架、不需要大量线材管材、不需要输变电设备、施工周期短、不消耗市电不产生电费、不受地理位置限制，维护费用低、低压无触电危险等诸多优点。
 
-**2\. Does the camera work in remote locations without electricity?**
+# 2 服务理念
 
-Yes. This system is designed for off-grid operation. It uses a high-efficiency solar panel combined with a built-in lithium battery, allowing continuous operation in remote areas without access to power supply.
+我司郑重承诺:
 
-**3\. Can I access the camera remotely in real time?**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务。
 
-Yes. The camera supports 4G LTE wireless connectivity (WiFi optional). Users can remotely view live images, time-lapse recordings, and device status through a web platform or mobile app from anywhere in the world.
+我们免费提供远程指导，远程配置调试服务，将数据发送至客户指定的服务器。
 
-**4\. How does the time-lapse function work?**
+免费提供物联网方案咨询服务！
 
-The device captures images automatically at scheduled intervals (such as every 1 minute, 5 minutes, or custom settings). These images are then compiled into a time-lapse video to visually show project progress over time.
+# 3 产品特性参数
 
-**5\. Is the camera suitable for harsh outdoor environments?**
+## 3.1 相机参数及选型
 
-Yes. The device is built with an IP66/IP67 industrial-grade waterproof and dustproof enclosure, making it suitable for rain, wind, dust, and extreme temperature environments ranging from -20°C to +60°C.
+分辨率：2560X1440P
 
-**6\. What happens if there is no sunlight for several days?**
+灵敏度（选配）：高灵明度（4 000mV/luxS）
 
-The system includes a high-capacity rechargeable battery that stores solar energy. It is designed to maintain stable operation during cloudy or low-light conditions for extended periods, depending on configuration and usage frequency.
+星光级别(4800mV/luxS)
 
-**7\. Where is the data stored?**
+镜头焦距（选配）：16mm（可选8,25mm）
 
-The camera supports local SD card storage and optional cloud platform storage. Users can choose based on project requirements for data security and accessibility.
+2.5mm～10mm 变焦，自动对焦
 
-**8\. Can the system be integrated into an IoT platform?**
+2.5mm～12mm 变焦，自动对焦
 
-Yes. The camera can support IoT platform integration and API access (optional customization), allowing it to be integrated into existing monitoring systems or smart project management platforms.
+5mm～50mm 变焦，自动对焦
 
-**9\. What are the installation methods?**
+850 红外灯:4X0.5W，带IR_CUT，只在拍照、侦测和 4G 实时监控才能开启
 
-The device supports flexible installation options, including pole mounting, wall mounting, and temporary site deployment, making it suitable for both permanent and temporary projects.
+角度:60(有效距离10～30 米，可选45℃；有效20～50 米)
 
-**10\. What industries typically use this product?**
+旋转云台（选配）：左右 250 度，上下60 度
 
-It is widely used in:
+记录存储：32G，录像：720P、1080P；拍照:1440P(可设2-60s 间隔)
 
-Construction project monitoring
+整机功耗:持续录像<0.3W；拍照模式(每2 秒)<0.2W；4G 远程<1W；
 
-Solar energy farms
+移动侦测<0.2W，待机<8MA；红外灯开：+0.2～0.5W
 
-Oil & gas pipeline inspection
+移动侦测:在设定布防时间内侦测到物体持续移动主动上报并记录
 
-Road and bridge construction
+电池容量：3.7V 24AH LI-POL，内置
 
-Environmental monitoring
+太阳能充电:6V 5W 一体（也可外接，根据实际应用选择功率）
 
-Remote industrial asset tracking
+重量：1.25 kg
+
+## 3.2 电气特性
+
+供电方式：太阳能或电池供电
+
+## 3.3 通信特性
+
+4G 通讯模组:华为ME909S; 频段:（不在下述频段可另选）
+
+FDD LTE:B1/3/8;TDD LTE:B38-41;TD-SCDMA:B34/39；
+
+DC-HSPA+/HSPA+/HSPA/WCDMA:B1/5/8/9；GSM/GPRS/EDGE；
+
+4G 上传模式:实时:720P、1080P、1440P
+
+低功耗；远程回放录像或照片
+
+图片上传：FTP服务器
+
+## 3.4 结构特性
+
+天线类型：胶棒式外置天线
+
+材质：PC塑料（外壳）
+
+主体防护等级：IP66
+
+尺寸（mm）：太阳能罩:250X120;主体:160X85X85
+
+## 3.5 工作环境
+
+运行-20～50℃，充电-10～50℃；湿度0～95%（非冷凝）
+
+# 
+
+# 4 产品核心优势
+
+# 5 应用案例
+
+微功耗4G太阳能无线定时拍照摄像机主要是为了满足户外民用监控市场需求而研发设计的低成本高效率监控传输一体化产品。低功耗4G摄像机，采用太阳能板和锂电池供电。通过内置4G 模块，完美解决了在没有有线网络、无直接供电的应用场景下的监控难题；4G覆盖更加稳定，同时省去了有线网络部署的成本。
+
+目前该方案在稳定性、可靠性、性能方面在同行业中都处于领先位置，已广泛地应用于农村养殖、种植业、旅游景点、农村庭院监控、乡村道路雪亮工程项目、水库水坝项目、电力、水务项目，以及城市工地、道路、各类物业服务场所的清洁情况监控等场景。

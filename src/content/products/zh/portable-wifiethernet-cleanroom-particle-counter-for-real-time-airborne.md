@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Portable WiFi/Ethernet Cleanroom Particle Counter for Real-time Airborne Particle Monitoring
 summary: >-
   DAQ-GP-CL

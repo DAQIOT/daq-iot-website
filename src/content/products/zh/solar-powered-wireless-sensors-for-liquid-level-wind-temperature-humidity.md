@@ -1,138 +1,76 @@
 ---
-title: Solar powered wireless sensors for liquid level, wind, temperature, humidity outdoor
+title: 太阳能供电无线液位传感器
 summary: >-
-  Solar powered wireless sensors for outdoor monitoring of liquid level, wind, temperature, and humidity. Easy installation, real-time IoT data transmission, and reliable performance in harsh environments.
-image: /images/products/1755068622395710.png
+  l采集类型：液体水位
+image: /images/products/1783317794937889.png
 order: 26
 category: plcacquisition
+hidden: false
 ---
-# 1 **Product Overview**
+**产品详情**
 
-DAQ-SP-X4G is a solar-powered RTU wireless collector launched by Shanghai Shucai IoT Technology. It supports various series of 485 interface sensors and supports 4G wireless communication by default. It can remotely monitor and connect various sensors or probes based on RS485 communication, such as submersible liquid level sensors, temperature and humidity sensors, light intensity sensors, wind speed and direction sensors, inclination sensors, electronic water gauges and other outdoor scene sensors.
+# 1 **产品概述**
 
-The product has a built-in rechargeable lithium battery, is rainproof for outdoor use, and is equipped with a universal bracket for easy outdoor installation. The built-in 4G IoT SIM card can be directly connected to the IoT cloud platform , and data information can be viewed directly on WeChat or the website . It is suitable for various remote monitoring scenarios where it is inconvenient to power supply outdoors.
+DAQ-SP-TLL4G是上海数采物联网科技推出的低功耗太阳能供电无线投入式液位传感变送器，内置可充电锂电池，默认采用4G通信，可根据压力与水深成正比关系的静水压力原理，使元器件电阻发生变化，从而测出该点的孔隙水压力及水位、液位高度。主要适用于河流、地下水位、基坑水位，孔隙水压等的液位测量与控制。
 
-# 2 **Ordering specifications and selection**
+终端内置可充电锂电池，户外防雨，方便户外安装。内置4G物联网SIM卡，定时采集的数据可以直接接入物联网云平台，可直接在手机App或浏览器上查看时设备实数据信息。适用于各种户外不方便供电的远程监测场景。
 
-| **model**        | **Features**                                       |
-|------------------|----------------------------------------------------|
-| DAQ - SP - TLL4G | Solar 4G Wireless Liquid Level Sensor              |
-| DAQ - SP - LR4G  | Solar 4G Wireless Irradiance Meter                 |
-| DAQ - SP - IL4G  | Solar 4G Wireless Inclination Sensor               |
-| DAQ - SP - WSD4G | Solar 4G Wireless Wind Speed and Direction Monitor |
-| DAQ - SP - IR4G  | Solar 4G Wireless Infrared Meter Reader            |
-| ......           | Other custom sensors                               |
+# 2 **服务理念**
 
-# 3 **Service Concept**
+**我司郑重承诺 :**
 
-**Our company solemnly promises:**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
+本产品，现场只需普通工人接电安装即可! 无需调试！
 
-This product only needs ordinary workers to connect the power and install it on site! No debugging is required!
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the user's designated cloud platform.
+免费提供物联网方案咨询服务！
 
-Free IoT solution consulting services!
+# 3 **产品核心优势**
 
-# 4 **Product characteristic parameters**
+u **低功耗****自供电，采用清洁能源实现 “零碳”**
 
-##  4.1 **Acquisition characteristics**
+u **外观精美，防水防尘，可以运行在各种复杂的野外环境**
 
-l Acquisition interface : RS485
+u **安装简单，快速部署，助力物联网项目快速落地**
 
-l External output voltage : 5V/12V @1A
+u **支持自定义注册包和心跳包，方便平台区分设备。**
 
-## 4.2 **Electrical Characteristics**
+u **支持任意物联网云平台和组态软件，提供数据协议对接**
 
-l Solar panel power : 4.2W
+u **支持****电池电压采集，方便查看电池电量**
 
-l Device power consumption: < =3W (default)
+u **支持远程配置参数， FOTA远程升级，最大限度减少现场施工维护的人员成本**
 
-l Battery capacity : 4Ah (expandable)
+# 4 **数据展示与查看**
 
-## 4.3 **Communication****characteristics**
+本设备具备数据存储功能，云平台可以将设备上传的数据保存到服务器中，当用户需要查询历史数据时，可以通过app或者web方式调取设备历史数据，既绘制成历史曲线，还可以将数据下载到本地方便用户查询、操作。
 
-4G network supported by default
+平台网页端数据展示示例
 
-Customizable WiFi/LoRa and other communication methods
+用户可以通过手机app或者电脑浏览器访问云平台，从而获取设备的数据。访问网址为view.daq-iot.com，打开网址用我方开通的账号和密码登录即可查看设备的实时数值、历史数据。手机端操作界面如下，用户可以通过app实时查看液位高度、信号强度以及供电电池的电压。
 
-## 4.4 **Structural characteristics**
+平台手机APP数据展示示例
 
-l of the main unit : 175 × 165 × 45 mm
+# 5 **通信协议**
 
-l Protection level : IP65
+数据上传方式支持TCP、UDP、HTTP、MQTT等主流通信方式，数据格式可以用json的方式对接第三方平台。
 
-## 4.5 **Storage****environment**
+## 5.1 **数据上报通讯协议解析说明**
 
-l Temperature -20 ℃ ～ 60 ℃
-
-# 5 **Core advantages of products**
-
-u **Self-powered, using clean energy to achieve "zero carbon"**
-
-u **Simple installation and quick deployment help IoT projects to be implemented quickly**
-
-u **Supports custom registration packages and heartbeat packages to facilitate platform differentiation of devices.**
-
-u **Support any IoT cloud platform and configuration software, and provide data protocol docking**
-
-u **Supports Alibaba Cloud, Baidu Tiangong, OneNet, Tencent Cloud mainstream cloud platforms**
-
-u **Support external multi-channel sensors**
-
-u **Support remote configuration parameters and FOTA remote upgrade to minimize the personnel cost of on-site construction and maintenance**
-
-#  6 **Communication Protocol**
-
-The data upload method supports mainstream communication methods such as RS485, TCP, UDP, HTTP, MQTT, etc. The data format can be connected to the third-party platform in the form of modbus or json.
-
-## 6.1 **Data reporting communication protocol analysis**
-
-JSON format data message parsing example :
+JSON格式数据报文解析示例：
 
 {
 
-" tempeature ":1 8.5 , // temperature °C
+"liquid level":8, //液位深度 m
 
-" wind ":4 .2 , // wind speed m/s
-
-" liquid level ": 8 , // Liquid level depth m
-
-" illumination ": 476 , // Lux
-
-"energy":0, // Power consumption 6 kwh
-
-"power":0, // Power 4 W
-
-"id":"861658062222974", // Device ID
+"id":"861658062222974",//设备ID
 
 }
 
-# 7 **Application****Cases**
+# 6 **应用案例**
 
-Application scheme diagram
+本产品可广泛应用于泵站、水厂监控，楼宇消费液位监控、供热系统、河流水位监控等场景。
 
-Platform web page data display example
-
-## FAQ – Solar Powered Wireless Sensors
-
-### 1\. Can the sensors work without sunlight for long periods?
-
-Yes, built-in battery storage ensures continuous operation even during low sunlight conditions.
-
-### 2\. What communication methods are supported?
-
-Depending on configuration, the system can support LoRa, 4G, NB-IoT, or other wireless IoT protocols.
-
-### 3\. Are the sensors suitable for harsh outdoor environments?
-
-Yes, they are designed with IP-rated waterproof and dustproof protection for outdoor use.
-
-### 4\. Can multiple sensors be integrated into one system?
-
-Yes, the system supports multi-node sensor networks for centralized monitoring.
-
-### 5\. Is remote monitoring available?
-
-Yes, data can be transmitted to cloud platforms or SCADA systems for remote access.
+应用方案图

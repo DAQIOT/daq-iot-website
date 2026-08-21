@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Edge Computing Gateway Communcation Management Machine
 summary: >-
   Key Features

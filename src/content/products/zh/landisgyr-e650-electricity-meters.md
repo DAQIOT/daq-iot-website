@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Landis+Gyr E650 Electricity Meters
 summary: >-
   AMI Smart Metering System Solution for Utilities & Smart Grid | Remote Energy Data Acquisition & Monitoring Platform

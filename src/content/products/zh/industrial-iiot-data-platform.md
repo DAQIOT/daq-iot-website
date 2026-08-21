@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Industrial IIOT data platform
 summary: >-
   Industrial IoT Data Visualization Dashboard Software | Real-Time Data Monitoring & Reporting Platform with Drag-and-Drop Design (Private Deployment)

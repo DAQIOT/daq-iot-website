@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: FANUC CNC System PCMCIA Network Card
 summary: >-
   ⚡ FANUC CNC System PCMCIA Network Card – Key Advantages

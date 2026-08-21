@@ -14,7 +14,7 @@ const base = '/' + lang;
 // 初始分类：构建时静态页默认显示全部，运行时由前端脚本根据 ?cat= 过滤
 const activeCat = Astro.url.searchParams.get('cat') || 'all';
 
-const all = await getCollection('products', (entry) => entry.id.startsWith(lang + '/'));
+const all = await getCollection('products', (entry) => entry.id.startsWith(lang + '/') && !entry.data.hidden);
 const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const categories = (await getCollection('categories')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));

@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Mk30 Single-Phase (DIN Mounting) Technical Reference Manual
 summary: >-
   Electrical Parameters

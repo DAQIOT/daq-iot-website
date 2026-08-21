@@ -1,301 +1,157 @@
 ---
-title: AI OCR camera Image-based Automatic Meter Reading for the Outdated Mechanical Instruments
+title: 无线拍照抄表器
 summary: >-
-  1Product overviewThe SC-LP-CAM series battery-powered wireless timing photo camera meter reading terminal, introduced by Shanghai Shucai IoT Technology Co., Ltd., is designed to quickly read data from traditional and outdated mechanical instruments (such as water meters, electricit
-image: /images/products/1753941881590077.png
+  1产品概述SC-LP-CAM系列电池供电无线定时拍照摄像头抄表终端是上海数采物联网科技有限公司推出的针对传统老旧机械仪表（水表、电表、燃气表、压力表等）
+  或无法直接通讯的仪表进行快速抄表的数据采集终端。拍照终端按照设定时间间隔进行拍照，并将照片上传到服务器后进行分析识别，得出仪表示数，用户可查
+image: /images/products/1692780820230485.jpg
 order: 37
 category: wirelesstimingphotography
+hidden: false
 ---
-# 1 **Product overview**
+**产品详情**
 
-The SC-LP-CAM series battery-powered wireless timing photo camera meter reading terminal, introduced by Shanghai Shucai IoT Technology Co., Ltd., is designed to quickly read data from traditional and outdated mechanical instruments (such as water meters, electricity meters, gas meters, and pressure gauges) or instruments that cannot communicate directly. The photo terminal takes photos at preset intervals, uploads the images to a server for analysis and recognition, which generates the instrument readings. Users can view the original photos and the recognition results.
+# 1 **产品概述**
 
-The terminal is equipped with a long-life lithium battery and supports NB-IOT/LoRa/WiFi communication modes, which can overcome the wireless communication blocking caused by special on-site environment, greatly simplify the field deployment time and reduce the construction cost.
+SC-LP-CAM系列电池供电无线定时拍照摄像头抄表终端是上海数采物联网科技有限公司推出的针对传统老旧机械仪表（水表、电表、燃气表、压力表等）或无法直接通讯的仪表进行快速抄表的数据采集终端。拍照终端按照设定时间间隔进行拍照，并将照片上传到服务器后进行分析识别，得出仪表示数，用户可查看原始图片和识别结果数据。
 
-| model        | Features explained                                                                                                                                                                                                                                                               |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SC-LP-CAM    | NB-IOT / loRa communication, powered by long-life lithium battery, suitable for collecting low frequency and difficult to connect to external power supply. It can be used with cloud platform and standard instrument identification algorithm. It can only be used one-to-one. |
-| SC-GP-CAM    | 4G/WiFi communication, 220V AC/12V DC power supply, suitable for high frequency collection or convenient external power supply. Supports timed photo upload FTP, the identification software needs to be customized separately, and supports one-to-many use.                    |
-| SC-GP-CAMEXT | 4G /WiFi communication, 220V AC /12V DC power supply, suitable for high frequency collection or convenient external power supply. Supports external signal to trigger photo upload FTP, which can be used in production line, body capture and other scenarios.                  |
+终端内置长寿命锂电池，支持采NB-IOT/LoRa/WiFi通信方式，能够克服现场特殊环境导致的无线通信遮挡，大大简化现场部署时间和降低施工费用。
 
-# 2 **service idea**
+# 2 **服务理念**
 
-Our company solemnly promises:
+**我司郑重承诺 :**
 
-**What you buy is not only the product, but also meticulous and thoughtful technical support services!!! (=^_^=)**
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-This product can be installed by ordinary workers on site! No debugging is required!
+本产品，现场只需普通工人安装即可! 无需调试！
 
-We provide free remote guidance, remote configuration and debugging services, and send data to the cloud platform specified by users.
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-Free consulting service on Internet of Things solutions!
+免费提供物联网方案咨询服务！
 
-# 3 **product features**
+# 3 **产品特性**
 
-##  3.1 **Instrument photo acquisition characteristics**
+##  3.1 **仪表照片****采集特性**
 
-Image format type: jpg
+图片格式类型：jpg
 
-Image pixel: up to 640*480
+图片像素：最大支持640*480
 
-Collection frequency: 1 minute ~30 days, support remote configuration
+采集频率：1分钟~30天，支持远程配置
 
-Wake up mode: interval wake up; timed wake up; alarm wake up
+唤醒模式：间隔唤醒；定时唤醒；闹钟唤醒
 
-## 3.2 **electrical character**
+## 3.2 **电气特性**
 
-Power supply: 3.6V long-life lithium battery (non-rechargeable)
+供电方式：3.6V 长寿命锂电池供电（不可充电）
 
-Battery capacity: 8500mAh
+电池容量：9000mAh
 
-Power consumption: current less than 200mA
+功耗：电流小于200mA
 
-Idle current: less than 5uA
+待机电流：小于5uA
 
-## 3.3 **structural property**
+## 3.3 **结构特性**
 
-Material: PC plastic (shell)
+材质：PC塑料（外壳）
 
-Main protection class: IP65
+主体防护等级：IP68
 
-Water meter size: 135mm x 95mm x 55mm
+水表款尺寸：135mm×95mm×55mm 
 
-Electric meter size: 120mm x 110mm x 50mm
+电表款尺寸：120mm×110mm×50mm 
 
-Main body mounting method: bonding or narrow band clamp fastening
+主体安装方式：粘贴或窄带抱箍紧固
 
-## 3.4 **work environment**
+## 3.4 **工作****环境**
 
-Environmental temperature-25°C~75°C, humidity 0~95% (non-condensing)
+环境温度-25°C～75°C，湿度0～95%（非冷凝）
 
-# 4 **Micro-power mode of operation**
+# 4 **电池续航**
 
-##  4.1 **Interval mode:**
+本产品采用长寿命低自放电的专用锂电池供电，可拍照2500~3000次。每天拍照一次，可使用5~7年。其他拍照频率用户可自行换算。
 
-The interval time mode refers to the user specifying a certain interval time for data collection, and reporting after several samples. The interval time should be greater than 1 minute. For example, if a user needs to collect data every 10 minutes, the sampling interval (M) is: 10. Refer to the platform Settings interface for specific configuration.
+# **5 微功耗工作模式******
 
-## 4.2 **Alarm clock mode**
+## 5.1 间隔时间模式****
 
-The hourly mode works in a similar way to an alarm clock, and is set for the operation of the clock from 0 o'clock to 23 o'clock. "Sample time" and "report time" represent 23 o'clock to 0 o'clock from left to right in the hourly mode. Refer to the platform Settings interface for specific configuration.
+间隔时间模式是指由用户指定一定的间隔时间进行 采集，并且在采样几次后进行上报。 该间隔时间应大于1分钟。比如，某用户需要每 10 分钟采集一次数据，采样间隔（M）：10。具体配置参考平台设置界面。
 
-## 4.3 **Magnet artificial activation mode**
+## 5.2 ******模式**
 
-During the hibernation period, the device cannot update its parameters. It must wait until it is automatically awakened to communicate with the platform server and update its parameters. If you need to wake up immediately for manual debugging, you can place a small piece of strong magnet near the designated area of the device for 1-2 seconds and then remove it. The device will automatically reset and restart, entering the wake-up photo mode.
+整点时间模式类似闹钟的工作原理，是针对时钟的 0 点至 23 点整时工作进行设置。“采样时间”和“上报时间”按照整点时间从左到右依次代表 23 点至 0 点。具体配置参考平台设置界面。
 
-# 5 **Core product advantages**
+## 5.3 **磁铁人工激活****模式**
 
-v **Simple installation and rapid deployment help the Internet of Things project to be implemented quickly**
+设备在休眠期间，无法更新参数，必须等自动唤醒后才能与平台服务器通讯并更新参数。如需立刻唤醒进行人工调试。可将小块强磁铁靠近设备指定区域1~2秒钟并移开，设备将自动复位重启，进入唤醒拍照模式。
 
-v **Provide original photos for verification**
+# 6 **产品核心优势**
 
-v **Non-intrusive acquisition, does not affect the normal operation of the equipment**
+v **安装简单，快速部署，助力物联网项目快速落地**
 
-v **Supports remote configuration parameters and FOTA remote upgrades to minimize on-site construction and maintenance personnel costs**
+v **提供原始照片，方便核对校验**
 
-#  6 **Platform operation**
+v **非侵入式采集，不影响设备正常工作**
 
-##  6.1 **Default platform**
+v **支持远程配置参数， FOTA远程升级，最大限度减少现场施工维护的人员成本**
 
-The product is connected to the designated Internet of Things platform of our company by default. The interface of the platform is as follows:
+# 7 **平台操作**
 
-Computer-based browser interface
+##  7.1 **默认平台**
 
-Parameter configuration interface
+产品出厂默认连接我司指定物联网平台，平台界面如下：
 
-After logging in, click Device Management-Management to configure the corresponding device parameters.
+电脑端浏览器界面
 
-# 7 **application case**
+参数配置界面
 
-Instrumentation acquisition
+登录后，点击 设备管理-管理，进行相应的设备参数配置。
 
-# 8 **Installation guide**
+# 8 **应用案例**
 
-1\. When installing the device, the camera should be aimed at the dial number as far as possible, and the cover should be kept in the closed state.
+仪表采集
 
-2\. Do not move it again after installation to prevent affecting the identification. If you need to adjust the position, please contact the technical personnel to reconfigure the identification algorithm after adjustment
+# 9 **安装指南**
 
-3\. The equipment should be far away from the installation environment such as damp and rain.
+1\. 安装设备时，摄像头应尽量对准表盘数字，翻盖应保持常闭状态 。
 
-4\. After the equipment is installed, it can be fixed with zip ties when necessary.
+2\. 安装好之后请勿再次移动，以防影响识别。若需调整位置，调整好后请联系技术人员重新配置识别算法
 
-5\. The device wake-up cycle of the platform should not be too short, otherwise it will cause frequent data upload and power consumption. The device can upload photos 2000~3000 times.
+3\. 设备应远离潮湿、雨淋等安装环境。
 
-7\. When the dial iron cover is rusty or the dial is dirty, be sure to clean the dial with a scraper or shovel until the surface is dry and free of dust or grease.
+4\. 设备安装完毕，必要时可配合扎带辅助固定。
 
-9\. For outdoor equipment, it is necessary to prevent fogging. A pack of 1g calcium chloride desiccant can be attached to the inner wall.
+5\. 平台设置设备唤醒周期建议不能太短，否则会引起频繁上传数据导致电能耗尽。设备可上传照片2000~3000次。
 
-## 8.1 **Water meter (pointer) installation**
+7\. 当表盘铁罩子生锈、或者表盘有污垢，务必用刮刀或铲子处理干净表盘，使其表面干燥，无粉尘或者油污。
 
-1\. Wipe the water meter dial clean and apply a ring of nail free glue around the dial.
+9\. 安装在户外的设备，需要注意防起雾，可以在内壁贴一包 1g 重量的氯化钙干燥剂。
 
-2\. Insert desiccant according to the installation environment of the water meter.
+## 9.1 **水表（指针）款安装**
 
-3\. Try to ensure that the orientation of the meter is as close as possible to the dial numbers.
+1\. 擦拭干净水表表盘，围绕表盘涂一圈免钉胶。
 
-4\. Wait for the device to automatically wake up (depending on the platform Settings) to see if the photos are clear. You can also use a magnet to activate the device, and the light will be on when it is activated successfully.
+2\. 根据水表安装环境情况插入干燥剂。
 
-5\. After the image is uploaded successfully, contact the technical personnel to configure the device so that it reads normally.
+3\. 尽量保证读表器安装的朝向尽量和表盘数字对正。
 
-## 8.2 **Installation of electricity meter (gas meter)**
+4\. 等待设备自动唤醒（根据平台设置）查看所拍照片是否清晰。也可使用磁铁激活设备，灯亮即激活成功。
 
-1\. Remove the 3M back adhesive
+5\. 图像上传成功后，联系技术人员配置设备，使其正常读数。
 
-2\. Open the cover of the meter reader.
+## 9.2 **电表（燃气表）款安装**
 
-According to the actual situation, use zip ties or stickers to fix
+1\. 撕下 3M 背胶 
 
-3\. Try to ensure that the orientation of the meter is as close as possible to the dial numbers.
+2\. 打开电表读表器外盖。
 
-4\. Wait for the device to wake up automatically (according to the platform setting) to check whether the photos taken are clear. You can also use a magnet to activate the device. The light will be on when the activation is successful.
+根据实际情况，使用扎带或粘贴方式固定
 
-5\. After the image is uploaded successfully, contact the technical personnel to configure the device so that it can read normally.
+3\. 尽量保证读表器安装的朝向尽量和表盘数字对正。
 
-# 9 **matters need attention**
+4.等待设备自动唤醒（根据平台设置）查看所拍照片是否清晰。也可使用磁铁激活设备，灯亮即激活成功。
 
-(1) The product is equipped with an Internet of Things SIM card by default. The first year is free of data charges, and from the second year, the data charge for each device is 10~20 yuan, including free technical support services.
+5.图像上传成功后，联系技术人员配置设备，使其正常读数。
 
-# FAQ – AI OCR Camera for Automatic Meter Reading (Mechanical Instruments)
+# 10 **注意事项**
 
-* * *
-
-## 1\. What is an AI OCR Camera for automatic meter reading?
-
-An AI OCR Camera is a smart vision-based device that uses artificial intelligence and optical character recognition (OCR) to automatically read data from outdated mechanical meters and instruments, such as dials, rollers, and analog displays.
-
-* * *
-
-## 2\. What types of meters can it read?
-
-It can read various outdated and traditional instruments, including:
-
-  * Mechanical water meters
-
-  * Mechanical electricity meters
-
-  * Gas meters
-
-  * Dial gauges
-
-  * Rolling number displays
-
-  * Analog industrial instruments
-
-* * *
-
-## 3\. How does the AI OCR meter reading work?
-
-The camera captures images of the meter display, then uses AI OCR algorithms to recognize digits, symbols, or dial positions, converting visual data into structured digital information for monitoring systems.
-
-* * *
-
-## 4\. Is it suitable for old or non-smart meters?
-
-Yes. It is specifically designed for outdated mechanical meters that do not support digital communication or remote reading interfaces.
-
-* * *
-
-## 5\. What is the accuracy of the OCR reading?
-
-The system provides high recognition accuracy under stable conditions, and it can be improved through AI training, image optimization, and proper installation positioning.
-
-* * *
-
-## 6\. Can it work in low light or harsh environments?
-
-Yes. The device supports:
-
-  * Low-light image enhancement
-
-  * Optional infrared or supplementary lighting
-
-  * Industrial-grade waterproof housing (depending on model)
-
-* * *
-
-## 7\. How is the data transmitted?
-
-The recognized meter data can be transmitted via:
-
-  * 4G / 5G networks
-
-  * WiFi
-
-  * Ethernet
-
-  * IoT cloud platforms
-
-  * SCADA or energy management systems
-
-* * *
-
-## 8\. Can it operate automatically without human intervention?
-
-Yes. The system is fully automated and can perform scheduled or triggered image capture and OCR recognition without manual reading.
-
-* * *
-
-## 9\. Where is this AI OCR camera commonly used?
-
-It is widely used in:
-
-  * Smart grid modernization projects
-
-  * Water, electricity, and gas utilities
-
-  * Industrial energy management systems
-
-  * Remote infrastructure monitoring
-
-  * Legacy meter digital transformation projects
-
-* * *
-
-## 10\. Can it be used for multiple meters?
-
-Yes. Multiple AI OCR cameras can be deployed to cover large-scale meter reading systems and centrally managed via IoT platforms.
-
-* * *
-
-## 11\. Does it require replacing existing meters?
-
-No. It works with existing mechanical meters, eliminating the need for costly upgrades or replacements.
-
-* * *
-
-## 12\. Is it suitable for remote locations?
-
-Yes. With wireless communication (4G/5G or IoT connectivity), it is ideal for remote and hard-to-reach installation sites.
-
-* * *
-
-## 13\. What are the main advantages of AI OCR meter reading?
-
-  * No need to replace existing meters
-
-  * Fully automated data collection
-
-  * Works with legacy mechanical instruments
-
-  * Reduces manual labor and reading errors
-
-  * Enables digital transformation of old systems
-
-  * Easy integration with IoT platforms
-
-* * *
-
-## 14\. What industries use this solution?
-
-It is commonly used in:
-
-  * Utility companies (water, electricity, gas)
-
-  * Smart city infrastructure
-
-  * Industrial plants
-
-  * Energy management systems
-
-  * Public facility monitoring
-
-  * Digital transformation of legacy metering systems
+(1) 本产品出厂默认内置物联网SIM卡，首年免流量费，次年起每台设备收取流量费10~20元，含免费技术支持服务。

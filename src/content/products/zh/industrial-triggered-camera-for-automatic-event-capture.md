@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Industrial Triggered Camera for Automatic Event Capture
 summary: >-
   Smart trigger activated camera designed for industrial monitoring, remote image capture, and automatic event recording. Available with 4G, wireless, solar powered, and sensor-triggered solutions.

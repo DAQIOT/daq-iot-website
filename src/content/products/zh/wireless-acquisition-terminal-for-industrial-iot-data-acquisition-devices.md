@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Wireless acquisition terminal for Industrial & IoT Data Acquisition Devices
 summary: >-
   Wireless acquisition terminal for industrial and IoT data acquisition devices. Supports real-time data collection, remote monitoring, and seamless integration with SCADA, MES, and cloud platforms.

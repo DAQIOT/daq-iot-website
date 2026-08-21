@@ -1,83 +1,77 @@
 ---
-title: Data Collection Dashboard - Data Visualization Software
+title: 数采看板-数据展示可视化软件
 summary: >-
-  This product enables enterprise users to easily implement data visualization for scenarios such as report analysis, data reporting, leadership cockpit dashboards, IoT data display, industrial cloud configuration, and corporate promotion. It addresses the following pain points:
-image: /images/products/1755068175810044.jpg
+  本产品可帮助企业用户轻松实施数据可视化查看，用于报表分析、数据汇报、领导驾驶舱看板、物联网数据展示、工业云组态、公司宣传等场景。产品可解决以下痛点：设备
+  分散，内容维护费人费力；大屏设备悬挂在高处，开关机、内容展示维护困难；内容经常需要变化、撤换时，人工维护不及时。特别适用于私有化部署场景。
+image: /images/products/1709091418473738.jpg
 order: 1
 category: dataacquisitionsoftware
+hidden: false
 ---
-1 **Product Overview**  
+**产品详情**
 
-The Data Collection Dashboard is a client software tool for data visualization report display on large - screen devices such as Windows systems and Android systems, launched by Shanghai Data Collection IoT Technology. It is a productivity tool that can be used out - of - the - box. It can be installed on industrial computers, Android boxes, conference tablet all - in - one machines, advertising machines and other devices.
+1 **产品概述**  
 
-This product can help enterprise users easily implement data visualization viewing, and is used in scenarios such as report analysis, data reporting, leadership cockpit dashboards, IoT data display, industrial cloud configuration, and corporate promotion. The product can solve the following pain points: devices are scattered, and content maintenance is labor - intensive; large - screen devices are hung at high places, making it difficult to turn on/off and maintain content display; when content often needs to be changed or replaced, manual maintenance is not timely. It is especially suitable for private deployment scenarios.
+数采看板是上海数采物联网科技推出的一款在Windows系统、安卓系统等大屏设备数据可视化报表展示客户端软件工具，是一套开箱即用的提供生产力工具。可以用安装在工控机、安卓盒子、会议平板一体机、广告机等设备上。
 
-The product supports importing data files such as EXCEL and CSV, system databases such as ERP and OA, and data from third - party system API interfaces. It can upload various resources including picture materials, fonts, audio - video resources, map data, and custom - developed pages for use in the Data Collection Dashboard software. The product supports drag - and - drop layout design, zero - code data binding, has dozens of built - in chart components, and supports display terminal devices with different resolutions such as PCs, mobile phones, and large - screen devices.
+本产品可帮助企业用户轻松实施数据可视化查看，用于报表分析、数据汇报、领导驾驶舱看板、物联网数据展示、工业云组态、公司宣传等场景。产品可解决以下痛点：设备分散，内容维护费人费力；大屏设备悬挂在高处，开关机、内容展示维护困难；内容经常需要变化、撤换时，人工维护不及时。特别适用于私有化部署场景。
 
-# 2 **Service concept**
+产品支持导入EXCEL、CSV 等数据文件、ERP、OA等系统数据库、第三方系统数API接口数据。可以上传包括图片素材、字体、音视频资源、地图数据 、自定义开发的页面等，上传到数采看板软件中使用。产品支持拖拉拽布局设计、零代码绑定数据、内置数十种图表组件，支持PC、手机 、大屏设备等不同分辨率的显示终端设备。
 
-Our company solemnly promises: What you purchase is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= ) For this product, on-site installation can be done by ordinary workers! No debugging is needed! We provide free remote guidance and remote configuration and debugging services to send data to the cloud platform designated by the user. Free consulting services for IoT solutions are also available!
+# 2 **服务理念**
 
-# 3 **Product features and advantages**
+**我司郑重承诺 :**
 
-l Drag-and-drop design for quick response to ever-changing business needs; low-code secondary development to easily meet personalized requirements.
+您购买的不仅仅是产品，还有细致、周到的技术支持服务**！！！( **=^_^=**) **
 
-l Rich data sources: Relational databases, big data components, data files, external data APIs, Internet of Things, etc.
+本产品，现场只需普通工人安装即可! 无需调试！
 
-l Drag-and-drop design: Flexibly combine to design data visualization reports like a jigsaw puzzle, with what you see is what you get.
+我们免费提供远程指导，远程配置调试服务，将数据发送至用户指定的云平台。
 
-l Multi-terminal support: Support designing visual dashboards for different resolution display terminals such as desktops, mobile phones, tablets, and tiled screens.
+免费提供物联网方案咨询服务！
 
-l Configure interactions: Implement interactive requirements such as clicks, jumps, pop-ups, drill-downs, chart linkages, and data filtering through configuration.
+# 3 **产品特色优势**
 
-l Report push: Automatically push to channels such as enterprise WeChat groups, DingTalk groups, Email, and large-screen devices.
+l 拖拽设计，快速响应多变的业务需求；低代码二次开发，轻松满足个性化需求。
 
-l Intranet private deployment: Take autonomous control of data security.
+l 丰富的数据源：关系型数据库、大数据组件、数据文件、外部数据API、物联网等。
 
-# 4 **Product functions**
+l 拖拽设计：灵活组合，像拼图一样 设计数据可视化报表，所见即所得。
 
-System functional architecture
+l 多端支持：支持为电脑端、手机端、Pad 端、拼接屏等不同分辨率展示终端设计可视化大屏。
 
-## 4.1 **Data access**
+l 配置交互：配置化实现点击、跳转、弹窗、下钻、图表联动、数据筛选 等交互需求。
 
-##  4.2 Visual design
+l 报表推送：全自动推送到企业微信群、钉钉群、Email、大屏设备等渠道。
 
-## 4.3 **Automatic push of data dashboard**
+l 内网私有化部署：数据安全自主掌控。
 
-##  4.4 **Large screen display**
+# 4 **产品功能**
 
-##  4.5 **Data Portal**
+系统功能架构
 
-You can view data reports anytime and anywhere in the mobile APP client.
+## 4.1 **数据接入**
 
-## 4.6 **Low-code expansion**
+##  4.2 **可视化设计**
 
-##  4.7 **System management**
+##  4.3 **数据看板自动推送**
 
-#  5 **Project implementation process**
+##  4.4 **大屏展示**
 
-The project implementation of this product can be divided into the following steps: data collection, design material upload, visual design, report release and other links.![94b27c2475df479502b982b83935a024.jpg](/static/upload/image/20250813/1755068101207409.jpg)
+产品支持手机、电脑、拼接屏等硬件大屏展示设备
 
-# 6 **Typical cases**
+## 4.5 **数据门户**
 
-##  FAQ – Solar Powered Wireless Sensors
+可在手机APP客户端中 随时随地查看数据报表
 
-### 1\. Can the sensors work without sunlight for long periods?
+## 4.6 **低代码拓展**
 
-Yes, built-in battery storage ensures continuous operation even during low sunlight conditions.
+##  4.7 **系统管理**
 
-### 2\. What communication methods are supported?
+#  5 **项目实施过程**
 
-Depending on configuration, the system can support LoRa, 4G, NB-IoT, or other wireless IoT protocols.
+本产品的项目实施可以分为以下几个步骤：数据采集、设计素材上传、可视化设计、报表发布等环节。
 
-### 3\. Are the sensors suitable for harsh outdoor environments?
+项目实施过程示意图
 
-Yes, they are designed with IP-rated waterproof and dustproof protection for outdoor use.
-
-### 4\. Can multiple sensors be integrated into one system?
-
-Yes, the system supports multi-node sensor networks for centralized monitoring.
-
-### 5\. Is remote monitoring available?
-
-Yes, data can be transmitted to cloud platforms or SCADA systems for remote access.
+# 6 **典型案例**

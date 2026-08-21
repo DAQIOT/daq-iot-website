@@ -1,105 +1,118 @@
 ---
-title: IEC62056 Smart Meter Data Collector | Remote Energy Monitoring Solution
+title: 低功耗无线红外抄表终端
 summary: >-
-  SC-LP-IRLoRaWAN
-image: /images/products/1780651882140821.png
+  1概述数采物联DAQ-LP-IR4G无线红外抄表终端是上海数采物联网科技有限公司一款基于红外通讯，电池或太阳能电池板自供电或有线供电的通用电表燃气表抄表
+  终端，可采集国网电表的电能数据、电压、电流、功率因数等电参数数据。无线红外抄表终端采用4G通信方式，克服现场特殊环境导致的无线通信遮挡，大大简化现场部署
+  时间
+image: /images/products/1739267848163015.png
 order: 22
 category: instrumentation
+hidden: false
 ---
-**IEC62056 Smart Meter Data Collector for Accurate Energy Monitoring**
+**产品详情**
 
-**1 Remote Monitoring and Real-Time Reporting**
+# 1 **概述**
 
-The SC-LP-IRLoRaWAN wireless infrared meter reading terminal is a universal electric meter and gas meter reading terminal based on infrared communication, self-powered by batteries or solar panels or wired power supply, developed by Shanghai Shucai IoT Technology Co., Ltd. It can collect electrical energy data, voltage, current, power factor and other electrical parameter data of the State Grid electric meter.
+数采物联DAQ-LP-IR4G无线红外抄表终端是上海数采物联网科技有限公司一款基于红外通讯，电池或太阳能电池板自供电或有线供电的通用电表燃气表抄表终端，可采集国网电表的电能数据、电压、电流、功率因数等电参数数据。
 
-The wireless infrared meter reading terminal adopts LoRaWAN communication mode to overcome the wireless communication obstruction caused by the special environment on site, greatly simplifying the on-site deployment time and reducing the construction cost . The working status of the equipment is divided into three states: sleep, collection and storage, and activation and reporting. After collecting data, it can automatically enter the low power consumption state to reduce power consumption and extend working time. This terminal supports meter reading scenarios of various meters such as electric meters and gas meters with infrared communication interfaces, and is suitable for electric energy meter data collection, smart city data collection, power monitoring data collection, energy conservation and emission reduction data monitoring system data collection, energy consumption monitoring system data collection, photovoltaic system data collection, intelligent monitoring data collection, robot data collection, smart security system data collection, cloud platform system data collection; electric energy meter calibration test bench; especially suitable for meter reading in the case where the lead seal of the total meter of the power supply bureau and the state grid electric meter is completely closed and no seal can be opened.
+无线红外抄表终端采用4G通信方式，克服现场特殊环境导致的无线通信遮挡，大大简化现场部署时间和降低施工费用。设备工作状态分为休眠、采集存储、激活上报三种状态。可在采集数据后，自动进入低功耗状态，降低电源消耗，延长工作时间。本终端支持各种具备红外通信接口的电表、燃气表等仪表的抄表场景，适用于电能表数据采集、智慧城市数据采集、电力监控数据采集、节能减排数据监控系统数据采集、能耗监控系统数据采集、光伏系统数据采集、智能监控数据采集、机器人数据采集、智慧安防系统数据采集、云平台系统数据采集；电能表校验检验测试台;特别适合供电局国网电表总表铅封完全封闭状态，不可开启任何封印的情况的抄表。
 
-# ****
+# 2 **产品特性**
 
-# **2 High-Precision Energy Data Acquisition**
+**采集特性**
 
-**Acquisition characteristics**
+l 红外载波频率：38 kHz
 
-Infrared carrier frequency: 38 kHz
+l 通信波特率：1200~115200 bps，根据电能表通信参数自适应
 
-Communication baud rate: 1200~115200 bps, adaptive according to the communication parameters of the energy meter
+l 通信距离：≤10米
 
-Communication distance: ≤10 meters
+l 通信角度：≤15度
 
-Communication angle: ≤15 degrees
+l 通信角度：≤15度
 
-Infrared communication protocol: Compliant with IEC 62056-21 (IEC 1107), DL/T 645, IEC 62056, Modbus, EDMI and DLMS communication protocols.
+l 红外通信协议：符合IEC62056-21(IEC1107)和DL/645标准
 
-**Electrical Characteristics**
+******电气特性**
 
-Power supply: battery power supply/external power supply
+l 供电方式：电池供电/外部电源供电
 
-Optional external power supply voltage: 12V DC
+l 可选外部供电电压：12V DC
 
-Battery capacity: 3.6V*38Ah
+l 电池容量：3.6V*38Ah
 
-Standby power consumption: less than 5uA@3.6V
+l 待机功耗：小于5uA@3.6V 
 
-Working power consumption: 5~30mA@3.6V
+l 工作功耗：5~30mA@3.6V
 
-Transmitting power consumption: 50~80mA@3.6V
+l 发射功耗：50~80mA@3.6V
 
-**Communication****characteristics**
+******通信****特性**
 
-Antenna type: external suction cup antenna or rubber stick antenna (internal antenna optional)
+l 天线类型：外置吸盘天线或胶棒天线(可选内置天线)
 
-Transmission mode: LoRaWAN/LoRa optional
+l 传输方式：4G/NB-IOT/LoRa可选
 
-Communication protocol: Default meter data transparent transmission, UDP communication mode, other protocols can be customized
+l 通信协议：默认电表数据透传，UDP通信方式，可定制其他协议
 
-Data forwarding: any public network server
+l 数据转发：任意公网服务器
 
-**Structural characteristics**
+**结构特性******
 
-Material: ABS plastic (shell)
+l 材质：ABS塑料（外壳）
 
-Main protection level: IP65
+l 主体防护等级：IP65
 
-Main body size: 130mm×95mm×60mm
+l 主体尺寸：130mm×95mm×60mm
 
-Main installation method: wall hanging or screw fastening
+l 主体安装方式：壁挂或螺丝紧固
 
-**Work****Environment**
+**工作****环境**
 
-Temperature -30°C～75°C, humidity 0～95% (non-condensing)
+l 温度-30°C～75°C，湿度0～95%（非冷凝）
 
-**Storage****Environment**
+**存储****环境**
 
-Temperature -40°C～90°C, humidity 0～95% (non-condensing)
+l 温度-40°C～90°C，湿度0～95%（非冷凝）
 
-# 3 Easy Integration with Existing Metering Systems
+# 3 **微功耗工作模式**
 
-The wireless infrared meter reading terminal achieves power saving by working intermittently. The device is in standby mode most of the time, and only a very small part of the circuit continues to work to maintain a micro-power state. This part of the circuit will ensure the correct operation of the system time and the correct wake-up at the next activation time .
+无线红外抄表终端通过间歇工作的方式实现省电的效果，设备大部分时间处于待机状态， 仅有极小一部分电路继续工作以保持在微功耗的状态。这部分电路会保证系统时间的正确运行以及下次激活时间的正确唤醒。
 
-## 3.1 **Interval time mode:**
+## 3.1 **间隔时间模式：**
 
-The interval mode means that the user specifies a certain interval for sampling and reports after sampling a certain number of times. The interval should be greater than 1 minute. For example, a user needs to collect data every 10 minutes and report after collecting 6 times. The following two parameters can be set as sampling interval (M): 10, sampling N times report: 6 .
+间隔时间模式是指由用户指定一定的间隔时间进行采样，并且在采样几次后进行上报。 该间隔时间应大于1分钟。比如，某用户需要每 10 分钟采集一次数据，在采集 6 次后进行上报，则以下两个参数可以分别设置为，采样间隔（M）：10，采样N次上报：6。
 
-## 3.2 **Hourly mode**
+## 3.2 **整点模式**
 
-The hourly time mode is similar to the working principle of an alarm clock, and is set for the clock's 0 to 23 o'clock hours. The "sampling time" and "reporting time" represent 23 o'clock to 0 o'clock from left to right according to the hourly time .
+整点时间模式类似闹钟的工作原理，是针对时钟的 0 点至 23 点整时工作进行设置。“采样时间”和“上报时间”按照整点时间从左到右依次代表 23 点至 0 点。
 
-# 4 **Features of IEC62056 Meter Data Collector**
+# 4 **产品核心优势**
 
-Ø Comes with its own battery, no wiring required
+Ø 自带电池，无需布线
 
-Ø Simple installation and quick deployment help IoT projects to be implemented quickly
+Ø 安装简单，快速部署，助力物联网项目快速落地
 
-Ø Support any IoT cloud platform and provide data connection
+Ø 支持任意物联网云平台，提供数据对接
 
-Ø Support external multi-channel sensor probes
+Ø 支持外接多路传感器探头
 
-Ø Support analog, digital and switch quantity acquisition
+Ø 支持模拟量数字量开关量采集
 
-Ø Support remote configuration of meter address and protocol to minimize on-site maintenance costs
+Ø 支持远程配置电表地址和协议，最大限度减少现场维护成本
 
-# 5 Product Usage
+# 5 **产品使用**
 
-This product is easy to install and can be deployed quickly. No on-site debugging is required, and remote cloud server debugging and configuration are supported. If you have any questions about the product, please contact after-sales personnel.
+本产品安装简单，可快速部署。无需现场调试，支持远程云服务器端调试配置。有任何产品使用问题，请联系售后人员。
 
-# 6 Applications in Power Utilities & Industrial Facilities
+# 6 **应用案例**
+
+工业园区10kV计量柜电表数据采集
+
+本案例中，采用电池供电方式采集工业园区10kV计量柜的电能表数据，采集频率为2小时每次，通过4G方式将电能表数据发送至远程服务器。
+
+# 7 **注意事项**
+
+1）产品采用电池供电时，为尽可能利用电池能量，未做反接保护，需注意正负极，请勿接反以防烧坏设备。
+
+2）红外发射接收孔对准需要采集通讯的红外设备即可进行通讯，通讯过程中请确保通讯距离及倾斜角度在技术要求之内，否则会严重影响通讯效果。
