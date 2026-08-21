@@ -72,8 +72,11 @@ collections:
     delete: true
     extension: md
     format: frontmatter
-    slug: '{{name}}'
+    slug: '{{slug}}'
     fields:
+      - label: URL标识(slug，只能英文小写和连字符)
+        name: slug
+        widget: string
       - label: 排序(数字越小越靠前)
         name: order
         widget: number

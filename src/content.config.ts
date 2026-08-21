@@ -39,6 +39,7 @@ const contact = defineCollection({
 const categories = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/categories' }),
   schema: z.object({
+    slug: z.string(),
     name: z.string(),
     description: z.string().optional().default(''),
     order: z.number().default(0)
