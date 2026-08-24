@@ -83,8 +83,8 @@ collections:
         name: category
         widget: relation
         collection: categories
-        display_fields: [name]
-        search_fields: [name]
+        display_fields: [nameZh, name]
+        search_fields: [name, nameZh, nameDe]
         value_field: slug
         required: true
         i18n: duplicate
@@ -103,6 +103,7 @@ collections:
     extension: md
     format: frontmatter
     slug: '{{slug}}'
+    summary: '{{nameZh}} ({{name}})'
     fields:
       - label: URL标识 slug（必填，只能英文小写，不能用空格）
         name: slug
