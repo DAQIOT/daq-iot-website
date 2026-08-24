@@ -1,5 +1,5 @@
 ---
-import { getTranslations } from '../i18n/utils';
+import { getTranslations, getCategoryDisplay } from '../i18n/utils';
 import type { Lang } from '../i18n/config';
 import { getCollection } from 'astro:content';
 import LanguageSwitcher from './LanguageSwitcher.astro';
@@ -14,7 +14,7 @@ const path = Astro.url.pathname;
 
 const categories = (await getCollection('categories'))
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
-  .map((c) => ({ key: c.id, name: c.data.name, href: base + '/products?cat=' + c.id }));
+  .map((c) => ({ key: c.id, name: getCategoryDisplay(c, lang).name, href: base + '/products?cat=' + c.id }));
 
 const nav = [
   { href: base + '/', label: t('nav.home') },

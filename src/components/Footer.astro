@@ -1,5 +1,5 @@
 ---
-import { getTranslations } from '../i18n/utils';
+import { getTranslations, getCategoryDisplay } from '../i18n/utils';
 import type { Lang } from '../i18n/config';
 import { getCollection } from 'astro:content';
 
@@ -12,7 +12,7 @@ const base = '/' + lang;
 
 const productCats = (await getCollection('categories'))
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
-  .map((c) => ({ key: c.id, name: c.data.name, href: base + '/products?cat=' + c.id }));
+  .map((c) => ({ key: c.id, name: getCategoryDisplay(c, lang).name, href: base + '/products?cat=' + c.id }));
 ---
 <footer class="bg-brand-dark text-slate-300">
   <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">

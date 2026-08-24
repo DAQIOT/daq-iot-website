@@ -62,3 +62,19 @@ export function stripLang(pathname: string, lang: Lang): string {
   if (pathname.startsWith(prefix + '/')) return pathname.slice(prefix.length) || '/';
   return pathname;
 }
+
+// 取分类的本地化名称与描述（用于 Header / Footer / 首页 / 产品页）
+export function getCategoryDisplay(category: { data: Record<string, any> }, lang: Lang) {
+  const name =
+    lang === 'zh' ? category.data.nameZh :
+    lang === 'de' ? category.data.nameDe :
+    category.data.name;
+  const description =
+    lang === 'zh' ? category.data.descriptionZh :
+    lang === 'de' ? category.data.descriptionDe :
+    category.data.description;
+  return {
+    name: name || category.data.name,
+    description: description || category.data.description,
+  };
+}

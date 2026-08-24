@@ -42,6 +42,10 @@ const categories = defineCollection({
     slug: z.string(),
     name: z.string(),
     description: z.string().optional().default(''),
+    nameZh: z.string().optional(),
+    descriptionZh: z.string().optional().default(''),
+    nameDe: z.string().optional(),
+    descriptionDe: z.string().optional().default(''),
     order: z.number().default(0)
   })
 });

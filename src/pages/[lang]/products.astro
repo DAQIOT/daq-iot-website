@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getTranslations } from '../../i18n/utils';
+import { getTranslations, getCategoryDisplay } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 import { getCollection } from 'astro:content';
 
@@ -18,10 +18,10 @@ const all = await getCollection('products', (entry) => entry.id.startsWith(lang 
 const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const categories = (await getCollection('categories')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
-const catName = Object.fromEntries(categories.map((c) => [c.id, c.data.name]));
+const catName = Object.fromEntries(categories.map((c) => [c.id, getCategoryDisplay(c, lang).name]));
 const cats = [
   { key: 'all', label: t('products.all') },
-  ...categories.map((c) => ({ key: c.id, label: c.data.name }))
+  ...categories.map((c) => ({ key: c.id, label: getCategoryDisplay(c, lang).name }))
 ];
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
