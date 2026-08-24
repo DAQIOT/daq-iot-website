@@ -1,8 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getTranslations, getSiteData, getCategoryDisplay } from '../../i18n/utils';
+import { getTranslations, getSiteData, getCategoriesByLang } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
-import { getCollection } from 'astro:content';
 
 export function getStaticPaths() {
   return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
@@ -12,16 +11,13 @@ const t = await getTranslations(lang);
 const site = await getSiteData(lang);
 const base = '/' + lang;
 
-const categories = (await getCollection('categories')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
-const families = categories.map((c) => {
-  const display = getCategoryDisplay(c, lang);
-  return {
-    slug: c.id,
-    name: display.name,
-    description: display.description,
-    href: base + '/products?cat=' + c.id
-  };
-});
+const categories = await getCategoriesByLang(lang);
+const families = categories.map((c) => ({
+  slug: c.data.slug,
+  name: c.data.name,
+  description: c.data.description,
+  href: base + '/products?cat=' + c.data.slug
+}));
 
 const industries = (site.home?.industries ?? []).map((it: { label: string }, i: number) => ({
   n: String(i + 1).padStart(2, '0'),

@@ -83,8 +83,8 @@ collections:
         name: category
         widget: relation
         collection: categories
-        display_fields: [nameZh, name]
-        search_fields: [name, nameZh, nameDe]
+        display_fields: [name]
+        search_fields: [name]
         value_field: slug
         required: true
         i18n: duplicate
@@ -97,49 +97,38 @@ collections:
   - name: categories
     label: 产品分类
     folder: src/content/categories
-    i18n: false
+    i18n: true
     create: true
     delete: true
     extension: md
     format: frontmatter
     slug: '{{slug}}'
-    summary: '{{nameZh}} ({{name}})'
     fields:
-      - label: URL标识 slug（必填，只能英文小写，不能用空格）
+      - label: URL标识 slug（必填，只能英文小写，不能用空格；三种语言必须一致）
         name: slug
         widget: string
         required: true
         pattern: ['^[a-z0-9]+$', '只能小写字母和数字，例如 instrumentation']
-        hint: 填一次即可，产品里的"产品分类"靠它关联
-      - label: 排序(数字越小越靠前)
+        hint: 三语共用同一个 slug，产品里的"产品分类"靠它关联
+        i18n: duplicate
+      - label: 排序(数字越小越靠前，三种语言保持一致)
         name: order
         widget: number
         value_type: int
         default: 0
-      - label: 分类名称(英文，必填)
+        i18n: duplicate
+      - label: 分类名称
         name: name
         widget: string
         required: true
-      - label: 分类说明(英文，选填)
+        hint: 顶部切换语言，分别填写当前语言的分类名称
+        i18n: true
+      - label: 分类说明
         name: description
         widget: text
         required: false
-      - label: 分类名称(中文，必填)
-        name: nameZh
-        widget: string
-        required: true
-      - label: 分类说明(中文，选填)
-        name: descriptionZh
-        widget: text
-        required: false
-      - label: 分类名称(德文，选填)
-        name: nameDe
-        widget: string
-        required: false
-      - label: 分类说明(德文，选填)
-        name: descriptionDe
-        widget: text
-        required: false
+        hint: 顶部切换语言，分别填写当前语言的分类说明
+        i18n: true
   - name: posts
     label: 博客文章
     folder: src/content/posts

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getTranslations, getCategoryDisplay } from '../../../i18n/utils';
+import { getTranslations, getCategoriesByLang } from '../../../i18n/utils';
 import type { Lang } from '../../../i18n/config';
 import { getCollection, render } from 'astro:content';
 
@@ -22,7 +22,7 @@ const t = await getTranslations(lang);
 const { Content } = await render(entry);
 const productsHref = '/' + lang + '/products';
 const contactHref = '/' + lang + '/contact';
-const catName = Object.fromEntries((await getCollection('categories')).map((c) => [c.id, getCategoryDisplay(c, lang).name]));
+const catName = Object.fromEntries((await getCategoriesByLang(lang)).map((c) => [c.data.slug, c.data.name]));
 ---
 <BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.summary}>
   <section class="bg-brand-dark">

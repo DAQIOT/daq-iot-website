@@ -1,5 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const site = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/site' }),
@@ -37,15 +39,21 @@ const contact = defineCollection({
 });
 
 const categories = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/categories' }),
+  loader: glob({
+    pattern: '**/[^_]*.md',
+    base: './src/content/categories',
+    // 分类 frontmatter 含 slug 字段，默认 generateId 会用 slug 作为 id，
+    // 导致 zh/en/de 三语文件 id 冲突。强制用相对路径（语言子目录/文件名）作为 id。
+    generateId: ({ entry, base }) => {
+      const entryURL = new URL(encodeURI(entry), base);
+      const rel = relative(fileURLToPath(base), fileURLToPath(entryURL)).replace(/\\/g, '/');
+      return rel.replace(/\.md$/, '');
+    }
+  }),
   schema: z.object({
     slug: z.string(),
     name: z.string(),
     description: z.string().optional().default(''),
-    nameZh: z.string().optional(),
-    descriptionZh: z.string().optional().default(''),
-    nameDe: z.string().optional(),
-    descriptionDe: z.string().optional().default(''),
     order: z.number().default(0)
   })
 });

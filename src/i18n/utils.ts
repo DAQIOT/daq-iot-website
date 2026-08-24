@@ -63,18 +63,9 @@ export function stripLang(pathname: string, lang: Lang): string {
   return pathname;
 }
 
-// 取分类的本地化名称与描述（用于 Header / Footer / 首页 / 产品页）
-export function getCategoryDisplay(category: { data: Record<string, any> }, lang: Lang) {
-  const name =
-    lang === 'zh' ? category.data.nameZh :
-    lang === 'de' ? category.data.nameDe :
-    category.data.name;
-  const description =
-    lang === 'zh' ? category.data.descriptionZh :
-    lang === 'de' ? category.data.descriptionDe :
-    category.data.description;
-  return {
-    name: name || category.data.name,
-    description: description || category.data.description,
-  };
+// 获取当前语言的分类列表（multiple_folders 结构：zh/、en/、de/ 子目录，文件名不含语言前缀）
+// 分类文件按语言分目录存放，每个文件内 name/description 即当前语言
+export async function getCategoriesByLang(lang: Lang) {
+  const entries = await getCollection('categories', (entry: { id: string }) => entry.id.startsWith(lang + '/'));
+  return entries.sort((a: any, b: any) => (a.data.order ?? 0) - (b.data.order ?? 0));
 }
