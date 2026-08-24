@@ -5,7 +5,7 @@ summary: >-
   分散，内容维护费人费力；大屏设备悬挂在高处，开关机、内容展示维护困难；内容经常需要变化、撤换时，人工维护不及时。特别适用于私有化部署场景。
 image: /images/products/1709091418473738.jpg
 order: 1
-category: dataacquisitionsoftware
+category: daq-software
 hidden: false
 ---
 **产品详情**

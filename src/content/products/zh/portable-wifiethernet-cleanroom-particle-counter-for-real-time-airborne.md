@@ -5,7 +5,7 @@ summary: >-
   DAQ-GP-CL
 image: /images/products/1780565101321474.png
 order: 34
-category: wirelesssensor
+category: daq-sensor
 ---
 # 1 **Product overview******
 

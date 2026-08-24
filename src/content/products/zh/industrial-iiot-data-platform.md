@@ -5,7 +5,7 @@ summary: >-
   Industrial IoT Data Visualization Dashboard Software | Real-Time Data Monitoring & Reporting Platform with Drag-and-Drop Design (Private Deployment)
 image: /images/products/1755137572660991.png
 order: 5
-category: dataacquisitionsoftware
+category: daq-software
 ---
 # 1 **Product Overview**
 

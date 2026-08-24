@@ -6,7 +6,7 @@ summary: >-
   ，板载4GB内
 image: /images/products/1740042787342232.png
 order: 30
-category: plcacquisition
+category: daq-gateway
 hidden: false
 ---
 **产品详情**

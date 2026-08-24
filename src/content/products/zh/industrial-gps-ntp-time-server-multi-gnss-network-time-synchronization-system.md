@@ -6,7 +6,7 @@ summary: >-
   能提供基于 UTC 标准时间及
 image: /images/products/1747039141282391.png
 order: 28
-category: plcacquisition
+category: daq-gateway
 hidden: false
 ---
 **产品详情**

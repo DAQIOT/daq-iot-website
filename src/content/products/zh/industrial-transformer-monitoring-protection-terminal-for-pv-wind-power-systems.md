@@ -5,7 +5,7 @@ summary: >-
   整、信息远传等功能。实现风电或光伏工程的“无人值班，少人值守”运行管理模式。装置采用最新32位高性能处理器平台设计，结合公司成熟、稳定的软
 image: /images/products/1744706634790083.png
 order: 29
-category: plcacquisition
+category: daq-gateway
 hidden: false
 ---
 **产品详情**

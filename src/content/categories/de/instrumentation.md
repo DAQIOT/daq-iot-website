@@ -1,6 +1,6 @@
 ---
 slug: instrumentation
-name: Messinstrumente
-description: Präzisionsmessinstrumente und Sensorik für industrielle Daten
+name: Instrumentierung
+description: Präzisionsinstrumente und Messmodule für die industrielle Datenerfassung
 order: 1
 ---

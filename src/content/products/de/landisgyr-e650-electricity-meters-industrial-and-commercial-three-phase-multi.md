@@ -4,7 +4,7 @@ summary: >-
   ⚡ Landis+Gyr E650 Electricity Meter – Product Advantages
 image: /images/products/1780562815451779.jpg
 order: 9
-category: instrumentacquisition
+category: instrumentation
 ---
 **1\. Product Introduction**
 

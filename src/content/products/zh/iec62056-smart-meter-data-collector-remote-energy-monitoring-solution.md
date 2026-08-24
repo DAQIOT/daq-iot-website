@@ -6,7 +6,7 @@ summary: >-
   时间
 image: /images/products/1739267848163015.png
 order: 22
-category: instrumentation
+category: daq-meter
 hidden: false
 ---
 **产品详情**

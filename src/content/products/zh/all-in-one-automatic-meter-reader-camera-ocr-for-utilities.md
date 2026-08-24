@@ -6,7 +6,7 @@ summary: >-
   设备采用偏振增透镜
 image: /images/products/1776841256336735.jpg
 order: 12
-category: instrumentacquisition
+category: daq-camera
 hidden: false
 ---
 **产品详情**

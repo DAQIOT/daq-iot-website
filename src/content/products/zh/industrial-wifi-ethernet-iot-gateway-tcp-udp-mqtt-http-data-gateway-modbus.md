@@ -5,7 +5,7 @@ summary: >-
   Industrial WiFi and Ethernet IoT Gateway supporting TCP, UDP, MQTT, HTTP, ARP, ICMP, DHCP, and DNS protocols. Designed for remote monitoring, industrial automation, PLC communication, SCADA integration, and Industrial IoT applications.
 image: /images/products/1781662101462408.jpg
 order: 24
-category: instrumentation
+category: daq-gateway
 ---
 # Product Overview
 

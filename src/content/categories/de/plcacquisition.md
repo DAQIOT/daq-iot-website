@@ -1,6 +1,6 @@
 ---
 slug: plcacquisition
-name: PLC-Datenerfassung
-description: PLC-Datenerfassung und Protokoll-Kommunikationsgateways
+name: PLC-Erfassung
+description: PLC-Datenerfassung und Protokoll-Kommunikations-Manager
 order: 5
 ---

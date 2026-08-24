@@ -5,7 +5,7 @@ summary: >-
   或无法直接通讯的仪表进行快速抄表的数据采集终端。拍照终端按照设定时间间隔进行拍照，并将照片上传到服务器后进行分析识别，得出仪表示数，用户可查
 image: /images/products/1692780820230485.jpg
 order: 37
-category: wirelesstimingphotography
+category: daq-camera
 hidden: false
 ---
 **产品详情**

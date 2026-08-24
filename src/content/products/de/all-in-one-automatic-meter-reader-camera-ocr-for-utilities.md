@@ -4,7 +4,7 @@ summary: >-
   ⚡ All-in-One OCR Meter Reader Camera – Key Advantages
 image: /images/products/1780567691403469.png
 order: 12
-category: instrumentacquisition
+category: instrumentation
 ---
 # **1 Product Overview**
 

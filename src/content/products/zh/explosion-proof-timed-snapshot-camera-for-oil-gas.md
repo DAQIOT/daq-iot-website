@@ -5,7 +5,7 @@ summary: >-
   Core Features & Design
 image: /images/products/1755244811711967.png
 order: 39
-category: wirelesstimingphotography
+category: daq-camera
 ---
 1\. Product Overview
 

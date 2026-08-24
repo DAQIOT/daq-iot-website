@@ -1,6 +1,6 @@
 ---
 slug: wirelesstimingphotography
-name: Drahtlose Zeitraffer-Kameras
-description: Drahtlose Zeitraffer- und Industriekamera-Systeme
+name: Drahtlose Intervallfotografie
+description: Drahtlose Kameras für Intervall- und Zeitrafferaufnahmen zur Fernüberwachung
 order: 4
 ---

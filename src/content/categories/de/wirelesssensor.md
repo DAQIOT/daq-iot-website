@@ -1,6 +1,6 @@
 ---
 slug: wirelesssensor
-name: Drahtlose Sensoren
-description: Drahtlose Sensoren für Temperatur, Vibration, Füllstand u. v. m.
+name: Funksensoren
+description: Drahtlose Sensoren für Temperatur, Vibration, Füllstand, Wind und Druck
 order: 3
 ---

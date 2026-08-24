@@ -5,7 +5,7 @@ summary: >-
   Key Features
 image: /images/products/1755057431638453.png
 order: 25
-category: plcacquisition
+category: daq-gateway
 ---
 **1********Product Overview**
 

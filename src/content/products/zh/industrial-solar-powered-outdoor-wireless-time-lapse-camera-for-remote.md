@@ -6,7 +6,7 @@ summary: >-
   地、水库大坝
 image: /images/products/1766477909526131.png
 order: 38
-category: wirelesstimingphotography
+category: daq-camera
 hidden: false
 ---
 **产品详情**

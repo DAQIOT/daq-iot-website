@@ -4,7 +4,7 @@ summary: >-
   高性能嵌入式处理器 Cortex-A7，800MHz，可实时处理高达3万测点；
 image: /images/products/1747463976376171.png
 order: 27
-category: plcacquisition
+category: daq-gateway
 hidden: false
 ---
 **产品详情**

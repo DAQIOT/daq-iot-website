@@ -4,7 +4,7 @@ summary: >-
   Electrical Parameters
 image: /images/products/1781081054381862.jpg
 order: 8
-category: instrumentacquisition
+category: instrumentation
 ---
 The Mk30 is a compact, single-phase electrical meter designed for accurate energy and power monitoring in residential, commercial, and industrial environments. Its DIN rail mounting ensures easy installation, and it supports multiple measurement parameters including active/reactive energy, voltage, current, and power factor.
 

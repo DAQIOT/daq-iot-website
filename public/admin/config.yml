@@ -35,24 +35,24 @@ collections:
       - label: 全部
         field: category
         pattern: '.*'
-      - label: 智能仪表
+      - label: 仪器仪表采集
         field: category
-        pattern: instrumentation
-      - label: 仪表采集
-        field: category
-        pattern: instrumentacquisition
+        pattern: daq-meter
       - label: 无线传感器
         field: category
-        pattern: wirelesssensor
-      - label: 无线定时拍照
+        pattern: daq-sensor
+      - label: 定时抓拍
         field: category
-        pattern: wirelesstimingphotography
-      - label: PLC采集
+        pattern: daq-camera
+      - label: 采集终端
         field: category
-        pattern: plcacquisition
-      - label: 数采软件
+        pattern: daq-gateway
+      - label: 软件平台
         field: category
-        pattern: dataacquisitionsoftware
+        pattern: daq-software
+      - label: 安装施工
+        field: category
+        pattern: daq-install
     fields:
       - label: 产品名称（必填，各语言分别填写）
         name: title
@@ -79,7 +79,7 @@ collections:
         default: 0
         pattern: ['^[0-9]+$', '只能填数字']
         i18n: duplicate
-      - label: 产品分类（必填，先到"产品分类"里确认分类已存在）
+      - label: 产品分类（必填，切换语言分别选择对应分类）
         name: category
         widget: relation
         collection: categories
@@ -87,7 +87,8 @@ collections:
         search_fields: [name]
         value_field: slug
         required: true
-        i18n: duplicate
+        i18n: true
+        hint: 中文后台只显示中文分类（daq-*），英文后台只显示英文分类，德文后台只显示德文分类；产品的 category 字段按语言分别保存
       - label: 产品参数（选填，可添加多条）
         name: parameters
         widget: list
@@ -117,12 +118,12 @@ collections:
     format: frontmatter
     slug: '{{slug}}'
     fields:
-      - label: URL标识 slug（必填，只能英文小写，不能用空格；三种语言必须一致）
+      - label: URL标识 slug（必填，只能英文小写，不能用空格）
         name: slug
         widget: string
         required: true
-        pattern: ['^[a-z0-9]+$', '只能小写字母和数字，例如 instrumentation']
-        hint: 三语共用同一个 slug，产品里的"产品分类"靠它关联
+        pattern: ['^[a-z0-9]+$', '只能小写字母和数字，例如 daq-meter']
+        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）。产品的"产品分类"字段按语言选择当前语言对应的 slug
         i18n: duplicate
       - label: 排序(数字越小越靠前，三种语言保持一致)
         name: order

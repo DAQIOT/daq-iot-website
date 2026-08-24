@@ -5,7 +5,7 @@ summary: >-
   🔹DAQ-GP-485HUB RS485 Bus Multiplexer – Key Advantages
 image: /images/products/1755066762930894.png
 order: 14
-category: instrumentacquisition
+category: daq-gateway
 ---
 # 1 **Product Overview**
 

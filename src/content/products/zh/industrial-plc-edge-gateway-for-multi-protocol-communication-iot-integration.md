@@ -5,7 +5,7 @@ summary: >-
   Multi-Protocol Communication;
 image: /images/products/1780648808529009.png
 order: 21
-category: instrumentation
+category: daq-gateway
 ---
 **Multi-Protocol Industrial Communication Support**
 

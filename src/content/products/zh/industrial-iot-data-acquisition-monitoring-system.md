@@ -6,7 +6,7 @@ summary: >-
   NET5客户端浏览器Edge、Chrome、Fire
 image: /images/products/1692951414317855.jpg
 order: 2
-category: dataacquisitionsoftware
+category: daq-software
 hidden: false
 parameters:
   - label: 操作系统

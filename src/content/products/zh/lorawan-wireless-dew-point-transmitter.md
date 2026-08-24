@@ -5,7 +5,7 @@ summary: >-
   ⚙️ Product Advantages – Dew point transmitter/meter
 image: /images/products/1780562922271143.png
 order: 32
-category: wirelesssensor
+category: daq-sensor
 ---
 # 1 **Product Overview**
 

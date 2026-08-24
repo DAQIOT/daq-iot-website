@@ -4,7 +4,7 @@ summary: >-
   ⚡ RS485 & LoRa Vibration Sensor – Key Advantages
 image: /images/products/1780910981409813.png
 order: 11
-category: instrumentacquisition
+category: instrumentation
 ---
 # 1 **Product Overview**
 

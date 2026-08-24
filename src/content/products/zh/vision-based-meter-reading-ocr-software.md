@@ -5,7 +5,7 @@ summary: >-
   📊 Vision-Based Meter Reading OCR Software – Product Specifications
 image: /images/products/1755137746482795.png
 order: 4
-category: dataacquisitionsoftware
+category: daq-software
 ---
 # 1 **illustrate**
 

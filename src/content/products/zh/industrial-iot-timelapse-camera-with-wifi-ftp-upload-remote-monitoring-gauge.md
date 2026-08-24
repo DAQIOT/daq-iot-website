@@ -6,7 +6,7 @@ summary: >-
   器或存储于SD卡中。配合
 image: /images/products/1692947462533419.jpg
 order: 41
-category: wirelesstimingphotography
+category: daq-camera
 hidden: false
 ---
 **产品详情**

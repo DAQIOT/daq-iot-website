@@ -4,7 +4,7 @@ summary: >-
   l采集类型：液体水位
 image: /images/products/1783317794937889.png
 order: 26
-category: plcacquisition
+category: daq-sensor
 hidden: false
 ---
 **产品详情**

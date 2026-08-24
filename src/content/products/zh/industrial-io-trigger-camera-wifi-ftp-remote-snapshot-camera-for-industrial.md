@@ -6,7 +6,7 @@ summary: >-
   fi或以太网方式
 image: /images/products/1692947081361673.jpg
 order: 42
-category: wirelesstimingphotography
+category: daq-camera
 hidden: false
 ---
 **产品详情**

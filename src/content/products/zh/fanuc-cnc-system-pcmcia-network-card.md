@@ -5,7 +5,7 @@ summary: >-
   ⚡ FANUC CNC System PCMCIA Network Card – Key Advantages
 image: /images/products/1780568696442492.png
 order: 13
-category: instrumentacquisition
+category: daq-gateway
 ---
 # 1 **Product Overview**
 

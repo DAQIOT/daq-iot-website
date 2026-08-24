@@ -4,7 +4,7 @@ summary: >-
   🔌EDMI MK6E(s) Smart Electricity Meter – Product Specifications
 image: /images/products/1755141806978431.png
 order: 18
-category: instrumentacquisition
+category: daq-meter
 hidden: true
 ---
 **High********Precision********Meter for****GRID,********Industrial and********High-End Comm****ercial********Markets**

@@ -1,6 +1,6 @@
 ---
 slug: dataacquisitionsoftware
 name: Datenerfassungssoftware
-description: SCADA · Zählerablesung · Daten-Dashboards · Energiemanagement · PV-O&M-Cloud
+description: SCADA, Zählerfernablesung, Daten-Dashboards, EMS und PV-Cloud-Überwachung
 order: 6
 ---
