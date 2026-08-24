@@ -35,37 +35,37 @@ collections:
       - label: 全部
         field: category
         pattern: '.*'
-      - label: Instrumentation
+      - label: 智能仪表
         field: category
         pattern: instrumentation
-      - label: Instrument Acquisition
+      - label: 仪表采集
         field: category
         pattern: instrumentacquisition
-      - label: Wireless Sensor
+      - label: 无线传感器
         field: category
         pattern: wirelesssensor
-      - label: Wireless Timing Photography
+      - label: 无线定时拍照
         field: category
         pattern: wirelesstimingphotography
-      - label: PLC Acquisition
+      - label: PLC采集
         field: category
         pattern: plcacquisition
-      - label: Data Acquisition Software
+      - label: 数采软件
         field: category
         pattern: dataacquisitionsoftware
     fields:
-      - label: 产品名称（必填）
+      - label: 产品名称（必填，各语言分别填写）
         name: title
         widget: string
         required: true
-        hint: 用英文填写即可，会自动同步到中文和德文页面
-        i18n: duplicate
-      - label: 一句话描述（必填）
+        hint: 切换上方语言分别填写中文/英文/德文名称
+        i18n: true
+      - label: 一句话描述（必填，各语言分别填写）
         name: summary
         widget: text
         required: true
-        hint: 产品一句话介绍，20-50 字左右；用英文填写即可
-        i18n: duplicate
+        hint: 产品一句话介绍，20-50 字左右；各语言分别填写
+        i18n: true
       - label: 产品图片（选填）
         name: image
         widget: image
@@ -88,12 +88,12 @@ collections:
         value_field: slug
         required: true
         i18n: duplicate
-      - label: 详细介绍（必填）
+      - label: 详细介绍（必填，各语言分别填写）
         name: body
         widget: markdown
         required: true
-        hint: 产品详细介绍，支持 Markdown 格式；用英文填写即可
-        i18n: duplicate
+        hint: 产品详细介绍，支持 Markdown 格式；各语言分别填写
+        i18n: true
   - name: categories
     label: 产品分类
     folder: src/content/categories
@@ -121,6 +121,14 @@ collections:
         required: true
       - label: 分类说明(英文，选填)
         name: description
+        widget: text
+        required: false
+      - label: 分类名称(中文，必填)
+        name: nameZh
+        widget: string
+        required: true
+      - label: 分类说明(中文，选填)
+        name: descriptionZh
         widget: text
         required: false
   - name: posts
