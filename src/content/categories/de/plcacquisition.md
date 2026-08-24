@@ -3,4 +3,5 @@ slug: plcacquisition
 name: PLC-Erfassung
 description: PLC-Datenerfassung und Protokoll-Kommunikations-Manager
 order: 5
+path: PLC-Erfassung
 ---

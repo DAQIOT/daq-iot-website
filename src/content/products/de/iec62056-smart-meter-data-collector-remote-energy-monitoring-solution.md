@@ -4,7 +4,7 @@ summary: >-
   SC-LP-IRLoRaWAN
 image: /images/products/1780651882140821.png
 order: 22
-category: instrumentation
+category: instrument-acquisition
 ---
 **IEC62056 Smart Meter Data Collector for Accurate Energy Monitoring**
 

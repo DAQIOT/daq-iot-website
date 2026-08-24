@@ -4,7 +4,7 @@ summary: >-
   Seamless Data Integration Between Photovoltaic Systems and IoT Platforms
 image: /images/products/1755069132282380.png
 order: 16
-category: instrumentation
+category: instrument-acquisition
 ---
 # 1 **Product Overview**
 

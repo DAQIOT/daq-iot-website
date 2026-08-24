@@ -4,7 +4,7 @@ summary: >-
   High-Precision Energy Measurement
 image: /images/products/1780972505236180.jpg
 order: 23
-category: instrumentation
+category: instrument-acquisition
 ---
 **Smart Single Phase Energy Meter WiFi RS485 DIN Rail******
 

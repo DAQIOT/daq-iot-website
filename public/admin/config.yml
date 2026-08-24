@@ -65,6 +65,12 @@ collections:
       - label: 安装施工
         field: category
         pattern: daq-install
+      - label: 英文-Instrumentation（含二级）
+        field: category
+        pattern: '^instrument(ation|-acquisition)$'
+      - label: 英文-Instrument Acquisition
+        field: category
+        pattern: instrument-acquisition
     fields:
       - label: 产品名称（必填，各语言分别填写）
         name: title
@@ -95,12 +101,12 @@ collections:
         name: category
         widget: relation
         collection: categories
-        display_fields: [name]
-        search_fields: [name]
+        display_fields: [path]
+        search_fields: [name, path]
         value_field: slug
         required: true
         i18n: true
-        hint: 中文后台只显示中文分类（daq-*），英文后台只显示英文分类，德文后台只显示德文分类；产品的 category 字段按语言分别保存。有二级分类的一级分类（如仪器仪表采集）请选到具体的二级分类（如电表采集）
+        hint: 中文后台只显示中文分类（daq-*），英文后台只显示英文分类，德文后台只显示德文分类；下拉中带"父级名 / 分类名"（如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"）的是二级分类，有二级的一级分类请选到具体的二级分类
       - label: 产品参数（选填，可添加多条）
         name: parameters
         widget: list
@@ -134,8 +140,8 @@ collections:
         name: slug
         widget: string
         required: true
-        pattern: ['^[a-z0-9]+$', '只能小写字母和数字，例如 daq-meter']
-        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）。产品的"产品分类"字段按语言选择当前语言对应的 slug
+        pattern: ['^[a-z0-9-]+$', '只能小写字母、数字和连字符，例如 daq-meter-electric']
+        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）。二级分类建议用"父级slug-子级名"命名，如 daq-meter-electric、instrument-acquisition。产品的"产品分类"字段按语言选择当前语言对应的 slug
         i18n: duplicate
       - label: 排序(数字越小越靠前，三种语言保持一致)
         name: order
@@ -152,7 +158,13 @@ collections:
         value_field: slug
         required: false
         i18n: true
-        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）
+        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）；英文/德文二级：Instrument Acquisition / Instrumentenerfassung（父级=Instrumentation / Instrumentierung）
+      - label: 分类显示路径（后台下拉用）
+        name: path
+        widget: string
+        required: false
+        hint: 后台产品分类下拉显示用，各语言分别填写。一级分类填分类名称即可；二级分类填"父级名 / 分类名"，如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"
+        i18n: true
       - label: 分类名称
         name: name
         widget: string

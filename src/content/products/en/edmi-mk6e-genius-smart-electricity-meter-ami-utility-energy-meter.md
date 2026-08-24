@@ -4,7 +4,7 @@ summary: >-
   ⚡ EDMI Mk6E Genius Smart Electricity Meter – Key Advantages
 image: /images/products/1780901539583612.png
 order: 7
-category: instrumentation
+category: instrument-acquisition
 ---
 ## Meta Description
 

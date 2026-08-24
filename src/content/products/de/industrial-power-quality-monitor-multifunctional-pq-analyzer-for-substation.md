@@ -4,7 +4,7 @@ summary: >-
   ⚙️ Product Specifications
 image: /images/products/1755071685238536.png
 order: 17
-category: instrumentation
+category: instrument-acquisition
 ---
 # 1 **Product Overview**
 
