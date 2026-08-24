@@ -6,7 +6,7 @@ summary: >-
   传感器采用不
 image: /images/products/1768268485649409.jpg
 order: 11
-category: daq-sensor
+category: daq-sensor-power
 hidden: false
 ---
 **产品详情**

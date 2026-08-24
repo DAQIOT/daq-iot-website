@@ -5,7 +5,7 @@ summary: >-
   DAQ-GP-CL
 image: /images/products/1780565101321474.png
 order: 34
-category: daq-sensor
+category: daq-sensor-env
 ---
 # 1 **Product overview******
 

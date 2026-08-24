@@ -5,7 +5,7 @@ summary: >-
   ⚡ Key Product Advantages
 image: /images/products/1780562258728639.png
 order: 10
-category: daq-sensor
+category: daq-sensor-power
 ---
 # 1 **Product Overview**
 

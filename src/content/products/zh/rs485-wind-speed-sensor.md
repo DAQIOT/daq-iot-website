@@ -5,7 +5,7 @@ summary: >-
   ⚙️ Product Advantages – RS485 Wind Speed Sensor (Cup Anemometer)
 image: /images/products/1780553817199834.png
 order: 31
-category: daq-sensor
+category: daq-sensor-env
 ---
 **1\. Product Overview**
 

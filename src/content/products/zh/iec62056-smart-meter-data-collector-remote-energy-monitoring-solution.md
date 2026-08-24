@@ -6,7 +6,7 @@ summary: >-
   时间
 image: /images/products/1739267848163015.png
 order: 22
-category: daq-meter
+category: daq-meter-other
 hidden: false
 ---
 **产品详情**

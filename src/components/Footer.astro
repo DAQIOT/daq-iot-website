@@ -9,7 +9,8 @@ const { lang } = Astro.props;
 const t = await getTranslations(lang);
 const base = '/' + lang;
 
-const productCats = (await getCategoriesByLang(lang)).map((c) => ({ key: c.data.slug, name: c.data.name, href: base + '/products?cat=' + c.data.slug }));
+// 页脚只展示一级分类
+const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.parent).map((c) => ({ key: c.data.slug, name: c.data.name, href: base + '/products?cat=' + c.data.slug }));
 ---
 <footer class="bg-brand-dark text-slate-300">
   <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">

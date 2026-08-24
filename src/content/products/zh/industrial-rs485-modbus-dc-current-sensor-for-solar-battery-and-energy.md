@@ -5,7 +5,7 @@ summary: >-
   RS485 Modbus DC Current Sensor for precise and non-intrusive DC current monitoring. Ideal for solar energy, battery storage, energy management, and industrial automation applications. Supports Hall effect measurement, real-time data acquisition, and seamless integration with PLC, SCADA, and IoT systems. Industrial-grade design ensures reliable, continuous operation and easy installation without interrupting power circuits.
 image: /images/products/1780563677552065.png
 order: 33
-category: daq-sensor
+category: daq-sensor-power
 ---
 # 1 **Product Overview**
 

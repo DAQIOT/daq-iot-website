@@ -6,7 +6,7 @@ summary: >-
   ．1、MK6E
 image: /images/products/1739441311387866.png
 order: 7
-category: daq-meter
+category: daq-meter-electric
 hidden: false
 ---
 **产品详情**

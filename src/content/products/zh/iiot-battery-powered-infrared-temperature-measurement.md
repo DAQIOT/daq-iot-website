@@ -4,7 +4,7 @@ summary: >-
   v安装简单，快速部署，助力物联网项目快速落地
 image: /images/products/1764918350627112.jpg
 order: 35
-category: daq-sensor
+category: daq-sensor-power
 hidden: false
 ---
 **产品详情**

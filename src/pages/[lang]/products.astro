@@ -19,9 +19,13 @@ const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const categories = await getCategoriesByLang(lang);
 const catName = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.name]));
+// 二级分类结构：parentOf[二级slug] = 一级slug
+const parentOf = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.parent || '']));
+const topLevel = categories.filter((c) => !c.data.parent);
 const cats = [
-  { key: 'all', label: t('products.all') },
-  ...categories.map((c) => ({ key: c.data.slug, label: c.data.name }))
+  { key: 'all', label: t('products.all'), level: 0 },
+  ...topLevel.map((c) => ({ key: c.data.slug, label: c.data.name, level: 0 })),
+  ...categories.filter((c) => c.data.parent).map((c) => ({ key: c.data.slug, label: c.data.name, level: 1 }))
 ];
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
@@ -33,16 +37,18 @@ const cats = [
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-10">
-    <!-- 分类筛选（前端脚本处理点击与 ?cat= 初始过滤） -->
+    <!-- 分类筛选（前端脚本处理点击与 ?cat= 初始过滤；一级分类含其下所有二级产品） -->
     <div class="flex flex-wrap gap-2 mb-10" id="catFilter">
       {cats.map((c) => (
         <button type="button" data-cat={c.key}
           class={`cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ${
+            c.level === 1 ? 'ml-1 text-xs bg-slate-50' : ''
+          } ${
             (activeCat === c.key || (activeCat === 'all' && c.key === 'all'))
               ? 'bg-brand text-white border-brand'
               : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
           }`}>
-          {c.label}
+          {c.level === 1 ? '· ' : ''}{c.label}
         </button>
       ))}
     </div>
@@ -51,6 +57,7 @@ const cats = [
       {products.map((p) => (
         <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')}
            data-category={p.data.category}
+           data-parent-category={parentOf[p.data.category] ?? ''}
            class="product-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
           {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-contain bg-slate-50" />}
           <div class="p-6">
@@ -66,7 +73,7 @@ const cats = [
   </section>
 </BaseLayout>
 
-<script>
+<script define:vars={{ parentOfMap: parentOf }}>
   const grid = document.getElementById('productGrid');
   const empty = document.getElementById('productEmpty');
   const cards = grid ? Array.from(grid.querySelectorAll('.product-card')) : [];
@@ -75,14 +82,18 @@ const cats = [
   function paint(cat: string) {
     let visible = 0;
     cards.forEach((c) => {
-      const show = cat === 'all' || (c as HTMLElement).dataset.category === cat;
-      (c as HTMLElement).style.display = show ? '' : 'none';
+      const el = c as HTMLElement;
+      // 匹配规则：全部分类 | 卡片分类=选中 | 卡片是选中的一级分类的子分类
+      const show = cat === 'all' || el.dataset.category === cat || el.dataset.parentCategory === cat;
+      el.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     if (empty) empty.classList.toggle('hidden', visible !== 0);
     btns.forEach((b) => {
-      const on = (b as HTMLElement).dataset.cat === cat;
+      const el = b as HTMLElement;
+      const on = el.dataset.cat === cat;
       b.className = 'cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
+        (el.dataset.cat !== 'all' && el.dataset.cat && parentOfMap[el.dataset.cat] === cat ? '' : '') +
         (on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
     });
   }

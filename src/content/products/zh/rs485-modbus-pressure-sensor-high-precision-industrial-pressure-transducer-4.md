@@ -5,7 +5,7 @@ summary: >-
   High-accuracy RS485 Modbus pressure transducer sensor for industrial automation, water treatment, HVAC, hydraulic systems, pumps, pipelines, and remote monitoring applications. Supports Modbus RTU communication with reliable long-distance transmission.
 image: /images/products/1781660530940977.jpg
 order: 36
-category: daq-sensor
+category: daq-sensor-env
 ---
 # 1 Product Introduction
 The DAQ-GP-PS485 Pressure Sensor is a high-performance pressure transmitter developed by Shanghai DAQ-IOT Technology Co., Ltd. It utilizes a high-precision piezoresistive sensing element as the core measurement component. Each sensor undergoes automated computer-based testing and is precisely calibrated using advanced laser trimming technology to achieve zero-point and sensitivity temperature compensation over a wide temperature range.

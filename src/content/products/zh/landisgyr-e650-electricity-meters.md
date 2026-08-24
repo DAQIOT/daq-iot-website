@@ -5,7 +5,7 @@ summary: >-
   AMI Smart Metering System Solution for Utilities & Smart Grid | Remote Energy Data Acquisition & Monitoring Platform
 image: /images/products/1755142585205824.png
 order: 19
-category: daq-meter
+category: daq-meter-electric
 ---
 The Landis E850 series of high-end gateway settlement watt-hour meters are specially used for gateway settlement of regional power grids and power plants with high voltage levels, as well as large industrial and commercial users such as electrified railways with frequent load changes. With excellent measurement accuracy, significantly high refresh rate, and long-term stable and reliable operation, they have successfully won the unanimous praise and trust of users around the world.
 

@@ -11,7 +11,8 @@ const t = await getTranslations(lang);
 const site = await getSiteData(lang);
 const base = '/' + lang;
 
-const categories = await getCategoriesByLang(lang);
+// 首页只展示一级分类（二级分类在产品页和导航下拉中展示）
+const categories = (await getCategoriesByLang(lang)).filter((c) => !c.data.parent);
 const families = categories.map((c) => ({
   slug: c.data.slug,
   name: c.data.name,

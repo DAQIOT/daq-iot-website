@@ -37,10 +37,22 @@ collections:
         pattern: '.*'
       - label: 仪器仪表采集
         field: category
-        pattern: daq-meter
+        pattern: daq-meter.*
+      - label: 电表采集
+        field: category
+        pattern: daq-meter-electric
+      - label: 其他类仪表采集
+        field: category
+        pattern: daq-meter-other
       - label: 无线传感器
         field: category
-        pattern: daq-sensor
+        pattern: daq-sensor.*
+      - label: 电力类传感器
+        field: category
+        pattern: daq-sensor-power
+      - label: 环境类传感器
+        field: category
+        pattern: daq-sensor-env
       - label: 定时抓拍
         field: category
         pattern: daq-camera
@@ -88,7 +100,7 @@ collections:
         value_field: slug
         required: true
         i18n: true
-        hint: 中文后台只显示中文分类（daq-*），英文后台只显示英文分类，德文后台只显示德文分类；产品的 category 字段按语言分别保存
+        hint: 中文后台只显示中文分类（daq-*），英文后台只显示英文分类，德文后台只显示德文分类；产品的 category 字段按语言分别保存。有二级分类的一级分类（如仪器仪表采集）请选到具体的二级分类（如电表采集）
       - label: 产品参数（选填，可添加多条）
         name: parameters
         widget: list
@@ -131,6 +143,16 @@ collections:
         value_type: int
         default: 0
         i18n: duplicate
+      - label: 父级分类（选填，留空为一级分类；有父级即二级分类）
+        name: parent
+        widget: relation
+        collection: categories
+        display_fields: [name]
+        search_fields: [name]
+        value_field: slug
+        required: false
+        i18n: true
+        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）
       - label: 分类名称
         name: name
         widget: string

@@ -5,7 +5,7 @@ summary: >-
   形畸变、电压波动与闪变和三相不平衡等电能质量问题情况日趋严重。从而引起变压器过热、网损增加、计量仪表误差、通讯干扰，不但使得供用电设备本身安全性
 image: /images/products/1745227708881825.png
 order: 17
-category: daq-meter
+category: daq-meter-other
 hidden: false
 ---
 **产品详情**
