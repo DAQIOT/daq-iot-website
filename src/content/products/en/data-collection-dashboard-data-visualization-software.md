@@ -20,19 +20,19 @@ Our company solemnly promises: What you purchase is not just a product, but also
 
 # 3 **Product features and advantages**
 
-l Drag-and-drop design for quick response to ever-changing business needs; low-code secondary development to easily meet personalized requirements.
+- Drag-and-drop design for quick response to ever-changing business needs; low-code secondary development to easily meet personalized requirements.
 
-l Rich data sources: Relational databases, big data components, data files, external data APIs, Internet of Things, etc.
+- Rich data sources: Relational databases, big data components, data files, external data APIs, Internet of Things, etc.
 
-l Drag-and-drop design: Flexibly combine to design data visualization reports like a jigsaw puzzle, with what you see is what you get.
+- Drag-and-drop design: Flexibly combine to design data visualization reports like a jigsaw puzzle, with what you see is what you get.
 
-l Multi-terminal support: Support designing visual dashboards for different resolution display terminals such as desktops, mobile phones, tablets, and tiled screens.
+- Multi-terminal support: Support designing visual dashboards for different resolution display terminals such as desktops, mobile phones, tablets, and tiled screens.
 
-l Configure interactions: Implement interactive requirements such as clicks, jumps, pop-ups, drill-downs, chart linkages, and data filtering through configuration.
+- Configure interactions: Implement interactive requirements such as clicks, jumps, pop-ups, drill-downs, chart linkages, and data filtering through configuration.
 
-l Report push: Automatically push to channels such as enterprise WeChat groups, DingTalk groups, Email, and large-screen devices.
+- Report push: Automatically push to channels such as enterprise WeChat groups, DingTalk groups, Email, and large-screen devices.
 
-l Intranet private deployment: Take autonomous control of data security.
+- Intranet private deployment: Take autonomous control of data security.
 
 # 4 **Product functions**
 

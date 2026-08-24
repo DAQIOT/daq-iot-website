@@ -33,25 +33,25 @@ Free IoT solution consulting services!
 
 ##  1.1 **Electrical Characteristics**
 
-l Power supply: 9-36 V DC
+- Power supply: 9-36 V DC
 
-l Working power consumption: 1~2W
+- Working power consumption: 1~2W
 
 ## 1.2 **Communication****characteristics**
 
-l Wireless transmission method: LoRa / WiFi
+- Wireless transmission method: LoRa / WiFi
 
-l Communication protocol: MQTT/TCP/UDP/HTTP/SSL/Modbus RTU , other protocols can be customized
+- Communication protocol: MQTT/TCP/UDP/HTTP/SSL/Modbus RTU , other protocols can be customized
 
-l Data forwarding: any public network server
+- Data forwarding: any public network server
 
-l Number of server centers: Supports reporting data to up to 7 cloud servers at the same time.
+- Number of server centers: Supports reporting data to up to 7 cloud servers at the same time.
 
-l Heartbeat packet: supports custom heartbeat packets, which can be set to signal strength.
+- Heartbeat packet: supports custom heartbeat packets, which can be set to signal strength.
 
-l Registration package: supports custom registration package, which can be set to IMEI code.
+- Registration package: supports custom registration package, which can be set to IMEI code.
 
-l Positioning: Support L B S base station positioning, convenient for querying device location.
+- Positioning: Support L B S base station positioning, convenient for querying device location.
 
 # 2 **Core advantages of products**
 

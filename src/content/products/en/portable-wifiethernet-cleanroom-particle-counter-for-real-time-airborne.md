@@ -52,47 +52,47 @@ Free Internet of Things solution consulting services!
 
 ## 4.2 **electrical character**
 
-l Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket)
+- Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket)
 
-l Charging mode: 5V DC power supply (power interface: type-C)
+- Charging mode: 5V DC power supply (power interface: type-C)
 
-l Battery capacity: 2,000 mA
+- Battery capacity: 2,000 mA
 
-l Operating current: 550 mA
+- Operating current: 550 mA
 
-l Standby current: 200 mA
+- Standby current: 200 mA
 
 ## 4.3 **Communication characteristics**
 
-l Transmission mode: LoRa/LoRaWAN/ RJ 45 / WiFi
+- Transmission mode: LoRa/LoRaWAN/ RJ 45 / WiFi
 
-l Communication protocol: MQTT / TCP can customize other protocols
+- Communication protocol: MQTT / TCP can customize other protocols
 
-l Data forwarding: support any public network server
+- Data forwarding: support any public network server
 
-l Heartbeat packet: Support for a custom heartbeat packet.
+- Heartbeat packet: Support for a custom heartbeat packet.
 
-l Registration package: support custom registration package, can be set to IMEI code.
+- Registration package: support custom registration package, can be set to IMEI code.
 
 ## 4.4 **structural property**
 
-l Antenna type: rubber rod type external antenna
+- Antenna type: rubber rod type external antenna
 
-l Screen: 480 * 480 color LCD screen (capacitive touch screen)
+- Screen: 480 * 480 color LCD screen (capacitive touch screen)
 
-l Material: ABS plastic (enclosure)
+- Material: ABS plastic (enclosure)
 
-l Weight: 800g
+- Weight: 800g
 
-l Body size: 215 * 114 * 48MM
+- Body size: 215 * 114 * 48MM
 
-l Main body installation method: paste, screw fastening and installation
+- Main body installation method: paste, screw fastening and installation
 
 ## 4.5 work environment
 
-l temperature:-10℃~60℃
+- temperature:-10℃~60℃
 
-l Humidity: 0% ~ 95% RH
+- Humidity: 0% ~ 95% RH
 
 # 5 **Product core advantages**
 

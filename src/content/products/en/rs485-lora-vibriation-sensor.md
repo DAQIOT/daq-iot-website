@@ -22,14 +22,10 @@ It can be applied to online measurement of vibration speed, acceleration, and te
 
 **Our company solemnly promises:**
 
-# **What you have purchased is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= )**
-
-# **This product only requires ordinary workers to connect the power and install it on site! No debugging is needed!**
-
-# **We provide free remote guidance and remote configuration and debugging services, and send the data to the cloud platform specified by the user.**
-
-# **Free IoT solution consulting services!**
-
+# What you have purchased is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= )
+# This product only requires ordinary workers to connect the power and install it on site! No debugging is needed!
+# We provide free remote guidance and remote configuration and debugging services, and send the data to the cloud platform specified by the user.
+# Free IoT solution consulting services!
 #  3 **Product Features**
 
 ##  3.1 **RS485Vibration sensor characteristics**

@@ -13,12 +13,10 @@ category: wirelesssensor
 
 # Application areas: Widely used in power, communication, transportation, environmental protection, petrochemical, steel and other fields to monitor the current or voltage consumption of AC and DC equipment. Standard RS-485 digital interface output to achieve interconnection with computers, PLCs, industrial gateways, touch screens and other host computers.
 
-# **2 Ordering specifications and selection**
-
+# 2 Ordering specifications and selection
 #  Support special customization of three parameters: input range, output type, and working power supply.
 
-# **3 Service Concept**
-
+# 3 Service Concept
 **Our company solemnly promises:**
 
 You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**

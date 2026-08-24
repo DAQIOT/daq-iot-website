@@ -12,8 +12,7 @@ The SC-GP-DP wireless dew point online monitor is an industrial-grade, compact, 
 
 Application areas: It is suitable for the semiconductor industry and a variety of industrial applications, such as pure gas, dryers, glove boxes, drying chambers, additive production, compressed air, and other applications requiring high-precision humidity control.
 
-# **2** **Ordering Specifications and Selection**
-
+# 2 Ordering Specifications and Selection
 | **model**     | **Features**                                                                                  |
 |---------------|-----------------------------------------------------------------------------------------------|
 | DAQ-GP-DPLoRa | LoRa transmission, 12V DC power supply                                                        |
@@ -26,7 +25,6 @@ Application areas: It is suitable for the semiconductor industry and a variety o
 
 # 3 **Service Philosophy**
 
-# ****
 
 **Our company solemnly promises:**
 

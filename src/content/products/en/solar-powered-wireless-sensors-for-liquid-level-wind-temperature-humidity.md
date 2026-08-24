@@ -39,17 +39,17 @@ Free IoT solution consulting services!
 
 ##  4.1 **Acquisition characteristics**
 
-l Acquisition interface : RS485
+- Acquisition interface : RS485
 
-l External output voltage : 5V/12V @1A
+- External output voltage : 5V/12V @1A
 
 ## 4.2 **Electrical Characteristics**
 
-l Solar panel power : 4.2W
+- Solar panel power : 4.2W
 
-l Device power consumption: < =3W (default)
+- Device power consumption: < =3W (default)
 
-l Battery capacity : 4Ah (expandable)
+- Battery capacity : 4Ah (expandable)
 
 ## 4.3 **Communication****characteristics**
 
@@ -59,13 +59,13 @@ Customizable WiFi/LoRa and other communication methods
 
 ## 4.4 **Structural characteristics**
 
-l of the main unit : 175 × 165 × 45 mm
+- of the main unit : 175 × 165 × 45 mm
 
-l Protection level : IP65
+- Protection level : IP65
 
 ## 4.5 **Storage****environment**
 
-l Temperature -20 ℃ ～ 60 ℃
+- Temperature -20 ℃ ～ 60 ℃
 
 # 5 **Core advantages of products**
 

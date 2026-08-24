@@ -7,16 +7,14 @@ image: /images/products/1781660530940977.jpg
 order: 36
 category: wirelesssensor
 ---
-# **1 Product Introduction******
-
+# 1 Product Introduction
 The DAQ-GP-PS485 Pressure Sensor is a high-performance pressure transmitter developed by Shanghai DAQ-IOT Technology Co., Ltd. It utilizes a high-precision piezoresistive sensing element as the core measurement component. Each sensor undergoes automated computer-based testing and is precisely calibrated using advanced laser trimming technology to achieve zero-point and sensitivity temperature compensation over a wide temperature range.
 
 The integrated signal conditioning and amplification circuit converts the sensor output into a standard output signal, fully leveraging the advantages of the sensing element. As a result, the pressure/level transmitter delivers outstanding performance and reliability in demanding industrial environments.
 
 Featuring excellent resistance to electromagnetic interference, overload pressure, and mechanical shock, the DAQ-GP-PS485 also offers low temperature drift, high stability, and exceptional measurement accuracy. These characteristics make it an ideal pressure measurement instrument for industrial automation, process control, water treatment, energy management, hydraulic systems, and various Industrial IoT (IIoT) applications.
 
-# **2 Working Principle******
-
+# 2 Working Principle
 The pressure sensor utilizes a**Wheatstone bridge** diffused onto a silicon diaphragm. When pressure from the measured medium is applied to the sensing element, the resistance values of the bridge arms change due to the **piezoresistive effect** , generating a differential voltage signal.
 
 This differential signal is then processed and amplified by a dedicated signal conditioning circuit, which converts it into a standard analog or digital output signal proportional to the corresponding pressure range.
@@ -68,12 +66,9 @@ As an expert in industrial data collection, Shucai IoT provides free IoT solutio
 | **Temperature Drift**              |  ±0.01% FS/°C (Within Compensation Range)                                                   |
 | **Protection Rating**              |  IP65 / IP67                                                                                |
 
-# **5 Product Dimensions******
-
-# **6 Wiring Connection******
-
-# **7 Precautions for Use******
-
+# 5 Product Dimensions
+# 6 Wiring Connection
+# 7 Precautions for Use
 1.**Installation must be carried out only when the system is depressurized and the power supply is disconnected.**
 
 2\. **Do not use the transmitter to measure media that are incompatible with the wetted materials of the sensor.**
@@ -92,8 +87,7 @@ As an expert in industrial data collection, Shucai IoT provides free IoT solutio
 
 9\. The sensing element is a precision component. Users should not disassemble the sensor or touch the pressure diaphragm, as this may result in permanent damage and affect measurement performance.
 
-### **Safety Notes******
-
+### Safety Notes
 · Read the operating instructions carefully before installation and use.
 
 · Follow all applicable electrical and safety regulations.

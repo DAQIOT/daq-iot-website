@@ -94,7 +94,7 @@ Size: Standard 1U chassis size
 
 ## 4.6 **Work****Environment**
 
-l Temperature -30°C～75°C, humidity 0～95%
+- Temperature -30°C～75°C, humidity 0～95%
 
 # 5 **Core advantages of products**
 

@@ -27,9 +27,9 @@ Free Internet of Things solution consulting services!
 
 ##  3.1 **electrical character**
 
-l Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket, positive and negative outside inside)
+- Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket, positive and negative outside inside)
 
-l Working power consumption: less than 5W
+- Working power consumption: less than 5W
 
 ## 3.2 **Communication characteristics**
 
@@ -51,7 +51,7 @@ Positioning: Support LBS base station positioning to facilitate the query of dev
 
 ##  3.4 **work environment**
 
-l Temperature-30°C~75°C, humidity of 0~95%
+- Temperature-30°C~75°C, humidity of 0~95%
 
 # 4 **Product core advantages**
 

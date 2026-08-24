@@ -14,10 +14,8 @@ The SC-LP-IRLoRaWAN wireless infrared meter reading terminal is a universal elec
 
 The wireless infrared meter reading terminal adopts LoRaWAN communication mode to overcome the wireless communication obstruction caused by the special environment on site, greatly simplifying the on-site deployment time and reducing the construction cost . The working status of the equipment is divided into three states: sleep, collection and storage, and activation and reporting. After collecting data, it can automatically enter the low power consumption state to reduce power consumption and extend working time. This terminal supports meter reading scenarios of various meters such as electric meters and gas meters with infrared communication interfaces, and is suitable for electric energy meter data collection, smart city data collection, power monitoring data collection, energy conservation and emission reduction data monitoring system data collection, energy consumption monitoring system data collection, photovoltaic system data collection, intelligent monitoring data collection, robot data collection, smart security system data collection, cloud platform system data collection; electric energy meter calibration test bench; especially suitable for meter reading in the case where the lead seal of the total meter of the power supply bureau and the state grid electric meter is completely closed and no seal can be opened.
 
-# ****
 
-# **2 High-Precision Energy Data Acquisition**
-
+# 2 High-Precision Energy Data Acquisition
 **Acquisition characteristics**
 
 Infrared carrier frequency: 38 kHz

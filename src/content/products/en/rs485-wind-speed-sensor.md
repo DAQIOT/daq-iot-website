@@ -12,7 +12,6 @@ The DAQ-GP-WSRS485 wind speed sensor, manufactured by Shanghai Data Acquisition 
 
 **2\. Service Philosophy**
 
-# ****
 
 **Our company solemnly promises:**
 
@@ -24,10 +23,8 @@ We provide free remote guidance and remote configuration and debugging services,
 
 We offer free IoT solution consultation services!
 
-# ****
 
-# **3\. Functional Features**
-
+# 3\. Functional Features
 n Measurement range: 0-60 m/s, resolution: 0.1 m/s
 
 n Electromagnetic interference protection
@@ -42,10 +39,7 @@ n The equipment's structure and weight have been carefully designed and distribu
 
 n Standard ModBus-RTU communication protocol, easy to connect
 
-# **4\. Main parameters**
-
-# ****
-
+# 4\. Main parameters
 | DC power supply (default)            |  5 ~ 30V DC                                                                                                                                                                                                             |
 |--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Maximum power consumption            | 0.2W (12V power supply)                                                                                                                                                                                                 |
@@ -58,10 +52,8 @@ n Standard ModBus-RTU communication protocol, easy to connect
 
 Unit: millimeters
 
-# ****
 
-# **5\. Interface Description and Installation**  
-
+# 5\. Interface Description and Installation
 Wide voltage power input of 10~30V is acceptable. When wiring the 485 signal lines, ensure that the A and B lines are not reversed, and that the addresses of multiple devices on the bus do not conflict.
 
 | project       | Line color            | illustrate                        |
@@ -73,12 +65,8 @@ Wide voltage power input of 10~30V is acceptable. When wiring the 485 signal lin
 
 Flange mounting is used, and the threaded flange connection firmly fixes the lower tube of the wind speed sensor to the flange. The base is Ø79.8mm, and four Ø4.5mm mounting holes are drilled on the Ø68mm circumference. Bolts are used to firmly fix it to the bracket, keeping the entire instrument at the optimal level and ensuring the accuracy of wind speed data. The flange connection is convenient to use and can withstand greater pressure.
 
-# **6\. Communication Protocol**
-
-# ****
-
-## **6.1 Basic Communication Parameters**
-
+# 6\. Communication Protocol
+## 6.1 Basic Communication Parameters
 | Editor code      | 8 -bit binary                                                                                                                           |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | Data bits        | 8 -bit                                                                                                                                  |
@@ -87,10 +75,7 @@ Flange mounting is used, and the threaded flange connection firmly fixes the low
 | Error Validation | CRC (Cyclic Redundancy Code)                                                                                                            |
 | baud rate        | 2400 bit/s , 4800 bit/s , 9600 bit/s , 19200 bit /s , 38400 bit /s , 57600 bit/s , or 115200 bit/s . The factory default is 4800 bit/s. |
 
-## **6.2 Data Frame Format Definition**
-
-## ****
-
+## 6.2 Data Frame Format Definition
 The Mod Bus-RTU communication protocol is adopted , with the following format:
 
 Initial structure ≥ 4 bytes time
@@ -131,16 +116,13 @@ Slave response frame structure:
 |--------------|---------------|------------------|-------------|------------------|---------------|-------------------|
 | 1 byte       | 1 byte        | 1 byte           | 2 bytes     | 2 bytes          | 2 bytes       | 2 bytes           |
 
-## ****
 
 | Register address |  PLC or configuration address | content                                                             | operate   |
 |------------------|-------------------------------|---------------------------------------------------------------------|-----------|
 | 0000 H           | 40001                         | Instantaneous wind speedUploaded data is 10 times the actual value. | Read-only |
 
-## ****
 
-## **6.4 Examples and Explanations of Communication Protocols**
-
+## 6.4 Examples and Explanations of Communication Protocols
 **Example: Read the wind speed value at device address 0x01**
 
 Query frame:

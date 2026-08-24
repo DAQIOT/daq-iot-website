@@ -22,19 +22,19 @@ Free IoT solution consulting services!
 
 # 3 **Product Features and Advantages**
 
-l Drag-and-drop design allows quick response to changing business needs; low-code secondary development allows easy satisfaction of personalized needs.
+- Drag-and-drop design allows quick response to changing business needs; low-code secondary development allows easy satisfaction of personalized needs.
 
-l Rich data sources: relational databases, big data components, data files, external data APIs, the Internet of Things, etc.
+- Rich data sources: relational databases, big data components, data files, external data APIs, the Internet of Things, etc.
 
-l Drag-and-drop design: Flexible combination, design data visualization reports like a puzzle, what you see is what you get.
+- Drag-and-drop design: Flexible combination, design data visualization reports like a puzzle, what you see is what you get.
 
-l Multi-terminal support: Supports designing large-screen visualization for display terminals with different resolutions, such as computers, mobile phones, pads, and splicing screens.
+- Multi-terminal support: Supports designing large-screen visualization for display terminals with different resolutions, such as computers, mobile phones, pads, and splicing screens.
 
-l Configure interaction: Configure to realize click, jump, pop-up window, drill down, chart linkage, data filtering and other interactive needs.
+- Configure interaction: Configure to realize click, jump, pop-up window, drill down, chart linkage, data filtering and other interactive needs.
 
-l Report push: fully automatically pushed to enterprise WeChat groups, DingTalk groups, Email, large-screen devices and other channels.
+- Report push: fully automatically pushed to enterprise WeChat groups, DingTalk groups, Email, large-screen devices and other channels.
 
-l Intranet privatization deployment: independent control of data security.
+- Intranet privatization deployment: independent control of data security.
 
 # 4 **Product Features**
 

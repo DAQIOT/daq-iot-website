@@ -6,8 +6,7 @@ image: /images/products/1780567691403469.png
 order: 12
 category: instrumentacquisition
 ---
-# **1 Product Overview**
-
+# 1 Product Overview
 **DAQ-GP-OCR500 All-in-One Image Recognition Camera****** Launched by **Shanghai Data Acquisition IoT Technology Co., Ltd.** , the DAQ-GP-OCR500 is a 5-megapixel industrial-grade intelligent visual acquisition terminal. Integrating high-definition image capture, OCR character recognition, pointer dial identification, intelligent analysis, and wired network transmission, it provides an integrated solution for **non-contact automatic reading, remote monitoring, and anomaly alerting** tailored to scenarios such as **instruments & meters, power distribution cabinets, equipment in computer rooms, and industrial sites**.
 
 Featuring a **polarization anti-reflection lens** \+ **VCM auto-focus** , the device effectively eliminates screen reflections and glare, ensuring sharp imaging at close distances. It supports **Ethernet/RS485 wired transmission** and outputs recognition data via **Modbus RTU/TCP standard protocols**. This enables **unattended operation** , automatic meter reading, real-time status monitoring, energy management, and safety pre-alerting.
@@ -24,68 +23,60 @@ We provide free remote guidance, remote configuration and debugging services, an
 
 As an expert in industrial data collection, Shucai IoT provides free IoT solution consulting services!
 
-# **3 Implementation Standard**
-
+# 3 Implementation Standard
 GB/T 28181—2016 Technical Requirements for Information Transmission, Exchange and Control in Public Security Video Surveillance Networking Systems.
 
-# **4 Product Specifications & Features**
+# 4 Product Specifications & Features
+## 4.1Image & Recognition Features
+- Image Sensor: 1/2.7-inch CMOS
 
-## **4****.1****Image & Recognition Features**
+- Effective Pixels: 5 Megapixels (2880×1620@25fps)
 
-l Image Sensor: 1/2.7-inch CMOS
+- Lens: 2.8mm fixed focus, VCM auto-focus, clear macro imaging at 10-50cm 2.8mm
 
-l Effective Pixels: 5 Megapixels (2880×1620@25fps)
+- Optical Characteristics: Polarizing Lens + AR Anti-Reflection Coating, which suppresses reflections and glare
 
-l Lens: 2.8mm fixed focus, VCM auto-focus, clear macro imaging at 10-50cm 2.8mm
+- Recognition Capability: OCR digital recognition, pointer dial recognition, supporting various meter recognition OCR
 
-l Optical Characteristics: Polarizing Lens + AR Anti-Reflection Coating, which suppresses reflections and glare
+- Image Enhancement: 3D Digital Noise Reduction, Backlight Compensation, Strong Light Suppression, Electronic Shutter
 
-l Recognition Capability: OCR digital recognition, pointer dial recognition, supporting various meter recognition OCR
+- Encoding Format: H.265/H.264 Dual Encoding, Bit Rate Adjustable from 64Kbps to 3MbpsH.265/H.264
 
-l Image Enhancement: 3D Digital Noise Reduction, Backlight Compensation, Strong Light Suppression, Electronic Shutter
+- Storage: Supports MicroSD Card Local Storage
 
-l Encoding Format: H.265/H.264 Dual Encoding, Bit Rate Adjustable from 64Kbps to 3MbpsH.265/H.264
+## 4.2Electrical Characteristics
+- Power Supply: DC12V
 
-l Storage: Supports MicroSD Card Local Storage
+- Power Consumption:≤5W
 
-## **4****.2****Electrical Characteristics**
+- Interfaces:RJ45 10/100M、RS485、Alarm Input/Output
 
-l Power Supply: DC12V
+## 4.3Communication Characteristics
+- Network: Wired Ethernet
 
-l Power Consumption:≤5W
+- Serial Port: Wired RS485RS485
 
-l Interfaces:RJ45 10/100M、RS485、Alarm Input/Output
+- Communication Protocol: Modbus RTU、Modbus TCP
 
-## **4****.3****Communication Characteristics**
+- Data Reporting: Multi-Host/Multi-Platform Access Supported
 
-l Network: Wired Ethernet
+- Remote Management: Remote Parameter Configuration, Remote Upgrade, Remote Preview
 
-l Serial Port: Wired RS485RS485
+## 4.4Structural Characteristics
+- Material: ABS + Metal BracketABS
 
-l Communication Protocol: Modbus RTU、Modbus TCP
+- Protection Level: IP67 (Dustproof and Waterproof)
 
-l Data Reporting: Multi-Host/Multi-Platform Access Supported
+- Installation Method: U-shaped Bracket, Adapter Bracket, Back Adhesion/Wall Mounting
 
-l Remote Management: Remote Parameter Configuration, Remote Upgrade, Remote Preview
+- Dimensions: Approximately 57.9mm×57.9mm×30.1mm, compact and easy to install
 
-## **4****.4****Structural Characteristics**
+## 4.5Working Environment
+- Temperature: -30℃～70℃
 
-l Material: ABS + Metal BracketABS
+- Humidity: 0～95% (No Condensation)
 
-l Protection Level: IP67 (Dustproof and Waterproof)
-
-l Installation Method: U-shaped Bracket, Adapter Bracket, Back Adhesion/Wall Mounting
-
-l Dimensions: Approximately 57.9mm×57.9mm×30.1mm, compact and easy to install
-
-## **4****.5****Working Environment**
-
-l Temperature: -30℃～70℃
-
-l Humidity: 0～95% (No Condensation)
-
-# **5 Core Advantages of Product**
-
+# 5 Core Advantages of Product
 u **Non-contact Recognition: No unpacking, no wire breaking, no impact on equipment operation, safe and compliant**
 
 u **Strong Anti-interference Imaging: Polarization anti-glare, auto-focus, clear readability of instrument panels/LED screens**
@@ -98,12 +89,10 @@ u **Remote Maintenance-free: Remote configuration, remote upgrade, automatic cap
 
 u **Minimal Deployment: Small size, quick installation, stable wired transmission, reducing construction costs**
 
-# **6 Application Scenarios**
-
+# 6 Application Scenarios
 Remote visual meter reading for State Grid/commercial and industrial electricity meters, computer room power distribution cabinets, UPS, battery pack status monitoring, industrial instruments, pressure gauges, flow meters, temperature gauge unattended operation, remote collection of gas/water/heat station instruments, photovoltaic power stations, visual monitoring of energy storage system operation status, factory production lines, and digital recognition of equipment panels.
 
-# **7 Installation Notes**
-
+# 7 Installation Notes
 1) Before installation, confirm that the power supply is DC12V and the positive and negative poles must not be reversed;
 
 2) The lens should be directly facing the instrument display area, with a distance of 10–50cm, preferably installed at a vertical angle, and strong backlight should be avoided;

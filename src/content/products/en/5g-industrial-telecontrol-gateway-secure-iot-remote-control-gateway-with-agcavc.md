@@ -6,14 +6,12 @@ image: /images/products/1755069732437922.png
 order: 27
 category: plcacquisition
 ---
-# **1 Product Overview**
-
+# 1 Product Overview
 DAQ-GP-VCMT5G all- in-one 5G fusion terminal is a control terminal launched by Shanghai Shucai IoT Technology Co., Ltd. that integrates 5G communication, vertical encryption, telecontrol communication, and AGC/AVC functions .
 
 It adopts advanced embedded LINUX operating system and flexible modular design, and adopts fanless, high performance, low power consumption, flexible installation and other design concepts. Considering intensive deployment, saving equipment investment cost , saving installation space and other aspects, it is a multifunctional and integrated acquisition and communication equipment. It integrates the functions of 5G communication terminal, vertical encryption, telemotor and AGC/AVC control, and meets the function of 380V, 10 KV and above distributed photovoltaic access to the dispatching main station in direct acquisition mode, and performs automatic power control at the same time. It adopts 5G wireless access mode to connect to the grid. As an important supplement to wired access , it can realize the unified dispatch of all local power plants and distributed photovoltaics by the power dispatching center , realize the power system access of distributed photovoltaic power stations, and meet the requirements of "observable, measurable, adjustable and controllable" of distributed photovoltaics. 
 
-# **2 Service Concept**
-
+# 2 Service Concept
 **Our company solemnly promises:**
 
 You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
@@ -24,8 +22,7 @@ We provide free remote guidance, remote configuration and debugging services, an
 
 Free IoT solution consulting services!
 
-# **3 Core advantages of the product**
-
+# 3 Core advantages of the product
 ü High-performance embedded processor Cortex-A7, 800MHz , capable of processing up to 30,000 measurement points in real time;
 
 ü 512MB RAM , 8GB eMMC storage;
@@ -48,34 +45,28 @@ Free IoT solution consulting services!
 
 ü Supports data storage and storage breakpoint resumption.
 
-# **4 Main functions**
-
-## **4.1****Data Collection**
-
+# 4 Main functions
+## 4.1Data Collection
 ###  The product supports data collection of equipment with multiple protocols, and the corresponding protocols support more than 300 communication protocols including industry, power, environmental protection and other industries, such as MODBUS/CDT/101/102/103/104/IEC61850/GOOSE/DLT645/MQTT/HTTP, etc., to meet various on-site needs. In the new energy industry, various inverter communication protocols are accumulated, supporting data reading, remote control switch, remote adjustment of inverter active power, reactive power, power factor, voltage regulation, etc.
 
 Figure: Data collection and broadcast remote control
 
-## **4.2 Data Storage**
-
+## 4.2 Data Storage
 Supports data storage. The machine has built-in 8G storage space, which can meet various data storage needs, offline caching, breakpoint resume and other functions. It supports built-in applications for data storage and automatically retransmits offline data when transmission is restored.
 
-## **4.3 Data Forwarding**
-
+## 4.3 Data Forwarding
 The all-in-one 5G fusion terminal itself has a remote motor function, supports various platforms/power dispatching 104, distribution network 101, CDT and other communication protocols, supports simultaneous transmission of multiple data channels, such as 101/104, and supports single-channel forwarding of multiple clients to meet the communication needs of various dispatching master stations.
 
 Figure: 104 master station software collects and remotely adjusts all-in-one 5G converged terminal data
 
-## **4.4 Encrypted transmission**
-
+## 4.4 Encrypted transmission
 ![4.4.png](/static/upload/image/20250813/1755069853117803.png) all-in-one 5G converged terminal has a built-in micro-vertical encryption device, which performs encrypted transmission with the dispatching master station to ensure data security. Reliable transmission and seamless connection with various vertical encryption devices of the main station, such as Kedong, Nanrui, etc.
 
 Figure : Kedong encryption configuration
 
 Figure: NARI encryption configuration
 
-## **4.5 AGC/AVC Control**
-
+## 4.5 AGC/AVC Control
 all-in-one 5G converged terminal supports the dispatching of complete AGC/AVC control functions such as active control regulation, reactive control regulation, power factor regulation, and voltage regulation . It responds quickly and automatically performs adjustments to maintain the target active, reactive, and voltage values issued by the master station . It is compatible with multiple types of inverter group control and group adjustment, reactive compensation devices, and inverter reactive load balancing, and supports multiple execution algorithms. Meet the safe and stable operation requirements of various power plants.
 
 picture AGC/AVC telemetry points
@@ -88,12 +79,10 @@ picture AGC/AVC remote adjustment point
 
 picture All-in-one 5G converged terminal response master station AGC/AVC control
 
-## **4.6 5G high-speed communication**
-
+## 4.6 5G high-speed communication
 all-in-one 5G converged terminal supports the latest generation of mobile communication technology, 5G communication, and data communication is reliable, efficient, stable, and low-latency. It can maintain high-speed communication with the main station in real time and control the response within 50ms .
 
-## **4.7 Protocol Library List**
-
+## 4.7 Protocol Library List
 The all-in-one 5G converged terminal runs the LPC data acquisition core software platform ( LPC software for short ). Each communication protocol is an independent SO library in the LPC software . When the device starts, the LPC software reads the configured project and dynamically loads the required SO library according to the configured project. When developing a new communication protocol or expanding an existing communication protocol, it does not affect the stability of other communication protocols in the original system.
 
 currently supported by all-in-one 5G converged terminals are: 
@@ -130,12 +119,9 @@ currently supported by all-in-one 5G converged terminals are:
 
 ü Various inverters for new energy, weather station protocols, etc.
 
-# **5 Hardware Interface**
-
-## **5.1 Technical parameters**
-
-### **5.1.1****Hardware Parameters******
-
+# 5 Hardware Interface
+## 5.1 Technical parameters
+### 5.1.1Hardware Parameters
 | **name******                 | **parameter******                                                                                             |
 |------------------------------|---------------------------------------------------------------------------------------------------------------|
 | CPU                          | Cortext-A8 CPU 800MHz                                                                                         |
@@ -157,10 +143,8 @@ currently supported by all-in-one 5G converged terminals are:
 | Cooling method               | No fan, natural air cooling                                                                                   |
 | other                        | It has independent hardware watchdog and GPIO control functions; the whole machine has no rotating equipment. |
 
-## **5.2 Product size and appearance**
-
-### **5.2.1 Product size**
-
+## 5.2 Product size and appearance
+### 5.2.1 Product size
 picture Product Dimensions
 
 picture Front view of the box
@@ -198,8 +182,7 @@ picture Front view of the box
 
 Back view of the box
 
-### **5.2.2 Power Interface**
-
+### 5.2.2 Power Interface
 The power input is AC/DC, the AC input range is 85~264V , and the DC input range is 100~370V
 
 | Identifier | Functional Description |
@@ -209,8 +192,7 @@ The power input is AC/DC, the AC input range is 85~264V , and the DC input range
 | 3          | null                   |
 | 4          | Grounding              |
 
-### **5.2.3 Serial port and SIM card interface definition**
-
+### 5.2.3 Serial port and SIM card interface definition
 the Nth serial port:
 
 | serial number | Identifier | Functional Description                    |
@@ -235,8 +217,7 @@ Supported SIM card types: standard SIM card 25mm*15mm (mini SIM card). To instal
 
 (Note : SIM card insertion and removal operations require power off, and SIM card insertion and removal with power on is not supported)
 
-### **5.2.4 Network Interface**
-
+### 5.2.4 Network Interface
 | Classification | Identifier                                  | Functional Description                      |
 |----------------|---------------------------------------------|---------------------------------------------|
 | Telecontrol    | LAN1                                        | Remote control network port, 192.168.11.177 |
@@ -244,10 +225,8 @@ Supported SIM card types: standard SIM card 25mm*15mm (mini SIM card). To instal
 | encryption     | ETH1                                        | Encrypted intranet port, 169.254.200.200    |
 | Console        | Encrypted console port                      |
 
-# **6 Typical Networking**
-
-## **6.1 Power dispatching communication network**
-
+# 6 Typical Networking
+## 6.1 Power dispatching communication network
 Figure 1. Power dispatching communication network
 
 Through 5G For CPE communication, the station end adopts an integrated acquisition and communication device that integrates multiple machines into one. It also has functions such as wireless/wired communication , encryption chip, telecontrol transmission, AGC substation, etc. The photovoltaic inverter signal communicates through a trusted WLAN network, power carrier network or 485 wired network and an all-in-one 5G fusion terminal.
@@ -256,10 +235,8 @@ the 5G converged communication terminal communicates with the wireless security 
 
 through 5G wireless/wired communication, the vertical communication channel adopts access control , authentication and encryption measures. At the same time , it can correctly receive and automatically execute the instructions issued by the AGC master station to adjust the inverter output power.****
 
-# **7 Product Installation**
-
-## **7.1 Pre-installation check**
-
+# 7 Product Installation
+## 7.1 Pre-installation check
 Check the outer packaging:
 
 the All-in-One 5G Converged Terminal, please check the packaging for visible damage, such as holes, cracks , or other signs of possible internal damage. If there are any abnormalities in the packaging, do not unpack it and contact your dealer as soon as possible.
@@ -272,8 +249,7 @@ illustrate:
 
 For the number of items delivered with the box, please refer to the "Product Packing List" in the packaging box.
 
-## **7.2 Preparing the Installation Tool**
-
+## 7.2 Preparing the Installation Tool
 | **tool******                 | **model******                         | **use******                                                                    |
 |------------------------------|---------------------------------------|--------------------------------------------------------------------------------|
 | Impact drill                 | Configure drill bit 6mm Drill bit 8mm | Used for drilling holes in the wall when wall-mounted installation is adopted. |
@@ -284,8 +260,7 @@ For the number of items delivered with the box, please refer to the "Product Pac
 | Phillips screwdriver         | 6 x 100                               | Used to connect communication cable screws.                                    |
 | Cable Ties                   | -                                     | Bundle the cables.                                                             |
 
-## **7.3 Select the device installation location**
-
+## 7.3 Select the device installation location
 Ø When choosing an installation location, consider the following requirements:
 
 Ø all-in-one 5G converged terminal is IP20 . Do not install the all-in-one 5G converged terminal outdoors.
@@ -300,17 +275,15 @@ For the number of items delivered with the box, please refer to the "Product Pac
 
 Ø all-in-one 5G converged terminal should maintain a certain installation distance from surrounding objects.
 
-## **7.4 How to install an all-in-one 5G converged terminal**
+## 7.4 How to install an all-in-one 5G converged terminal
+### 7.4.1 Standard rail installation
+- Good rack grounding is an important guarantee for equipment anti-static, anti-leakage, lightning protection, and anti-interference, so ensure that the rack grounding wire is installed correctly;
 
-### **7.4.1 Standard rail installation**
+- Equipment installed in the rack is generally installed from bottom to top to avoid overloading;
 
-l Good rack grounding is an important guarantee for equipment anti-static, anti-leakage, lightning protection, and anti-interference, so ensure that the rack grounding wire is installed correctly;
+- the all-in-one 5G converged terminal to avoid accidents;
 
-l Equipment installed in the rack is generally installed from bottom to top to avoid overloading;
-
-l the all-in-one 5G converged terminal to avoid accidents;
-
-l 
+- 
 
 |     |
 |     |    |
@@ -324,8 +297,7 @@ Ensure heat dissipation and air circulation in the rack;
 
 all-in-one 5G converged terminal is installed in a 19- inch standard rack.
 
-### **Procedure**
-
+### Procedure
 Step 1 : Install the two L -shaped brackets in the accessories on the left and right sides of the all-in-one 5G converged terminal, and fix them with the screws provided in the accessories;
 
 Step 2 : Place the all-in-one 5G converged terminal in an appropriate position in the rack, preferably supported by a bracket;
@@ -334,8 +306,7 @@ Step 3 : Use rack screws to fix the L -shaped brackets to the guide grooves fixe
 
 Step 4 : Tighten the rack screws with a screwdriver and make sure they are not loose.
 
-# ******8****Electrical connections******
-
+# 8Electrical connections
 Application Overview:
 
 This section mainly introduces the specific operations of electrical connection between the all-in-one 5G converged terminal and inverters, combiner boxes, power quality meters, environmental monitors, electric meters and other equipment .
@@ -352,8 +323,7 @@ When making electrical connections, ensure that all cables are securely connecte
 
 the all-in-one 5G converged terminal before completing the electrical connections.
 
-## **8.1****Connection port description******
-
+## 8.1Connection port description
 Port Description:
 
 For the bottom diagram of the box body of the all-in-one 5G converged terminal and the port function description, please refer to the bottom interface of the box body in the appearance description , as shown in the figure below .
@@ -370,8 +340,7 @@ Notice:
 
 all-in-one 5G converged terminal connects to devices via a serial port ( the number of devices connected to a single serial port is recommended not to exceed 32 )
 
-## **8.2****Connecting the protective ground wire******
-
+## 8.2Connecting the protective ground wire
 Application overview: Through the grounding wire, the shell grounding terminal of the all-in-one 5G converged terminal is connected to the on-site grounding bar to achieve the purpose of grounding protection, which can effectively protect the equipment;
 
 Steps:

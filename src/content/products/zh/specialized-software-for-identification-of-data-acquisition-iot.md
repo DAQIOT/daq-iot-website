@@ -9,6 +9,7 @@ hidden: false
 ---
 **产品详情**
 
-点击链接查看软件详情
+数采物联仪表识别专用软件，点击下方链接查看软件详情：
 
-https://www.yidianzixun.com/article/0vfbpJts
+https://daq-iot.blog.csdn.net/article/details/122493114
+

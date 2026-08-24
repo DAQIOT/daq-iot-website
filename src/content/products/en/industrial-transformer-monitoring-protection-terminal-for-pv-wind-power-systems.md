@@ -63,23 +63,22 @@ Free IoT solution consulting services!
 | Node capacity              | AC250V/10A, DC30V/10A                            |
 | Output method              | empty contact                                    |
 
-## **4.1****Communication characteristics**
+## 4.1Communication characteristics
+- RS485 serial port baud rate 1200bps～9600bps
 
-l RS485 serial port baud rate 1200bps～9600bps
+- Optical port ST interface, single-mode dual-core ≥ 20km
 
-l Optical port ST interface, single-mode dual-core ≥ 20km
-
-l RJ45 network port 10M/100M adaptive
+- RJ45 network port 10M/100M adaptive
 
 # 5 **Structural characteristics**
 
-l The device adopts a rear plug-in structure with a closed shell; the chassis adopts an embedded installation method with wiring at the back of the box.
+- The device adopts a rear plug-in structure with a closed shell; the chassis adopts an embedded installation method with wiring at the back of the box.
 
-l Device dimensions: 223×262×240mm (height×width×depth);
+- Device dimensions: 223×262×240mm (height×width×depth);
 
-l Installation opening size: 223×227mm (height×width);
+- Installation opening size: 223×227mm (height×width);
 
-l Installation fixing hole spacing: 140×246mm (height×width), installation hole: 4×Φ8mm.
+- Installation fixing hole spacing: 140×246mm (height×width), installation hole: 4×Φ8mm.
 
 The device is designed with modular design concept. Different configuration requirements are combined and configured by various functional components as needed, realizing the standardization of functional modules. The device consists of analog input AI plug-in, main control MAIN plug-in, basic remote signal DI plug-in, power supply/output POW plug-in, communication TX plug-in and human-machine interface MMI component on the panel.
 
@@ -131,7 +130,7 @@ The default IP address of the communication TX plug-in network port is as follow
 
 The human-machine interface component provides an OLED screen with a wide operating temperature range and is equipped with 9 operation buttons to achieve human-machine interactive operations. The device panel is equipped with 5 software indicator lights and 26 hardware drive indicator lights.
 
-### 5.1.7 ****
+### 5.1.7 
 
 ###  5.1.8 **Hardware****indicator light**
 
@@ -172,15 +171,15 @@ The human-machine interface component provides an OLED screen with a wide operat
 
 # 6 **Work****Environment**
 
-l A place without explosion hazard, conductive dust or corrosiveness.
+- A place without explosion hazard, conductive dust or corrosiveness.
 
-l Ambient temperature: -40℃~+75℃
+- Ambient temperature: -40℃~+75℃
 
-l Ambient humidity: When the maximum temperature is 75℃, the relative humidity does not exceed 50%; when the ambient temperature is 20℃, the maximum ambient humidity can reach 90%
+- Ambient humidity: When the maximum temperature is 75℃, the relative humidity does not exceed 50%; when the ambient temperature is 20℃, the maximum ambient humidity can reach 90%
 
-l Atmospheric pressure: 80kPa~110kPa
+- Atmospheric pressure: 80kPa~110kPa
 
-l Protection level: IP50
+- Protection level: IP50
 
 # 7 **Features**
 
@@ -194,7 +193,7 @@ l Protection level: IP50
 
 (5) The system is designed with RS485 serial communication, RJ45 Ethernet communication and optical fiber communication, which can be connected to other device protocols on site to realize data forwarding.
 
-# 8 ****
+# 8 
 
 The device uses a wide temperature OLED screen, which allows users to easily browse data information, modify set parameters, conduct transmission experiments, etc. The device also provides detailed fault event records and fault recording reports to help users handle power grid accidents in a timely and accurate manner.
 
@@ -202,7 +201,7 @@ The device uses a wide temperature OLED screen, which allows users to easily bro
 
 **Note: The factory default password of the device is "1000". The factory setting is for factory debugging and requires a super password.**
 
-##  8.2 ****
+##  8.2 
 
 of the device is a multi-level structure menu. You can select it by using the arrow keys. The background color indicates that the item is selected. After selecting, press the "Confirm" key to enter the next level menu.
 
@@ -218,11 +217,11 @@ Repeat the above operation until the parameter items that need to be modified ar
 
 Figure 4.3-3 Figure 4.3-4
 
-## 8.4 ****
+## 8.4 
 
 In the data display and report display interface, the dynamic interface of fault information can be automatically popped up. Press the "Back" key in the dynamic pop-up interface to exit the dynamic interface. The historical records can be viewed in the report display interface.
 
-##  8.5 ****
+##  8.5 
 
 To extend the life of the LCD screen, when no key is pressed for more than 5 minutes, the screen will enter the screen saver state and the LCD screen will display a black screen. In the screen saver state, pressing any key will light up the LCD screen. 
 

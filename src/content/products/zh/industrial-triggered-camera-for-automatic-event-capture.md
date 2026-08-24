@@ -64,8 +64,7 @@ Dimensions: 185 mm × 85 mm × 80 mm
 
 Ambient Temperature: -30°C to 70°C, Humidity: 0–95% (Non-Condensing)
 
-# **4 Core Product Advantages**
-
+# 4 Core Product Advantages
   * **Simple installation and rapid deployment to facilitate quick implementation of IoT projects**
 
   * **Compact size**
@@ -76,16 +75,13 @@ Ambient Temperature: -30°C to 70°C, Humidity: 0–95% (Non-Condensing)
 
 **Supports remote parameter configuration**
 
-# **5 Timed Photo Upload Settings**
-
+# 5 Timed Photo Upload Settings
 Allows setting of any time interval to capture photos stored on the SD card or uploaded to the FTP Server.
 
-# **6 Application Cases**
-
+# 6 Application Cases
 ![图片4.png](/static/upload/image/20260602/1780389290110737.png) Factory Vehicle Access Monitoring
 
-# **7 FAQ**
-
+# 7 FAQ
 ## Q1: What triggers the camera to capture images?
 
 It supports external triggers such as sensors, PLC signals, relays, or system alarms.

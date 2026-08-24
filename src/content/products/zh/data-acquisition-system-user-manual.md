@@ -13,21 +13,21 @@ category: dataacquisitionsoftware
 
 The main functions of the system include:
 
-l Flexible transport configuration (link, storage, device, factor, upload service)
+- Flexible transport configuration (link, storage, device, factor, upload service)
 
-l Data collection and upload
+- Data collection and upload
 
-l Real-time monitoring (device, upload)
+- Real-time monitoring (device, upload)
 
-l Alarm configuration and monitoring
+- Alarm configuration and monitoring
 
-l Data storage and query (tables, charts, Web API)
+- Data storage and query (tables, charts, Web API)
 
-l Configuration and visualization
+- Configuration and visualization
 
-l User and permission management
+- User and permission management
 
-l Interface multi-language support
+- Interface multi-language support
 
 ## 1.2 **Operating Environment**
 
@@ -141,11 +141,11 @@ The system collects data from a device that has a communication interface and us
 
 Factors are attributes of a device, including its measured value, state, control unit, etc. For example, for a measuring instrument, the following attributes can be called a factor:
 
-l Latest measured value (measured value)
+- Latest measured value (measured value)
 
-l Current device status: measuring, standby, fault, etc. (status)
+- Current device status: measuring, standby, fault, etc. (status)
 
-l Start measurement, stop measurement (control unit)
+- Start measurement, stop measurement (control unit)
 
 ### 1.4.3 **link**
 
@@ -181,7 +181,6 @@ Free IoT solution consulting services!
 
 ###  3.1.1 **Environment Preparation**
 
-### ****  
 
 Before installing the system, please make sure that .NET6 has been successfully installed. You can download and install .NET6 from the Microsoft official website .
 
@@ -243,13 +242,13 @@ for collection, uploading and storage is shown below:
 
 Generally speaking, the core function of the system is to collect data from the device, store the data, and upload it to the platform. Each transmission requires the use of a communication link and a certain communication protocol. Then, the entire transmission and storage process will have the following modules:
 
-l Communication Link
+- Communication Link
 
-l Collection Protocol
+- Collection Protocol
 
-l Upload Agreement
+- Upload Agreement
 
-l Storage Solutions
+- Storage Solutions
 
 For each module, the system adopts a driver + configuration model to meet the needs. Taking the storage solution as an example, the storage driver contains the code to store data in a certain database (such as MySQL), while the storage configuration includes the connection string and when to store these contents.
 
@@ -413,13 +412,13 @@ If you need to view the current collection status, you can open the device monit
 
 From this page, you can:
 
-l Check the real-time status of the device. For the description of the device status, please refer to Appendix 1.
+- Check the real-time status of the device. For the description of the device status, please refer to Appendix 1.
 
-l View the real-time value of each factor, as well as the current data time.
+- View the real-time value of each factor, as well as the current data time.
 
-l Enable or disable a device.
+- Enable or disable a device.
 
-l Reverse control of the device to modify the factor value. This operation will send a change value and write command to the device , not a virtual change value.
+- Reverse control of the device to modify the factor value. This operation will send a change value and write command to the device , not a virtual change value.
 
 ## 5.3 **Upload monitoring**
 
@@ -433,13 +432,13 @@ You can also pause uploading on this page.
 
 You can use tables or charts to query historical data. If you find that there is no data when querying data, the possible reasons are:
 
-l When configuring the factor, whether to store is not checked.
+- When configuring the factor, whether to store is not checked.
 
-l Database configuration, storage time is not to store.
+- Database configuration, storage time is not to store.
 
-l Collection was not started.
+- Collection was not started.
 
-l No legitimate data has yet appeared.
+- No legitimate data has yet appeared.
 
 ## 6.2 **Table method**
 
@@ -512,17 +511,17 @@ This system provides configuration and visualization functions, with powerful lo
 
 The system supports the following functions:
 
-l User-defined images can be added (supporting JPG, PNG, GIF, SVG and other formats).
+- User-defined images can be added (supporting JPG, PNG, GIF, SVG and other formats).
 
-l User-defined components can be added.
+- User-defined components can be added.
 
-l Supports data display components such as tables and charts.
+- Supports data display components such as tables and charts.
 
-l Both real-time data and historical data can be displayed.
+- Both real-time data and historical data can be displayed.
 
-l Can send control commands to the device .
+- Can send control commands to the device .
 
-l Provides a large number of auxiliary design functions (auxiliary lines, rulers, magnets, alignment, etc.).
+- Provides a large number of auxiliary design functions (auxiliary lines, rulers, magnets, alignment, etc.).
 
 ## 9.2 **Application Examples**
 
@@ -584,15 +583,15 @@ The running page only contains the designed content and no additional page eleme
 
 On the Run page, available functions include:
 
-l Displays the device values collected in real time.
+- Displays the device values collected in real time.
 
-l Displays data history.
+- Displays data history.
 
-l Display dynamically changing system processes.
+- Display dynamically changing system processes.
 
-l Send instructions and values to the device by operating page elements .
+- Send instructions and values to the device by operating page elements .
 
-l Switch to a different view page.
+- Switch to a different view page.
 
 ## 9.4 **Data Source**
 
@@ -701,8 +700,7 @@ If you want to open a new page, add "new" after the command, as shown below:
 | **page=page name,new** |
 | ---                    |
 
-# **Appendix 1 Equipment Status Codes**
-
+# Appendix 1 Equipment Status Codes
 The device status codes and their meanings are shown in the following table:
 
 | **Code** | **Representative significance** | **Cause**                                                                                                                                                      |
@@ -720,10 +718,8 @@ The device status codes and their meanings are shown in the following table:
 | **-9**   |  Unknown error                  |                                                                                                                                                                |
 |          |
 
-# **Appendix 2 Data Sources and Expressions**
-
-## **A2.1 Variable reference**
-
+# Appendix 2 Data Sources and Expressions
+## A2.1 Variable reference
 In device configuration, hardware is read and written by configuring a factor. Where expressions are used, this factor refers to the corresponding hardware. Use device name.factor name to represent factors.
 
 For example, a device D1 using the Modbus protocol is added, and a factor F1 is added to read and write the value of register address 40001. Then, D1.F1 represents register 40001.
@@ -738,8 +734,7 @@ To reference itself, you can use this:
 | **{this}** |
 | ---        |
 
-## **A2.2 Expression Types**
-
+## A2.2 Expression Types
 There are four expressions used in the system, namely:
 
 Numeric expression: The result of the calculation is a numeric value, for example: {a}*2.5+3
@@ -750,8 +745,7 @@ Text expression: can only calculate the content in the braces, there is no fixed
 
 Command expression: There is an equal sign in the middle, the variable is on the left, and the value is on the right, for example: {a}=10
 
-## **A2.3 Factor configuration expression**
-
+## A2.3 Factor configuration expression
 In the factor configuration, you can enter an expression. This is generally used when there is a functional relationship between the collected value and the actual displayed value. For example, the collected value is in kg, but the storage requirement is in g. Then, after this value is collected, an expression needs to be used for conversion.
 
 The factor configuration expression is a numerical expression. Taking the above example, assuming the factor is D1.F1, the actual factor needs to be multiplied by 1000. The expression can be written as:
@@ -774,22 +768,17 @@ or
 | **+10** |
 | ---     |
 
-# **Appendix 3 MODBUS Configuration Instructions**
-
-## **A3.1 Driver and Link Selection**
-
+# Appendix 3 MODBUS Configuration Instructions
+## A3.1 Driver and Link Selection
 There are three types of Modbus protocols, namely Modbus-RTU, Modbus-TCP and Modbus-ASCII. You need to select the appropriate acquisition driver according to the actual situation. All three communication protocols can communicate under TCP client or serial port link.
 
-## **A3.2 Collection interval selection**
-
+## A3.2 Collection interval selection
 For Modbus communication protocol, the acquisition interval and cycle wait can be set to 0, and the receiving wait time needs to be more than 100ms. If you find that the data is chaotic when receiving data, it is generally caused by insufficient receiving wait time. If this problem occurs, you can increase the receiving wait time appropriately. If you want to know the more accurate time, you can send a Modbus command to the device and observe the time of data reply.
 
-## **A3.3 Storage Mode**
-
+## A3.3 Storage Mode
 The Modbus protocol defines a variety of data storage spaces, including registers, coils, input registers, and input coils. The storage mode to be used is selected according to the document description.
 
-## **A3.4 Channel Type**
-
+## A3.4 Channel Type
 For registers, the channel types are various, including FLOAT, INT, BIT, etc.; while for coils, the channel type is only BIT.
 
 For multi-byte data, the storage order of bytes in different devices may be different, so you need to choose according to the actual situation. The following are commonly used byte orders:
@@ -801,12 +790,10 @@ For multi-byte data, the storage order of bytes in different devices may be diff
 | **Unsigned**   |  Unsigned10           |
 | **Signed**     |  Unsigned10           |
 
-## **A3.5 Bitwise Value**
-
+## A3.5 Bitwise Value
 Select register for storage mode and BIT for channel type, then you can get the value by bit. The starting address is the address of the register, and the bit address indicates which bit of data to get. The bit address is from right to left, that is, the rightmost bit is bit 0.
 
-## **A3.6 Continuous Addresses**
-
+## A3.6 Continuous Addresses
 If there are several factor channels of the same type and with consecutive addresses, they can be configured once. Just fill in a value greater than 1 in the channel number, and the automatically created factor address will be automatically adjusted according to the channel type. The following is an example after the channel number is filled in with 5:
 
 | **Storage Mode** | **Channel Type** | **Starting address** | **Bit Address** | **Generate Address**   |

@@ -43,23 +43,23 @@ Object-oriented communication protocol for electricity consumption information c
 
 ##  4.1 ** Structural ****characteristics**
 
-l Installation method: rail type
+- Installation method: rail type
 
-l Material: PC plastic (shell)
+- Material: PC plastic (shell)
 
-l Size: 108mm*62mm*70mm
+- Size: 108mm*62mm*70mm
 
 ## 4.2 ** Electrical Characteristics**
 
-l Power supply: AC220V
+- Power supply: AC220V
 
-l Working power consumption: less than 5W
+- Working power consumption: less than 5W
 
 ## 4.3 ** Working environment characteristics**
 
-l Temperature -25 ℃ ~70 ℃ , extreme temperature -40℃~70℃
+- Temperature -25 ℃ ~70 ℃ , extreme temperature -40℃~70℃
 
-l Relative humidity: 10%~100% (no condensation)
+- Relative humidity: 10%~100% (no condensation)
 
 ## 4.4 **Indicator light characteristics**
 
@@ -71,11 +71,11 @@ l Relative humidity: 10%~100% (no condensation)
 
 ## 4.5 **Communication features**
 
-l Equipped with 2 RS485 ports, used to connect to the RS485 port of the energy meter or the photovoltaic inverter interface
+- Equipped with 2 RS485 ports, used to connect to the RS485 port of the energy meter or the photovoltaic inverter interface
 
-l With low voltage power line carrier, used to forward the communication commands of the concentrator
+- With low voltage power line carrier, used to forward the communication commands of the concentrator
 
-l With Bluetooth communication for on-site maintenance
+- With Bluetooth communication for on-site maintenance
 
 ## 4.6 ******Communication networking****features**
 
