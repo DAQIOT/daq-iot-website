@@ -56,7 +56,8 @@ const categories = defineCollection({
     description: z.string().optional().default(''),
     order: z.number().default(0),
     parent: z.string().optional().default(''),
-    path: z.string().optional().default('')
+    path: z.string().optional().default(''),
+    lang: z.enum(['zh', 'en', 'de']).default('zh')
   })
 });
 
