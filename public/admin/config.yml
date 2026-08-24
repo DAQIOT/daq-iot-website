@@ -22,10 +22,10 @@ i18n:
     - de
   default_locale: zh
 collections:
-  - name: products
-    label: 产品
-    folder: src/content/products
-    i18n: true
+  - name: zh_products
+    label: 中文产品
+    folder: src/content/products/zh
+    i18n: false
     create: true
     delete: true
     extension: md
@@ -35,56 +35,71 @@ collections:
       - label: 全部
         field: category
         pattern: '.*'
-      - label: 中文产品
+      - label: 仪器仪表采集
         field: category
-        pattern: '^(daq-.+)$'
-      - label: 英文产品
+        pattern: daq-meter.*
+      - label: 电表采集
         field: category
-        pattern: '^(instrumentation|instrument-acquisition|wirelesssensor|wirelesstimingphotography|plcacquisition|dataacquisitionsoftware)$'
-      - label: 德文产品
+        pattern: daq-meter-electric
+      - label: 其他类仪表采集
         field: category
-        pattern: '^(instrumentierung|instrument-acquisition|funksensoren|drahtlose-intervallfotografie|plc-erfasssung|datenerfassungssoftware)$'
+        pattern: daq-meter-other
+      - label: 无线传感器
+        field: category
+        pattern: daq-sensor.*
+      - label: 电力类传感器
+        field: category
+        pattern: daq-sensor-power
+      - label: 环境类传感器
+        field: category
+        pattern: daq-sensor-env
+      - label: 定时抓拍
+        field: category
+        pattern: daq-camera
+      - label: 采集终端
+        field: category
+        pattern: daq-gateway
+      - label: 软件平台
+        field: category
+        pattern: daq-software
+      - label: 安装施工
+        field: category
+        pattern: daq-install
     fields:
-      - label: 产品名称（必填，各语言分别填写）
+      - label: 产品名称（必填）
         name: title
         widget: string
         required: true
-        hint: 切换上方语言分别填写中文/英文/德文名称
-        i18n: true
-      - label: 一句话描述（必填，各语言分别填写）
+        hint: 填写中文产品名称
+      - label: 一句话描述（必填）
         name: summary
         widget: text
         required: true
-        hint: 产品一句话介绍，20-50 字左右；各语言分别填写
-        i18n: true
+        hint: 中文产品一句话介绍，20-50 字左右
       - label: 产品图片（选填）
         name: image
         widget: image
         required: false
-        hint: 只需上传一次，三语页面共用
-        i18n: duplicate
+        hint: 中文产品图片
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
         value_type: int
         default: 0
         pattern: ['^[0-9]+$', '只能填数字']
-        i18n: duplicate
-      - label: 产品分类（必填，切换语言分别选择对应分类）
+      - label: 产品分类（必填）
         name: category
         widget: relation
-        collection: categories
-        display_fields: [lang, path]
-        search_fields: [name, path, lang]
+        collection: zh_categories
+        display_fields: [path]
+        search_fields: [name, path]
         value_field: slug
         required: true
-        i18n: true
-        hint: 下拉第一项是语言（zh/en/de），第二项是层级路径。当前在哪种语言就请选择对应语言的分类（如中文产品选 zh 开头的路径），不要混用。带"父级名 / 分类名"的是二级分类，有二级的一级分类请选到具体的二级分类
+        hint: 只显示中文分类。带"父级名 / 分类名"的是二级分类，有二级的一级分类请选到具体的二级分类
       - label: 产品参数（选填，可添加多条）
         name: parameters
         widget: list
         required: false
-        i18n: true
         hint: 每行一条，例如"参数名：通信方式 / 参数值：4G"
         fields:
           - label: 参数名
@@ -93,12 +108,169 @@ collections:
           - label: 参数值
             name: value
             widget: string
-      - label: 详细介绍（必填，各语言分别填写）
+      - label: 详细介绍（必填）
         name: body
         widget: markdown
         required: true
-        hint: 产品详细介绍，支持 Markdown 格式；各语言分别填写
-        i18n: true
+        hint: 中文产品详细介绍，支持 Markdown 格式
+  - name: en_products
+    label: 英文产品
+    folder: src/content/products/en
+    i18n: false
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    view_filters:
+      - label: 全部
+        field: category
+        pattern: '.*'
+      - label: Instrumentation（含二级）
+        field: category
+        pattern: '^instrument(ation|-acquisition)$'
+      - label: Instrument Acquisition
+        field: category
+        pattern: instrument-acquisition
+      - label: Wireless Sensor
+        field: category
+        pattern: wirelesssensor
+      - label: Wireless Timing Photography
+        field: category
+        pattern: wirelesstimingphotography
+      - label: PLC Acquisition
+        field: category
+        pattern: plcacquisition
+      - label: Data Acquisition Software
+        field: category
+        pattern: dataacquisitionsoftware
+    fields:
+      - label: Product Name (required)
+        name: title
+        widget: string
+        required: true
+        hint: Enter English product name
+      - label: One-line description (required)
+        name: summary
+        widget: text
+        required: true
+        hint: English product summary, around 20-50 words
+      - label: Product Image
+        name: image
+        widget: image
+        required: false
+        hint: English product image
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        pattern: ['^[0-9]+$', 'Numbers only']
+      - label: Product Category (required)
+        name: category
+        widget: relation
+        collection: en_categories
+        display_fields: [path]
+        search_fields: [name, path]
+        value_field: slug
+        required: true
+        hint: Only English categories are shown. Items with "Parent / Child" are subcategories; choose the specific subcategory when available
+      - label: Product Parameters
+        name: parameters
+        widget: list
+        required: false
+        hint: 'One per row, e.g. "Parameter: Communication / Value: 4G"'
+        fields:
+          - label: Parameter
+            name: label
+            widget: string
+          - label: Value
+            name: value
+            widget: string
+      - label: Detailed Description (required)
+        name: body
+        widget: markdown
+        required: true
+        hint: English product description in Markdown
+  - name: de_products
+    label: 德文产品
+    folder: src/content/products/de
+    i18n: false
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    view_filters:
+      - label: 全部
+        field: category
+        pattern: '.*'
+      - label: Instrumentierung（含二级）
+        field: category
+        pattern: '^(instrumentierung|instrument-acquisition)$'
+      - label: Instrumentenerfassung
+        field: category
+        pattern: instrument-acquisition
+      - label: Funksensoren
+        field: category
+        pattern: funksensoren
+      - label: Drahtlose Intervallfotografie
+        field: category
+        pattern: drahtlose-intervallfotografie
+      - label: PLC-Erfassung
+        field: category
+        pattern: plc-erfasssung
+      - label: Datenerfassungssoftware
+        field: category
+        pattern: datenerfassungssoftware
+    fields:
+      - label: Produktname (erforderlich)
+        name: title
+        widget: string
+        required: true
+        hint: Deutschen Produktnamen eingeben
+      - label: Kurzbeschreibung (erforderlich)
+        name: summary
+        widget: text
+        required: true
+        hint: Deutsche Kurzbeschreibung, ca. 20-50 Wörter
+      - label: Produktbild
+        name: image
+        widget: image
+        required: false
+        hint: Deutsches Produktbild
+      - label: Sortierung
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        pattern: ['^[0-9]+$', 'Nur Zahlen']
+      - label: Produktkategorie (erforderlich)
+        name: category
+        widget: relation
+        collection: de_categories
+        display_fields: [path]
+        search_fields: [name, path]
+        value_field: slug
+        required: true
+        hint: Nur deutsche Kategorien angezeigt. Einträge mit "Eltern / Kind" sind Unterkategorien; wählen Sie gegebenenfalls die konkrete Unterkategorie
+      - label: Produktparameter
+        name: parameters
+        widget: list
+        required: false
+        hint: 'Eine Zeile pro Eintrag, z. B. "Parameter: Kommunikation / Wert: 4G"'
+        fields:
+          - label: Parameter
+            name: label
+            widget: string
+          - label: Wert
+            name: value
+            widget: string
+      - label: Detaillierte Beschreibung (erforderlich)
+        name: body
+        widget: markdown
+        required: true
+        hint: Deutsche Produktbeschreibung im Markdown-Format
   # 隐藏的汇总集合：仅作为 products.category 的 relation 数据源，不在左侧导航显示
   - name: categories
     label: 产品分类（全部语言汇总）
