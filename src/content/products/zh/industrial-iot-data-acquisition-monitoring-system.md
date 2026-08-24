@@ -8,6 +8,17 @@ image: /images/products/1692951414317855.jpg
 order: 2
 category: dataacquisitionsoftware
 hidden: false
+parameters:
+  - label: 操作系统
+    value: Windows、Linux
+  - label: 软件基础环境
+    value: .NET 6
+  - label: 客户端浏览器
+    value: Edge、Chrome、Firefox、Safari
+  - label: 采集系统访问地址
+    value: http://localhost:16801/scada.html
+  - label: 组态可视化访问地址
+    value: http://localhost:16804/diagram.html
 ---
 **产品详情**
 

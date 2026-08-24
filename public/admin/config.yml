@@ -88,6 +88,19 @@ collections:
         value_field: slug
         required: true
         i18n: duplicate
+      - label: 产品参数（选填，可添加多条）
+        name: parameters
+        widget: list
+        required: false
+        i18n: true
+        hint: 每行一条，例如"参数名：通信方式 / 参数值：4G"
+        fields:
+          - label: 参数名
+            name: label
+            widget: string
+          - label: 参数值
+            name: value
+            widget: string
       - label: 详细介绍（必填，各语言分别填写）
         name: body
         widget: markdown

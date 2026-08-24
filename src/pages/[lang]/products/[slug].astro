@@ -48,6 +48,26 @@ const catName = Object.fromEntries((await getCategoriesByLang(lang)).map((c) => 
       </div>
     </div>
 
+    {entry.data.parameters && entry.data.parameters.length > 0 && (
+      <div class="mt-12">
+        <h2 class="text-xl font-bold text-slate-800 mb-4">{t('products.parameters', '产品参数')}</h2>
+        <div class="overflow-hidden rounded-xl border border-slate-200">
+          <table class="w-full text-sm">
+            <tbody>
+              {
+                entry.data.parameters.map((p, i) => (
+                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+                    <td class="w-2/5 px-5 py-3 font-medium text-slate-700 border-r border-slate-100">{p.label}</td>
+                    <td class="w-3/5 px-5 py-3 text-slate-600">{p.value}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
     <div class="mt-12 border-t border-slate-200 pt-8 text-slate-700 leading-relaxed space-y-4 prose max-w-none">
       <Content />
     </div>
