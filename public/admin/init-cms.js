@@ -61,6 +61,40 @@
     ]
   };
 
+  // 分类名称映射（slug -> 显示名称），用于产品列表分组标题替换
+  var CATEGORY_MAP = {
+    zh: {
+      'daq-meter': '仪器仪表采集',
+      'daq-meter-electric': '仪器仪表采集 / 电表采集',
+      'daq-meter-other': '仪器仪表采集 / 其他类仪表采集',
+      'daq-sensor': '无线传感器',
+      'daq-sensor-env': '无线传感器 / 环境类传感器',
+      'daq-sensor-power': '无线传感器 / 电力类传感器',
+      'daq-camera': '定时抓拍',
+      'daq-gateway': '采集终端',
+      'daq-software': '软件平台',
+      'daq-install': '安装施工'
+    },
+    en: {
+      'instrumentation': 'Instrumentation',
+      'instrument-acquisition': 'Instrumentation / Instrument Acquisition',
+      'wirelesssensor': 'Wireless Sensor',
+      'wirelesstimingphotography': 'Wireless Timing Photography',
+      'plcacquisition': 'PLC Acquisition',
+      'dataacquisitionsoftware': 'Data Acquisition Software'
+    },
+    de: {
+      'instrumentation': 'Instrumentierung',
+      'instrument-acquisition': 'Instrumentierung / Instrumentenerfassung',
+      'wirelesssensor': 'Funksensoren',
+      'wirelesstimingphotography': 'Drahtlose Intervallfotografie',
+      'plcacquisition': 'PLC-Erfassung',
+      'dataacquisitionsoftware': 'Datenerfassungssoftware'
+    }
+  };
+  var CAT_NAMES = CATEGORY_MAP[lang] || {};
+  var CAT_ORDER = Object.keys(CAT_NAMES);
+
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
   function derive(collection, folder, label) {
     var c = JSON.parse(JSON.stringify(collection));
@@ -147,6 +181,90 @@
     });
   }
 
+  // ============================================================
+  // 产品列表分组增强：Decap 的 view_groups 按 category slug 分组后，
+  // 把分组标题替换为分类中文/英文/德文名称，并加上展开/收起箭头。
+  // ============================================================
+  function maybeProductGroups() {
+    if (location.hash.indexOf('collections/products') < 0) return;
+    var map = CAT_NAMES;
+    if (!map || !Object.keys(map).length) return;
+
+    var root = document.querySelector('#nc-root');
+    if (!root) return;
+
+    var slugs = Object.keys(map);
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var node;
+    var replacedParents = [];
+    while ((node = walker.nextNode())) {
+      var text = node.nodeValue;
+      if (!text) continue;
+      var trimmed = text.trim();
+      if (!trimmed) continue;
+      // 匹配 "slug" 或 "slug (N)"，且不在 h2（产品标题）里
+      var parent = node.parentElement;
+      if (!parent) continue;
+      if (parent.closest && parent.closest('h2')) continue;
+      var match = trimmed.match(/^([a-z0-9-]+)(\s*\(\d+\))?$/);
+      if (!match) continue;
+      var slug = match[1];
+      if (slugs.indexOf(slug) < 0) continue;
+      var count = match[2] || '';
+      node.nodeValue = map[slug] + count;
+
+      var header = parent.closest ? parent.closest('li, div, section') : parent;
+      if (header && replacedParents.indexOf(header) < 0) {
+        replacedParents.push(header);
+        header.classList.add('product-group-header');
+        // 若还没有箭头，加一个
+        if (!header.querySelector('.product-group-arrow')) {
+          var arrow = document.createElement('span');
+          arrow.className = 'product-group-arrow';
+          arrow.textContent = '▾';
+          header.insertBefore(arrow, header.firstChild);
+        }
+        // 绑定点击展开/收起：尝试找同组下的产品条目容器
+        if (!header.dataset.groupBound) {
+          header.dataset.groupBound = '1';
+          (function (h) {
+            h.addEventListener('click', function (e) {
+              // 不拦截链接/按钮
+              var t = e.target;
+              if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a, button'))) return;
+              toggleProductGroup(h);
+            });
+          })(header);
+        }
+      }
+    }
+  }
+
+  function toggleProductGroup(header) {
+    var arrow = header.querySelector('.product-group-arrow');
+    // 策略1：header 与条目是同级 li/div
+    var items = [];
+    var sibling = header.nextElementSibling;
+    while (sibling) {
+      if (sibling.classList && sibling.classList.contains('product-group-header')) break;
+      items.push(sibling);
+      sibling = sibling.nextElementSibling;
+    }
+    // 策略2：header 父容器下有 ul/ol 条目列表
+    if (!items.length) {
+      var list = header.parentElement && header.parentElement.querySelector('ul, ol');
+      if (list && list !== header) {
+        items = Array.prototype.slice.call(list.children);
+      }
+    }
+    if (!items.length) return;
+
+    var open = items[0].style.display !== 'none';
+    items.forEach(function (it) { it.style.display = open ? 'none' : ''; });
+    if (arrow) arrow.textContent = open ? '▸' : '▾';
+    header.classList.toggle('collapsed', open);
+  }
+
   // 注入树形样式（ul 用 flex column 让 order 生效；箭头；子级缩进）
   (function () {
     var st = document.createElement('style');
@@ -157,7 +275,10 @@
       '.tree-toggle{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;cursor:pointer;border-radius:3px;z-index:3;font-size:12px;padding:0;}' +
       '.tree-toggle:hover{background:#e2e8f0;}' +
       '.tree-child{margin-left:40px !important;padding-left:14px !important;border-left:2px solid #cbd5e1;background:#f8fafc;}' +
-      '.tree-child h2{font-weight:400;}';
+      '.tree-child h2{font-weight:400;}' +
+      // 产品列表分组标题：把 Decap 按 category slug 生成的分组标题换成中文名/英文名/德文名
+      '.product-group-header{cursor:pointer;user-select:none;}' +
+      '.product-group-header .product-group-arrow{display:inline-block;width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;border-radius:3px;font-size:12px;margin-right:6px;}';
     document.head.appendChild(st);
   })();
 
@@ -165,13 +286,16 @@
   var _tw = new MutationObserver(function () {
     _tw.disconnect();
     try { maybeTreeify(); } catch (e) { console.error('[treeify]', e); }
+    try { maybeProductGroups(); } catch (e) { console.error('[product-groups]', e); }
     _tw.observe(document.body, { childList: true, subtree: true });
   });
   _tw.observe(document.body, { childList: true, subtree: true });
   setTimeout(maybeTreeify, 400);
   setTimeout(maybeTreeify, 1200);
+  setTimeout(maybeProductGroups, 600);
+  setTimeout(maybeProductGroups, 1400);
 
-  fetch('config.yml?v=5')
+  fetch('config.yml?v=6')
     .then(function (r) { return r.text(); })
     .then(function (text) {
       var config = jsyaml.load(text);
@@ -194,6 +318,8 @@
 
       var products = derive(productsTpl, 'src/content/products/' + lang, '产品');
       products.view_filters = VIEW_FILTERS[lang];
+      // 产品列表按 category 字段分组，便于按分类查看
+      products.view_groups = [{ label: '按分类分组', field: 'category' }];
 
       var categories = derive(categoriesTpl, 'src/content/categories/' + lang, '产品分类');
       // 新建分类时自动写入当前语言标识
