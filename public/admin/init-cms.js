@@ -193,52 +193,69 @@
     var root = document.querySelector('#nc-root');
     if (!root) return;
 
-    var slugs = Object.keys(map);
-    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-    var node;
-    var replacedParents = [];
-    while ((node = walker.nextNode())) {
-      var text = node.nodeValue;
-      if (!text) continue;
-      var trimmed = text.trim();
-      if (!trimmed) continue;
-      // 匹配 "slug" 或 "slug (N)"，且不在 h2（产品标题）里
-      var parent = node.parentElement;
-      if (!parent) continue;
-      if (parent.closest && parent.closest('h2')) continue;
-      var match = trimmed.match(/^([a-z0-9-]+)(\s*\(\d+\))?$/);
-      if (!match) continue;
-      var slug = match[1];
-      if (slugs.indexOf(slug) < 0) continue;
-      var count = match[2] || '';
-      node.nodeValue = map[slug] + count;
+      var slugs = Object.keys(map);
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+      var node;
+      var replacedParents = [];
+      var replacedCount = 0;
+      while ((node = walker.nextNode())) {
+        var text = node.nodeValue;
+        if (!text) continue;
+        var trimmed = text.trim();
+        if (!trimmed) continue;
+        // 匹配分组标题：Decap 会渲染成 "按分类分组 slug" 或 "slug (N)"。
+        // 产品标题也在 h2 内，但 class 不含 GroupHeading，借此区分。
+        var parent = node.parentElement;
+        if (!parent) continue;
+        var closestH2 = parent.closest ? parent.closest('h2') : null;
+        if (closestH2 && (!closestH2.className || closestH2.className.indexOf('GroupHeading') < 0)) continue;
+        var match = trimmed.match(/([a-z0-9-]+)(\s*\(\d+\))?$/);
+        if (!match) continue;
+        var slug = match[1];
+        if (slugs.indexOf(slug) < 0) continue;
+        var count = match[2] || '';
+        node.nodeValue = map[slug] + count;
+        replacedCount++;
 
-      var header = parent.closest ? parent.closest('li, div, section') : parent;
-      if (header && replacedParents.indexOf(header) < 0) {
-        replacedParents.push(header);
-        header.classList.add('product-group-header');
-        // 若还没有箭头，加一个
-        if (!header.querySelector('.product-group-arrow')) {
-          var arrow = document.createElement('span');
-          arrow.className = 'product-group-arrow';
-          arrow.textContent = '▾';
-          header.insertBefore(arrow, header.firstChild);
-        }
-        // 绑定点击展开/收起：尝试找同组下的产品条目容器
-        if (!header.dataset.groupBound) {
-          header.dataset.groupBound = '1';
-          (function (h) {
-            h.addEventListener('click', function (e) {
-              // 不拦截链接/按钮
-              var t = e.target;
-              if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a, button'))) return;
-              toggleProductGroup(h);
-            });
-          })(header);
+        var header = parent.closest ? parent.closest('li, div, section') : parent;
+        if (header && replacedParents.indexOf(header) < 0) {
+          replacedParents.push(header);
+          header.classList.add('product-group-header');
+          // 若还没有箭头，加一个
+          if (!header.querySelector('.product-group-arrow')) {
+            var arrow = document.createElement('span');
+            arrow.className = 'product-group-arrow';
+            arrow.textContent = '▾';
+            header.insertBefore(arrow, header.firstChild);
+          }
+          // 绑定点击展开/收起：尝试找同组下的产品条目容器
+          if (!header.dataset.groupBound) {
+            header.dataset.groupBound = '1';
+            (function (h) {
+              h.addEventListener('click', function (e) {
+                // 不拦截链接/按钮
+                var t = e.target;
+                if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a, button'))) return;
+                toggleProductGroup(h);
+              });
+            })(header);
+          }
         }
       }
+      return replacedCount;
     }
-  }
+
+    // 轮询兜底：用户切换「分组」视图后，分组标题可能延迟生成，
+    // 持续轮询确保分类 slug 被替换为中文/英文/德文名称。
+    var _pgAttempts = 0;
+    function pollProductGroups() {
+      if (++_pgAttempts > 50) return;
+      if (location.hash.indexOf('collections/products') < 0) return;
+      var count = maybeProductGroups();
+      console.log('[product-groups] poll #' + _pgAttempts + ' replaced=' + count);
+      // 只要还在产品列表页，就继续轮询（切换视图时会重新替换）
+      setTimeout(pollProductGroups, 700);
+    }
 
   function toggleProductGroup(header) {
     var arrow = header.querySelector('.product-group-arrow');
@@ -292,8 +309,8 @@
   _tw.observe(document.body, { childList: true, subtree: true });
   setTimeout(maybeTreeify, 400);
   setTimeout(maybeTreeify, 1200);
-  setTimeout(maybeProductGroups, 600);
-  setTimeout(maybeProductGroups, 1400);
+  // 启动产品分组标题映射轮询（用户手动点「分组→按分类分组」后自动替换为分类名）
+  setTimeout(pollProductGroups, 600);
 
   fetch('config.yml?v=' + Date.now())
     .then(function (r) { return r.text(); })
