@@ -22,84 +22,61 @@ i18n:
     - de
   default_locale: zh
 collections:
-  - name: zh_products
-    label: 中文产品
-    folder: src/content/products/zh
-    i18n: false
+  # ── 产品 / 产品分类：单一集合定义（模板）──
+  # 实际后台由 admin/init-cms.js 根据顶部语言下拉动态派生：
+  # 选择哪种语言，【产品】【产品分类】两个入口就只显示/管理该语言目录
+  # （src/content/products/zh|en|de、src/content/categories/zh|en|de），
+  # 添加/删除/编辑都只影响当前语言，各语言内容完全独立。
+  - name: products
+    label: 产品
+    folder: src/content/products
+    i18n: true
     create: true
     delete: true
     extension: md
     format: frontmatter
     slug: '{{title}}'
-    view_filters:
-      - label: 全部
-        field: category
-        pattern: '.*'
-      - label: 仪器仪表采集
-        field: category
-        pattern: daq-meter.*
-      - label: 电表采集
-        field: category
-        pattern: daq-meter-electric
-      - label: 其他类仪表采集
-        field: category
-        pattern: daq-meter-other
-      - label: 无线传感器
-        field: category
-        pattern: daq-sensor.*
-      - label: 电力类传感器
-        field: category
-        pattern: daq-sensor-power
-      - label: 环境类传感器
-        field: category
-        pattern: daq-sensor-env
-      - label: 定时抓拍
-        field: category
-        pattern: daq-camera
-      - label: 采集终端
-        field: category
-        pattern: daq-gateway
-      - label: 软件平台
-        field: category
-        pattern: daq-software
-      - label: 安装施工
-        field: category
-        pattern: daq-install
     fields:
       - label: 产品名称（必填）
         name: title
         widget: string
         required: true
-        hint: 填写中文产品名称
+        i18n: true
+        hint: 填写当前语言的产品名称（中文产品填中文，英文产品填英文）
       - label: 一句话描述（必填）
         name: summary
         widget: text
         required: true
-        hint: 中文产品一句话介绍，20-50 字左右
+        i18n: true
+        hint: 产品一句话介绍，20-50 字左右
       - label: 产品图片（选填）
         name: image
         widget: image
         required: false
-        hint: 中文产品图片
+        i18n: duplicate
+        hint: 产品图片，各语言可以使用不同图片
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
         value_type: int
         default: 0
         pattern: ['^[0-9]+$', '只能填数字']
+        i18n: duplicate
       - label: 产品分类（必填）
         name: category
         widget: relation
-        collection: zh_categories
+        collection: categories
         display_fields: [path]
         search_fields: [name, path]
         value_field: slug
         required: true
-        hint: 只显示中文分类。带"父级名 / 分类名"的是二级分类，有二级的一级分类请选到具体的二级分类
+        i18n: true
+        hint: 只显示当前语言的分类。带"父级名 / 分类名"（如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"）的是二级分类，有二级的一级分类请选到具体的二级分类
       - label: 产品参数（选填，可添加多条）
         name: parameters
         widget: list
         required: false
+        i18n: true
         hint: 每行一条，例如"参数名：通信方式 / 参数值：4G"
         fields:
           - label: 参数名
@@ -112,364 +89,70 @@ collections:
         name: body
         widget: markdown
         required: true
-        hint: 中文产品详细介绍，支持 Markdown 格式
-  - name: en_products
-    label: 英文产品
-    folder: src/content/products/en
-    i18n: false
-    create: true
-    delete: true
-    extension: md
-    format: frontmatter
-    slug: '{{title}}'
-    view_filters:
-      - label: 全部
-        field: category
-        pattern: '.*'
-      - label: Instrumentation（含二级）
-        field: category
-        pattern: '^instrument(ation|-acquisition)$'
-      - label: Instrument Acquisition
-        field: category
-        pattern: instrument-acquisition
-      - label: Wireless Sensor
-        field: category
-        pattern: wirelesssensor
-      - label: Wireless Timing Photography
-        field: category
-        pattern: wirelesstimingphotography
-      - label: PLC Acquisition
-        field: category
-        pattern: plcacquisition
-      - label: Data Acquisition Software
-        field: category
-        pattern: dataacquisitionsoftware
-    fields:
-      - label: Product Name (required)
-        name: title
-        widget: string
-        required: true
-        hint: Enter English product name
-      - label: One-line description (required)
-        name: summary
-        widget: text
-        required: true
-        hint: English product summary, around 20-50 words
-      - label: Product Image
-        name: image
-        widget: image
-        required: false
-        hint: English product image
-      - label: Order
-        name: order
-        widget: number
-        value_type: int
-        default: 0
-        pattern: ['^[0-9]+$', 'Numbers only']
-      - label: Product Category (required)
-        name: category
-        widget: relation
-        collection: en_categories
-        display_fields: [path]
-        search_fields: [name, path]
-        value_field: slug
-        required: true
-        hint: Only English categories are shown. Items with "Parent / Child" are subcategories; choose the specific subcategory when available
-      - label: Product Parameters
-        name: parameters
-        widget: list
-        required: false
-        hint: 'One per row, e.g. "Parameter: Communication / Value: 4G"'
-        fields:
-          - label: Parameter
-            name: label
-            widget: string
-          - label: Value
-            name: value
-            widget: string
-      - label: Detailed Description (required)
-        name: body
-        widget: markdown
-        required: true
-        hint: English product description in Markdown
-  - name: de_products
-    label: 德文产品
-    folder: src/content/products/de
-    i18n: false
-    create: true
-    delete: true
-    extension: md
-    format: frontmatter
-    slug: '{{title}}'
-    view_filters:
-      - label: 全部
-        field: category
-        pattern: '.*'
-      - label: Instrumentierung（含二级）
-        field: category
-        pattern: '^(instrumentierung|instrument-acquisition)$'
-      - label: Instrumentenerfassung
-        field: category
-        pattern: instrument-acquisition
-      - label: Funksensoren
-        field: category
-        pattern: funksensoren
-      - label: Drahtlose Intervallfotografie
-        field: category
-        pattern: drahtlose-intervallfotografie
-      - label: PLC-Erfassung
-        field: category
-        pattern: plc-erfasssung
-      - label: Datenerfassungssoftware
-        field: category
-        pattern: datenerfassungssoftware
-    fields:
-      - label: Produktname (erforderlich)
-        name: title
-        widget: string
-        required: true
-        hint: Deutschen Produktnamen eingeben
-      - label: Kurzbeschreibung (erforderlich)
-        name: summary
-        widget: text
-        required: true
-        hint: Deutsche Kurzbeschreibung, ca. 20-50 Wörter
-      - label: Produktbild
-        name: image
-        widget: image
-        required: false
-        hint: Deutsches Produktbild
-      - label: Sortierung
-        name: order
-        widget: number
-        value_type: int
-        default: 0
-        pattern: ['^[0-9]+$', 'Nur Zahlen']
-      - label: Produktkategorie (erforderlich)
-        name: category
-        widget: relation
-        collection: de_categories
-        display_fields: [path]
-        search_fields: [name, path]
-        value_field: slug
-        required: true
-        hint: Nur deutsche Kategorien angezeigt. Einträge mit "Eltern / Kind" sind Unterkategorien; wählen Sie gegebenenfalls die konkrete Unterkategorie
-      - label: Produktparameter
-        name: parameters
-        widget: list
-        required: false
-        hint: 'Eine Zeile pro Eintrag, z. B. "Parameter: Kommunikation / Wert: 4G"'
-        fields:
-          - label: Parameter
-            name: label
-            widget: string
-          - label: Wert
-            name: value
-            widget: string
-      - label: Detaillierte Beschreibung (erforderlich)
-        name: body
-        widget: markdown
-        required: true
-        hint: Deutsche Produktbeschreibung im Markdown-Format
-  # 隐藏的汇总集合：仅作为 products.category 的 relation 数据源，不在左侧导航显示
+        i18n: true
+        hint: 产品详细介绍，支持 Markdown 格式
   - name: categories
-    label: 产品分类（全部语言汇总）
+    label: 产品分类
     folder: src/content/categories
-    hide: true
     i18n: true
-    create: false
-    delete: false
-    extension: md
-    format: frontmatter
-    slug: '{{slug}}'
-    fields:
-      - label: 语言标识
-        name: lang
-        widget: hidden
-        default: zh
-        i18n: duplicate
-      - label: URL标识 slug
-        name: slug
-        widget: string
-        required: true
-        i18n: duplicate
-      - label: 排序
-        name: order
-        widget: number
-        value_type: int
-        default: 0
-        i18n: duplicate
-      - label: 父级分类
-        name: parent
-        widget: relation
-        collection: categories
-        display_fields: [lang, path]
-        search_fields: [name, path, lang]
-        value_field: slug
-        required: false
-        i18n: true
-      - label: 分类显示路径
-        name: path
-        widget: string
-        required: false
-        i18n: true
-      - label: 分类名称
-        name: name
-        widget: string
-        required: true
-        i18n: true
-      - label: 分类说明
-        name: description
-        widget: text
-        required: false
-        i18n: true
-  - name: zh_categories
-    label: 中文产品分类
-    folder: src/content/categories/zh
-    i18n: false
     create: true
     delete: true
     extension: md
     format: frontmatter
     slug: '{{slug}}'
+    # 列表按"分类显示路径"显示，二级分类直接看出层级（如 仪器仪表采集 / 电表采集）
+    summary: '{{fields.path}}'
+    sortable_fields: [path, order]
+    sort_by: path
+    # 按父级分组：二级分类直接归到所属父级组下，实现"二级在父类下面"的层级展示
+    view_groups:
+      - label: 按父级分组
+        field: parent
     fields:
-      - label: 语言标识
+      - label: 语言标识（自动，勿改）
         name: lang
         widget: hidden
         default: zh
+        i18n: duplicate
       - label: URL标识 slug（必填，只能英文小写，不能用空格）
         name: slug
         widget: string
         required: true
         pattern: ['^[a-z0-9-]+$', '只能小写字母、数字和连字符，例如 daq-meter-electric']
-        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；二级分类建议用"父级slug-子级名"命名，如 daq-meter-electric、daq-sensor-power
+        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）。二级分类用"父级slug-子级名"命名，如 daq-meter-electric、instrument-acquisition
+        i18n: duplicate
       - label: 排序(数字越小越靠前)
         name: order
         widget: number
         value_type: int
         default: 0
+        i18n: duplicate
       - label: 父级分类（选填，留空为一级分类；有父级即二级分类）
         name: parent
         widget: relation
-        collection: zh_categories
-        display_fields: [name]
-        search_fields: [name]
+        collection: categories
+        display_fields: [path]
+        search_fields: [name, path]
         value_field: slug
         required: false
-        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）
-      - label: 分类显示路径（后台下拉用）
+        i18n: true
+        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）；英文/德文二级：Instrument Acquisition / Instrumentenerfassung（父级=Instrumentation / Instrumentierung）
+      - label: 分类显示路径（后台列表与下拉用）
         name: path
         widget: string
         required: false
-        hint: 后台产品分类下拉显示用。一级分类填分类名称即可；二级分类填"父级名 / 分类名"，如"仪器仪表采集 / 电表采集"
-      - label: 分类名称
+        i18n: true
+        hint: 一级分类填分类名称即可；二级分类填"父级名 / 分类名"，如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"
+      - label: 分类名称（必填）
         name: name
         widget: string
         required: true
-        hint: 填写中文分类名称
+        i18n: true
       - label: 分类说明
         name: description
         widget: text
         required: false
-        hint: 填写中文分类说明
-  - name: en_categories
-    label: 英文产品分类
-    folder: src/content/categories/en
-    i18n: false
-    create: true
-    delete: true
-    extension: md
-    format: frontmatter
-    slug: '{{slug}}'
-    fields:
-      - label: 语言标识
-        name: lang
-        widget: hidden
-        default: en
-      - label: URL标识 slug（必填，只能英文小写，不能用空格）
-        name: slug
-        widget: string
-        required: true
-        pattern: ['^[a-z0-9-]+$', '只能小写字母、数字和连字符，例如 instrument-acquisition']
-        hint: 英文分类 slug 用英文（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）；二级分类建议用"父级slug-子级名"命名，如 instrument-acquisition
-      - label: 排序(数字越小越靠前)
-        name: order
-        widget: number
-        value_type: int
-        default: 0
-      - label: 父级分类（选填，留空为一级分类；有父级即二级分类）
-        name: parent
-        widget: relation
-        collection: en_categories
-        display_fields: [name]
-        search_fields: [name]
-        value_field: slug
-        required: false
-        hint: 二级分类必须选择父级。当前英文二级：Instrument Acquisition（父级=Instrumentation）
-      - label: 分类显示路径（后台下拉用）
-        name: path
-        widget: string
-        required: false
-        hint: 后台产品分类下拉显示用。一级分类填分类名称即可；二级分类填"父级名 / 分类名"，如"Instrumentation / Instrument Acquisition"
-      - label: 分类名称
-        name: name
-        widget: string
-        required: true
-        hint: 填写英文分类名称
-      - label: 分类说明
-        name: description
-        widget: text
-        required: false
-        hint: 填写英文分类说明
-  - name: de_categories
-    label: 德文产品分类
-    folder: src/content/categories/de
-    i18n: false
-    create: true
-    delete: true
-    extension: md
-    format: frontmatter
-    slug: '{{slug}}'
-    fields:
-      - label: 语言标识
-        name: lang
-        widget: hidden
-        default: de
-      - label: URL标识 slug（必填，只能英文小写，不能用空格）
-        name: slug
-        widget: string
-        required: true
-        pattern: ['^[a-z0-9-]+$', '只能小写字母、数字和连字符，例如 instrument-acquisition']
-        hint: 德文分类 slug 沿用英文 slug；分类名称用德语翻译
-      - label: 排序(数字越小越靠前)
-        name: order
-        widget: number
-        value_type: int
-        default: 0
-      - label: 父级分类（选填，留空为一级分类；有父级即二级分类）
-        name: parent
-        widget: relation
-        collection: de_categories
-        display_fields: [name]
-        search_fields: [name]
-        value_field: slug
-        required: false
-        hint: 二级分类必须选择父级。当前德文二级：Instrumentenerfassung（父级=Instrumentierung）
-      - label: 分类显示路径（后台下拉用）
-        name: path
-        widget: string
-        required: false
-        hint: 后台产品分类下拉显示用。一级分类填分类名称即可；二级分类填"父级名 / 分类名"，如"Instrumentierung / Instrumentenerfassung"
-      - label: 分类名称
-        name: name
-        widget: string
-        required: true
-        hint: 填写德文分类名称
-      - label: 分类说明
-        name: description
-        widget: text
-        required: false
-        hint: 填写德文分类说明
+        i18n: true
   - name: posts
     label: 博客文章
     folder: src/content/posts

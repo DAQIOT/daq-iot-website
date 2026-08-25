@@ -57,7 +57,12 @@
       var l = entry.get('locale');
       if (l) return l;
     } catch (e) {}
-    return '';
+    // 派生集合没有条目级 locale，回退到后台语言选择
+    try {
+      return localStorage.getItem('cms-lang') || '';
+    } catch (e) {
+      return '';
+    }
   }
 
   function resolveAsset(asset) {
@@ -117,7 +122,7 @@
         h('div', { className: 'locale-bar' },
           '正在预览语言：',
           h('b', null, LOCALE_LABELS[locale] || locale || '默认'),
-          ' · 用上方「使用哪个语言撰写」下拉切换中 / 英 / 德，右侧预览会实时更新'
+          ' · 当前后台语言，可用顶部语言下拉切换'
         ),
         h('section', { className: 'hero' },
           h('div', { style: { maxWidth: '64rem', margin: '0 auto' } },
@@ -165,7 +170,7 @@
         h('div', { className: 'locale-bar' },
           '正在预览语言：',
           h('b', null, LOCALE_LABELS[locale] || locale || '默认'),
-          ' · 用上方「使用哪个语言撰写」下拉切换中 / 英 / 德'
+          ' · 当前后台语言，可用顶部语言下拉切换'
         ),
         h('section', { className: 'hero' },
           h('div', { style: { maxWidth: '64rem', margin: '0 auto' } },

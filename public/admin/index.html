@@ -9,20 +9,20 @@
       body { display: flex; flex-direction: column; }
       #cms-lang-banner { flex-shrink: 0; }
       #nc-root { flex: 1 1 auto; min-height: 0; overflow: hidden; }
-      /* CMS 顶部语言切换 banner */
+      /* CMS 顶部语言切换 banner（文档流内，flex 布局下 CMS 自动排在 banner 下方） */
       #cms-lang-banner {
-        position: fixed;
-        top: 0; left: 0; right: 0;
         height: 44px;
+        width: 100%;
+        box-sizing: border-box;
         background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
         color: #f9fafb;
         display: flex;
         align-items: center;
         padding: 0 16px;
-        z-index: 9999;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 14px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        z-index: 9999;
       }
       #cms-lang-banner .label {
         font-weight: 600;
@@ -61,7 +61,7 @@
     </style>
   </head>
   <body>
-    <!-- CMS 顶部语言切换 banner：默认中文，切换后跳转到对应语言的【产品】集合 -->
+    <!-- CMS 顶部语言切换 banner：切换后整个后台内容（产品/产品分类）切换为所选语言 -->
     <div id="cms-lang-banner">
       <span class="label">后台语言 / Language</span>
       <select id="cms-lang-select">
@@ -69,14 +69,20 @@
         <option value="en">English</option>
         <option value="de">Deutsch</option>
       </select>
-      <span class="hint">切换后跳到对应语言的【产品】集合，侧边栏的其他语言入口仍可见便于跳转</span>
+      <span class="hint">切换后【产品】【产品分类】整个后台只显示所选语言的内容</span>
     </div>
     <div id="nc-root"></div>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- 手动初始化：由 init-cms.js 按所选语言派生集合后再 CMS.init -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
+    <!-- 本地 vendor 脚本（海外 CDN 在国内不稳定，全部本地化） -->
+    <script src="./vendor/decap-cms/decap-cms.js"></script>
+    <script src="./vendor/js-yaml.min.js"></script>
+    <!-- 按语言动态初始化（fetch config.yml -> 派生当前语言的集合 -> CMS.init） -->
+    <script src="./init-cms.js?v=4"></script>
     <!-- 自定义语言切换逻辑 -->
     <script src="./lang-switcher.js"></script>
     <!-- marked：预览模板里把 body 的 Markdown 渲染成带表格/列表的 HTML -->
-    <script src="https://unpkg.com/marked/marked.min.js"></script>
+    <script src="./vendor/marked.min.js"></script>
     <!-- aiiot 自定义 Preview 模板（产品/博客），依赖上面的 h/createClass 与 marked -->
     <script src="./preview.js"></script>
     <script>
