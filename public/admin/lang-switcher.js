@@ -10,6 +10,12 @@
     select.value = saved;
     select.addEventListener('change', function () {
       localStorage.setItem('cms-lang', select.value);
+      // 切换语言会刷新页面，先把 Decap 的登录 token 备份到 sessionStorage，
+      // 防止刷新后 GitHub OAuth 登录态丢失导致重新登录
+      try {
+        var user = localStorage.getItem('decap-cms-user');
+        if (user) sessionStorage.setItem('cms-lang-user-backup', user);
+      } catch (e) { /* ignore */ }
       window.location.reload();
     });
   }

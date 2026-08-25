@@ -14,6 +14,19 @@
   var lang = localStorage.getItem('cms-lang');
   if (LANGS.indexOf(lang) < 0) lang = 'zh';
 
+  // 切换语言刷新后，若 Decap 的 GitHub OAuth token 从 localStorage 丢失，
+  // 从 sessionStorage 备份恢复，避免每次切语言都重新登录
+  (function restoreAuthBackup() {
+    try {
+      var user = localStorage.getItem('decap-cms-user');
+      var backup = sessionStorage.getItem('cms-lang-user-backup');
+      if (!user && backup) {
+        localStorage.setItem('decap-cms-user', backup);
+      }
+      sessionStorage.removeItem('cms-lang-user-backup');
+    } catch (e) { /* ignore */ }
+  })();
+
   var VIEW_FILTERS = {
     zh: [
       { label: '全部', field: 'category', pattern: '.*' },
@@ -139,8 +152,9 @@
     var st = document.createElement('style');
     st.textContent =
       '.tree-root{display:flex !important;flex-direction:column !important;}' +
-      '.tree-parent{position:relative;}' +
-      '.tree-toggle{position:absolute;left:8px;top:14px;width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;cursor:pointer;border-radius:3px;z-index:3;font-size:12px;padding:0;}' +
+      '.tree-parent{position:relative;padding-left:4px !important;}' +
+      '.tree-parent h2{padding-left:34px !important;margin-left:0 !important;}' +
+      '.tree-toggle{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;cursor:pointer;border-radius:3px;z-index:3;font-size:12px;padding:0;}' +
       '.tree-toggle:hover{background:#e2e8f0;}' +
       '.tree-child{margin-left:40px !important;padding-left:14px !important;border-left:2px solid #cbd5e1;background:#f8fafc;}' +
       '.tree-child h2{font-weight:400;}';
@@ -157,10 +171,13 @@
   setTimeout(maybeTreeify, 400);
   setTimeout(maybeTreeify, 1200);
 
-  fetch('config.yml')
+  fetch('config.yml?v=5')
     .then(function (r) { return r.text(); })
     .then(function (text) {
       var config = jsyaml.load(text);
+      // 固定 site_id，避免 Decap 把不同语言配置当成不同站点而丢失 OAuth 登录态
+      config.backend = config.backend || {};
+      config.backend.site_id = config.backend.site_id || 'daq-iot-website';
       var rest = [];
       var productsTpl = null;
       var categoriesTpl = null;

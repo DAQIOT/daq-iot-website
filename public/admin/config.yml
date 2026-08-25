@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://daq-iot.pages.dev
   auth_endpoint: /oauth/auth
+  site_id: daq-iot-website
 locale: zh_Hans
 media_folder: public/images
 public_folder: /images
