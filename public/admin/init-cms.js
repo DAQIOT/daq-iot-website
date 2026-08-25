@@ -295,7 +295,7 @@
   setTimeout(maybeProductGroups, 600);
   setTimeout(maybeProductGroups, 1400);
 
-  fetch('config.yml?v=6')
+  fetch('config.yml?v=' + Date.now())
     .then(function (r) { return r.text(); })
     .then(function (text) {
       var config = jsyaml.load(text);
@@ -329,9 +329,10 @@
 
       config.collections = [products, categories].concat(rest);
 
-      // 本地预览：走 decap-server 本地代理（localhost:8081），无需 GitHub OAuth
+      // 本地预览：走 decap-server 本地 git-gateway（localhost:8081），无需真实 GitHub OAuth
       if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
-        config.local_backend = true;
+        config.backend = { name: 'git-gateway', branch: 'main' };
+        config.local_backend = { url: 'http://localhost:8081/api/v1' };
       }
 
       // load_config_file:false 必须放在 config 对象内部！
