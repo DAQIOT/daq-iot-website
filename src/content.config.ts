@@ -70,10 +70,7 @@ const products = defineCollection({
     category: z.string().default('instrumentation'),
     order: z.number().default(0),
     hidden: z.boolean().optional().default(false),
-    parameters: z.array(z.object({
-      label: z.string(),
-      value: z.string()
-    })).optional().default([])
+    parameters: z.string().optional().default('')
   })
 });
 

@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getTranslations, getCategoriesByLang } from '../../../i18n/utils';
 import type { Lang } from '../../../i18n/config';
 import { getCollection, render } from 'astro:content';
+import { renderMarkdown } from '../../../lib/renderMarkdown';
 
 export async function getStaticPaths() {
   const products = await getCollection('products', (entry) => !entry.data.hidden);
@@ -20,6 +21,7 @@ const { lang, slug } = Astro.params as { lang: Lang; slug: string };
 const { entry } = Astro.props;
 const t = await getTranslations(lang);
 const { Content } = await render(entry);
+const paramsHtml = entry.data.parameters ? await renderMarkdown(entry.data.parameters) : '';
 const productsHref = '/' + lang + '/products';
 const contactHref = '/' + lang + '/contact';
 const catName = Object.fromEntries((await getCategoriesByLang(lang)).map((c) => [c.data.slug, c.data.name]));
@@ -48,23 +50,10 @@ const catName = Object.fromEntries((await getCategoriesByLang(lang)).map((c) => 
       </div>
     </div>
 
-    {entry.data.parameters && entry.data.parameters.length > 0 && (
+    {paramsHtml && (
       <div class="mt-12">
         <h2 class="text-xl font-bold text-slate-800 mb-4">{t('products.parameters', '产品参数')}</h2>
-        <div class="overflow-hidden rounded-xl border border-slate-200">
-          <table class="w-full text-sm">
-            <tbody>
-              {
-                entry.data.parameters.map((p, i) => (
-                  <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    <td class="w-2/5 px-5 py-3 font-medium text-slate-700 border-r border-slate-100">{p.label}</td>
-                    <td class="w-3/5 px-5 py-3 text-slate-600">{p.value}</td>
-                  </tr>
-                ))
-              }
-            </tbody>
-          </table>
-        </div>
+        <div class="prose max-w-none text-slate-700 leading-relaxed space-y-4" set:html={paramsHtml} />
       </div>
     )}
 

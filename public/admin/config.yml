@@ -73,19 +73,12 @@ collections:
         required: true
         i18n: true
         hint: 只显示当前语言的分类。带"父级名 / 分类名"（如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"）的是二级分类，有二级的一级分类请选到具体的二级分类
-      - label: 产品参数（选填，可添加多条）
+      - label: 产品参数（选填）
         name: parameters
-        widget: list
+        widget: markdown
         required: false
         i18n: true
-        hint: 每行一条，例如"参数名：通信方式 / 参数值：4G"
-        fields:
-          - label: 参数名
-            name: label
-            widget: string
-          - label: 参数值
-            name: value
-            widget: string
+        hint: 支持 Markdown，可用表格 / 列表自由排版产品参数
       - label: 详细介绍（必填）
         name: body
         widget: markdown

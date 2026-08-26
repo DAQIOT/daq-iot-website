@@ -8,17 +8,14 @@ image: /images/products/1692951414317855.jpg
 order: 2
 category: daq-software
 hidden: false
-parameters:
-  - label: 操作系统
-    value: Windows、Linux
-  - label: 软件基础环境
-    value: .NET 6
-  - label: 客户端浏览器
-    value: Edge、Chrome、Firefox、Safari
-  - label: 采集系统访问地址
-    value: http://localhost:16801/scada.html
-  - label: 组态可视化访问地址
-    value: http://localhost:16804/diagram.html
+parameters: |-
+  | 项目 | 要求 |
+  | --- | --- |
+  | 操作系统 | Windows、Linux |
+  | 软件基础环境 | .NET 6 |
+  | 客户端浏览器 | Edge、Chrome、Firefox、Safari |
+  | 采集系统访问地址 | http://localhost:16801/scada.html |
+  | 组态可视化访问地址 | http://localhost:16804/diagram.html |
 ---
 **产品详情**
 
