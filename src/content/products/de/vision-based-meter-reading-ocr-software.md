@@ -58,11 +58,11 @@ Restart time: You can set the time at which the software restarts
 
 Switch to the data source configuration interface and follow the arrow direction to operate
 
-First enter the data source name -> click ![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)Add Data Source -> Select Data Source (Local) -> Select the local file path (can be filled directly in the input box) -> click the Save Parameters button to save the parameters.
+First enter the data source name -> click Add Data Source -> Select Data Source (Local) -> Select the local file path (can be filled directly in the input box) -> click the Save Parameters button to save the parameters.
 
 # 4 **Add recognition template**
 
-Switch to the recognition template configuration interface, and configure the recognition template as shown below. Enter the dial name -> click ![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)Add Instrument -> click the Error Parameter button to save the parameters -> click the Area Recognition button and select a picture in the pop-up dialog box -> the software will automatically jump to the Recognition Area Parameter interface, configure the recognition area -> click the Recognition Test button (the recognition result will be displayed on the interface)
+Switch to the recognition template configuration interface, and configure the recognition template as shown below. Enter the dial name -> click Add Instrument -> click the Error Parameter button to save the parameters -> click the Area Recognition button and select a picture in the pop-up dialog box -> the software will automatically jump to the Recognition Area Parameter interface, configure the recognition area -> click the Recognition Test button (the recognition result will be displayed on the interface)
 
 # 5 **Identify Configuration**
 

@@ -299,7 +299,7 @@ The supported operations in expressions include:
 |                        |
 |                        | Bitwise XOR               | 43432^                                                                                 |21 |
 |                        |
-|                        | Bit reverse               | ![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)43432 |
+|                        | Bit reverse               | 43432 |
 |                        |
 |                        | Bit Shift Left            | 123<<4                                                                                 |
 |                        |

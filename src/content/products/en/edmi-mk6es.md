@@ -20,15 +20,15 @@ The X-Series 2 range improves your management and control of embedded generation
 
 **High-precision********metering for GRID energy********management******
 
-![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Power quality********measurement a****ccording to********IEC61000-4-30 Class********S**********![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Multi-level security and********encryption******
+******Power quality********measurement a****ccording to********IEC61000-4-30 Class********S****************Multi-level security and********encryption******
 
-![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Cellular********IP communication******
+******Cellular********IP communication******
 
-![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Exchangeable SCADA and********local control********functionality******
+******Exchangeable SCADA and********local control********functionality******
 
-![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Exceptional********isolation of********regulated********metrolog****y allows functional********updates without********recertif****ication******
+******Exceptional********isolation of********regulated********metrolog****y allows functional********updates without********recertif****ication******
 
-![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Design********life of********15 years flows from********h****igh-quality components**********![](https://www.daq-iot.com/core/extend/ueditor/themes/default/images/spacer.gif)******Safety standard compliant********(IEC62052-31)******
+******Design********life of********15 years flows from********h****igh-quality components****************Safety standard compliant********(IEC62052-31)******
 
 **Key********Features******
 
