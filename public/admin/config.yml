@@ -561,8 +561,6 @@ collections:
           - image
           - unordered-list
           - ordered-list
-        media_folder: public/images
-        public_folder: /images
       - label: 段落2（支持图片/排版）
         name: p2
         widget: markdown
@@ -577,8 +575,6 @@ collections:
           - image
           - unordered-list
           - ordered-list
-        media_folder: public/images
-        public_folder: /images
       - label: 段落3（支持图片/排版）
         name: p3
         widget: markdown
@@ -593,8 +589,6 @@ collections:
           - image
           - unordered-list
           - ordered-list
-        media_folder: public/images
-        public_folder: /images
   - name: contact
     label: 联系我们
     folder: src/content/contact
