@@ -547,15 +547,54 @@ collections:
       - label: 标题
         name: title
         widget: string
-      - label: 段落1
+      - label: 段落1（支持图片/排版）
         name: p1
-        widget: text
-      - label: 段落2
+        widget: markdown
+        required: false
+        toolbar_buttons:
+          - bold
+          - italic
+          - heading
+          - quote
+          - code
+          - link
+          - image
+          - unordered-list
+          - ordered-list
+        media_folder: public/images
+        public_folder: /images
+      - label: 段落2（支持图片/排版）
         name: p2
-        widget: text
-      - label: 段落3
+        widget: markdown
+        required: false
+        toolbar_buttons:
+          - bold
+          - italic
+          - heading
+          - quote
+          - code
+          - link
+          - image
+          - unordered-list
+          - ordered-list
+        media_folder: public/images
+        public_folder: /images
+      - label: 段落3（支持图片/排版）
         name: p3
-        widget: text
+        widget: markdown
+        required: false
+        toolbar_buttons:
+          - bold
+          - italic
+          - heading
+          - quote
+          - code
+          - link
+          - image
+          - unordered-list
+          - ordered-list
+        media_folder: public/images
+        public_folder: /images
   - name: contact
     label: 联系我们
     folder: src/content/contact
