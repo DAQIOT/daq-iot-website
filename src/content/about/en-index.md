@@ -2,7 +2,16 @@
 editor_lang: 英文
 name: about
 title: About DAQ-IOT
-p1: Shanghai Data Acquisition IOT Technology Co., LTD. is a national high-tech enterprise specializing in industrial IoT and enterprise digital transformation. We provide wireless sensors, data acquisition & monitoring systems, SCADA systems, energy management platforms and more.
-p2: Our solutions serve smart manufacturing, PV new energy and other industries. With service locations in Shanghai, Henan, Zhengzhou and Bangladesh, we support global clients with reliable products and local service.
-p3: Contact us at export@daq-iot.com or call 400-9677-032. Our team is ready to help you build a smarter, more connected operation.
+p1: Shanghai Data Acquisition IoT Technology Co., Ltd. is a National High-tech Enterprise and a member of the expert pool for industrial intelligent and digital transformation, with sustained focus on Industrial IoT and enterprise digital transformation services.
+p2: We have decades of extensive R&D and project experience in wireless sensors, industrial software & hardware data acquisition and monitoring systems. We have long served the full industrial chains of smart manufacturing and new energy industries.
+p3: |-
+  Corporate Mission (Positioning): Committed to industrial informatization, we deliver premium IoT data acquisition solutions for customers.
+
+  Corporate Vision: We dismantle information silos, achieve interconnection of all industrial equipment, and unlock the full value of data.
+
+  Core Values: Win customers' trust through first-class technology and thoughtful services; make data collection simpler.
+
+  ![Certificate of Honor](/images/about/about-certificate-2021-en.jpg)
+
+  ![High-tech Enterprise Certificate](/images/about/about-certificate-hightech-2024.jpg)
 ---
