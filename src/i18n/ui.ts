@@ -8,6 +8,7 @@ export const ui = {
     'nav.about': 'About',
     'nav.products': 'Products',
     'nav.contact': 'Contact',
+    'nav.cases': 'Project Cases',
     'nav.cta': 'Get a Quote',
 
     'hero.title': 'Industrial IoT Solutions Expert',
@@ -82,6 +83,7 @@ export const ui = {
     'nav.about': '关于我们',
     'nav.products': '产品中心',
     'nav.contact': '联系我们',
+    'nav.cases': '项目案例',
     'nav.cta': '获取报价',
 
     'hero.title': '工业物联网解决方案专家',
@@ -156,6 +158,7 @@ export const ui = {
     'nav.about': 'Über uns',
     'nav.products': 'Produkte',
     'nav.contact': 'Kontakt',
+    'nav.cases': 'Projekte',
     'nav.cta': 'Angebot anfordern',
 
     'hero.title': 'Experte für industrielle IoT-Lösungen',

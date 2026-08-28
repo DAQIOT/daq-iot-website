@@ -11,6 +11,7 @@ nav:
   support: 支持
   blog: 资讯
   contact: 联系我们
+  cases: 项目案例
   cta: 获取报价
 cat:
   software: AI+软件

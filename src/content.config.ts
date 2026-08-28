@@ -85,6 +85,18 @@ const posts = defineCollection({
   })
 });
 
+const cases = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/cases' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    image: z.string().optional().default(''),
+    industry: z.string().optional().default(''),
+    order: z.number().default(0),
+    hidden: z.boolean().optional().default(false)
+  })
+});
+
 export const collections = {
   site,
   solutions,
@@ -95,5 +107,6 @@ export const collections = {
   contact,
   categories,
   products,
-  posts
+  posts,
+  cases
 };

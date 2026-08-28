@@ -11,6 +11,7 @@ nav:
   support: Support
   blog: News
   contact: Kontakt
+  cases: Projekte
   cta: Angebot anfordern
 cat:
   software: KI+ Software

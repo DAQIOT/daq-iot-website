@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getTranslations } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/config';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('cases', (entry) => !entry.data.hidden);
+  return cases.map((entry) => {
+    const [lang, ...slugParts] = entry.id.split('/');
+    const slug = slugParts.join('/');
+    return {
+      params: { lang, slug },
+      props: { entry },
+    };
+  });
+}
+
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { entry } = Astro.props;
+const t = await getTranslations(lang);
+const { Content } = await render(entry);
+const casesHref = '/' + lang + '/cases';
+const contactHref = '/' + lang + '/contact';
+---
+<BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.summary}>
+  <section class="bg-brand-dark">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <nav class="text-sm text-slate-400 mb-3">
+        <a href={casesHref} class="hover:text-brand">{t('nav.cases')}</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-200">{entry.data.title}</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold text-white">{entry.data.title}</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      {entry.data.image && (
+        <img src={entry.data.image} alt={entry.data.title} class="w-full h-80 object-cover bg-slate-50 rounded-2xl shadow" />
+      )}
+      <div>
+        {entry.data.industry && (
+          <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{entry.data.industry}</span>
+        )}
+        <p class="mt-4 text-lg text-slate-600 leading-relaxed">{entry.data.summary}</p>
+        <a href={contactHref} class="mt-6 inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('nav.cta', '获取报价')}</a>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-slate-200 pt-8 text-slate-700 leading-relaxed space-y-4 prose max-w-none">
+      <Content />
+    </div>
+  </section>
+</BaseLayout>

@@ -11,6 +11,7 @@ nav:
   support: Support
   blog: News
   contact: Contact
+  cases: Project Cases
   cta: Get a Quote
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert

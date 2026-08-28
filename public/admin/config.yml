@@ -85,6 +85,53 @@ collections:
         required: true
         i18n: true
         hint: 产品详细介绍，支持 Markdown 格式
+  - name: cases
+    label: 项目案例
+    folder: src/content/cases
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    fields:
+      - label: 案例标题（必填）
+        name: title
+        widget: string
+        required: true
+        i18n: true
+        hint: 填写当前语言的案例标题（中文案例填中文，英文案例填英文）
+      - label: 一句话摘要（必填）
+        name: summary
+        widget: text
+        required: true
+        i18n: true
+        hint: 案例一句话介绍，用于列表卡片展示，20-50 字左右
+      - label: 封面图（选填）
+        name: image
+        widget: image
+        required: false
+        i18n: duplicate
+        hint: 案例封面/现场图，各语言可使用不同图片
+      - label: 所属行业（选填）
+        name: industry
+        widget: string
+        required: false
+        i18n: true
+        hint: 如 智能制造 / 光伏新能源 / 智慧城市，用于详情页标签展示
+      - label: 排序（选填，数字越小越靠前）
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        pattern: ['^[0-9]+$', '只能填数字']
+        i18n: duplicate
+      - label: 案例详情（必填）
+        name: body
+        widget: markdown
+        required: true
+        i18n: true
+        hint: 案例详细内容（背景/方案/成效等），支持 Markdown，可插入图片
   - name: categories
     label: 产品分类
     folder: src/content/categories
