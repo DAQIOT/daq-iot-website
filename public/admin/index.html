@@ -56,10 +56,10 @@
         #cms-lang-banner .hint { display: none; }
       }
       /* Decap i18n 双栏真实类名为 .Pane（默认只有 height:100% 没有 overflow）。
-         仅给 .Pane 自身加 overflow-y:auto 让其可滚动；
-         切勿给 .Pane 的子 div 强加 overflow/height，否则会创建独立滚动层、
-         拦截 Decap markdown 编辑器的「编辑区↔预览区」同步滚动事件。 */
-      .Pane {
+         只给它和直接内容容器加 overflow-y:auto + 正确高度，
+         让浏览器原生滚轮自己找最近的可滚容器，绝不接管 wheel 事件。 */
+      .Pane,
+      .Pane > div {
         overflow-y: auto !important;
         height: 100% !important;
         max-height: 100% !important;
@@ -101,6 +101,11 @@
             if (p.dataset.scrollFixed) return;
             p.style.overflowY = 'auto';
             p.dataset.scrollFixed = '1';
+            var child = p.firstElementChild;
+            if (child) {
+              child.style.overflowY = 'auto';
+              child.style.height = '100%';
+            }
           });
         }
         // 集合列表页没有 .Pane，需要让 #nc-root 本身可滚动；编辑页有 .Pane 时保持 hidden
