@@ -27,3 +27,5 @@ pnpm-debug.log*
 dist-test/
 .astro_trash_*/
 preview-shots/
+
+.workbuddy/
