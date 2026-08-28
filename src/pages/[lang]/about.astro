@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getTranslations } from '../../i18n/utils';
+import { renderMarkdown } from '../../lib/renderMarkdown';
 import type { Lang } from '../../i18n/config';
 
 export function getStaticPaths() {
@@ -8,12 +9,17 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
+const p1 = await renderMarkdown(t('about.p1') || '');
+const p2 = await renderMarkdown(t('about.p2') || '');
+const p3 = await renderMarkdown(t('about.p3') || '');
+const title = t('about.title');
+const desc = t('about.p1') || '';
 ---
-<BaseLayout lang={lang} title={t('about.title') + ' | DAQ-IOT'} description={t('about.p1')}>
+<BaseLayout lang={lang} title={title + ' | DAQ-IOT'} description={desc}>
   <section class="mx-auto max-w-3xl px-4 py-20">
-    <h1 class="text-4xl font-bold text-slate-900">{t('about.title')}</h1>
-    <p class="mt-6 text-lg text-slate-600 leading-relaxed">{t('about.p1')}</p>
-    <p class="mt-4 text-lg text-slate-600 leading-relaxed">{t('about.p2')}</p>
-    <p class="mt-4 text-lg text-slate-600 leading-relaxed">{t('about.p3')}</p>
+    <h1 class="text-4xl font-bold text-slate-900">{title}</h1>
+    <div class="mt-6 text-lg text-slate-600 leading-relaxed [&_img]:mx-auto [&_img]:block [&_img]:max-w-full [&_img]:rounded-xl [&_img]:my-6" set:html={p1} />
+    <div class="mt-4 text-lg text-slate-600 leading-relaxed [&_img]:mx-auto [&_img]:block [&_img]:max-w-full [&_img]:rounded-xl [&_img]:my-6" set:html={p2} />
+    <div class="mt-4 text-lg text-slate-600 leading-relaxed [&_img]:mx-auto [&_img]:block [&_img]:max-w-full [&_img]:rounded-xl [&_img]:my-6" set:html={p3} />
   </section>
 </BaseLayout>
