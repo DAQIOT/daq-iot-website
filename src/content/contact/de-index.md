@@ -13,10 +13,10 @@ phone: Telefon
 mobile: Mobil / WhatsApp
 person: Ansprechpartner
 address: Adresse
-personName: Nicholas Wei
+personName: xiangyang.wu
 emailValue: export@daq-iot.com
-phoneValue: 400-9677-032
-mobileValue: +86 134 5523 1614
+phoneValue: 'Facebook/wechat/WhatsApp:+8619936624847  LINE:daqiot'
+mobileValue: '+8619936624847'
 address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
 address2: 16. Stock, Gebäude 6, Nr. 888 Xinlang Road, Songjiang District, Shanghai
 address3: Nr. 19 Dongsheng Straße, Zhonglou Straße, Ruzhou Stadt, Pingdingshan Stadt, Henan Provinz
