@@ -16,7 +16,7 @@ address: 地址
 personName: 王亚乐
 emailValue: business@daq-iot.com
 phoneValue: 400-9677-032
-mobileValue: 15275635861
+mobileValue: "15275635861(业务总监)/19936624847(总经理) "
 address1: 香港新蒲岗五芳街26号荣盛工业大厦24楼2401-16室
 address2: 上海市松江区欣浪路888弄6号楼16层
 address3: 河南省平顶山市汝州市钟楼街道东盛街19号
