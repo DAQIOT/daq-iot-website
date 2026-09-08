@@ -1,14 +1,16 @@
-// Decap CMS 动态初始化：按顶部语言下拉派生【产品】【产品分类】集合
+// Decap CMS 动态初始化：按顶部语言下拉派生【全部 12 个集合】
 // ------------------------------------------------------------
-// config.yml 里 products / categories 是单一模板定义（i18n 模式）。
-// 这里在 CMS 初始化前，按当前选择的语言把这两个集合改写为
-// 只管理对应语言的目录：
-//   zh -> src/content/products/zh   + src/content/categories/zh
-//   en -> src/content/products/en   + src/content/categories/en
-//   de -> src/content/products/de   + src/content/categories/de
-// 效果：后台侧边栏只有【产品】【产品分类】两个入口；
-// 切换顶部语言并刷新后，整个后台内容切换为该语言，
-// 添加/删除/编辑只影响当前语言，各语言内容完全独立。
+// 阶段一：语言切换彻底化
+//   i18n:true 集合（products/categories/cases/downloads/posts）：
+//     folder 改为 src/content/{collection}/{lang}，只显示当前语言
+//   i18n:false 集合（site/solutions/services/partners/support/about/contact）：
+//     转为 file collection，只指向 {lang}-settings.md 或 {lang}-index.md
+//
+// 阶段二：侧边栏分组
+//   集合按"内容管理"和"页面文案"两组用分隔线分开
+//
+// 效果：切换顶部语言并刷新后，整个后台所有集合只显示当前语言内容。
+// 侧边栏按逻辑分组，不再是一堆平铺列表。
 (function () {
   var LANGS = ['zh', 'en', 'de'];
   var lang = localStorage.getItem('cms-lang');
@@ -95,6 +97,39 @@
   var CAT_NAMES = CATEGORY_MAP[lang] || {};
   var CAT_ORDER = Object.keys(CAT_NAMES);
 
+  // 文案集合（i18n:false）的文件后缀映射
+  // site -> zh-settings.md, solutions -> zh-index.md, etc.
+  var FILE_SUFFIX = {
+    site: 'settings',
+    solutions: 'index',
+    services: 'index',
+    partners: 'index',
+    support: 'index',
+    about: 'index',
+    contact: 'index'
+  };
+
+  // 集合 label 映射
+  var LABEL_MAP = {
+    products: '产品',
+    categories: '产品分类',
+    cases: '项目案例',
+    downloads: '下载中心',
+    posts: '博客文章',
+    site: '网站基础文案',
+    solutions: '解决方案',
+    services: '服务与支持',
+    partners: '合作伙伴',
+    support: '技术支持',
+    about: '关于我们',
+    contact: '联系我们'
+  };
+
+  // i18n:true 集合列表（folder 派生）
+  var I18N_COLLECTIONS = ['products', 'categories', 'cases', 'downloads', 'posts'];
+  // i18n:false 集合列表（file 派生）
+  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'support', 'about', 'contact'];
+
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
   function derive(collection, folder, label) {
     var c = JSON.parse(JSON.stringify(collection));
@@ -109,19 +144,38 @@
     return c;
   }
 
+  // 将 folder 集合转为 file 集合，只指向当前语言的那一个文件
+  // 用于 i18n:false 的文案集合，让后台只显示当前语言的文件
+  function deriveSingleFile(collection, lang, label, fileSuffix) {
+    var c = JSON.parse(JSON.stringify(collection));
+    delete c.i18n;
+    delete c.hide;
+    delete c.folder;
+    delete c.identifier_field;
+    delete c.create;
+    c.label = label;
+    var fileName = lang + '-' + fileSuffix + '.md';
+    c.files = [{
+      name: lang + '-' + fileSuffix,
+      label: label,
+      file: 'src/content/' + c.name + '/' + fileName,
+      fields: c.fields
+    }];
+    (c.fields || []).forEach(function (f) {
+      delete f.i18n;
+      if (f.fields) f.fields.forEach(function (sf) { delete sf.i18n; });
+    });
+    return c;
+  }
+
   // ============================================================
   // 分类列表树形折叠：点击父类（折叠箭头）展开/收起其二级分类
-  // Decap 原生列表是扁平的（每个分类都是独立条目），
-  // 这里不动 React 管理的 DOM 节点，只用 CSS order 把二级项排在父级下方，
-  // 并用 JS 折叠显示，避免 React 重渲染时节点重复/丢失。
   // ============================================================
   function maybeTreeify() {
-    // 仅在「产品分类」集合列表页生效
     if (location.hash.indexOf('collections/categories') < 0) return;
     var ul = document.querySelector('main ul');
     if (!ul) return;
 
-    // 让 ul 支持 CSS order 重排（不移动 DOM 节点）
     ul.classList.add('tree-root');
 
     var lis = Array.prototype.slice.call(ul.children).filter(function (c) {
@@ -129,14 +183,12 @@
     });
     if (lis.length < 2) return;
 
-    // 先还原上一轮样式/按钮
     Array.prototype.slice.call(ul.querySelectorAll('.tree-toggle')).forEach(function (t) { t.remove(); });
     lis.forEach(function (li) {
       li.classList.remove('tree-parent', 'tree-child');
       li.style.order = '';
     });
 
-    // 解析一级 / 二级（二级 path 形如「父级 / 子级」）
     var parents = {}, childrenMap = {};
     lis.forEach(function (li) {
       var h = li.querySelector('h2');
@@ -166,7 +218,7 @@
         var tog = document.createElement('button');
         tog.type = 'button';
         tog.className = 'tree-toggle';
-        tog.textContent = '▾'; // 默认展开
+        tog.textContent = '▾';
         tog.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
@@ -182,8 +234,7 @@
   }
 
   // ============================================================
-  // 产品列表分组增强：Decap 的 view_groups 按 category slug 分组后，
-  // 把分组标题替换为分类中文/英文/德文名称，并加上展开/收起箭头。
+  // 产品列表分组增强
   // ============================================================
   function maybeProductGroups() {
     if (location.hash.indexOf('collections/products') < 0) return;
@@ -203,8 +254,6 @@
         if (!text) continue;
         var trimmed = text.trim();
         if (!trimmed) continue;
-        // 匹配分组标题：Decap 会渲染成 "按分类分组 slug" 或 "slug (N)"。
-        // 产品标题也在 h2 内，但 class 不含 GroupHeading，借此区分。
         var parent = node.parentElement;
         if (!parent) continue;
         var closestH2 = parent.closest ? parent.closest('h2') : null;
@@ -221,19 +270,16 @@
         if (header && replacedParents.indexOf(header) < 0) {
           replacedParents.push(header);
           header.classList.add('product-group-header');
-          // 若还没有箭头，加一个
           if (!header.querySelector('.product-group-arrow')) {
             var arrow = document.createElement('span');
             arrow.className = 'product-group-arrow';
             arrow.textContent = '▾';
             header.insertBefore(arrow, header.firstChild);
           }
-          // 绑定点击展开/收起：尝试找同组下的产品条目容器
           if (!header.dataset.groupBound) {
             header.dataset.groupBound = '1';
             (function (h) {
               h.addEventListener('click', function (e) {
-                // 不拦截链接/按钮
                 var t = e.target;
                 if (t && (t.tagName === 'A' || t.tagName === 'BUTTON' || t.closest('a, button'))) return;
                 toggleProductGroup(h);
@@ -245,21 +291,17 @@
       return replacedCount;
     }
 
-    // 轮询兜底：用户切换「分组」视图后，分组标题可能延迟生成，
-    // 持续轮询确保分类 slug 被替换为中文/英文/德文名称。
     var _pgAttempts = 0;
     function pollProductGroups() {
       if (++_pgAttempts > 50) return;
       if (location.hash.indexOf('collections/products') < 0) return;
       var count = maybeProductGroups();
       console.log('[product-groups] poll #' + _pgAttempts + ' replaced=' + count);
-      // 只要还在产品列表页，就继续轮询（切换视图时会重新替换）
       setTimeout(pollProductGroups, 700);
     }
 
   function toggleProductGroup(header) {
     var arrow = header.querySelector('.product-group-arrow');
-    // 策略1：header 与条目是同级 li/div
     var items = [];
     var sibling = header.nextElementSibling;
     while (sibling) {
@@ -267,7 +309,6 @@
       items.push(sibling);
       sibling = sibling.nextElementSibling;
     }
-    // 策略2：header 父容器下有 ul/ol 条目列表
     if (!items.length) {
       var list = header.parentElement && header.parentElement.querySelector('ul, ol');
       if (list && list !== header) {
@@ -282,7 +323,70 @@
     header.classList.toggle('collapsed', open);
   }
 
-  // 注入树形样式（ul 用 flex column 让 order 生效；箭头；子级缩进）
+  // ============================================================
+  // 侧边栏分组：在"内容管理"和"页面文案"两组之间插入分隔标题
+  // ============================================================
+  function injectSidebarGroups() {
+    var root = document.querySelector('#nc-root') || document.body;
+    // 查找侧边栏中指向 collections 的链接
+    var links = root.querySelectorAll('a[href*="#/collections/"]');
+    if (links.length < 4) return;
+
+    // 检查是否已注入
+    var existing = root.querySelector('.cms-group-sep');
+    if (existing) return;
+
+    // 页面文案集合名列表
+    var pageContentNames = SINGLE_FILE_COLLECTIONS;
+    // 内容管理集合名列表
+    var contentNames = I18N_COLLECTIONS;
+
+    var sepInserted = {};
+    links.forEach(function (link) {
+      var href = link.getAttribute('href') || '';
+
+      // 在第一个"内容管理"集合前插入分组标题
+      var isFirstContent = false;
+      for (var i = 0; i < contentNames.length; i++) {
+        if (href.indexOf('collections/' + contentNames[i]) >= 0) {
+          isFirstContent = true;
+          break;
+        }
+      }
+      if (isFirstContent && !sepInserted.content) {
+        sepInserted.content = true;
+        // 检查是否已有
+        var prev = link.previousElementSibling;
+        if (!prev || !prev.classList || !prev.classList.contains('cms-group-sep')) {
+          var sep = document.createElement('div');
+          sep.className = 'cms-group-sep cms-group-content';
+          sep.textContent = '内容管理';
+          link.parentNode.insertBefore(sep, link);
+        }
+      }
+
+      // 在第一个"页面文案"集合前插入分组标题
+      var isFirstPage = false;
+      for (var j = 0; j < pageContentNames.length; j++) {
+        if (href.indexOf('collections/' + pageContentNames[j]) >= 0) {
+          isFirstPage = true;
+          break;
+        }
+      }
+      if (isFirstPage && !sepInserted.page) {
+        sepInserted.page = true;
+        var prevP = link.previousElementSibling;
+        if (!prevP || !prevP.classList || !prevP.classList.contains('cms-group-sep')) {
+          var sepP = document.createElement('div');
+          sepP.className = 'cms-group-sep cms-group-page';
+          sepP.textContent = '页面文案';
+          link.parentNode.insertBefore(sepP, link);
+        }
+      }
+    });
+  }
+
+  // 注入样式：树形 + 产品分组 + 侧边栏分组
   (function () {
     var st = document.createElement('style');
     st.textContent =
@@ -293,72 +397,93 @@
       '.tree-toggle:hover{background:#e2e8f0;}' +
       '.tree-child{margin-left:40px !important;padding-left:14px !important;border-left:2px solid #cbd5e1;background:#f8fafc;}' +
       '.tree-child h2{font-weight:400;}' +
-      // 产品列表分组标题：把 Decap 按 category slug 生成的分组标题换成中文名/英文名/德文名
       '.product-group-header{cursor:pointer;user-select:none;}' +
-      '.product-group-header .product-group-arrow{display:inline-block;width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;border-radius:3px;font-size:12px;margin-right:6px;}';
+      '.product-group-header .product-group-arrow{display:inline-block;width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;border-radius:3px;font-size:12px;margin-right:6px;}' +
+      // 侧边栏分组分隔
+      '.cms-group-sep{font-size:11px !important;font-weight:700 !important;color:#64748b !important;text-transform:uppercase !important;letter-spacing:0.08em !important;padding:12px 16px 4px !important;margin-top:8px !important;border-top:1px solid #e2e8f0 !important;background:#f8fafc !important;pointer-events:none;}' +
+      '.cms-group-sep:first-child{border-top:none !important;margin-top:0 !important;}';
     document.head.appendChild(st);
   })();
 
-  // 监听 DOM 变化后重新树形化（disconnect 期间操作，避免自身触发递归）
+  // 监听 DOM 变化后重新执行增强逻辑
   var _tw = new MutationObserver(function () {
     _tw.disconnect();
     try { maybeTreeify(); } catch (e) { console.error('[treeify]', e); }
     try { maybeProductGroups(); } catch (e) { console.error('[product-groups]', e); }
+    try { injectSidebarGroups(); } catch (e) { console.error('[sidebar-groups]', e); }
     _tw.observe(document.body, { childList: true, subtree: true });
   });
   _tw.observe(document.body, { childList: true, subtree: true });
   setTimeout(maybeTreeify, 400);
   setTimeout(maybeTreeify, 1200);
-  // 启动产品分组标题映射轮询（用户手动点「分组→按分类分组」后自动替换为分类名）
+  setTimeout(injectSidebarGroups, 500);
+  setTimeout(injectSidebarGroups, 1500);
   setTimeout(pollProductGroups, 600);
 
+  // ============================================================
+  // 按语言派生全部 12 个集合后初始化 CMS
+  // ============================================================
   fetch('config.yml?v=' + Date.now())
     .then(function (r) { return r.text(); })
     .then(function (text) {
       var config = jsyaml.load(text);
-      // 固定 site_id，避免 Decap 把不同语言配置当成不同站点而丢失 OAuth 登录态
       config.backend = config.backend || {};
       config.backend.site_id = config.backend.site_id || 'daq-iot-website';
-      var rest = [];
-      var productsTpl = null;
-      var categoriesTpl = null;
+
+      // 按 name 索引所有模板集合
+      var templates = {};
       (config.collections || []).forEach(function (c) {
-        if (c.name === 'products') { productsTpl = c; return; }
-        if (c.name === 'categories') { categoriesTpl = c; return; }
-        rest.push(c);
+        templates[c.name] = c;
       });
-      if (!productsTpl || !categoriesTpl) {
-        console.error('[init-cms] config.yml 缺少 products/categories 模板，回退默认初始化');
-        window.CMS.init();
-        return;
+
+      var derived = [];
+
+      // ── 内容管理组：i18n:true 集合，folder 派生到当前语言子目录 ──
+      if (templates.products) {
+        var products = derive(templates.products, 'src/content/products/' + lang, '① 产品');
+        products.view_filters = VIEW_FILTERS[lang];
+        products.view_groups = [{ label: '按分类分组', field: 'category' }];
+        derived.push(products);
+      }
+      if (templates.categories) {
+        var categories = derive(templates.categories, 'src/content/categories/' + lang, '② 产品分类');
+        (categories.fields || []).forEach(function (f) {
+          if (f.name === 'lang') f.default = lang;
+        });
+        derived.push(categories);
+      }
+      if (templates.cases) {
+        derived.push(derive(templates.cases, 'src/content/cases/' + lang, '③ 项目案例'));
+      }
+      if (templates.downloads) {
+        derived.push(derive(templates.downloads, 'src/content/downloads/' + lang, '④ 下载中心'));
+      }
+      if (templates.posts) {
+        derived.push(derive(templates.posts, 'src/content/posts/' + lang, '⑤ 博客文章'));
       }
 
-      var products = derive(productsTpl, 'src/content/products/' + lang, '产品');
-      products.view_filters = VIEW_FILTERS[lang];
-      // 产品列表按 category 字段分组，便于按分类查看
-      products.view_groups = [{ label: '按分类分组', field: 'category' }];
-
-      var categories = derive(categoriesTpl, 'src/content/categories/' + lang, '产品分类');
-      // 新建分类时自动写入当前语言标识
-      (categories.fields || []).forEach(function (f) {
-        if (f.name === 'lang') f.default = lang;
+      // ── 页面文案组：i18n:false 集合，转为 file collection 只指向当前语言文件 ──
+      SINGLE_FILE_COLLECTIONS.forEach(function (name) {
+        if (!templates[name]) return;
+        var suffix = FILE_SUFFIX[name] || 'index';
+        derived.push(deriveSingleFile(templates[name], lang, LABEL_MAP[name], suffix));
       });
 
-      config.collections = [products, categories].concat(rest);
+      config.collections = derived;
 
       // 本地预览：走 decap-server 本地 git-gateway（localhost:8081），无需真实 GitHub OAuth
+      // 线上：走 GitHub OAuth，删除 local_backend 避免尝试连接不存在的本地服务器
       if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
         config.backend = { name: 'git-gateway', branch: 'main' };
         config.local_backend = { url: 'http://localhost:8081/api/v1' };
+      } else {
+        delete config.local_backend;
       }
 
-      // load_config_file:false 必须放在 config 对象内部！
-      // CMS.init 只解构 options.config 传给 loadConfig；
-      // 若不关闭，Decap 会再 fetch config.yml 并与传入对象做数组合并，
-      // 导致 i18n.locales / collections 重复而校验失败
+      // load_config_file:false 必须放在 config 对象内部
       config.load_config_file = false;
       window.CMS.init({ config: config });
-      console.log('[init-cms] 已按语言初始化后台：' + lang);
+      console.log('[init-cms] 已按语言初始化后台：' + lang + '（' + derived.length + ' 个集合）');
     })
     .catch(function (e) {
       console.error('[init-cms] 初始化失败，回退默认初始化：', e);

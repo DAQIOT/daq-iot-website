@@ -1,7 +1,7 @@
 ---
 title: 欢迎来到数采物联新官网
 description: 我们很高兴推出全新多语言官网，以更好地服务全球客户。
-pubDate: 2025-07-31
+pubDate: "2025-07-31"
 author: 数采物联团队
 image: /hero.svg
 ---

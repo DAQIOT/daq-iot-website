@@ -17,6 +17,14 @@ const childrenByParent: Record<string, typeof catList> = {};
 catList.forEach((c) => { if (c.parent) (childrenByParent[c.parent] ||= []).push(c); });
 const categories = catList.filter((c) => !c.parent).map((c) => ({ ...c, children: childrenByParent[c.key] || [] }));
 
+// 下载分类下拉
+const dlCats = [
+  { key: 'software', name: t('downloads.catSoftware'), href: base + '/downloads?cat=software' },
+  { key: 'config-tool', name: t('downloads.catConfigTool'), href: base + '/downloads?cat=config-tool' },
+  { key: 'driver', name: t('downloads.catDriver'), href: base + '/downloads?cat=driver' },
+  { key: 'doc', name: t('downloads.catDoc'), href: base + '/downloads?cat=doc' },
+];
+
 const nav = [
   { href: base + '/', label: t('nav.home') },
   { href: base + '/products', label: t('nav.products'), dropdown: categories },
@@ -25,6 +33,7 @@ const nav = [
   { href: base + '/cases', label: t('nav.cases') },
   { href: base + '/partners', label: t('nav.partners') },
   { href: base + '/support', label: t('nav.support') },
+  { href: base + '/downloads', label: t('nav.downloads'), dropdown: dlCats },
   { href: base + '/blog', label: t('nav.blog') },
   { href: base + '/about', label: t('nav.about') },
   { href: base + '/contact', label: t('nav.contact') },

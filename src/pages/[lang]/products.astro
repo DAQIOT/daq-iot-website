@@ -79,29 +79,32 @@ const cats = [
   const cards = grid ? Array.from(grid.querySelectorAll('.product-card')) : [];
   const btns = Array.from(document.querySelectorAll('.cat-btn'));
 
-  function paint(cat: string) {
+  function paint(cat) {
     let visible = 0;
     cards.forEach((c) => {
-      const el = c as HTMLElement;
-      // 匹配规则：全部分类 | 卡片分类=选中 | 卡片是选中的一级分类的子分类
-      const show = cat === 'all' || el.dataset.category === cat || el.dataset.parentCategory === cat;
-      el.style.display = show ? '' : 'none';
+      const show = cat === 'all' || c.dataset.category === cat || c.dataset.parentCategory === cat;
+      c.style.display = show ? '' : 'none';
       if (show) visible++;
     });
     if (empty) empty.classList.toggle('hidden', visible !== 0);
     btns.forEach((b) => {
-      const el = b as HTMLElement;
-      const on = el.dataset.cat === cat;
+      const on = b.dataset.cat === cat;
+      const isChild = b.dataset.cat && parentOfMap[b.dataset.cat] !== undefined;
+      const parentActive = isChild && parentOfMap[b.dataset.cat] === cat;
       b.className = 'cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
-        (el.dataset.cat !== 'all' && el.dataset.cat && parentOfMap[el.dataset.cat] === cat ? '' : '') +
-        (on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
+        (isChild ? 'ml-1 text-xs ' : '') +
+        (on
+          ? 'bg-brand text-white border-brand'
+          : parentActive
+            ? 'bg-brand-light text-brand border-brand'
+            : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
     });
   }
 
   const basePath = location.pathname.replace(/\/+$/, '');
   btns.forEach((b) => {
     b.addEventListener('click', () => {
-      const cat = (b as HTMLElement).dataset.cat || 'all';
+      const cat = b.dataset.cat || 'all';
       const url = cat === 'all' ? basePath : basePath + '?cat=' + cat;
       history.replaceState(null, '', url);
       paint(cat);

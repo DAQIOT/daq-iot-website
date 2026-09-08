@@ -22,8 +22,8 @@ const t = await getTranslations(lang);
 const { Content } = await render(entry);
 const listHref = '/' + lang + '/blog';
 
-function fmt(d: Date | undefined) {
-  return d ? d.toISOString().slice(0, 10) : '';
+function fmt(d: string | undefined) {
+  return d ? d : '';
 }
 ---
 <BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.description}>

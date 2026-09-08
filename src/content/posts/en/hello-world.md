@@ -1,7 +1,7 @@
 ---
 title: Welcome to the New DAQ-IOT Website
 description: We are excited to launch our new multilingual website to better serve global customers.
-pubDate: 2025-07-31
+pubDate: "2025-07-31"
 author: DAQ-IOT Team
 image: /hero.svg
 ---

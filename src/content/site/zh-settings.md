@@ -9,6 +9,7 @@ nav:
   services: 服务
   partners: 合作伙伴
   support: 支持
+  downloads: 下载中心
   blog: 资讯
   contact: 联系我们
   cases: 项目案例
@@ -85,6 +86,19 @@ products:
   back: 返回产品
   all: 全部产品
   empty: 该分类下暂无产品，欢迎联系我们定制。
+downloads:
+  title: 下载中心
+  subtitle: 软件安装包、配置工具、驱动与产品相关资料下载。
+  all: 全部下载
+  empty: 该分类下暂无下载内容。
+  catSoftware: 软件平台
+  catConfigTool: 配置工具
+  catDriver: 驱动程序
+  catDoc: 文档资料
+  download: 立即下载
+  changelog: 更新日志
+  version: 版本
+  updated: 更新
 blog:
   title: 资讯中心
   subtitle: 行业洞察、产品动态与技术分享，助您紧跟工业物联网前沿。

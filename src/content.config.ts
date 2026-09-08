@@ -79,7 +79,7 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    pubDate: z.date(),
+    pubDate: z.preprocess((v) => v instanceof Date ? v.toISOString().split('T')[0] : v, z.string()),
     author: z.string().optional(),
     image: z.string().optional()
   })
@@ -97,6 +97,32 @@ const cases = defineCollection({
   })
 });
 
+const linkSchema = z.object({
+  label: z.string(),
+  url: z.string(),
+  type: z.string().default('local')
+});
+
+const downloads = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/downloads' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional().default(''),
+    version: z.string().optional().default(''),
+    fileSize: z.string().optional().default(''),
+    fileType: z.string().optional().default('ZIP'),
+    file: z.string().optional().default(''),
+    links: z.array(linkSchema).optional().default([]),
+    productSlug: z.string().optional().default(''),
+    icon: z.string().optional().default('all'),
+    category: z.string().optional().default(''),
+    releaseDate: z.preprocess((v) => v instanceof Date ? v.toISOString().split('T')[0] : v, z.string().optional().default('')),
+    changelog: z.string().optional().default(''),
+    order: z.number().optional().default(0)
+  })
+});
+
 export const collections = {
   site,
   solutions,
@@ -108,5 +134,6 @@ export const collections = {
   categories,
   products,
   posts,
-  cases
+  cases,
+  downloads
 };

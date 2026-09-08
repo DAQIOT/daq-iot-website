@@ -14,7 +14,7 @@ export async function getTranslations(lang: Lang) {
   const data = await getRawSite(lang);
   return function t(key: string, fallback?: string): string {
     const value = key.split('.').reduce<any>((o, k) => (o == null ? undefined : o[k]), data);
-    return typeof value === 'string' ? value : (fallback ?? key);
+    return typeof value === 'string' || typeof value === 'number' ? String(value) : (fallback ?? key);
   };
 }
 

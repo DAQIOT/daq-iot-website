@@ -47,9 +47,9 @@ const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.pare
     <div>
       <div class="text-white font-semibold text-sm mb-3">{t('footer.contact')}</div>
       <ul class="space-y-2 text-sm text-slate-400">
-        <li>Email: export@daq-iot.com</li>
-        <li>Tel: 400-9677-032</li>
-        <li>WhatsApp: +86 152 7563 5861</li>
+        <li>Email: {t('contact.emailValue')}</li>
+        <li>Tel: {t('contact.phoneValue')}</li>
+        <li>WhatsApp: {t('contact.mobileValue')}</li>
       </ul>
     </div>
   </div>

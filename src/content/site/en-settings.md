@@ -9,6 +9,7 @@ nav:
   services: Services
   partners: Partners
   support: Support
+  downloads: Downloads
   blog: News
   contact: Contact
   cases: Project Cases
@@ -74,6 +75,19 @@ products:
   back: Back to Products
   all: All Products
   empty: No products in this category yet. Contact us for customization.
+downloads:
+  title: Downloads
+  subtitle: Software installers, configuration tools, drivers and product datasheets for download.
+  all: All Downloads
+  empty: No downloads in this category yet.
+  catSoftware: Software Platform
+  catConfigTool: Configuration Tools
+  catDriver: Drivers
+  catDoc: Documentation
+  download: Download
+  changelog: Changelog
+  version: Version
+  updated: Updated
 blog:
   title: News & Insights
   subtitle: Industry insights, product updates and technical sharing to keep you ahead in industrial IoT.

@@ -12,10 +12,10 @@ const t = await getTranslations(lang);
 const base = '/' + lang;
 
 const posts = (await getCollection('posts', (entry) => entry.id.startsWith(lang + '/')))
-  .sort((a, b) => (b.data.pubDate?.getTime() ?? 0) - (a.data.pubDate?.getTime() ?? 0));
+  .sort((a, b) => (b.data.pubDate ?? '').localeCompare(a.data.pubDate ?? ''));
 
-function fmt(d: Date | undefined) {
-  return d ? d.toISOString().slice(0, 10) : '';
+function fmt(d: string | undefined) {
+  return d ? d : '';
 }
 ---
 <BaseLayout lang={lang} title={t('blog.title') + ' | DAQ-IOT'} description={t('blog.subtitle')}>

@@ -8,6 +8,15 @@ backend:
 locale: zh_Hans
 media_folder: public/images
 public_folder: /images
+# ── 本地开发 ──
+# 本地运行 decap-server 后访问 http://localhost:4321/admin/ 即可进入后台。
+# init-cms.js 会自动检测 localhost 并切换为 git-gateway + local_backend，无需改此文件。
+# 启动方法：
+#   1. 终端1: npx decap-server（启动本地 CMS API，端口 8081）
+#   2. 终端2: npm run dev（启动 Astro，端口 4321）
+#   3. 浏览器打开 http://localhost:4321/admin/
+# 线上部署到 Cloudflare Pages 后，自动走 GitHub OAuth，无需额外配置。
+local_backend: true
 # ── 图片物理分类约定 ──
 # 语言相关的产品图请用文件名前缀区分：en-（英文）/ zh-（中文）/ de-（德文），如 en-scada-cover.jpg
 # 也可手动归入 public/images/en、public/images/zh、public/images/de 子文件夹（已建好，含 .gitkeep）
@@ -132,6 +141,133 @@ collections:
         required: true
         i18n: true
         hint: 案例详细内容（背景/方案/成效等），支持 Markdown，可插入图片
+  - name: downloads
+    label: 下载中心
+    folder: src/content/downloads
+    i18n: true
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    fields:
+      - label: 下载项名称（必填）
+        name: title
+        widget: string
+        required: true
+        i18n: true
+        hint: 填当前语言的名称（如"通用工业数据采集系统"、"485总线共享器配置软件"）
+      - label: 一句话说明（必填）
+        name: description
+        widget: text
+        required: true
+        i18n: true
+        hint: 用于下载列表卡片展示的一句话说明
+      - label: 说明图片（选填）
+        name: image
+        widget: image
+        required: false
+        i18n: true
+        hint: 下载项说明图片（如软件截图、界面预览等），显示在说明文字下方
+      - label: 版本号（选填）
+        name: version
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: 如 V6.0.418
+      - label: 文件大小（选填）
+        name: fileSize
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: 如 156 MB
+      - label: 文件类型（选填）
+        name: fileType
+        widget: select
+        required: false
+        default: ZIP
+        options: [ZIP, EXE, APK, PDF, MSI, RAR, DOC]
+        i18n: duplicate
+      - label: 下载文件路径（选填）
+        name: file
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: public/downloads/ 下的实际文件路径，如 /downloads/scada-setup.zip。如果使用下方"下载链接列表"，此字段可留空。
+      - label: 下载链接列表（选填，支持多个链接）
+        name: links
+        widget: list
+        required: false
+        i18n: true
+        hint: 支持添加多个下载链接（不同平台版本、镜像下载、外部网盘链接等）。如果填写了链接列表，会与上方"下载文件路径"同时显示。
+        fields:
+          - name: label
+            label: 链接文字（必填）
+            widget: string
+            required: true
+            hint: 如 "Windows 版" / "Mac 版" / "Google Drive" / "官方下载"
+          - name: url
+            label: 下载地址（必填）
+            widget: string
+            required: true
+            hint: 本地文件填 /downloads/xxx.zip，外链填完整 URL（如 https://drive.google.com/...）
+          - name: type
+            label: 链接类型
+            widget: select
+            default: local
+            options:
+              - label: 本地文件
+                value: local
+              - label: 外部链接
+                value: external
+      - label: 关联产品 slug（选填）
+        name: productSlug
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: 关联到哪个产品的 slug（如 industrial-iot-data-acquisition-monitoring-system），用于在产品页显示"立即下载"
+      - label: 适用平台图标（选填）
+        name: icon
+        widget: select
+        required: false
+        default: all
+        options: [all, windows, macos, linux]
+        i18n: duplicate
+      - label: 下载分类（选填）
+        name: category
+        widget: select
+        required: false
+        default: software
+        options:
+          - label: 软件平台
+            value: software
+          - label: 配置工具
+            value: config-tool
+          - label: 驱动程序
+            value: driver
+          - label: 文档资料
+            value: doc
+        i18n: duplicate
+        hint: 用于下载页面的分类筛选标签
+      - label: 更新日期（选填）
+        name: releaseDate
+        widget: string
+        required: false
+        i18n: duplicate
+        hint: 如 2026-09-01
+      - label: 更新日志（选填）
+        name: changelog
+        widget: markdown
+        required: false
+        i18n: true
+        hint: 支持 Markdown，如"修复 xx 问题 / 增加 xx 协议驱动"
+      - label: 排序（选填，数字越小越靠前）
+        name: order
+        widget: number
+        value_type: int
+        default: 0
+        pattern: ['^[0-9]+$', '只能填数字']
+        i18n: duplicate
   - name: categories
     label: 产品分类
     folder: src/content/categories
