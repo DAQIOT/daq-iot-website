@@ -29,3 +29,9 @@ dist-test/
 preview-shots/
 
 .workbuddy/
+
+# migration working files (local scratch, not part of the site)
+.migration/
+
+# old-site migration reports / inventory (local reference only)
+docs/
