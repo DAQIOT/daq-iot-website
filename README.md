@@ -236,11 +236,11 @@ Markdown frontmatter 中的日期字段（`releaseDate`、`pubDate`）**必须�
 
 ```yaml
 # 正确
-releaseDate: "2026-09-01"
+#releaseDate: "2026-09-01"
 pubDate: "2025-07-31"
 
 # 错误（YAML 解析为 Date 对象）
-releaseDate: 2026-09-01
+#releaseDate: 2026-09-01
 ```
 
 ### 内联脚本不能用 TypeScript
