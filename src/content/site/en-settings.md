@@ -14,6 +14,11 @@ nav:
   contact: Contact
   cases: Project Cases
   cta: Get a Quote
+banner:
+  homeImage: ''
+  pageImage: ''
+  partnersImage: ''
+  ctaImage: ''
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
   subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.

@@ -14,6 +14,11 @@ nav:
   contact: Kontakt
   cases: Projekte
   cta: Angebot anfordern
+banner:
+  homeImage: ''
+  pageImage: ''
+  partnersImage: ''
+  ctaImage: ''
 cat:
   software: KI+ Software
   edge: KI+ Edge-Computing

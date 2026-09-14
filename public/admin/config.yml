@@ -425,6 +425,32 @@ collections:
           - name: ctaSecondary
             label: 次按钮文字
             widget: string
+      - label: 页面横幅背景图
+        name: banner
+        widget: object
+        required: false
+        hint: 上传图片后，首页与各栏目页顶部的深色横幅会显示该背景图；留空则使用默认渐变纹理。上传后系统自动生成 /images/... 路径
+        fields:
+          - name: homeImage
+            label: 首页横幅背景图
+            widget: image
+            required: false
+            hint: 建议宽 1920px 以上、高 600~900px，JPG/WebP 格式
+          - name: pageImage
+            label: 内页横幅背景图（所有栏目页通用）
+            widget: image
+            required: false
+            hint: 建议宽 1920px 以上、高 400~600px，JPG/WebP 格式
+          - name: partnersImage
+            label: 合作伙伴横条背景图（首页底部）
+            widget: image
+            required: false
+            hint: 建议宽 1920px 以上、高 300~500px，JPG/WebP 格式；留空则用默认渐变纹理
+          - name: ctaImage
+            label: 行动号召横条背景图（首页最底部）
+            widget: image
+            required: false
+            hint: 建议宽 1920px 以上、高 300~500px，JPG/WebP 格式；留空则用默认渐变纹理
       - label: 首页
         name: home
         widget: object

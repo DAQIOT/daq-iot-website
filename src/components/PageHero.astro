@@ -1,0 +1,87 @@
+---
+/**
+ * PageHero —— 统一页面横幅（banner）
+ *
+ * 全站所有内页顶部的深色横幅都走这个组件，保证：
+ *  1. 样式统一（背景图 / 渐变光晕 / 网格纹理 / 文字遮罩）
+ *  2. 加背景图只需在后台填一个路径，全站生效
+ *  3. 文字可读性由遮罩层兜底，换任何图都不会看不清标题
+ *
+ * 用法：
+ *   <PageHero title={...} subtitle={...} image={site.banner?.pageImage} />
+ *   // 详情页可传 breadcrumb 插槽 + size="sm" + width="narrow"
+ */
+interface Props {
+  /** 主标题 */
+  title?: string;
+  /** 副标题 */
+  subtitle?: string;
+  /** 背景图路径，如 /images/banner-solutions.jpg；留空则用默认渐变纹理 */
+  image?: string;
+  /** 高度：sm（详情页，py-12）| md（列表页，py-16） */
+  size?: 'sm' | 'md';
+  /** 内容宽度：wide（max-w-7xl）| narrow（max-w-6xl） */
+  width?: 'wide' | 'narrow';
+  /** 标题自定义 class（默认 h1 样式） */
+  titleClass?: string;
+  /** 是否显示网格纹理（默认显示，避免纯色单调） */
+  grid?: boolean;
+}
+
+const {
+  title = '',
+  subtitle = '',
+  image = '',
+  size = 'md',
+  width = 'wide',
+  titleClass = 'text-3xl md:text-4xl font-bold text-white',
+  grid = true
+} = Astro.props;
+
+const pad = size === 'sm' ? 'py-12' : 'py-16';
+const maxw = width === 'narrow' ? 'max-w-6xl' : 'max-w-7xl';
+---
+
+<section class="relative isolate overflow-hidden bg-brand-dark">
+  <!-- 背景图（有配置时显示） -->
+  {image && (
+    <img
+      src={image}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+  )}
+
+  <!-- 品牌渐变光晕（无图时的主要层次感来源） -->
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.28),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.20),transparent_50%)]"></div>
+
+  <!-- 网格纹理 -->
+  {grid && (
+    <div
+      class="absolute inset-0 opacity-[0.07]"
+      style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"
+    />
+  )}
+
+  <!-- 文字遮罩：有背景图时加重，保证白字可读 -->
+  <div
+    class:list={[
+      'absolute inset-0',
+      image
+        ? 'bg-gradient-to-r from-brand-darker/95 via-brand-darker/80 to-brand-darker/35'
+        : 'bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent'
+    ]}
+  >
+  </div>
+
+  <!-- 内容 -->
+  <div class={`relative mx-auto ${maxw} px-4 ${pad}`}>
+    <slot name="breadcrumb" />
+    {title && <h1 class={titleClass}>{title}</h1>}
+    {subtitle && <p class="mt-3 text-slate-300 max-w-2xl">{subtitle}</p>}
+    <slot />
+  </div>
+</section>

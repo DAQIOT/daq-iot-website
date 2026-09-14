@@ -1,0 +1,73 @@
+---
+/**
+ * SectionBand —— 内容区块横条（首页「合作伙伴」「CTA」等）
+ *
+ * 与 PageHero 共用同一套视觉语言（渐变光晕 + 网格纹理 + 可选背景图），
+ * 解决"大色块纯色、显得单调"的问题。
+ *
+ * 用法：
+ *   <SectionBand tone="dark" width="wide" image={partnersImage}> ...内容... </SectionBand>
+ *   <SectionBand tone="brand"> ...内容... </SectionBand>
+ */
+interface Props {
+  /** 底色：dark（深海军蓝）| brand（品牌蓝，用于行动号召） */
+  tone?: 'dark' | 'brand';
+  /** 背景图路径，如 /images/band-partners.jpg；留空则用默认渐变纹理 */
+  image?: string;
+  /** 是否显示网格纹理 */
+  grid?: boolean;
+  /** 内容宽度：narrow（max-w-4xl）| wide（max-w-7xl） */
+  width?: 'narrow' | 'wide';
+}
+
+const { tone = 'dark', image = '', grid = true, width = 'narrow' } = Astro.props;
+const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-7xl';
+---
+
+<section class:list={['relative isolate overflow-hidden', tone === 'dark' ? 'bg-brand-dark' : 'bg-brand']}>
+  <!-- 背景图（有配置时显示） -->
+  {image && (
+    <img
+      src={image}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover"
+      loading="lazy"
+    />
+  )}
+
+  <!-- 渐变光晕：无图时的层次感来源 -->
+  {tone === 'dark' ? (
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(0,150,214,0.32),transparent_55%),radial-gradient(circle_at_82%_78%,rgba(0,194,168,0.18),transparent_50%)]"></div>
+  ) : (
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-25%,rgba(255,255,255,0.30),transparent_60%)]"></div>
+  )}
+
+  <!-- 网格纹理 -->
+  {grid && (
+    <div
+      class="absolute inset-0 opacity-[0.07]"
+      style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"
+    />
+  )}
+
+  <!-- 遮罩：保证白字可读 -->
+  <div
+    class:list={[
+      'absolute inset-0',
+      tone === 'dark'
+        ? image
+          ? 'bg-gradient-to-r from-brand-darker/95 via-brand-darker/80 to-brand-darker/40'
+          : 'bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent'
+        : image
+          ? 'bg-gradient-to-br from-brand/85 via-brand/65 to-brand-darker/70'
+          : 'bg-gradient-to-br from-transparent via-transparent to-brand-darker/45'
+    ]}
+  >
+  </div>
+
+  <!-- 内容 -->
+  <div class={`relative mx-auto ${maxw} px-4 py-16 text-center`}>
+    <slot />
+  </div>
+</section>
