@@ -1,0 +1,93 @@
+---
+// 全局 404 页面
+// Cloudflare Pages 会自动把所有未匹配路径交给 404.html，并返回真实的 404 状态码，
+// 从而消除此前"未知路径返回 200 + 重定向"造成的软 404（对 SEO 不利）。
+// 页面自包含（不依赖 BaseLayout），按浏览器语言展示对应文案。
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 - Page Not Found | DAQ-IOT</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #e6f4fb 0%, #f8fafc 55%, #ffffff 100%);
+        color: #0a2a43;
+        padding: 24px;
+      }
+      .box { max-width: 560px; text-align: center; }
+      .code {
+        font-size: clamp(72px, 18vw, 140px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, #0096d6, #00c2a8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .msg { margin-top: 18px; font-size: 20px; font-weight: 600; }
+      .msg .lang { display: none; }
+      .msg .lang.show { display: inline; }
+      .sub { margin-top: 10px; font-size: 15px; color: #64748b; }
+      .links { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+      .links a {
+        display: inline-block;
+        padding: 10px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: opacity .15s ease;
+      }
+      .btn-primary { background: #0096d6; color: #fff; }
+      .btn-ghost { border: 1px solid #cbd5e1; color: #0a2a43; background: #fff; }
+      .links a:hover { opacity: .85; }
+      .lang-opts { margin-top: 26px; font-size: 13px; color: #94a3b8; }
+      .lang-opts a { color: #0096d6; text-decoration: none; margin: 0 6px; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="code">404</div>
+      <p class="msg">
+        <span class="lang" data-lang="en">Page not found.</span>
+        <span class="lang" data-lang="zh">抱歉，您访问的页面不存在。</span>
+        <span class="lang" data-lang="de">Seite nicht gefunden.</span>
+      </p>
+      <p class="sub">
+        <span class="lang" data-lang="en">The page may have been moved or the address is incorrect.</span>
+        <span class="lang" data-lang="zh">页面可能已迁移，或地址输入有误。</span>
+        <span class="lang" data-lang="de">Die Seite wurde möglicherweise verschoben oder die Adresse ist falsch.</span>
+      </p>
+      <div class="links">
+        <a class="btn-primary" href="/en">English Home</a>
+        <a class="btn-primary" href="/zh">中文首页</a>
+        <a class="btn-ghost" href="/">daq-iot.com</a>
+      </div>
+      <p class="lang-opts">
+        <a href="/en/products">Products</a>·<a href="/en/cases">Cases</a>·<a href="/en/contact">Contact</a>
+        ｜<a href="/zh/products">产品中心</a>·<a href="/zh/cases">项目案例</a>·<a href="/zh/contact">联系我们</a>
+      </p>
+    </div>
+    <script is:inline>
+      (function () {
+        var langs = ['en', 'zh', 'de'];
+        var nav = (navigator.language || 'en').toLowerCase();
+        var pick = nav.indexOf('zh') === 0 ? 'zh' : nav.indexOf('de') === 0 ? 'de' : 'en';
+        document.querySelectorAll('.lang').forEach(function (el) {
+          if (el.getAttribute('data-lang') === pick) el.classList.add('show');
+        });
+        document.documentElement.lang = pick;
+      })();
+    </script>
+  </body>
+</html>

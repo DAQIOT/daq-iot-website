@@ -35,3 +35,13 @@ preview-shots/
 
 # old-site migration reports / inventory (local reference only)
 docs/
+
+# ── 大文件禁入仓库 ────────────────────────────────────────────────
+# 原因：Cloudflare Pages 单文件上限 25 MiB，超了直接部署失败；
+#       GitHub 也建议单文件 < 50 MB，且二进制进 git 会让仓库永久膨胀。
+# 做法：下载文件一律托管到外部（对象存储 / 旧站静态目录），
+#       md 的 frontmatter 用 links[].type=external 填完整 URL。
+public/downloads/*
+# 保留目录本身的占位说明，方便新人知道该往哪放
+!public/downloads/_README.txt
+

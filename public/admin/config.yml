@@ -188,18 +188,18 @@ collections:
         default: ZIP
         options: [ZIP, EXE, APK, PDF, MSI, RAR, DOC]
         i18n: duplicate
-      - label: 下载文件路径（选填）
+      - label: 下载文件路径（一般留空，用下方链接列表）
         name: file
         widget: string
         required: false
         i18n: duplicate
-        hint: public/downloads/ 下的实际文件路径，如 /downloads/scada-setup.zip。如果使用下方"下载链接列表"，此字段可留空。
-      - label: 下载链接列表（选填，支持多个链接）
+        hint: ⚠️ 仅当文件小于 25 MiB 且已放进 public/downloads/ 时才填，如 /downloads/xxx.zip。Cloudflare Pages 单文件上限 25 MiB，超过会部署失败；大文件请一律用下方「下载链接列表」填外部地址。
+      - label: 下载链接列表（推荐，支持多个链接）
         name: links
         widget: list
         required: false
         i18n: true
-        hint: 支持添加多个下载链接（不同平台版本、镜像下载、外部网盘链接等）。如果填写了链接列表，会与上方"下载文件路径"同时显示。
+        hint: 【推荐用这个】可加多条（Windows/Mac 版、镜像、网盘）。推荐把安装包上传到对象存储（Cloudflare R2 / 阿里云 OSS / 腾讯云 COS）或旧站静态目录，然后这里填完整 URL 并选「外部链接」。
         fields:
           - name: label
             label: 链接文字（必填）
@@ -210,16 +210,16 @@ collections:
             label: 下载地址（必填）
             widget: string
             required: true
-            hint: 本地文件填 /downloads/xxx.zip，外链填完整 URL（如 https://drive.google.com/...）
+            hint: 推荐填完整外链 URL（如 https://static.daq-iot.com/xxx.zip）。只有小于 25 MiB 且已放进 public/downloads/ 的文件才填 /downloads/xxx.zip
           - name: type
             label: 链接类型
             widget: select
-            default: local
+            default: external
             options:
-              - label: 本地文件
-                value: local
-              - label: 外部链接
+              - label: 外部链接（推荐）
                 value: external
+              - label: 本地文件（< 25 MiB）
+                value: local
       - label: 关联产品 slug（选填）
         name: productSlug
         widget: string

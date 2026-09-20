@@ -1,0 +1,14 @@
+# Cloudflare Pages 重定向规则
+# 语法：<源路径>  <目标路径>  <状态码>
+
+# 统一 sitemap 入口：搜索引擎默认请求 /sitemap.xml，这里 200 代理到 Astro 生成的索引文件
+/sitemap.xml /sitemap-index.xml 200
+
+# 旧站（PbootCMS）核心入口重定向：域名切换后保证旧链接可落地
+# 说明：旧站详情页数量多，逐条映射价值低，这里只处理栏目入口，
+#       详情页由 Google 收录更新逐步过渡
+/product   /en/products   301
+/news      /en/blog       301
+/about     /en/about      301
+/contact   /en/contact    301
+/hezuo     /en/partners   301
