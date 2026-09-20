@@ -13,10 +13,10 @@ const base = '/' + lang;
 const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.parent).map((c) => ({ key: c.data.slug, name: c.data.name, href: base + '/products?cat=' + c.data.slug }));
 ---
 <footer class="bg-brand-dark text-slate-300">
-  <div class="mx-auto max-w-7xl px-4 py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+  <div class="mx-auto max-w-[1600px] px-4 lg:px-8 py-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
     <!-- 品牌 -->
     <div class="col-span-2 md:col-span-3 lg:col-span-1">
-      <div class="text-white font-bold text-xl">DAQ<span class="text-brand">-IOT</span></div>
+      <img src="/images/logo-shucang-white.png" class="h-10 w-auto" alt="数采物联" />
       <p class="mt-3 text-sm text-slate-400 max-w-xs">{t('footer.tagline')}</p>
     </div>
 
@@ -65,7 +65,7 @@ const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.pare
   </div>
 
   <div class="border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 py-4 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-2">
+    <div class="mx-auto max-w-[1600px] px-4 lg:px-8 py-4 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-2">
       <span>{t('footer.rights')}</span>
       <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition">沪ICP备2021036991号</a>
     </div>

@@ -37,23 +37,28 @@ const activeCat = activeCatRaw || defaultCat;
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
   <PageHero title={t('products.title')} subtitle={t('products.subtitle')} image={bannerImage} />
 
-  <section class="mx-auto max-w-7xl px-4 py-10">
-    <div class="flex flex-col md:flex-row gap-8 items-start">
+  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
       <!-- 分类侧栏（竖排；一级分类含其下所有二级产品） -->
       <aside class="w-full md:w-56 md:shrink-0 md:sticky md:top-24">
-        <div class="flex flex-wrap md:flex-col gap-2" id="catFilter">
-          {cats.map((c) => (
-            <button type="button" data-cat={c.key}
-              class={`cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ${
-                c.level === 1 ? 'md:ml-4 md:text-xs text-xs' : ''
-              } ${
-                activeCat === c.key
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
-              }`}>
-              {c.level === 1 ? '· ' : ''}{c.label}
-            </button>
-          ))}
+        <div class="md:bg-white md:border md:border-slate-200 md:rounded-2xl md:shadow-sm md:p-3">
+          <div class="hidden md:block px-3 pt-1 pb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            {lang === 'zh' ? '产品分类' : lang === 'de' ? 'Kategorien' : 'Categories'}
+          </div>
+          <div class="flex flex-wrap md:flex-col gap-1.5" id="catFilter">
+            {cats.map((c) => (
+              <button type="button" data-cat={c.key}
+                class={`cat-btn w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  c.level === 1 ? 'md:ml-3 text-xs' : ''
+                } ${
+                  activeCat === c.key
+                    ? 'bg-brand text-white shadow-sm'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-brand'
+                }`}>
+                <span class:list={[c.level === 1 && 'text-slate-400']}>{c.level === 1 ? '· ' : ''}{c.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </aside>
 
@@ -99,13 +104,13 @@ const activeCat = activeCatRaw || defaultCat;
       const on = b.dataset.cat === cat;
       const isChild = b.dataset.cat && parentOfMap[b.dataset.cat] !== undefined;
       const parentActive = isChild && parentOfMap[b.dataset.cat] === cat;
-      b.className = 'cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ' +
-        (isChild ? 'md:ml-4 text-xs ' : '') +
+      b.className = 'cat-btn w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition ' +
+        (isChild ? 'md:ml-3 text-xs ' : '') +
         (on
-          ? 'bg-brand text-white border-brand'
+          ? 'bg-brand text-white shadow-sm'
           : parentActive
-            ? 'bg-brand-light text-brand border-brand'
-            : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
+            ? 'bg-brand-light text-brand'
+            : 'text-slate-600 hover:bg-slate-100 hover:text-brand');
     });
   }
 

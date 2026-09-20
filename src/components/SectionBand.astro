@@ -21,7 +21,7 @@ interface Props {
 }
 
 const { tone = 'dark', image = '', grid = true, width = 'narrow' } = Astro.props;
-const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-7xl';
+const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-[1600px]';
 ---
 
 <section class:list={['relative isolate overflow-hidden', tone === 'dark' ? 'bg-brand-dark' : 'bg-brand']}>
@@ -67,7 +67,7 @@ const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-7xl';
   </div>
 
   <!-- 内容 -->
-  <div class={`relative mx-auto ${maxw} px-4 py-16 text-center`}>
+  <div class={`relative mx-auto ${maxw} px-4 lg:px-8 py-16 text-center`}>
     <slot />
   </div>
 </section>

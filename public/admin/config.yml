@@ -451,6 +451,36 @@ collections:
             widget: image
             required: false
             hint: 建议宽 1920px 以上、高 300~500px，JPG/WebP 格式；留空则用默认渐变纹理
+      - label: 首页产品矩阵卡片背景图
+        name: categoryCards
+        widget: object
+        required: false
+        hint: 首页「AI+ 五大产品矩阵」6 张卡片的背景图，按分类对应上传。留空的分类使用内置默认背景图。建议 1024x1024 以上、主体图案偏右侧（左侧文字区会被白色渐变遮罩保证可读）
+        fields:
+          - name: gauge
+            label: 仪器仪表采集卡片背景
+            widget: image
+            required: false
+          - name: signal
+            label: 无线传感器卡片背景
+            widget: image
+            required: false
+          - name: camera
+            label: 定时抓拍卡片背景
+            widget: image
+            required: false
+          - name: chip
+            label: 采集终端卡片背景
+            widget: image
+            required: false
+          - name: software
+            label: 软件平台卡片背景
+            widget: image
+            required: false
+          - name: tools
+            label: 安装施工卡片背景
+            widget: image
+            required: false
       - label: 首页
         name: home
         widget: object

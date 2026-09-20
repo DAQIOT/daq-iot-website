@@ -46,9 +46,9 @@ function isActive(href: string) {
 ---
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
-  <nav class="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between gap-4">
-    <a href={base + '/'} class="flex items-center gap-2 shrink-0">
-      <span class="font-bold text-xl text-brand-dark">DAQ-IOT</span>
+  <nav class="mx-auto max-w-[1600px] px-4 lg:px-8 h-16 flex items-center justify-between gap-4">
+    <a href={base + '/'} class="flex items-center shrink-0" aria-label="数采物联 DAQ-IOT 首页">
+      <img src="/images/logo-shucang.png" alt="数采物联 DAQ-IOT" class="h-10 w-auto" width="480" height="135" loading="eager" />
     </a>
 
     <!-- 桌面导航 -->
@@ -104,7 +104,7 @@ function isActive(href: string) {
 
   <!-- 移动端展开菜单 -->
   <div id="mobileMenu" class="xl:hidden hidden border-t border-slate-200 bg-white max-h-[80vh] overflow-y-auto">
-    <div class="mx-auto max-w-7xl px-4 py-3 space-y-1">
+    <div class="mx-auto max-w-[1600px] px-4 lg:px-8 py-3 space-y-1">
       {nav.map((item) => (
         item.dropdown ? (
           <div class="py-1">

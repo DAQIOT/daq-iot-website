@@ -112,6 +112,7 @@ footer:
   products: 产品
   solutions: 解决方案
   company: 公司
+  resources: 资源
   rights: Copyright © 2021-2025 DAQ-IOT Technology 版权所有。
   tagline: 智联万物。
 ---

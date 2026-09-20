@@ -26,7 +26,7 @@ function fmt(d: string | undefined) {
 <BaseLayout lang={lang} title={t('blog.title') + ' | DAQ-IOT'} description={t('blog.subtitle')}>
   <PageHero title={t('blog.title')} subtitle={t('blog.subtitle')} image={bannerImage} />
 
-  <section class="mx-auto max-w-7xl px-4 py-10">
+  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
     {posts.length === 0 ? (
       <p class="text-slate-500 py-12 text-center">—</p>
     ) : (

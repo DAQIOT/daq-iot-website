@@ -101,6 +101,7 @@ footer:
   products: Products
   solutions: Solutions
   company: Company
+  resources: Resources
   rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
   tagline: Connecting the Universe of Intelligence.
 ---

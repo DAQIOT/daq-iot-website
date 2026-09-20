@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getTranslations, getSiteData } from '../../../i18n/utils';
+import { localizeIndustry } from '../../../i18n/industry';
 import type { Lang } from '../../../i18n/config';
 import { getCollection, render } from 'astro:content';
 import PageHero from '../../../components/PageHero.astro';
@@ -42,7 +43,7 @@ const bannerImage = (site.banner?.pageImage as string) || '';
       )}
       <div>
         {entry.data.industry && (
-          <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{entry.data.industry}</span>
+          <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{localizeIndustry(entry.data.industry, lang)}</span>
         )}
         <p class="mt-4 text-lg text-slate-600 leading-relaxed">{entry.data.summary}</p>
         <a href={contactHref} class="mt-6 inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('nav.cta', '获取报价')}</a>
