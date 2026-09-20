@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionBand from '../../components/SectionBand.astro';
+import CategoryIcon from '../../components/CategoryIcon.astro';
 import { getTranslations, getSiteData, getCategoriesByLang } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
 
@@ -14,10 +15,22 @@ const base = '/' + lang;
 
 // 首页只展示一级分类（二级分类在产品页和导航下拉中展示）
 const categories = (await getCategoriesByLang(lang)).filter((c) => !c.data.parent);
+
+// 分类 slug → 图标名（中英文分类 slug 不同，都映射到同一套图标）
+const iconBySlug: Record<string, string> = {
+  'daq-meter': 'gauge', 'instrumentation': 'gauge',            // 仪器仪表采集
+  'daq-sensor': 'signal', 'wirelesssensor': 'signal',          // 无线传感器
+  'daq-camera': 'camera', 'wirelesstimingphotography': 'camera', // 定时抓拍
+  'daq-gateway': 'chip', 'plcacquisition': 'chip',             // 采集终端 / PLC
+  'daq-software': 'software', 'dataacquisitionsoftware': 'software', // 软件平台
+  'daq-install': 'tools'                                       // 安装施工
+};
+
 const families = categories.map((c) => ({
   slug: c.data.slug,
   name: c.data.name,
   description: c.data.description,
+  icon: iconBySlug[c.data.slug] ?? 'chip',
   href: base + '/products?cat=' + c.data.slug
 }));
 
@@ -77,11 +90,13 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {families.map((f) => (
         <a href={f.href} class="card-hover group block bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand">
-          <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center mb-4">
-            <span class="text-brand font-bold text-lg">{f.name.charAt(0)}</span>
-          </div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-light flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:text-white text-brand transition">
+              <CategoryIcon name={f.icon} class="w-6 h-6" />
+            </div>
             <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{f.name}</h3>
-            <p class="mt-2 text-sm text-slate-500 leading-relaxed">{f.description}</p>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">{f.description}</p>
           <span class="mt-4 inline-flex items-center text-sm font-medium text-brand">{t('home.viewAll')} →</span>
         </a>
       ))}

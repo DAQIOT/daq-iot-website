@@ -18,7 +18,7 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = (site.banner?.pageImage as string) || '';
 
-const activeCat = Astro.url.searchParams.get('cat') || 'all';
+const activeCatRaw = Astro.url.searchParams.get('cat');
 
 const items = (await getCollection('downloads', (e) => e.id.startsWith(lang + '/')))
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
@@ -45,33 +45,40 @@ const fileTypeColor: Record<string, string> = {
   DOC: 'bg-indigo-100 text-indigo-600',
 };
 
+// 分类（无「全部」，默认选中第一项，竖排展示在左侧）
 const dlCats = [
-  { key: 'all', label: t('downloads.all') },
   { key: 'software', label: t('downloads.catSoftware') },
   { key: 'config-tool', label: t('downloads.catConfigTool') },
   { key: 'driver', label: t('downloads.catDriver') },
   { key: 'doc', label: t('downloads.catDoc') },
 ];
+const defaultCat = dlCats[0].key;
+const activeCat = activeCatRaw || defaultCat;
 ---
 <BaseLayout lang={lang} title={t('downloads.title') + ' | DAQ-IOT'} description={t('downloads.subtitle')}>
   <PageHero title={t('downloads.title')} subtitle={t('downloads.subtitle')} image={bannerImage} />
 
   <section class="mx-auto max-w-7xl px-4 py-10">
-    <!-- 分类筛选 -->
-    <div class="flex flex-wrap gap-2 mb-10" id="dlCatFilter">
-      {dlCats.map((c) => (
-        <button type="button" data-cat={c.key}
-          class={`dl-cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ${
-            (activeCat === c.key || (activeCat === 'all' && c.key === 'all'))
-              ? 'bg-brand text-white border-brand'
-              : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
-          }`}>
-          {c.label}
-        </button>
-      ))}
-    </div>
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- 分类侧栏（竖排） -->
+      <aside class="w-full md:w-56 md:shrink-0 md:sticky md:top-24">
+        <div class="flex flex-wrap md:flex-col gap-2" id="dlCatFilter">
+          {dlCats.map((c) => (
+            <button type="button" data-cat={c.key}
+              class={`dl-cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ${
+                activeCat === c.key
+                  ? 'bg-brand text-white border-brand'
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
+              }`}>
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </aside>
 
-    <div class="grid md:grid-cols-2 gap-7" id="dlGrid">
+      <!-- 下载列表 -->
+      <div class="flex-1 min-w-0">
+        <div class="grid md:grid-cols-2 gap-7" id="dlGrid">
       {enriched.map((d) => (
         <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col"
              data-category={d.data.category || ''}>
@@ -131,13 +138,15 @@ const dlCats = [
       <p class="text-slate-500 py-12 text-center">{t('downloads.empty')}</p>
     )}
     <p class="text-slate-500 py-12 text-center hidden" id="dlEmpty">{t('downloads.empty')}</p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
-<script is:inline>
+<script is:inline define:vars={{ defaultCat }}>
   (function () {
     const params = new URLSearchParams(location.search);
-    const cat = params.get('cat') || 'all';
+    const cat = params.get('cat') || defaultCat;
     const grid = document.getElementById('dlGrid');
     const empty = document.getElementById('dlEmpty');
     const btns = document.querySelectorAll('.dl-cat-btn');
@@ -147,7 +156,7 @@ const dlCats = [
       let visible = 0;
       cards.forEach(function (c) {
         var el = c;
-        var show = cat === 'all' || el.dataset.category === cat;
+        var show = el.dataset.category === cat;
         el.style.display = show ? '' : 'none';
         if (show) visible++;
       });
@@ -155,17 +164,16 @@ const dlCats = [
       btns.forEach(function (b) {
         var el = b;
         var on = el.dataset.cat === cat;
-        b.className = 'dl-cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
+        b.className = 'dl-cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ' +
           (on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
       });
     }
 
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
-        var c = b.dataset.cat;
+        var c = b.dataset.cat || defaultCat;
         var url = new URL(location.href);
-        if (c === 'all') url.searchParams.delete('cat');
-        else url.searchParams.set('cat', c);
+        url.searchParams.set('cat', c);
         history.replaceState(null, '', url);
         paint(c);
       });

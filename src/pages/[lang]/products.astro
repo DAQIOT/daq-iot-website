@@ -16,44 +16,50 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = (site.banner?.pageImage as string) || '';
 
-// 初始分类：构建时静态页默认显示全部，运行时由前端脚本根据 ?cat= 过滤
-const activeCat = Astro.url.searchParams.get('cat') || 'all';
+// 初始分类：构建时静态页默认选中第一个一级分类，运行时由前端脚本根据 ?cat= 过滤
+const activeCatRaw = Astro.url.searchParams.get('cat');
 
 const all = await getCollection('products', (entry) => entry.id.startsWith(lang + '/') && !entry.data.hidden);
 const products = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const categories = await getCategoriesByLang(lang);
 const catName = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.name]));
-// 二级分类结构：parentOf[二级slug] = 一级slug
+// 分类：一级 + 二级（无「全部」，默认选中第一个一级分类，竖排展示在左侧）
 const parentOf = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.parent || '']));
 const topLevel = categories.filter((c) => !c.data.parent);
 const cats = [
-  { key: 'all', label: t('products.all'), level: 0 },
   ...topLevel.map((c) => ({ key: c.data.slug, label: c.data.name, level: 0 })),
   ...categories.filter((c) => c.data.parent).map((c) => ({ key: c.data.slug, label: c.data.name, level: 1 }))
 ];
+const defaultCat = topLevel[0]?.data.slug ?? cats[0]?.key ?? '';
+const activeCat = activeCatRaw || defaultCat;
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
   <PageHero title={t('products.title')} subtitle={t('products.subtitle')} image={bannerImage} />
 
   <section class="mx-auto max-w-7xl px-4 py-10">
-    <!-- 分类筛选（前端脚本处理点击与 ?cat= 初始过滤；一级分类含其下所有二级产品） -->
-    <div class="flex flex-wrap gap-2 mb-10" id="catFilter">
-      {cats.map((c) => (
-        <button type="button" data-cat={c.key}
-          class={`cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ${
-            c.level === 1 ? 'ml-1 text-xs bg-slate-50' : ''
-          } ${
-            (activeCat === c.key || (activeCat === 'all' && c.key === 'all'))
-              ? 'bg-brand text-white border-brand'
-              : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
-          }`}>
-          {c.level === 1 ? '· ' : ''}{c.label}
-        </button>
-      ))}
-    </div>
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <!-- 分类侧栏（竖排；一级分类含其下所有二级产品） -->
+      <aside class="w-full md:w-56 md:shrink-0 md:sticky md:top-24">
+        <div class="flex flex-wrap md:flex-col gap-2" id="catFilter">
+          {cats.map((c) => (
+            <button type="button" data-cat={c.key}
+              class={`cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ${
+                c.level === 1 ? 'md:ml-4 md:text-xs text-xs' : ''
+              } ${
+                activeCat === c.key
+                  ? 'bg-brand text-white border-brand'
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
+              }`}>
+              {c.level === 1 ? '· ' : ''}{c.label}
+            </button>
+          ))}
+        </div>
+      </aside>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="productGrid">
+      <!-- 产品网格 -->
+      <div class="flex-1 min-w-0">
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7" id="productGrid">
       {products.map((p) => (
         <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')}
            data-category={p.data.category}
@@ -67,13 +73,15 @@ const cats = [
           </div>
         </a>
       ))}
-    </div>
+        </div>
 
-    <p class="text-slate-500 py-12 text-center hidden" id="productEmpty">{t('products.empty')}</p>
+        <p class="text-slate-500 py-12 text-center hidden" id="productEmpty">{t('products.empty')}</p>
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
-<script define:vars={{ parentOfMap: parentOf }}>
+<script define:vars={{ parentOfMap: parentOf, defaultCat }}>
   const grid = document.getElementById('productGrid');
   const empty = document.getElementById('productEmpty');
   const cards = grid ? Array.from(grid.querySelectorAll('.product-card')) : [];
@@ -82,7 +90,7 @@ const cats = [
   function paint(cat) {
     let visible = 0;
     cards.forEach((c) => {
-      const show = cat === 'all' || c.dataset.category === cat || c.dataset.parentCategory === cat;
+      const show = c.dataset.category === cat || c.dataset.parentCategory === cat;
       c.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -91,8 +99,8 @@ const cats = [
       const on = b.dataset.cat === cat;
       const isChild = b.dataset.cat && parentOfMap[b.dataset.cat] !== undefined;
       const parentActive = isChild && parentOfMap[b.dataset.cat] === cat;
-      b.className = 'cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
-        (isChild ? 'ml-1 text-xs ' : '') +
+      b.className = 'cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ' +
+        (isChild ? 'md:ml-4 text-xs ' : '') +
         (on
           ? 'bg-brand text-white border-brand'
           : parentActive
@@ -104,14 +112,14 @@ const cats = [
   const basePath = location.pathname.replace(/\/+$/, '');
   btns.forEach((b) => {
     b.addEventListener('click', () => {
-      const cat = b.dataset.cat || 'all';
-      const url = cat === 'all' ? basePath : basePath + '?cat=' + cat;
+      const cat = b.dataset.cat || defaultCat;
+      const url = basePath + '?cat=' + encodeURIComponent(cat);
       history.replaceState(null, '', url);
       paint(cat);
     });
   });
 
-  // 页面加载时根据 URL 的 ?cat= 过滤（兼容导航下拉链接）
-  const initial = new URLSearchParams(location.search).get('cat') || 'all';
+  // 页面加载时根据 URL 的 ?cat= 过滤（兼容导航下拉链接；无参数用默认分类）
+  const initial = new URLSearchParams(location.search).get('cat') || defaultCat;
   paint(initial);
 </script>

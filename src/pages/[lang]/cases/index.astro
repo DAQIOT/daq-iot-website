@@ -12,21 +12,17 @@ const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
 const site = await getSiteData(lang);
 const base = '/' + lang;
-
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = (site.banner?.pageImage as string) || '';
-
-const activeCat = Astro.url.searchParams.get('cat') || 'all';
 
 const all = await getCollection('cases', (entry) => entry.id.startsWith(lang + '/') && !entry.data.hidden);
 const cases = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
-// 从案例的 industry 字段动态生成筛选标签
+// 从案例的 industry 字段动态生成筛选标签（无「全部」，默认选中第一个，竖排展示在左侧）
 const industryList = [...new Set(cases.map((c) => c.data.industry).filter(Boolean))];
-const cats = [
-  { key: 'all', label: lang === 'zh' ? '全部案例' : lang === 'de' ? 'Alle Projekte' : 'All Cases' },
-  ...industryList.map((ind) => ({ key: ind, label: ind }))
-];
+const cats = industryList.map((ind) => ({ key: ind, label: ind }));
+const defaultCat = cats[0]?.key ?? '';
+const activeCat = Astro.url.searchParams.get('cat') || defaultCat;
 ---
 <BaseLayout lang={lang} title={t('nav.cases') + ' | DAQ-IOT'} description={t('nav.cases')}>
   <PageHero
@@ -39,48 +35,53 @@ const cats = [
     {cases.length === 0 ? (
       <p class="text-slate-500 py-12 text-center">暂无案例，欢迎在后台「项目案例」中添加。</p>
     ) : (
-      <>
-        <!-- 行业筛选标签 -->
-        <div class="flex flex-wrap gap-2 mb-10" id="caseCatFilter">
-          {cats.map((c) => (
-            <button type="button" data-cat={c.key}
-              class={`case-cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ${
-                (activeCat === c.key || (activeCat === 'all' && c.key === 'all'))
-                  ? 'bg-brand text-white border-brand'
-                  : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
-              }`}>
-              {c.label}
-            </button>
-          ))}
-        </div>
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        <!-- 行业侧栏（竖排） -->
+        <aside class="w-full md:w-56 md:shrink-0 md:sticky md:top-24">
+          <div class="flex flex-wrap md:flex-col gap-2" id="caseCatFilter">
+            {cats.map((c) => (
+              <button type="button" data-cat={c.key}
+                class={`case-cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ${
+                  activeCat === c.key
+                    ? 'bg-brand text-white border-brand'
+                    : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand'
+                }`}>
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </aside>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7" id="caseGrid">
-          {cases.map((c) => (
-            <a href={'/' + lang + '/cases/' + c.id.split('/').slice(1).join('/')}
-               data-industry={c.data.industry || ''}
-               class="case-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
-              {c.data.image && <img src={c.data.image} alt={c.data.title} class="w-full h-48 object-cover bg-slate-50" />}
-              <div class="p-6">
-                {c.data.industry && (
-                  <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{c.data.industry}</span>
-                )}
-                <h3 class="text-xl font-semibold text-brand-dark">{c.data.title}</h3>
-                <p class="mt-2 text-slate-600 text-sm leading-relaxed">{c.data.summary}</p>
-              </div>
-            </a>
-          ))}
-        </div>
+        <!-- 案例网格 -->
+        <div class="flex-1 min-w-0">
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7" id="caseGrid">
+            {cases.map((c) => (
+              <a href={'/' + lang + '/cases/' + c.id.split('/').slice(1).join('/')}
+                 data-industry={c.data.industry || ''}
+                 class="case-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
+                {c.data.image && <img src={c.data.image} alt={c.data.title} class="w-full h-48 object-cover bg-slate-50" />}
+                <div class="p-6">
+                  {c.data.industry && (
+                    <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{c.data.industry}</span>
+                  )}
+                  <h3 class="text-xl font-semibold text-brand-dark">{c.data.title}</h3>
+                  <p class="mt-2 text-slate-600 text-sm leading-relaxed">{c.data.summary}</p>
+                </div>
+              </a>
+            ))}
+          </div>
 
-        <p class="text-slate-500 py-12 text-center hidden" id="caseEmpty">{lang === 'zh' ? '该分类下暂无案例' : lang === 'de' ? 'Keine Projekte in dieser Kategorie' : 'No cases in this category'}</p>
-      </>
+          <p class="text-slate-500 py-12 text-center hidden" id="caseEmpty">{lang === 'zh' ? '该分类下暂无案例' : lang === 'de' ? 'Keine Projekte in dieser Kategorie' : 'No cases in this category'}</p>
+        </div>
+      </div>
     )}
   </section>
 </BaseLayout>
 
-<script is:inline>
+<script is:inline define:vars={{ defaultCat }}>
   (function () {
     var params = new URLSearchParams(location.search);
-    var cat = params.get('cat') || 'all';
+    var cat = params.get('cat') || defaultCat;
     var grid = document.getElementById('caseGrid');
     var empty = document.getElementById('caseEmpty');
     var cards = grid ? Array.from(grid.querySelectorAll('.case-card')) : [];
@@ -89,23 +90,23 @@ const cats = [
     function paint(cat) {
       var visible = 0;
       cards.forEach(function (c) {
-        var show = cat === 'all' || c.dataset.industry === cat;
+        var show = c.dataset.industry === cat;
         c.style.display = show ? '' : 'none';
         if (show) visible++;
       });
       if (empty) empty.classList.toggle('hidden', visible !== 0);
       btns.forEach(function (b) {
         var on = b.dataset.cat === cat;
-        b.className = 'case-cat-btn px-4 py-2 rounded-full text-sm font-medium border transition ' +
+        b.className = 'case-cat-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium border transition ' +
           (on ? 'bg-brand text-white border-brand' : 'bg-white text-slate-600 border-slate-200 hover:border-brand hover:text-brand');
       });
     }
 
     btns.forEach(function (b) {
       b.addEventListener('click', function () {
-        var c = b.dataset.cat || 'all';
+        var c = b.dataset.cat || defaultCat;
         var basePath = location.pathname.replace(/\/+$/, '');
-        var url = c === 'all' ? basePath : basePath + '?cat=' + encodeURIComponent(c);
+        var url = basePath + '?cat=' + encodeURIComponent(c);
         history.replaceState(null, '', url);
         paint(c);
       });
