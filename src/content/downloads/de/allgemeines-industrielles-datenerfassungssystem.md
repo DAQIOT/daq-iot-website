@@ -4,7 +4,10 @@ description: DAQ-IOT SCADA-Softwareinstaller für Gerätedatenerfassung, Überwa
 version: V6.0.418
 fileSize: 156 MB
 fileType: ZIP
-file: /downloads/scada-setup-v6.0.418.zip
+links:
+  - label: "Windows (ZIP, ca. 156 MB)"
+    url: "https://www.daq-iot.com/static/upload/file/scada-setup-v6.0.418.zip"
+    type: "external"
 productSlug: industrial-iot-data-acquisition-monitoring-system
 icon: windows
 category: software

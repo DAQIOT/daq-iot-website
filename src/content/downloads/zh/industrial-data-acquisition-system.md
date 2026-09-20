@@ -5,7 +5,10 @@ image: /images/1693208184107145.jpg
 version: V4.27.1
 fileSize: 44 MB
 fileType: ZIP
-file: /downloads/ScadaSystem_4.27.1_Windows_x64.zip
+links:
+  - label: "Windows 版（ZIP，约 44 MB）"
+    url: "https://www.daq-iot.com/static/upload/file/scada-system-4.27.1-windows-x64.zip"
+    type: "external"
 productSlug: industrial-iot-data-acquisition-monitoring-system
 icon: windows
 category: software

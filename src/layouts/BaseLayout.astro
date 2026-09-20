@@ -2,21 +2,41 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { locales } from '../i18n/config';
+import { locales, languages } from '../i18n/config';
 import { stripLang } from '../i18n/utils';
 
 interface Props {
   lang: 'en' | 'zh' | 'de';
   title: string;
   description?: string;
+  image?: string;
 }
-const { lang, title, description = '' } = Astro.props;
+const { lang, title, description = '', image = '' } = Astro.props;
+
+const SITE = Astro.site ?? new URL('https://daq-iot.pages.dev');
 
 // 生成 hreflang 多语言标签（SEO 关键：告诉谷歌每种语言对应的页面）
+// canonical / hreflang 必须是绝对 URL，相对路径在跨域名场景会失效（P2-1）
 const pathname = Astro.url.pathname;
 const pure = stripLang(pathname, lang);
 const suffix = pure === '/' ? '' : pure;
-const canonical = '/' + lang + suffix;
+const canonical = new URL('/' + lang + suffix, SITE).href;
+const altLangs = locales.map((l) => ({ code: l, href: new URL('/' + l + suffix, SITE).href }));
+const xDefault = new URL('/en' + suffix, SITE).href;
+
+// 社交分享图（P2-2）：页面级 image 优先，否则用默认 og-cover
+const ogImage = new URL(image || '/images/og-cover.jpg', SITE).href;
+
+// JSON-LD 结构化数据（P2-3）：Organization 全站注入
+const orgJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Shanghai Data Acquisition IoT Technology Co., Ltd.',
+  alternateName: 'DAQ-IOT',
+  url: SITE.href,
+  logo: new URL('/images/og-cover.jpg', SITE).href,
+  description: 'Industrial IoT solutions expert: wireless sensors, data acquisition gateways, SCADA software, meter reading and energy monitoring.',
+});
 ---
 <!doctype html>
 <html lang={lang}>
@@ -26,10 +46,19 @@ const canonical = '/' + lang + suffix;
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={'/en' + suffix} />
-    <link rel="alternate" hreflang="zh" href={'/zh' + suffix} />
-    <link rel="alternate" hreflang="de" href={'/de' + suffix} />
-    <link rel="alternate" hreflang="x-default" href={'/en' + suffix} />
+    {altLangs.map((a) => <link rel="alternate" hreflang={a.code} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DAQ-IOT" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={orgJsonLd} />
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-white text-slate-800 flex flex-col">

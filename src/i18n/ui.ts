@@ -80,6 +80,7 @@ export const ui = {
     'contact.address': 'Address',
 
     'footer.contact': 'Contact',
+    'footer.resources': 'Resources',
     'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.',
     'footer.tagline': 'Connecting the Universe of Intelligence.',
   },
@@ -161,6 +162,7 @@ export const ui = {
     'contact.address': '地址',
 
     'footer.contact': '联系方式',
+    'footer.resources': '资源',
     'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology 版权所有。',
     'footer.tagline': '智联万物。',
   },
@@ -242,6 +244,7 @@ export const ui = {
     'contact.address': 'Adresse',
 
     'footer.contact': 'Kontakt',
+    'footer.resources': 'Ressourcen',
     'footer.rights': 'Copyright © 2021-2025 DAQ-IOT Technology. Alle Rechte vorbehalten.',
     'footer.tagline': 'Das Universum der Intelligenz verbinden.',
   },
