@@ -16,16 +16,14 @@ nav:
   solutions: 解决方案
   services: 服务
   home: 首页
+cases:
+  title: 项目案例
+  subtitle: DAQ-IOT 项目案例 —— 覆盖智能制造与光伏新能源的工业物联网数据采集与监控落地实践。
 hero:
   title: 工业物联网 DAQ-IOT 解决方案专家
   subtitle: DAQ-IOT 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
   ctaPrimary: 获取报价
   ctaSecondary: 查看产品
-banner:
-  homeImage: ""
-  pageImage: ""
-  partnersImage: ""
-  ctaImage: ""
 home:
   catDescSensor: CT电流 · 红外温度 · 液位 · 无线温振 · 转速
   ctaButton: 立即联系我们
@@ -56,7 +54,7 @@ home:
   stats:
     - value: 国家级
       label: 高新技术企业
-    - value: 4+
+    - value: 5+
       label: 全球服务网点
     - value: 24h
       label: 快速响应
@@ -67,7 +65,7 @@ features:
   feature2Desc: 从无线传感器到SCADA、EMS平台，覆盖数据采集到管理的完整链路。
   feature3Desc: 数字化工厂解决方案，提升生产效率，降低设备停机风险。
   feature4Desc: 光伏及新能源监控系统，助力可持续运营。
-  feature5Desc: 服务网点覆盖上海、河南、郑州及孟加拉，支持全球客户。
+  feature5Desc: 服务网点覆盖香港、上海、河南、郑州及孟加拉，支持全球客户。
   feature6Desc: 专业团队24小时内回复询盘，咨询热线：400-9677-032。
   subtitle: 国家级高新技术企业，专注工业物联网与企业数字化转型
   feature6Title: 快速响应
@@ -77,6 +75,10 @@ features:
   feature3Title: 智能制造
   feature2Title: 工业物联网全栈方案
   feature1Title: 国家级高新技术企业
+cta:
+  title: 开启您的智能工厂项目
+  subtitle: 发送需求，24 小时内获取定制化物联网解决方案报价。
+  button: 立即联系我们
 products:
   title: 产品与解决方案
   subtitle: 面向数据采集、监控与管理的工业物联网软硬件产品
@@ -97,10 +99,19 @@ downloads:
   catSoftware: 软件平台
   catDriver: 驱动程序
 name: settings
-cta:
-  title: 开启您的智能工厂项目
-  subtitle: 发送需求，24 小时内获取定制化物联网解决方案报价。
-  button: 立即联系我们
+banner:
+  solutionsImage: ""
+  partnersPageImage: /images/banners/banner-partners-page.jpg
+  ctaImage: /images/banners/banner-cta.jpg
+  pageImage: /images/banners/banner-page.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersImage: /images/banners/banner-partners.jpg
+  homeImages:
+    - /images/slides/slide-1.jpg
+    - /images/slides/slide-2.jpg
+    - /images/slides/slide-3.jpg
+  homeImage: /images/slides/slide-1.jpg
+  servicesImage: ""
 cat:
   software: AI+软件
   edge: AI+边缘计算机

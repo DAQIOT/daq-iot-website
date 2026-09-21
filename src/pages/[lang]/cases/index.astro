@@ -15,6 +15,9 @@ const site = await getSiteData(lang);
 const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = (site.banner?.pageImage as string) || '';
+const casesData = (site.cases ?? {}) as Record<string, any>;
+const casesTitle = (casesData.title as string) || t('nav.cases');
+const casesSubtitle = (casesData.subtitle as string) || '';
 
 const all = await getCollection('cases', (entry) => entry.id.startsWith(lang + '/') && !entry.data.hidden);
 const cases = all.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
@@ -30,10 +33,10 @@ const cats = [...industryMap].map(([key, label]) => ({ key, label }));
 const defaultCat = cats[0]?.key ?? '';
 const activeCat = Astro.url.searchParams.get('cat') || defaultCat;
 ---
-<BaseLayout lang={lang} title={t('nav.cases') + ' | DAQ-IOT'} description={t('nav.cases')}>
+<BaseLayout lang={lang} title={casesTitle + ' | DAQ-IOT'} description={casesSubtitle || casesTitle}>
   <PageHero
-    title={t('nav.cases')}
-    subtitle={`DAQ-IOT ${t('nav.cases')} — Industrial IoT data acquisition & monitoring deployment stories across smart manufacturing and new energy.`}
+    title={casesTitle}
+    subtitle={casesSubtitle}
     image={bannerImage}
   />
 

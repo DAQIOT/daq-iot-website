@@ -34,7 +34,7 @@ export const ui = {
     'feature4Title': 'New Energy Monitoring',
     'feature4Desc': 'PV and renewable energy monitoring systems for sustainable operations.',
     'feature5Title': 'Multi-Region Service',
-    'feature5Desc': 'Service centers in Shanghai, Henan, Zhengzhou and Bangladesh.',
+    'feature5Desc': 'Service centers in Hong Kong, Shanghai, Henan, Zhengzhou and Bangladesh.',
     'feature6Title': 'Fast Response',
     'feature6Desc': 'Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032.',
 
@@ -116,7 +116,7 @@ export const ui = {
     'feature4Title': '新能源监控',
     'feature4Desc': '光伏及新能源监控系统，助力可持续运营。',
     'feature5Title': '多地服务网络',
-    'feature5Desc': '服务网点覆盖上海、河南、郑州及孟加拉，支持全球客户。',
+    'feature5Desc': '服务网点覆盖香港、上海、河南、郑州及孟加拉，支持全球客户。',
     'feature6Title': '快速响应',
     'feature6Desc': '专业团队24小时内回复询盘，咨询热线：400-9677-032。',
 
@@ -128,7 +128,7 @@ export const ui = {
     'about.p1':
       '上海数采物联网科技有限公司是国家级高新技术企业，专注于工业物联网和企业数字化转型，提供无线传感器、数据采集监控系统、SCADA系统、能源管理平台等解决方案。',
     'about.p2':
-      '公司服务智能制造、光伏新能源等领域，在上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。',
+      '公司服务智能制造、光伏新能源等领域，在香港、上海、河南、郑州及孟加拉设有服务网点，为全球客户提供可靠产品与本地化服务。',
     'about.p3':
       '欢迎通过 export@daq-iot.com 或 400-9677-032 与我们联系，专业团队将竭诚为您服务。',
 
@@ -198,7 +198,7 @@ export const ui = {
     'feature4Title': 'Neue-Energie-Überwachung',
     'feature4Desc': 'Überwachungssysteme für Photovoltaik und erneuerbare Energien für nachhaltigen Betrieb.',
     'feature5Title': 'Multi-Region-Service',
-    'feature5Desc': 'Servicestandorte in Shanghai, Henan, Zhengzhou und Bangladesch.',
+    'feature5Desc': 'Servicestandorte in Hongkong, Shanghai, Henan, Zhengzhou und Bangladesch.',
     'feature6Title': 'Schnelle Reaktion',
     'feature6Desc': 'Dediziertes Team antwortet innerhalb von 24 Stunden. Hotline: 400-9677-032.',
 
@@ -210,7 +210,7 @@ export const ui = {
     'about.p1':
       'Die Shanghai Data Acquisition IOT Technology Co., LTD. ist ein nationales High-Tech-Unternehmen, das auf industrielles IoT und digitale Unternehmenstransformation spezialisiert ist. Wir bieten kabellose Sensoren, Datenerfassungs- und Überwachungssysteme, SCADA-Systeme, Energiemanagementplattformen und mehr.',
     'about.p2':
-      'Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.',
+      'Unsere Lösungen dienen der intelligenten Fertigung, der PV-Neuenergie und weiteren Branchen. Mit Standorten in Hongkong, Shanghai, Henan, Zhengzhou und Bangladesch unterstützen wir globale Kunden mit zuverlässigen Produkten und lokalem Service.',
     'about.p3':
       'Kontaktieren Sie uns unter export@daq-iot.com oder rufen Sie 400-9677-032 an. Unser Team hilft Ihnen gerne bei der Gestaltung einer intelligenteren, vernetzten Produktion.',
 

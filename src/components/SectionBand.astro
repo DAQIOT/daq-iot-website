@@ -22,9 +22,18 @@ interface Props {
 
 const { tone = 'dark', image = '', grid = true, width = 'narrow' } = Astro.props;
 const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-[1600px]';
+// 有背景图时：桌面端高度按图片比例（2560/400 = 6.4:1）随视口宽度自动变化，原图零裁剪完整展示
+const minH = 'md:min-h-[300px]';
 ---
 
-<section class:list={['relative isolate overflow-hidden', tone === 'dark' ? 'bg-brand-dark' : 'bg-brand']}>
+<section
+  class:list={[
+    'relative isolate overflow-hidden',
+    image ? 'md:aspect-[2560/400]' : minH,
+    'md:flex md:items-center',
+    tone === 'dark' ? 'bg-brand-dark' : 'bg-brand'
+  ]}
+>
   <!-- 背景图（有配置时显示） -->
   {image && (
     <img
@@ -36,38 +45,28 @@ const maxw = width === 'narrow' ? 'max-w-4xl' : 'max-w-[1600px]';
     />
   )}
 
-  <!-- 渐变光晕：无图时的层次感来源 -->
-  {tone === 'dark' ? (
+  <!-- 渐变光晕（仅无背景图时使用；有图时不加任何遮罩） -->
+  {!image && (tone === 'dark' ? (
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(0,150,214,0.32),transparent_55%),radial-gradient(circle_at_82%_78%,rgba(0,194,168,0.18),transparent_50%)]"></div>
   ) : (
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_-25%,rgba(255,255,255,0.30),transparent_60%)]"></div>
-  )}
+  ))}
 
-  <!-- 网格纹理 -->
-  {grid && (
+  <!-- 网格纹理（仅无背景图时使用） -->
+  {!image && grid && (
     <div
       class="absolute inset-0 opacity-[0.07]"
       style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"
     />
   )}
 
-  <!-- 遮罩：保证白字可读 -->
-  <div
-    class:list={[
-      'absolute inset-0',
-      tone === 'dark'
-        ? image
-          ? 'bg-gradient-to-r from-brand-darker/95 via-brand-darker/80 to-brand-darker/40'
-          : 'bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent'
-        : image
-          ? 'bg-gradient-to-br from-brand/85 via-brand/65 to-brand-darker/70'
-          : 'bg-gradient-to-br from-transparent via-transparent to-brand-darker/45'
-    ]}
-  >
-  </div>
+  <!-- 遮罩：仅无背景图时压暗底色；有图时完全不加遮罩 -->
+  {!image && (
+    <div class:list={['absolute inset-0', tone === 'dark' ? 'bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent' : 'bg-gradient-to-br from-transparent via-transparent to-brand-darker/45']}></div>
+  )}
 
-  <!-- 内容 -->
-  <div class={`relative mx-auto ${maxw} px-4 lg:px-8 py-16 text-center`}>
+  <!-- 内容（文字加深色投影，无遮罩时也能看清；有图时压缩纵向留白避免撑破比例高度） -->
+  <div class:list={[`relative mx-auto w-full ${maxw} px-4 lg:px-8 text-center drop-shadow-[0_2px_10px_rgba(2,20,40,0.85)]`, image ? 'py-12 md:py-6' : 'py-16']}>
     <slot />
   </div>
 </section>

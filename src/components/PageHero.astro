@@ -38,11 +38,22 @@ const {
   grid = true
 } = Astro.props;
 
-const pad = size === 'sm' ? 'py-12' : 'py-16';
 const maxw = width === 'narrow' ? 'max-w-6xl' : 'max-w-[1600px]';
+// 有背景图时：桌面端横幅高度按图片比例（2560/352 ≈ 7.3:1，1920 宽下约 264px 高）随视口宽度自动变化，
+// 图片零裁剪完整展示；无图时固定 300px 高
+const minH = 'md:min-h-[300px]';
+// 有图时压缩纵向留白，保证内容不会撑破比例高度
+const padWithImage = 'py-12 md:py-6';
+const pad = image ? padWithImage : size === 'sm' ? 'py-12' : 'py-16';
 ---
 
-<section class="relative isolate overflow-hidden bg-brand-dark">
+<section
+  class:list={[
+    'relative isolate overflow-hidden bg-brand-dark',
+    image ? 'md:aspect-[2560/352]' : minH,
+    'md:flex md:items-center'
+  ]}
+>
   <!-- 背景图（有配置时显示） -->
   {image && (
     <img
@@ -55,33 +66,29 @@ const maxw = width === 'narrow' ? 'max-w-6xl' : 'max-w-[1600px]';
     />
   )}
 
-  <!-- 品牌渐变光晕（无图时的主要层次感来源） -->
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.28),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.20),transparent_50%)]"></div>
+  <!-- 品牌渐变光晕（仅无背景图时使用；有图时不加任何遮罩，直接展示原图） -->
+  {!image && (
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.28),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.20),transparent_50%)]"></div>
+  )}
 
-  <!-- 网格纹理 -->
-  {grid && (
+  <!-- 网格纹理（仅无背景图时使用） -->
+  {!image && grid && (
     <div
       class="absolute inset-0 opacity-[0.07]"
       style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"
     />
   )}
 
-  <!-- 文字遮罩：有背景图时加重，保证白字可读 -->
-  <div
-    class:list={[
-      'absolute inset-0',
-      image
-        ? 'bg-gradient-to-r from-brand-darker/95 via-brand-darker/80 to-brand-darker/35'
-        : 'bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent'
-    ]}
-  >
-  </div>
+  <!-- 遮罩：仅在无背景图时用于压暗底色，保证白字可读；有图时完全不加遮罩 -->
+  {!image && (
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/55 to-transparent"></div>
+  )}
 
-  <!-- 内容 -->
-  <div class={`relative mx-auto ${maxw} px-4 lg:px-8 ${pad}`}>
+  <!-- 内容（文字加深色投影，无遮罩时也能看清） -->
+  <div class={`relative mx-auto w-full ${maxw} px-4 lg:px-8 ${pad}`}>
     <slot name="breadcrumb" />
-    {title && <h1 class={titleClass}>{title}</h1>}
-    {subtitle && <p class="mt-3 text-slate-300 max-w-2xl">{subtitle}</p>}
+    {title && <h1 class={titleClass + ' drop-shadow-[0_2px_10px_rgba(2,20,40,0.85)]'}>{title}</h1>}
+    {subtitle && <p class="mt-3 text-slate-100 max-w-2xl drop-shadow-[0_2px_8px_rgba(2,20,40,0.9)]">{subtitle}</p>}
     <slot />
   </div>
 </section>

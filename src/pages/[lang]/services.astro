@@ -13,7 +13,7 @@ const site = await getSiteData(lang);
 const base = '/' + lang;
 
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
-const bannerImage = (site.banner?.pageImage as string) || '';
+const bannerImage = ((site.banner?.servicesImage as string) || (site.banner?.pageImage as string) || '');
 
 const items = (site.services?.items ?? []).map((it: { title: string; desc: string }, i: number) => ({
   n: String(i + 1).padStart(2, '0'),

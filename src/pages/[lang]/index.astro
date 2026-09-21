@@ -46,9 +46,17 @@ const families = categories.map((c) => ({
   href: base + '/products?cat=' + c.data.slug
 }));
 
+// 行业卡片主题背景图（按配置顺序一一对应）
+const industryBgs = [
+  '/images/industry-manufacturing.jpg',
+  '/images/industry-pv.jpg',
+  '/images/industry-city.jpg',
+  '/images/industry-energy.jpg',
+];
 const industries = (site.home?.industries ?? []).map((it: { label: string }, i: number) => ({
   n: String(i + 1).padStart(2, '0'),
-  label: it.label
+  label: it.label,
+  bg: industryBgs[i] ?? ''
 }));
 
 const stats = (site.home?.stats ?? []).map((s: { value: string; label: string }) => ({
@@ -56,8 +64,15 @@ const stats = (site.home?.stats ?? []).map((s: { value: string; label: string })
   l: s.label
 }));
 
-// 首页横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空则用默认渐变纹理）
+// 首页横幅背景图：homeImages 轮播列表优先，其次单图 homeImage（后台「网站基础文案 → 页面横幅背景图」配置）
+// homeImages 兼容两种结构：纯字符串数组（手写 YAML）或 [{image: 路径}]（CMS list widget）
+const heroRaw = (site.banner?.homeImages as unknown) ?? [];
+const heroImagesList = (Array.isArray(heroRaw) ? heroRaw : [])
+  .map((it: unknown) => (typeof it === 'string' ? it : (it as { image?: string })?.image))
+  .filter((s): s is string => Boolean(s));
 const heroImage = (site.banner?.homeImage as string) || '';
+const heroImages = heroImagesList.length ? heroImagesList : (heroImage ? [heroImage] : []);
+const hasHeroImg = heroImages.length > 0;
 // 首页底部横条背景图（同上，留空则用默认渐变纹理）
 const partnersImage = (site.banner?.partnersImage as string) || '';
 const ctaImage = (site.banner?.ctaImage as string) || '';
@@ -66,26 +81,34 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
 
   <!-- Hero -->
   <section class="relative isolate overflow-hidden bg-brand-dark">
-    {heroImage && (
+    {heroImages.map((src, i) => (
       <img
-        src={heroImage}
+        src={src}
         alt=""
         aria-hidden="true"
-        class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        loading="eager"
-        fetchpriority="high"
+        class:list={['hero-slide pointer-events-none absolute inset-0 h-full w-full object-cover', i === 0 && 'is-active']}
+        loading={i === 0 ? 'eager' : 'lazy'}
+        fetchpriority={i === 0 ? 'high' : undefined}
       />
+    ))}
+    <!-- 轮播图直接展示原图，不加任何遮罩 -->
+    <!-- 无背景图时才加光晕/网格/压暗遮罩 -->
+    {!hasHeroImg && (
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.25),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.18),transparent_50%)]"></div>
     )}
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.25),transparent_55%),radial-gradient(circle_at_80%_60%,rgba(14,165,233,0.18),transparent_50%)]"></div>
-    <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"></div>
-    <div class:list={['absolute inset-0 bg-gradient-to-r from-brand-darker', heroImage ? 'via-brand-darker/80 to-brand-darker/35' : 'via-brand-darker/85 to-transparent']}></div>
+    {!hasHeroImg && (
+      <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'40\'><path d=\'M0 39.5H40M39.5 0V40\' fill=\'none\' stroke=\'white\' stroke-width=\'1\'/></svg>')"></div>
+    )}
+    {!hasHeroImg && (
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/85 to-transparent"></div>
+    )}
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-24 md:py-32">
       <div class="inline-block">
-        <p class="text-brand text-xl md:text-2xl lg:text-3xl font-black tracking-[0.15em] uppercase drop-shadow-sm">{t('home.eyebrow')}</p>
+        <p class="text-brand text-xl md:text-2xl lg:text-3xl font-black tracking-[0.15em] uppercase drop-shadow-[0_2px_10px_rgba(2,20,40,0.9)]">{t('home.eyebrow')}</p>
         <div class="mt-3 h-0.5 w-full bg-brand/80 rounded-full"></div>
       </div>
-      <h1 class="mt-5 text-xl md:text-3xl font-bold text-slate-200 whitespace-nowrap leading-tight">{t('home.heroTitle')}</h1>
-      <p class="mt-6 text-lg text-slate-300 max-w-2xl">{t('home.heroSubtitle')}</p>
+      <h1 class="mt-5 text-xl md:text-3xl font-bold text-white whitespace-nowrap leading-tight drop-shadow-[0_2px_12px_rgba(2,20,40,0.95)]">{t('home.heroTitle')}</h1>
+      <p class="mt-6 text-lg text-slate-100 max-w-2xl drop-shadow-[0_2px_10px_rgba(2,20,40,0.95)]">{t('home.heroSubtitle')}</p>
       <div class="mt-8 flex flex-wrap gap-4">
         <a href={base + '/contact'} class="bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('home.heroCta1')}</a>
         <a href={base + '/products'} class="border border-white/40 text-white px-7 py-3 rounded-md font-medium hover:bg-white/10 transition">{t('home.heroCta2')}</a>
@@ -94,15 +117,7 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
   </section>
 
   <!-- 五大产品矩阵 -->
-  <section class="relative isolate overflow-hidden">
-    <img
-      src="/images/home-categories-bg.jpg"
-      alt=""
-      aria-hidden="true"
-      class="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      loading="lazy"
-    />
-    <div class="absolute inset-0 bg-white/60"></div>
+  <section class="relative">
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.categoriesTitle')}</h2>
@@ -118,8 +133,6 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
               class="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
               loading="lazy"
             />
-            <!-- 白色渐变遮罩：左侧文字区更实、右侧背景图更透出 -->
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/15"></div>
             <div class="relative">
               <div class="flex items-center gap-3 mb-4">
                 <div class="w-12 h-12 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:text-white text-brand transition">
@@ -137,17 +150,28 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
   </section>
 
   <!-- 行业解决方案 -->
-  <section class="bg-slate-50 border-y border-slate-100">
-    <div class="mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
+  <section class="relative border-y border-slate-100">
+    <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.solutionsTitle')}</h2>
         <p class="mt-3 text-slate-500">{t('home.solutionsSubtitle')}</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {industries.map((it) => (
-          <div class="bg-white rounded-2xl border border-slate-200 p-7 card-hover">
-            <span class="text-brand/30 text-3xl font-bold">{it.n}</span>
-            <h3 class="mt-3 text-xl font-semibold text-brand-dark">{it.label}</h3>
+          <div class="card-hover relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7">
+            {it.bg && (
+              <img
+                src={it.bg}
+                alt=""
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            )}
+            <div class="relative">
+              <span class="text-brand/30 text-3xl font-bold">{it.n}</span>
+              <h3 class="mt-3 text-xl font-semibold text-brand-dark">{it.label}</h3>
+            </div>
           </div>
         ))}
       </div>
@@ -158,7 +182,8 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
   </section>
 
   <!-- 数据基石 -->
-  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
+  <section class="relative">
+    <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-brand-dark">{t('home.statsTitle')}</h2>
     </div>
@@ -186,3 +211,31 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
     <a href={base + '/contact'} class="mt-6 inline-block bg-white text-brand px-7 py-3 rounded-md font-medium hover:bg-brand-light transition">{t('home.ctaButton')}</a>
   </SectionBand>
 </BaseLayout>
+
+<style>
+  /* Hero 轮播：多张背景图淡入淡出切换 */
+  .hero-slide {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .hero-slide.is-active {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 1) {
+    let idx = 0;
+    setInterval(() => {
+      slides[idx].classList.remove('is-active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('is-active');
+    }, 5000);
+  }
+</script>

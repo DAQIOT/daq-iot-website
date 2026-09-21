@@ -1,6 +1,9 @@
 ---
 editor_lang: 英文
 name: settings
+cases:
+  title: Project Cases
+  subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring deployment stories across smart manufacturing and new energy.
 nav:
   home: Home
   about: About
@@ -15,10 +18,18 @@ nav:
   cases: Project Cases
   cta: Get a Quote
 banner:
-  homeImage: ''
-  pageImage: ''
-  partnersImage: ''
-  ctaImage: ''
+  homeImages:
+    - /images/slides/slide-1.jpg
+    - /images/slides/slide-2.jpg
+    - /images/slides/slide-3.jpg
+  homeImage: /images/slides/slide-1.jpg
+  pageImage: /images/banners/banner-page.jpg
+  partnersImage: /images/banners/banner-partners.jpg
+  ctaImage: /images/banners/banner-cta.jpg
+  solutionsImage: /images/banners/banner-solutions.jpg
+  servicesImage: /images/banners/banner-services.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersPageImage: /images/banners/banner-partners-page.jpg
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
   subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
@@ -44,7 +55,7 @@ home:
   stats:
     - value: National
       label: High-Tech Enterprise
-    - value: 4+
+    - value: 5+
       label: Global Service Sites
     - value: 24h
       label: Fast Response
@@ -67,7 +78,7 @@ features:
   feature4Title: New Energy Monitoring
   feature4Desc: PV and renewable energy monitoring systems for sustainable operations.
   feature5Title: Multi-Region Service
-  feature5Desc: Service centers in Shanghai, Henan, Zhengzhou and Bangladesh.
+  feature5Desc: Service centers in Hong Kong, Shanghai, Henan, Zhengzhou and Bangladesh.
   feature6Title: Fast Response
   feature6Desc: 'Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032.'
 cta:

@@ -1,6 +1,9 @@
 ---
 editor_lang: 德文
 name: settings
+cases:
+  title: Projektreferenzen
+  subtitle: DAQ-IOT Projektreferenzen — Industrielle IoT-Datenerfassung und -überwachung in der intelligenten Fertigung und Photovoltaik.
 nav:
   home: Start
   about: Über uns
@@ -15,10 +18,18 @@ nav:
   cases: Projekte
   cta: Angebot anfordern
 banner:
-  homeImage: ''
-  pageImage: ''
-  partnersImage: ''
-  ctaImage: ''
+  homeImages:
+    - /images/slides/slide-1.jpg
+    - /images/slides/slide-2.jpg
+    - /images/slides/slide-3.jpg
+  homeImage: /images/slides/slide-1.jpg
+  pageImage: /images/banners/banner-page.jpg
+  partnersImage: /images/banners/banner-partners.jpg
+  ctaImage: /images/banners/banner-cta.jpg
+  solutionsImage: /images/banners/banner-solutions.jpg
+  servicesImage: /images/banners/banner-services.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersPageImage: /images/banners/banner-partners-page.jpg
 cat:
   software: KI+ Software
   edge: KI+ Edge-Computing
@@ -55,7 +66,7 @@ home:
   stats:
     - value: Staatlich
       label: High-Tech-Unternehmen
-    - value: 4+
+    - value: 5+
       label: Globale Servicestandorte
     - value: 24h
       label: Schnelle Reaktion
@@ -78,7 +89,7 @@ features:
   feature4Title: Neue-Energie-Überwachung
   feature4Desc: Überwachungssysteme für Photovoltaik und erneuerbare Energien für nachhaltigen Betrieb.
   feature5Title: Multi-Region-Service
-  feature5Desc: Servicestandorte in Shanghai, Henan, Zhengzhou und Bangladesch.
+  feature5Desc: Servicestandorte in Hongkong, Shanghai, Henan, Zhengzhou und Bangladesch.
   feature6Title: Schnelle Reaktion
   feature6Desc: 'Dediziertes Team antwortet innerhalb von 24 Stunden. Hotline: 400-9677-032.'
 cta:
