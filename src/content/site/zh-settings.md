@@ -30,7 +30,7 @@ home:
   partnersSubtitle: 与行业领先企业共建工业物联网生态
   catDescConnect: 工业交换机 · 蜂窝路由 · 串口服务器 · 光模块
   catDescEdge: 边缘计算网关 · 协议通信管理机
-  ctaTitle: 开启您的智能工厂项目
+  ctaTitle: 开启您的智能化项目
   ctaSubtitle: 发送需求，24 小时内获取定制化物联网解决方案报价。
   eyebrow: DAQ-IOT | 智联万物
   partnersTitle: 合作伙伴与生态
