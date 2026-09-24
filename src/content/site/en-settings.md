@@ -1,57 +1,58 @@
 ---
 editor_lang: 英文
-name: settings
-cases:
-  title: Project Cases
-  subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring deployment stories across smart manufacturing and new energy.
+blog:
+  title: News & Insights
+  subtitle: Industry insights, product updates and technical sharing to keep you
+    ahead in industrial IoT.
 nav:
-  home: Home
-  about: About
+  contact: Contact
+  blog: News
+  cases: Project Cases
   products: Products
+  partners: Partners
+  downloads: Downloads
+  about: About
+  support: Support
+  cta: Get a Quote
   solutions: Solutions
   services: Services
-  partners: Partners
-  support: Support
-  downloads: Downloads
-  blog: News
-  contact: Contact
-  cases: Project Cases
-  cta: Get a Quote
-banner:
-  homeImages:
-    - /images/slides/slide-1.jpg
-    - /images/slides/slide-2.jpg
-    - /images/slides/slide-3.jpg
-  homeImage: /images/slides/slide-1.jpg
-  pageImage: /images/banners/banner-page.jpg
-  partnersImage: /images/banners/banner-partners.jpg
-  ctaImage: /images/banners/banner-cta.jpg
-  solutionsImage: /images/banners/banner-solutions.jpg
-  servicesImage: /images/banners/banner-services.jpg
-  supportImage: /images/banners/banner-support.jpg
-  partnersPageImage: /images/banners/banner-partners-page.jpg
+  home: Home
+cases:
+  title: Project Cases
+  subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring
+    deployment stories across smart manufacturing and new energy.
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
-  subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart connectivity and automation to build a data-intelligence loop from device to cloud.
+  subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart
+    connectivity and automation to build a data-intelligence loop from device to
+    cloud.
   ctaPrimary: Get a Quote
   ctaSecondary: View Products
 home:
+  ctaButton: Contact Us Now
+  partnersSubtitle: Building the industrial IoT ecosystem with industry leaders
+  ctaTitle: Start Your Smart Project
+  ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
   eyebrow: DAQ-IOT | CONNECTING THE UNIVERSE OF INTELLIGENCE
-  heroTitle: Empowering Every Device with Intelligence
-  heroSubtitle: From wireless sensors and edge gateways to SCADA and energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT stack for smart manufacturing and new energy.
-  heroCta1: Get a Quote
-  heroCta2: View Products
-  categoriesTitle: Our Product Categories
+  partnersTitle: Partners & Ecosystem
+  solutionsSubtitle: Deep expertise in smart manufacturing and new energy for
+    digital transformation
+  heroSubtitle: From wireless sensors and edge gateways to SCADA and
+    energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT
+    stack for smart manufacturing and new energy.
   categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
+  statsTitle: DAQ-IOT · The Data Foundation
+  heroCta1: Get a Quote
   viewAll: View All Products
-  solutionsTitle: Industry Solutions
-  solutionsSubtitle: Deep expertise in smart manufacturing and new energy for digital transformation
+  categoriesTitle: Our Product Categories
   industries:
     - label: Smart Manufacturing
     - label: PV & New Energy
     - label: Smart City
     - label: Power & Energy
-  statsTitle: DAQ-IOT · The Data Foundation
+  heroCta2: View Products
+  solutionsTitle: Industry Solutions
+  heroTitle: Empowering Every Device with Intelligence
   stats:
     - value: National
       label: High-Tech Enterprise
@@ -61,52 +62,61 @@ home:
       label: Fast Response
     - value: Full-Stack
       label: Industrial IoT Solutions
-  partnersTitle: Partners & Ecosystem
-  partnersSubtitle: Building the industrial IoT ecosystem with industry leaders
-  ctaTitle: Start Your Smart Factory Project
-  ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
-  ctaButton: Contact Us Now
 features:
-  title: Why DAQ-IOT
-  subtitle: National high-tech enterprise focused on industrial IoT and digital transformation
-  feature1Title: National High-Tech Enterprise
   feature1Desc: Certified national high-tech company with R&D strength in industrial IoT.
-  feature2Title: End-to-End IoT Solutions
   feature2Desc: From wireless sensors to SCADA and EMS platforms, we cover the full stack.
-  feature3Title: Smart Manufacturing
   feature3Desc: Digital factory solutions that improve efficiency and reduce downtime.
-  feature4Title: New Energy Monitoring
   feature4Desc: PV and renewable energy monitoring systems for sustainable operations.
-  feature5Title: Multi-Region Service
   feature5Desc: Service centers in Hong Kong, Shanghai, Henan, Zhengzhou and Bangladesh.
+  feature6Desc: "Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032."
+  subtitle: National high-tech enterprise focused on industrial IoT and digital
+    transformation
   feature6Title: Fast Response
-  feature6Desc: 'Dedicated team replies to inquiries within 24 hours. Hotline: 400-9677-032.'
+  title: Why DAQ-IOT
+  feature5Title: Multi-Region Service
+  feature4Title: New Energy Monitoring
+  feature3Title: Smart Manufacturing
+  feature2Title: End-to-End IoT Solutions
+  feature1Title: National High-Tech Enterprise
 cta:
   title: Start Your Smart Factory Project
   subtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
   button: Contact Us Now
 products:
   title: Products & Solutions
-  subtitle: Industrial IoT hardware and software for data acquisition, monitoring and management
+  subtitle: Industrial IoT hardware and software for data acquisition, monitoring
+    and management
   back: Back to Products
   all: All Products
   empty: No products in this category yet. Contact us for customization.
 downloads:
-  title: Downloads
-  subtitle: Software installers, configuration tools, drivers and product datasheets for download.
   all: All Downloads
-  empty: No downloads in this category yet.
-  catSoftware: Software Platform
-  catConfigTool: Configuration Tools
-  catDriver: Drivers
   catDoc: Documentation
   download: Download
+  empty: No downloads in this category yet.
+  catConfigTool: Configuration Tools
   changelog: Changelog
+  subtitle: Software installers, configuration tools, drivers and product
+    datasheets for download.
   version: Version
+  title: Downloads
   updated: Updated
-blog:
-  title: News & Insights
-  subtitle: Industry insights, product updates and technical sharing to keep you ahead in industrial IoT.
+  catSoftware: Software Platform
+  catDriver: Drivers
+name: settings
+banner:
+  solutionsImage: /images/banners/banner-solutions.jpg
+  partnersPageImage: /images/banners/banner-partners-page.jpg
+  ctaImage: /images/banners/banner-cta.jpg
+  pageImage: /images/banners/banner-page.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersImage: /images/banners/banner-partners.jpg
+  homeImages:
+    - /images/slides/slide-1.jpg
+    - /images/slides/slide-2.jpg
+    - /images/slides/slide-3.jpg
+  homeImage: /images/slides/slide-1.jpg
+  servicesImage: /images/banners/banner-services.jpg
 footer:
   contact: Contact
   products: Products
