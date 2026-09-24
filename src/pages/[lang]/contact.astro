@@ -55,24 +55,25 @@ const formSubject = t('contact.formSubject', FALLBACK_SUBJECT) || FALLBACK_SUBJE
 
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.name')}</label>
-          <input type="text" name="name" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
+          <input type="text" name={t('contact.name')} required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.email')}</label>
+          <!-- name="email" 是 Web3Forms 保留字段（用于设置回复地址），不能改成中文 -->
           <input type="email" name="email" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <!-- 手机号：可选字段，不做格式校验，原样随表单发到收件邮箱 -->
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.phoneField', phoneFallback)}</label>
-          <input type="tel" name="phone" autocomplete="tel" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
+          <input type="tel" name={t('contact.phoneField', phoneFallback)} autocomplete="tel" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.company')}</label>
-          <input type="text" name="company" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
+          <input type="text" name={t('contact.company')} class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.message')}</label>
-          <textarea name="message" rows="4" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea>
+          <textarea name={t('contact.message')} rows="4" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand resize-none"></textarea>
         </div>
         <button type="submit" class="w-full bg-brand text-white py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('contact.submit')}</button>
       </form>
