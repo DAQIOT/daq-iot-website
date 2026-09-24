@@ -112,8 +112,7 @@ banner:
   supportImage: /images/banners/banner-support.jpg
   partnersImage: /images/banners/banner-partners.jpg
   homeImages:
-    - /images/slides/slide-2.jpg
-    - /images/slides/slide-3.jpg
+    - /images/img-muf933st-3947bd06.png
     - /images/img-mtmnm9mb-46e31837.png
   homeImage: /images/slides/slide-1.jpg
   servicesImage: /images/banners/banner-services.jpg
