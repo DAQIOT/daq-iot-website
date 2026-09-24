@@ -1,15 +1,15 @@
 ---
-title: "能源(能耗)管理平台app下载链接"
-description: "能源（能耗）管理平台配套 APP 下载；安卓版点击下载，网页版可通过平台地址登录查看。"
-image: "/images/downloads/1758272778440646.png"
-fileType: "APK"
-category: "software"
+title: 能源(能耗)管理平台app下载链接
+description: 能源（能耗）管理平台配套 APP 下载；安卓版点击下载，网页版可通过平台地址登录查看。
+image: /images/downloads/1758272778440646.png
+fileType: APK
+links:
+  - label: Android APK 下载 / Download
+    url: http://43.173.88.17:8888/down/y6VsEK9m0qxd.apk
+    type: external
+category: software
 releaseDate: ""
 order: 33
-links:
-  - label: "Android APK 下载 / Download"
-    url: "https://upload.app/download/%E6%95%B0%E9%87%87%E7%89%A9%E8%81%94/uni.app.UNI17C3D30/5bf1d0a55f40e9b82e5f0474a714f09fa54c13243aaca0277e55a156e171c57c"
-    type: "external"
 ---
 一、安卓版：
 
