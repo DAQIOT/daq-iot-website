@@ -13,7 +13,7 @@ interface Props {
 }
 const { lang, title, description = '', image = '' } = Astro.props;
 
-const SITE = Astro.site ?? new URL('https://daq-iot.pages.dev');
+const SITE = Astro.site ?? new URL('https://www.daq-iot.com');
 
 // 生成 hreflang 多语言标签（SEO 关键：告诉谷歌每种语言对应的页面）
 // canonical / hreflang 必须是绝对 URL，相对路径在跨域名场景会失效（P2-1）

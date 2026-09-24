@@ -9,9 +9,9 @@ export default defineConfig({
   output: 'static',
   // 网站域名（决定 sitemap、canonical、hreflang 的绝对地址）：
   // - 线上可用环境变量 SITE_URL 覆盖，无需改代码
-  // - 未设置时回退到当前真实对外域名 daq-iot.pages.dev
-  // - 将来绑定正式域名（如 https://www.daq-iot.com）后，改这个默认值或在 Cloudflare 配 SITE_URL
-  site: process.env.SITE_URL || 'https://daq-iot.pages.dev',
+  // - 未设置时回退到正式对外域名 www.daq-iot.com
+  // - 历史说明：2026-09 官网已从 daq-iot.pages.dev 迁移到 www.daq-iot.com（CNAME 指向 CF Pages）
+  site: process.env.SITE_URL || 'https://www.daq-iot.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

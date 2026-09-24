@@ -35,7 +35,7 @@
   };
   var LOCALE_LABELS = { zh: '中文', en: 'English', de: 'Deutsch' };
   // body 内相对图片在预览 iframe 中需绝对地址才显示
-  var SITE_BASE = 'https://daq-iot.com';
+  var SITE_BASE = 'https://www.daq-iot.com';
 
   function renderMarkdown(md) {
     if (!md) return '';
