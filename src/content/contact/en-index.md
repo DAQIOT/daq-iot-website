@@ -5,10 +5,13 @@ subtitle: Tell us what you need — we usually reply within 24 hours.
 infoTitle: Contact Information
 name: Your Name
 email: Email
+phoneField: Phone / WhatsApp
 company: Company
 message: Your Message
 submit: Send Inquiry
 success: Thank you! We will contact you within 24 hours.
+formKey: ''
+formSubject: Website Inquiry (EN)
 phone: Phone
 mobile: Mobile / WhatsApp
 person: Contact Person

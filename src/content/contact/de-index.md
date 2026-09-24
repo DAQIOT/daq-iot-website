@@ -5,10 +5,13 @@ subtitle: Teilen Sie uns Ihr Bedarf mit – meist antworten wir innerhalb von 24
 infoTitle: Kontaktinformationen
 name: Ihr Name
 email: E-Mail
+phoneField: Telefon / WhatsApp
 company: Unternehmen
 message: Ihre Nachricht
 submit: Anfrage senden
 success: Danke! Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+formKey: ''
+formSubject: Website-Anfrage (DE)
 phone: Telefon
 mobile: Mobil / WhatsApp
 person: Ansprechpartner

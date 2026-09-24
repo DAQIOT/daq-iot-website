@@ -882,6 +882,11 @@ collections:
       - label: 邮箱框占位
         name: email
         widget: string
+      - label: 手机号框占位
+        name: phoneField
+        widget: string
+        required: false
+        hint: 联系表单里"手机号"输入框的标签文字；该字段为选填，不做格式校验
       - label: 公司框占位
         name: company
         widget: string
@@ -894,6 +899,16 @@ collections:
       - label: 提交成功提示
         name: success
         widget: string
+      - label: 表单密钥(Web3Forms Access Key)
+        name: formKey
+        widget: string
+        required: false
+        hint: 决定询盘邮件发送到哪个收件邮箱。留空则使用网站代码里的默认 key。换邮箱的方法：到 web3forms.com 用目标邮箱生成一个 Access Key，粘贴到这里即可，无需改代码。（一个 key 对应一个邮箱，中文站与英/德站可填不同 key 实现分开收件）
+      - label: 询盘邮件标题
+        name: formSubject
+        widget: string
+        required: false
+        hint: 收到询盘时邮件列表里显示的主题，建议带上语言标记便于分辨来源，如"官网询盘（中文站）"。留空则用默认标题。
       - label: 电话标签
         name: phone
         widget: string

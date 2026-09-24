@@ -8,6 +8,15 @@ export function getStaticPaths() {
 }
 const { lang } = Astro.params as { lang: Lang };
 const t = await getTranslations(lang);
+// 手机号框标签兜底（后台未填时按语言显示）
+const phoneFallback = lang === 'zh' ? '手机号' : lang === 'de' ? 'Telefon / WhatsApp' : 'Phone / WhatsApp';
+
+// Web3Forms 收件配置：优先读后台（联系我们 - 表单密钥），留空则回退到这里的默认 key。
+// 想换收件邮箱：到 web3forms.com 用新邮箱生成 access key，填到后台对应语言即可，无需改代码。
+const FALLBACK_KEY = '93b9c083-e982-4195-ae00-51d9202acaf9';
+const FALLBACK_SUBJECT = 'New Inquiry from DAQ-IOT Website';
+const formKey = t('contact.formKey', FALLBACK_KEY) || FALLBACK_KEY;
+const formSubject = t('contact.formSubject', FALLBACK_SUBJECT) || FALLBACK_SUBJECT;
 ---
 <BaseLayout lang={lang} title={t('contact.title') + ' | DAQ-IOT'} description={t('contact.subtitle')}>
   <!-- layout: max-w-6xl gives long EN/DE addresses room (revised 2026-08-19) -->
@@ -34,13 +43,14 @@ const t = await getTranslations(lang);
       </div>
 
       <!--
-        web3forms access_key 已配置。
-        该 key 于 2026-08-13 重新生成替换旧 key，询盘通知发到生成此 key 时所用邮箱（在 Web3Forms 后台可查）。
-        如需更换接收邮箱，用新邮箱重新生成 key 并替换下方 value。
+        收件配置已改为后台可配（后台 → 联系我们 → 表单密钥 / 邮件标题）。
+        中文站可填 business@ 的 key，英/德站填 export@ 的 key，实现分语言收件。
+        未填时回退到本文件顶部的 FALLBACK_KEY（原默认 key），行为与之前一致。
+        Web3Forms 说明：一个 access_key 绑定一个收件邮箱，key 本身是公开别名、不是密码，可安全放在页面源码里。
       -->
       <form action="https://api.web3forms.com/submit" method="POST" class="space-y-3">
-        <input type="hidden" name="access_key" value="93b9c083-e982-4195-ae00-51d9202acaf9" />
-        <input type="hidden" name="subject" value="New Inquiry from DAQ-IOT Website" />
+        <input type="hidden" name="access_key" value={formKey} />
+        <input type="hidden" name="subject" value={formSubject} />
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 
         <div>
@@ -50,6 +60,11 @@ const t = await getTranslations(lang);
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.email')}</label>
           <input type="email" name="email" required class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
+        </div>
+        <!-- 手机号：可选字段，不做格式校验，原样随表单发到收件邮箱 -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.phoneField', phoneFallback)}</label>
+          <input type="tel" name="phone" autocomplete="tel" class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <div>
           <label class="block text-sm font-medium text-slate-700 mb-1">{t('contact.company')}</label>

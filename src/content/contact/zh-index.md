@@ -5,10 +5,13 @@ subtitle: 告诉我们您的需求，通常 24 小时内回复。
 infoTitle: 联系信息
 name: 您的姓名
 email: 电子邮箱
+phoneField: 手机号
 company: 公司名称
 message: 留言内容
 submit: 提交询盘
 success: 感谢您的咨询！我们将在 24 小时内与您联系。
+formKey: '5d027375-ef9c-4ddd-9abe-501e7bce7fde'
+formSubject: 官网询盘（中文站）
 phone: 电话
 mobile: 手机
 person: 联系人
