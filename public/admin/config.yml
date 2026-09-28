@@ -94,6 +94,47 @@ collections:
         required: true
         i18n: true
         hint: 产品详细介绍，支持 Markdown 格式
+      - label: 相关资料（选填，支持多个）
+        name: docs
+        widget: list
+        required: false
+        i18n: true
+        collapsed: true
+        hint: 展示在产品详情底部，支持三种类型：PDF 文件（直接上传，≤25MiB）、网页链接、语雀文档。每条必须填「资料名称」，PDF 上传文件或填链接地址二选一。
+        fields:
+          - label: 资料名称（必填）
+            name: title
+            widget: string
+            required: true
+            i18n: true
+            hint: 如 "产品手册"、"选型指南"、"仪表视觉本地图像识别方案V1.3"
+          - label: 资料类型
+            name: type
+            widget: select
+            default: pdf
+            required: true
+            i18n: duplicate
+            options:
+              - label: "PDF 文件（上传）"
+                value: pdf
+              - label: "网页链接"
+                value: link
+              - label: "语雀文档"
+                value: yuque
+          - label: PDF 文件（类型=PDF 时上传）
+            name: file
+            widget: file
+            required: false
+            media_folder: public/files
+            public_folder: /files
+            i18n: duplicate
+            hint: 会上传到 public/files/ 目录。⚠️ 单文件 ≤25 MiB（Cloudflare Pages 部署上限）；更大的 PDF 请传到对象存储（R2/OSS/COS）后改用「网页链接」类型填外链。
+          - label: 链接地址（类型=网页链接 / 语雀 时填写）
+            name: url
+            widget: string
+            required: false
+            i18n: duplicate
+            hint: 完整 URL，如 https://www.yuque.com/xxx/yyy 或 https://static.daq-iot.com/xxx.pdf；链接里含 yuque.com 会自动按语雀文档展示
   - name: cases
     label: 项目案例
     folder: src/content/cases
@@ -141,6 +182,47 @@ collections:
         required: true
         i18n: true
         hint: 案例详细内容（背景/方案/成效等），支持 Markdown，可插入图片
+      - label: 相关资料（选填，支持多个）
+        name: docs
+        widget: list
+        required: false
+        i18n: true
+        collapsed: true
+        hint: 展示在案例详情底部，支持三种类型：PDF 文件（直接上传，≤25MiB）、网页链接、语雀文档。每条必须填「资料名称」，PDF 上传文件或填链接地址二选一。
+        fields:
+          - label: 资料名称（必填）
+            name: title
+            widget: string
+            required: true
+            i18n: true
+            hint: 如 "方案说明书"、"检测报告"、"仪表视觉本地图像识别方案V1.3"
+          - label: 资料类型
+            name: type
+            widget: select
+            default: pdf
+            required: true
+            i18n: duplicate
+            options:
+              - label: "PDF 文件（上传）"
+                value: pdf
+              - label: "网页链接"
+                value: link
+              - label: "语雀文档"
+                value: yuque
+          - label: PDF 文件（类型=PDF 时上传）
+            name: file
+            widget: file
+            required: false
+            media_folder: public/files
+            public_folder: /files
+            i18n: duplicate
+            hint: 会上传到 public/files/ 目录。⚠️ 单文件 ≤25 MiB（Cloudflare Pages 部署上限）；更大的 PDF 请传到对象存储（R2/OSS/COS）后改用「网页链接」类型填外链。
+          - label: 链接地址（类型=网页链接 / 语雀 时填写）
+            name: url
+            widget: string
+            required: false
+            i18n: duplicate
+            hint: 完整 URL，如 https://www.yuque.com/xxx/yyy 或 https://static.daq-iot.com/xxx.pdf；链接里含 yuque.com 会自动按语雀文档展示
   - name: downloads
     label: 下载中心
     folder: src/content/downloads

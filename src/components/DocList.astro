@@ -1,0 +1,96 @@
+---
+// 相关资料卡片：支持 PDF 文件 / 网页链接 / 语雀文档 三种类型
+// 用在产品详情、案例详情底部；docs 为空或全部无效时整体不渲染
+import { statSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Lang } from '../i18n/config';
+
+export interface DocItem {
+  title: string;
+  type?: string;
+  file?: string;
+  url?: string;
+}
+
+interface Props {
+  docs?: DocItem[] | null;
+  lang?: Lang;
+}
+
+const { docs, lang = 'zh' } = Astro.props;
+
+const UI: Record<Lang, { title: string; view: string; download: string; open: string; read: string; meta: Record<string, string>; badge: Record<string, string> }> = {
+  zh: { title: '相关资料', view: '在线查看', download: '下载', open: '打开链接', read: '阅读文档',
+    meta: { pdf: 'PDF 文档', link: '网页链接', yuque: '语雀文档' },
+    badge: { pdf: 'PDF', link: '链接', yuque: '语雀' } },
+  en: { title: 'Documentation', view: 'View', download: 'Download', open: 'Open link', read: 'Read doc',
+    meta: { pdf: 'PDF', link: 'Web link', yuque: 'Yuque doc' },
+    badge: { pdf: 'PDF', link: 'Link', yuque: 'Yuque' } },
+  de: { title: 'Dokumente', view: 'Ansehen', download: 'Herunterladen', open: 'Link öffnen', read: 'Dokument lesen',
+    meta: { pdf: 'PDF-Dokument', link: 'Weblink', yuque: 'Yuque-Dokument' },
+    badge: { pdf: 'PDF', link: 'Link', yuque: 'Yuque' } }
+};
+const ui = UI[lang] ?? UI.zh;
+
+const badgeCls: Record<string, string> = {
+  pdf: 'bg-rose-100 text-rose-600',
+  link: 'bg-blue-100 text-blue-600',
+  yuque: 'bg-emerald-100 text-emerald-600'
+};
+
+const raw = (docs ?? []).filter((d) => d && d.title && (d.file || d.url));
+const items = raw.map((d) => {
+  let type: 'pdf' | 'link' | 'yuque' = d.type === 'link' || d.type === 'yuque' ? d.type : 'pdf';
+  // 没上传文件、链接里带 yuque.com → 自动按语雀文档展示
+  if (!d.file && (d.url || '').toLowerCase().includes('yuque.com')) type = 'yuque';
+  const href = d.file || d.url || '';
+  const external = /^https?:\/\//i.test(href);
+  // 本地上传文件在构建期读取真实大小展示
+  let size = '';
+  if (!external && href.startsWith('/')) {
+    try {
+      const st = statSync(join(process.cwd(), 'public', href));
+      const mb = st.size / 1024 / 1024;
+      size = mb >= 1 ? mb.toFixed(1) + ' MB' : Math.max(1, Math.round(st.size / 1024)) + ' KB';
+    } catch { /* 文件不在本地（如仅在后台配置后尚未同步） */ }
+  }
+  return { ...d, type, href, external, size };
+});
+---
+{items.length > 0 && (
+  <section class="mt-12 border-t border-slate-200 pt-8">
+    <h2 class="text-xl font-bold text-slate-800 mb-5 flex items-center gap-2">
+      {ui.title}
+      <span class="text-xs font-medium text-slate-400 bg-slate-100 rounded-full px-2 py-0.5">{items.length}</span>
+    </h2>
+    <div class="grid gap-3 sm:grid-cols-2">
+      {items.map((item) => (
+        <div class="flex items-center gap-4 bg-white border border-slate-200 rounded-xl px-4 py-3.5 hover:border-brand hover:shadow-md transition">
+          <div class:list={['shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-xs font-bold', badgeCls[item.type]]}>
+            {ui.badge[item.type]}
+          </div>
+          <div class="min-w-0 flex-1">
+            <p class="truncate font-medium text-slate-800" title={item.title}>{item.title}</p>
+            <p class="text-xs text-slate-400 mt-0.5">{ui.meta[item.type]}{item.size ? ` · ${item.size}` : ''}</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            {item.type === 'pdf' && (
+              <>
+                <a href={item.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-brand text-white px-3.5 py-1.5 rounded-md text-sm font-medium hover:bg-brand-dark transition">{ui.view}</a>
+                {!item.external && (
+                  <a href={item.href} download class="inline-flex items-center gap-1.5 border border-slate-300 text-slate-600 px-3.5 py-1.5 rounded-md text-sm font-medium hover:border-brand hover:text-brand transition">{ui.download}</a>
+                )}
+              </>
+            )}
+            {item.type === 'link' && (
+              <a href={item.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-brand text-white px-3.5 py-1.5 rounded-md text-sm font-medium hover:bg-brand-dark transition">{ui.open}</a>
+            )}
+            {item.type === 'yuque' && (
+              <a href={item.href} target="_blank" rel="noopener nofollow" class="inline-flex items-center gap-1.5 bg-emerald-500 text-white px-3.5 py-1.5 rounded-md text-sm font-medium hover:bg-emerald-600 transition">{ui.read}</a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

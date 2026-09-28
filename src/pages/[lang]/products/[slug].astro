@@ -5,6 +5,7 @@ import type { Lang } from '../../../i18n/config';
 import { getCollection, render } from 'astro:content';
 import { renderMarkdown } from '../../../lib/renderMarkdown';
 import PageHero from '../../../components/PageHero.astro';
+import DocList from '../../../components/DocList.astro';
 
 export async function getStaticPaths() {
   const products = await getCollection('products', (entry) => !entry.data.hidden);
@@ -60,5 +61,7 @@ const bannerImage = (site.banner?.pageImage as string) || '';
     <div class="mt-12 border-t border-slate-200 pt-8 text-slate-700 leading-relaxed space-y-4 prose max-w-none">
       <Content />
     </div>
+
+    <DocList docs={entry.data.docs} lang={lang} />
   </section>
 </BaseLayout>

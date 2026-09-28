@@ -61,6 +61,14 @@ const categories = defineCollection({
   })
 });
 
+// 相关资料条目：PDF 上传文件 / 网页链接 / 语雀文档
+const docSchema = z.object({
+  title: z.string(),
+  type: z.enum(['pdf', 'link', 'yuque']).default('pdf'),
+  file: z.string().optional().default(''),
+  url: z.string().optional().default('')
+});
+
 const products = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/products' }),
   schema: z.object({
@@ -70,7 +78,8 @@ const products = defineCollection({
     category: z.string().default('instrumentation'),
     order: z.number().default(0),
     hidden: z.boolean().optional().default(false),
-    parameters: z.string().optional().default('')
+    parameters: z.string().optional().default(''),
+    docs: z.array(docSchema).optional().default([])
   })
 });
 
@@ -93,7 +102,8 @@ const cases = defineCollection({
     image: z.string().optional().default(''),
     industry: z.string().optional().default(''),
     order: z.number().default(0),
-    hidden: z.boolean().optional().default(false)
+    hidden: z.boolean().optional().default(false),
+    docs: z.array(docSchema).optional().default([])
   })
 });
 
