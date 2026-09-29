@@ -1,8 +1,8 @@
 ---
-title: "工厂DCS系统PLC采集及大屏看板项目案例"
-summary: "一、项目背景"
-image: "/images/cases/1780283673495062.png"
-industry: "智能制造"
+title: 工厂DCS系统PLC采集及大屏看板项目案例
+summary: 客户现场有wifi，PLC品牌通讯协议文档也已经提供，所以本次项目采用我司提供的wifi版PLC采集网关，将采集到的数据存储在PostgreSQL数据库里，软件开发可以直接获取数据库里的真实数据，这样可以确保开发软件时，对数据进行逻辑处理的准确性。
+image: /images/cases/1780283673495062.png
+industry: 智能制造
 order: 45
 ---
 一、**项目背景**
