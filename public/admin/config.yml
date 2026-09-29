@@ -169,12 +169,42 @@ collections:
         required: false
         i18n: duplicate
         hint: 案例封面/现场图，各语言可使用不同图片
-      - label: 所属行业（选填）
+      - label: 所属行业（「项目案例」列表页的行业分类标签，选填）
         name: industry
-        widget: string
+        widget: select
         required: false
-        i18n: true
-        hint: 如 智能制造 / 光伏新能源 / 智慧城市，用于详情页标签展示
+        options:
+          - { label: 智能制造, value: 智能制造 }
+          - { label: 光伏新能源, value: 光伏新能源 }
+          - { label: 智慧城市, value: 智慧城市 }
+          - { label: 电力与能源, value: 电力与能源 }
+          - { label: 智慧矿山, value: 智慧矿山 }
+          - { label: 其他（暂未归类）, value: 其他 }
+        i18n: duplicate
+        hint: 就是「项目案例」列表页（/cases）左侧「行业分类」的那个标签——决定案例归到哪个行业下，同时显示在案例卡片与详情页（英/德页面自动显示对应语言）。顺序与列表页左侧筛选栏一致，「其他」固定排最后。暂未归类的选「其他」，不要留空（留空的案例不会出现在任何行业下）。⚠️ 要新增行业，找我一分钟就能加。
+      - label: 归属标签（决定出现在三个页面的哪张卡片下，可多选）
+        name: tags
+        widget: select
+        multiple: true
+        required: false
+        default: []
+        i18n: duplicate
+        options:
+          # 选项 = 解决方案页面的 4 张卡片
+          - { label: 解决方案 · 智能制造, value: 解决方案 · 智能制造 }
+          - { label: 解决方案 · 光伏新能源, value: 解决方案 · 光伏新能源 }
+          - { label: 解决方案 · 智慧城市, value: 解决方案 · 智慧城市 }
+          - { label: 解决方案 · 电力与能源, value: 解决方案 · 电力与能源 }
+          # 选项 = 服务与支持页面的 4 张卡片
+          - { label: 服务与支持 · 方案咨询, value: 服务与支持 · 方案咨询 }
+          - { label: 服务与支持 · 部署实施, value: 服务与支持 · 部署实施 }
+          - { label: 服务与支持 · 运维培训, value: 服务与支持 · 运维培训 }
+          - { label: 服务与支持 · 定制开发, value: 服务与支持 · 定制开发 }
+          # 选项 = 合作伙伴页面的 3 张卡片
+          - { label: 合作伙伴 · 渠道伙伴, value: 合作伙伴 · 渠道伙伴 }
+          - { label: 合作伙伴 · 系统集成商, value: 合作伙伴 · 系统集成商 }
+          - { label: 合作伙伴 · 行业客户, value: 合作伙伴 · 行业客户 }
+        hint: 只作用于「解决方案 / 服务与支持 / 合作伙伴」三个页面——决定案例出现在哪个页面的哪张卡片点开后。选项 = 「页面 · 卡片标题」，选了「解决方案 · 光伏新能源」，就会出现在解决方案页「光伏新能源」卡片点开的列表里。可多选（内容只维护一份，多页面复用）。⚠️ 不选 = 案例只出现在「项目案例」列表页；页面里改了卡片标题或新增卡片后，这里的选项需要同步（找我一分钟就能加）。
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
@@ -745,6 +775,20 @@ collections:
           - name: empty
             label: 空分类提示
             widget: string
+      - label: 项目案例页（列表页 /cases）
+        name: cases
+        widget: object
+        fields:
+          - name: title
+            label: 页面标题（选填）
+            widget: string
+            required: false
+            hint: 导航「项目案例」点进去那个列表页顶部的标题；留空显示「项目案例 / Cases」。列表里的案例来自「内容管理 → 项目案例」，左侧行业筛选自动取案例的「所属行业」字段，这里只改页面文案。
+          - name: subtitle
+            label: 页面副标题（选填）
+            widget: text
+            required: false
+            hint: 标题下方的一句话说明，留空则不显示
       - label: 页脚
         name: footer
         widget: object
@@ -796,6 +840,11 @@ collections:
           - name: desc
             label: 方案描述
             widget: text
+          - name: caseTitle
+            label: 展开后 · 案例区小标题（选填）
+            widget: string
+            required: false
+            hint: 点这张卡片展开后，案例区顶部的小字标题（例如「行业应用案例」）。留空时该标签统一显示「相关案例 / Related Cases」。只影响这一张卡片对应的标签，不影响其他标签。
   - name: services
     label: 服务与支持
     folder: src/content/services
@@ -821,6 +870,39 @@ collections:
             widget: string
           - name: desc
             label: 服务描述
+            widget: text
+          - name: caseTitle
+            label: 展开后 · 案例区小标题（选填）
+            widget: string
+            required: false
+            hint: 点这张卡片展开后，案例区顶部的小字标题（例如「行业应用案例」）。留空时该标签统一显示「相关案例 / Related Cases」。只影响这一张卡片对应的标签，不影响其他标签。
+      - label: 服务区标题（选填）
+        name: itemsTitle
+        widget: string
+        required: false
+        hint: 页面「服务项目」板块标题；留空显示「服务项目 / Our Services」
+      # ── 技术支持板块（原「支持」页面已合并到本页面） ──
+      - label: 技术支持 · 板块标题（选填）
+        name: supportTitle
+        widget: string
+        required: false
+        hint: 页面下半部分「技术支持」板块的标题；留空显示「技术支持 / Technical Support」
+      - label: 技术支持 · 板块说明（选填）
+        name: supportSubtitle
+        widget: text
+        required: false
+        hint: 显示在「技术支持」标题下方的一句话说明
+      - label: 技术支持 · 内容列表（可增删）
+        name: supportItems
+        widget: list
+        required: false
+        hint: 三个卡片，例如文档中心 / RMA 服务 / 培训资源
+        fields:
+          - name: title
+            label: 标题
+            widget: string
+          - name: desc
+            label: 描述
             widget: text
   - name: partners
     label: 合作伙伴
@@ -848,6 +930,11 @@ collections:
           - name: desc
             label: 类型描述
             widget: text
+          - name: caseTitle
+            label: 展开后 · 案例区小标题（选填）
+            widget: string
+            required: false
+            hint: 点这张卡片展开后，案例区顶部的小字标题（例如「行业应用案例」）。留空时该标签统一显示「相关案例 / Related Cases」。只影响这一张卡片对应的标签，不影响其他标签。
       - name: resourcesTitle
         label: 资料区标题
         widget: string
@@ -865,7 +952,9 @@ collections:
             label: 资料描述
             widget: text
   - name: support
-    label: 技术支持
+    label: 技术支持（旧集合，已并入「页面文案 → 服务与支持」）
+    description: 本集合内容已迁移到「页面文案 → 服务与支持」编辑页的「技术支持 · …」字段，后台不再单独显示，保留定义仅为兼容旧数据。
+    hide: true
     folder: src/content/support
     create: false
     i18n: false

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getTranslations, getSiteData } from '../../../i18n/utils';
-import { industryKey, localizeIndustry } from '../../../i18n/industry';
+import { industryKey, localizeIndustry, sortIndustryKeys } from '../../../i18n/industry';
 import type { Lang } from '../../../i18n/config';
 import { getCollection } from 'astro:content';
 import PageHero from '../../../components/PageHero.astro';
@@ -29,7 +29,8 @@ cases.forEach((c) => {
   const key = industryKey(c.data.industry);
   if (key && !industryMap.has(key)) industryMap.set(key, localizeIndustry(c.data.industry, lang));
 });
-const cats = [...industryMap].map(([key, label]) => ({ key, label }));
+// 筛选栏顺序固定：规范行业按后台下拉的次序，未登记行业其次，「其他」永远垫底
+const cats = sortIndustryKeys([...industryMap.keys()]).map((key) => ({ key, label: industryMap.get(key)! }));
 const defaultCat = cats[0]?.key ?? '';
 const activeCat = Astro.url.searchParams.get('cat') || defaultCat;
 

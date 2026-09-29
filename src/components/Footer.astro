@@ -53,7 +53,7 @@ const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.pare
       <div class="text-white font-semibold text-sm mb-3">{t('footer.resources')}</div>
       <ul class="space-y-2 text-sm text-slate-400">
         <li><a href={base + '/downloads'} class="hover:text-brand transition">{t('nav.downloads')}</a></li>
-        <li><a href={base + '/support'} class="hover:text-brand transition">{t('nav.support')}</a></li>
+        <li><a href={base + '/services#support'} class="hover:text-brand transition">{t('nav.support')}</a></li>
         <li><a href={base + '/blog'} class="hover:text-brand transition">{t('nav.blog')}</a></li>
       </ul>
     </div>

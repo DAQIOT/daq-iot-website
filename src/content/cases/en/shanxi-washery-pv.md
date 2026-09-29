@@ -2,7 +2,7 @@
 title: Shanxi Coal Washery C&I PV "Four-Capability" AGC/AVC Cluster Control Case
 summary: A 760kW low-voltage grid-connected PV plant equipped with a 5G all-in-one terminal to meet "observable, measurable, controllable, dispatchable" requirements.
 image: ""
-industry: PV & New Energy
+industry: 光伏新能源
 order: 5
 ---
 

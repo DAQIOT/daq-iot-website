@@ -11,5 +11,14 @@ items:
     desc: Product usage and maintenance training for engineers and managers.
   - title: Custom Development
     desc: Tailored data acquisition, monitoring and dashboard features per industry scenario.
+supportTitle: Technical Support
+supportSubtitle: Documentation, RMA and training resources to keep your systems running
+supportItems:
+  - title: Documentation
+    desc: Product manuals, wiring diagrams, configuration guides and API docs.
+  - title: RMA Service
+    desc: After-sales repair and warranty process with fast response for faulty devices.
+  - title: Training Resources
+    desc: "Online videos and on-site training to boost O&M capability."
 name: index
 ---

@@ -1,4 +1,4 @@
-// Decap CMS 动态初始化：按顶部语言下拉派生【全部 12 个集合】
+// Decap CMS 动态初始化：按顶部语言下拉派生【全部 14 个集合】
 // ------------------------------------------------------------
 // 阶段一：语言切换彻底化
 //   i18n:true 集合（products/categories/cases/downloads/posts）：
@@ -125,10 +125,11 @@
     contact: '联系我们'
   };
 
-  // i18n:true 集合列表（folder 派生）
+  // 内容管理组（用于侧边栏分组判断）
   var I18N_COLLECTIONS = ['products', 'categories', 'cases', 'downloads', 'posts'];
   // i18n:false 集合列表（file 派生）
-  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'support', 'about', 'contact'];
+  // 注意：support（技术支持）已并入「服务与支持」页面文案，不再单独出现在后台
+  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'about', 'contact'];
 
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
   function derive(collection, folder, label) {
@@ -468,6 +469,10 @@
         var suffix = FILE_SUFFIX[name] || 'index';
         derived.push(deriveSingleFile(templates[name], lang, LABEL_MAP[name], suffix));
       });
+
+      // 注：解决方案 / 服务与支持 / 合作伙伴 三个页面的「标签」= 页面自己的卡片列表
+      // （在「页面文案 → 对应页面」的列表里维护）；案例通过 tags 关联到卡片标题，
+      // 所以这里不需要单独的标签集合。
 
       config.collections = derived;
 

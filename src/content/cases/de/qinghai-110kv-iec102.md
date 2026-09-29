@@ -2,7 +2,7 @@
 title: Qinghai 110kV Substation Wasion IEC102 Energy Terminal Acquisition Case
 summary: Custom IEC102 protocol driver converting Wasion WFET-3000 energy data to Modbus TCP for the upper computer.
 image: ""
-industry: PV & New Energy
+industry: 光伏新能源
 order: 6
 ---
 

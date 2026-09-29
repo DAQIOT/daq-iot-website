@@ -2,7 +2,7 @@
 title: Daily / Weekly / Monthly Generation & Grid Export Statistics Platform Case
 summary: Built a generation data logic and reporting platform for distributed PV plants in Taizhou and Yangzhou, Jiangsu, eliminating manual calculation.
 image: /images/cases/1717574779124384.png
-industry: PV & New Energy
+industry: 光伏新能源
 order: 3
 ---
 

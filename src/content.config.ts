@@ -103,6 +103,16 @@ const cases = defineCollection({
     industry: z.string().optional().default(''),
     order: z.number().default(0),
     hidden: z.boolean().optional().default(false),
+    // 归属标签：值 = 「页面前缀 · 卡片标题」（如 解决方案 · 智能制造）
+    // 决定案例出现在三个页面中哪个页面的哪张卡片点开后的列表里（后台下拉多选）
+    // 不填 = 只出现在「项目案例」列表页；列表页侧的归属由 industry（所属行业）决定
+    tags: z.preprocess(
+      (v) => {
+        const raw = Array.isArray(v) ? v : typeof v === 'string' ? v.split(/[,，、;；]/) : [];
+        return raw.map((s) => String(s).trim()).filter(Boolean);
+      },
+      z.array(z.string()).optional().default([])
+    ),
     docs: z.array(docSchema).optional().default([])
   })
 });

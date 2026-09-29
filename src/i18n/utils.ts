@@ -69,3 +69,42 @@ export async function getCategoriesByLang(lang: Lang) {
   const entries = await getCollection('categories', (entry: { id: string }) => entry.id.startsWith(lang + '/'));
   return entries.sort((a: any, b: any) => (a.data.order ?? 0) - (b.data.order ?? 0));
 }
+
+// 三个页面的归属标签前缀 —— 必须与后台「项目案例 → 归属标签」选项的 value 前缀保持一致
+// 标签值形如「解决方案 · 智能制造」，前半段决定页面、后半段决定卡片
+export const PAGE_TAG_PREFIX = {
+  solutions: '解决方案',
+  services: '服务与支持',
+  partners: '合作伙伴'
+} as const;
+export type TagPage = keyof typeof PAGE_TAG_PREFIX;
+export const pageTagKey = (page: TagPage, cardTitle: string) => `${PAGE_TAG_PREFIX[page]} · ${cardTitle}`;
+
+// 三个页面的案例候选池 = 当前语言下所有未隐藏案例
+// 具体归到哪个页面/哪张卡片，由案例的「归属标签」（tags）决定（见 PageTagCards 组件）
+export async function getAllCases(lang: Lang, limit = 0) {
+  const entries = await getCollection('cases', (entry: any) => entry.id.startsWith(lang + '/') && !entry.data.hidden);
+  const sorted = entries.sort((a: any, b: any) => (a.data.order ?? 0) - (b.data.order ?? 0));
+  return limit > 0 ? sorted.slice(0, limit) : sorted;
+}
+
+// 页面标签 = 这三个页面「页面文案」里的卡片列表本身
+// （解决方案 → 方案列表 / 服务与支持 → 服务列表 / 合作伙伴 → 合作类型列表）
+// key 取中文卡片的标题（案例的「分类标签」存的就是这个值，跨语言统一）
+// name/desc 取当前语言的卡片标题/说明（英/德页面自动显示对应语言）
+export async function getPageTags(lang: Lang, page: 'solutions' | 'services' | 'partners') {
+  const cur = await getSiteData(lang);
+  const zh = lang === 'zh' ? cur : await getSiteData('zh');
+  const curItems = ((cur[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string }[]) || [];
+  const zhItems = ((zh[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string }[]) || [];
+  return curItems
+    .map((it, i) => ({
+      key: String(zhItems[i]?.title ?? it.title ?? '').trim(),
+      name: String(it.title ?? '').trim(),
+      desc: String(it.desc ?? '').trim(),
+      // 该标签专属的「案例区小标题」：留空时由组件回退到整页默认 / 系统默认
+      caseTitle: String(it.caseTitle ?? '').trim(),
+      slug: 'tag-' + (i + 1)
+    }))
+    .filter((t) => t.key && t.name);
+}

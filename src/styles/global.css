@@ -178,6 +178,124 @@ body {
   opacity: 1;
 }
 
+/* ── 页面标签卡片（解决方案 / 服务与支持 / 合作伙伴） ──
+   页面原有的内容卡片就是标签：点卡片 → 在下方展开该分类的案例，再点一次（或点「收起」）收起 */
+.tag-cards {
+  scroll-margin-top: 6rem;
+}
+.tag-card {
+  position: relative;
+  overflow: hidden;
+}
+/* 顶部渐变条：hover / 展开时从左铺开 */
+.tag-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0ba5e0, var(--color-brand));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.tag-card:hover::before,
+.tag-card.is-active::before {
+  transform: scaleX(1);
+}
+.tag-card.is-active {
+  border-color: var(--color-brand);
+  box-shadow: 0 20px 36px -24px rgba(0, 150, 214, 0.65);
+}
+/* 卡片底部「查看案例 →」，展开后变「收起 ↓」 */
+.tag-card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+.tag-card-more svg {
+  transition: transform 0.25s ease;
+}
+.tag-card:not(.is-active):hover .tag-card-more svg {
+  transform: translateX(3px);
+}
+.tag-card.is-active .tag-card-more svg {
+  transform: rotate(90deg);
+}
+.tag-card-more-close,
+.tag-card.is-active .tag-card-more-open {
+  display: none;
+}
+.tag-card.is-active .tag-card-more-close {
+  display: inline;
+}
+
+/* 案例面板（点卡片后在卡片下方展开） */
+.tag-panel {
+  margin-top: 2.5rem;
+  scroll-margin-top: 6rem;
+}
+.tag-panel[hidden] {
+  display: none;
+}
+.tag-panel-head {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+.tag-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.125rem;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8125rem;
+  color: #475569;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.tag-back:hover {
+  color: var(--color-brand);
+  border-color: #a9dcf3;
+  background: #f6fbfe;
+}
+.tag-panel-eyebrow {
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  opacity: 0.75;
+}
+.tag-panel-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+}
+.tag-panel-desc {
+  margin: 0.5rem auto 0;
+  max-width: 48rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: #64748b;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .tag-card,
+  .tag-card::before,
+  .tag-card-more svg {
+    animation: none;
+    transition: none;
+  }
+}
+
 /* ── 切换分类时右侧卡片入场动画（display 切换会重新触发） ── */
 @keyframes fadeUp {
   from {

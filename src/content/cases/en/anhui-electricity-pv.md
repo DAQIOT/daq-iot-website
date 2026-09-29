@@ -2,7 +2,7 @@
 title: Anhui Electric Power PV Data (Meter / Inverter / Bay Controller) Acquisition Case
 summary: Unified acquisition of State Grid meters, Modbus inverters and IEC104 bay controllers across distributed PV plants in Anhui.
 image: ""
-industry: PV & New Energy
+industry: 光伏新能源
 order: 4
 ---
 

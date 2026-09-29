@@ -12,3 +12,9 @@
 /about     /en/about      301
 /contact   /en/contact    301
 /hezuo     /en/partners   301
+
+# 「技术支持」页面已合并进「服务与支持」页面（/services），旧地址 301 保留收录
+/support   /zh/services   301
+/zh/support /zh/services  301
+/en/support /en/services  301
+/de/support /de/services  301

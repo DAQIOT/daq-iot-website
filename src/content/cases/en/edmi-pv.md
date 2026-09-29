@@ -2,7 +2,7 @@
 title: C&I PV Grid-Connected EDMI Protocol Meter Acquisition Case
 summary: Solved acquisition of EDMI (Mk6E) meters that cannot be opened and only expose an infrared port, with low-cost wireless real-time monitoring.
 image: /images/cases/1719816777146873.png
-industry: PV & New Energy
+industry: 光伏新能源
 order: 2
 ---
 
