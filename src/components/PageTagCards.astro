@@ -1,0 +1,253 @@
+---
+/**
+ * 页面标签卡片（解决方案 / 服务与支持 / 合作伙伴 三页共用）
+ *
+ * 这三张页面的「原内容卡片」本身就是标签：点卡片 → 在卡片下方展开该标签的案例，
+ * 再点一次（或点「收起」）收起。首次进入只显示卡片，不占额外版面。
+ *
+ * ─ 标签来源：页面自己的卡片列表（后台「页面文案 → 解决方案 / 服务与支持 / 合作伙伴」的列表）
+ * ─ 案例来源：「项目案例」里「归属标签」选中了「本页面前缀 · 卡片标题」的案例
+ * ─ 案例的最终归属只由这一个下拉决定，不再需要额外的「展示页面」开关
+ * ─ URL 带 #tag-N，可直达、可分享，浏览器前进/后退可用
+ */
+import type { Lang } from '../i18n/config';
+import { localizeIndustry } from '../i18n/industry';
+import { PAGE_TAG_PREFIX, pageTagKey, type TagPage } from '../i18n/utils';
+
+interface TagItem {
+  key: string;
+  name: string;
+  desc: string;
+  /** 该标签专属的「案例区小标题」（后台卡片里的「展开后 · 案例区小标题」），留空回退整页默认 */
+  caseTitle?: string;
+  slug: string;
+}
+
+interface Props {
+  lang: Lang;
+  /** 本组件所在的页面：决定读哪一组归属标签（solutions / services / partners） */
+  page: TagPage;
+  tags: TagItem[];
+  cases: any[];
+  /** 卡片规格：lg = 解决方案，md = 服务与支持，sm = 合作伙伴 */
+  variant?: 'lg' | 'md' | 'sm';
+}
+
+const { lang, page, tags = [], cases = [], variant = 'md' } = Astro.props;
+const base = '/' + lang;
+const uid = `tc-${lang}-${variant}`;
+const prefix = PAGE_TAG_PREFIX[page];
+
+// 案例的「归属标签」字段：兼容数组 / 逗号·顿号·分号分隔的字符串
+function toTags(v: unknown): string[] {
+  const raw = Array.isArray(v) ? v : typeof v === 'string' ? v.split(/[,，、;；]/) : [];
+  return raw.map((s) => String(s).trim()).filter(Boolean);
+}
+
+// 该案例是否属于本页面的这张卡片
+// 标准值 =「页面前缀 · 卡片标题」；同时兼容只写了卡片标题的老数据
+const isMine = (c: any, cardTitle: string) => {
+  const list = toTags(c.data?.tags);
+  return list.includes(pageTagKey(page, cardTitle)) || list.includes(cardTitle);
+};
+
+// 该案例的标签里是否带了本页面的前缀（用于兜底归到「其他项目」）
+const belongsToPage = (c: any) => toTags(c.data?.tags).some((t) => t.startsWith(prefix + ' · '));
+
+// 每张卡片 → 归到它名下的案例
+const used = new Set<string>();
+const groups = tags.map((t) => {
+  const list = cases.filter((c) => isMine(c, t.key));
+  list.forEach((c) => used.add(String(c.id)));
+  return { ...t, cases: list };
+});
+
+// 标签带了本页面前缀、但对应卡片已不在页面上的案例 → 收进「其他项目」（避免静默消失）
+const rest = cases.filter((c) => !used.has(String(c.id)) && belongsToPage(c));
+if (rest.length) {
+  groups.push({
+    key: '__others__',
+    name: lang === 'zh' ? '其他项目' : lang === 'de' ? 'Weitere Projekte' : 'More Projects',
+    desc: '',
+    slug: 'others',
+    cases: rest
+  });
+}
+
+// 卡片规格
+const spec = {
+  lg: {
+    grid: 'grid sm:grid-cols-2 gap-6',
+    numbered: true,
+    idx: 'text-brand/30 text-4xl font-bold',
+    title: 'mt-3 text-2xl font-semibold text-brand-dark',
+    desc: 'mt-3 text-slate-600 leading-relaxed'
+  },
+  md: {
+    grid: 'grid sm:grid-cols-2 gap-6',
+    numbered: true,
+    idx: 'text-brand/30 text-4xl font-bold',
+    title: 'mt-3 text-xl font-semibold text-brand-dark',
+    desc: 'mt-2 text-slate-600 text-sm leading-relaxed'
+  },
+  sm: {
+    grid: 'grid sm:grid-cols-3 gap-6',
+    numbered: false,
+    idx: '',
+    title: 'text-lg font-semibold text-brand-dark',
+    desc: 'mt-2 text-slate-600 text-sm leading-relaxed'
+  }
+}[variant];
+
+// 文案
+// 案例区小标题：优先用卡片自己的「展开后 · 案例区小标题」，没填则用系统默认「相关案例」
+const eyebrow = lang === 'zh' ? '相关案例' : lang === 'de' ? 'Ähnliche Projekte' : 'Related Cases';
+const moreText = lang === 'zh' ? '查看案例' : lang === 'de' ? 'Projekte ansehen' : 'View cases';
+const lessText = lang === 'zh' ? '收起' : lang === 'de' ? 'Einklappen' : 'Collapse';
+const emptyText =
+  lang === 'zh'
+    ? '该分类下的案例正在整理中'
+    : lang === 'de'
+      ? 'Projekte in dieser Kategorie folgen in Kürze'
+      : 'Cases in this category are coming soon';
+const pad = (n: number) => String(n + 1).padStart(2, '0');
+---
+
+{groups.length > 0 && (
+  <div class="tag-cards" data-tag-cards data-tc-uid={uid}>
+    {/* ① 原来的内容卡片：现在就是标签，点它展开对应案例 */}
+    <div class={spec.grid}>
+      {groups.map((g, i) => (
+        <a
+          href={`#${g.slug}`}
+          class="tag-card card-hover bg-white border border-slate-200 rounded-2xl p-8 block"
+          data-tc-cell={i}
+          data-tc-slug={g.slug}
+          aria-controls={`${uid}-panel-${i}`}
+          aria-expanded="false"
+        >
+          {spec.numbered && <span class={spec.idx}>{pad(i)}</span>}
+          <h3 class={spec.title}>{g.name}</h3>
+          {g.desc && <p class={spec.desc}>{g.desc}</p>}
+          <span class="tag-card-more">
+            <span class="tag-card-more-open">{moreText}</span>
+            <span class="tag-card-more-close">{lessText}</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    {/* ② 各标签的案例面板（默认全部隐藏，点卡片才展开） */}
+    {groups.map((g, i) => (
+      <div class="tag-panel" id={`${uid}-panel-${i}`} data-tc-panel={i} hidden>
+        <div class="tag-panel-head">
+          <button type="button" class="tag-back" data-tc-back>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>{lessText}</span>
+          </button>
+          <p class="tag-panel-eyebrow">{g.caseTitle || eyebrow}</p>
+          <h3 class="tag-panel-title">{g.name}</h3>
+          {g.desc && <p class="tag-panel-desc">{g.desc}</p>}
+        </div>
+
+        {g.cases.length > 0 ? (
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+            {g.cases.map((c, ci) => (
+              <a
+                href={base + '/cases/' + String(c.id).split('/').slice(1).join('/')}
+                class="case-card anim-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden"
+                style={`animation-delay:${Math.min(ci * 50, 350)}ms`}
+              >
+                {c.data.image && (
+                  <img src={c.data.image} alt={c.data.title} loading="lazy" class="w-full h-48 object-cover bg-slate-50" />
+                )}
+                <div class="p-6">
+                  {c.data.industry && (
+                    <span class="inline-block text-xs font-medium text-brand bg-brand/8 px-2.5 py-1 rounded mb-3">
+                      {localizeIndustry(c.data.industry, lang)}
+                    </span>
+                  )}
+                  <h4 class="text-lg font-semibold text-brand-dark leading-snug line-clamp-2">{c.data.title}</h4>
+                  {c.data.summary && (
+                    <p class="mt-2 text-slate-600 text-sm leading-relaxed line-clamp-3">{c.data.summary}</p>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-center text-slate-400 py-16 text-sm">{emptyText}</p>
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-tag-cards]').forEach((root) => {
+    const cells = Array.from(root.querySelectorAll<HTMLElement>('[data-tc-cell]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-tc-panel]'));
+    if (!cells.length || !panels.length) return;
+
+    const slugs = cells.map((c) => c.getAttribute('data-tc-slug') || '');
+    const uid = root.getAttribute('data-tc-uid') || '';
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
+
+    // 展开 / 收起：index = -1 表示全部收起
+    const show = (index: number, updateUrl = true) => {
+      panels.forEach((p, j) => {
+        p.hidden = j !== index;
+      });
+      cells.forEach((c, j) => {
+        const on = j === index;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-expanded', String(on));
+      });
+
+      if (updateUrl) {
+        const slug = index < 0 ? '' : slugs[index] || '';
+        const url = slug ? `#${slug}` : location.pathname + location.search;
+        history.pushState({ tc: uid, index }, '', url);
+      }
+
+      // 滚动到卡片区顶部：卡片始终留在视野里，案例在下方展开
+      root.scrollIntoView({ behavior, block: 'start' });
+    };
+
+    const indexBySlug = (slug: string) => (slug ? slugs.indexOf(slug) : -1);
+    const syncFromUrl = () => show(indexBySlug(location.hash.replace(/^#/, '')), false);
+
+    cells.forEach((cell, i) => {
+      cell.addEventListener('click', (e) => {
+        e.preventDefault();
+        // 点当前已展开的卡片 = 收起
+        show(cell.classList.contains('is-active') ? -1 : i);
+      });
+    });
+    root.querySelectorAll<HTMLElement>('[data-tc-back]').forEach((btn) => {
+      btn.addEventListener('click', () => show(-1));
+    });
+
+    // 浏览器前进/后退 / 手动改 hash
+    window.addEventListener('popstate', syncFromUrl);
+    window.addEventListener('hashchange', syncFromUrl);
+
+    // 首次进入若 URL 带 hash，直接展开对应标签（不滚动，避免开屏跳动）
+    const initial = indexBySlug(location.hash.replace(/^#/, ''));
+    if (initial >= 0) {
+      panels.forEach((p, j) => (p.hidden = j !== initial));
+      cells.forEach((c, j) => {
+        c.classList.toggle('is-active', j === initial);
+        c.setAttribute('aria-expanded', String(j === initial));
+      });
+    }
+  });
+</script>
