@@ -45,9 +45,9 @@ home:
   categoriesTitle: AI+ 五大产品矩阵
   industries:
     - label: 智能制造
-    - label: 光伏新能源
-    - label: 智慧城市
-    - label: 电力与能源
+    - label: 电力能源
+    - label: 智慧矿山
+    - label: 其他
   heroCta2: 查看产品
   solutionsTitle: 行业解决方案
   heroTitle: 让每一台设备都拥有智能
