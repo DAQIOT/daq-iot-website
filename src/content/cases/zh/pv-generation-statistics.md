@@ -1,7 +1,7 @@
 ---
 title: 日、周、月度累计发电量、上网电量数据统计平台开发实施案例
 summary: 为江苏泰州、扬州分布式光伏电站开发发电数据逻辑运算与报表统计平台，免除人工核算。
-image: https://www.daq-iot.com/static/upload/image/20240605/1717574779124384.png
+image: /images/cases/1717574779124384.png
 industry: 光伏新能源
 order: 3
 ---

@@ -1,7 +1,7 @@
 ---
 title: 上海轨道交通分布式光伏发电项目数采案例
 summary: 在上海轨道交通多个基地的光伏计量柜上部署 SC-GP-IR4G 无线红外抄表终端，实现国网电表远程抄表与发电量统计。
-image: https://www.daq-iot.com/static/upload/image/20240724/1721803688639000.png
+image: /images/cases/1721803688639000.png
 industry: 光伏新能源
 order: 1
 ---

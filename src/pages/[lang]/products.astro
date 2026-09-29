@@ -27,12 +27,20 @@ const catName = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.na
 // 分类：一级 + 二级（无「全部」，默认选中第一个一级分类，竖排展示在左侧）
 const parentOf = Object.fromEntries(categories.map((c) => [c.data.slug, c.data.parent || '']));
 const topLevel = categories.filter((c) => !c.data.parent);
-const cats = [
-  ...topLevel.map((c) => ({ key: c.data.slug, label: c.data.name, level: 0 })),
-  ...categories.filter((c) => c.data.parent).map((c) => ({ key: c.data.slug, label: c.data.name, level: 1 }))
-];
-const defaultCat = topLevel[0]?.data.slug ?? cats[0]?.key ?? '';
+const children = categories.filter((c) => c.data.parent);
+// 侧栏分组：二级分类挂在各自父级下，默认折叠，选中父级时展开
+const groups = topLevel.map((c) => ({
+  key: c.data.slug,
+  label: c.data.name,
+  children: children
+    .filter((x) => x.data.parent === c.data.slug)
+    .map((x) => ({ key: x.data.slug, label: x.data.name }))
+}));
+const defaultCat = topLevel[0]?.data.slug ?? '';
 const activeCat = activeCatRaw || defaultCat;
+const parentOfActive = parentOf[activeCat] || '';
+// 展开条件：该父级被选中，或其下的二级分类被选中
+const isOpen = (key: string) => activeCat === key || parentOfActive === key;
 ---
 <BaseLayout lang={lang} title={t('products.title') + ' | DAQ-IOT'} description={t('products.subtitle')}>
   <PageHero title={t('products.title')} subtitle={t('products.subtitle')} image={bannerImage} />
@@ -40,23 +48,44 @@ const activeCat = activeCatRaw || defaultCat;
   <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
     <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
       <!-- 分类侧栏（竖排；一级分类含其下所有二级产品） -->
-      <aside class="w-full md:w-56 md:shrink-0 md:sticky md:top-24">
+      <aside class="w-full md:w-60 md:shrink-0 md:sticky md:top-24">
         <div class="md:bg-white md:border md:border-slate-200 md:rounded-2xl md:shadow-sm md:p-3">
-          <div class="hidden md:block px-3 pt-1 pb-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">
+          <div class="side-title hidden md:flex">
             {lang === 'zh' ? '产品分类' : lang === 'de' ? 'Kategorien' : 'Categories'}
           </div>
           <div class="flex flex-wrap md:flex-col gap-1.5" id="catFilter">
-            {cats.map((c) => (
-              <button type="button" data-cat={c.key}
-                class={`cat-btn w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition ${
-                  c.level === 1 ? 'md:ml-3 text-xs' : ''
-                } ${
-                  activeCat === c.key
-                    ? 'bg-brand text-white shadow-sm'
-                    : 'text-slate-600 hover:bg-slate-100 hover:text-brand'
-                }`}>
-                <span class:list={[c.level === 1 && 'text-slate-400']}>{c.level === 1 ? '· ' : ''}{c.label}</span>
-              </button>
+            {groups.map((g) => (
+              <div class="side-group">
+                <button type="button" data-cat={g.key}
+                  aria-expanded={g.children.length > 0 ? (isOpen(g.key) ? 'true' : 'false') : undefined}
+                  class:list={[
+                    'side-btn',
+                    'side-btn-parent',
+                    g.children.length > 0 && isOpen(g.key) && 'is-open',
+                    activeCat === g.key && 'side-btn-active',
+                    activeCat !== g.key && parentOfActive === g.key && 'side-btn-soft',
+                  ]}>
+                  <span class="truncate">{g.label}</span>
+                  {g.children.length > 0 && (
+                    <svg class="side-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  )}
+                </button>
+                {g.children.length > 0 && (
+                  <div class:list={['side-sub', isOpen(g.key) && 'is-open']} data-parent={g.key}>
+                    <div class="side-sub-inner">
+                      {g.children.map((c) => (
+                        <button type="button" data-cat={c.key}
+                          class:list={['side-btn', 'side-btn-child', activeCat === c.key && 'side-btn-active']}>
+                          <span class="side-dot"></span>
+                          <span class="truncate">{c.label}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -69,7 +98,7 @@ const activeCat = activeCatRaw || defaultCat;
         <a href={'/' + lang + '/products/' + p.id.split('/').slice(1).join('/')}
            data-category={p.data.category}
            data-parent-category={parentOf[p.data.category] ?? ''}
-           class="product-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
+           class="product-card anim-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden">
           {p.data.image && <img src={p.data.image} alt={p.data.title} class="w-full h-48 object-contain bg-slate-50" />}
           <div class="p-6">
             <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">{catName[p.data.category] ?? p.data.category}</span>
@@ -90,27 +119,44 @@ const activeCat = activeCatRaw || defaultCat;
   const grid = document.getElementById('productGrid');
   const empty = document.getElementById('productEmpty');
   const cards = grid ? Array.from(grid.querySelectorAll('.product-card')) : [];
-  const btns = Array.from(document.querySelectorAll('.cat-btn'));
+  const btns = Array.from(document.querySelectorAll('#catFilter .side-btn'));
+  const groups = Array.from(document.querySelectorAll('#catFilter .side-group'));
+  // 用户手动收起过的分组（点已展开的父级 = 收起）
+  const collapsed = new Set();
 
   function paint(cat) {
     let visible = 0;
     cards.forEach((c) => {
       const show = c.dataset.category === cat || c.dataset.parentCategory === cat;
       c.style.display = show ? '' : 'none';
-      if (show) visible++;
+      if (show) {
+        // 逐个延迟入场，形成瀑布过渡（display 切换会重新触发 anim-card 动画）
+        c.style.animationDelay = Math.min(visible * 50, 350) + 'ms';
+        visible++;
+      }
     });
     if (empty) empty.classList.toggle('hidden', visible !== 0);
+
+    // 二级分类折叠：展开当前分类所在分组；被手动收起过的分组不再自动展开
+    const activeParent = parentOfMap[cat] || '';
+    groups.forEach((g) => {
+      const pbtn = g.querySelector('.side-btn-parent');
+      const sub = g.querySelector('.side-sub');
+      const key = pbtn ? pbtn.dataset.cat || '' : '';
+      const inPath = key !== '' && (key === cat || key === activeParent);
+      const open = inPath && !collapsed.has(key);
+      if (pbtn) {
+        pbtn.classList.toggle('is-open', open);
+        if (pbtn.hasAttribute('aria-expanded')) pbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      if (sub) sub.classList.toggle('is-open', open);
+    });
+
     btns.forEach((b) => {
       const on = b.dataset.cat === cat;
-      const isChild = b.dataset.cat && parentOfMap[b.dataset.cat] !== undefined;
-      const parentActive = isChild && parentOfMap[b.dataset.cat] === cat;
-      b.className = 'cat-btn w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition ' +
-        (isChild ? 'md:ml-3 text-xs ' : '') +
-        (on
-          ? 'bg-brand text-white shadow-sm'
-          : parentActive
-            ? 'bg-brand-light text-brand'
-            : 'text-slate-600 hover:bg-slate-100 hover:text-brand');
+      const parent = parentOfMap[b.dataset.cat] || '';
+      b.classList.toggle('side-btn-active', on);
+      b.classList.toggle('side-btn-soft', !on && parent !== '' && parent === cat);
     });
   }
 
@@ -118,6 +164,16 @@ const activeCat = activeCatRaw || defaultCat;
   btns.forEach((b) => {
     b.addEventListener('click', () => {
       const cat = b.dataset.cat || defaultCat;
+      // 再次点击已展开且处于选中状态的父级 → 收起其子分类（筛选结果不变）
+      const isOpenActiveParent =
+        b.classList.contains('side-btn-parent') &&
+        b.classList.contains('is-open') &&
+        b.classList.contains('side-btn-active');
+      if (isOpenActiveParent) {
+        collapsed.add(cat);
+      } else {
+        collapsed.delete(cat);
+      }
       const url = basePath + '?cat=' + encodeURIComponent(cat);
       history.replaceState(null, '', url);
       paint(cat);

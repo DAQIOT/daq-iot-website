@@ -1,7 +1,7 @@
 ---
 title: Daily / Weekly / Monthly Generation & Grid Export Statistics Platform Case
 summary: Built a generation data logic and reporting platform for distributed PV plants in Taizhou and Yangzhou, Jiangsu, eliminating manual calculation.
-image: https://www.daq-iot.com/static/upload/image/20240605/1717574779124384.png
+image: /images/cases/1717574779124384.png
 industry: PV & New Energy
 order: 3
 ---

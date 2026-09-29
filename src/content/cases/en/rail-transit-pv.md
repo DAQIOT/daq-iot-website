@@ -1,7 +1,7 @@
 ---
 title: Rail Transit Distributed PV Data Acquisition Case
 summary: Deployed SC-GP-IR4G wireless infrared meters across multiple Shanghai rail transit bases for remote meter reading and generation statistics.
-image: https://www.daq-iot.com/static/upload/image/20240724/1721803688639000.png
+image: /images/cases/1721803688639000.png
 industry: PV & New Energy
 order: 1
 ---

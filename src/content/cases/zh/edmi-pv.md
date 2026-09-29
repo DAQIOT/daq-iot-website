@@ -1,7 +1,7 @@
 ---
 title: 工商业光伏发电并网项目 EDMI 协议电表数采案例
 summary: 攻克 EDMI 协议（Mk6E）电表不能拆机、仅红外光口通讯的采集难点，以低成本无线方式实现实时监控。
-image: https://www.daq-iot.com/static/upload/image/20240701/1719816777146873.png
+image: /images/cases/1719816777146873.png
 industry: 光伏新能源
 order: 2
 ---

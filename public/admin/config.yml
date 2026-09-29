@@ -40,6 +40,9 @@ collections:
   - name: products
     label: 产品
     folder: src/content/products
+    # 该集合内上传的图片直接存到产品图片目录（选图弹窗里点「上传」即可）
+    media_folder: public/images/products
+    public_folder: /images/products
     i18n: true
     create: true
     delete: true
@@ -138,6 +141,9 @@ collections:
   - name: cases
     label: 项目案例
     folder: src/content/cases
+    # 该集合内上传的图片直接存到案例图片目录（选图弹窗里点「上传」即可）
+    media_folder: public/images/cases
+    public_folder: /images/cases
     i18n: true
     create: true
     delete: true
