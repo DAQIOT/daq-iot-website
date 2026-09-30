@@ -1,8 +1,8 @@
 ---
-title: "smt工厂图像识别案例"
-summary: "SMT车间照片"
-image: "/images/cases/1735631303172244.png"
-industry: "智能制造"
+title: smt工厂图像识别案例
+summary: 本项目位于浙江义乌 SMT 工厂，需抓取贴片机上位机界面展示的设备运行状态数据，通过 MQTT 协议上传至 MES 系统。
+image: /images/cases/1735631303172244.png
+industry: 智能制造
 order: 32
 ---
 ![](/images/cases/1735631303172244.png)
