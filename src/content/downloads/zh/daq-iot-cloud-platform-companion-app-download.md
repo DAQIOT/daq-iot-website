@@ -5,7 +5,7 @@ image: /images/downloads/1692002394979344.jpg
 fileType: APK
 links:
   - label: Android APK 下载 / Download
-    url: http://43.173.88.17:8888/down/y6VsEK9m0qxd.apk
+    url: http://cn.daq-iot.com/down/y6VsEK9m0qxd.apk
     type: external
   - label: 网页版 / Web version
     url: http://view.daq-iot.com/
