@@ -1,10 +1,9 @@
 ---
-title: "外夹式超声波流量计"
-summary: >-
-  基于4G无线传输、交流/直流宽电压供电的通用型超声波流量计热量表，可采集管道瞬时流量、瞬时热流量，外夹式安装无需断管停流，真正实现无损在线安装。
-image: "/images/products/1723700376375113.jpg"
+title: 外夹式超声波流量计
+summary: 基于4G无线传输、交流/直流宽电压供电的通用型超声波流量计热量表，可采集管道瞬时流量、瞬时热流量，外夹式安装无需断管停流，真正实现无损在线安装。
+image: /images/products/1723700376375113.jpg
 order: 235
-category: "daq-meter"
+category: daq-sensor-env
 hidden: false
 ---
 ## 产品概述
