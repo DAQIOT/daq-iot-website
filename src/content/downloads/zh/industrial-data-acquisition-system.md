@@ -7,7 +7,7 @@ fileSize: 44 MB
 fileType: ZIP
 links:
   - label: Windows 版（ZIP，约 44 MB）
-    url: http://43.173.88.17:8888/down/2ljqDzB85oT3.zip
+    url: https://cn.daq-iot.com/down/2ljqDzB85oT3.zip
     type: external
 productSlug: industrial-iot-data-acquisition-monitoring-system
 icon: windows

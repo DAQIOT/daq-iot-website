@@ -7,7 +7,7 @@ fileSize: 0.5 MB
 fileType: ZIP
 links:
   - label: Windows 版（ZIP，约 0.5 MB）
-    url: http://43.173.88.17:8888/down/VomOgmO8qlvD.zip
+    url: https://cn.daq-iot.com/down/VomOgmO8qlvD.zip
     type: external
 productSlug: rs485-bus-sharer-bus-multiplexer
 icon: windows

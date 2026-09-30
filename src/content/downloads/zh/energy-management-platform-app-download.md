@@ -5,7 +5,7 @@ image: /images/downloads/1758272778440646.png
 fileType: APK
 links:
   - label: Android APK 下载 / Download
-    url: http://43.173.88.17:8888/down/py8CjeosJfoI.apk
+    url: https://cn.daq-iot.com/down/py8CjeosJfoI.apk
     type: external
 category: software
 releaseDate: ""

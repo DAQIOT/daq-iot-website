@@ -6,7 +6,7 @@ fileSize: 35 MB
 fileType: RAR
 links:
   - label: 下载 / Download（RAR，约 35 MB）
-    url: http://cn.daq-iot.com/down/PgprCBYS7845.rar
+    url: https://cn.daq-iot.com/down/PgprCBYS7845.rar
     type: external
 category: software
 releaseDate: ""

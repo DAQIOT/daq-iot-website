@@ -5,7 +5,7 @@ image: /images/downloads/1692002394979344.jpg
 fileType: APK
 links:
   - label: Android APK 下载 / Download
-    url: http://cn.daq-iot.com/down/y6VsEK9m0qxd.apk
+    url: https://cn.daq-iot.com/down/y6VsEK9m0qxd.apk
     type: external
   - label: 网页版 / Web version
     url: http://view.daq-iot.com/
@@ -26,4 +26,4 @@ App Store 搜索 “**dataio**” 下载
 
 另有网页版通过以下网址即可登录查看
 
-（http://view.daq-iot.com/）
+（view.daq-iot.com，请在浏览器地址栏直接输入域名访问）
