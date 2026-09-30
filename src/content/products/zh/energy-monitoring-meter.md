@@ -1,10 +1,9 @@
 ---
-title: "电量监测仪"
-summary: >-
-  智能用电参数监测设备，支持4G/WiFi/LoRa传输，监测单相/三相线电压与电流，计算有功功率、功率因数、有功电能等，非侵入式采集不影响设备正常工作。
-image: "/images/products/1723703302355351.jpg"
+title: 电量监测仪
+summary: 智能用电参数监测设备，支持4G/WiFi/LoRa传输，监测单相/三相线电压与电流，计算有功功率、功率因数、有功电能等，非侵入式采集不影响设备正常工作。
+image: /images/products/1723703302355351.jpg
 order: 236
-category: "daq-meter"
+category: daq-sensor-power
 hidden: false
 ---
 ## 产品概述
