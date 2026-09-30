@@ -1,9 +1,9 @@
 ---
-title: "新能源光伏电站并网发电量电表逆变器数据采集对接云平台"
-summary: "光伏电站项目监控运维数据采集整体方案"
-image: "/images/products/1695884741452307.jpg"
+title: 新能源光伏电站并网发电量电表逆变器数据采集对接云平台
+summary: 光伏电站项目监控运维数据采集整体方案
+image: /images/products/微信图片_20260929135547_2698_31.png
 order: 230
-category: "daq-meter-other"
+category: daq-meter-other
 hidden: false
 ---
 **产品详情**
