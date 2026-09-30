@@ -1,10 +1,10 @@
 ---
-title: "电流采集器"
-summary: >-
-  开口式电流互感器，把交流电模拟信号转换成485数字信号，内置32位ARM MCU与高精度计量芯片，精度高、响应快，可与常见数采网关、DTU、PLC直接数据交互。
-image: "/images/products/1723616051127915.jpg"
+title: 电流采集器
+summary: 开口式电流互感器，把交流电模拟信号转换成485数字信号，内置32位ARM
+  MCU与高精度计量芯片，精度高、响应快，可与常见数采网关、DTU、PLC直接数据交互。
+image: /images/products/1723616051127915.jpg
 order: 233
-category: "daq-meter"
+category: daq-sensor-power
 hidden: false
 ---
 ## 产品概述
