@@ -16,14 +16,24 @@ nav:
   solutions: 解决方案
   services: 服务
   home: 首页
-cases:
-  title: 项目案例
-  subtitle: DAQ-IOT 项目案例 —— 覆盖智能制造与光伏新能源的工业物联网数据采集与监控落地实践。
 hero:
   title: 工业物联网 DAQ-IOT 解决方案专家
   subtitle: DAQ-IOT 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
   ctaPrimary: 获取报价
   ctaSecondary: 查看产品
+banner:
+  solutionsImage: ""
+  partnersPageImage: /images/banners/banner-partners-page.jpg
+  ctaImage: /images/banners/banner-cta.jpg
+  pageImage: /images/banners/banner-page.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersImage: /images/banners/banner-partners.jpg
+  homeImages:
+    - /images/slides/slide-1.jpg
+    - /images/slides/slide-2.jpg
+    - /images/slides/slide-3.jpg
+  homeImage: /images/slides/slide-1.jpg
+  servicesImage: ""
 home:
   catDescSensor: CT电流 · 红外温度 · 液位 · 无线温振 · 转速
   ctaButton: 立即联系我们
@@ -45,7 +55,7 @@ home:
   categoriesTitle: AI+ 五大产品矩阵
   industries:
     - label: 智能制造
-    - label: 电力能源
+    - label: 电力与能源
     - label: 智慧矿山
     - label: 其他
   heroCta2: 查看产品
@@ -85,6 +95,9 @@ products:
   back: 返回产品
   all: 全部产品
   empty: 该分类下暂无产品，欢迎联系我们定制。
+cases:
+  title: 项目案例
+  subtitle: DAQ-IOT 项目案例 —— 覆盖智能制造与光伏新能源的工业物联网数据采集与监控落地实践。
 downloads:
   all: 全部下载
   catDoc: 文档资料
@@ -99,19 +112,6 @@ downloads:
   catSoftware: 软件平台
   catDriver: 驱动程序
 name: settings
-banner:
-  solutionsImage: ""
-  partnersPageImage: /images/banners/banner-partners-page.jpg
-  ctaImage: /images/banners/banner-cta.jpg
-  pageImage: /images/banners/banner-page.jpg
-  supportImage: /images/banners/banner-support.jpg
-  partnersImage: /images/banners/banner-partners.jpg
-  homeImages:
-    - /images/slides/slide-1.jpg
-    - /images/slides/slide-2.jpg
-    - /images/slides/slide-3.jpg
-  homeImage: /images/slides/slide-1.jpg
-  servicesImage: ""
 cat:
   software: AI+软件
   edge: AI+边缘计算机
