@@ -6,7 +6,7 @@ backend:
   auth_endpoint: /oauth/auth
   site_id: daq-iot-website
 locale: zh_Hans
-media_folder: public/images
+media_folder: /public/images
 public_folder: /images
 # ── 本地开发 ──
 # 本地运行 decap-server 后访问 http://localhost:4321/admin/ 即可进入后台。
@@ -40,9 +40,7 @@ collections:
   - name: products
     label: 产品
     folder: src/content/products
-    # 该集合内上传的图片直接存到产品图片目录（选图弹窗里点「上传」即可）
-    media_folder: public/images/products
-    public_folder: /images/products
+    # 图片统一进全局 public/images（避免选图弹窗只显示某子目录、跨目录看不到图的问题）
     i18n: true
     create: true
     delete: true
@@ -128,7 +126,7 @@ collections:
             name: file
             widget: file
             required: false
-            media_folder: public/files
+            media_folder: /public/files
             public_folder: /files
             i18n: duplicate
             hint: 会上传到 public/files/ 目录。⚠️ 单文件 ≤25 MiB（Cloudflare Pages 部署上限）；更大的 PDF 请传到对象存储（R2/OSS/COS）后改用「网页链接」类型填外链。
@@ -141,9 +139,7 @@ collections:
   - name: cases
     label: 项目案例
     folder: src/content/cases
-    # 该集合内上传的图片直接存到案例图片目录（选图弹窗里点「上传」即可）
-    media_folder: public/images/cases
-    public_folder: /images/cases
+    # 图片统一进全局 public/images（避免选图弹窗只显示某子目录、跨目录看不到图的问题）
     i18n: true
     create: true
     delete: true
@@ -249,7 +245,7 @@ collections:
             name: file
             widget: file
             required: false
-            media_folder: public/files
+            media_folder: /public/files
             public_folder: /files
             i18n: duplicate
             hint: 会上传到 public/files/ 目录。⚠️ 单文件 ≤25 MiB（Cloudflare Pages 部署上限）；更大的 PDF 请传到对象存储（R2/OSS/COS）后改用「网页链接」类型填外链。

@@ -112,8 +112,11 @@
     <!-- 本地 vendor 脚本（海外 CDN 在国内不稳定，全部本地化） -->
     <script src="./vendor/decap-cms/decap-cms.js"></script>
     <script src="./vendor/js-yaml.min.js"></script>
+    <!-- 媒体库排序：拦截 Git Trees API 响应，按上传时间/文件名重排（须在 CMS 初始化前加载） -->
+    <script src="./media-sort.js?v=2"></script>
+    <script src="./media-sort-ui.js?v=1"></script>
     <!-- 按语言动态初始化（fetch config.yml -> 派生当前语言的集合 -> CMS.init） -->
-    <script src="./init-cms.js?v=9"></script>
+    <script src="./init-cms.js?v=12"></script>
     <!-- 自定义语言切换逻辑 -->
     <script src="./lang-switcher.js?v=9"></script>
     <!-- marked：预览模板里把 body 的 Markdown 渲染成带表格/列表的 HTML -->

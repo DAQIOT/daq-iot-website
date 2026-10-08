@@ -8,7 +8,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "cms": "npx decap-server",
-    "dev:cms": "start /b npx decap-server && astro dev"
+    "dev:cms": "start /b npx decap-server && astro dev",
+    "check:images": "node scripts/check-images.cjs",
+    "audit:media": "node scripts/audit-media.cjs",
+    "fix:media": "node scripts/fix-misplaced-media.cjs",
+    "media:index": "git log --diff-filter=A --format=\"COMMIT|%cI\" --name-only -- public/images > .git-media-log.tmp && node scripts/gen-media-index.cjs"
   },
   "dependencies": {
     "astro": "^6.4.2",

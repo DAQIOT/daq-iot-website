@@ -132,15 +132,39 @@
   var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'about', 'contact'];
 
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
+  // 关键：把所有 media_folder 改为绝对路径（以 / 开头，相对仓库根）。
+  // 否则 Decap 会按"相对 collection folder"解析，导致图片错位到
+  // src/content/xxx/zh/public/images/...，选图弹窗空白、线上图片 404。
+  function absolutizeMediaFolder(field) {
+    if (!field) return;
+    if (field.media_folder) {
+      if (field.media_folder.charAt(0) !== '/') {
+        field.media_folder = '/' + field.media_folder;
+      }
+    }
+    // 递归处理 list/object 等嵌套 widget 的 fields
+    if (Array.isArray(field.fields)) {
+      field.fields.forEach(absolutizeMediaFolder);
+    }
+  }
+
   function derive(collection, folder, label) {
     var c = JSON.parse(JSON.stringify(collection));
     delete c.i18n;
     delete c.hide;
     c.folder = folder;
     c.label = label;
+    // 集合级 media_folder：没设置则用全局默认（绝对路径）；有则转绝对路径
+    if (!c.media_folder) {
+      c.media_folder = '/public/images';
+      c.public_folder = c.public_folder || '/images';
+    } else if (c.media_folder.charAt(0) !== '/') {
+      c.media_folder = '/' + c.media_folder;
+    }
+    // 递归处理所有嵌套字段的 media_folder（如 docs 字段下 list 里的 file widget）
     (c.fields || []).forEach(function (f) {
       delete f.i18n;
-      if (f.fields) f.fields.forEach(function (sf) { delete sf.i18n; });
+      absolutizeMediaFolder(f);
     });
     return c;
   }
@@ -151,6 +175,17 @@
     var c = JSON.parse(JSON.stringify(collection));
     delete c.i18n;
     delete c.hide;
+    // file 集合也需要绝对路径 media_folder，避免再次错位
+    if (!c.media_folder) {
+      c.media_folder = '/public/images';
+      c.public_folder = c.public_folder || '/images';
+    } else if (c.media_folder.charAt(0) !== '/') {
+      c.media_folder = '/' + c.media_folder;
+    }
+    (c.fields || []).forEach(function (f) {
+      delete f.i18n;
+      absolutizeMediaFolder(f);
+    });
     delete c.folder;
     delete c.identifier_field;
     delete c.create;
@@ -402,9 +437,158 @@
       '.product-group-header .product-group-arrow{display:inline-block;width:18px;height:18px;line-height:15px;text-align:center;border:1px solid #cbd5e1;background:#f1f5f9;border-radius:3px;font-size:12px;margin-right:6px;}' +
       // 侧边栏分组分隔
       '.cms-group-sep{font-size:11px !important;font-weight:700 !important;color:#64748b !important;text-transform:uppercase !important;letter-spacing:0.08em !important;padding:12px 16px 4px !important;margin-top:8px !important;border-top:1px solid #e2e8f0 !important;background:#f8fafc !important;pointer-events:none;}' +
-      '.cms-group-sep:first-child{border-top:none !important;margin-top:0 !important;}';
+      '.cms-group-sep:first-child{border-top:none !important;margin-top:0 !important;}' +
+      // 媒体库排序按钮
+      '#cms-media-sort-btn{position:fixed;top:80px;right:24px;z-index:99999;padding:9px 16px;background:#1f2937;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,0.25);font-family:system-ui,-apple-system,sans-serif;font-weight:500;}' +
+      '#cms-media-sort-btn:hover{background:#374151 !important;}' +
+      '#cms-media-sort-btn:active{transform:translateY(1px);}';
     document.head.appendChild(st);
   })();
+
+  // ============================================================
+  // 媒体库排序按钮：浮动按钮，点击切换"按上传时间"升序/降序
+  // 基于文件名中的数字串近似（13位毫秒时间戳或微信图片日期时间 20260930105101）
+  // ============================================================
+  var _mediaSort = { order: 'desc' };
+
+  // 从文件名解析上传时间戳（毫秒）。无法识别返回 null。
+  function parseFileTimestamp(name) {
+    if (!name) return null;
+    // 1) 13 位以上毫秒时间戳：如 1747040924193550.png（取前 13 位）
+    var m = name.match(/(\d{13,})/);
+    if (m) {
+      var ts = parseInt(m[1].substring(0, 13), 10);
+      if (ts > 1000000000000) return ts; // 2001 年之后
+    }
+    // 2) 微信图片 14 位日期时间：20260930105101 → 2026-09-30 10:51:01
+    m = name.match(/(\d{14})/);
+    if (m) {
+      var s = m[1];
+      var y = parseInt(s.substring(0, 4), 10);
+      var mo = parseInt(s.substring(4, 6), 10);
+      var d = parseInt(s.substring(6, 8), 10);
+      var h = parseInt(s.substring(8, 10), 10);
+      var mi = parseInt(s.substring(10, 12), 10);
+      var se = parseInt(s.substring(12, 14), 10);
+      if (y >= 2000 && y <= 2100 && mo >= 1 && mo <= 12 && d >= 1 && d <= 31 && h < 24 && mi < 60 && se < 60) {
+        return new Date(y, mo - 1, d, h, mi, se).getTime();
+      }
+    }
+    // 3) 8 位日期：20260930
+    m = name.match(/(\d{8})/);
+    if (m) {
+      var s2 = m[1];
+      var y2 = parseInt(s2.substring(0, 4), 10);
+      var mo2 = parseInt(s2.substring(4, 6), 10);
+      var d2 = parseInt(s2.substring(6, 8), 10);
+      if (y2 >= 2000 && y2 <= 2100 && mo2 >= 1 && mo2 <= 12 && d2 >= 1 && d2 <= 31) {
+        return new Date(y2, mo2 - 1, d2).getTime();
+      }
+    }
+    return null;
+  }
+
+  // 找媒体库弹窗里的图片网格容器与图片列表
+  // 通用检测：任何 img，排除明显的 icon/avatar/logo/data URL/SVG
+  function findMediaGallery() {
+    var allImgs = Array.prototype.slice.call(document.querySelectorAll('img'));
+    var imgs = allImgs.filter(function (img) {
+      var src = img.getAttribute('src') || '';
+      if (!src) return false;
+      if (src.indexOf('data:') === 0) return false;
+      if (/\.svg($|\?)/i.test(src)) return false;
+      // 排除小尺寸 icon（已加载完成的）
+      var nw = img.naturalWidth || 0;
+      var nh = img.naturalHeight || 0;
+      if (nw > 0 && nw < 48) return false;
+      if (nh > 0 && nh < 48) return false;
+      // 排除 class 含 avatar/logo/icon 的
+      var cls = img.className || '';
+      if (typeof cls === 'string' && /avatar|logo|icon/i.test(cls)) return false;
+      var pEl = img.parentElement;
+      var pCls = pEl ? (pEl.className || '') : '';
+      if (typeof pCls === 'string' && /avatar|logo|icon/i.test(pCls)) return false;
+      return true;
+    });
+    if (imgs.length < 2) return null;
+    // 找第一张图片的卡片层（向上找直到父容器有多个子元素）
+    var firstImg = imgs[0];
+    var item = firstImg;
+    for (var i = 0; i < 6; i++) {
+      var p = item.parentElement;
+      if (!p) break;
+      if (p.children.length > 1) break;
+      item = p;
+    }
+    var grid = item.parentElement;
+    if (!grid) return null;
+    return { grid: grid, imgs: imgs };
+  }
+
+  function ensureMediaSortButton() {
+    var container = findMediaGallery();
+    var has = !!container && container.imgs.length >= 2;
+    var existing = document.getElementById('cms-media-sort-btn');
+    if (has && !existing) {
+      var btn = document.createElement('button');
+      btn.id = 'cms-media-sort-btn';
+      btn.type = 'button';
+      btn.textContent = '⇅ 按上传时间排序（新→旧）';
+      btn.addEventListener('click', function () {
+        _mediaSort.order = _mediaSort.order === 'desc' ? 'asc' : 'desc';
+        btn.textContent = _mediaSort.order === 'desc' ? '⇅ 按上传时间排序（新→旧）' : '⇅ 按上传时间排序（旧→新）';
+        sortMediaGallery();
+      });
+      document.body.appendChild(btn);
+    } else if (!has && existing) {
+      existing.remove();
+    }
+  }
+
+  function sortMediaGallery() {
+    var container = findMediaGallery();
+    if (!container) return;
+    var grid = container.grid;
+    var imgs = container.imgs;
+
+    // 找每张图片对应的卡片元素（向上找直到父容器是 grid）
+    var items = imgs.map(function (img) {
+      var item = img;
+      for (var i = 0; i < 6; i++) {
+        var p = item.parentElement;
+        if (!p) break;
+        if (p === grid) break;
+        item = p;
+      }
+      var src = img.getAttribute('src') || '';
+      var name = decodeURIComponent(src.split('/').pop() || '');
+      var ts = parseFileTimestamp(name);
+      return { item: item, name: name, ts: ts };
+    });
+
+    // 验证所有 item 父元素一致（同一个 grid）
+    var parent = items[0].item.parentElement;
+    var allSame = items.every(function (it) { return it.item.parentElement === parent; });
+    if (!allSame) {
+      console.warn('[media-sort] 图片项父容器不一致，跳过排序');
+      return;
+    }
+
+    items.sort(function (a, b) {
+      if (a.ts !== null && b.ts !== null) {
+        return _mediaSort.order === 'desc' ? b.ts - a.ts : a.ts - b.ts;
+      }
+      if (a.ts !== null) return -1;
+      if (b.ts !== null) return 1;
+      return _mediaSort.order === 'desc'
+        ? b.name.localeCompare(a.name, 'zh')
+        : a.name.localeCompare(b.name, 'zh');
+    });
+
+    // 重新插入（appendChild 会移动元素到末尾，按 items 顺序逐个插入）
+    items.forEach(function (it) { parent.appendChild(it.item); });
+    console.log('[media-sort] 排序完成：' + items.length + ' 张图片，顺序：' + _mediaSort.order);
+  }
 
   // 监听 DOM 变化后重新执行增强逻辑
   var _tw = new MutationObserver(function () {
@@ -412,6 +596,7 @@
     try { maybeTreeify(); } catch (e) { console.error('[treeify]', e); }
     try { maybeProductGroups(); } catch (e) { console.error('[product-groups]', e); }
     try { injectSidebarGroups(); } catch (e) { console.error('[sidebar-groups]', e); }
+    try { ensureMediaSortButton(); } catch (e) { console.error('[media-sort]', e); }
     _tw.observe(document.body, { childList: true, subtree: true });
   });
   _tw.observe(document.body, { childList: true, subtree: true });
@@ -420,6 +605,8 @@
   setTimeout(injectSidebarGroups, 500);
   setTimeout(injectSidebarGroups, 1500);
   setTimeout(pollProductGroups, 600);
+  setTimeout(ensureMediaSortButton, 500);
+  setTimeout(ensureMediaSortButton, 1500);
 
   // ============================================================
   // 按语言派生全部 12 个集合后初始化 CMS
