@@ -1,10 +1,12 @@
 ---
-title: "Low-Power Timed Photography Camera"
-summary: >-
-  DAQ-LP-CAM is a compact, intelligent AIoT timed-photography camera. It pairs a 1920x1080 high-resolution lens with a small fill light, reliably capturing high-quality images and transmitting them to a management platform. Four dif…
-image: "/images/products/1788166816672003.png"
+title: Low-Power Timed Photography Camera
+summary: DAQ-LP-CAM is a compact, intelligent AIoT timed-photography camera. It
+  pairs a 1920x1080 high-resolution lens with a small fill light, reliably
+  capturing high-quality images and transmitting them to a management platform.
+  Four dif…
+image: /images/products/1788166816672003.png
 order: 247
-category: "wirelesstimingphotography"
+category: wirelesstimingphotography
 hidden: false
 ---
 **Product Details**
@@ -34,7 +36,7 @@ The camera is available in two wireless versions, LTE Cat.1 and Wi-Fi, and conne
 
 ## 3.2 Appearance
 
-![](/images/products/1780908613393995.png)
+![](/images/1780908613393995.png)
 
 ## 3.3 Dimensions
 
@@ -42,12 +44,12 @@ The camera is available in two wireless versions, LTE Cat.1 and Wi-Fi, and conne
 
 ## 3.4 Buttons and Indicators
 
-| Function | Operation | Indicator |
-| --- | --- | --- |
-| Wake up device | Short press the button once | Off -> steady on |
-| Capture one image | When awake, short press the button once, or trigger via the alarm input interface / software | Blinks twice |
-| Device sleep | No connection within 1 minute, or no configuration action within 5 minutes after connection | On -> off |
-| Restore factory settings | Long press the button for 3 s | Continuously blinking |
+| Function                 | Operation                                                                                    | Indicator             |
+| ------------------------ | -------------------------------------------------------------------------------------------- | --------------------- |
+| Wake up device           | Short press the button once                                                                  | Off -> steady on      |
+| Capture one image        | When awake, short press the button once, or trigger via the alarm input interface / software | Blinks twice          |
+| Device sleep             | No connection within 1 minute, or no configuration action within 5 minutes after connection  | On -> off             |
+| Restore factory settings | Long press the button for 3 s                                                                | Continuously blinking |
 
 # 4 Power Supply
 
@@ -74,7 +76,7 @@ Replace the battery cover and secure it with the screw.
 
 Step 1: For 4G models, first connect the antenna to the antenna connector on the device.
 
-![](/images/products/1780908758878880.png)
+![](/images/1780908758878880.png)
 
 Step 2: Fix the device onto a universal camera bracket using the bracket holes. Choose the hole that suits your needs; the bracket must be purchased separately.
 
@@ -180,11 +182,11 @@ The device can connect to third-party platforms over MQTT. Pushed data is in JSO
 
 # 9 Safety Instructions
 
-1) To protect the product and ensure safe operation, please follow this manual. The company accepts no responsibility for improper use or use not in accordance with this manual.
-2) Do not disassemble or modify this product.
-3) To avoid fire and electric shock hazards, keep the device away from rain and moisture before installation.
-4) Do not use the product in environments outside the specified operating temperature and humidity range, and keep it away from cold sources, heat sources and open flames.
-5) Do not subject the product to external impact or vibration.
-6) Make sure the product is installed securely.
-7) If the device is not used for a long time, remove the batteries; otherwise battery leakage may damage internal components.
-8) Always install new batteries, otherwise differing charge levels will shorten battery life.
+1. To protect the product and ensure safe operation, please follow this manual. The company accepts no responsibility for improper use or use not in accordance with this manual.
+2. Do not disassemble or modify this product.
+3. To avoid fire and electric shock hazards, keep the device away from rain and moisture before installation.
+4. Do not use the product in environments outside the specified operating temperature and humidity range, and keep it away from cold sources, heat sources and open flames.
+5. Do not subject the product to external impact or vibration.
+6. Make sure the product is installed securely.
+7. If the device is not used for a long time, remove the batteries; otherwise battery leakage may damage internal components.
+8. Always install new batteries, otherwise differing charge levels will shorten battery life.
