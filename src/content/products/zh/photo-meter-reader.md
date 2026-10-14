@@ -1,10 +1,9 @@
 ---
-title: "拍照抄表器"
-summary: >-
-  电池供电无线定时拍照抄表终端，针对传统老旧机械仪表（水表、电表、燃气表、压力表等）或无法直接通讯的仪表快速抄表，内置长寿命锂电池，支持NB-IOT/LoRa/WiFi。
-image: "/images/products/1723528770844667.gif"
+title: 拍照抄表器
+summary: 电池供电无线定时拍照抄表终端，针对传统老旧机械仪表（水表、电表、燃气表、压力表等）或无法直接通讯的仪表快速抄表，内置长寿命锂电池，支持NB-IOT/LoRa/WiFi。
+image: /images/products/1723528770844667.gif
 order: 231
-category: "daq-meter"
+category: daq-meter-other
 hidden: false
 ---
 ## 产品概述
