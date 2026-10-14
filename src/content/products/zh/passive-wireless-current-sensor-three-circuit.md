@@ -1,9 +1,13 @@
 ---
-title: "无源无线电流传感器（三回路）"
-summary: "1 产品概述"
-image: "/images/products/1789108234768969.jpg"
+title: 无源无线电流传感器（三回路）
+summary: >-
+  SC-LP-3CTLoRa是集高精度电流测量及温度监测为一体的无源无线电流传感器，通过无线通讯方式将数据传输至接收装置，实现对被测回路数据信息的实时远传监测，及早获悉早期的安全隐患保障用电安全。
+
+
+  传感器采用双电源供电模式，可通过接入CT电流信号或内部电池供电工作，自适应灵活切换，无需外部供电减免维护。外形小巧安装便捷，适应多种应用场景安装。
+image: /images/products/1789108234768969.jpg
 order: 242
-category: "daq-meter"
+category: daq-meter
 hidden: false
 ---
 **产品详情**
