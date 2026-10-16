@@ -196,11 +196,9 @@ collections:
           - { label: 服务与支持 · 部署实施, value: 服务与支持 · 部署实施 }
           - { label: 服务与支持 · 运维培训, value: 服务与支持 · 运维培训 }
           - { label: 服务与支持 · 定制开发, value: 服务与支持 · 定制开发 }
-          # 选项 = 合作伙伴页面的 3 张卡片
-          - { label: 合作伙伴 · 渠道伙伴, value: 合作伙伴 · 渠道伙伴 }
-          - { label: 合作伙伴 · 系统集成商, value: 合作伙伴 · 系统集成商 }
-          - { label: 合作伙伴 · 行业客户, value: 合作伙伴 · 行业客户 }
-        hint: 只作用于「解决方案 / 服务与支持 / 合作伙伴」三个页面——决定案例出现在哪个页面的哪张卡片点开后。选项 = 「页面 · 卡片标题」，选了「解决方案 · 光伏新能源」，就会出现在解决方案页「光伏新能源」卡片点开的列表里。可多选（内容只维护一份，多页面复用）。⚠️ 不选 = 案例只出现在「项目案例」列表页；页面里改了卡片标题或新增卡片后，这里的选项需要同步（找我一分钟就能加）。
+          # 合作伙伴页面的卡片目前都不可展开（「渠道伙伴加盟」是跳转卡片，另外两张纯说明），
+          # 所以这里没有「合作伙伴 · …」选项。以后若要恢复展开，需同时给 partners 页传 cases + expandable。
+        hint: 只作用于「解决方案 / 服务与支持」两个页面——决定案例出现在哪个页面的哪张卡片点开后。选项 = 「页面 · 卡片标题」，选了「解决方案 · 光伏新能源」，就会出现在解决方案页「光伏新能源」卡片点开的列表里。可多选（内容只维护一份，多页面复用）。⚠️ 不选 = 案例只出现在「项目案例」列表页；页面里改了卡片标题或新增卡片后，这里的选项需要同步（找我一分钟就能加）。
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
@@ -523,6 +521,14 @@ collections:
           - name: cta
             label: 右上角按钮(获取报价)
             widget: string
+          - name: join
+            label: 加入我们(页脚入口)
+            widget: string
+            required: false
+          - name: honors
+            label: 荣誉资质(页脚入口)
+            widget: string
+            required: false
       - label: 网站标题与描述(SEO)
         name: hero
         widget: object
@@ -931,6 +937,11 @@ collections:
             widget: string
             required: false
             hint: 点这张卡片展开后，案例区顶部的小字标题（例如「行业应用案例」）。留空时该标签统一显示「相关案例 / Related Cases」。只影响这一张卡片对应的标签，不影响其他标签。
+          - name: link
+            label: 点开跳转链接（选填）
+            widget: string
+            required: false
+            hint: 填站内相对路径（如 /join、/contact）后，这张卡片变成「跳转卡片」——点开直接跳转，不再展开案例；英/德页面会自动带上语言前缀（/en/join、/de/join）。留空 = 保持原样（点开在卡片下方展开本分类案例）。
       - name: resourcesTitle
         label: 资料区标题
         widget: string
@@ -947,6 +958,98 @@ collections:
           - name: desc
             label: 资料描述
             widget: text
+          - name: link
+            label: 点开跳转链接（选填）
+            widget: string
+            required: false
+            hint: 填站内相对路径（如 /products = 产品中心、/solutions = 解决方案、/honors = 荣誉资质）后，整张卡片可点击跳转并显示箭头；留空 = 普通卡片。英/德页面自动带语言前缀。
+  - name: join
+    label: 加入我们
+    description: 「加入我们（合作加盟）」页面的全部文案。入口 = 合作伙伴页面第一张卡片「合作伙伴加盟」（该卡片配了 /join 跳转）。
+    folder: src/content/join
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - name: intro
+        label: 加盟介绍
+        widget: text
+        required: false
+        hint: 页面第一段加粗导语，例如「我司诚招合作代理商、加盟商……」
+      - name: conditionsTitle
+        label: 代理商申请条件 · 板块标题
+        widget: string
+        required: false
+      - label: 代理商申请条件(可增删，逐条列出)
+        name: conditions
+        widget: list
+        required: false
+        field:
+          label: 条件内容
+          name: text
+          widget: string
+      - name: ctaTitle
+        label: 结尾呼吁文字
+        widget: text
+        required: false
+      - name: image
+        label: 页面配图
+        widget: image
+        required: false
+        hint: 正文底部的说明图；不填时使用旧站原版配图（/images/join/join-intro.png）。
+  - name: honors
+    label: 荣誉资质
+    description: 「荣誉资质」页面的全部内容（高新技术企业、软件著作权、行业奖项等证书）。入口 = 合作伙伴页面「资料中心」的「认证证书」卡片（该卡片配了 /honors 跳转）。
+    folder: src/content/honors
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    media_folder: /public/images/honors
+    public_folder: /images/honors
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: 证书板块(可增删：一个板块 = 一组证书)
+        name: sections
+        widget: list
+        hint: 页面上按这里的顺序从上到下排列；每个板块内是一组证书图片。
+        fields:
+          - name: title
+            label: 板块标题
+            widget: string
+          - name: desc
+            label: 板块说明（选填）
+            widget: text
+            required: false
+          - label: 证书图片(可增删)
+            name: images
+            widget: list
+            summary: '{{fields.caption}}'
+            fields:
+              - name: image
+                label: 证书图片
+                widget: image
+                hint: 上传到 /images/honors 目录；建议竖版扫描件，宽度 1100px 左右即可。
+              - name: caption
+                label: 证书名称
+                widget: string
+                hint: 卡片下方显示的名称，也是放大查看时的说明文字。
   - name: support
     label: 技术支持（旧集合，已并入「页面文案 → 服务与支持」）
     description: 本集合内容已迁移到「页面文案 → 服务与支持」编辑页的「技术支持 · …」字段，后台不再单独显示，保留定义仅为兼容旧数据。

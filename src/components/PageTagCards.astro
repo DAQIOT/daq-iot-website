@@ -20,6 +20,8 @@ interface TagItem {
   desc: string;
   /** 该标签专属的「案例区小标题」（后台卡片里的「展开后 · 案例区小标题」），留空回退整页默认 */
   caseTitle?: string;
+  /** 站内跳转路径（如 /join）：填了就变成「跳转卡片」，点开直接跳走，不展开案例 */
+  link?: string;
   slug: string;
 }
 
@@ -31,9 +33,17 @@ interface Props {
   cases: any[];
   /** 卡片规格：lg = 解决方案，md = 服务与支持，sm = 合作伙伴 */
   variant?: 'lg' | 'md' | 'sm';
+  /** 卡片底部的「查看案例 → / 收起 ↓」提示行：默认显示；合作伙伴页关掉（hint={false}） */
+  hint?: boolean;
+  /**
+   * 卡片是否可点击展开案例：默认 true。
+   * 关掉（expandable={false}）→ 本页所有卡片都变成纯说明卡片：不可点击、不渲染案例面板、不找案例。
+   * 目前合作伙伴页关掉（「渠道伙伴加盟」仍是跳转卡片，另外两张只做说明）。
+   */
+  expandable?: boolean;
 }
 
-const { lang, page, tags = [], cases = [], variant = 'md' } = Astro.props;
+const { lang, page, tags = [], cases = [], variant = 'md', hint = true, expandable = true } = Astro.props;
 const base = '/' + lang;
 const uid = `tc-${lang}-${variant}`;
 const prefix = PAGE_TAG_PREFIX[page];
@@ -55,15 +65,18 @@ const isMine = (c: any, cardTitle: string) => {
 const belongsToPage = (c: any) => toTags(c.data?.tags).some((t) => t.startsWith(prefix + ' · '));
 
 // 每张卡片 → 归到它名下的案例
+// 跳转卡片（配了 link）不承载案例：不消费案例池，避免案例被它「吃掉」后无处显示
+// 整页不可展开（expandable=false）时也不找案例，直接跳过
 const used = new Set<string>();
 const groups = tags.map((t) => {
-  const list = cases.filter((c) => isMine(c, t.key));
+  const list = !expandable || t.link ? [] : cases.filter((c) => isMine(c, t.key));
   list.forEach((c) => used.add(String(c.id)));
   return { ...t, cases: list };
 });
 
 // 标签带了本页面前缀、但对应卡片已不在页面上的案例 → 收进「其他项目」（避免静默消失）
-const rest = cases.filter((c) => !used.has(String(c.id)) && belongsToPage(c));
+// 仅在本页卡片可展开时才需要这张兜底卡片
+const rest = expandable ? cases.filter((c) => !used.has(String(c.id)) && belongsToPage(c)) : [];
 if (rest.length) {
   groups.push({
     key: '__others__',
@@ -114,35 +127,66 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
 ---
 
 {groups.length > 0 && (
-  <div class="tag-cards" data-tag-cards data-tc-uid={uid}>
-    {/* ① 原来的内容卡片：现在就是标签，点它展开对应案例 */}
+  <div class="tag-cards" data-tag-cards data-tc-uid={uid} data-tc-slugs={JSON.stringify(groups.map((g) => g.slug))}>
+    {/* ① 原来的内容卡片：现在就是标签；配了 link 的整块可点跳走，可展开的点它展开对应案例 */}
     <div class={spec.grid}>
-      {groups.map((g, i) => (
-        <a
-          href={`#${g.slug}`}
-          class="tag-card card-hover bg-white border border-slate-200 rounded-2xl p-8 block"
-          data-tc-cell={i}
-          data-tc-slug={g.slug}
-          aria-controls={`${uid}-panel-${i}`}
-          aria-expanded="false"
-        >
-          {spec.numbered && <span class={spec.idx}>{pad(i)}</span>}
-          <h3 class={spec.title}>{g.name}</h3>
-          {g.desc && <p class={spec.desc}>{g.desc}</p>}
-          <span class="tag-card-more">
-            <span class="tag-card-more-open">{moreText}</span>
-            <span class="tag-card-more-close">{lessText}</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </a>
-      ))}
+      {groups.map((g, i) => {
+        // ① 跳转卡片：整块可点，跳到站内其他页面
+        if (g.link) {
+          return (
+            <a
+              href={base + g.link}
+              class="tag-card card-hover bg-white border border-slate-200 rounded-2xl p-8 block"
+              data-tc-link={i}
+            >
+              {spec.numbered && <span class={spec.idx}>{pad(i)}</span>}
+              <h3 class={spec.title}>{g.name}</h3>
+              {g.desc && <p class={spec.desc}>{g.desc}</p>}
+            </a>
+          );
+        }
+        // ② 静态卡片：整页关掉展开时只做说明，不可点击、无 hover 抬升、无提示行
+        if (!expandable) {
+          return (
+            <div class="tag-card bg-white border border-slate-200 rounded-2xl p-8">
+              {spec.numbered && <span class={spec.idx}>{pad(i)}</span>}
+              <h3 class={spec.title}>{g.name}</h3>
+              {g.desc && <p class={spec.desc}>{g.desc}</p>}
+            </div>
+          );
+        }
+        // ③ 可展开卡片：点开在下方展开该标签的案例
+        return (
+          <a
+            href={`#${g.slug}`}
+            class="tag-card card-hover bg-white border border-slate-200 rounded-2xl p-8 block"
+            data-tc-cell={i}
+            data-tc-slug={g.slug}
+            aria-controls={`${uid}-panel-${i}`}
+            aria-expanded="false"
+          >
+            {spec.numbered && <span class={spec.idx}>{pad(i)}</span>}
+            <h3 class={spec.title}>{g.name}</h3>
+            {g.desc && <p class={spec.desc}>{g.desc}</p>}
+            {hint && (
+              <span class="tag-card-more">
+                <span class="tag-card-more-open">{moreText}</span>
+                <span class="tag-card-more-close">{lessText}</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            )}
+          </a>
+        );
+      })}
     </div>
 
-    {/* ② 各标签的案例面板（默认全部隐藏，点卡片才展开） */}
-    {groups.map((g, i) => (
+    {/* ② 各标签的案例面板（默认全部隐藏，点卡片才展开；跳转卡片、静态卡片没有面板） */}
+    {expandable &&
+      groups.map((g, i) =>
+        g.link ? null : (
       <div class="tag-panel" id={`${uid}-panel-${i}`} data-tc-panel={i} hidden>
         <div class="tag-panel-head">
           <button type="button" class="tag-back" data-tc-back>
@@ -186,7 +230,8 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
           <p class="text-center text-slate-400 py-16 text-sm">{emptyText}</p>
         )}
       </div>
-    ))}
+        )
+      )}
   </div>
 )}
 
@@ -196,18 +241,28 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
     const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-tc-panel]'));
     if (!cells.length || !panels.length) return;
 
-    const slugs = cells.map((c) => c.getAttribute('data-tc-slug') || '');
+    // 卡片/面板各自带「第几张卡片」的下标（data-tc-cell / data-tc-panel）。
+    // 存在跳转卡片（配了 link、没有面板）时数组长度不一致，所以一律按显式下标配对，
+    // 不能再用数组位置对齐。
+    const idx = (el: HTMLElement | undefined, attr: string) => Number(el?.getAttribute(attr) ?? '-1');
+    const cellIndex = cells.map((c) => idx(c, 'data-tc-cell'));
+    let slugs: string[] = [];
+    try {
+      slugs = JSON.parse(root.getAttribute('data-tc-slugs') || '[]');
+    } catch {
+      slugs = [];
+    }
     const uid = root.getAttribute('data-tc-uid') || '';
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
 
     // 展开 / 收起：index = -1 表示全部收起
     const show = (index: number, updateUrl = true) => {
-      panels.forEach((p, j) => {
-        p.hidden = j !== index;
+      panels.forEach((p) => {
+        p.hidden = idx(p, 'data-tc-panel') !== index;
       });
       cells.forEach((c, j) => {
-        const on = j === index;
+        const on = cellIndex[j] === index;
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-expanded', String(on));
       });
@@ -225,11 +280,11 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
     const indexBySlug = (slug: string) => (slug ? slugs.indexOf(slug) : -1);
     const syncFromUrl = () => show(indexBySlug(location.hash.replace(/^#/, '')), false);
 
-    cells.forEach((cell, i) => {
+    cells.forEach((cell, j) => {
       cell.addEventListener('click', (e) => {
         e.preventDefault();
         // 点当前已展开的卡片 = 收起
-        show(cell.classList.contains('is-active') ? -1 : i);
+        show(cell.classList.contains('is-active') ? -1 : cellIndex[j]);
       });
     });
     root.querySelectorAll<HTMLElement>('[data-tc-back]').forEach((btn) => {
@@ -243,10 +298,11 @@ const pad = (n: number) => String(n + 1).padStart(2, '0');
     // 首次进入若 URL 带 hash，直接展开对应标签（不滚动，避免开屏跳动）
     const initial = indexBySlug(location.hash.replace(/^#/, ''));
     if (initial >= 0) {
-      panels.forEach((p, j) => (p.hidden = j !== initial));
+      panels.forEach((p) => { p.hidden = idx(p, 'data-tc-panel') !== initial; });
       cells.forEach((c, j) => {
-        c.classList.toggle('is-active', j === initial);
-        c.setAttribute('aria-expanded', String(j === initial));
+        const on = cellIndex[j] === initial;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-expanded', String(on));
       });
     }
   });

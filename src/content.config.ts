@@ -23,6 +23,18 @@ const partners = defineCollection({
   schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
+// 加入我们（合作加盟）页面文案
+const join = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/join' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+// 荣誉资质页面文案（高新技术企业、软件著作权、行业奖项等证书）
+const honors = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/honors' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
 const support = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/support' }),
   schema: z.object({ name: z.string().optional() }).passthrough()
@@ -148,6 +160,8 @@ export const collections = {
   solutions,
   services,
   partners,
+  join,
+  honors,
   support,
   about,
   contact,

@@ -34,7 +34,7 @@ async function loadCollectionData(lang: Lang, collection: string): Promise<Recor
 }
 
 async function getRawSite(lang: Lang): Promise<Record<string, any>> {
-  const [siteData, solutionsData, servicesData, partnersData, supportData, aboutData, contactData] = await Promise.all([
+  const [siteData, solutionsData, servicesData, partnersData, supportData, aboutData, contactData, joinData, honorsData] = await Promise.all([
     loadCollectionData(lang, 'site'),
     loadCollectionData(lang, 'solutions'),
     loadCollectionData(lang, 'services'),
@@ -42,6 +42,8 @@ async function getRawSite(lang: Lang): Promise<Record<string, any>> {
     loadCollectionData(lang, 'support'),
     loadCollectionData(lang, 'about'),
     loadCollectionData(lang, 'contact'),
+    loadCollectionData(lang, 'join'),
+    loadCollectionData(lang, 'honors'),
   ]);
 
   return {
@@ -52,6 +54,8 @@ async function getRawSite(lang: Lang): Promise<Record<string, any>> {
     support: supportData,
     about: aboutData,
     contact: contactData,
+    join: joinData,
+    honors: honorsData,
   };
 }
 
@@ -95,8 +99,8 @@ export async function getAllCases(lang: Lang, limit = 0) {
 export async function getPageTags(lang: Lang, page: 'solutions' | 'services' | 'partners') {
   const cur = await getSiteData(lang);
   const zh = lang === 'zh' ? cur : await getSiteData('zh');
-  const curItems = ((cur[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string }[]) || [];
-  const zhItems = ((zh[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string }[]) || [];
+  const curItems = ((cur[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string; link?: string }[]) || [];
+  const zhItems = ((zh[page]?.items ?? []) as { title?: string; desc?: string; caseTitle?: string; link?: string }[]) || [];
   return curItems
     .map((it, i) => ({
       key: String(zhItems[i]?.title ?? it.title ?? '').trim(),
@@ -104,6 +108,8 @@ export async function getPageTags(lang: Lang, page: 'solutions' | 'services' | '
       desc: String(it.desc ?? '').trim(),
       // 该标签专属的「案例区小标题」：留空时由组件回退到整页默认 / 系统默认
       caseTitle: String(it.caseTitle ?? '').trim(),
+      // 填了就变成「跳转卡片」：点开直接跳站内该路径（如 /join），不再展开案例
+      link: String(it.link ?? '').trim(),
       slug: 'tag-' + (i + 1)
     }))
     .filter((t) => t.key && t.name);

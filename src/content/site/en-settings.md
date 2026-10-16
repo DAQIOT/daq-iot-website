@@ -17,6 +17,8 @@ nav:
   solutions: Solutions
   services: Services
   home: Home
+  join: Join Us
+  honors: Honors
 cases:
   title: Project Cases
   subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring

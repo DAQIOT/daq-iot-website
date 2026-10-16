@@ -6,6 +6,8 @@ cases:
   subtitle: DAQ-IOT Projektreferenzen — Industrielle IoT-Datenerfassung und -überwachung in der intelligenten Fertigung und Photovoltaik.
 nav:
   home: Start
+  join: Partner werden
+  honors: Auszeichnungen
   about: Über uns
   products: Produkte
   solutions: Lösungen

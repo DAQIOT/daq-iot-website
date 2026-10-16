@@ -3,8 +3,9 @@ editor_lang: 中文
 title: 合作伙伴
 subtitle: 与渠道伙伴、集成商及行业客户共建工业物联网生态
 items:
-  - title: 渠道伙伴
-    desc: 区域代理与经销商，共享市场与渠道资源。
+  - title: 渠道伙伴加盟
+    desc: 诚招代理商、加盟商，支持 OEM/ODM 贴牌生产与方案定制。
+    link: /join
   - title: 系统集成商
     desc: 面向自动化与信息化集成商的项目协作。
   - title: 行业客户
@@ -14,9 +15,12 @@ resourcesSubtitle: 产品彩页、认证证书与白皮书，供合作伙伴下�
 resources:
   - title: 产品彩页
     desc: 各产品系列高清彩页与规格速览。
+    link: /products
   - title: 认证证书
-    desc: 高新技术企业、CE/ROHS 等资质文件。
+    desc: 高新技术企业、软件著作权等资质证书。
+    link: /honors
   - title: 白皮书
     desc: 行业解决方案与技术架构白皮书。
+    link: /solutions
 name: index
 ---

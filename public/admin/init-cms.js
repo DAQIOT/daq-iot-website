@@ -104,6 +104,8 @@
     solutions: 'index',
     services: 'index',
     partners: 'index',
+    join: 'index',
+    honors: 'index',
     support: 'index',
     about: 'index',
     contact: 'index'
@@ -120,6 +122,8 @@
     solutions: '解决方案',
     services: '服务与支持',
     partners: '合作伙伴',
+    join: '加入我们',
+    honors: '荣誉资质',
     support: '技术支持',
     about: '关于我们',
     contact: '联系我们'
@@ -129,7 +133,7 @@
   var I18N_COLLECTIONS = ['products', 'categories', 'cases', 'downloads', 'posts'];
   // i18n:false 集合列表（file 派生）
   // 注意：support（技术支持）已并入「服务与支持」页面文案，不再单独出现在后台
-  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'about', 'contact'];
+  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'join', 'honors', 'about', 'contact'];
 
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
   // 关键：把所有 media_folder 改为绝对路径（以 / 开头，相对仓库根）。

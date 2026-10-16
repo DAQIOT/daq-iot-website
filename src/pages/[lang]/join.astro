@@ -1,0 +1,71 @@
+---
+/**
+ * 加入我们（合作加盟）页面
+ *
+ * 内容全部来自后台「页面文案 → 加入我们」（src/content/join/<lang>-index.md），
+ * 入口：合作伙伴页面第一张卡片「渠道伙伴加盟」（该卡片配了 link: /join，点开即跳本页）。
+ *
+ * 版式与旧站 cn.daq-iot.com/hezuo/ 保持一致：加粗导语 → 代理商申请条件（编号列表）
+ * → 加粗结尾呼吁 → 页面配图。不额外加板块。
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations, getSiteData } from '../../i18n/utils';
+import type { Lang } from '../../i18n/config';
+import PageHero from '../../components/PageHero.astro';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params as { lang: Lang };
+const t = await getTranslations(lang);
+const site = await getSiteData(lang);
+const join = ((site.join ?? {}) as Record<string, any>);
+const base = '/' + lang;
+
+const bannerImage = ((site.banner?.pageImage as string) || '');
+const title = (join.title as string) || t('nav.join');
+const subtitle = (join.subtitle as string) || '';
+const intro = (join.intro as string) || '';
+const conditionsTitle = (join.conditionsTitle as string) || '';
+// 兼容两种写法：纯字符串数组 / [{ text: '...' }]
+const conditions = ((join.conditions ?? []) as any[])
+  .map((c) => String(typeof c === 'string' ? c : (c?.text ?? '')).trim())
+  .filter(Boolean);
+const ctaTitle = (join.ctaTitle as string) || '';
+// 页面配图：后台可换；没填时用旧站原版配图
+const image = (join.image as string) || '/images/join/join-intro.png';
+---
+<BaseLayout lang={lang} title={title + ' | DAQ-IOT'} description={subtitle || intro}>
+  <PageHero title={title} subtitle={subtitle} image={bannerImage} />
+
+  <section class="mx-auto max-w-4xl px-4 lg:px-8 py-14 lg:py-20">
+    <!-- 加粗导语（对应旧站正文第一段） -->
+    {intro && <p class="text-lg md:text-xl font-semibold text-slate-800 leading-relaxed">{intro}</p>}
+
+    <!-- 代理商申请条件（对应旧站「代理商申请条件：」+ 编号列表） -->
+    {conditions.length > 0 && (
+      <div class="mt-10">
+        {conditionsTitle && <h2 class="text-xl md:text-2xl font-bold text-brand">{conditionsTitle}</h2>}
+        <ol class="mt-5 space-y-3">
+          {conditions.map((c, i) => (
+            <li class="flex items-start gap-2 text-base md:text-lg text-slate-700 leading-relaxed">
+              <span class="text-brand font-bold shrink-0">{i + 1}、</span>
+              <span>{c}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+
+    <!-- 加粗结尾呼吁（对应旧站最后一句） -->
+    {ctaTitle && <p class="mt-10 text-lg md:text-xl font-bold text-slate-900 leading-relaxed">{ctaTitle}</p>}
+
+    <!-- 页面配图（旧站原版插画，后台可换） -->
+    {image && <img src={image} alt={title} loading="lazy" class="mt-8 w-full rounded-xl border border-slate-100 bg-white" />}
+
+    <!-- 联系入口 -->
+    <div class="mt-12 text-center">
+      <a href={base + '/contact'} class="inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('nav.contact')}</a>
+    </div>
+  </section>
+</BaseLayout>
