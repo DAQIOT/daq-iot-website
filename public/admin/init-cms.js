@@ -7,7 +7,7 @@
 //     转为 file collection，只指向 {lang}-settings.md 或 {lang}-index.md
 //
 // 阶段二：侧边栏分组
-//   集合按"内容管理"和"页面文案"两组用分隔线分开
+//   集合按"内容管理""页面文案""Logo 墙与资质"三组用分隔线分开
 //
 // 效果：切换顶部语言并刷新后，整个后台所有集合只显示当前语言内容。
 // 侧边栏按逻辑分组，不再是一堆平铺列表。
@@ -125,9 +125,9 @@
     services: '服务与支持',
     partners: '合作伙伴',
     join: '加入我们',
-    honors: '荣誉资质',
-    integrators: '系统集成商（Logo）',
-    customers: '行业客户（Logo）',
+    honors: '荣誉资质（认证证书）',
+    integrators: '系统集成商（Logo 墙）',
+    customers: '行业客户（Logo 墙）',
     support: '技术支持',
     about: '关于我们',
     contact: '联系我们'
@@ -137,7 +137,9 @@
   var I18N_COLLECTIONS = ['products', 'categories', 'cases', 'downloads', 'posts'];
   // i18n:false 集合列表（file 派生）
   // 注意：support（技术支持）已并入「服务与支持」页面文案，不再单独出现在后台
-  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'join', 'honors', 'integrators', 'customers', 'about', 'contact'];
+  var SINGLE_FILE_COLLECTIONS = ['site', 'solutions', 'services', 'partners', 'join', 'about', 'contact', 'honors', 'integrators', 'customers'];
+  // 侧栏第三组：Logo 墙与资质证书（同样走 i18n:false 单文件派生，只是侧栏单独分组、排在最后）
+  var ASSET_COLLECTIONS = ['honors', 'integrators', 'customers'];
 
   // 复制模板集合并去掉 i18n 相关属性，锁定到指定语言的目录
   // 关键：把所有 media_folder 改为绝对路径（以 / 开头，相对仓库根）。
@@ -380,52 +382,38 @@
     var existing = root.querySelector('.cms-group-sep');
     if (existing) return;
 
-    // 页面文案集合名列表
-    var pageContentNames = SINGLE_FILE_COLLECTIONS;
-    // 内容管理集合名列表
-    var contentNames = I18N_COLLECTIONS;
+    // 侧栏分组配置（顺序 = 侧栏出现顺序）：
+    //   ① 内容管理（i18n 集合）② 页面文案（单文件页面）③ Logo 墙与资质（同样单文件，但单独分组）
+    var GROUPS = [
+      { label: '内容管理', names: I18N_COLLECTIONS, cls: 'cms-group-content' },
+      { label: '页面文案', names: SINGLE_FILE_COLLECTIONS, cls: 'cms-group-page' },
+      { label: 'Logo 墙与资质', names: ASSET_COLLECTIONS, cls: 'cms-group-assets' }
+    ];
 
     var sepInserted = {};
+
     links.forEach(function (link) {
       var href = link.getAttribute('href') || '';
 
-      // 在第一个"内容管理"集合前插入分组标题
-      var isFirstContent = false;
-      for (var i = 0; i < contentNames.length; i++) {
-        if (href.indexOf('collections/' + contentNames[i]) >= 0) {
-          isFirstContent = true;
-          break;
+      for (var g = 0; g < GROUPS.length; g++) {
+        var group = GROUPS[g];
+        if (sepInserted[g]) continue;
+
+        var hit = false;
+        for (var i = 0; i < group.names.length; i++) {
+          if (href.indexOf('collections/' + group.names[i]) >= 0) { hit = true; break; }
         }
-      }
-      if (isFirstContent && !sepInserted.content) {
-        sepInserted.content = true;
-        // 检查是否已有
+        if (!hit) continue;
+
+        sepInserted[g] = true;
         var prev = link.previousElementSibling;
         if (!prev || !prev.classList || !prev.classList.contains('cms-group-sep')) {
           var sep = document.createElement('div');
-          sep.className = 'cms-group-sep cms-group-content';
-          sep.textContent = '内容管理';
+          sep.className = 'cms-group-sep ' + group.cls;
+          sep.textContent = group.label;
           link.parentNode.insertBefore(sep, link);
         }
-      }
-
-      // 在第一个"页面文案"集合前插入分组标题
-      var isFirstPage = false;
-      for (var j = 0; j < pageContentNames.length; j++) {
-        if (href.indexOf('collections/' + pageContentNames[j]) >= 0) {
-          isFirstPage = true;
-          break;
-        }
-      }
-      if (isFirstPage && !sepInserted.page) {
-        sepInserted.page = true;
-        var prevP = link.previousElementSibling;
-        if (!prevP || !prevP.classList || !prevP.classList.contains('cms-group-sep')) {
-          var sepP = document.createElement('div');
-          sepP.className = 'cms-group-sep cms-group-page';
-          sepP.textContent = '页面文案';
-          link.parentNode.insertBefore(sepP, link);
-        }
+        break;
       }
     });
   }

@@ -1007,8 +1007,8 @@ collections:
         required: false
         hint: 正文底部的说明图；不填时使用旧站原版配图（/images/join/join-intro.png）。
   - name: honors
-    label: 荣誉资质
-    description: 「荣誉资质」页面的全部内容（高新技术企业、软件著作权、行业奖项等证书）。入口 = 合作伙伴页面「资料中心」的「认证证书」卡片（该卡片配了 /honors 跳转）。
+    label: 荣誉资质（认证证书）
+    description: 合作伙伴页面「资料中心 → 认证证书」卡片点开后的页面（/honors）：高新技术企业证书、软件著作权、行业奖项。在这里上传/删除证书图片、改名称、调顺序；列表项左侧手柄可拖拽排序。
     folder: src/content/honors
     create: false
     i18n: false
@@ -1028,11 +1028,15 @@ collections:
       - label: 证书板块(可增删：一个板块 = 一组证书)
         name: sections
         widget: list
-        hint: 页面上按这里的顺序从上到下排列；每个板块内是一组证书图片。
+        collapsed: true
+        label_singular: 一个板块
+        summary: '{{fields.title}}'
+        hint: 页面上按这里的顺序从上到下排列；点住条目左边的手柄可上下拖拽调整板块顺序。
         fields:
           - name: title
             label: 板块标题
             widget: string
+            hint: 如「高新技术企业」「软件著作权」「荣誉奖项」。
           - name: desc
             label: 板块说明（选填）
             widget: text
@@ -1040,7 +1044,10 @@ collections:
           - label: 证书图片(可增删)
             name: images
             widget: list
+            collapsed: true
+            label_singular: 一张证书
             summary: '{{fields.caption}}'
+            hint: 默认折叠显示名称，点开改名称/换图；拖拽手柄可调整证书先后顺序（页面上按此顺序从左到右、从上到下排列）。
             fields:
               - name: image
                 label: 证书图片
@@ -1051,8 +1058,8 @@ collections:
                 widget: string
                 hint: 卡片下方显示的名称，也是放大查看时的说明文字。
   - name: integrators
-    label: 系统集成商（Logo）
-    description: 合作伙伴页面「系统集成商」卡片点开后的 Logo 墙页面（/partners/integrators）。
+    label: 系统集成商（Logo 墙）
+    description: 合作伙伴页面「系统集成商」卡片点开后的 Logo 墙页面（/partners/integrators）。在这里上传/删除 Logo、改公司名、调顺序；列表项左侧手柄可拖拽排序，页面上按此顺序排列。
     folder: src/content/integrators
     create: false
     i18n: false
@@ -1072,7 +1079,10 @@ collections:
       - label: Logo 板块(可增删：一个板块 = 一组 Logo)
         name: sections
         widget: list
-        hint: 页面上按这里的顺序从上到下排列。
+        collapsed: true
+        label_singular: 一个板块
+        summary: '{{fields.title}}'
+        hint: 页面上按这里的顺序从上到下排列；点住条目左边的手柄可上下拖拽调整板块顺序。
         fields:
           - name: title
             label: 板块标题
@@ -1084,19 +1094,22 @@ collections:
           - label: Logo 列表(可增删)
             name: logos
             widget: list
+            collapsed: true
+            label_singular: 一个 Logo
             summary: '{{fields.name}}'
+            hint: 默认折叠显示公司名，点开换图/改名；拖拽手柄可调整 Logo 顺序（页面上按此顺序从左到右、从上到下排列）。
             fields:
               - name: image
                 label: Logo 图片
                 widget: image
-                hint: 上传到 /images/partners 目录；建议透明底 PNG，边长 400px 左右。
+                hint: '上传到 /images/partners 目录；建议 PNG，边长 400px 左右。⚠️ 不要用「透明底 + 白色图案」的 Logo——页面卡片是白底，白色图案会看不见；请下载深色版本或带底色的图。'
               - name: name
                 label: 公司名称
                 widget: string
                 hint: Logo 下方的公司名称（同时也是图片的 alt 文字），可留空。
   - name: customers
-    label: 行业客户（Logo）
-    description: 合作伙伴页面「行业客户」卡片点开后的 Logo 墙页面（/partners/customers），分「光伏新能源 / 终端工厂」两类。
+    label: 行业客户（Logo 墙）
+    description: 合作伙伴页面「行业客户」卡片点开后的 Logo 墙页面（/partners/customers），分「光伏新能源 / 终端工厂」两类。在这里上传/删除 Logo、改公司名、调顺序；列表项左侧手柄可拖拽排序。
     folder: src/content/customers
     create: false
     i18n: false
@@ -1116,7 +1129,10 @@ collections:
       - label: Logo 板块(可增删：一个板块 = 一类客户)
         name: sections
         widget: list
-        hint: 页面上按这里的顺序从上到下排列。当前两类：光伏新能源 / 终端工厂。
+        collapsed: true
+        label_singular: 一个板块
+        summary: '{{fields.title}}'
+        hint: 页面上按这里的顺序从上到下排列（当前两类：光伏新能源 / 终端工厂）；拖拽手柄可调整板块顺序，新增板块即新增一类客户。
         fields:
           - name: title
             label: 板块标题
@@ -1128,12 +1144,15 @@ collections:
           - label: Logo 列表(可增删)
             name: logos
             widget: list
+            collapsed: true
+            label_singular: 一个 Logo
             summary: '{{fields.name}}'
+            hint: 默认折叠显示公司名，点开换图/改名；拖拽手柄可调整 Logo 顺序（页面上按此顺序从左到右、从上到下排列）。
             fields:
               - name: image
                 label: Logo 图片
                 widget: image
-                hint: 上传到 /images/partners 目录；建议透明底 PNG，边长 400px 左右。
+                hint: '上传到 /images/partners 目录；建议 PNG，边长 400px 左右。⚠️ 不要用「透明底 + 白色图案」的 Logo——页面卡片是白底，白色图案会看不见；请下载深色版本或带底色的图。'
               - name: name
                 label: 公司名称
                 widget: string
