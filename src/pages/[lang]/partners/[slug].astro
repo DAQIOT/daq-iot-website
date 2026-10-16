@@ -1,0 +1,117 @@
+---
+/**
+ * 合作伙伴 Logo 墙（系统集成商 / 行业客户 两页共用）
+ *
+ * 内容全部来自后台「页面文案 → 系统集成商 / 行业客户」
+ * （src/content/integrators/<lang>-index.md、src/content/customers/<lang>-index.md）。
+ *
+ * 入口：合作伙伴页面的「系统集成商」「行业客户」卡片（两张卡片都配了 link，点开即跳本页）。
+ * 版式 = 若干「板块」（每个板块一组 logo 卡片网格），logo 按原始比例完整显示。
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getTranslations, getSiteData } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/config';
+import PageHero from '../../../components/PageHero.astro';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).flatMap((lang) =>
+    (['integrators', 'customers'] as const).map((slug) => ({ params: { lang, slug } }))
+  );
+}
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const t = await getTranslations(lang);
+const site = await getSiteData(lang);
+const base = '/' + lang;
+
+const page = (site[slug] ?? {}) as Record<string, any>;
+const bannerImage = (site.banner?.pageImage as string) || '';
+
+// 标题兜底：内容没填时按语言给默认（不依赖站点文案里的 nav 键）
+const FALLBACK: Record<string, Record<Lang, string>> = {
+  integrators: { zh: '系统集成商', en: 'System Integrators', de: 'Systemintegratoren' },
+  customers: { zh: '行业客户', en: 'Industry Customers', de: 'Industriekunden' }
+};
+const title = (page.title as string) || FALLBACK[slug]?.[lang] || slug;
+const subtitle = (page.subtitle as string) || '';
+
+const sections = ((page.sections ?? []) as any[])
+  .map((s) => ({
+    title: String(s?.title ?? '').trim(),
+    desc: String(s?.desc ?? '').trim(),
+    logos: ((s?.logos ?? []) as any[])
+      .map((l) => ({ name: String(l?.name ?? '').trim(), image: String(l?.image ?? '').trim() }))
+      .filter((l) => l.image)
+  }))
+  .filter((s) => s.logos.length > 0);
+
+const total = sections.reduce((n, s) => n + s.logos.length, 0);
+const countText =
+  lang === 'zh'
+    ? `共 ${total} 家合作伙伴`
+    : lang === 'de'
+      ? `${total} Partner insgesamt`
+      : `${total} partners in total`;
+const backText = lang === 'zh' ? '返回合作伙伴' : lang === 'de' ? 'Zurueck zu Partner' : 'Back to Partners';
+const emptyText = lang === 'zh' ? '暂无内容' : lang === 'de' ? 'Noch keine Inhalte' : 'No content yet';
+---
+<BaseLayout lang={lang} title={title + ' | DAQ-IOT'} description={subtitle}>
+  <PageHero title={title} subtitle={subtitle} image={bannerImage} />
+
+  {sections.length > 0 ? (
+    <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-12 lg:py-16 space-y-14 lg:space-y-16">
+      {sections.map((s) => (
+        <div>
+          <div class="text-center mb-8 md:mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark">{s.title}</h2>
+            {s.desc && <p class="mt-2 text-slate-500 text-sm md:text-base">{s.desc}</p>}
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+            {s.logos.map((l) => (
+              <div class="logo-card group bg-white border border-slate-200 rounded-xl p-3 md:p-4" title={l.name}>
+                <div class="aspect-[3/2] flex items-center justify-center overflow-hidden">
+                  <img
+                    src={l.image}
+                    alt={l.name}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-contain transition duration-300 group-hover:scale-[1.04]"
+                  />
+                </div>
+                {l.name && <p class="mt-2 text-center text-xs text-slate-500 truncate">{l.name}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="text-center text-sm text-slate-400">{countText}</p>
+    </section>
+  ) : (
+    <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-24 text-center text-slate-400">{emptyText}</section>
+  )}
+
+  <div class="text-center pb-16">
+    <a
+      href={base + '/partners'}
+      class="inline-flex items-center gap-2 border border-slate-300 text-slate-600 px-6 py-2.5 rounded-md text-sm font-medium hover:border-brand hover:text-brand transition"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      {backText}
+    </a>
+  </div>
+</BaseLayout>
+
+<style>
+  .logo-card {
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  }
+  .logo-card:hover {
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.09);
+    border-color: rgb(203 213 225);
+    transform: translateY(-2px);
+  }
+</style>

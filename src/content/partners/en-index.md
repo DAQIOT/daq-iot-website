@@ -7,9 +7,11 @@ items:
     desc: Recruiting agents and distributors — OEM/ODM branding and solution customization supported.
     link: /join
   - title: System Integrators
-    desc: Project collaboration with automation and IT system integrators.
+    desc: Project collaboration with automation and IT system integrators. Open to view our partner integrators.
+    link: /partners/integrators
   - title: Industry Customers
-    desc: Direct cooperation with customers in manufacturing, energy, water and other sectors.
+    desc: Direct cooperation with customers in manufacturing, energy, water and other sectors. Open to view our industry customers.
+    link: /partners/customers
 resourcesTitle: Resource Center
 resourcesSubtitle: Product brochures, certificates and whitepapers for partners to download.
 resources:

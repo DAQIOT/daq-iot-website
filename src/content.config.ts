@@ -35,6 +35,18 @@ const honors = defineCollection({
   schema: z.object({ name: z.string().optional() }).passthrough()
 });
 
+// 系统集成商 Logo 墙（合作伙伴页「系统集成商」卡片点开后的页面）
+const integrators = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/integrators' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
+// 行业客户 Logo 墙（合作伙伴页「行业客户」卡片点开后的页面，分光伏新能源 / 终端工厂两类）
+const customers = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/customers' }),
+  schema: z.object({ name: z.string().optional() }).passthrough()
+});
+
 const support = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './src/content/support' }),
   schema: z.object({ name: z.string().optional() }).passthrough()
@@ -162,6 +174,8 @@ export const collections = {
   partners,
   join,
   honors,
+  integrators,
+  customers,
   support,
   about,
   contact,

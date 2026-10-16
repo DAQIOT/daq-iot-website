@@ -1050,6 +1050,94 @@ collections:
                 label: 证书名称
                 widget: string
                 hint: 卡片下方显示的名称，也是放大查看时的说明文字。
+  - name: integrators
+    label: 系统集成商（Logo）
+    description: 合作伙伴页面「系统集成商」卡片点开后的 Logo 墙页面（/partners/integrators）。
+    folder: src/content/integrators
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    media_folder: /public/images/partners
+    public_folder: /images/partners
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: Logo 板块(可增删：一个板块 = 一组 Logo)
+        name: sections
+        widget: list
+        hint: 页面上按这里的顺序从上到下排列。
+        fields:
+          - name: title
+            label: 板块标题
+            widget: string
+          - name: desc
+            label: 板块说明（选填）
+            widget: text
+            required: false
+          - label: Logo 列表(可增删)
+            name: logos
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - name: image
+                label: Logo 图片
+                widget: image
+                hint: 上传到 /images/partners 目录；建议透明底 PNG，边长 400px 左右。
+              - name: name
+                label: 公司名称
+                widget: string
+                hint: Logo 下方的公司名称（同时也是图片的 alt 文字），可留空。
+  - name: customers
+    label: 行业客户（Logo）
+    description: 合作伙伴页面「行业客户」卡片点开后的 Logo 墙页面（/partners/customers），分「光伏新能源 / 终端工厂」两类。
+    folder: src/content/customers
+    create: false
+    i18n: false
+    identifier_field: editor_lang
+    media_folder: /public/images/partners
+    public_folder: /images/partners
+    fields:
+      - label: 语言
+        name: editor_lang
+        widget: string
+      - name: title
+        label: 标题
+        widget: string
+      - name: subtitle
+        label: 副标题
+        widget: text
+      - label: Logo 板块(可增删：一个板块 = 一类客户)
+        name: sections
+        widget: list
+        hint: 页面上按这里的顺序从上到下排列。当前两类：光伏新能源 / 终端工厂。
+        fields:
+          - name: title
+            label: 板块标题
+            widget: string
+          - name: desc
+            label: 板块说明（选填）
+            widget: text
+            required: false
+          - label: Logo 列表(可增删)
+            name: logos
+            widget: list
+            summary: '{{fields.name}}'
+            fields:
+              - name: image
+                label: Logo 图片
+                widget: image
+                hint: 上传到 /images/partners 目录；建议透明底 PNG，边长 400px 左右。
+              - name: name
+                label: 公司名称
+                widget: string
+                hint: Logo 下方的公司名称（同时也是图片的 alt 文字），可留空。
   - name: support
     label: 技术支持（旧集合，已并入「页面文案 → 服务与支持」）
     description: 本集合内容已迁移到「页面文案 → 服务与支持」编辑页的「技术支持 · …」字段，后台不再单独显示，保留定义仅为兼容旧数据。

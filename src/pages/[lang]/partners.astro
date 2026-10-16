@@ -16,8 +16,8 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = ((site.banner?.partnersPageImage as string) || (site.banner?.pageImage as string) || '');
 
-// 合作类型列表 = 标签；本页卡片**不可点开**（expandable={false}）：
-// 第一张是跳转卡片（去「加入我们」），另外两张只做说明，不在下方展开案例。
+// 合作类型列表 = 标签；本页三张卡片都是「跳转卡片」（expandable={false}，不在下方展开案例）：
+// 渠道伙伴加盟 → /join、系统集成商 → /partners/integrators（Logo 墙）、行业客户 → /partners/customers（Logo 墙）
 const tags = await getPageTags(lang, 'partners');
 // 资料中心卡片：带 link 的（产品彩页 → 产品中心、认证证书 → 荣誉资质、白皮书 → 解决方案）整块可点跳转
 const resources = (site.partners?.resources ?? []).map((it: { title: string; desc: string; link?: string }) => ({
@@ -30,7 +30,7 @@ const resources = (site.partners?.resources ?? []).map((it: { title: string; des
   <PageHero title={t('partners.title')} subtitle={t('partners.subtitle')} image={bannerImage} />
 
   <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-16">
-    <!-- 合作类型卡片：本页统一不可展开（expandable={false}）——第一张跳「加入我们」，另外两张纯说明 -->
+    <!-- 合作类型卡片：三张都是跳转卡片（本页不展开案例） -->
     <PageTagCards lang={lang} page="partners" tags={tags} variant="sm" expandable={false} />
   </section>
 

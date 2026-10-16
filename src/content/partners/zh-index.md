@@ -7,9 +7,11 @@ items:
     desc: 诚招代理商、加盟商，支持 OEM/ODM 贴牌生产与方案定制。
     link: /join
   - title: 系统集成商
-    desc: 面向自动化与信息化集成商的项目协作。
+    desc: 面向自动化与信息化集成商的项目协作，点开查看合作集成商名录。
+    link: /partners/integrators
   - title: 行业客户
-    desc: 制造、能源、水务等行业的直接合作客户。
+    desc: 制造、能源、水务等行业的直接合作客户，点开查看行业客户名录。
+    link: /partners/customers
 resourcesTitle: 资料中心
 resourcesSubtitle: 产品彩页、认证证书与白皮书，供合作伙伴下载使用
 resources:

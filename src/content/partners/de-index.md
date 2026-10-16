@@ -7,9 +7,11 @@ items:
     desc: Wir suchen Vertriebspartner und Distributoren – OEM/ODM und Lösungsanpassung inklusive.
     link: /join
   - title: Systemintegratoren
-    desc: Projektzusammenarbeit mit Automatisierungs- und IT-Systemintegratoren.
+    desc: Projektzusammenarbeit mit Automatisierungs- und IT-Systemintegratoren. Öffnen Sie die Partnerliste.
+    link: /partners/integrators
   - title: Industriekunden
-    desc: Direkte Zusammenarbeit mit Kunden aus Fertigung, Energie, Wasser u. a.
+    desc: Direkte Zusammenarbeit mit Kunden aus Fertigung, Energie, Wasser u. a. Öffnen Sie die Kundenliste.
+    link: /partners/customers
 resourcesTitle: Ressourcen-Center
 resourcesSubtitle: Produktbroschüren, Zertifikate und Whitepaper zum Download für Partner.
 resources:
