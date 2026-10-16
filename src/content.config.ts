@@ -141,6 +141,23 @@ const cases = defineCollection({
   })
 });
 
+// 方案库（解决方案页面左侧树里的方案文章，正文为中文，三语页面共用同一份）
+const plans = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/plans' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string().optional().default(''),
+    // 一级 / 二级分类：存中文规范名（见 src/i18n/plan-cats.ts）
+    category: z.string().optional().default(''),
+    subcategory: z.string().optional().default(''),
+    order: z.number().optional().default(0),
+    image: z.string().optional().default(''),
+    // 来源文档名（仅作追溯，不显示在页面上）
+    sourceDoc: z.string().optional().default(''),
+    hidden: z.boolean().optional().default(false)
+  })
+});
+
 const linkSchema = z.object({
   label: z.string(),
   url: z.string(),
@@ -183,5 +200,6 @@ export const collections = {
   products,
   posts,
   cases,
-  downloads
+  downloads,
+  plans
 };

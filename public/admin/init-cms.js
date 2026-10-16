@@ -385,7 +385,7 @@
     // 侧栏分组配置（顺序 = 侧栏出现顺序）：
     //   ① 内容管理（i18n 集合）② 页面文案（单文件页面）③ Logo 墙与资质（同样单文件，但单独分组）
     var GROUPS = [
-      { label: '内容管理', names: I18N_COLLECTIONS, cls: 'cms-group-content' },
+      { label: '内容管理', names: I18N_COLLECTIONS.concat(['plans']), cls: 'cms-group-content' },
       { label: '页面文案', names: SINGLE_FILE_COLLECTIONS, cls: 'cms-group-page' },
       { label: 'Logo 墙与资质', names: ASSET_COLLECTIONS, cls: 'cms-group-assets' }
     ];
@@ -644,6 +644,10 @@
       }
       if (templates.posts) {
         derived.push(derive(templates.posts, 'src/content/posts/' + lang, '⑤ 博客文章'));
+      }
+      // ⑥ 方案库：正文三语共用同一份中文内容，所以**不按语言派生**（切语言也显示同一批方案）
+      if (templates.plans) {
+        derived.push(derive(templates.plans, 'src/content/plans', '⑥ 方案库'));
       }
 
       // ── 页面文案组：i18n:false 集合，转为 file collection 只指向当前语言文件 ──

@@ -186,19 +186,18 @@ collections:
         default: []
         i18n: duplicate
         options:
-          # 选项 = 解决方案页面的 4 张卡片
-          - { label: 解决方案 · 智能制造, value: 解决方案 · 智能制造 }
-          - { label: 解决方案 · 光伏新能源, value: 解决方案 · 光伏新能源 }
-          - { label: 解决方案 · 智慧城市, value: 解决方案 · 智慧城市 }
-          - { label: 解决方案 · 电力与能源, value: 解决方案 · 电力与能源 }
           # 选项 = 服务与支持页面的 4 张卡片
           - { label: 服务与支持 · 方案咨询, value: 服务与支持 · 方案咨询 }
           - { label: 服务与支持 · 部署实施, value: 服务与支持 · 部署实施 }
           - { label: 服务与支持 · 运维培训, value: 服务与支持 · 运维培训 }
           - { label: 服务与支持 · 定制开发, value: 服务与支持 · 定制开发 }
-          # 合作伙伴页面的卡片目前都不可展开（「渠道伙伴加盟」是跳转卡片，另外两张纯说明），
-          # 所以这里没有「合作伙伴 · …」选项。以后若要恢复展开，需同时给 partners 页传 cases + expandable。
-        hint: 只作用于「解决方案 / 服务与支持」两个页面——决定案例出现在哪个页面的哪张卡片点开后。选项 = 「页面 · 卡片标题」，选了「解决方案 · 光伏新能源」，就会出现在解决方案页「光伏新能源」卡片点开的列表里。可多选（内容只维护一份，多页面复用）。⚠️ 不选 = 案例只出现在「项目案例」列表页；页面里改了卡片标题或新增卡片后，这里的选项需要同步（找我一分钟就能加）。
+          # 说明（2026-10-16）：
+          #  · 解决方案页面已改成「左侧两级分类树 + 方案卡片网格」，卡片不再是可展开的标签，
+          #    所以这里不再有「解决方案 · …」选项（原来选了也不会有任何展示）。
+          #    解决方案页的内容现在由「内容管理 → ⑥ 方案库」维护。
+          #  · 合作伙伴页面的卡片都不可展开（「渠道伙伴加盟」是跳转卡片，另外两张纯说明），
+          #    所以也没有「合作伙伴 · …」选项。
+        hint: 只作用于「服务与支持」页面——决定案例出现在该页哪张卡片点开后。选项 = 「服务与支持 · 卡片标题」。可多选（内容只维护一份，多页面复用）。⚠️ 不选 = 案例只出现在「项目案例」列表页。（解决方案页已改为独立的「方案库」，不再用案例标签。）
       - label: 排序（选填，数字越小越靠前）
         name: order
         widget: number
@@ -480,6 +479,72 @@ collections:
         name: body
         widget: markdown
         i18n: true
+  # ── ⑥ 方案库（解决方案页面左侧分类树里的方案文章）──────────────────────
+  # 正文是三语共用的中文内容（英/德页面直接显示中文正文，属于已知的过渡状态）。
+  # 分类树 = 这里的「一级分类 / 二级分类」自动聚合：一级顺序固定（代码里），
+  # 二级只要填同一个名字就会归到同一个节点，新增二级不用改代码。
+  - name: plans
+    label: ⑥ 方案库
+    description: 解决方案页面左侧树里的全部方案文章。左侧树的大类 / 子类由这里的「一级分类 / 二级分类」自动生成，页面顺序按「排序」从小到大。
+    folder: src/content/plans
+    create: true
+    delete: true
+    i18n: false
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    media_folder: /public/images/plans
+    public_folder: /images/plans
+    fields:
+      - label: 方案标题（必填）
+        name: title
+        widget: string
+        required: true
+        hint: 显示在卡片与详情页顶部，也会作为 URL（英文标题最省事；中文标题也能生成链接）。
+      - label: 一句话摘要（必填）
+        name: summary
+        widget: text
+        required: true
+        hint: 卡片上的一句话介绍，50-110 字最合适；详情页顶部也会显示。
+      - label: 一级分类（左侧树的大类）
+        name: category
+        widget: select
+        options:
+          - { label: 智能制造, value: 智能制造 }
+          - { label: 光伏新能源, value: 光伏新能源 }
+          - { label: 电力与能源, value: 电力与能源 }
+          - { label: 机器视觉与仪表识别, value: 机器视觉与仪表识别 }
+          - { label: 其他, value: 其他 }
+        hint: 决定方案挂在左侧树的哪个大类下；树的顺序固定（智能制造 → 光伏新能源 → 电力与能源 → 机器视觉与仪表识别 → 其他）。要新增大类找我一分钟就能加。
+      - label: 二级分类（左侧树的子类）
+        name: subcategory
+        widget: string
+        hint: 直接填名字（例如「设备联网与数据采集」「光伏电站数据采集」）。填已存在的名字就归到同一个节点，填新名字树上会多出一个节点——不需要改代码。留空则该方案只挂在所属大类下。
+      - label: 正文（方案内容）
+        name: body
+        widget: markdown
+        required: false
+        hint: 支持标题、表格、图片；图片建议压缩到 1100px 宽以内的 WebP（后台直接上传即可）。
+      - label: 排序号（同类内，小的排前面）
+        name: order
+        widget: number
+        required: false
+        default: 0
+      - label: 来源文档名（选填，仅作追溯）
+        name: sourceDoc
+        widget: string
+        required: false
+        hint: 原始 Word/PPT 文件名，页面上不显示。
+      - label: 封面图（列表卡片显示的图，选填）
+        name: image
+        widget: image
+        required: false
+        hint: 解决方案页卡片顶部的那张图。留空则不显示图（只有标题与摘要）。建议横版、比例接近 16:9；上传后会按 h-48 裁切填充。
+      - label: 在页面上隐藏
+        name: hidden
+        widget: boolean
+        required: false
+        default: false
   - name: site
     label: 网站基础文案
     folder: src/content/site
@@ -815,6 +880,7 @@ collections:
             widget: string
   - name: solutions
     label: 解决方案
+    description: 解决方案页面的标题与引导文案。⚠️ 页面上的方案列表不再在这里维护——改到「内容管理 → ⑥ 方案库」（左侧两级分类树由方案文章的「一级分类 / 二级分类」自动生成）。
     folder: src/content/solutions
     create: false
     i18n: false
@@ -832,21 +898,9 @@ collections:
       - name: p1
         label: 段落
         widget: text
-      - label: 方案列表(可增删)
-        name: items
-        widget: list
-        fields:
-          - name: title
-            label: 方案标题
-            widget: string
-          - name: desc
-            label: 方案描述
-            widget: text
-          - name: caseTitle
-            label: 展开后 · 案例区小标题（选填）
-            widget: string
-            required: false
-            hint: 点这张卡片展开后，案例区顶部的小字标题（例如「行业应用案例」）。留空时该标签统一显示「相关案例 / Related Cases」。只影响这一张卡片对应的标签，不影响其他标签。
+      # 注：页面上原来的「方案列表（4 张标签卡片）」已废弃（2026-10-16）——
+      # 解决方案页现在改成「左侧两级分类树 + 方案卡片网格」，内容来自「内容管理 → ⑥ 方案库」，
+      # 分类树的分类名在代码里（src/i18n/plan-cats.ts），这里不再维护卡片列表。
   - name: services
     label: 服务与支持
     folder: src/content/services

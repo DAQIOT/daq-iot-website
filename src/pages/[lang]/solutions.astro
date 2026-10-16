@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getTranslations, getSiteData, getAllCases, getPageTags } from '../../i18n/utils';
+import { getTranslations, getSiteData } from '../../i18n/utils';
+import { planCatKey, planSubKey, localizePlanCat, localizePlanSub, planCatRank, planSubRank } from '../../i18n/plan-cats';
 import type { Lang } from '../../i18n/config';
+import { getCollection } from 'astro:content';
 import PageHero from '../../components/PageHero.astro';
-import PageTagCards from '../../components/PageTagCards.astro';
 
 export function getStaticPaths() {
   return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
@@ -16,21 +17,236 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = ((site.banner?.solutionsImage as string) || (site.banner?.pageImage as string) || '');
 
-// 页面卡片 = 标签（点卡片展开对应案例）
-const tags = await getPageTags(lang, 'solutions');
-const cases = await getAllCases(lang);
+// 方案库：三语共用同一份内容（正文为中文），分类名按语言本地化
+const all = await getCollection('plans', (entry) => !entry.data.hidden);
+const plans = all.sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0) || a.data.title.localeCompare(b.data.title, 'zh')
+);
+
+// ── 两级分类树（一级 = category，二级 = subcategory；顺序由 plan-cats.ts 固定，未登记的排后面）──
+type Leaf = { key: string; label: string; count: number };
+type Branch = { key: string; label: string; count: number; children: Leaf[] };
+
+const acc = new Map<string, { key: string; count: number; subs: Map<string, number> }>();
+for (const p of plans) {
+  const ck = planCatKey(p.data.category) || 'other';
+  const sk = planSubKey(p.data.subcategory);
+  if (!acc.has(ck)) acc.set(ck, { key: ck, count: 0, subs: new Map() });
+  const node = acc.get(ck)!;
+  node.count += 1;
+  if (sk) node.subs.set(sk, (node.subs.get(sk) ?? 0) + 1);
+}
+const tree: Branch[] = [...acc.values()]
+  .sort((a, b) => planCatRank(a.key) - planCatRank(b.key))
+  .map((n) => {
+    const cur = plans.find((p) => (planCatKey(p.data.category) || 'other') === n.key);
+    return {
+      key: n.key,
+      label: localizePlanCat(cur?.data.category ?? n.key, lang),
+      count: n.count,
+      children: [...n.subs.entries()]
+        .sort((a, b) => planSubRank(n.key, a[0]) - planSubRank(n.key, b[0]))
+        .map(([key, count]) => {
+          const sample = plans.find(
+            (p) => (planCatKey(p.data.category) || 'other') === n.key && planSubKey(p.data.subcategory) === key
+          );
+          return { key, label: localizePlanSub(sample?.data.subcategory ?? key, lang), count };
+        })
+    };
+  });
+
+// 子类 → 父类映射（前端展开/收起用）
+const parentOf: Record<string, string> = {};
+tree.forEach((b) => b.children.forEach((c) => (parentOf[c.key] = b.key)));
+
+const items = plans.map((p) => ({
+  slug: p.id,
+  cat: planCatKey(p.data.category) || 'other',
+  sub: planSubKey(p.data.subcategory),
+  catLabel: localizePlanCat(p.data.category, lang),
+  subLabel: localizePlanSub(p.data.subcategory, lang),
+  title: p.data.title,
+  summary: p.data.summary,
+  image: p.data.image
+}));
+
+const zh = lang === 'zh';
+// 计数文案模板（前端过滤后替换 {n}）
+const tpl = zh ? '共 {n} 篇方案' : lang === 'de' ? 'Insgesamt {n} Lösungen' : '{n} solutions in total';
+const txt = {
+  treeTitle: zh ? '方案分类' : lang === 'de' ? 'Lösungen' : 'Solution categories',
+  all: zh ? '全部方案' : lang === 'de' ? 'Alle Lösungen' : 'All solutions',
+  count: (n: number) => tpl.replace('{n}', String(n)),
+  empty: zh ? '该分类下暂无方案' : lang === 'de' ? 'Keine Lösungen in dieser Kategorie' : 'No solutions in this category'
+};
 ---
 <BaseLayout lang={lang} title={t('solutions.title') + ' | DAQ-IOT'} description={t('solutions.subtitle')}>
   <PageHero title={t('solutions.title')} subtitle={t('solutions.subtitle')} image={bannerImage} />
 
-  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-16">
-    <p class="text-slate-600 max-w-3xl mb-10">{t('solutions.p1')}</p>
+  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-12">
+    <p class="text-slate-600 max-w-3xl mb-8">{t('solutions.p1')}</p>
 
-    <!-- 方案卡片 = 标签：点卡片展开该分类下的案例 -->
-    <PageTagCards lang={lang} page="solutions" tags={tags} cases={cases} variant="lg" />
+    {plans.length === 0 ? (
+      <p class="text-slate-500 py-12 text-center">暂无方案，欢迎在后台「方案库」中添加。</p>
+    ) : (
+      <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+        <!-- 分类树（一级可展开出二级） -->
+        <aside class="w-full md:w-64 md:shrink-0 md:sticky md:top-24">
+          <div class="md:bg-white md:border md:border-slate-200 md:rounded-2xl md:shadow-sm md:p-3">
+            <div class="side-title hidden md:flex">{txt.treeTitle}</div>
+            <div class="flex flex-wrap md:flex-col gap-1.5" id="planTree">
+              <button type="button" data-cat="" data-sub="" class="side-btn" id="planAllBtn">
+                <span class="truncate">{txt.all}</span>
+              </button>
+              {tree.map((b) => (
+                <div class="side-group">
+                  <button
+                    type="button"
+                    data-cat={b.key}
+                    data-sub=""
+                    aria-expanded="false"
+                    class="side-btn side-btn-parent"
+                  >
+                    <span class="truncate">{b.label}</span>
+                    {b.children.length > 0 && (
+                      <svg class="side-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    )}
+                  </button>
+                  {b.children.length > 0 && (
+                    <div class="side-sub" data-parent={b.key}>
+                      <div class="side-sub-inner">
+                        {b.children.map((c) => (
+                          <button type="button" data-cat={b.key} data-sub={c.key} class="side-btn side-btn-child">
+                            <span class="side-dot"></span>
+                            <span class="truncate">{c.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </aside>
 
-    <div class="text-center mt-12">
+        <!-- 方案网格 -->
+        <div class="flex-1 min-w-0">
+          <p class="text-sm text-slate-500 mb-5" id="planCount" data-tpl={tpl}>{txt.count(plans.length)}</p>
+          <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-7" id="planGrid">
+            {items.map((p) => (
+              <a
+                href={`${base}/solutions/${p.slug}`}
+                data-cat={p.cat}
+                data-sub={p.sub}
+                class="plan-card anim-card card-hover block bg-white border border-slate-200 rounded-2xl overflow-hidden"
+              >
+                {p.image && (
+                  <img src={p.image} alt={p.title} loading="lazy" decoding="async" class="w-full h-48 object-cover bg-slate-50" />
+                )}
+                <div class="p-6">
+                  <span class="inline-block text-xs font-medium text-brand bg-brand-light px-2 py-1 rounded mb-3">
+                    {p.subLabel || p.catLabel}
+                  </span>
+                  <h3 class="text-lg font-semibold text-brand-dark leading-snug">{p.title}</h3>
+                  <p class="mt-2 text-slate-600 text-sm leading-relaxed">{p.summary}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <p class="text-slate-500 py-12 text-center hidden" id="planEmpty">{txt.empty}</p>
+        </div>
+      </div>
+    )}
+
+    <div class="text-center mt-14">
       <a href={base + '/contact'} class="inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('nav.cta')}</a>
     </div>
   </section>
+
+  <style>
+    /* 卡片：封面图 + 分类标签 + 标题 + 摘要（无「查看详情」提示行，整卡可点） */
+    .plan-card h3 {
+      transition: color 0.2s ease;
+    }
+    .plan-card:hover h3 {
+      color: var(--color-brand);
+    }
+  </style>
 </BaseLayout>
+
+<script is:inline define:vars={{ parentOf, defaultCat: tree[0]?.key ?? '' }}>
+  (function () {
+    var grid = document.getElementById('planGrid');
+    var empty = document.getElementById('planEmpty');
+    if (!grid) return;
+    var cards = Array.from(grid.querySelectorAll('.plan-card'));
+    var btns = Array.from(document.querySelectorAll('#planTree .side-btn'));
+    var groups = Array.from(document.querySelectorAll('#planTree .side-group'));
+    var collapsed = {};
+
+    function paint(cat, sub) {
+      var visible = 0;
+      cards.forEach(function (c) {
+        var show = (!cat || c.dataset.cat === cat) && (!sub || c.dataset.sub === sub);
+        c.style.display = show ? '' : 'none';
+        if (show) {
+          c.style.animationDelay = Math.min(visible * 45, 320) + 'ms';
+          visible++;
+        }
+      });
+      if (empty) empty.classList.toggle('hidden', visible !== 0);
+      var countEl = document.getElementById('planCount');
+      if (countEl) {
+        countEl.textContent = countEl.dataset.tpl.replace('{n}', String(visible));
+      }
+
+      // 展开当前分类所在的组（用户手动收起过的不再自动展开）
+      var activeParent = sub ? parentOf[sub] || cat : cat;
+      groups.forEach(function (g) {
+        var pbtn = g.querySelector('.side-btn-parent');
+        var box = g.querySelector('.side-sub');
+        var key = pbtn ? pbtn.dataset.cat || '' : '';
+        var open = key !== '' && key === activeParent && !collapsed[key];
+        if (pbtn) {
+          pbtn.classList.toggle('is-open', open);
+          if (pbtn.hasAttribute('aria-expanded')) pbtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        if (box) box.classList.toggle('is-open', open);
+      });
+
+      btns.forEach(function (b) {
+        var bCat = b.dataset.cat || '';
+        var bSub = b.dataset.sub || '';
+        var on = bCat === cat && bSub === sub;
+        var selfParent = parentOf[bSub] || '';
+        var soft = !on && bCat !== '' && bSub === '' && selfParent !== '' && selfParent === (parentOf[sub] || '');
+        b.classList.toggle('side-btn-active', on);
+        b.classList.toggle('side-btn-soft', soft);
+      });
+    }
+
+    var basePath = location.pathname.replace(/\/+$/, '');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var cat = b.dataset.cat || '';
+        var sub = b.dataset.sub || '';
+        var isParent = b.classList.contains('side-btn-parent');
+        // 再点一次已展开且选中的一级 → 收起其二级（筛选结果不变）
+        if (isParent && cat && b.classList.contains('is-open') && b.classList.contains('side-btn-active')) {
+          collapsed[cat] = true;
+        } else if (cat) {
+          delete collapsed[cat];
+        }
+        var url = basePath + (cat ? '?cat=' + encodeURIComponent(cat) + (sub ? '&sub=' + encodeURIComponent(sub) : '') : '');
+        history.replaceState(null, '', url);
+        paint(cat, sub);
+      });
+    });
+
+    var params = new URLSearchParams(location.search);
+    paint(params.get('cat') || '', params.get('sub') || '');
+  })();
+</script>

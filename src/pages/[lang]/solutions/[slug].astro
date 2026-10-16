@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getTranslations, getSiteData } from '../../../i18n/utils';
+import { planCatKey, planSubKey, localizePlanCat, localizePlanSub } from '../../../i18n/plan-cats';
+import type { Lang } from '../../../i18n/config';
+import { getCollection, render } from 'astro:content';
+import PageHero from '../../../components/PageHero.astro';
+
+export async function getStaticPaths() {
+  const plans = await getCollection('plans', (entry) => !entry.data.hidden);
+  const langs: Lang[] = ['en', 'zh', 'de'];
+  return langs.flatMap((lang) => plans.map((entry) => ({ params: { lang, slug: entry.id }, props: { entry } })));
+}
+
+const { lang, slug } = Astro.params as { lang: Lang; slug: string };
+const { entry } = Astro.props;
+const t = await getTranslations(lang);
+const { Content } = await render(entry);
+const site = await getSiteData(lang);
+const bannerImage = (site.banner?.pageImage as string) || '';
+
+const listHref = '/' + lang + '/solutions';
+const contactHref = '/' + lang + '/contact';
+const catLabel = localizePlanCat(entry.data.category, lang);
+const subLabel = localizePlanSub(entry.data.subcategory, lang);
+
+// 同子类的其他方案（底部「相关方案」）
+const siblings = (await getCollection('plans', (p) => !p.data.hidden && p.id !== entry.id))
+  .filter((p) => planSubKey(p.data.subcategory) === planSubKey(entry.data.subcategory))
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .slice(0, 3);
+
+const zh = lang === 'zh';
+const txt = {
+  library: zh ? '方案库' : lang === 'de' ? 'Lösungen' : 'Solutions',
+  back: zh ? '返回方案库' : lang === 'de' ? 'Zurück zu allen Lösungen' : 'Back to all solutions',
+  related: zh ? '相关方案' : lang === 'de' ? 'Ähnliche Lösungen' : 'Related solutions',
+  tip: zh
+    ? '需要针对您的现场做方案细化？我们的工程师可提供免费评估与选型建议。'
+    : lang === 'de'
+      ? 'Sie benötigen eine auf Ihr Projekt zugeschnittene Lösung? Unsere Ingenieure beraten Sie gerne kostenfrei.'
+      : 'Need a solution tailored to your site? Our engineers offer a free assessment and selection advice.'
+};
+---
+<BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.summary}>
+  <PageHero title={entry.data.title} image={bannerImage} size="sm" width="narrow">
+    <nav slot="breadcrumb" class="text-sm text-slate-400 mb-3">
+      <a href={listHref} class="hover:text-brand">{txt.library}</a>
+      {catLabel && (
+        <>
+          <span class="mx-2">/</span>
+          <a href={listHref + '?cat=' + planCatKey(entry.data.category)} class="hover:text-brand">{catLabel}</a>
+        </>
+      )}
+      {subLabel && (
+        <>
+          <span class="mx-2">/</span>
+          <span class="text-slate-200">{subLabel}</span>
+        </>
+      )}
+    </nav>
+  </PageHero>
+
+  <section class="mx-auto max-w-4xl px-4 py-12">
+    <!-- 摘要 + 分类 + CTA -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-7 shadow-sm">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        {catLabel && <span class="text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{catLabel}</span>}
+        {subLabel && <span class="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded">{subLabel}</span>}
+      </div>
+      {entry.data.summary && <p class="text-lg text-slate-700 leading-relaxed">{entry.data.summary}</p>}
+      <div class="mt-6 flex flex-wrap items-center gap-4">
+        <a href={contactHref} class="inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">
+          {t('nav.cta', '获取报价')}
+        </a>
+        <p class="text-sm text-slate-500 flex-1 min-w-[220px]">{txt.tip}</p>
+      </div>
+    </div>
+
+    <!-- 方案正文 -->
+    <article class="plan-body mt-10 text-slate-700">
+      <Content />
+    </article>
+
+    <!-- 相关方案 -->
+    {siblings.length > 0 && (
+      <div class="mt-14 border-t border-slate-200 pt-8">
+        <h2 class="text-lg font-semibold text-brand-dark mb-5">{txt.related}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {siblings.map((s) => (
+            <a
+              href={`/${lang}/solutions/${s.id}`}
+              class="block bg-white border border-slate-200 rounded-2xl p-5 card-hover"
+            >
+              <h3 class="text-base font-semibold text-brand-dark leading-snug">{s.data.title}</h3>
+              <p class="mt-2 text-slate-600 text-sm leading-relaxed">{s.data.summary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="mt-12 text-center">
+      <a href={listHref} class="inline-flex items-center gap-2 text-brand font-medium hover:gap-3 transition-all">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        {txt.back}
+      </a>
+    </div>
+  </section>
+
+  <style>
+    /* 方案正文排版（Markdown 渲染结果：h2/h3/段落/图片/表格/图注） */
+    .plan-body {
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .plan-body :global(h2) {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--color-brand-dark, #0a2a43);
+      margin: 2.25rem 0 0.9rem;
+      padding-left: 0.75rem;
+      border-left: 4px solid var(--color-brand);
+      line-height: 1.4;
+    }
+    .plan-body :global(h3) {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #14384f;
+      margin: 1.75rem 0 0.7rem;
+    }
+    .plan-body :global(h4) {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #334155;
+      margin: 1.4rem 0 0.6rem;
+    }
+    .plan-body :global(p) {
+      margin: 0.9rem 0;
+    }
+    .plan-body :global(strong) {
+      color: #0f172a;
+    }
+    .plan-body :global(img) {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 1.5rem auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.875rem;
+      background: #f8fafc;
+    }
+    /* 图注：紧跟图片的短段落（Markdown 里生成的是 <em>） */
+    .plan-body :global(p:has(> em:only-child)) {
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #94a3b8;
+      margin-top: -0.75rem;
+    }
+    .plan-body :global(table) {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+      display: block;
+      overflow-x: auto;
+    }
+    .plan-body :global(th),
+    .plan-body :global(td) {
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .plan-body :global(th) {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    .plan-body :global(ul),
+    .plan-body :global(ol) {
+      margin: 0.9rem 0 0.9rem 1.25rem;
+      list-style: disc;
+    }
+    .plan-body :global(ol) {
+      list-style: decimal;
+    }
+    .plan-body :global(li) {
+      margin: 0.35rem 0;
+    }
+    .plan-body :global(blockquote) {
+      margin: 1.25rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid #cbd5e1;
+      background: #f8fafc;
+      color: #475569;
+    }
+    .plan-body :global(a) {
+      color: var(--color-brand);
+      text-decoration: underline;
+    }
+  </style>
+</BaseLayout>
+
+<script is:inline>
+  // 正文图片统一懒加载（Markdown 生成的 <img> 默认是立即加载，长文里有几十张图会拖慢首屏）
+  document.querySelectorAll('.plan-body img').forEach(function (img, i) {
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    if (i === 0) img.setAttribute('fetchpriority', 'high');
+  });
+</script>
