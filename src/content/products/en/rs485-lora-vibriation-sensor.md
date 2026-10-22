@@ -3,7 +3,7 @@ title: RS485 & Lora Vibriation Sensor
 summary: RS485  LoRa Wireless Temperature Vibration Sensor
 image: /images/微信图片_20261022112600_3215_31.png
 order: 11
-category: instrumentation
+category: wirelesssensor
 ---
 # 1 **Product Overview**
 
