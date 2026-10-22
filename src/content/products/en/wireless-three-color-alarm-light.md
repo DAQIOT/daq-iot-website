@@ -1,7 +1,7 @@
 ---
 title: Wireless Three-color Alarm Light
-summary: >-
-  ⚡ Key Product Advantages
+summary: MQTT/http  WiFi Wireless Andon Tower Light Industrial Stack Light Andon
+  System for MES ERP Production Line Status Alarm
 image: /images/products/1780562258728639.png
 order: 10
 category: instrumentation
