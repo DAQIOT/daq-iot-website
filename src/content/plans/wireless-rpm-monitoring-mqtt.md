@@ -1,11 +1,11 @@
 ---
-title: "旋转设备无线转速监测与 MQTT 平台对接方案"
-summary: "在工业生产中，电动机、齿轮箱、泵体、风机等旋转机械设备是生产作业的核心，其转速是否稳定直接影响生产效率和设备运行安全。"
-category: "智能制造"
-subcategory: "设备状态监测与预测性维护"
+title: 旋转设备无线转速监测与 MQTT 平台对接方案
+summary: 在工业生产中，电动机、齿轮箱、泵体、风机等旋转机械设备是生产作业的核心，其转速是否稳定直接影响生产效率和设备运行安全。
+category: 智能制造
+subcategory: 设备状态监测与预测性维护
 order: 1
-sourceDoc: "1、工业转速监测如何做到无线传输 + MQTT 平台对接？.docx"
-image: "/images/plans/wireless-rpm-monitoring-mqtt/img-02.webp"
+sourceDoc: 1、工业转速监测如何做到无线传输 + MQTT 平台对接？.docx
+image: /images/plans/6dcd5f99cb5e3272f7eca248ca5d9c96.png
 ---
 ### 工业转速监测如何做到无线传输 + MQTT 平台对接？
 
