@@ -1,11 +1,11 @@
 ---
-title: "工厂能耗监测：水电蒸汽表数据可视化节能方案"
-summary: "工业转型与智能制造的过程中，能耗数据的精准采集、分析与优化已成为工厂降本增效、实现可持续发展的核心。"
-category: "智能制造"
-subcategory: "能耗与能源管理"
+title: 工厂能耗监测：水电蒸汽表数据可视化节能方案
+summary: 工业转型与智能制造的过程中，能耗数据的精准采集、分析与优化已成为工厂降本增效、实现可持续发展的核心。
+category: 智能制造
+subcategory: 能耗与能源管理
 order: 12
-sourceDoc: "工厂能耗能源监测系统水电蒸汽表数据可视化节能方案.docx"
-image: "/images/plans/factory-energy-water-steam-visualization/img-02.webp"
+sourceDoc: 工厂能耗能源监测系统水电蒸汽表数据可视化节能方案.docx
+image: /images/plans/img-01.webp
 ---
 工厂能耗能源监测系统
 
