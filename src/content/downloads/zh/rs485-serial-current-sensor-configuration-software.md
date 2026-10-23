@@ -8,7 +8,7 @@ links:
   - label: 下载 / Download（RAR，约 35 MB）
     url: https://cn.daq-iot.com/down/PgprCBYS7845.rar
     type: external
-category: software
+category: config-tool
 releaseDate: ""
 order: 32
 ---
