@@ -1,11 +1,11 @@
 ---
-title: "无线转速传感器 + MQTT 在线测量监测系统方案"
-summary: "在工业生产中，旋转机械设备的运行状态直接关系到生产效率和设备安全。无线转速传感器作为工业物联网（IIoT）中的重要工具，能够实时监测设备转速，并通过无线通信技术将数据上传至远程监控系统，帮助用户实现高效、智能的设备管理。"
-category: "智能制造"
-subcategory: "设备状态监测与预测性维护"
+title: 无线转速传感器 + MQTT 在线测量监测系统方案
+summary: 在工业生产中，旋转机械设备的运行状态直接关系到生产效率和设备安全。无线转速传感器作为工业物联网（IIoT）中的重要工具，能够实时监测设备转速，并通过无线通信技术将数据上传至远程监控系统，帮助用户实现高效、智能的设备管理。
+category: 智能制造
+subcategory: 设备状态监测与预测性维护
 order: 14
-sourceDoc: "无线转速传感器+MQTT在线测量监测系统变送器旋转设备 .docx"
-image: "/images/plans/wireless-rpm-sensor-mqtt-system/img-03.webp"
+sourceDoc: 无线转速传感器+MQTT在线测量监测系统变送器旋转设备 .docx
+image: /images/plans/wireless-rpm-sensor-mqtt-system/img-03.webp
 ---
 在工业生产中，旋转机械设备的运行状态直接关系到生产效率和设备安全。无线转速传感器作为工业物联网（IIoT）中的重要工具，能够实时监测设备转速，并通过无线通信技术将数据上传至远程监控系统，帮助用户实现高效、智能的设备管理。
 
@@ -51,7 +51,7 @@ image: "/images/plans/wireless-rpm-sensor-mqtt-system/img-03.webp"
 
 主流通讯协议对接：实现高效远程监控
 
-![无线转速传感器 + MQTT 在线测量监测系统方案](/images/plans/wireless-rpm-sensor-mqtt-system/img-03.webp)
+![无线转速传感器 + MQTT 在线测量监测系统方案](/images/plans/img-03.webp)
 
 无线转速传感器支持TCP/UDP/HTTP/MQTT协议，能够轻松对接物联网平台，实现高效的远程监控。
 
