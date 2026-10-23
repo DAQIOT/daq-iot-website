@@ -16,7 +16,7 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = ((site.banner?.servicesImage as string) || (site.banner?.pageImage as string) || '');
 
-// 服务列表 = 标签（点卡片展开该分类下的案例）
+// 服务列表 = 标签卡片（纯说明，不展开案例：expandable=false 去掉「查看案例」）
 const tags = await getPageTags(lang, 'services');
 // 服务项目小标题（后台可改，留空按语言兜底）
 const itemsTitle =
@@ -24,10 +24,10 @@ const itemsTitle =
   (lang === 'zh' ? '服务项目' : lang === 'de' ? 'Unsere Leistungen' : 'Our Services');
 
 // 技术支持板块：后台「页面文案 → 服务与支持」里的「技术支持 · …」字段维护
-// （原独立 support 集合已并入本页面，这里保留 site.support 作数据兜底）
+// 每个条目可配 link（如 /support/docs）→ 卡片整块可点，跳到对应资源页
 const svc = (site.services ?? {}) as Record<string, any>;
 const legacySupport = (site.support ?? {}) as Record<string, any>;
-const supportItems = ((svc.supportItems ?? legacySupport.items) ?? []) as { title: string; desc: string }[];
+const supportItems = ((svc.supportItems ?? legacySupport.items) ?? []) as { title: string; desc: string; link?: string }[];
 const supportTitle =
   (svc.supportTitle as string) ||
   (legacySupport.title as string) ||
@@ -45,8 +45,8 @@ const cases = await getAllCases(lang);
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-brand-dark">{itemsTitle}</h2>
     </div>
-    <!-- 服务卡片 = 标签：点卡片展开该分类下的案例 -->
-    <PageTagCards lang={lang} page="services" tags={tags} cases={cases} variant="md" />
+    <!-- 服务卡片 = 标签：纯说明卡片（2026-10-23 去掉点击展开案例功能） -->
+    <PageTagCards lang={lang} page="services" tags={tags} cases={cases} variant="md" expandable={false} />
   </section>
 
   <!-- 技术支持（原「支持」页面内容已合并到这里） -->
@@ -58,12 +58,20 @@ const cases = await getAllCases(lang);
           {supportSubtitle && <p class="mt-3 text-slate-500 max-w-3xl mx-auto">{supportSubtitle}</p>}
         </div>
         <div class="grid sm:grid-cols-3 gap-6">
-          {supportItems.map((it) => (
-            <div class="bg-white border border-slate-200 rounded-2xl p-8 card-hover">
-              <h3 class="text-lg font-semibold text-brand-dark">{it.title}</h3>
-              <p class="mt-2 text-slate-600 text-sm leading-relaxed">{it.desc}</p>
-            </div>
-          ))}
+          {supportItems.map((it) => {
+            const href = it.link ? base + it.link : '';
+            return href ? (
+              <a href={href} class="group bg-white border border-slate-200 rounded-2xl p-8 card-hover block">
+                <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{it.title}</h3>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">{it.desc}</p>
+              </a>
+            ) : (
+              <div class="bg-white border border-slate-200 rounded-2xl p-8">
+                <h3 class="text-lg font-semibold text-brand-dark">{it.title}</h3>
+                <p class="mt-2 text-slate-600 text-sm leading-relaxed">{it.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

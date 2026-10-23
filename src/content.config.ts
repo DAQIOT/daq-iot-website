@@ -184,6 +184,26 @@ const downloads = defineCollection({
   })
 });
 
+// 技术支持资源库（文档中心 / RMA 服务 / 培训资源）
+// 三语共用一份内容（文档标题一般不翻译），category 存 support-types.ts 里的 key
+const resources = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/resources' }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string().optional().default(''),
+    // docs | rma | training（见 src/i18n/support-types.ts）
+    category: z.string().optional().default('docs'),
+    // 左侧分类（后台自由填写，如「产品手册」「返修流程」），留空归「其他」
+    subcategory: z.string().optional().default(''),
+    // 上传的文件（/files/resources/...）
+    file: z.string().optional().default(''),
+    // 在线链接（语雀文档、在线视频等）
+    link: z.string().optional().default(''),
+    order: z.number().optional().default(0),
+    hidden: z.boolean().optional().default(false)
+  })
+});
+
 export const collections = {
   site,
   solutions,
@@ -201,5 +221,6 @@ export const collections = {
   posts,
   cases,
   downloads,
-  plans
+  plans,
+  resources
 };

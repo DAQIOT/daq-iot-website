@@ -1,0 +1,257 @@
+---
+/**
+ * 技术支持资源页：/zh/support/docs · /rma · /training（三语 × 3 类型）
+ *
+ * 布局（参考星纵文档中心）：左侧分类列表 + 右侧文档条目列表（图标 + 标题）+ 底部分页
+ * 内容来自内容集合 resources（src/content/resources），category 字段 = 本页 type.key
+ * 条目两种形态：
+ *   - 配了 link → 在线文档（语雀等），新窗口打开
+ *   - 配了 file → 上传的文件，新窗口打开 / 下载
+ * 后台「内容管理 → ⑦ 资源库（文档/RMA/培训）」维护。
+ */
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getSiteData } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/config';
+import { getCollection } from 'astro:content';
+import { SUPPORT_TYPES, supportTypeByKey, supportTypeLabel, supportTypeDesc } from '../../../i18n/support-types';
+import PageHero from '../../../components/PageHero.astro';
+
+export async function getStaticPaths() {
+  const langs: Lang[] = ['en', 'zh', 'de'];
+  return langs.flatMap((lang) =>
+    SUPPORT_TYPES.map((type) => ({ params: { lang, type: type.key }, props: { type } }))
+  );
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const { type } = Astro.props as { type: NonNullable<ReturnType<typeof supportTypeByKey>> };
+const site = await getSiteData(lang);
+const base = '/' + lang;
+const zh = lang === 'zh';
+
+// 顶部横幅（沿用服务页的横幅配置）
+const bannerImage =
+  ((site.services?.supportImage as string) || (site.banner?.servicesImage as string) || (site.banner?.pageImage as string) || '');
+
+const label = supportTypeLabel(type, lang);
+const desc = supportTypeDesc(type, lang);
+
+// 本类型的全部资源条目（三语共用，order 升序）
+const all = await getCollection('resources', (e) => !e.data.hidden && e.data.category === type.key);
+const items = all
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0) || a.data.title.localeCompare(b.data.title, 'zh'))
+  .map((e) => ({
+    slug: e.id,
+    title: e.data.title,
+    summary: e.data.summary || '',
+    sub: (e.data.subcategory || '').trim(),
+    file: e.data.file || '',
+    link: e.data.link || ''
+  }));
+
+// 左侧分类 = 子分类聚合（保持出现顺序），空值归「其他」
+const otherLabel = zh ? '其他' : lang === 'de' ? 'Sonstiges' : 'Others';
+const subList: { name: string; count: number }[] = [];
+{
+  const map = new Map<string, number>();
+  for (const it of items) {
+    const name = it.sub || otherLabel;
+    map.set(name, (map.get(name) ?? 0) + 1);
+  }
+  for (const [name, count] of map) subList.push({ name, count });
+}
+
+// 文件扩展名徽标（如 PDF / DOCX / ZIP）
+const extOf = (url: string) => {
+  const m = url.split('?')[0].match(/\.([a-z0-9]{2,5})$/i);
+  return m ? m[1].toUpperCase() : '';
+};
+
+const allLabel = zh ? '全部分类' : lang === 'de' ? 'Alle' : 'All';
+const emptyText = zh ? '内容正在整理中，敬请期待' : lang === 'de' ? 'Inhalte folgen in Kürze' : 'Content is coming soon';
+const backText = zh ? '服务与支持' : lang === 'de' ? 'Service & Support' : 'Services & Support';
+const onlineText = zh ? '在线文档' : lang === 'de' ? 'Online-Dokument' : 'Online doc';
+const fileText = zh ? '文件下载' : lang === 'de' ? 'Datei-Download' : 'Download';
+const pagerPrev = zh ? '上一页' : lang === 'de' ? 'Zurück' : 'Prev';
+const pagerNext = zh ? '下一页' : lang === 'de' ? 'Weiter' : 'Next';
+const gotoText = zh ? '前往' : lang === 'de' ? 'Gehe zu' : 'Go to';
+const pageUnit = zh ? '页' : lang === 'de' ? 'Seite' : 'page';
+---
+<BaseLayout lang={lang} title={label + ' | DAQ-IOT'} description={desc}>
+  <PageHero title={label} subtitle={desc} image={bannerImage} />
+
+  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
+    <!-- 面包屑 -->
+    <nav class="mb-6 text-sm text-slate-500 flex items-center gap-2">
+      <a href={base + '/services'} class="hover:text-brand transition">{backText}</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-slate-700 font-medium">{label}</span>
+    </nav>
+
+    {/* 注意：这里不能用大三元 `{cond ? (...) : (...)}` —— Astro 编译器对大分支三元会生成坏代码（else 分支丢右括号），必须拆成两个 && 表达式 */}
+    {items.length === 0 && (
+      <p class="text-slate-400 py-24 text-center">{emptyText}</p>
+    )}
+    {items.length > 0 && (
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+      <aside class="w-full md:w-60 md:shrink-0 md:sticky md:top-24">
+        <div class="md:bg-white md:border md:border-slate-200 md:rounded-2xl md:shadow-sm md:p-3">
+          <div class="side-title hidden md:flex">
+            {zh ? '文档分类' : lang === 'de' ? 'Kategorien' : 'Categories'}
+          </div>
+          <div class="flex flex-wrap md:flex-col gap-1.5" id="resCatFilter">
+            <button type="button" data-cat="all" class:list={['side-btn', 'side-btn-active']}>
+              <span class="truncate">{allLabel}</span>
+            </button>
+            {subList.map((s) => (
+              <button type="button" data-cat={s.name} class:list={['side-btn']}>
+                <span class="truncate">{s.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </aside>
+
+      <div class="flex-1 min-w-0">
+        <div id="resList">
+          {items.map((it) => {
+            const ext = it.link ? '' : extOf(it.file);
+            return (
+            <a
+              href={it.link || it.file}
+              target="_blank"
+              rel={it.link ? 'noopener noreferrer' : undefined}
+              class="res-row group flex items-start gap-4 py-5 border-b border-slate-100"
+              data-cat={it.sub || otherLabel}
+            >
+              <span class="mt-0.5 shrink-0 text-slate-400 group-hover:text-brand transition">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="8" y1="13" x2="16" y2="13"></line>
+                  <line x1="8" y1="17" x2="13" y2="17"></line>
+                </svg>
+              </span>
+              <span class="min-w-0 flex-1">
+                <span class="block text-[15px] font-medium text-slate-800 group-hover:text-brand transition leading-snug">{it.title}</span>
+                {it.summary && <span class="block mt-1.5 text-sm text-slate-500 leading-relaxed line-clamp-2">{it.summary}</span>}
+              </span>
+              <span class="shrink-0 hidden sm:inline-flex items-center text-xs px-2 py-1 rounded bg-slate-50 text-slate-500 group-hover:bg-brand-light group-hover:text-brand transition">
+                {it.link ? onlineText : ext || fileText}
+              </span>
+            </a>
+            );
+          })}
+        </div>
+
+        <nav class="res-pager mt-10 items-center justify-center gap-2 text-sm" style="display:none" aria-label="pagination">
+          <button type="button" class="res-pager-btn" data-pager="prev">{pagerPrev}</button>
+          <span class="flex items-center gap-2" id="resPages"></span>
+          <button type="button" class="res-pager-btn" data-pager="next">{pagerNext}</button>
+          <span class="ml-3 flex items-center gap-1.5 text-slate-500">
+            {gotoText} <input id="resGoto" type="number" min="1" value="1" class="w-14 px-2 py-1.5 text-center border border-slate-200 rounded focus:outline-none focus:border-brand" /> {pageUnit}
+          </span>
+        </nav>
+      </div>
+    </div>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .res-pager-btn {
+    padding: 0.5rem 0.9rem;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease;
+  }
+  .res-pager-btn:hover:not(:disabled) { background: #e2e8f0; color: #1e293b; }
+  .res-pager-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .res-page-btn {
+    min-width: 2.4rem;
+    padding: 0.5rem 0.4rem;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 0.375rem;
+    text-align: center;
+    transition: all 0.15s ease;
+  }
+  .res-page-btn:hover { background: #e2e8f0; }
+  .res-page-btn.is-active { background: var(--color-brand, #0096d6); color: #fff; }
+  #resGoto:focus-visible { outline: none; }
+</style>
+
+<script is:inline>
+  (function () {
+    var PAGE_SIZE = 10;
+    var list = document.getElementById('resList');
+    if (!list) return;
+    var rows = Array.prototype.slice.call(list.querySelectorAll('.res-row'));
+    var catBtns = Array.prototype.slice.call(document.querySelectorAll('#resCatFilter .side-btn'));
+    var pager = document.querySelector('.res-pager');
+    var pagesBox = document.getElementById('resPages');
+    var prevBtn = document.querySelector('[data-pager="prev"]');
+    var nextBtn = document.querySelector('[data-pager="next"]');
+    var gotoInput = document.getElementById('resGoto');
+    var emptyEl = document.getElementById('resEmpty');
+
+    var state = { cat: 'all', page: 1 };
+
+    function visible() {
+      return rows.filter(function (r) {
+        return state.cat === 'all' || r.getAttribute('data-cat') === state.cat;
+      });
+    }
+
+    function render() {
+      var show = visible();
+      var totalPages = Math.max(1, Math.ceil(show.length / PAGE_SIZE));
+      if (state.page > totalPages) state.page = totalPages;
+      if (state.page < 1) state.page = 1;
+
+      rows.forEach(function (r) { r.style.display = 'none'; });
+      show.slice((state.page - 1) * PAGE_SIZE, state.page * PAGE_SIZE).forEach(function (r, i) {
+        r.style.display = '';
+        r.style.animationDelay = Math.min(i * 40, 320) + 'ms';
+      });
+
+      // 页码按钮
+      pagesBox.innerHTML = '';
+      for (var p = 1; p <= totalPages; p++) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'res-page-btn' + (p === state.page ? ' is-active' : '');
+        b.textContent = String(p);
+        (function (pg) {
+          b.addEventListener('click', function () { state.page = pg; render(); });
+        })(p);
+        pagesBox.appendChild(b);
+      }
+      prevBtn.disabled = state.page <= 1;
+      nextBtn.disabled = state.page >= totalPages;
+      gotoInput.value = state.page;
+      gotoInput.max = totalPages;
+      pager.style.display = totalPages <= 1 ? 'none' : 'flex';
+
+      if (emptyEl) emptyEl.classList.toggle('hidden', show.length !== 0);
+    }
+
+    catBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.cat = b.getAttribute('data-cat') || 'all';
+        state.page = 1;
+        catBtns.forEach(function (x) { x.classList.toggle('side-btn-active', x === b); });
+        render();
+      });
+    });
+    prevBtn.addEventListener('click', function () { state.page--; render(); });
+    nextBtn.addEventListener('click', function () { state.page++; render(); });
+    gotoInput.addEventListener('change', function () {
+      var v = parseInt(gotoInput.value, 10);
+      if (!isNaN(v)) { state.page = v; render(); }
+    });
+
+    render();
+  })();
+</script>

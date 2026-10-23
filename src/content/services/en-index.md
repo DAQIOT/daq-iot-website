@@ -16,9 +16,12 @@ supportSubtitle: Documentation, RMA and training resources to keep your systems 
 supportItems:
   - title: Documentation
     desc: Product manuals, wiring diagrams, configuration guides and API docs.
+    link: /support/docs
   - title: RMA Service
     desc: After-sales repair and warranty process with fast response for faulty devices.
+    link: /support/rma
   - title: Training Resources
     desc: "Online videos and on-site training to boost O&M capability."
+    link: /support/training
 name: index
 ---

@@ -545,6 +545,63 @@ collections:
         widget: boolean
         required: false
         default: false
+  - name: resources
+    label: ⑦ 资源库（文档 / RMA / 培训）
+    description: 服务与支持页「技术支持」三张卡片对应的资源页内容：文档中心、RMA 服务、培训资源。页面为左侧分类 + 右侧文档列表 + 分页，条目可以是上传的文件，也可以是语雀等在线链接。
+    folder: src/content/resources
+    create: true
+    delete: true
+    i18n: false
+    extension: md
+    format: frontmatter
+    slug: '{{title}}'
+    media_folder: /public/files/resources
+    public_folder: /files/resources
+    fields:
+      - label: 标题（必填）
+        name: title
+        widget: string
+        required: true
+        hint: 文档 / 资源的名称，显示在列表一行里（如「星纵UC系列RS485 Modbus主动采集」）。
+      - label: 一句话说明（选填）
+        name: summary
+        widget: text
+        required: false
+        hint: 显示在标题下方的小字说明，建议 1-2 句；留空则只显示标题。
+      - label: 所属板块
+        name: category
+        widget: select
+        default: docs
+        options:
+          - { label: 文档中心, value: docs }
+          - { label: RMA 服务, value: rma }
+          - { label: 培训资源, value: training }
+        hint: 决定这条资源出现在哪个页面（/support/docs、/support/rma、/support/training）。
+      - label: 左侧分类
+        name: subcategory
+        widget: string
+        required: false
+        hint: 页面左侧分类列表的名字（如「产品手册」「返修流程」「操作视频」）。填已存在的名字就归到同一类，填新名字会自动多出一个分类；留空归「其他」。
+      - label: 上传文件（选填）
+        name: file
+        widget: file
+        required: false
+        hint: PDF / Word / Excel / Zip 等，点击条目后打开或下载。与「在线链接」二选一，都填时优先走在线链接。
+      - label: 在线链接（选填）
+        name: link
+        widget: string
+        required: false
+        hint: 语雀文档、在线视频等外部地址（https://… 开头），点击后新窗口打开。
+      - label: 排序号（小的排前面）
+        name: order
+        widget: number
+        required: false
+        default: 0
+      - label: 在页面上隐藏
+        name: hidden
+        widget: boolean
+        required: false
+        default: false
   - name: site
     label: 网站基础文案
     folder: src/content/site
@@ -952,7 +1009,7 @@ collections:
         name: supportItems
         widget: list
         required: false
-        hint: 三个卡片，例如文档中心 / RMA 服务 / 培训资源
+        hint: 三个卡片（文档中心 / RMA 服务 / 培训资源）。配了「跳转链接」的卡片整块可点，跳到 /support/… 资源页（内容在「内容管理 → ⑦ 资源库」维护）
         fields:
           - name: title
             label: 标题
@@ -960,6 +1017,11 @@ collections:
           - name: desc
             label: 描述
             widget: text
+          - name: link
+            label: 跳转链接（选填）
+            widget: string
+            required: false
+            hint: 站内路径（以 / 开头），如 /support/docs、/support/rma、/support/training。填了卡片整块可点跳转；留空则仍是纯说明卡片
   - name: partners
     label: 合作伙伴
     folder: src/content/partners

@@ -16,9 +16,12 @@ supportSubtitle: Dokumentation, RMA und Schulungsressourcen für den stabilen Be
 supportItems:
   - title: Dokumentation
     desc: Produkthandbücher, Schaltpläne, Konfigurationsleitfäden und API-Dokumentation.
+    link: /support/docs
   - title: RMA-Service
     desc: After-Sales-Reparatur und Garantieprozess mit schneller Reaktion auf defekte Geräte.
+    link: /support/rma
   - title: Schulungsressourcen
     desc: "Online-Videos und Vor-Ort-Schulungen zur Stärkung der O&M-Kompetenz."
+    link: /support/training
 name: index
 ---
