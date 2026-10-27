@@ -1,0 +1,423 @@
+---
+/**
+ * 站内搜索结果页：/<lang>/search?q=关键词（三语）
+ *
+ * 布局（参考星纵/斯通达搜索结果页）：面包屑 + 左侧「其他导航」+ 右侧搜索结果列表
+ * 结果条目：缩略图 + 标题（关键词高亮 + 日期）+ 摘要 + 类型徽标
+ *
+ * 数据来源：构建期生成的 /<lang>/search-index.json（产品 + 案例 + 方案 + 资讯）。
+ * 静态站点无后端，由本页前端脚本按 URL 里的 q 参数过滤索引并渲染。
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getTranslations } from '../../i18n/utils';
+import type { Lang } from '../../i18n/config';
+
+export async function getStaticPaths() {
+  return (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = await getTranslations(lang);
+const base = '/' + lang;
+
+// 三语文案（含前端脚本要用的，统一放这里）
+const T = {
+  zh: {
+    title: '搜索结果',
+    home: '首页',
+    placeholder: '输入关键词搜索',
+    btn: '搜索',
+    noKeyword: '请输入关键词进行搜索',
+    empty: '未找到与「{q}」相关的内容，换个关键词试试',
+    count: '共 {n} 条与「{q}」相关的结果',
+    pageInfo: '第 {p}/{t} 页 · 共 {n} 条',
+    prev: '上一页',
+    next: '下一页',
+    navTitle: '网站导航',
+    types: { product: '产品', plan: '方案', case: '案例', post: '资讯' },
+  },
+  en: {
+    title: 'Search Results',
+    home: 'Home',
+    placeholder: 'Search products...',
+    btn: 'Search',
+    noKeyword: 'Please enter a keyword to search',
+    empty: 'No results found for "{q}". Try another keyword',
+    count: '{n} results for "{q}"',
+    pageInfo: 'Page {p}/{t} · {n} results',
+    prev: 'Prev',
+    next: 'Next',
+    navTitle: 'Site Navigation',
+    types: { product: 'Product', plan: 'Solution', case: 'Case', post: 'News' },
+  },
+  de: {
+    title: 'Suchergebnisse',
+    home: 'Startseite',
+    placeholder: 'Produkte suchen...',
+    btn: 'Suchen',
+    noKeyword: 'Bitte geben Sie ein Suchwort ein',
+    empty: 'Keine Ergebnisse für "{q}". Versuchen Sie ein anderes Stichwort',
+    count: '{n} Ergebnisse für "{q}"',
+    pageInfo: 'Seite {p}/{t} · {n} Ergebnisse',
+    prev: 'Zurück',
+    next: 'Weiter',
+    navTitle: 'Navigation',
+    types: { product: 'Produkt', plan: 'Lösung', case: 'Fall', post: 'News' },
+  },
+}[lang];
+
+// 左侧「其他导航」：与顶部导航一致的栏目列表（每项配图标）
+const ICONS = {
+  products: '<rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M8 12h2M14 12h2M12 8v2M12 14v2"></path>',
+  solutions: '<path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4.9 1 .9 1.6v1.5h5.2v-1.5c0-.6.3-1.2.9-1.6A6 6 0 0 0 12 3Z"></path>',
+  services: '<circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"></path>',
+  cases: '<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"></path>',
+  partners: '<circle cx="9" cy="8" r="3"></circle><path d="M3 20a6 6 0 0 1 12 0"></path><path d="M16 5.5a3 3 0 0 1 0 5.5"></path><path d="M18 20a5 5 0 0 0-2-4"></path>',
+  downloads: '<path d="M12 3v12"></path><path d="m7 11 5 5 5-5"></path><path d="M4 20h16"></path>',
+  blog: '<rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 8h10M7 12h10M7 16h6"></path>',
+  about: '<circle cx="12" cy="12" r="9"></circle><path d="M12 8h.01M11 12h1v5h1"></path>',
+  contact: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>',
+};
+
+const navItems = [
+  { href: base + '/products', label: t('nav.products'), icon: ICONS.products },
+  { href: base + '/solutions', label: t('nav.solutions'), icon: ICONS.solutions },
+  { href: base + '/services', label: t('nav.services'), icon: ICONS.services },
+  { href: base + '/cases', label: t('nav.cases'), icon: ICONS.cases },
+  { href: base + '/partners', label: t('nav.partners'), icon: ICONS.partners },
+  { href: base + '/downloads', label: t('nav.downloads'), icon: ICONS.downloads },
+  { href: base + '/blog', label: t('nav.blog'), icon: ICONS.blog },
+  { href: base + '/about', label: t('nav.about'), icon: ICONS.about },
+  { href: base + '/contact', label: t('nav.contact'), icon: ICONS.contact },
+];
+
+const path = Astro.url.pathname;
+const active = (href: string) => path.startsWith(href);
+---
+<BaseLayout lang={lang} title={T.title + ' | DAQ-IOT'} description={T.title}>
+  <section class="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
+    <!-- 面包屑 -->
+    <nav class="mb-6 text-sm text-slate-500 flex items-center gap-2">
+      <a href={base + '/'} class="hover:text-brand transition">{T.home}</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-slate-700 font-medium">{T.title}</span>
+    </nav>
+
+    <div class="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
+      <!-- 左侧：搜索框 + 其他导航 -->
+      <aside class="w-full md:w-60 md:shrink-0 md:sticky md:top-24 space-y-6">
+        <form action={base + '/search'} method="get" class="flex items-center border border-slate-300 rounded-lg overflow-hidden focus-within:border-brand bg-white">
+          <input
+            id="pageSearchInput"
+            name="q"
+            type="text"
+            placeholder={T.placeholder}
+            autocomplete="off"
+            class="flex-1 min-w-0 px-3 py-2 text-sm outline-none bg-transparent"
+          />
+          <button type="submit" class="px-3 py-2 text-slate-500 hover:text-brand transition" aria-label={T.btn}>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+
+        <!-- 其他导航（图标卡片式） -->
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-sm p-3">
+          <div class="flex items-center gap-2 px-2 pt-1 pb-2">
+            <span class="w-1 h-4 rounded-full bg-brand"></span>
+            <span class="text-sm font-semibold text-slate-900">{T.navTitle}</span>
+          </div>
+          <nav class="grid grid-cols-2 md:grid-cols-1 gap-1">
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  'group flex items-center gap-3 px-2.5 py-2.5 rounded-xl transition',
+                  active(item.href)
+                    ? 'bg-brand-light text-brand'
+                    : 'text-slate-600 hover:bg-brand-light/60 hover:text-brand',
+                ]}
+              >
+                <span
+                  class:list={[
+                    'shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition',
+                    active(item.href)
+                      ? 'bg-white text-brand'
+                      : 'bg-slate-50 text-slate-400 group-hover:bg-white group-hover:text-brand',
+                  ]}
+                >
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon}></svg>
+                </span>
+                <span class:list={['min-w-0 flex-1 truncate text-sm', active(item.href) ? 'font-medium' : '']}>{item.label}</span>
+                <svg class="w-3.5 h-3.5 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+              </a>
+            ))}
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 右侧：搜索结果 -->
+      <div class="flex-1 min-w-0">
+        <h1 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-1.5 h-5 bg-brand rounded-sm"></span>
+          {T.title}
+        </h1>
+        <p id="searchCount" class="mt-2 text-sm text-slate-500"></p>
+        <div id="searchResults" class="mt-2"></div>
+        <div id="searchPager" class="hidden mt-8 flex flex-wrap items-center justify-center gap-1.5"></div>
+        <p id="searchEmpty" class="hidden py-20 text-center text-slate-400"></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ lang, texts: T }}>
+  var T = texts;
+  var listEl = document.getElementById('searchResults');
+  var countEl = document.getElementById('searchCount');
+  var emptyEl = document.getElementById('searchEmpty');
+  var inputEl = document.getElementById('pageSearchInput');
+
+  var params = new URLSearchParams(location.search);
+  var q = (params.get('q') || '').trim();
+  if (inputEl) inputEl.value = q;
+
+  function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  // —— 模糊匹配规则 ——
+  // ① 归一化：小写 + 去掉空格/连字符/标点，让「4G 网关」「4g-网关」都能命中「4G网关」
+  function norm(s) {
+    return String(s == null ? '' : s)
+      .toLowerCase()
+      .replace(/[\s\-_/\\.,:：;；、|"'“”‘’()（）\[\]【】{}<>《》]+/g, '');
+  }
+
+  // ② 分词：数字/英文串整段，中文串按 2 字切（「4g网关」→ ['4g','网关']；「数据采集网关」→ ['数据','采集','网关']）
+  function tokenize(s) {
+    var n = norm(s);
+    var out = [];
+    var re = /[a-z0-9]+|[\u4e00-\u9fa5]+/g;
+    var m;
+    while ((m = re.exec(n)) !== null) {
+      var run = m[0];
+      if (/^[a-z0-9]+$/.test(run)) {
+        out.push(run);
+      } else if (run.length <= 2) {
+        out.push(run);
+      } else {
+        for (var i = 0; i + 1 < run.length; i += 2) out.push(run.slice(i, i + 2));
+      }
+    }
+    return out;
+  }
+
+  // ③ 同义词扩展（半权重，让「网关」也能关联到 Gateway / 通讯管理机 / 无线等写法）
+  var SYN = {
+    网关: ['gateway', 'gprs', 'rtu', '通讯管理机'],
+    gateway: ['网关'],
+    采集: ['acquisition', '数采'],
+    acquisition: ['采集', '数采'],
+    电表: ['meter', '电能表', '抄表'],
+    meter: ['电表', '电能表'],
+    光伏: ['pv', 'solar', 'photovoltaic', '逆变器'],
+    pv: ['光伏'],
+    能耗: ['energy', '电能', '用电'],
+    无线: ['wifi', 'lora', 'gprs'],
+  };
+
+  function scoreItem(it, full, tokens) {
+    var title = norm(it.t);
+    var desc = norm(it.d);
+    var cat = norm(it.c);
+    var score = 0;
+    var hit = 0;
+    var i, j;
+
+    // 整串完全命中 → 最高优先级
+    if (title.indexOf(full) >= 0) score += 120;
+    else if (desc.indexOf(full) >= 0) score += 50;
+    else if (cat.indexOf(full) >= 0) score += 30;
+
+    for (i = 0; i < tokens.length; i++) {
+      var tk = tokens[i];
+      var w = tk.length; // 词越长越有区分度
+      var got = false;
+      if (title.indexOf(tk) >= 0) { score += 20 * w; got = true; }
+      else if (desc.indexOf(tk) >= 0) { score += 6 * w; got = true; }
+      else if (cat.indexOf(tk) >= 0) { score += 4 * w; got = true; }
+      else {
+        var syns = SYN[tk] || [];
+        for (j = 0; j < syns.length; j++) {
+          var sy = norm(syns[j]);
+          if (title.indexOf(sy) >= 0) { score += 10 * w; got = true; break; }
+          if (desc.indexOf(sy) >= 0) { score += 3 * w; got = true; break; }
+        }
+      }
+      if (got) hit++;
+    }
+
+    if (!hit) return 0;
+    // 三个及以上词时至少命中两个，避免「数据采集网关」把只带「采集」的条目全捞进来
+    if (tokens.length >= 3 && hit < 2) return 0;
+    // 覆盖率：命中的词越多排越前（「4g」+「网关」都命中 > 只命中「网关」）
+    var coverage = hit / Math.max(tokens.length, 1);
+    return Math.round(score * (0.25 + 0.75 * coverage));
+  }
+
+  // 高亮：整串 + 各分词（单次正则替换，避免嵌套破坏 HTML）
+  function makeHi(full, tokens) {
+    var parts = [];
+    if (full) parts.push(full);
+    tokens.forEach(function (t) { if (t.length >= 1) parts.push(t); });
+    parts = parts
+      .map(function (p) { return p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); })
+      .sort(function (a, b) { return b.length - a.length; });
+    var re = parts.length ? new RegExp('(' + parts.join('|') + ')', 'gi') : null;
+    return function (s) {
+      var e = esc(s);
+      if (!re) return e;
+      return e.replace(re, '<mark class="bg-amber-100 text-slate-900 rounded px-0.5">$1</mark>');
+    };
+  }
+
+  // —— 分页 ——
+  var PAGE_SIZE = 10;
+  var allHits = [];
+  var curPage = parseInt(params.get('page'), 10) || 1;
+  if (curPage < 1) curPage = 1;
+  var pagerEl = document.getElementById('searchPager');
+
+  function totalPages() {
+    return Math.max(1, Math.ceil(allHits.length / PAGE_SIZE));
+  }
+
+  function buildRow(h, hi) {
+    var it = h.it;
+    var a = document.createElement('a');
+    a.href = it.u;
+    a.className = 'group flex items-start gap-4 py-5 border-b border-slate-100';
+    var img = it.i
+      ? '<img src="' + esc(it.i) + '" alt="" loading="lazy" class="w-28 h-20 object-cover rounded-lg border border-slate-200 shrink-0 bg-slate-50" onerror="this.style.display=\'none\'">'
+      : '';
+    var date = it.dt ? ' <span class="ml-1 text-xs text-orange-500 font-medium align-middle">[' + esc(it.dt) + ']</span>' : '';
+    var summary = (it.d || '').replace(/\s+/g, ' ').slice(0, 180);
+    a.innerHTML =
+      img +
+      '<div class="min-w-0">' +
+      '<h3 class="text-base font-semibold text-slate-800 group-hover:text-brand transition">' + hi(it.t) + date + '</h3>' +
+      '<p class="mt-1.5 text-sm text-slate-500">' + hi(summary) + '</p>' +
+      '<span class="inline-block mt-2 text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-500">' + esc((T.types && T.types[it.y]) || it.y) + '</span>' +
+      '</div>';
+    return a;
+  }
+
+  function pageBtn(label, target, active, disabled) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className =
+      'min-w-[36px] h-9 px-3 rounded-lg border text-sm transition ' +
+      (active
+        ? 'bg-brand text-white border-brand font-medium'
+        : disabled
+        ? 'border-slate-200 text-slate-300 cursor-not-allowed'
+        : 'border-slate-300 text-slate-600 hover:border-brand hover:text-brand');
+    b.textContent = label;
+    if (!active && !disabled) {
+      b.addEventListener('click', function () {
+        renderPage(lastHi, target);
+        var box = document.getElementById('searchResults');
+        if (box) box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    return b;
+  }
+
+  var lastHi = null;
+
+  function renderPage(hi, page) {
+    if (hi) lastHi = hi;
+    if (!lastHi) return;
+    hi = lastHi;
+    if (typeof page === 'number') curPage = page;
+    var tp = totalPages();
+    if (curPage > tp) curPage = tp;
+    if (curPage < 1) curPage = 1;
+
+    listEl.innerHTML = '';
+    if (allHits.length > PAGE_SIZE) pagerEl.classList.remove('hidden');
+    var start = (curPage - 1) * PAGE_SIZE;
+    allHits.slice(start, start + PAGE_SIZE).forEach(function (h) {
+      listEl.appendChild(buildRow(h, hi));
+    });
+
+    // 同步到地址栏，刷新/分享能停在当前页
+    var url = new URL(location.href);
+    if (curPage > 1) url.searchParams.set('page', String(curPage));
+    else url.searchParams.delete('page');
+    history.replaceState(null, '', url);
+
+    // 分页条
+    pagerEl.innerHTML = '';
+    var info = document.createElement('span');
+    info.className = 'mr-1 text-sm text-slate-500';
+    info.textContent = T.pageInfo.replace('{p}', curPage).replace('{t}', tp).replace('{n}', allHits.length);
+    pagerEl.appendChild(info);
+    pagerEl.appendChild(pageBtn('‹ ' + T.prev, curPage - 1, false, curPage <= 1));
+
+    // 页码窗口：首末页 + 当前页前后各 1 页，中间用省略号
+    var pages = [];
+    for (var i = 1; i <= tp; i++) {
+      if (i === 1 || i === tp || Math.abs(i - curPage) <= 1) pages.push(i);
+    }
+    var prevP = 0;
+    pages.forEach(function (p) {
+      if (prevP && p - prevP > 1) {
+        var dots = document.createElement('span');
+        dots.className = 'px-1 text-sm text-slate-400';
+        dots.textContent = '…';
+        pagerEl.appendChild(dots);
+      }
+      pagerEl.appendChild(pageBtn(String(p), p, p === curPage, false));
+      prevP = p;
+    });
+
+    pagerEl.appendChild(pageBtn(T.next + ' ›', curPage + 1, false, curPage >= tp));
+  }
+
+  if (!q) {
+    emptyEl.textContent = T.noKeyword;
+    emptyEl.classList.remove('hidden');
+  } else {
+    fetch('/' + lang + '/search-index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (items) {
+        var full = norm(q);
+        var tokens = tokenize(q);
+        var hi = makeHi(full, tokens);
+        var hits = [];
+        for (var i = 0; i < items.length; i++) {
+          var sc = scoreItem(items[i], full, tokens);
+          if (sc >= 8) hits.push({ it: items[i], score: sc });
+        }
+        hits.sort(function (a, b) { return b.score - a.score; });
+
+        countEl.textContent = T.count.replace('{n}', hits.length).replace('{q}', q);
+
+        if (!hits.length) {
+          emptyEl.textContent = T.empty.replace('{q}', q);
+          emptyEl.classList.remove('hidden');
+          return;
+        }
+
+        allHits = hits;
+        renderPage(hi);
+      })
+      .catch(function () {
+        emptyEl.textContent = 'Search index failed to load.';
+        emptyEl.classList.remove('hidden');
+      });
+  }
+</script>

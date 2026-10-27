@@ -47,6 +47,13 @@ function isActive(href: string) {
   if (href === base + '/') return path === base + '/' || path === '/' + lang;
   return path.startsWith(href);
 }
+
+// 站内搜索：占位文案（三语）
+const searchText = {
+  zh: { ph: '请输入关键词搜索', btn: '搜索' },
+  en: { ph: 'Search', btn: 'Search' },
+  de: { ph: 'Suchbegriff eingeben', btn: 'Suchen' },
+}[lang];
 ---
 
 <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
@@ -97,6 +104,22 @@ function isActive(href: string) {
     </div>
 
     <div class="flex items-center gap-3 shrink-0">
+      <!-- 站内搜索框（桌面端）：获取报价按钮前 -->
+      <div id="siteSearch" class="hidden xl:block relative">
+        <form action={base + '/search'} method="get" class="flex items-center border border-slate-300 rounded-md overflow-hidden focus-within:border-brand bg-white">
+          <input
+            id="headerSearchInput"
+            name="q"
+            type="text"
+            placeholder={searchText.ph}
+            autocomplete="off"
+            class="w-40 px-3 py-1.5 text-sm outline-none bg-transparent"
+          />
+          <button type="submit" class="px-2 py-1.5 text-slate-500 hover:text-brand transition" aria-label={searchText.btn}>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+      </div>
       <a href={base + '/contact'} class="hidden sm:inline-flex bg-brand text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-brand-dark transition">{t('nav.cta')}</a>
       <LanguageSwitcher lang={lang} />
       <!-- 移动端菜单按钮 -->
@@ -109,6 +132,13 @@ function isActive(href: string) {
   <!-- 移动端展开菜单 -->
   <div id="mobileMenu" class="xl:hidden hidden border-t border-slate-200 bg-white max-h-[80vh] overflow-y-auto">
     <div class="mx-auto max-w-[1600px] px-4 lg:px-8 py-3 space-y-1">
+      <!-- 移动端搜索入口 -->
+      <form action={base + '/search'} method="get" class="flex items-center border border-slate-300 rounded-md overflow-hidden focus-within:border-brand bg-white mb-2">
+        <input name="q" type="text" placeholder={searchText.ph} autocomplete="off" class="flex-1 min-w-0 px-3 py-2 text-sm outline-none bg-transparent" />
+        <button type="submit" class="px-3 py-2 text-slate-500 hover:text-brand transition" aria-label={searchText.btn}>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </button>
+      </form>
       {nav.map((item) => (
         item.dropdown ? (
           <div class="py-1">
@@ -143,4 +173,5 @@ function isActive(href: string) {
   btn?.addEventListener('click', () => {
     menu?.classList.toggle('hidden');
   });
+
 </script>
