@@ -1,8 +1,8 @@
 ---
 title: All-in-One Automatic Meter Reader Camera (OCR) for Utilities
-summary: >-
-  ⚡ All-in-One OCR Meter Reader Camera – Key Advantages
-image: /images/products/1780567691403469.png
+summary: Modbus OCR Meter Reading Camera, Non‑Contact Automatic Gauge Reader for
+  Industrial Meters | DAQ‑IOT
+image: /images/微信图片_20261027163244_208_133.png
 order: 12
 category: instrument-acquisition
 ---
