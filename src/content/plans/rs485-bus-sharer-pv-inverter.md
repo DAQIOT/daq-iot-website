@@ -1,8 +1,8 @@
 ---
 title: "RS485 总线共享器在光伏逆变器数据采集中的应用"
 summary: "在光伏能源领域，逆变器作为核心设备，其数据的准确采集和高效传输对于整个光伏电站的稳定运行和管理至关重要。"
-category: "光伏新能源"
-subcategory: "光伏电站数据采集"
+category: "电力与能源"
+subcategory: "光伏电站采集与运维"
 order: 1
 sourceDoc: "RS485总线共享器在光伏发电项目（逆变器数据采集)中的应用.docx"
 image: "/images/plans/rs485-bus-sharer-pv-inverter/img-03.webp"

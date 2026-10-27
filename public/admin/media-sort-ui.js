@@ -23,6 +23,18 @@
     { key: 'name-desc', label: '文件名（Z→A）' }
   ];
 
+  // 本地开发时由 media-lite.js 统一渲染「排序 + 分页」工具条：
+  // 两个脚本各自往搜索框那一行 appendChild 会互相挤歪（2026-10-23 修：排序位置不对）。
+  // 这里只把排序项暴露出去并跳过自身注入；线上（GitHub 后端）仍由本文件注入排序下拉。
+  window.__cmsSortOptions = OPTIONS;
+  window.__cmsSortStorageKey = STORAGE_KEY;
+
+  var LOCAL_HOST = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+  if (LOCAL_HOST) {
+    console.log('[media-sort] 本地模式：排序 UI 交给 media-lite 统一工具条渲染');
+    return;
+  }
+
   function getMode() {
     var v = localStorage.getItem(STORAGE_KEY);
     return OPTIONS.some(function (o) { return o.key === v; }) ? v : 'time-desc';
@@ -126,8 +138,17 @@
   }
 
   if (window.MutationObserver) {
-    var mo = new MutationObserver(function () { inject(); });
-    mo.observe(document.body, { childList: true, subtree: true });
+    // 节流：媒体库渲染时 mutation 极多，合并成一次注入，避免卡顿（2026-10-23）
+    var _pending = false;
+    var _mo = new MutationObserver(function () {
+      if (_pending) return;
+      _pending = true;
+      setTimeout(function () {
+        _pending = false;
+        inject();
+      }, 120);
+    });
+    _mo.observe(document.body, { childList: true, subtree: true });
   }
   setInterval(inject, 1200);
   inject();

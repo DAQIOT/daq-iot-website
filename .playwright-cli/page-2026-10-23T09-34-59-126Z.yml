@@ -1,0 +1,9 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: 后台语言 / Language
+    - combobox [ref=e4] [cursor=pointer]:
+      - option "中文（默认）" [selected]
+      - option "English"
+      - option "Deutsch"
+    - generic [ref=e5]: 切换后整个后台所有集合只显示所选语言的内容
+  - generic [ref=e6]: Loading configuration...

@@ -1,8 +1,8 @@
 ---
 title: "分布式光伏电站运维智能化升级方案"
 summary: "随着光伏产业的快速发展，分布式光伏电站的运维管理面临着诸多挑战。以数采物联团队服务过的一家新能源公司所运营的18个屋顶工商业分布式光伏电站为例，这些电站规模不一，发电量在几千瓦到几兆瓦之间，建站时间跨"
-category: "光伏新能源"
-subcategory: "电站运维平台"
+category: "电力与能源"
+subcategory: "光伏电站采集与运维"
 order: 5
 sourceDoc: "分布式光伏电站运维智能化升级方案-V.docx"
 image: "/images/plans/distributed-pv-om-upgrade/img-02.webp"

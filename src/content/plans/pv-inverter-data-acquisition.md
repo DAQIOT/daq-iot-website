@@ -1,8 +1,8 @@
 ---
 title: "光伏逆变器数据采集方案"
 summary: "分布式光伏电站主要建设在建筑屋面，厂房屋顶之上，电站后期的运维工作有诸多不便。运用光伏数据采集技术，对配套设备的数据进行远程采集，实现无人值守，可以降低运维成本，有效提高发电效率，具有巨大的经济价值。"
-category: "光伏新能源"
-subcategory: "光伏电站数据采集"
+category: "电力与能源"
+subcategory: "光伏电站采集与运维"
 order: 4
 sourceDoc: "光伏逆变器数据采集方案.docx"
 image: "/images/plans/pv-inverter-data-acquisition/img-03.webp"

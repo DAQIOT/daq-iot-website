@@ -586,15 +586,23 @@
     console.log('[media-sort] 排序完成：' + items.length + ' 张图片，顺序：' + _mediaSort.order);
   }
 
-  // 监听 DOM 变化后重新执行增强逻辑
-  var _tw = new MutationObserver(function () {
-    _tw.disconnect();
-    try { maybeTreeify(); } catch (e) { console.error('[treeify]', e); }
-    try { maybeProductGroups(); } catch (e) { console.error('[product-groups]', e); }
-    try { injectSidebarGroups(); } catch (e) { console.error('[sidebar-groups]', e); }
-    try { ensureMediaSortButton(); } catch (e) { console.error('[media-sort]', e); }
-    _tw.observe(document.body, { childList: true, subtree: true });
-  });
+  // 监听 DOM 变化后重新执行增强逻辑。
+  // ⚠️ 这里必须节流：媒体库渲染上百条媒体时会触发海量 mutation，
+  // 若每次 mutation 都同步跑一遍DOM遍历/ Fiber操作，会把页面卡死（2026-10-23 实测）。
+  // 做法：mutation 只负责「排一次队」，120ms 内的连续变化合并成一次执行。
+  var _pending = false;
+  function schedule() {
+    if (_pending) return;
+    _pending = true;
+    setTimeout(function () {
+      _pending = false;
+      try { maybeTreeify(); } catch (e) { console.error('[treeify]', e); }
+      try { maybeProductGroups(); } catch (e) { console.error('[product-groups]', e); }
+      try { injectSidebarGroups(); } catch (e) { console.error('[sidebar-groups]', e); }
+      try { ensureMediaSortButton(); } catch (e) { console.error('[media-sort]', e); }
+    }, 120);
+  }
+  var _tw = new MutationObserver(schedule);
   _tw.observe(document.body, { childList: true, subtree: true });
   setTimeout(maybeTreeify, 400);
   setTimeout(maybeTreeify, 1200);

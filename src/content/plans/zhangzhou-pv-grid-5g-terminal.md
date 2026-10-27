@@ -1,8 +1,8 @@
 ---
 title: 漳州分布式光伏并网：多合一 5G 融合终端解决方案
 summary: 2025年，国网福建供电公司发布函件，对工商业分布式光伏项目提出明确要求，接入方案文件规定调度自动化产品（光伏四可）必须满足以下功能要求：
-category: 光伏新能源
-subcategory: 并网与「四可」装置
+category: "电力与能源"
+subcategory: "电网调控与安全"
 order: 7
 sourceDoc: 漳州分布式光伏项目并网首选解决方案(1).docx
 image: /images/plans/img-05.webp

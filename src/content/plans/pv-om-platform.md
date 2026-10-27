@@ -1,8 +1,8 @@
 ---
 title: "数采物联光伏电站运维管理平台"
 summary: "数采物联光伏运维管理平台是一个集数据采集、数据统计、智能预警、运维管理为一体的综合管理平台。"
-category: "光伏新能源"
-subcategory: "电站运维平台"
+category: "电力与能源"
+subcategory: "光伏电站采集与运维"
 order: 3
 sourceDoc: "光伏运维平台.docx"
 image: "/images/plans/pv-om-platform/img-02.webp"

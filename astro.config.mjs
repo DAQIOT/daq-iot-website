@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+// 本地开发专用：给后台媒体库提供轻量的「只看元数据 + 分页 + 搜索」接口（不参与构建）
+import devMediaApi from './scripts/vite-dev-media.mjs';
 
 // 多语言外贸站骨架
 // 语言路由采用物理目录方式：src/pages/[lang]/ 对应 /en /zh /de
@@ -14,6 +16,6 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://www.daq-iot.com',
   integrations: [sitemap()],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), devMediaApi()],
   },
 });

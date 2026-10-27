@@ -1,0 +1,15 @@
+[    1492ms] [LOG] decap-cms-app 3.15.1 @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:507
+[    1524ms] [LOG] `window.CMS_MANUAL_INIT` flag set, skipping automatic initialization. @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:507
+[    1524ms] [LOG] decap-cms 3.15.1 @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:507
+[    1529ms] [LOG] [media-sort] 本地模式：排序 UI 交给 media-lite 统一工具条渲染 @ http://localhost:4321/admin/media-sort-ui.js?v=3:33
+[    1530ms] [LOG] [media-lite] 已启用轻量媒体列表（仅分页，不做筛选）；关闭方式：localStorage.setItem("cms-media-lite","off") @ http://localhost:4321/admin/media-lite.js?v=5:424
+[    1531ms] [LOG] [file-picker] 已启用「选择文件」直传；关闭方式：localStorage.setItem("cms-direct-upload","off") @ http://localhost:4321/admin/file-picker.js?v=1:191
+[    1547ms] [LOG] [aiiot-preview] 已注册 products / posts 预览模板 @ http://localhost:4321/admin/preview.js:195
+[    1552ms] [LOG] [media-sort] 已启用媒体库排序（time-desc，索引 1330 条） @ http://localhost:4321/admin/media-sort.js?v=2:147
+[    1561ms] [LOG] [file-picker] 已加载后台配置，可直接上传 @ http://localhost:4321/admin/file-picker.js?v=1:51
+[    1568ms] [LOG] decap-cms-core 3.17.1 @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:53
+[    1714ms] [LOG] Looking for Decap CMS Proxy Server at 'http://localhost:8081/api/v1' @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:16
+[    1716ms] [LOG] [init-cms] 已按语言初始化后台：zh（17 个集合） @ http://localhost:4321/admin/init-cms.js?v=16:689
+[    1718ms] [LOG] [media-lite] 接口就绪，媒体库将按分页加载 @ http://localhost:4321/admin/media-lite.js?v=5:83
+[    1748ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:4321/favicon.ico:0
+[    1749ms] [LOG] Detected Decap CMS Proxy Server at 'http://localhost:8081/api/v1' with repo: '官网' @ http://localhost:4321/admin/vendor/decap-cms/decap-cms.js:16

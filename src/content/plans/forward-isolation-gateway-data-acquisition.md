@@ -1,8 +1,8 @@
 ---
 title: "正向隔离装置（网闸）数据采集方案"
 summary: "随着国家“双碳”目标等相关政策的推出和光伏技术的发展以及工商业企业屋顶多为闲置资源，安装光伏电站可将其转化为“发电站”，盘活固定资产并创造持续收益。"
-category: "光伏新能源"
-subcategory: "并网与「四可」装置"
+category: "电力与能源"
+subcategory: "电网调控与安全"
 order: 6
 sourceDoc: "正向隔离装置网闸数据采集方案.docx"
 image: "/images/plans/forward-isolation-gateway-data-acquisition/img-01.webp"

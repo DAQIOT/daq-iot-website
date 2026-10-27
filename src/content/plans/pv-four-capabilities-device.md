@@ -1,8 +1,8 @@
 ---
 title: "工商业分布式光伏「四可」装置方案"
 summary: "随着国家“双碳”战略的深入推进，工商业分布式光伏装机量呈爆发式增长。然而，大规模分布式电源接入电网后，电网运行安全、电能质量、调度响应等问题日益凸显。"
-category: "光伏新能源"
-subcategory: "并网与「四可」装置"
+category: "电力与能源"
+subcategory: "电网调控与安全"
 order: 2
 sourceDoc: "光伏四可装置推广软文.docx"
 image: "/images/plans/pv-four-capabilities-device/img-01.webp"
