@@ -8,6 +8,8 @@ nav:
   blog: 资讯
   cases: 项目案例
   products: 产品中心
+  honors: 荣誉资质
+  join: 加入我们
   partners: 合作伙伴
   downloads: 下载中心
   about: 关于我们
@@ -16,8 +18,6 @@ nav:
   solutions: 解决方案
   services: 服务
   home: 首页
-  join: 加入我们
-  honors: 荣誉资质
 hero:
   title: 工业物联网 DAQ-IOT 解决方案专家
   subtitle: DAQ-IOT 数采物联以 AI+ 软件、边缘计算、无线传感、智能连接与自动化，构建设备到云端的数据智能闭环。
@@ -126,6 +126,6 @@ footer:
   solutions: 解决方案
   company: 公司
   resources: 资源
-  rights: Copyright © 2021-2025 DAQ-IOT Technology 版权所有。
+  rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。
   tagline: 智联万物。
 ---
