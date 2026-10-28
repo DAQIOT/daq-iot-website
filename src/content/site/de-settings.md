@@ -26,8 +26,8 @@ banner:
     - /images/slides/slide-3.jpg
   homeImage: /images/slides/slide-1.jpg
   pageImage: /images/banners/banner-page.jpg
-  partnersImage: /images/banners/banner-partners.jpg
-  ctaImage: /images/banners/banner-cta.jpg
+  partnersImage: /images/banners/banner-cta.jpg
+  ctaImage: /images/banners/banner-partners.jpg
   solutionsImage: /images/banners/banner-solutions.jpg
   servicesImage: /images/banners/banner-services.jpg
   supportImage: /images/banners/banner-support.jpg

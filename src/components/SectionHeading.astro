@@ -1,0 +1,62 @@
+---
+/**
+ * SectionHeading —— 全站统一的区块标题组
+ *
+ * 统一节奏：小标签 + 大标题 + 副标题 + 「了解更多 →」，参考 Minew/研华的区块规范：
+ *   <SectionHeading eyebrow="Products" title="产品中心" subtitle="…" href="/zh/products" linkText="查看全部" />
+ *
+ * 以前每个页面各写一套 h2/p，字号、间距、对齐都不一致；以后统一走这里，
+ * 改一处全站生效。可选 align="center"（默认）| "left"，dark 用于深色横条。
+ */
+interface Props {
+  /** 小标签（英文/短词），居中显示时带两侧短线 */
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  /** 「了解更多」链接地址，给了才显示链接 */
+  href?: string;
+  /** 链接文案，不给则用 href 自带的默认文案（由调用方传入翻译） */
+  linkText?: string;
+  /** 对齐：center（默认）| left */
+  align?: 'center' | 'left';
+  /** 深色底上用 */
+  dark?: boolean;
+}
+
+const { eyebrow = '', title, subtitle = '', href = '', linkText = '', align = 'center', dark = false } = Astro.props;
+const center = align === 'center';
+---
+
+<div class:list={['max-w-3xl', center ? 'mx-auto text-center' : 'text-left', 'mb-12']}>
+  {eyebrow && (
+    <div class:list={['flex items-center gap-3', center && 'justify-center']}>
+      {center && <span class="h-px w-8 bg-brand/50"></span>}
+      <span class:list={['text-xs font-bold tracking-[0.18em] uppercase', dark ? 'text-brand/90' : 'text-brand']}>
+        {eyebrow}
+      </span>
+      {center && <span class="h-px w-8 bg-brand/50"></span>}
+    </div>
+  )}
+
+  <h2
+    class:list={[
+      'font-bold leading-tight',
+      eyebrow ? 'mt-3' : '',
+      'text-2xl md:text-3xl lg:text-4xl',
+      dark ? 'text-white' : 'text-brand-dark'
+    ]}
+  >
+    {title}
+  </h2>
+
+  {subtitle && (
+    <p class:list={['mt-4 leading-relaxed', dark ? 'text-slate-300' : 'text-slate-500']}>{subtitle}</p>
+  )}
+
+  {href && (
+    <a href={href} class:list={['link-arrow mt-6', dark && 'text-white']}>
+      <span>{linkText}</span>
+      <span class="arw" aria-hidden="true">→</span>
+    </a>
+  )}
+</div>

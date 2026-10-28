@@ -109,10 +109,10 @@ name: settings
 banner:
   solutionsImage: /images/banners/banner-solutions.jpg
   partnersPageImage: /images/banners/banner-partners-page.jpg
-  ctaImage: /images/banners/banner-cta.jpg
+  ctaImage: /images/banners/banner-partners.jpg
   pageImage: /images/banners/banner-page.jpg
   supportImage: /images/banners/banner-support.jpg
-  partnersImage: /images/banners/banner-partners.jpg
+  partnersImage: /images/banners/banner-cta.jpg
   homeImages:
     - /images/img-muf933st-3947bd06.png
     - /images/img-mtmnm9mb-46e31837.png

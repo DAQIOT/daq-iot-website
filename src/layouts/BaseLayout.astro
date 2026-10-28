@@ -59,6 +59,8 @@ const orgJsonLd = JSON.stringify({
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={orgJsonLd} />
+    {/* 必须在 CSS 应用前打上标记，否则会出现「先隐藏再出现」的闪烁 */}
+    <script is:inline>document.documentElement.classList.add('js-reveal');</script>
     <slot name="head" />
   </head>
   <body class="min-h-screen bg-white text-slate-800 flex flex-col">
@@ -67,5 +69,108 @@ const orgJsonLd = JSON.stringify({
       <slot />
     </main>
     <Footer lang={lang} />
+
+    <!-- 回到顶部 -->
+    <button id="backToTop" type="button" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg>
+    </button>
+
+    <script>
+      /* ── 1. 滚动入场：带 data-reveal 的元素进入视口后加 .is-in ── */
+      (function () {
+        const targets = document.querySelectorAll('[data-reveal]');
+        if (!targets.length) return;
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) {
+          targets.forEach((el) => el.classList.add('is-in'));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+        );
+        targets.forEach((el) => io.observe(el));
+      })();
+
+      /* ── 2. 数字滚动增长：[data-count="200+"] 进入视口时从 0 递增 ── */
+      (function () {
+        const nums = document.querySelectorAll('[data-count]');
+        if (!nums.length) return;
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const run = (el: Element) => {
+          const raw = String((el as HTMLElement).dataset.count || '');
+          const m = raw.match(/^([^\d]*)(\d[\d,]*)(.*)$/);
+          if (!m) return;
+          const pre = m[1];
+          const target = Number(m[2].replace(/,/g, ''));
+          const suf = m[3];
+          if (!isFinite(target) || reduce) {
+            el.textContent = raw;
+            return;
+          }
+          const dur = 1400;
+          const start = performance.now();
+          const tick = (now: number) => {
+            const p = Math.min((now - start) / dur, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const v = Math.round(target * eased);
+            el.textContent = pre + v.toLocaleString('en-US') + suf;
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+        if (!('IntersectionObserver' in window)) {
+          nums.forEach(run);
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                run(e.target);
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.4 }
+        );
+        nums.forEach((el) => io.observe(el));
+      })();
+
+      /* ── 3. 顶部导航滚动收缩 + 回到顶部按钮显隐 ── */
+      (function () {
+        const header = document.querySelector('.site-header');
+        const top = document.getElementById('backToTop');
+        const update = () => {
+          const y = window.scrollY;
+          if (header) header.classList.toggle('is-scrolled', y > 80);
+          if (top) top.classList.toggle('is-visible', y > 320);
+        };
+        let raf = false;
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (raf) return;
+            raf = true;
+            requestAnimationFrame(() => {
+              raf = false;
+              update();
+            });
+          },
+          { passive: true }
+        );
+        top?.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        update();
+      })();
+    </script>
   </body>
 </html>

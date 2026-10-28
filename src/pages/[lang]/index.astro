@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionBand from '../../components/SectionBand.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
 import CategoryIcon from '../../components/CategoryIcon.astro';
 import { getTranslations, getSiteData, getCategoriesByLang } from '../../i18n/utils';
 import type { Lang } from '../../i18n/config';
@@ -76,6 +77,22 @@ const hasHeroImg = heroImages.length > 0;
 // 首页底部横条背景图（同上，留空则用默认渐变纹理）
 const partnersImage = (site.banner?.partnersImage as string) || '';
 const ctaImage = (site.banner?.ctaImage as string) || '';
+
+// 合作伙伴滚动墙：行业客户 + 系统集成商的后台 Logo 合并（保持后台顺序，客户在前）
+const partnerLogos = [
+  ...(((site.customers as Record<string, any>)?.sections ?? []) as any[]),
+  ...(((site.integrators as Record<string, any>)?.sections ?? []) as any[]),
+]
+  .flatMap((s) => (Array.isArray(s?.logos) ? s.logos : []))
+  .map((l) => ({ name: String(l?.name ?? '').trim(), image: String(l?.image ?? '').trim() }))
+  .filter((l) => l.image);
+
+// 区块小标签（eyebrow）：后台未配置时使用内置文案，配置后自动覆盖
+const EYEBROW = {
+  zh: { products: 'PRODUCTS', solutions: 'SOLUTIONS', stats: 'MILESTONES' },
+  en: { products: 'PRODUCTS', solutions: 'SOLUTIONS', stats: 'MILESTONES' },
+  de: { products: 'PRODUKTE', solutions: 'LÖSUNGEN', stats: 'MEILENSTEINE' },
+}[lang];
 ---
 <BaseLayout lang={lang} title={t('hero.title') + ' | DAQ-IOT'} description={t('hero.subtitle')}>
 
@@ -103,15 +120,15 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
       <div class="absolute inset-0 bg-gradient-to-r from-brand-darker via-brand-darker/85 to-transparent"></div>
     )}
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-24 md:py-32">
-      <div class="inline-block">
+      <div data-reveal="fade" class="inline-block">
         <p class="text-brand text-xl md:text-2xl lg:text-3xl font-black tracking-[0.15em] uppercase drop-shadow-[0_2px_10px_rgba(2,20,40,0.9)]">{t('home.eyebrow')}</p>
         <div class="mt-3 h-0.5 w-full bg-brand/80 rounded-full"></div>
       </div>
-      <h1 class="mt-5 text-xl md:text-3xl font-bold text-white whitespace-nowrap leading-tight drop-shadow-[0_2px_12px_rgba(2,20,40,0.95)]">{t('home.heroTitle')}</h1>
-      <p class="mt-6 text-lg text-slate-100 max-w-2xl drop-shadow-[0_2px_10px_rgba(2,20,40,0.95)]">{t('home.heroSubtitle')}</p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href={base + '/contact'} class="bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">{t('home.heroCta1')}</a>
-        <a href={base + '/products'} class="border border-white/40 text-white px-7 py-3 rounded-md font-medium hover:bg-white/10 transition">{t('home.heroCta2')}</a>
+      <h1 data-reveal style="--rd:80ms" class="mt-5 text-xl md:text-3xl font-bold text-white whitespace-nowrap leading-tight drop-shadow-[0_2px_12px_rgba(2,20,40,0.95)]">{t('home.heroTitle')}</h1>
+      <p data-reveal style="--rd:160ms" class="mt-6 text-lg text-slate-100 max-w-2xl drop-shadow-[0_2px_10px_rgba(2,20,40,0.95)]">{t('home.heroSubtitle')}</p>
+      <div data-reveal style="--rd:240ms" class="mt-8 flex flex-wrap gap-4">
+        <a href={base + '/contact'} class="btn btn-primary">{t('home.heroCta1')}</a>
+        <a href={base + '/products'} class="btn btn-outline">{t('home.heroCta2')}</a>
       </div>
     </div>
   </section>
@@ -119,29 +136,36 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
   <!-- 五大产品矩阵 -->
   <section class="relative">
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.categoriesTitle')}</h2>
-        <p class="mt-3 text-slate-500">{t('home.categoriesSubtitle')}</p>
-      </div>
+      <SectionHeading
+        eyebrow={t('home.categoriesEyebrow', EYEBROW.products)}
+        title={t('home.categoriesTitle')}
+        subtitle={t('home.categoriesSubtitle')}
+        href={base + '/products'}
+        linkText={t('home.viewAll')}
+      />
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {families.map((f) => (
-          <a href={f.href} class="card-hover group relative block overflow-hidden bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand">
+        {families.map((f, i) => (
+          <a
+            href={f.href}
+            data-reveal
+            style={`--rd:${i * 80}ms`}
+            class="card-hover group relative block overflow-hidden bg-white border border-slate-200 rounded-2xl p-6 hover:border-brand"
+          >
             <img
               src={f.bg}
               alt=""
               aria-hidden="true"
-              class="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+              class="card-media pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-700 ease-out"
               loading="lazy"
             />
             <div class="relative">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:text-white text-brand transition">
+                <div class="w-12 h-12 rounded-xl bg-white/85 backdrop-blur-sm flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:text-white text-brand transition">
                   <CategoryIcon name={f.icon} class="w-6 h-6" />
                 </div>
                 <h3 class="text-lg font-semibold text-brand-dark group-hover:text-brand transition">{f.name}</h3>
               </div>
               <p class="text-sm text-slate-500 leading-relaxed">{f.description}</p>
-              <span class="mt-4 inline-flex items-center text-sm font-medium text-brand">{t('home.viewAll')} →</span>
             </div>
           </a>
         ))}
@@ -152,63 +176,119 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
   <!-- 行业解决方案 -->
   <section class="relative border-y border-slate-100">
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">{t('home.solutionsTitle')}</h2>
-        <p class="mt-3 text-slate-500">{t('home.solutionsSubtitle')}</p>
-      </div>
+      <SectionHeading
+        eyebrow={t('home.solutionsEyebrow', EYEBROW.solutions)}
+        title={t('home.solutionsTitle')}
+        subtitle={t('home.solutionsSubtitle')}
+        href={base + '/solutions'}
+        linkText={t('nav.solutions')}
+      />
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {industries.map((it) => (
-          <div class="card-hover relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-7">
+        {industries.map((it, i) => (
+          <a
+            href={base + '/solutions'}
+            data-reveal
+            style={`--rd:${i * 90}ms`}
+            class="card-hover group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white p-7 hover:border-brand"
+          >
             {it.bg && (
               <img
                 src={it.bg}
                 alt=""
                 aria-hidden="true"
-                class="pointer-events-none absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                class="card-media pointer-events-none absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
             )}
+            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent"></div>
             <div class="relative">
-              <span class="text-brand/30 text-3xl font-bold">{it.n}</span>
-              <h3 class="mt-3 text-xl font-semibold text-brand-dark">{it.label}</h3>
+              <span class="inline-block text-brand/40 text-3xl font-black tabular-nums transition group-hover:text-brand">{it.n}</span>
+              <h3 class="mt-3 text-xl font-semibold text-brand-dark transition group-hover:text-brand">{it.label}</h3>
+              <span class="absolute left-0 -bottom-1 h-0.5 w-8 bg-brand transition-all duration-300 group-hover:w-14"></span>
             </div>
-          </div>
+          </a>
         ))}
-      </div>
-      <div class="text-center mt-10">
-        <a href={base + '/solutions'} class="inline-flex items-center gap-2 text-brand font-medium hover:text-brand-dark transition">{t('nav.solutions')} →</a>
       </div>
     </div>
   </section>
 
   <!-- 数据基石 -->
-  <section class="relative">
+  <section class="relative bg-slate-50 border-y border-slate-100">
     <div class="relative mx-auto max-w-[1600px] px-4 lg:px-8 py-20">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-brand-dark">{t('home.statsTitle')}</h2>
-    </div>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-      {stats.map((s) => (
-        <div class="text-center">
-          <div class="text-4xl md:text-5xl font-bold text-brand">{s.v}</div>
-          <div class="mt-2 text-slate-500 text-sm">{s.l}</div>
-        </div>
-      ))}
+      <SectionHeading
+        eyebrow={t('home.statsEyebrow', EYEBROW.stats)}
+        title={t('home.statsTitle')}
+      />
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((s, i) => (
+          <div data-reveal style={`--rd:${i * 90}ms`} class="group text-center">
+            <div
+              data-count={s.v}
+              class="text-4xl md:text-5xl font-bold text-brand tabular-nums transition-transform duration-300 group-hover:scale-105"
+            >
+              {s.v}
+            </div>
+            <div class="mx-auto mt-3 h-px w-10 bg-brand/30 transition-all duration-300 group-hover:w-16 group-hover:bg-brand"></div>
+            <div class="mt-3 text-slate-500 text-sm">{s.l}</div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- 合作伙伴 -->
-  <SectionBand tone="dark" width="wide" image={partnersImage}>
-    <h2 class="text-2xl md:text-3xl font-bold text-white">{t('home.partnersTitle')}</h2>
-    <p class="mt-3 text-slate-400">{t('home.partnersSubtitle')}</p>
-    <a href={base + '/partners'} class="mt-6 inline-block border border-white/40 text-white px-6 py-2.5 rounded-md text-sm font-medium hover:bg-white/10 transition">{t('nav.partners')} →</a>
+  <SectionBand tone="dark" width="wide" image={partnersImage} overlay={0.5}>
+    <h2 data-reveal="fade" class="text-2xl md:text-3xl font-bold text-white">{t('home.partnersTitle')}</h2>
+    <p data-reveal="fade" style="--rd:80ms" class="mt-3 text-slate-400">{t('home.partnersSubtitle')}</p>
+
+    {partnerLogos.length > 0 && (
+      <div data-reveal="fade" style="--rd:160ms" class="logo-marquee mt-8" data-marquee>
+        <div class="logo-marquee-track">
+          {/* 无缝循环：同一份列表渲染两遍，动画位移 -50% 后重接 */}
+          {[0, 1].map((copy) => (
+            <div class="logo-marquee-group" aria-hidden={copy === 1 ? 'true' : undefined}>
+              {partnerLogos.map((l) => (
+                <div class="logo-marquee-item" title={l.name}>
+                  {/* 直接用后台原图（保留品牌彩色）。logo 放在白色卡片衬底上：
+                      彩色/黑白 logo 都清晰，部分白底未抠净的素材也与卡片融为一体。
+                      轨道靠 transform 持续移动，浏览器懒加载永不触发，必须 eager */}
+                  <img
+                    src={l.image}
+                    alt={copy === 1 ? '' : l.name}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div data-reveal="fade" style="--rd:240ms" class="mt-8">
+      <a href={base + '/partners'} class="btn btn-outline">{t('nav.partners')}</a>
+    </div>
   </SectionBand>
 
-  <!-- CTA -->
-  <SectionBand tone="brand" image={ctaImage}>
-    <h2 class="text-3xl font-bold text-white">{t('home.ctaTitle')}</h2>
-    <p class="mt-3 text-white/85">{t('home.ctaSubtitle')}</p>
-    <a href={base + '/contact'} class="mt-6 inline-block bg-white text-brand px-7 py-3 rounded-md font-medium hover:bg-brand-light transition">{t('home.ctaButton')}</a>
+  <!-- CTA（浅色：避免与上方合作伙伴连成两块深色；有背景图时文字自动转白保证可读） -->
+  <SectionBand tone="light" width="wide" image={ctaImage}>
+    <h2
+      data-reveal="fade"
+      class:list={['text-2xl md:text-3xl lg:text-4xl font-bold', ctaImage ? 'text-white drop-shadow-[0_2px_10px_rgba(2,20,40,0.85)]' : 'text-brand-dark']}
+    >
+      {t('home.ctaTitle')}
+    </h2>
+    <p
+      data-reveal="fade"
+      style="--rd:80ms"
+      class:list={['mt-4 max-w-2xl mx-auto leading-relaxed', ctaImage ? 'text-white/85 drop-shadow-[0_2px_10px_rgba(2,20,40,0.85)]' : 'text-slate-500']}
+    >
+      {t('home.ctaSubtitle')}
+    </p>
+    <div data-reveal="fade" style="--rd:160ms" class="mt-8">
+      <a href={base + '/contact'} class="btn btn-primary">{t('home.ctaButton')}</a>
+    </div>
   </SectionBand>
 </BaseLayout>
 
@@ -226,6 +306,85 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
       transition: none;
     }
   }
+
+  /* ── 合作伙伴 Logo 滚动墙（白色卡片式）──
+     背景：后台上传的 logo 素材混杂 —— 一部分白底没抠净、一部分是黑色为主的内容，
+     任何「统一反白」或「透明直排」方案都无法同时兼顾。
+     现行方案：彩色原图 + 白色圆角卡片衬底 ——
+       · 彩色 / 黑白 logo 在白卡片上都清晰；
+       · 白底未抠净的素材与卡片融为一体，看不出方块；
+       · 在任何背景图（亮图/暗图）上都成立，不再依赖 partners-alpha 预处理。
+     （scripts/gen-logo-alpha.mjs 生成的透明底版本保留在 /images/partners-alpha/，
+      当前首页已不使用；如需恢复透明直排方案可再启用。） */
+  .logo-marquee {
+    overflow: hidden;
+    padding: 0.875rem 0;
+    /* 两端渐隐，暗示内容在继续滚动 */
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  }
+  .logo-marquee-track {
+    display: flex;
+    width: max-content;
+    /* 兜底值：JS 会按轨道宽度换算成长时覆盖它；这里取慢值，避免脚本未执行时飞快闪过 */
+    animation: logo-marquee 180s linear infinite;
+  }
+  .logo-marquee:hover .logo-marquee-track {
+    animation-play-state: paused;
+  }
+  .logo-marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .logo-marquee-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.25rem;
+    padding: 0 1.125rem;
+    /* 白色卡片衬底：承载彩色 logo，并与白底素材融为一体 */
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 10px rgba(2, 20, 40, 0.22);
+    transition: transform 0.25s ease;
+  }
+  .logo-marquee-item:hover {
+    transform: translateY(-3px);
+  }
+  .logo-marquee-item img {
+    max-height: 3rem;
+    max-width: 8.5rem;
+    width: auto;
+    object-fit: contain;
+    /* 保留品牌原色，不再反白 */
+    opacity: 0.92;
+    transition: opacity 0.25s ease;
+  }
+  .logo-marquee-item:hover img {
+    opacity: 1;
+  }
+  @keyframes logo-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      /* 位移一个列表的宽度（两组中的一组），实现无缝循环 */
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee {
+      mask-image: none;
+      -webkit-mask-image: none;
+      overflow-x: auto;
+    }
+    .logo-marquee-track {
+      animation: none;
+    }
+  }
 </style>
 
 <script>
@@ -237,5 +396,14 @@ const ctaImage = (site.banner?.ctaImage as string) || '';
       idx = (idx + 1) % slides.length;
       slides[idx].classList.add('is-active');
     }, 5000);
+  }
+
+  // Logo 滚动墙：按轨道宽度动态计算时长，保证恒定速度，logo 多少都不影响快慢
+  // 想再慢/再快：调 SPEED（px/s，越小越慢；建议 20~45）
+  const SPEED = 30;
+  const track = document.querySelector('.logo-marquee-track');
+  if (track) {
+    const half = track.scrollWidth / 2; // 一组列表的宽度
+    if (half > 0) track.style.animationDuration = Math.max(45, Math.round(half / SPEED)) + 's';
   }
 </script>

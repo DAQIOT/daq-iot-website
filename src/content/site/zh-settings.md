@@ -26,10 +26,10 @@ hero:
 banner:
   solutionsImage: ""
   partnersPageImage: /images/banners/banner-partners-page.jpg
-  ctaImage: /images/banners/banner-cta.jpg
+  ctaImage: /images/banners/banner-partners.jpg
   pageImage: /images/banners/banner-page.jpg
   supportImage: /images/banners/banner-support.jpg
-  partnersImage: /images/banners/banner-partners.jpg
+  partnersImage: /images/banners/banner-cta.jpg
   homeImages:
     - /images/slides/slide-1.jpg
     - /images/slides/slide-2.jpg

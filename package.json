@@ -12,7 +12,8 @@
     "check:images": "node scripts/check-images.cjs",
     "audit:media": "node scripts/audit-media.cjs",
     "fix:media": "node scripts/fix-misplaced-media.cjs",
-    "media:index": "git log --diff-filter=A --format=\"COMMIT|%cI\" --name-only -- public/images > .git-media-log.tmp && node scripts/gen-media-index.cjs"
+    "media:index": "git log --diff-filter=A --format=\"COMMIT|%cI\" --name-only -- public/images > .git-media-log.tmp && node scripts/gen-media-index.cjs",
+    "logos:alpha": "node scripts/gen-logo-alpha.mjs"
   },
   "dependencies": {
     "astro": "^6.4.2",
