@@ -9,6 +9,8 @@ nav:
   blog: News
   cases: Project Cases
   products: Products
+  honors: Honors
+  join: Join Us
   partners: Partners
   downloads: Downloads
   about: About
@@ -17,12 +19,6 @@ nav:
   solutions: Solutions
   services: Services
   home: Home
-  join: Join Us
-  honors: Honors
-cases:
-  title: Project Cases
-  subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring
-    deployment stories across smart manufacturing and new energy.
 hero:
   title: Industrial IoT DAQ-IOT Solutions Expert
   subtitle: DAQ-IOT delivers AI+ software, edge computing, wireless sensing, smart
@@ -30,18 +26,32 @@ hero:
     cloud.
   ctaPrimary: Get a Quote
   ctaSecondary: View Products
+banner:
+  solutionsImage: /images/banners/banner-solutions.jpg
+  partnersPageImage: /images/banners/banner-partners-page.jpg
+  ctaImage: /images/banners/banner-partners.jpg
+  pageImage: /images/banners/banner-page.jpg
+  supportImage: /images/banners/banner-support.jpg
+  partnersImage: /images/banners/banner-cta.jpg
+  homeImages:
+    - /images/img-muf933st-3947bd06.png
+    - /images/img-mtmnm9mb-46e31837.png
+  homeImage: /images/slides/slide-1.jpg
+  servicesImage: /images/banners/banner-services.jpg
 home:
   ctaButton: Contact Us Now
   partnersSubtitle: Building the industrial IoT ecosystem with industry leaders
   ctaTitle: Start Your Smart Project
   ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
-  eyebrow: DAQ-IOT | CONNECTING THE UNIVERSE OF INTELLIGENCE
+  eyebrow: DAQ-IOT | Industrial Data Acquisition & IoT Monitoring Solutions
   partnersTitle: Partners & Ecosystem
   solutionsSubtitle: Deep expertise in smart manufacturing and new energy for
     digital transformation
-  heroSubtitle: From wireless sensors and edge gateways to SCADA and
-    energy-management platforms, DAQ-IOT provides an end-to-cloud industrial IoT
-    stack for smart manufacturing and new energy.
+  heroSubtitle: >-
+    Connect industrial sensors, meters, PLCs and equipment to  SCADA, MES, EMS
+    and cloud platforms.
+
+    DAQ-IOT provides industrial gateways, data acquisition devices,  sensors and customized software integration to help you collect, convert and manage industrial data.
   categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
   statsTitle: DAQ-IOT · The Data Foundation
   heroCta1: Get a Quote
@@ -91,6 +101,10 @@ products:
   back: Back to Products
   all: All Products
   empty: No products in this category yet. Contact us for customization.
+cases:
+  title: Project Cases
+  subtitle: DAQ-IOT project cases — Industrial IoT data acquisition & monitoring
+    deployment stories across smart manufacturing and new energy.
 downloads:
   all: All Downloads
   catDoc: Documentation
@@ -106,18 +120,6 @@ downloads:
   catSoftware: Software Platform
   catDriver: Drivers
 name: settings
-banner:
-  solutionsImage: /images/banners/banner-solutions.jpg
-  partnersPageImage: /images/banners/banner-partners-page.jpg
-  ctaImage: /images/banners/banner-partners.jpg
-  pageImage: /images/banners/banner-page.jpg
-  supportImage: /images/banners/banner-support.jpg
-  partnersImage: /images/banners/banner-cta.jpg
-  homeImages:
-    - /images/img-muf933st-3947bd06.png
-    - /images/img-mtmnm9mb-46e31837.png
-  homeImage: /images/slides/slide-1.jpg
-  servicesImage: /images/banners/banner-services.jpg
 footer:
   contact: Contact
   products: Products
