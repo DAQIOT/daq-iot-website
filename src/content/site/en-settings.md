@@ -122,17 +122,17 @@ name: settings
 footer:
   contact: Contact
   products: Products
-  solutions: Solutions
-  company: Company
   resources: Resources
-  rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
+  social:
+    facebook: https://www.facebook.com/daqiot/
+    instagram: https://www.instagram.com/daq_iot/
+    tiktok: https://www.tiktok.com/@daqiot7
+    linkedin: https://www.linkedin.com/company/142879429/admin/dashboard/
+    youtube: https://www.youtube.com/@DAQ-IOT
+    whatsapp: https://api.whatsapp.com/message/ROELWEV2NZIGF1?autoload=1&app_absent=0
   tagline: Connecting the Universe of Intelligence.
   follow: Follow Us
-  social:
-    facebook: ""
-    instagram: ""
-    tiktok: ""
-    linkedin: ""
-    youtube: ""
-    whatsapp: ""
+  rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
+  solutions: Solutions
+  company: Company
 ---
