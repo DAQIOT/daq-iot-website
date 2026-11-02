@@ -10,7 +10,7 @@ nav:
   products: 产品中心
   honors: 荣誉资质
   join: 加入我们
-  partners: 合作伙伴
+  partners: 合作加盟
   downloads: 下载中心
   about: 关于我们
   support: 支持
