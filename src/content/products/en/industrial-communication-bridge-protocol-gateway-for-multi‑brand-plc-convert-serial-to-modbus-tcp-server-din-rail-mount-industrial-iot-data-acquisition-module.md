@@ -177,6 +177,186 @@ XD3	DAQ-Bridge-XJ
 
 23	McGummet		gorge line	DAQ-Bridge-MEG	
 
+29	IP cross-segment conversion		Ethernet communication port equipment	DAQ-Bridge50-NAT					
+
+List of devices supported by NET series bridge protocol converter
+
+order number	PLC brand	PLC series	PLC model	Bridge adapter model	remarks
+
+1	siemens	S7200/S7200 CN	CPU221,
+
+CPU22 2,
+
+CPU224,
+
+CPU224XP,
+
+CPU226
+
+CPU126	DAQ-Bridge-PPI
+
+Direct type / bridge type	Direct type: The PLC communication port is occupied by Siemens touch screen; Bridge type: The PLC communication port is occupied by non-Siemens touch screen.
+
+```
+	S7200 Smart	CPU SR20/ST20,
+```
+
+CPU SR30/ST30,
+
+CPUSR40/ST40/CR40,
+
+CPUSR60/ST60/ CR 60,	DAQ-Bridge-PPI
+
+Direct type / bridge type	Connect via the CPUs PPI port (DSUB9)
+
+```
+	S7300	CPU312,
+```
+
+CPU313/313C-2DP,
+
+CPU314,
+
+CPU315-2DP/315-2DP/ PN
+
+840D	DAQ-Bridge-MPI
+
+```
+1. Communication port MP I or DP;
+```
+
+2, DAQ-Bridge-MPI
+
+The Pro series supports ModbusRTU and Ethernet client functions.
+
+```
+	S71200/1500/PN	CPU1200/1500/S7300PN/400PN	DAQ-Bridge50-PN	Siemens network port PLC to modbusTCP communication.
+
+	numerical control system	802C
+```
+
+802D,802dsl
+
+```
+NET80-S7NC	
+```
+
+2	Mitsubishi	FX	FX1S/1N,
+
+FX2N,
+
+FX3U/3S/3SA/3G	DAQ-Bridge--FX	Support for Mitsubishi compatible PLC such as Shilin, Hicon and Hechuan.
+
+```
+	Q	Q00J/Q00/ Q 01
+```
+
+Q02/ Q02H/Q06H/Q12H,
+
+Q00U/01U/02U/06U,
+
+Q00UD/Q03UD,	DAQ-Bridge--Q	
+
+```
+	A	A1SH,A2SH	DAQ-Bridge--A	
+
+	Q series Ethernet PLC	Q03UDE/Q03UDV/Q13UDE, etc	DAQ-Bridge50-CCL	
+
+	FX5U	FX5U	DAQ-Bridge50-ME L	
+```
+
+3	OMRON	CP/CJ	CP1E,CP1H,CP1L
+
+CJ1G,CJ1M,CJ2M,CJ2H;
+
+CJ1G-H,CJ1H-H;
+
+CS1D,CS1G,CS1H;
+
+CV1000,CV2000,CV500,CV1M;
+
+FQM1,NSJ,NX1P;	DAQ-Bridge-CS	
+
+```
+	CPM/C200	C1000,C2000,C200;
+```
+
+CPM1,CPM2
+
+CQM,IDSC,SRM1;	DAQ-Bridge-CX	10/20 pin interface, additional adapter is required.
+
+4	Panasonnic	FP	FP-XH, FP-X, FP-X0,
+
+FP0, FP0R, FP2SH	DAQ-Bridge-FP	Two connection methods are provided: circular interface and terminal row.
+
+5	delta	DVP	DVP-ES/ES2/EX2/EC3/EH3,
+
+DVP-SV2/SS2/SA/SX2,
+
+DVP-10PM/20PM	DAQ-Bridge-DVP	When placing an order for a T P all-in-one machine, please specify
+
+6	silver dollar	SN/DL	SN/ SM/SH
+
+DL-05/06/205/206	DAQ-Bridge-KOYO	
+
+7	Schneider		M200/100,
+
+M218/221/238/241/251/258/ 340,
+
+Twdio,P remium,
+
+TSX Micro,Q uantum	DAQ-Bridge-SC
+
+DAQ-Bridge-TWD
+
+DAQ-Bridge-SC/RJ45
+
+```
+Provide a variety of interface types: MD8, Rj45, DIP
+```
+
+8	Huichuan	HnU/485	H1 S
+
+H0U/H1U/H2U/H3U-XP	DAQ-Bridge-HnU	Support Huichuan PLC and all-in-one machine;
+
+Round hole 422 interface selection model: DAQ-Bridge-FX
+
+9	Xinjie	XC/XD	XC1/XC2/XC3/XC5/XCM/XCC,
+
+XD3	DAQ-Bridge-XJ	
+
+10	M odbus Standard equipment		Modbus RTU/ASCII	DAQ-Bridge-MB	RS485/ 232
+
+11	Yonghong	FB s	FB s	DAQ-Bridge-FB	
+
+1 2	LG	LS(LG)	Master K/K7M	DAQ-Bridge-LS	
+
+1 3	Control	LX	LX3V/VP/VE/VM	DAQ-Bridge-LX	
+
+14	FUJI		NB/WSZ	DAQ-Bridge-FJ	
+
+1 5	Keyence	KV	KV 500/1000/ 3000	DAQ-Bridge-KV	
+
+1 6	Yudian	AP	AP	DAQ-Bridge-AP	
+
+1 7	Feng Wei	VB/VH	VB/VH	DAQ-Bridge-VGR	
+
+1 8	Rockwell	AB	MicroLogix1000/1400	DAQ-Bridge-AB	
+
+19	Dongyuan (Tai an)	T eco	T eco	DAQ-Bridge-TECO	
+
+20	Yaskawa	YASKAWA	gorge line	DAQ-Bridge-MP	
+
+```
+		internet access	DAQ-Bridge50-MP	
+```
+
+2 1	Inwitten	INVT		DAQ-Bridge-INVT	
+
+2 2	Sea		gorge line	DAQ-Bridge-HW	
+
+23	McGummet		gorge line	DAQ-Bridge-MEG	
+
 29	IP cross-segment conversion		Ethernet communication port equipment	DAQ-Bridge50-NAT	
 
 ### **1. Siemens controller**
@@ -207,43 +387,53 @@ DAQ-Bridge-PPI features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-PPI
+```
+product model:	DAQ-Bridge-PPI
 
-	description:	Siemens S7-200 Ethernet communication
+description:	Siemens S7-200 Ethernet communication
 
-	Size (L\*W\*H):	65\*30\*17mm
+Size (L\*W\*H):	65\*30\*17mm
 
-	weight:	60 g
+weight:	60 g
 
-	way to install:	The communication port is plug-in
+way to install:	The communication port is plug-in
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	Voltage/current:	24VDC/100mA
+```
+Voltage/current:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DSUB9 F (RS485)
 
-	transmission speed:	9.6/19.2/187.5K bps
+```
+transmission speed:	9.6/19.2/187.5K bps
 
-	protocol:	PPI/MPI
+protocol:	PPI/MPI
 
-	support equipment:	Siemens S7200 /2000 SMART PLC
+support equipment:	Siemens S7200 /2000 SMART PLC
+```
 
 Communication port Com2	interface type:	DSUB9 M (RS485)
 
-	transmission speed:	9.6/19.2/187.5K bps
+```
+transmission speed:	9.6/19.2/187.5K bps
 
-	protocol:	PPI/MPI
+protocol:	PPI/MPI
 
-	support equipment:	Siemens, MCGS, Weilun, proface, Buke and others
+support equipment:	Siemens, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	S7TCP/ModbusTCP
+protocol:	S7TCP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -269,43 +459,53 @@ DAQ-Bridge-MPI features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-MPI
+```
+product model:	DAQ-Bridge-MPI
 
-	description:	Siemens S7-300/400,840D Ethernet communication
+description:	Siemens S7-300/400,840D Ethernet communication
 
-	Size (L\*W\*H):	65\*30\*17mm
+Size (L\*W\*H):	65\*30\*17mm
 
-	weight:	60 g
+weight:	60 g
 
-	way to install:	The communication port is plug-in
+way to install:	The communication port is plug-in
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DSUB9 F (RS485)
 
-	transmission speed:	9.6/19.2/187.5K/500K/1.5M BPS
+```
+transmission speed:	9.6/19.2/187.5K/500K/1.5M BPS
 
-	protocol:	MPI/PROFIBUS
+protocol:	MPI/PROFIBUS
 
-	support equipment:	Siemens S7300/400 PLC
+support equipment:	Siemens S7300/400 PLC
+```
 
 Communication port Com2	interface type:	DSUB9 M (RS485)
 
-	transmission speed:	9.6/19.2/187.5K/500K/1.5M BPS
+```
+transmission speed:	9.6/19.2/187.5K/500K/1.5M BPS
 
-	protocol:	MPI/PROFIBUS
+protocol:	MPI/PROFIBUS
 
-	support equipment:	Siemens, MCGS, Weilun, proface, Buke and others
+support equipment:	Siemens, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	S7TCP/ModbusTCP
+protocol:	S7TCP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -373,35 +573,43 @@ Connection method: Connect LAN1 of the bridge adapter to the Ethernet port of Si
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge50-PN
+```
+product model:	DAQ-Bridge50-PN
 
-	description:	Siemens PLC Ethernet IP address and ModbusTCP communication conversion
+description:	Siemens PLC Ethernet IP address and ModbusTCP communication conversion
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port LAN1	interface type:	Dual port switch (RJ45)
 
-	transmission speed:	10/100 M adaptive
+```
+transmission speed:	10/100 M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+```
 
 Communication port LAN2	interface type:	Ethernet (RJ45)
 
-	transmission speed:	10/100M adaptive
+```
+transmission speed:	10/100M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -433,43 +641,53 @@ DAQ-Bridge-FX features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-FX
+```
+product model:	DAQ-Bridge-FX
 
-	description:	Mitsubishi FX 1S/1N/2N/3U/3G/3S Ethernet communication
+description:	Mitsubishi FX 1S/1N/2N/3U/3G/3S Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD8 (RS422)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Mitsubishi programming port protocol
+protocol:	Mitsubishi programming port protocol
 
-	support equipment:	Mitsubishi FX 1S/1N/2N/3U/3G/3S PLC
+support equipment:	Mitsubishi FX 1S/1N/2N/3U/3G/3S PLC
+```
 
 Communication port Com2	interface type:	MD8 (RS422)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Mitsubishi programming port protocol
+protocol:	Mitsubishi programming port protocol
 
-	support equipment:	GOT, MCGS, Wulun, proface, Buke and others
+support equipment:	GOT, MCGS, Wulun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	MCTCP/ModbusTCP
+protocol:	MCTCP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -493,43 +711,53 @@ DAQ-Bridge-Q features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-Q
+```
+product model:	DAQ-Bridge-Q
 
-	description:	Mitsubishi Q series PLC Ethernet communication
+description:	Mitsubishi Q series PLC Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD6 (RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Mitsubishi programming port protocol
+protocol:	Mitsubishi programming port protocol
 
-	support equipment:	Mitsubishi Q series PLC
+support equipment:	Mitsubishi Q series PLC
+```
 
 Communication port Com2	interface type:	MD6 (RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Mitsubishi programming port protocol
+protocol:	Mitsubishi programming port protocol
 
-	support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	MCTCP/ModbusTCP
+protocol:	MCTCP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -551,43 +779,53 @@ DAQ-Bridge-A features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-A
+```
+product model:	DAQ-Bridge-A
 
-	description:	Mitsubishi A series PLC Ethernet communication
+description:	Mitsubishi A series PLC Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DB9M (RS 232)
 
-	transmission speed:	9600 BPS
+```
+transmission speed:	9600 BPS
 
-	protocol:	Mitsubishi A programming port protocol
+protocol:	Mitsubishi A programming port protocol
 
-	support equipment:	Mitsubishi A series PLC
+support equipment:	Mitsubishi A series PLC
+```
 
 Communication port Com2	interface type:	DB9M (RS 232)
 
-	transmission speed:	9600 BPS
+```
+transmission speed:	9600 BPS
 
-	protocol:	Mitsubishi programming port protocol
+protocol:	Mitsubishi programming port protocol
 
-	support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP
+protocol:	ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -617,35 +855,43 @@ The Siemens Ethernet communication protocol is converted to the standard ModbusT
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge50-CCL
+```
+product model:	DAQ-Bridge50-CCL
 
-	description:	Mitsubishi Q series PLC Ethernet IP address and ModbusTCP communication conversion
+description:	Mitsubishi Q series PLC Ethernet IP address and ModbusTCP communication conversion
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port LAN1	interface type:	Dual port switch (RJ45)
 
-	transmission speed:	10/100 M adaptive
+```
+transmission speed:	10/100 M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+```
 
 Communication port LAN2	interface type:	Ethernet (RJ45)
 
-	transmission speed:	10/100M adaptive
+```
+transmission speed:	10/100M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -675,35 +921,43 @@ The Mitsubishi Ethernet communication protocol is converted to the standard Modb
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge50-MEL
+```
+product model:	DAQ-Bridge50-MEL
 
-	description:	Mitsubishi PLC Ethernet IP address and ModbusTCP communication conversion
+description:	Mitsubishi PLC Ethernet IP address and ModbusTCP communication conversion
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port LAN1	interface type:	Dual port switch (RJ45)
 
-	transmission speed:	10/100 M adaptive
+```
+transmission speed:	10/100 M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+support equipment:	PLC, touch screen, PC and other Ethernet communication equipment
+```
 
 Communication port LAN2	interface type:	Ethernet (RJ45)
 
-	transmission speed:	10/100M adaptive
+```
+transmission speed:	10/100M adaptive
 
-	protocol:	TCP/UDP protocol
+protocol:	TCP/UDP protocol
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -733,43 +987,53 @@ DAQ-Bridge-CS is used for a series of PLCs such as Omron CP1E/CP1H/CP1L/CJ1M/CJ2
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-CS
+```
+product model:	DAQ-Bridge-CS
 
-	description:	Omron CP1E/CP1H/CP1L/CJ1M/CJ2M Ethernet communication
+description:	Omron CP1E/CP1H/CP1L/CJ1M/CJ2M Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DSUB9M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hostlink/NT LINK protocol
+protocol:	Hostlink/NT LINK protocol
 
-	support equipment:	Omron CP1E/CP1H/CP1L/CJ1M/CJ2M PLC
+support equipment:	Omron CP1E/CP1H/CP1L/CJ1M/CJ2M PLC
+```
 
 Communication port Com2	interface type:	DSUB9M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hostlink/NT LINK protocol
+protocol:	Hostlink/NT LINK protocol
 
-	support equipment:	Omron, MCGS, Weilun, proface, Buke and other human-machine
+support equipment:	Omron, MCGS, Weilun, proface, Buke and other human-machine
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	FinsTCP/ FinsUDP/ModbusTCP
+protocol:	FinsTCP/ FinsUDP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -803,43 +1067,53 @@ DAQ-Bridge-CX features:
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-CX
+```
+product model:	DAQ-Bridge-CX
 
-	description:	Omron CPM/CQM/C200H Ethernet communication
+description:	Omron CPM/CQM/C200H Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DSUB9M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hostlink C-mode protocol
+protocol:	Hostlink C-mode protocol
 
-	support equipment:	Omron CPM/CQM/C200H PLC
+support equipment:	Omron CPM/CQM/C200H PLC
+```
 
 Communication port Com2	interface type:	DSUB9M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hostlink C-mode protocol
+protocol:	Hostlink C-mode protocol
 
-	support equipment:	Omron, MCGS, Weilun, proface, Buke and others
+support equipment:	Omron, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	FinsTCP/FinsUDP/ModbusTCP
+protocol:	FinsTCP/FinsUDP/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -869,43 +1143,53 @@ DAQ-Bridge-FP is used in Panasonic FP-XH/FP-X/FP-X0/FP0/FP2SH series PLC.
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-FP
+```
+product model:	DAQ-Bridge-FP
 
-	description:	Panasonic FP-XH/FP-X/FP-X0/FP0/FP2SH Ethernet communication
+description:	Panasonic FP-XH/FP-X/FP-X0/FP0/FP2SH Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD5M/DIP6(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2/230.4K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2/230.4K BPS
 
-	protocol:	FP programming port protocol
+protocol:	FP programming port protocol
 
-	support equipment:	Panasonic FP-XH/FP-X/FP-X0/FP0/FP2SH
+support equipment:	Panasonic FP-XH/FP-X/FP-X0/FP0/FP2SH
+```
 
 Communication port Com2	interface type:	MD5M/DIP6(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	FP programming port protocol
+protocol:	FP programming port protocol
 
-	support equipment:	Panasonic, MCGS, Weilun, proface, Buke and others
+support equipment:	Panasonic, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ET-LAN/ModbusTCP
+protocol:	ET-LAN/ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -935,43 +1219,53 @@ DAQ-Bridge-DVP is used in Delta DVP-ES/EX/EC/EH/SV/SS/SA/SX/PM series PLC.
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-DVP
+```
+product model:	DAQ-Bridge-DVP
 
-	description:	Delta DVP-ES/EX/EC/EH/SV/SS/SA/SX/PM Ethernet communication
+description:	Delta DVP-ES/EX/EC/EH/SV/SS/SA/SX/PM Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD8M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2/230.4K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2/230.4K BPS
 
-	protocol:	DVP programming port protocol
+protocol:	DVP programming port protocol
 
-	support equipment:	Delta DVP-ES/EX/EC/EH/SV/SS/SA/SX/PM
+support equipment:	Delta DVP-ES/EX/EC/EH/SV/SS/SA/SX/PM
+```
 
 Communication port Com2	interface type:	MD8M(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/57.6/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/57.6/115.2K BPS
 
-	protocol:	DVP programming port protocol
+protocol:	DVP programming port protocol
 
-	support equipment:	Delta, MCGS, Weilun, proface, Buke and others
+support equipment:	Delta, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP
+protocol:	ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -999,43 +1293,53 @@ DAQ-Bridge-YOKO is used in lightyang SM/SN/SH/DL series PLC.
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-YOKO
+```
+product model:	DAQ-Bridge-YOKO
 
-	description:	Gonyang SM/SN/SH/DL Ethernet communication
+description:	Gonyang SM/SN/SH/DL Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	RJ11(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2/K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2/K BPS
 
-	protocol:	DVP programming port protocol
+protocol:	DVP programming port protocol
 
-	support equipment:	Guangyang SM/SN/SH/DL
+support equipment:	Guangyang SM/SN/SH/DL
+```
 
 Communication port Com2	interface type:	RJ11(RS 232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	K protocol, CCM 2 (HEX/ASCII) protocol
+protocol:	K protocol, CCM 2 (HEX/ASCII) protocol
 
-	support equipment:	Gongyang, MCGS, Weilun, proface, Buke and others
+support equipment:	Gongyang, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ECOM UDP, ModbusTCP
+protocol:	ECOM UDP, ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -1065,51 +1369,63 @@ DAQ-Bridge-SC is used for Ethernet communication expansion of Schneider Twdio/TS
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-SC
+```
+product model:	DAQ-Bridge-SC
 
-	description:	For use with Schneider PLC Ethernet communication extension
+description:	For use with Schneider PLC Ethernet communication extension
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	RJ45/MD8/DIP(RS485)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	ModbusRTU/ASCII protocol
+protocol:	ModbusRTU/ASCII protocol
 
-	support equipment:	Schneider and other PLCs that support standard modbus communications
+support equipment:	Schneider and other PLCs that support standard modbus communications
+```
 
 Communication port C om 2	interface type:	RJ45/MD8/DIP(RS485)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	ModbusRTU/ASCII protocol
+protocol:	ModbusRTU/ASCII protocol
 
-	support equipment:	Standard M odbus host
+support equipment:	Standard M odbus host
+```
 
 Communication port Com3	interface type:	D S UB9 M (RS485)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	ModbusRTU/ASCII protocol
+protocol:	ModbusRTU/ASCII protocol
 
-	support equipment:	Standard M odbus host
+support equipment:	Standard M odbus host
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP/UDP server S erver
+protocol:	ModbusTCP/UDP server S erver
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -1139,43 +1455,53 @@ DAQ-Bridge-H nU is used for 485 communication of INTELLINK H0 U/H1U/H2U/H3U seri
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-HnU
+```
+product model:	DAQ-Bridge-HnU
 
-	description:	Huichuan H0 U/H1U/H2U/H3U Ethernet communication
+description:	Huichuan H0 U/H1U/H2U/H3U Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD8 (RS422)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hicon programming port protocol
+protocol:	Hicon programming port protocol
 
-	support equipment:	Huichuan H0 U/H1U/H2U/H3U
+support equipment:	Huichuan H0 U/H1U/H2U/H3U
+```
 
 Communication port Com2	interface type:	MD8 (RS422)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	Hicon programming port protocol
+protocol:	Hicon programming port protocol
 
-	support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+support equipment:	GOT, MCGS, Wulun, proface, Buke and other human-machine
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP
+protocol:	ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -1203,43 +1529,53 @@ DAQ-Bridge-XJ is used in Xijie XC/XD series PLC and all-in-one machine.
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-XJ
+```
+product model:	DAQ-Bridge-XJ
 
-	description:	X C/XD Ethernet communication
+description:	X C/XD Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD8M(RS 232)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	XJ programming port protocol
+protocol:	XJ programming port protocol
 
-	support equipment:	X C/XD, Xinjie
+support equipment:	X C/XD, Xinjie
+```
 
 Communication port Com2	interface type:	MD8M(RS 232)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	XJ programming port protocol
+protocol:	XJ programming port protocol
 
-	support equipment:	Xinjie, MCGS, Weilun, proface, Buke and others
+support equipment:	Xinjie, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP/ModbusUDP
+protocol:	ModbusTCP/ModbusUDP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -1271,43 +1607,53 @@ DAQ-Bridge-MB bridge adopts multi-way data sharing design, does not modify any h
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-MB
+```
+product model:	DAQ-Bridge-MB
 
-	description:	Standard Modbus device Ethernet communication, serial data sharing
+description:	Standard Modbus device Ethernet communication, serial data sharing
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	External supply DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	DIP(RS485/232)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	ModbusRTU/ASCII protocol
+protocol:	ModbusRTU/ASCII protocol
 
-	support equipment:	PLC, instrument, frequency converter and other standard Modbus equipment
+support equipment:	PLC, instrument, frequency converter and other standard Modbus equipment
+```
 
 Communication port Com2	interface type:	DIP(RS485/232)
 
-	transmission speed:	9.6/19.2/38.4/115.2K BPS
+```
+transmission speed:	9.6/19.2/38.4/115.2K BPS
 
-	protocol:	ModbusRTU/ASCII protocol
+protocol:	ModbusRTU/ASCII protocol
 
-	support equipment:	Standard M odbus host
+support equipment:	Standard M odbus host
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP
+protocol:	ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
@@ -1335,49 +1681,57 @@ Ethernet supports ModbusTCP and M odbusUDP communication and supports up to 16 u
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-FB
+```
+product model:	DAQ-Bridge-FB
 
-	description:	Yonghong FBs series PLC Ethernet communication
+description:	Yonghong FBs series PLC Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	MD4(RS 232)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	Yonghong programming port protocol
+protocol:	Yonghong programming port protocol
 
-	support equipment:	Yonghong FBs series PLC
+support equipment:	Yonghong FBs series PLC
+```
 
 Communication port Com2	interface type:	MD4(RS 232)
 
-	transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
+```
+transmission speed:	1200/2400/4800/9600/19200/38400/57600/115200 BPS
 
-	protocol:	Yonghong programming port protocol
+protocol:	Yonghong programming port protocol
 
-	support equipment:	Yonghong, MCGS, Weilun, proface, Buke and others
+support equipment:	Yonghong, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP/ModbusUDP
+protocol:	ModbusTCP/ModbusUDP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
 
 technical parameter:
-
- 
 
 ### **12. Electric LS (LG) series PLC**
 
@@ -1401,42 +1755,52 @@ DAQ-Bridge-LS is used for power generation LS (LG) Master K series PLC.
 
 essential parameter	product name:	Industrial communication bridge
 
-	product model:	DAQ-Bridge-LS
+```
+product model:	DAQ-Bridge-LS
 
-	description:	Power MASTER-K series Ethernet communication
+description:	Power MASTER-K series Ethernet communication
 
-	Size (L\*W\*H):	110\*30\*70mm
+Size (L\*W\*H):	110\*30\*70mm
 
-	weight:	100 g
+weight:	100 g
 
-	way to install:	35mm guide rail installation
+way to install:	35mm guide rail installation
+```
 
 source	power supply mode:	PLC communication port direct power supply / external DIP2
 
-	voltage:	24VDC/100mA
+```
+voltage:	24VDC/100mA
+```
 
 Communication port C om 1	interface type:	Terminal row (RS 232)
 
-	transmission speed:	9.6K,19.2 k, 38.4k,57.6k,115.2 k BPS
+```
+transmission speed:	9.6K,19.2 k, 38.4k,57.6k,115.2 k BPS
 
-	protocol:	LOAD protocol, CNET protocol
+protocol:	LOAD protocol, CNET protocol
 
-	support equipment:	Power MASTER-K series PLC
+support equipment:	Power MASTER-K series PLC
+```
 
 Communication port Com2	interface type:	Terminal row (RS 232)
 
-	transmission speed:	9.6K,19.2 k, 38.4k,57.6k,115.2 k BPS
+```
+transmission speed:	9.6K,19.2 k, 38.4k,57.6k,115.2 k BPS
 
-	protocol:	LOAD protocol, CNET protocol
+protocol:	LOAD protocol, CNET protocol
 
-	support equipment:	Delta, MCGS, Weilun, proface, Buke and others
+support equipment:	Delta, MCGS, Weilun, proface, Buke and others
+```
 
 Ethernet communication port	interface type:	RJ45
 
-	transmission speed:	10/100M
+```
+transmission speed:	10/100M
 
-	protocol:	ModbusTCP
+protocol:	ModbusTCP
 
-	TCP linker number:	16
+TCP linker number:	16
+```
 
 work environment	temperature:	-20~85℃
