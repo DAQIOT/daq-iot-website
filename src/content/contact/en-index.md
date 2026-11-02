@@ -7,10 +7,10 @@ name: Your Name
 email: Email
 phoneField: Phone / WhatsApp
 company: Company
-message: Your Message
+message: Your Requirements
 submit: Send Inquiry
 success: Thank you! We will contact you within 24 hours.
-formKey: ''
+formKey: ""
 formSubject: Website Inquiry (EN)
 phone: Phone
 mobile: Mobile / WhatsApp
@@ -18,11 +18,14 @@ person: Contact Person
 address: Address
 personName: xiangyang.wu
 emailValue: export@daq-iot.com
-phoneValue: 'Facebook/wechat/WhatsApp:+8619936624847  LINE:daqiot'
-mobileValue: '+8619936624847'
-address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po Kong, Hong Kong
+phoneValue: Facebook/wechat/WhatsApp:+8619936624847  LINE:daqiot
+mobileValue: "+8619936624847"
+address1: FLAT 2401-16, 24/F, Wing Shing Ind Building, 26 Ng Fong Street, San Po
+  Kong, Hong Kong
 address2: 16/F, Building 6, No. 888 Xinlang Road, Songjiang District, Shanghai
-address3: No. 19 Dongsheng Street, Zhonglou Street, Ruzhou City, Pingdingshan City, Henan Province
-address4: Block B, Building 1, Yuan Sheng International, No. 49 Jinshui East Road, Zhengdong New District, Zhengzhou
+address3: No. 19 Dongsheng Street, Zhonglou Street, Ruzhou City, Pingdingshan
+  City, Henan Province
+address4: Block B, Building 1, Yuan Sheng International, No. 49 Jinshui East
+  Road, Zhengdong New District, Zhengzhou
 address5: Room 8A, Building 9, No. 105 Gulshan Road, Dhaka, Bangladesh
 ---
