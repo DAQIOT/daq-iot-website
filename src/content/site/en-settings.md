@@ -127,7 +127,7 @@ footer:
     facebook: https://www.facebook.com/daqiot/
     instagram: https://www.instagram.com/daq_iot/
     tiktok: https://www.tiktok.com/@daqiot7
-    linkedin: https://www.linkedin.com/company/142879429/admin/dashboard/
+    linkedin: https://www.linkedin.com/company/142879429/
     youtube: https://www.youtube.com/@DAQ-IOT
     whatsapp: https://api.whatsapp.com/message/ROELWEV2NZIGF1?autoload=1&app_absent=0
   tagline: Connecting the Universe of Intelligence.
