@@ -3,7 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { locales, languages } from '../i18n/config';
-import { stripLang } from '../i18n/utils';
+import { stripLang, getSiteData } from '../i18n/utils';
+import { buildTypographyCss } from '../lib/typography';
 
 interface Props {
   lang: 'en' | 'zh' | 'de';
@@ -26,6 +27,10 @@ const xDefault = new URL('/en' + suffix, SITE).href;
 
 // 社交分享图（P2-2）：页面级 image 优先，否则用默认 og-cover
 const ogImage = new URL(image || '/images/og-cover.jpg', SITE).href;
+
+// 全站字体样式：后台「网站基础文案 → 字体样式」配置了字号/颜色才生成规则，留空零影响
+const siteData = await getSiteData(lang);
+const typoCss = buildTypographyCss(siteData.typography);
 
 // JSON-LD 结构化数据（P2-3）：Organization 全站注入
 const orgJsonLd = JSON.stringify({
@@ -59,6 +64,8 @@ const orgJsonLd = JSON.stringify({
     {description && <meta name="twitter:description" content={description} />}
     <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={orgJsonLd} />
+    {/* 字体样式（后台可配）：只在配置了字号/颜色的层级生成规则 */}
+    {typoCss && <style is:inline set:html={typoCss} />}
     {/* 必须在 CSS 应用前打上标记，否则会出现「先隐藏再出现」的闪烁 */}
     <script is:inline>document.documentElement.classList.add('js-reveal');</script>
     <slot name="head" />

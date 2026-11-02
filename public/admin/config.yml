@@ -666,6 +666,73 @@ collections:
           - name: ctaSecondary
             label: 次按钮文字
             widget: string
+      - label: 字体样式（全站文本字号与颜色）
+        name: typography
+        widget: list
+        required: false
+        collapsed: true
+        hint: 按需「添加条目」选择要调整的文本类型，填写字号和/或颜色。留空不添加 = 保持当前样式。填写后以最高优先级覆盖。字号支持 px / rem / pt / %（如 28px、1.75rem）；颜色用取色器或直接输入 #十六进制
+        types:
+          - label: 全站正文（基准字号，影响大多数描述文字）
+            name: body
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false, hint: 如 16px、1.05rem}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 首页顶部小标签（DAQ-IOT | …）
+            name: heroEyebrow
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false, hint: 如 28px、1.75rem}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true, default: "#ffffff"}
+          - label: 首页大标题
+            name: heroTitle
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 首页大标题描述
+            name: heroSubtitle
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 各区块小标签（Products 之类的短词）
+            name: sectionEyebrow
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 各区块大标题
+            name: sectionTitle
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 各区块副标题/描述
+            name: sectionDesc
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 卡片标题（产品/案例/方案卡片）
+            name: cardTitle
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true, hint: 全站 h3 生效，注意深色/浅色背景的对比度}
+          - label: 顶部导航菜单文字
+            name: nav
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
+          - label: 页脚文字（段落与列表）
+            name: footer
+            widget: object
+            fields:
+              - {label: 字号, name: fontSize, widget: string, required: false}
+              - {label: 颜色, name: color, widget: color, required: false, allowInput: true}
       - label: 页面横幅背景图
         name: banner
         widget: object
