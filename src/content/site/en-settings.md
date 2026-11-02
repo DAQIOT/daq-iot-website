@@ -129,7 +129,7 @@ footer:
     tiktok: https://www.tiktok.com/@daqiot7
     linkedin: https://www.linkedin.com/company/142879429/
     youtube: https://www.youtube.com/@DAQ-IOT
-    whatsapp: https://api.whatsapp.com/message/ROELWEV2NZIGF1?autoload=1&app_absent=0
+    whatsapp: https://wa.me/8619936624847
   tagline: Connecting the Universe of Intelligence.
   follow: Follow Us
   rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
