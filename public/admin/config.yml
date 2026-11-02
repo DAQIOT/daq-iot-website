@@ -1068,6 +1068,32 @@ collections:
                 fields:
                   - {name: url, label: 链接(可留空), widget: string, required: false}
                   - {name: qr, label: 二维码图片, widget: image, required: false}
+      - label: 悬浮咨询栏（仅中文站）
+        name: consult
+        widget: object
+        required: false
+        hint: 中文站右侧的悬浮咨询栏。三项都可留空，留空的项不显示；三项全空时整条不显示（英文 / 德文站始终不显示）
+        fields:
+          - name: link
+            label: 在线咨询链接（企业微信「微信客服」）
+            widget: string
+            required: false
+            hint: 企业微信后台 → 应用管理 → 微信客服 → 复制客服链接（形如 https://work.weixin.qq.com/kfid/kfxxxxxxxx）。留空则不显示「在线咨询」按钮
+          - name: qr
+            label: 企业微信二维码
+            widget: image
+            required: false
+            hint: 鼠标经过「扫码咨询」时弹出，建议 300×300 以上的正方形 PNG
+          - name: qrText
+            label: 二维码下方提示文案
+            widget: string
+            required: false
+            hint: 留空默认「添加企业微信（注明来意）」
+          - name: phone
+            label: 咨询电话
+            widget: string
+            required: false
+            hint: 如 021-12345678 或 13800000000。鼠标经过显示号码，点击直接拨打
   - name: solutions
     label: 解决方案
     description: 解决方案页面的标题与引导文案。⚠️ 页面上的方案列表不再在这里维护——改到「内容管理 → ⑥ 方案库」（左侧两级分类树由方案文章的「一级分类 / 二级分类」自动生成）。

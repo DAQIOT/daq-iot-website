@@ -154,4 +154,11 @@ footer:
   rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。
   solutions: 解决方案
   company: 公司
+
+# 右侧悬浮咨询栏（仅中文站）：三项留空则对应按钮不显示，全空则整条不显示
+consult:
+  link: ""
+  qr: ""
+  qrText: ""
+  phone: ""
 ---

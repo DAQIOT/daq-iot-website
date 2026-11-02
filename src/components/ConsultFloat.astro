@@ -1,0 +1,254 @@
+---
+// 右侧悬浮咨询栏（仅中文站渲染，由 BaseLayout 控制）
+// 三个入口全部来自后台「网站基础文案 → 悬浮咨询栏」，留空的入口自动隐藏：
+//   在线咨询 → 跳企业微信「微信客服」链接
+//   扫码咨询 → hover/点击弹出企业微信二维码 + 提示文案
+//   电话咨询 → hover/点击弹出号码，点击直接拨打
+// 另含「回到顶部」（滚动超过一屏才出现）
+interface Props {
+  consult?: Record<string, any> | null;
+}
+
+const { consult } = Astro.props;
+
+const rawLink = String(consult?.link ?? '').trim();
+// 只接受站内路径或 http(s) 绝对地址，防 javascript: 注入
+const link = /^(https?:\/\/|\/)/i.test(rawLink) ? rawLink : '';
+const qr = String(consult?.qr ?? '').trim();
+const qrText = String(consult?.qrText ?? '').trim() || '添加企业微信（注明来意）';
+const phone = String(consult?.phone ?? '').trim();
+const tel = phone.replace(/[^\d+]/g, '');
+
+const hasAny = Boolean(link || qr || phone);
+
+// 图标（Remix Icon，24×24 单色路径）
+const ICONS = {
+  service: 'M21 8a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-1.062A8 8 0 0 1 12 23v-2a6 6 0 0 0 6-6V9A6 6 0 0 0 6 9v7H3a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1.062a8.001 8.001 0 0 1 15.876 0zM7.76 15.785l1.06-1.696A5.97 5.97 0 0 0 12 15a5.97 5.97 0 0 0 3.18-.911l1.06 1.696A7.96 7.96 0 0 1 12 17a7.96 7.96 0 0 1-4.24-1.215',
+  wechat:
+    'M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z',
+  phone:
+    'M21 16.42v3.536a1 1 0 0 1-.93.998Q19.415 21 19 21C10.163 21 3 13.837 3 5q0-.414.046-1.07A1 1 0 0 1 4.044 3H7.58a.5.5 0 0 1 .498.45q.034.344.064.552A13.9 13.9 0 0 0 9.35 8.003c.095.2.033.439-.147.567l-2.158 1.542a13.05 13.05 0 0 0 6.844 6.844l1.54-2.154a.46.46 0 0 1 .573-.149 13.9 13.9 0 0 0 4 1.205q.208.03.55.064a.5.5 0 0 1 .449.498'
+};
+---
+
+{
+  hasAny && (
+    <div class="consult-dock" aria-label="咨询方式">
+      {link && (
+        <a class="cd-item" href={link} target="_blank" rel="noopener noreferrer" aria-label="在线咨询">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={ICONS.service} /></svg>
+          <span class="cd-label">在线咨询</span>
+        </a>
+      )}
+
+      {qr && (
+        <div class="cd-item cd-item--pop" role="button" tabindex="0" aria-label="扫码咨询">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={ICONS.wechat} /></svg>
+          <span class="cd-label">扫码咨询</span>
+          <span class="cd-pop cd-pop--qr">
+            <img src={qr} alt="企业微信二维码" width="148" height="148" loading="lazy" decoding="async" />
+            <span class="cd-cap">{qrText}</span>
+          </span>
+        </div>
+      )}
+
+      {phone && (
+        <a class="cd-item cd-item--pop" href={`tel:${tel}`} aria-label={`电话咨询 ${phone}`}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d={ICONS.phone} /></svg>
+          <span class="cd-label">电话咨询</span>
+          <span class="cd-pop cd-pop--tel">
+            <span class="cd-tel">{phone}</span>
+            <span class="cd-cap">点击拨打</span>
+          </span>
+        </a>
+      )}
+    </div>
+  )
+}
+
+<style>
+  .consult-dock {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border-radius: 12px 0 0 12px;
+    overflow: visible;
+  }
+
+  .cd-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 62px;
+    padding: 10px 0 9px;
+    border: 0;
+    border-radius: 12px 0 0 12px;
+    background: linear-gradient(180deg, #0ba5e0 0%, #0096d6 100%);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.1;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.18s ease, padding-right 0.18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cd-item:first-child {
+    border-radius: 12px 0 0 0;
+  }
+  .cd-item:last-child {
+    border-radius: 0 0 0 12px;
+  }
+  .cd-item:first-child:last-child {
+    border-radius: 12px 0 0 12px;
+  }
+
+  .cd-item svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+
+  .cd-label {
+    display: block;
+    width: 3.4em;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    white-space: normal;
+  }
+
+  .cd-item:hover,
+  .cd-item:focus-visible {
+    background: linear-gradient(180deg, #12b0ea 0%, #0088c4 100%);
+    outline: none;
+  }
+
+  /* ── 弹层 ── */
+  .cd-pop {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    width: 172px;
+    padding: 12px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(6, 29, 49, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  }
+  .cd-pop::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -6px;
+    border: 6px solid transparent;
+    border-left-color: #fff;
+  }
+  .cd-item:hover .cd-pop,
+  .cd-item:focus-visible .cd-pop,
+  .cd-item.is-open .cd-pop {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .cd-pop img {
+    display: block;
+    width: 148px;
+    height: 148px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .cd-cap {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #475569;
+    text-align: center;
+  }
+
+  .cd-pop--tel {
+    width: auto;
+    min-width: 132px;
+    padding: 12px 16px;
+    gap: 3px;
+  }
+  .cd-tel {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0a2a43;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .cd-item {
+      width: 50px;
+      padding: 8px 0 7px;
+    }
+    .cd-item svg {
+      width: 19px;
+      height: 19px;
+    }
+    .cd-label {
+      font-size: 11px;
+      width: 3.2em;
+    }
+    .cd-pop {
+      width: 150px;
+      padding: 10px;
+    }
+    .cd-pop img {
+      width: 128px;
+      height: 128px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cd-item,
+    .cd-pop {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+const dock = document.querySelector<HTMLElement>('.consult-dock');
+if (dock) {
+  // 触屏设备没有 hover：点一下二维码按钮切换弹层（电话按钮有 tel: 直接拨打，不拦）
+  dock.querySelectorAll<HTMLElement>('.cd-item--pop').forEach((el) => {
+    el.addEventListener('click', (e) => {
+      if (el.tagName === 'A') return; // tel: 链接放行
+      e.preventDefault();
+      const open = el.classList.contains('is-open');
+      dock.querySelectorAll('.is-open').forEach((n) => n.classList.remove('is-open'));
+      if (!open) el.classList.add('is-open');
+    });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        el.classList.toggle('is-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dock.contains(e.target as Node)) dock.querySelectorAll('.is-open').forEach((n) => n.classList.remove('is-open'));
+  });
+}
+</script>
