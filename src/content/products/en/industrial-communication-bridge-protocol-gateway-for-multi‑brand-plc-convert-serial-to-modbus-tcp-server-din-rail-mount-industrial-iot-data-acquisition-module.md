@@ -8,7 +8,7 @@ summary: >-
   instruments via Ethernet for analysis.
 
   This manual is sorted by supported device types.
-image: /images/图片1英文.png
+image: /images/2ab.png
 order: 0
 category: plcacquisition
 docs: []
