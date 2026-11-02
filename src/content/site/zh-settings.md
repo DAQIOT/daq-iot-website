@@ -131,6 +131,24 @@ footer:
     linkedin: ""
     youtube: ""
     whatsapp: ""
+    wechat:
+      url: ""
+      qr: ""
+    douyin:
+      url: ""
+      qr: ""
+    channels:
+      url: ""
+      qr: ""
+    bilibili:
+      url: ""
+      qr: ""
+    zhihu:
+      url: ""
+      qr: ""
+    toutiao:
+      url: ""
+      qr: ""
   tagline: 智联万物。
   follow: 关注我们
   rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。

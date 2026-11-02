@@ -1019,6 +1019,55 @@ collections:
               - {name: linkedin, label: LinkedIn 链接, widget: string, required: false, hint: "https://www.linkedin.com/company/你的公司页"}
               - {name: youtube, label: YouTube 频道链接, widget: string, required: false, hint: "https://www.youtube.com/@你的频道"}
               - {name: whatsapp, label: WhatsApp（链接或号码）, widget: string, required: false, hint: "可直接填 +8613800000000 这样的号码，自动生成 https://wa.me/ 链接；也可填完整链接"}
+              - name: wechat
+                label: 微信
+                widget: object
+                required: false
+                collapsed: true
+                hint: 国内平台：鼠标悬停图标时，配了二维码就弹出「扫码查看」，只填链接则提示「点击查看」
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false, hint: "如公众号文章地址；纯二维码展示可留空"}
+                  - {name: qr, label: 二维码图片, widget: image, required: false, hint: 公众号/企业微信二维码，建议 300×300 以上 PNG}
+              - name: douyin
+                label: 抖音
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false, hint: "https://www.douyin.com/user/xxx"}
+                  - {name: qr, label: 二维码图片, widget: image, required: false}
+              - name: channels
+                label: 视频号
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false}
+                  - {name: qr, label: 二维码图片, widget: image, required: false, hint: 视频号二维码，建议 300×300 以上 PNG}
+              - name: bilibili
+                label: 哔哩哔哩(B站)
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false, hint: "https://space.bilibili.com/xxx"}
+                  - {name: qr, label: 二维码图片, widget: image, required: false}
+              - name: zhihu
+                label: 知乎
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false, hint: "https://www.zhihu.com/people/xxx"}
+                  - {name: qr, label: 二维码图片, widget: image, required: false}
+              - name: toutiao
+                label: 今日头条
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - {name: url, label: 链接(可留空), widget: string, required: false}
+                  - {name: qr, label: 二维码图片, widget: image, required: false}
   - name: solutions
     label: 解决方案
     description: 解决方案页面的标题与引导文案。⚠️ 页面上的方案列表不再在这里维护——改到「内容管理 → ⑥ 方案库」（左侧两级分类树由方案文章的「一级分类 / 二级分类」自动生成）。

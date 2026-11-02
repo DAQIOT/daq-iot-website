@@ -136,4 +136,22 @@ footer:
     linkedin: ""
     youtube: ""
     whatsapp: ""
+    wechat:
+      url: ""
+      qr: ""
+    douyin:
+      url: ""
+      qr: ""
+    channels:
+      url: ""
+      qr: ""
+    bilibili:
+      url: ""
+      qr: ""
+    zhihu:
+      url: ""
+      qr: ""
+    toutiao:
+      url: ""
+      qr: ""
 ---

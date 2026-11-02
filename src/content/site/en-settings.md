@@ -130,6 +130,24 @@ footer:
     linkedin: https://www.linkedin.com/company/142879429/
     youtube: https://www.youtube.com/@DAQ-IOT
     whatsapp: https://wa.me/8619936624847
+    wechat:
+      url: ""
+      qr: ""
+    douyin:
+      url: ""
+      qr: ""
+    channels:
+      url: ""
+      qr: ""
+    bilibili:
+      url: ""
+      qr: ""
+    zhihu:
+      url: ""
+      qr: ""
+    toutiao:
+      url: ""
+      qr: ""
   tagline: Connecting the Universe of Intelligence.
   follow: Follow Us
   rights: Copyright © 2021-2025 DAQ-IOT Technology. All Rights Reserved.
