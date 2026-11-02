@@ -47,8 +47,8 @@ home:
   solutionsSubtitle: Deep expertise in smart manufacturing and new energy for
     digital transformation
   heroSubtitle: >-
-    Connect industrial sensors, meters, PLCs and equipment to  SCADA, MES, EMS
-    and cloud platforms.
+    IIoT Expert | Connect industrial sensors, meters, PLCs and equipment
+    to  SCADA, MES, EMS and cloud platforms.
 
     DAQ-IOT provides industrial gateways, data acquisition devices,  sensors and customized software integration to help you collect, convert and manage industrial data.
   categoriesSubtitle: Covering the full industrial IoT chain from sensing and edge to cloud
