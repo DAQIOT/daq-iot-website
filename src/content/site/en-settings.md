@@ -42,7 +42,7 @@ home:
   partnersSubtitle: Building the industrial IoT ecosystem with industry leaders
   ctaTitle: Start Your Smart Project
   ctaSubtitle: Send your requirements and get a tailored IoT solution quote within 24 hours.
-  eyebrow: DAQ-IOT | Industrial Data Acquisition & IoT Monitoring Solutions
+  eyebrow: Industrial Data Acquisition & IoT Monitoring Solutions
   partnersTitle: Partners & Ecosystem
   solutionsSubtitle: Deep expertise in smart manufacturing and new energy for
     digital transformation
