@@ -1001,6 +1001,24 @@ collections:
           - name: tagline
             label: 标语
             widget: string
+          - name: follow
+            label: 社交图标上方小标题
+            widget: string
+            required: false
+            hint: 如「关注我们 / Follow Us」。留空则只显示图标、不显示标题
+          - name: social
+            label: 社交平台图标
+            widget: object
+            required: false
+            collapsed: true
+            hint: 填了链接的平台才会显示图标，留空即隐藏；只填平台账号编号也可（如 WhatsApp 填 +86 138xxxx 或纯数字，会自动转成 wa.me 链接）
+            fields:
+              - {name: facebook, label: Facebook 主页链接, widget: string, required: false, hint: "https://www.facebook.com/你的主页名"}
+              - {name: instagram, label: Instagram 链接, widget: string, required: false, hint: "https://www.instagram.com/你的账号名"}
+              - {name: tiktok, label: TikTok 链接, widget: string, required: false, hint: "https://www.tiktok.com/@你的账号名"}
+              - {name: linkedin, label: LinkedIn 链接, widget: string, required: false, hint: "https://www.linkedin.com/company/你的公司页"}
+              - {name: youtube, label: YouTube 频道链接, widget: string, required: false, hint: "https://www.youtube.com/@你的频道"}
+              - {name: whatsapp, label: WhatsApp（链接或号码）, widget: string, required: false, hint: "可直接填 +8613800000000 这样的号码，自动生成 https://wa.me/ 链接；也可填完整链接"}
   - name: solutions
     label: 解决方案
     description: 解决方案页面的标题与引导文案。⚠️ 页面上的方案列表不再在这里维护——改到「内容管理 → ⑥ 方案库」（左侧两级分类树由方案文章的「一级分类 / 二级分类」自动生成）。

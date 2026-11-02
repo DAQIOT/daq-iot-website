@@ -128,4 +128,12 @@ footer:
   resources: Ressourcen
   rights: Copyright © 2021-2025 DAQ-IOT Technology. Alle Rechte vorbehalten.
   tagline: Das Universum der Intelligenz verbinden.
+  follow: Folgen Sie uns
+  social:
+    facebook: ""
+    instagram: ""
+    tiktok: ""
+    linkedin: ""
+    youtube: ""
+    whatsapp: ""
 ---

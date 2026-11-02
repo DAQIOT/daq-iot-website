@@ -1,5 +1,6 @@
 ---
-import { getTranslations, getCategoriesByLang } from '../i18n/utils';
+import { getTranslations, getCategoriesByLang, getSiteData } from '../i18n/utils';
+import SocialLinks from './SocialLinks.astro';
 import type { Lang } from '../i18n/config';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = await getTranslations(lang);
 const base = '/' + lang;
+const footerData = ((await getSiteData(lang)).footer ?? {}) as Record<string, any>;
 
 // 品牌logo按语言切换：英文/德文站用 DAQ-IOT 英文logo（彩色透明版，深色背景可直接用），中文站用数采物联
 const LOGO = lang === 'zh'
@@ -23,6 +25,7 @@ const productCats = (await getCategoriesByLang(lang)).filter((c) => !c.data.pare
     <div class="col-span-2 md:col-span-3 lg:col-span-1">
       <img src={LOGO.src} class="h-10 w-auto" alt={LOGO.alt} />
       <p class="mt-3 text-sm text-slate-400 max-w-xs">{t('footer.tagline')}</p>
+      <SocialLinks social={footerData.social} follow={footerData.follow} class="mt-5" />
     </div>
 
     <!-- 产品 -->

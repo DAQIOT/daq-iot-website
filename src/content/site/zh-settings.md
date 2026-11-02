@@ -123,9 +123,17 @@ cat:
 footer:
   contact: 联系方式
   products: 产品
+  resources: 资源
+  social:
+    facebook: ""
+    instagram: ""
+    tiktok: ""
+    linkedin: ""
+    youtube: ""
+    whatsapp: ""
+  tagline: 智联万物。
+  follow: 关注我们
+  rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。
   solutions: 解决方案
   company: 公司
-  resources: 资源
-  rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。
-  tagline: 智联万物。
 ---
