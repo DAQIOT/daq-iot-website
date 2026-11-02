@@ -1,11 +1,15 @@
 ---
-title: "能源管理系统"
-summary: "系统简介BRIEF INTRODUCTION"
-image: "/images/products/1741850953375132.jpg"
+title: 能源管理系统
+summary: 能源管理系统依托云架构采集变配电、照明、空调、给排水、燃气及重点设备能耗数据，实现能耗分项分区统计、线损分析与用能预警，助力工业、楼宇及公共建筑可视化用能管控、节能降耗。
+image: /images/products/1741850953375132.jpg
 order: 260
-category: "daq-software"
+category: daq-software
 hidden: false
 ---
+#### **关键词:**
+
+#### 企业能源管理平台;能耗在线监测;能耗数据采集;分项能耗统计;线损分析;用能异常预警;工业能源管控;楼宇能耗监测;公共建筑能源管理;节能增效系统
+
 **产品详情**
 
 **系统简介BRIEF INTRODUCTION**
