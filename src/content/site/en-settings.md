@@ -11,7 +11,7 @@ nav:
   products: Products
   honors: Honors
   join: Join Us
-  partners: Partners
+  partners: Cooperation & Franchise
   downloads: Downloads
   about: About
   support: Support
