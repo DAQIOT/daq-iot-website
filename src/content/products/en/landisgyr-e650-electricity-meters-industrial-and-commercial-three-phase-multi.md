@@ -1,8 +1,12 @@
 ---
-title: Landis+Gyr E650 Electricity Meters industrial and commercial three-phase multi-function high-precision settlement gateway meter E650 E850 ZMQ202 ZMD402
-summary: >-
-  ⚡ Landis+Gyr E650 Electricity Meter – Product Advantages
-image: /images/products/1780562815451779.jpg
+title: Landis+Gyr E650 Electricity Meters industrial and commercial three-phase
+  multi-function high-precision settlement gateway meter E650 E850 ZMQ202 ZMD402
+summary: Landis E850 series high-end gateway settlement watt-hour meters feature
+  0.2S active accuracy for high-voltage grid, power plant and heavy-load
+  industrial settlement, supporting harmonic measurement, massive data logging
+  and configurable communication for UHV, cross-border grids, power generation
+  and high-speed rail traction applications.
+image: /images/80da405313497767bc9ed204ee856bb4.png
 order: 9
 category: instrument-acquisition
 ---
