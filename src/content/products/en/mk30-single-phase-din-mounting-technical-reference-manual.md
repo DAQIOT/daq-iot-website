@@ -1,7 +1,8 @@
 ---
 title: Mk30 Single-Phase (DIN Mounting) Technical Reference Manual
-summary: >-
-  Electrical Parameters
+summary: The Mk30 is a compact DIN-rail single-phase electrical meter that
+  delivers accurate monitoring of active/reactive energy, voltage, current and
+  power factor for residential, commercial and industrial applications.
 image: /images/products/1781081054381862.jpg
 order: 8
 category: instrument-acquisition
