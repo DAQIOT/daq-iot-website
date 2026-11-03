@@ -114,11 +114,6 @@ downloads:
   catSoftware: 软件平台
   catDriver: 驱动程序
 name: settings
-consult:
-  link: https://work.weixin.qq.com/kfid/kfce90340d0ae1f17c2
-  qr: ""
-  qrText: ""
-  phone: 400-9677-032
 cat:
   software: AI+软件
   edge: AI+边缘计算机
@@ -130,33 +125,41 @@ footer:
   products: 产品
   resources: 资源
   social:
-    youtube: ""
     facebook: ""
+    instagram: ""
+    tiktok: ""
+    linkedin: ""
+    youtube: ""
+    whatsapp: ""
     wechat:
       url: ""
       qr: ""
-    zhihu:
-      url: ""
-      qr: ""
-    bilibili:
+    douyin:
       url: ""
       qr: ""
     channels:
       url: ""
       qr: ""
-    whatsapp: ""
-    instagram: ""
-    douyin:
+    bilibili:
       url: ""
       qr: ""
-    tiktok: ""
+    zhihu:
+      url: ""
+      qr: ""
     toutiao:
       url: ""
       qr: ""
-    linkedin: ""
   tagline: 智联万物。
   follow: 关注我们
   rights: Copyright © 2021-2026 DAQ-IOT Technology 版权所有。
   solutions: 解决方案
   company: 公司
+
+# 右侧悬浮咨询栏（仅中文站）：三项留空则对应按钮不显示，全空则整条不显示
+consult:
+  link: https://work.weixin.qq.com/kfid/kfce90340d0ae1f17c2
+  tip: ""
+  qr: ""
+  qrText: ""
+  phone: 400-9677-032
 ---

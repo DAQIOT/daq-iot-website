@@ -1079,6 +1079,11 @@ collections:
             widget: string
             required: false
             hint: 企业微信后台 → 应用管理 → 微信客服 → 复制客服链接（形如 https://work.weixin.qq.com/kfid/kfxxxxxxxx）。留空则不显示「在线咨询」按钮
+          - name: tip
+            label: 在线咨询悬停描述
+            widget: string
+            required: false
+            hint: 鼠标经过「在线咨询」时左侧弹出的说明文字。留空默认「您好，欢迎咨询，我们会尽快回复」
           - name: qr
             label: 企业微信二维码
             widget: image
