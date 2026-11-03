@@ -1,7 +1,9 @@
 ---
 title: EDMI Mk6E Genius Smart Electricity Meter | AMI Utility Energy Meter
-summary: >-
-  ⚡ EDMI Mk6E Genius Smart Electricity Meter – Key Advantages
+summary: EDMI Mk6E Genius is a high-performance multifunction smart electricity
+  meter for utilities, industry and smart grids, featuring precise energy
+  measurement, remote reading, RS485 communication, event logging, load
+  profiling and anti-tamper functions for AMI and advanced power management.
 image: /images/products/1780901539583612.png
 order: 7
 category: instrument-acquisition
