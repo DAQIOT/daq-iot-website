@@ -1,0 +1,97 @@
+---
+title: "DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution"
+summary: "Requirement: a Dongao chemical company in Shandong received a notice from the regulatory industrial park and needs real-time acquisition and monitoring of DCS data, with the data uploaded to the park monitoring platform."
+---
+Requirement: a Dongao chemical company in Shandong received a notice from the regulatory industrial park and needs real-time acquisition and monitoring of DCS data, with the data uploaded to the park monitoring platform. Real-time data is acquired from the DCS over the OPC UA protocol. The acquired data is forwarded to the monitoring platform over MQTT.
+
+## 1. Background and Requirement Analysis
+
+A DCS (distributed control system) is a control system for industrial automation. It monitors and manages complex production processes through multiple distributed controllers and is widely used in the chemical, power and petroleum industries. DCS data acquisition faces several challenges. Conventional DCSs often use closed communication protocols, so their data is hard to exchange with other systems. Production data, equipment status and energy consumption information are scattered across separate systems and cannot be integrated or analyzed effectively. The systems also involve a wide variety of communication protocols, and devices from different vendors use different protocols (Emerson, Siemens, Yokogawa, Rockwell, SUPCON, HollySys, GE Xinhua, Chint Xinhua and others), which makes data acquisition and system integration difficult, slow and costly. These acquisition methods often suffer from poor real-time performance and high transmission latency.
+
+| DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey | DCS Control System Data Acquisition Survey |  |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| No. | No. | Company | DCS Brand | DCS Qty | DCS Qty | DCS Server | DCS Server | DCS Server | DCS Server | Data Acquisition Points | Data Acquisition Points | Data Acquisition Points | Data Acquisition Points | Data Acquisition Points | Remarks | Remarks |  |
+| No. | No. | Company | DCS Brand | DCS Qty | DCS Qty | DCS Server IP Address | OPC Interface License | Acquisition Bridge Program Allowed | Acquisition Bridge Program Allowed | Qty | Qty | Qty | Point List Available | Point List Available | Remarks | Remarks |  |
+| 1 | 1 | Daq IoT | SUPCON | 1 | 1 | X.X.X.X | Yes | Yes | Yes | 70 | 70 | 70 | Yes | Yes |  |  |  |
+| 2 | 2 | Daq IoT | HollySys | 1 | 1 | X.X.X.X | Yes | Yes | Yes | 100 | 100 | 100 | Yes | Yes |  |  |  |
+| 3 | 3 | Daq IoT | Rockwell | 1 | 1 | X.X.X.X | No | No | No | 50 | 50 | 50 | No | No |  |  |  |
+| 4 | 4 | Daq IoT | GE Xinhua | 1 | 1 | X.X.X.X | Yes | No | No | 80 | 80 | 80 | Yes | Yes |  |  |  |
+| DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example | DCS Point List Example |
+| No. | No. | Data Name | Data Name | Data Name | Data Name | Data Address (OPC UA Protocol Address Tag) | Data Address (OPC UA Protocol Address Tag) | Data Address (OPC UA Protocol Address Tag) | Data Address (OPC UA Protocol Address Tag) | Data Type | Data Type | Lower Range Limit | Upper Range Limit | Upper Range Limit | Unit | Unit | Remarks |
+| 1 | 1 | Concentration on the North Side of the No. 6 Benzene Solution Tank | Concentration on the North Side of the No. 6 Benzene Solution Tank | Concentration on the North Side of the No. 6 Benzene Solution Tank | Concentration on the North Side of the No. 6 Benzene Solution Tank | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | Integer | Integer | 0 | 100 | 100 | mg/m3 | mg/m3 |  |
+| 2 | 2 | Concentration on the South Side of the No. 1 Hydrochloric Acid Storage Tank | Concentration on the South Side of the No. 1 Hydrochloric Acid Storage Tank | Concentration on the South Side of the No. 1 Hydrochloric Acid Storage Tank | Concentration on the South Side of the No. 1 Hydrochloric Acid Storage Tank | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | Integer | Integer | 0 | 100 | 100 | mg/m3 | mg/m3 |  |
+| 3 | 3 | Level of the No. 1 Concentrated Sulfuric Acid Tank | Level of the No. 1 Concentrated Sulfuric Acid Tank | Level of the No. 1 Concentrated Sulfuric Acid Tank | Level of the No. 1 Concentrated Sulfuric Acid Tank | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | Integer | Integer | 0 | 6 | 6 | m | m |  |
+| 4 | 4 | Wastewater Level of Tank B in the Tank Farm | Wastewater Level of Tank B in the Tank Farm | Wastewater Level of Tank B in the Tank Farm | Wastewater Level of Tank B in the Tank Farm | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | Integer | Integer | 0 | 10 | 10 | m | m |  |
+
+(The table has more rows; only the first 12 are shown here.)
+
+## 2. Products and Data Acquisition Approach
+
+The DAQ-IOT industrial data acquisition gateway is a powerful tool for DCS data acquisition. It meets data acquisition needs in a wide range of complex industrial manufacturing scenarios. It acquires data from PLCs, CNC machines, test instruments, conventional machine tools, PC host systems and other industrial equipment, and integrates seamlessly with MES. It supports acquisition and transmission over multiple communication protocols
+
+![DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution](/images/plans/dcs-opc-ua-mqtt-forwarding/img-01.webp)
+
+![DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution](/images/plans/dcs-opc-ua-mqtt-forwarding/img-02.webp)
+
+DAQ-GP-IOTGW Series  DAQ-GP-DPU Series
+
+### 2.1 Strong Protocol Parsing for Easy DCS Integration
+
+The DAQ-IOT industrial data acquisition gateway has a built-in library of industrial protocols. It supports OPC UA, Modbus, HJ212, IEC and other mainstream industrial protocols, and connects easily to leading DCSs in China and abroad for seamless data acquisition and transmission. The gateway also supports custom protocol development to meet company-specific requirements.
+
+| Protocol Type | Main Protocol | Sub-Protocol | Remarks |
+|---|---|---|---|
+| PLC Communication Protocol | Modbus | Modbus-RTU |  |
+|  |  | Modbus-TCP |  |
+|  |  | Modbus-ASCII |  |
+|  | Siemens S7 |  |  |
+|  | Mitsubishi MELSEC Communication Protocol | MELSEC-1E |  |
+|  |  | MELSEC-3C |  |
+|  |  | MELSEC-3E |  |
+|  |  | MELSEC-4C |  |
+|  |  | MELSEC-4D |  |
+|  |  | Mitsubishi-Fx |  |
+| OPC Communication Protocol | OPC-UA |  |  |
+|  | OPC-DA |  |  |
+
+(The table has more rows; only the first 12 are shown here.)
+
+### 2.2 Efficient Data Acquisition and Forwarding for Real-Time Performance
+
+The DAQ-IOT industrial data acquisition gateway uses a high-performance processor and optimized acquisition algorithms. It acquires and forwards data at millisecond-level speed, ensuring real-time performance and accuracy. The gateway also supports resumable transmission and data caching, which effectively prevents data loss and protects data integrity.
+
+### 2.3 Flexible MQTT for Data Interconnection
+
+The DAQ-IOT industrial data acquisition gateway supports MQTT and can upload acquired DCS data to the cloud or a local server in real time for data interconnection and sharing. Companies can use MQTT to integrate DCS data with MES, ERP and SCADA systems, build a unified data platform, and carry out in-depth data mining and analysis.
+
+### 2.4 Secure and Reliable Data Protection
+
+The DAQ-IOT industrial data acquisition gateway uses multiple security mechanisms, including data encryption, identity authentication and access control, to effectively protect data security and reliability. It also supports remote upgrades and maintenance, making device management and maintenance easier for users.
+
+### 2.5 Acquisition Solution
+
+![DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution](/images/plans/dcs-opc-ua-mqtt-forwarding/img-03.webp)
+
+Authorization must be confirmed and enabled on the DCS central control system. Add network security middleware (a gap or firewall, etc.) as required by the company. Confirm whether a bridge program can be added to the company's DCS central control system environment to enable communication between different networks. Then connect the DAQ data acquisition gateway over an Ethernet cable. Finally, forward the data to the monitoring platform over MQTT.
+
+## 3. Application Scenarios: DCS Data Acquisition Across Industries
+
+Petrochemicals: acquire key parameters such as temperature, pressure and flow from production units in real time to monitor and optimize production processes.
+
+Power and Energy: acquire operating data from generator sets, substations and other equipment in real time to keep the power system safe and stable.
+
+Metallurgical Manufacturing: acquire equipment status, process parameters and other data from production lines in real time for automated control and optimization of production processes.
+
+Water Treatment: acquire water quality, flow, pressure and other data in real time for automated control and optimization of water treatment processes
+
+## 4. Installation Examples
+
+![DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution](/images/plans/dcs-opc-ua-mqtt-forwarding/img-04.webp)
+
+![DCS Data Acquisition: OPC UA Acquisition and MQTT Forwarding Solution](/images/plans/dcs-opc-ua-mqtt-forwarding/img-05.webp)
+
+*5. Summary*
+
+Acquiring DCS data over OPC UA and forwarding it over MQTT is a common industrial IoT application. Sound requirement analysis, technical design and system implementation enable real-time acquisition, reliable transmission and efficient use of data.
+
+We will continue to focus on industrial IoT, keep innovating our products and technologies, and provide companies with better data acquisition solutions that support their intelligent transformation and help build a better industrial future!

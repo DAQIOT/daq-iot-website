@@ -6,6 +6,8 @@
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import type { Lang } from '../../i18n/config';
+import { localizePlanCat, localizePlanSub } from '../../i18n/plan-cats';
+import { getPlanCards } from '../../lib/plans';
 
 export const getStaticPaths = (() =>
   (['en', 'zh', 'de'] as Lang[]).map((lang) => ({ params: { lang } }))) satisfies GetStaticPaths;
@@ -35,12 +37,13 @@ export const GET: APIRoute = async ({ params }) => {
     y: 'case',
   }));
 
-  const plans = (await getCollection('plans', (e) => !e.data.hidden)).map((e) => ({
-    t: e.data.title,
-    d: e.data.summary || '',
-    c: [e.data.category, e.data.subcategory].filter(Boolean).join(' '),
-    u: `${base}/solutions/${e.id}`,
-    i: e.data.image || '',
+  // 方案库：统一走 plans.ts（英文站含英文稿覆盖与英文独有方案），分类名按当前语言输出
+  const plans = (await getPlanCards(lang)).map((p) => ({
+    t: p.title,
+    d: p.summary || '',
+    c: [localizePlanCat(p.catRaw, lang), localizePlanSub(p.subRaw, lang)].filter(Boolean).join(' '),
+    u: `${base}/solutions/${p.id}`,
+    i: p.image || '',
     y: 'plan',
   }));
 

@@ -204,6 +204,30 @@ const resources = defineCollection({
   })
 });
 
+/**
+ * 英文方案库：src/content/plans-en/<slug>.md
+ * - 与中文同名时（同 slug）作为该篇的英文版；中文站完全不受影响
+ * - 中文里没有的 slug 视为「英文独有方案」，只在英文站出现
+ * - category / subcategory / order / image / hidden 均可选：
+ *     留空 → 继承同 slug 中文条目的值（老数据无需改）
+ *     填写 → 以英文条目为准，可独立分类、独立排序、独立封面
+ * - 分类名可写中文规范名、英文名或 key（如「智能制造」/ Smart Manufacturing / manufacturing）
+ * - 独立图片建议放 public/images/plans-en/<slug>/，字段与正文都写 /images/plans-en/<slug>/xxx
+ */
+const plansEn = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/plans-en' }),
+  schema: z.object({
+    title: z.string(),
+    // 以下字段全部可留空：后台保存空值时会写成 null，所以统一用 nullish 容错
+    summary: z.string().nullish(),
+    category: z.string().nullish(),
+    subcategory: z.string().nullish(),
+    order: z.number().nullish(),
+    image: z.string().nullish(),
+    hidden: z.boolean().nullish()
+  })
+});
+
 export const collections = {
   site,
   solutions,
@@ -222,5 +246,6 @@ export const collections = {
   cases,
   downloads,
   plans,
+  plansEn,
   resources
 };

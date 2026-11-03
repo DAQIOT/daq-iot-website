@@ -653,9 +653,37 @@
       if (templates.posts) {
         derived.push(derive(templates.posts, 'src/content/posts/' + lang, '⑤ 博客文章'));
       }
-      // ⑥ 方案库：正文三语共用同一份中文内容，所以**不按语言派生**（切语言也显示同一批方案）
+      // ⑥ 方案库：只保留一个入口，跟随顶部语言下拉切换内容目录
+      //   中文 / 德文 → src/content/plans（中文原稿，德文站仍回退中文正文）
+      //   英文       → src/content/plans-en（英文译稿 + 英文独有方案）
+      // 英文的封面与正文插图单独存 public/images/plans-en/<slug>/，与中文图完全分开。
       if (templates.plans) {
-        derived.push(derive(templates.plans, 'src/content/plans', '⑥ 方案库'));
+        var planIsEn = lang === 'en';
+        var plan = derive(
+          templates.plans,
+          planIsEn ? 'src/content/plans-en' : 'src/content/plans',
+          planIsEn ? '⑥ 方案库（English）' : '⑥ 方案库'
+        );
+        if (planIsEn) {
+          plan.media_folder = '/public/images/plans-en/{{slug}}';
+          plan.public_folder = '/images/plans-en/{{slug}}';
+          plan.description =
+            '英文站 /en/solutions 的方案。分类沿用中文方案库那一套（页面自动显示英文名）。' +
+            '要与某篇中文方案对应，请让文件名（slug）与中文一致：先在中文后台查看该方案的文件名，再切到 English 新建同名文件；' +
+            '文件名不同则视为「英文独有方案」，只在英文站出现。封面与正文插图自动存到 public/images/plans-en/<slug>/。';
+          (plan.fields || []).forEach(function (f) {
+            // 英文稿的「排序」留空时应继承同名中文方案，不能被后台默认值写成 0
+            if (f.name === 'order') {
+              delete f.default;
+              f.hint = '同类内数字小的排前面；留空 = 沿用同名中文方案的排序。';
+            }
+            // 英文库不追溯 Word/PPT 来源文档，字段保留但默认收起
+            if (f.name === 'sourceDoc') f.hint = '选填，仅作追溯，页面上不显示。';
+            // 英文摘要允许留空（个别中文原稿本身就没有摘要）
+            if (f.name === 'summary') f.required = false;
+          });
+        }
+        derived.push(plan);
       }
       // ⑦ 资源库（文档/RMA/培训）：同样三语共用，不按语言派生
       if (templates.resources) {

@@ -1,33 +1,61 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getTranslations, getSiteData } from '../../../i18n/utils';
-import { planCatKey, planSubKey, localizePlanCat, localizePlanSub } from '../../../i18n/plan-cats';
+import { planCatKey, localizePlanCat, localizePlanSub } from '../../../i18n/plan-cats';
 import type { Lang } from '../../../i18n/config';
 import { getCollection, render } from 'astro:content';
+import { getEnglishOnlyPlanIds, getHiddenEnPlanIds, getPlanCardMap } from '../../../lib/plans';
 import PageHero from '../../../components/PageHero.astro';
 
 export async function getStaticPaths() {
   const plans = await getCollection('plans', (entry) => !entry.data.hidden);
-  const langs: Lang[] = ['en', 'zh', 'de'];
-  return langs.flatMap((lang) => plans.map((entry) => ({ params: { lang, slug: entry.id }, props: { entry } })));
+  const enOnly = await getEnglishOnlyPlanIds();
+  const hiddenEn = await getHiddenEnPlanIds();
+  const enAll = await getCollection('plansEn');
+  const enById = new Map(enAll.map((e) => [e.id, e]));
+
+  const paths: any[] = [];
+  for (const entry of plans) {
+    paths.push({ params: { lang: 'zh', slug: entry.id }, props: { entry } });
+    paths.push({ params: { lang: 'de', slug: entry.id }, props: { entry } });
+    // 英文稿可以单独 hidden，此时英文站不生成该页（中文/德文不受影响）
+    if (!hiddenEn.has(entry.id)) {
+      paths.push({ params: { lang: 'en', slug: entry.id }, props: { entry } });
+    }
+  }
+  // 英文独有方案：只在英文站生成
+  for (const id of enOnly) {
+    const entry = enById.get(id);
+    if (entry) paths.push({ params: { lang: 'en', slug: id }, props: { entry } });
+  }
+  return paths;
 }
 
 const { lang, slug } = Astro.params as { lang: Lang; slug: string };
 const { entry } = Astro.props;
 const t = await getTranslations(lang);
-const { Content } = await render(entry);
+
+// 正文：英文站优先用 plans-en 的译文（含英文独有方案），缺译整篇回退中文
+const enEntry = lang === 'en' ? (await getCollection('plansEn')).find((e) => e.id === slug) : undefined;
+const { Content } = await render(enEntry ?? entry);
+
+// 标题/摘要/分类/封面统一走 plans.ts，保证列表页与详情页取值一致
+const cardMap = await getPlanCardMap(lang);
+const card = cardMap.get(slug);
+const pageTitle = card?.title || entry.data.title;
+const pageSummary = card?.summary || entry.data.summary;
+const catRaw = card?.catRaw || entry.data.category;
 const site = await getSiteData(lang);
 const bannerImage = (site.banner?.pageImage as string) || '';
 
 const listHref = '/' + lang + '/solutions';
 const contactHref = '/' + lang + '/contact';
-const catLabel = localizePlanCat(entry.data.category, lang);
-const subLabel = localizePlanSub(entry.data.subcategory, lang);
+const catLabel = localizePlanCat(catRaw, lang);
+const subLabel = localizePlanSub(card?.subRaw || entry.data.subcategory, lang);
 
 // 同子类的其他方案（底部「相关方案」）
-const siblings = (await getCollection('plans', (p) => !p.data.hidden && p.id !== entry.id))
-  .filter((p) => planSubKey(p.data.subcategory) === planSubKey(entry.data.subcategory))
-  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+const siblings = [...cardMap.values()]
+  .filter((c) => c.id !== slug && (!card?.sub || c.sub === card.sub))
   .slice(0, 3);
 
 const zh = lang === 'zh';
@@ -42,14 +70,14 @@ const txt = {
       : 'Need a solution tailored to your site? Our engineers offer a free assessment and selection advice.'
 };
 ---
-<BaseLayout lang={lang} title={entry.data.title + ' | DAQ-IOT'} description={entry.data.summary}>
-  <PageHero title={entry.data.title} image={bannerImage} size="sm" width="narrow">
+<BaseLayout lang={lang} title={pageTitle + ' | DAQ-IOT'} description={pageSummary}>
+  <PageHero title={pageTitle} image={bannerImage} size="sm" width="narrow">
     <nav slot="breadcrumb" class="text-sm text-slate-400 mb-3">
       <a href={listHref} class="hover:text-brand">{txt.library}</a>
       {catLabel && (
         <>
           <span class="mx-2">/</span>
-          <a href={listHref + '?cat=' + planCatKey(entry.data.category)} class="hover:text-brand">{catLabel}</a>
+          <a href={listHref + '?cat=' + planCatKey(catRaw)} class="hover:text-brand">{catLabel}</a>
         </>
       )}
       {subLabel && (
@@ -68,7 +96,7 @@ const txt = {
         {catLabel && <span class="text-xs font-medium text-brand bg-brand-light px-2.5 py-1 rounded">{catLabel}</span>}
         {subLabel && <span class="text-xs font-medium text-slate-600 bg-slate-100 px-2.5 py-1 rounded">{subLabel}</span>}
       </div>
-      {entry.data.summary && <p class="text-lg text-slate-700 leading-relaxed">{entry.data.summary}</p>}
+      {pageSummary && <p class="text-lg text-slate-700 leading-relaxed">{pageSummary}</p>}
       <div class="mt-6 flex flex-wrap items-center gap-4">
         <a href={contactHref} class="inline-block bg-brand text-white px-7 py-3 rounded-md font-medium hover:bg-brand-dark transition">
           {t('nav.cta', '获取报价')}
@@ -92,8 +120,8 @@ const txt = {
               href={`/${lang}/solutions/${s.id}`}
               class="block bg-white border border-slate-200 rounded-2xl p-5 card-hover"
             >
-              <h3 class="text-base font-semibold text-brand-dark leading-snug">{s.data.title}</h3>
-              <p class="mt-2 text-slate-600 text-sm leading-relaxed">{s.data.summary}</p>
+              <h3 class="text-base font-semibold text-brand-dark leading-snug">{s.title}</h3>
+              <p class="mt-2 text-slate-600 text-sm leading-relaxed">{s.summary}</p>
             </a>
           ))}
         </div>
