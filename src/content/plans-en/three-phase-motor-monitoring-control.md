@@ -1,6 +1,11 @@
 ---
-title: "Three-Phase Motor Monitoring and Remote Start/Stop Control Solution"
-summary: "In industrial production, three-phase motors are the core power source for mechanical equipment, and the stability of their operating status directly affects whether production runs smoothly and how well product quality and efficiency are maintained."
+title: Three-Phase Motor Monitoring and Remote Start/Stop Control Solution
+summary: In industrial production, three-phase motors are the core power source
+  for mechanical equipment, and the stability of their operating status directly
+  affects whether production runs smoothly and how well product quality and
+  efficiency are maintained.
+category: 智能制造
+subcategory: 设备联网与数据采集
 ---
 ## Three-Phase Motor Intelligent Monitoring and Control Solution
 
@@ -20,7 +25,7 @@ The solution is built on four cooperating layers: perception, transmission, data
 
 Device selection: the DAQ-GP-EM4G wireless power monitor is the core device for current and energy monitoring. It integrates a precision current transformer and signal conditioning circuitry, clamps onto the power cable of the three-phase motor and acquires line current accurately.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-02.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/075988b3-8e45-4822-9ec3-1d95877898bd.png)
 
 Parameter calculation: a high-performance microprocessor inside the monitor uses dedicated algorithms to calculate active power, apparent power, power factor and operating frequency in real time from the current data. Active power, for example, is derived from the phase difference between current and voltage and the RMS current, and power factor from the ratio of active to apparent power.
 
@@ -32,7 +37,7 @@ Vibration and Temperature Monitoring
 
 Sensor installation: the SC-LP-VIB low-power wireless vibration sensor mounts magnetically or with a clip and attaches easily to the motor housing near bearings, the base and other points prone to vibration. It does not alter the motor structure, so data acquisition is non-intrusive.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-03.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/dd6b274b-7cd6-409d-972e-ccf0150d2c58.png)
 
 Data acquisition: the sensor contains a high-performance MEMS vibration element that picks up the vibration the motor produces. The acquisition interval can be set to suit motor behavior. Shortly after start-up, for example, shorten it to once per second to capture the vibration at the moment of starting precisely; in normal operation, set it to once every 10 seconds to balance data volume against monitoring quality.
 
@@ -44,7 +49,7 @@ Standalone Temperature Monitoring
 
 Measurement principle: the SC-GP-PT100 wireless industrial temperature transmitter converts thermocouple or RTD signals into an input signal or a measured temperature and reports the motor surface temperature at set intervals over GPRS or 4G.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-04.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/10ce1812-ef41-426e-9157-97a17104e223.webp)
 
 Multi-point acquisition: the sensor supports multiple independent temperature channels, which can be distributed evenly around the motor housing and other heat-prone areas for all-round temperature monitoring. Measurement accuracy is within ±0.5 °C, meeting strict accuracy requirements under different operating conditions.
 
@@ -54,7 +59,7 @@ Threshold alarms: in the application layer, users set temperature alarm threshol
 
 Measurement principle: the SC-GP-RPM4G wireless speed detector uses the Hall effect. A magnetic body (a magnetic patch, for example) is fitted near the rotating shaft, and as the motor turns it passes the detector's Hall element periodically. The Hall element responds to the changing field and outputs a pulse signal related to rotational speed.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-05.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/88383f03-7ba7-4392-8c24-9d8417eb15b9.png)
 
 Signal processing: a high-precision counter and signal conditioning circuit inside the detector amplify and shape the pulses from the Hall element and count pulses per unit time precisely. Given the pulses produced per revolution (60 measurement points per revolution, for example, giving 60 pulses per turn) and the counting period, the speed formula (rotational speed = pulse count ÷ time × 60) yields the motor speed in real time.
 
@@ -66,7 +71,7 @@ Hardware: the intelligent control cabinet is the hardware core of remote start/s
 
 Communication: the control cabinet connects to the internet through a 4G IoT module and maintains a stable link to the cloud server. WiFi, Ethernet and other wired options serve as backups to keep communication continuous. MQTT and other lightweight, efficient IoT protocols carry the commands promptly and reliably.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-06.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/5df83bbe-b743-462d-8756-22d6c77131ad.png)
 
 Access control: a dedicated user management system in the application layer assigns different permissions by role. Administrators, for example, hold full rights for remote start/stop, parameter settings and user management, while general operators can only start and stop motors. At login, the system applies multi-factor authentication such as account password plus SMS code, so operations are safe and illegal actions cannot cause production incidents.
 
@@ -90,12 +95,12 @@ Water treatment case: sewage treatment equipment and the rotating equipment in a
 
 ![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-07.webp)
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-08.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/c7dd67dc-ca9e-4648-be83-093a97a85bb1.png)
 
 Metallurgy case: apron feeders, trough conveyors, bucket elevators, high-temperature fans, roller presses, rotary kilns, vertical mills, ball mills, belt conveyors, crushers, separators, grate coolers, double-roll crushers and more.
 
 ![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-09.webp)
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-10.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/b8ec02ba-49db-4604-90d2-87d614f62350.png)
 
 The three-phase motor monitoring and control solution from Shanghai Daq IoT Technology Co., Ltd. gives users a complete, efficient and reliable way to manage motors, helping enterprises raise production efficiency, cut O&M costs and complete their intelligent transformation.
