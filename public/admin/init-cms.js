@@ -668,18 +668,67 @@
           plan.media_folder = '/public/images/plans-en/{{slug}}';
           plan.public_folder = '/images/plans-en/{{slug}}';
           plan.description =
-            '英文站 /en/solutions 的方案。分类沿用中文方案库那一套（页面自动显示英文名）。' +
-            '要与某篇中文方案对应，请让文件名（slug）与中文一致：先在中文后台查看该方案的文件名，再切到 English 新建同名文件；' +
-            '文件名不同则视为「英文独有方案」，只在英文站出现。封面与正文插图自动存到 public/images/plans-en/<slug>/。';
-          (plan.fields || []).forEach(function (f) {
-            // 英文稿的「排序」留空时应继承同名中文方案，不能被后台默认值写成 0
-            if (f.name === 'order') {
-              delete f.default;
-              f.hint = '同类内数字小的排前面；留空 = 沿用同名中文方案的排序。';
+            '英文站 /en/solutions 专用的方案库，和中文方案库完全分开：内容存 src/content/plans-en，' +
+            '封面与正文图片存 public/images/plans-en/<方案名>/。' +
+            '文件名叫什么，英文站的 URL 就是什么：要与某篇中文方案对应（做它的英文版），' +
+            '请让文件名与中文一致（先在中文视图里看那篇的文件名，再切到 English 新建同名文件）；' +
+            '中文没有的文件名就是「英文独有方案」，只在英文站出现。' +
+            '分类直接填英文名，不跟中文分类联动，也不会自动翻译。';
+
+          // 英文视图：只把「内容相关」的措辞调成英文，其余标签与提示保持中文，
+          // 方便后台操作时按中文习惯阅读。
+          var EN_PLAN_FIELDS = {
+            title: {
+              hint: '填英文标题（会同时生成文件名与 URL，建议短而具体，例如 wireless-vibration-monitoring）。' +
+                '后期改标题会改变 URL。'
+            },
+            summary: {
+              label: '一句话摘要（选填）',
+              required: false,
+              hint: '英文摘要，1-2 句即可，显示在列表卡片与详情页顶部；个别方案可以不填。'
+            },
+            category: {
+              label: '一级分类（英文，自行维护）',
+              // 英文分类完全自维护：不取中文分类的翻译，填什么英文名就显示什么。
+              // 填新名字 → 左侧树自动多出一个一级节点；留空 → 沿用同名中文方案的分类（页面显示其英文名）。
+              widget: 'string',
+              hint: '点输入框右侧箭头，可从站上已有的一级分类里选；也可以直接输入新的英文分类名' +
+                '（新增后会立刻生效，下次部署后自动出现在下拉里）。分类与中文完全独立、不会自动翻译。' +
+                '留空 = 沿用同名中文方案的分类（页面自动显示对应的英文名）。'
+            },
+            subcategory: {
+              label: '二级分类（英文，自行维护）',
+              hint: '可从下拉里选已有二级分类（候选会跟随上面填的一级分类收窄），也可以直接输入新的英文名' +
+                '（例如 Device Networking & Data Acquisition，注意 & 前后各留一个空格）。' +
+                '留空 = 沿用同名中文方案的二级分类。'
+            },
+            body: {
+              label: '正文（英文）',
+              hint: '英文正文，支持标题、表格、图片；上传的图片自动存到 public/images/plans-en/<方案名>/。'
+            },
+            order: {
+              hint: '同类内数字小的排前面；留空 = 沿用同名中文方案的排序。'
+            },
+            image: {
+              hint: '列表卡片封面，建议 16:9。上传后自动存到 public/images/plans-en/<方案名>/，与中文图片分开。'
+            },
+            hidden: {
+              label: '在英文站隐藏',
+              hint: '只在英文站下架这一篇，中文站不受影响。'
+            },
+            sourceDoc: {
+              hint: '选填，仅作追溯，页面上不显示。'
             }
-            // 英文库不追溯 Word/PPT 来源文档，字段保留但默认收起
-            if (f.name === 'sourceDoc') f.hint = '选填，仅作追溯，页面上不显示。';
-            // 英文摘要允许留空（个别中文原稿本身就没有摘要）
+          };
+          (plan.fields || []).forEach(function (f) {
+            var o = EN_PLAN_FIELDS[f.name];
+            if (!o) return;
+            if (o.label) f.label = o.label;
+            if (o.hint) f.hint = o.hint;
+            if (o.widget) f.widget = o.widget;
+            // 改成自由填写后必须去掉原本的 select options，否则 Decap 校验会报错
+            if (o.widget === 'string') delete f.options;
+            if (f.name === 'order') delete f.default;
             if (f.name === 'summary') f.required = false;
           });
         }

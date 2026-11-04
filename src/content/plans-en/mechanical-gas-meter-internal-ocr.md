@@ -3,7 +3,7 @@ title: Automated Intranet Reading of Mechanical Roller Gas Meters (Vision Recogn
 summary: Many industrial sites still run mechanical roller-type gas meters.
   Manual reading is slow, never real time and prone to misreading, which is hard
   to reconcile with modern energy management.
-category: 机器视觉与仪表识别
+category: Machine Vision & Meter Reading
 subcategory: Vision Reading for Non-Communicating Meters
 image: /images/plans-en/automated-intranet-reading-of-mechanical-roller-gas-meters-vision-recognition/123456.png
 ---

@@ -115,6 +115,8 @@
     <!-- 媒体库排序：拦截 Git Trees API 响应，按上传时间/文件名重排（须在 CMS 初始化前加载） -->
     <script src="./media-sort.js?v=2"></script>
     <script src="./media-sort-ui.js?v=3"></script>
+    <!-- 正文图片路径保险：保存 md 前自动把 public/images 前缀纠正为 /images，杜绝构建报错 -->
+    <script src="./md-path-guard.js?v=1"></script>
     <!-- 媒体上传防覆盖：同名文件自动改名为 名称(1).ext 并提示，绝不覆盖旧文件 -->
     <script src="./media-dedupe.js?v=1"></script>
     <!-- 媒体库轻量模式：把「整目录全量拉取」换成只分页（不做筛选，仅本地开发生效）；
@@ -123,7 +125,9 @@
     <!-- 「选择文件」按钮改为直接选本地文件（不走媒体库，仅本地开发生效） -->
     <script src="./file-picker.js?v=1"></script>
     <!-- 按语言动态初始化（fetch config.yml -> 派生当前语言的集合 -> CMS.init） -->
-    <script src="./init-cms.js?v=16"></script>
+    <script src="./init-cms.js?v=20"></script>
+    <!-- 方案库分类下拉：把站上已有的一级/二级分类做成输入框候选，仍可输入新分类 -->
+    <script src="./plan-cat-suggest.js?v=1"></script>
     <!-- 自定义语言切换逻辑 -->
     <script src="./lang-switcher.js?v=9"></script>
     <!-- 列表模糊搜索：输入直接过滤下方列表行，搜索框跟在工具条后右缘对齐 -->

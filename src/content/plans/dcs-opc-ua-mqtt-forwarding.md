@@ -5,7 +5,7 @@ category: 智能制造
 subcategory: 设备联网与数据采集
 order: 6
 sourceDoc: DCS数据采集系统OPC UA协议数据采集实现MQTT转发.docx
-image: public/images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png
+image: /images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png
 ---
 需求：山东某东奥化工企业接监管园区通知，需要实现对DCS系统数据的实时采集和监控，将数据上传至园区监控平台。从DCS系统采集实时数据，数据协议为OPC UA。将采集到的数据通过MQTT协议转发至监控平台。
 
@@ -34,7 +34,7 @@ DCS分布式控制系统是一种用于工业自动化的控制系统，通过�
 
 DAQ-IOT工业数采网关，DCS数据采集的利器，适用于各种复杂工业制造场景数据采集的需求，能够采集PLC设备、数控机床、检测仪表、普通机床、PC上位机等工业设备，与MES无缝对接。支持多种通信协议采集和传输
 
-![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](public/images/2dde54ff-93e0-45b4-8576-5e5f31875e86.png)
+![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/2dde54ff-93e0-45b4-8576-5e5f31875e86.png)
 
 ![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/plans/dcs-opc-ua-mqtt-forwarding/img-02.webp)
 
@@ -75,7 +75,7 @@ DAQ-IOT工业数采网关采用多重安全机制，包括数据加密、身份�
 
 ### 2.5 采集方案
 
-![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](public/images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png)
+![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png)
 
 DCS中控系统需要确认开放授权，根据企业要求追加网络安全中间件（网闸或防火墙等），确定企业DCS中控系统环境是否可以追加桥接程序，以便实现不同网络间的互通，然后通过网线形式连接DAQ数采网关，最终实现MQTT协议转发至监控平台。
 
