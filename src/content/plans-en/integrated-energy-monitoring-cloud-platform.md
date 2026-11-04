@@ -6,7 +6,8 @@ summary: A service-oriented, cloud-based energy management system that acquires
   drainage, gas and key equipment, then reports it by category, sub-item, time
   period and area to expose savings opportunities.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
+image: /images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/7av.png
 ---
 | Shanghai Daq IoT Technology Co., Ltd. — Energy Management System |
 | ---------------------------------------------------------------- |
@@ -96,7 +97,7 @@ System Architecture — Local Deployment
 
 SYSTEM ARCHITECTURE-LOCAL DEPLOYMENT
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-04.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/7av.png)
 
 Application management layer
 
