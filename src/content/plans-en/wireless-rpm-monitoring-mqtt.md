@@ -4,7 +4,7 @@ summary: Motors, gearboxes, pumps and fans are the heart of industrial
   production, and whether their rotational speed stays stable directly affects
   production efficiency and equipment safety.
 category: 智能制造
-subcategory: Device Connectivity and Data Acquisition
+subcategory: Condition Monitoring and Predictive Maintenance
 ---
 ### How Do You Monitor Industrial RPM Wirelessly and Feed It into an MQTT Platform?
 
