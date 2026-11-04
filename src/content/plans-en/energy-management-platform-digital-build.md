@@ -1,6 +1,10 @@
 ---
-title: "Technical Plan for Digitalizing an Enterprise Energy Management Platform"
-summary: "Local deployment of an energy data platform that acquires and monitors water, steam, chilled water and compressed air consumption together with PLC data from 13 types of production equipment."
+title: Technical Plan for Digitalizing an Enterprise Energy Management Platform
+summary: Local deployment of an energy data platform that acquires and monitors
+  water, steam, chilled water and compressed air consumption together with PLC
+  data from 13 types of production equipment.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 ## Project Background
 
@@ -36,33 +40,33 @@ Easy to use: friendly human-machine interface, simple operation, straightforward
 
 ### Equipment List
 
-| No. | Item | Qty | Remarks |
-|---|---|---|---|
-| 1 | WiFi / wired acquisition terminal | 50 | For metering instruments and sensors with a communication port |
-| 2 | Data acquisition gateway | 7 | For connecting wireless steam trap monitoring devices on site |
-| 3 | Meter camera | 16 | For devices without a communication port, used with the image recognition system |
-| 4 | Local image recognition system | 1 | Parses ordinary photos, recognizes readings and outputs results |
-| 5 | General-purpose industrial data acquisition gateway | 17 | For acquiring on-site PLC data |
+| No. | Item                                                | Qty | Remarks                                                                          |
+| --- | --------------------------------------------------- | --- | -------------------------------------------------------------------------------- |
+| 1   | WiFi / wired acquisition terminal                   | 50  | For metering instruments and sensors with a communication port                   |
+| 2   | Data acquisition gateway                            | 7   | For connecting wireless steam trap monitoring devices on site                    |
+| 3   | Meter camera                                        | 16  | For devices without a communication port, used with the image recognition system |
+| 4   | Local image recognition system                      | 1   | Parses ordinary photos, recognizes readings and outputs results                  |
+| 5   | General-purpose industrial data acquisition gateway | 17  | For acquiring on-site PLC data                                                   |
 
 ### Acquisition System Architecture
 
-![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans/energy-management-platform-digital-build/img-01.webp)
+![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans-en/technical-plan-for-digitalizing-an-enterprise-energy-management-platform/1ac.png)
 
 *WiFi and wired acquisition terminal approach*
 
-![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans/energy-management-platform-digital-build/img-02.webp)
+![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans-en/technical-plan-for-digitalizing-an-enterprise-energy-management-platform/2ac.png)
 
 The WiFi / wired acquisition terminal is a classic dual-serial-port device server with high stability, strong cost-performance and low power consumption. The product ships with its peripheral circuitry complete and uses plug-in terminal blocks for direct RS-485/232 serial communication. Its main frequency reaches 240 MHz and it supports RS-232 and RS-485 operation at the same time. Other products in the series support analog and digital input as well as dry-contact and wet-contact switch input and control. Internally it runs a deeply optimized TCP/IP stack. Configuration is done through a web page or a visual host-system tool, which makes evaluation, testing and volume deployment straightforward.
 
 ### Local Image Recognition Approach
 
-![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans/energy-management-platform-digital-build/img-03.webp)
+![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans-en/technical-plan-for-digitalizing-an-enterprise-energy-management-platform/3ac.png)
 
 This approach targets remote acquisition from instruments without communication capability. The camera captures an image of the meter face; the image is first denoised, then an edge detection algorithm is applied to the preprocessed image. By precisely filtering out non-critical targets, the outline of the meter and its panel is located. A Hough transform detects the scale marks and the pointer, and the same transform can be used to detect liquid level. Targets in the image that require classification are handled with deep learning methods, such as digit recognition, meter style recognition and text position detection in natural scenes. The models use convolutional neural networks (CNN), with different network architectures built according to image characteristics. The product recognizes industrial instruments automatically from video images. It applies to LCD meters, analog gauge meters, roller-counter meters and other electronic or mechanical instruments. Test results show that the localization and recognition algorithm is computationally simple and achieves high accuracy, overcoming the effect of random dial tilt on reading recognition.
 
 ### PLC Data Acquisition Approach
 
-![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans/energy-management-platform-digital-build/img-04.webp)
+![Technical Plan for Digitalizing an Enterprise Energy Management Platform](/images/plans-en/technical-plan-for-digitalizing-an-enterprise-energy-management-platform/4ac.png)
 
 The IOT Gateway is an industrial protocol conversion and data acquisition gateway from Shanghai Daq IoT Technology Co., Ltd.
 
@@ -95,36 +99,36 @@ Multi-language interface support
 Some of the communication links supported by the system:
 
 | Link Type | Communication Link |
-|---|---|
-| TCP | TCP client |
-| TCP | TCP server |
-| Serial | Serial UART |
-| UDP | UDP |
-| HTTP | HTTP server |
-| HTTP | HTTP client |
-| OPC | OPC-UA |
-| OPC | OPC-DA |
-| MQTT | MQTT-TCP |
-| MQTT | MQTT-WebSocket |
+| --------- | ------------------ |
+| TCP       | TCP client         |
+| TCP       | TCP server         |
+| Serial    | Serial UART        |
+| UDP       | UDP                |
+| HTTP      | HTTP server        |
+| HTTP      | HTTP client        |
+| OPC       | OPC-UA             |
+| OPC       | OPC-DA             |
+| MQTT      | MQTT-TCP           |
+| MQTT      | MQTT-WebSocket     |
 
 #### Supported Communication Protocols
 
 Some of the communication protocols supported by the system:
 
-| Protocol Category | Main Protocol | Sub-protocol |
-|---|---|---|
-| PLC communication protocol | Modbus | Modbus-RTU |
-| PLC communication protocol |  | Modbus-TCP |
-| PLC communication protocol |  | Modbus-ASCII |
-| PLC communication protocol | Siemens S7 |  |
-| PLC communication protocol | Mitsubishi MELSEC | MELSEC-1E |
-| PLC communication protocol |  | MELSEC-3C |
-| PLC communication protocol |  | MELSEC-3E |
-| PLC communication protocol |  | MELSEC-4C |
-| PLC communication protocol |  | MELSEC-4D |
-| PLC communication protocol |  | Mitsubishi-Fx |
-| OPC communication protocol | OPC-UA |  |
-| OPC communication protocol | OPC-DA |  |
+| Protocol Category          | Main Protocol     | Sub-protocol  |
+| -------------------------- | ----------------- | ------------- |
+| PLC communication protocol | Modbus            | Modbus-RTU    |
+| PLC communication protocol |                   | Modbus-TCP    |
+| PLC communication protocol |                   | Modbus-ASCII  |
+| PLC communication protocol | Siemens S7        |               |
+| PLC communication protocol | Mitsubishi MELSEC | MELSEC-1E     |
+| PLC communication protocol |                   | MELSEC-3C     |
+| PLC communication protocol |                   | MELSEC-3E     |
+| PLC communication protocol |                   | MELSEC-4C     |
+| PLC communication protocol |                   | MELSEC-4D     |
+| PLC communication protocol |                   | Mitsubishi-Fx |
+| OPC communication protocol | OPC-UA            |               |
+| OPC communication protocol | OPC-DA            |               |
 
 (The full table is longer; only the first 12 rows are shown here.)
 
