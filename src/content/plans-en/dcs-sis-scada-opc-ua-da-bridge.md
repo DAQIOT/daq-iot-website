@@ -1,6 +1,10 @@
 ---
-title: "OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring"
-summary: "An OPC UA/DA acquisition client and an MQTT link move production data out of DCS, SIS and SCADA systems across a one-way isolation gateway, with custom API access on top."
+title: OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring
+summary: An OPC UA/DA acquisition client and an MQTT link move production data
+  out of DCS, SIS and SCADA systems across a one-way isolation gateway, with
+  custom API access on top.
+category: 智能制造
+subcategory: Device Networking & Data Acquisition
 ---
 DCS/SIS/SCADA remote monitoring: production data acquisition, OPC UA/DA protocol, custom API development and MQTT integration
 
@@ -18,13 +22,13 @@ OPC DA: built on COM/DCOM and aimed at Windows, it provides real-time data acces
 
 OPC UA: independent of the operating system, it supports cross-platform data exchange with strong security and extensibility. Its rich data model and service interfaces carry and manage complex data types, which suits enterprise-level integration and remote monitoring.
 
-| Feature | OPC DA | OPC UA |
-|---|---|---|
-| Platform dependency | Windows only | Cross-platform |
-| Communication protocol | COM/DCOM | TCP/SOAP/HTTPS |
-| Security mechanisms | Limited | End-to-end encryption |
-| Data modeling | Flat structure | Hierarchical object model |
-| Discovery service | None | Built-in discovery server |
+| Feature                | OPC DA         | OPC UA                    |
+| ---------------------- | -------------- | ------------------------- |
+| Platform dependency    | Windows only   | Cross-platform            |
+| Communication protocol | COM/DCOM       | TCP/SOAP/HTTPS            |
+| Security mechanisms    | Limited        | End-to-end encryption     |
+| Data modeling          | Flat structure | Hierarchical object model |
+| Discovery service      | None           | Built-in discovery server |
 
 ### (2) MQTT Protocol
 
@@ -36,17 +40,15 @@ MQTT uses a publish/subscribe model over TCP/IP. A publisher sends data to a spe
 
 An OPC UA/DA acquisition client is deployed between the DCS/SIS/SCADA systems and the target server. The client connects to the OPC server of the DCS and other systems and collects data. The data passes a firewall and a one-way isolation gateway, is published to the server over MQTT, and is then available to upper-layer applications.
 
-![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans/dcs-sis-scada-opc-ua-da-bridge/img-01.webp)
+![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans-en/opc-ua-and-opc-da-integration-for-dcs-sis-and-scada-remote-monitoring/architecture_diagram_en.png)
 
 *(2) Acquisition Workflow*
 
 1. Data acquisition: acquisition software supporting OPC UA/DA is installed on the acquisition-side server and configured — OPC server address, device ID, acquisition mode, update rate, monitoring point information. A file cache holds data locally when the network drops and resumes transmission once it recovers.
-
 2. Data transmission: collected data crosses the isolation gateway over TCP, which keeps transport secure. At the receiving end the software converts it into MQTT messages and publishes them to the MQTT server under preset topics.
-
 3. Data reception and processing: clients subscribed to those topics receive the data from the MQTT server and store, analyze and visualize it, supporting production decisions.
 
-![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans/dcs-sis-scada-opc-ua-da-bridge/img-02.webp)
+![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans-en/opc-ua-and-opc-da-integration-for-dcs-sis-and-scada-remote-monitoring/bc5ee541-0e94-4c62-869b-d7292ef3aebd.png)
 
 *4. Custom Development and API Interfaces*
 
@@ -80,7 +82,7 @@ Optimized acquisition strategy and transport mechanisms deliver fast collection 
 
 The DCS of a green power environmental protection plant uses this solution for data acquisition and transport. DCS data from the control room is collected over OPC DA, passes the isolation gateway and firewall, and is forwarded to the application-layer SCADA server over MQTT. Operating parameters such as main steam flow, temperature and pressure are monitored in real time, which supports optimized operation and fault warning, improves generation efficiency and cuts O&M cost.
 
-![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans/dcs-sis-scada-opc-ua-da-bridge/img-03.webp)
+![OPC UA and OPC DA Integration for DCS, SIS and SCADA Remote Monitoring](/images/plans-en/opc-ua-and-opc-da-integration-for-dcs-sis-and-scada-remote-monitoring/e7ff5137-9825-489b-b783-4f83fa88365f.png)
 
 Main steam flow (cumulative) (main_fow「ate_sum)
 
