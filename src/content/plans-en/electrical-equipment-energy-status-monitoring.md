@@ -5,7 +5,7 @@ summary: Distributed electrical loads spread across a site are hard to supervise
   wireless acquisition solution collects energy data, determines operating
   status and feeds third-party platforms without complex cabling.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
 ---
 ## How Do You Monitor the Energy Use and Operating Status of Electrical Equipment?
 
