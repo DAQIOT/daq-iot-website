@@ -6,6 +6,7 @@ summary: Distributed electrical loads spread across a site are hard to supervise
   status and feeds third-party platforms without complex cabling.
 category: 智能制造
 subcategory: Energy Consumption & Management
+image: /images/plans-en/energy-consumption-and-operating-status-monitoring-for-electrical-equipment/4az.png
 ---
 ## How Do You Monitor the Energy Use and Operating Status of Electrical Equipment?
 
