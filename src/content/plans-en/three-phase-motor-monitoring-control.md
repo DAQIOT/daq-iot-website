@@ -5,7 +5,7 @@ summary: In industrial production, three-phase motors are the core power source
   affects whether production runs smoothly and how well product quality and
   efficiency are maintained.
 category: 智能制造
-subcategory: 设备联网与数据采集
+subcategory: Condition Monitoring and Predictive Maintenance
 ---
 ## Three-Phase Motor Intelligent Monitoring and Control Solution
 
