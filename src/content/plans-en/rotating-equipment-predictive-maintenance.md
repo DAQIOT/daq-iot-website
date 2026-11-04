@@ -5,6 +5,7 @@ summary: A wireless vibration and temperature monitoring system that moves a
   maintenance, with no signal cabling in Zone 1 and Zone 2 areas.
 category: 智能制造
 subcategory: Condition Monitoring and Predictive Maintenance
+image: /images/plans-en/wireless-predictive-maintenance-for-rotating-equipment-in-a-chemical-plant/0a49cfed-c137-440c-b86a-f11e5e316a06.png
 ---
 | Project       | Wireless monitoring system for predictive maintenance of the pump fleet |
 | ------------- | ----------------------------------------------------------------------- |
