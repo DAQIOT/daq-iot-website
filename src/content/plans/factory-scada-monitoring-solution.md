@@ -1,11 +1,11 @@
 ---
-title: "工厂设备智能监控 SCADA 系统技术方案"
-summary: "随着工业4.0和智能制造浪潮的推进，企业数字化转型已成为提升核心竞争力、实现可持续发展的关键路径。"
-category: "智能制造"
-subcategory: "设备联网与数据采集"
+title: 工厂设备智能监控 SCADA 系统技术方案
+summary: 随着工业4.0和智能制造浪潮的推进，企业数字化转型已成为提升核心竞争力、实现可持续发展的关键路径。
+category: 智能制造
+subcategory: 设备联网与数据采集
 order: 7
-sourceDoc: "XX工厂设备智能监控SCADA系统技术方案(1).docx"
-image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
+sourceDoc: XX工厂设备智能监控SCADA系统技术方案(1).docx
+image: /images/plans/p1.png
 ---
 ### 第一章 项目概述与需求分析
 
@@ -17,20 +17,21 @@ image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
 
 本项目的监控对象清单
 
-| 被采集控制设备 | 采集/控制参数 | 数量 |
-|---|---|---|
-| 电机振动传感器 | 振动速度：0~20mm/s
-振动位移：0~200μm | 3 |
-| 调节风阀执行器 | 信号类型：模拟量信号
+| 被采集控制设备      | 采集/控制参数       | 数量  |
+| ------------ | ------------- | --- |
+| 电机振动传感器      | 振动速度：0~20mm/s |     |
+| 振动位移：0~200μm | 3             |     |
+| 调节风阀执行器      | 信号类型：模拟量信号    |     |
+
 控制类型：电动控制
 扭矩：15NM | 7 |
 | 调节水阀 | 信号类型：模拟量信号
 控制类型：电动控制 | 80 |
-| 风管型温度湿度传感器 | 量程范围：0~50℃，0~100%RH；
+| 风管型温度湿度传感器 | 量程范围：0\~50℃，0\~100%RH；
 信号类型：模拟量信号； | 7 |
-| 风管型压差传感器 | 量程范围：-2500~0Pa；
+| 风管型压差传感器 | 量程范围：-2500\~0Pa；
 信号类型：模拟量信号； | 2 |
-| 风管型压力传感器 | 量程范围：0~1000Pa；
+| 风管型压力传感器 | 量程范围：0\~1000Pa；
 信号类型：模拟量信号； | 5 |
 | 风量风速传感器 | 信号类型：模拟量信号+Modbus rtu； | 1 |
 | 开关风阀执行器 | 信号类型：数字量信号
@@ -38,10 +39,10 @@ image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
 扭矩：15NM | 7 |
 | 开关水阀 | 信号类型：数字量信号
 控制类型：电动控制 | 2 |
-| 空调压差开关 | 量程范围：0~500Pa；
+| 空调压差开关 | 量程范围：0\~500Pa；
 信号类型：数字量信号； | 42 |
 | 流量计 | 信号类型：模拟量信号+Modbus rtu； | 5 |
-| 气管型露点传感器 | 量程范围：-80~20℃DP；
+| 气管型露点传感器 | 量程范围：-80\~20℃DP；
 信号类型：模拟量信号； | 1 |
 
 （表格内容较多，此处仅展示前 12 行）
@@ -124,7 +125,7 @@ image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
 
 #### 2.3 系统拓扑图
 
-![工厂设备智能监控 SCADA 系统技术方案](/images/plans/factory-scada-monitoring-solution/img-01.webp)
+![工厂设备智能监控 SCADA 系统技术方案](/images/plans/p1.png)
 
 *第三章 硬件系统详细设计*
 
@@ -134,7 +135,7 @@ image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
 
 物联网网关：选用多协议兼容的网关，至少具备1个以太网口、多个RS-485接口，支持边缘计算和数据缓存功能。网关将根据设备物理位置分组部署，确保布线最优。
 
-![工厂设备智能监控 SCADA 系统技术方案](/images/plans/factory-scada-monitoring-solution/img-02.webp)
+![工厂设备智能监控 SCADA 系统技术方案](/images/plans/p2.png)
 
 *IO模块：*
 
@@ -146,9 +147,9 @@ image: "/images/plans/factory-scada-monitoring-solution/img-01.webp"
 
 模拟量输出模块：用于控制调节风阀/水阀执行器，输出4-20mA控制信号，实现阀门开度的精确调节。
 
-![工厂设备智能监控 SCADA 系统技术方案](/images/plans/factory-scada-monitoring-solution/img-03.webp)
+![工厂设备智能监控 SCADA 系统技术方案](/images/plans/p3.png)
 
-![工厂设备智能监控 SCADA 系统技术方案](/images/plans/factory-scada-monitoring-solution/img-04.webp)
+![工厂设备智能监控 SCADA 系统技术方案](/images/plans/p4.png)
 
 *3.2 监控中心硬件设计*
 
