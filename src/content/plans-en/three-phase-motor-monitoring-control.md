@@ -15,7 +15,7 @@ In industrial production, three-phase motors are the core power source that driv
 
 ### 2. Solution Architecture
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans/three-phase-motor-monitoring-control/img-01.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/72a69dd5-9813-4b51-a0a5-ead3c807c131.png)
 
 The solution is built on four cooperating layers: perception, transmission, data processing and application. The perception layer places high-precision sensors against key points on the motor to capture operating data accurately. The transmission layer uses 4G, WiFi, LoRa and other networks to upload the data securely and quickly to the cloud. The data processing layer applies cloud computing and big data analytics to mine and interpret the data at scale. The application layer gives users purpose-built web and mobile interfaces that show motor status clearly and enable remote control and intelligent management.
 
@@ -49,7 +49,7 @@ Standalone Temperature Monitoring
 
 Measurement principle: the SC-GP-PT100 wireless industrial temperature transmitter converts thermocouple or RTD signals into an input signal or a measured temperature and reports the motor surface temperature at set intervals over GPRS or 4G.
 
-![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/10ce1812-ef41-426e-9157-97a17104e223.webp)
+![Three-Phase Motor Monitoring and Remote Start/Stop Control Solution](/images/plans-en/three-phase-motor-monitoring-and-remote-start-stop-control-solution/10ce1812-ef41-426e-9157-97a17104e223.png)
 
 Multi-point acquisition: the sensor supports multiple independent temperature channels, which can be distributed evenly around the motor housing and other heat-prone areas for all-round temperature monitoring. Measurement accuracy is within ±0.5 °C, meeting strict accuracy requirements under different operating conditions.
 
