@@ -7,7 +7,7 @@ summary: An HJ212-2025 compliant monitoring system built on the Daq IoT
   energy statistics, operating-condition identification and direct reporting of
   power data to provincial pollution source monitoring platforms.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
 ---
 ### (HJ212 protocol, connecting to the provincial pollution source automatic monitoring platform)
 
