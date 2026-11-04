@@ -1,6 +1,13 @@
 ---
-title: "Technical Plan for Power Status Monitoring of Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)"
-summary: "An HJ212-2025 compliant monitoring system built on the Daq IoT SC-GP-EM4G multi-circuit wireless energy meter, covering power acquisition, energy statistics, operating-condition identification and direct reporting of power data to provincial pollution source monitoring platforms."
+title: Technical Plan for Power Status Monitoring of Pollution Control Equipment
+  at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial
+  Platform)
+summary: An HJ212-2025 compliant monitoring system built on the Daq IoT
+  SC-GP-EM4G multi-circuit wireless energy meter, covering power acquisition,
+  energy statistics, operating-condition identification and direct reporting of
+  power data to provincial pollution source monitoring platforms.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 ### (HJ212 protocol, connecting to the provincial pollution source automatic monitoring platform)
 
@@ -70,7 +77,7 @@ The environmental equipment energy monitoring project in Xinxiang, Henan serves 
 
 The system is built in three layers, all designed around power acquisition, energy statistics and data transmission to the environmental platform. The architecture matches the field communication model of the HJ212-2025 standard.
 
-![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans/pollution-control-equipment-power-monitoring/img-01.webp)
+![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans-en/technical-plan-for-power-status-monitoring-of-pollution-control-equipment-at-pollutant-discharging-facilities-hj212-integration-with-the-provincial-platform/1ax.png)
 
 ### 3.1 Layer 1: Field Acquisition Terminal Layer — Daq IoT SC-GP-EM4G Multi-Circuit Wireless Energy Monitor
 
@@ -80,7 +87,7 @@ SC-GP-EM4G is the field acquisition hardware of this plan. It handles multi-circ
 
 Acquisition channels. A single device supports 6 independent AC current and voltage acquisition circuits, monitoring plant total power, several production lines and several wastewater/exhaust-gas treatment facilities at the same time. Multiple devices can be expanded in parallel over RS485 for large discharging enterprises with many monitoring points.
 
-![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans/pollution-control-equipment-power-monitoring/img-02.webp)
+![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans-en/technical-plan-for-power-status-monitoring-of-pollution-control-equipment-at-pollutant-discharging-facilities-hj212-integration-with-the-provincial-platform/1az.png)
 
 Measuring range and accuracy. Voltage range 110–250 V AC, current 0–120 A (custom high-current transformers supported); voltage accuracy ±1 V, current accuracy ±0.1 A, power accuracy ±1 W. Metering accuracy meets the requirements of environmental energy ledger verification.
 
@@ -156,11 +163,11 @@ Main production facility monitoring points. A separate transformer circuit for e
 
 Pollution control facility monitoring points. Wastewater station aeration blowers, dosing pumps and sludge dewatering equipment; exhaust-gas desulfurization and denitrification blowers, VOCs thermal oxidizers, and activated-carbon adsorption blowers — every treatment power device gets its own monitoring circuit. Where an enterprise operates special parallel production equipment, circuits may be combined after on-site survey and approval by the local ecology and environment department.
 
-![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans/pollution-control-equipment-power-monitoring/img-03.webp)
+![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans-en/technical-plan-for-power-status-monitoring-of-pollution-control-equipment-at-pollutant-discharging-facilities-hj212-integration-with-the-provincial-platform/2ax.png)
 
-![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans/pollution-control-equipment-power-monitoring/img-04.webp)
+![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans-en/technical-plan-for-power-status-monitoring-of-pollution-control-equipment-at-pollutant-discharging-facilities-hj212-integration-with-the-provincial-platform/3az.png)
 
-![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans/pollution-control-equipment-power-monitoring/img-05.webp)
+![Power Status Monitoring System for Pollution Control Equipment at Pollutant-Discharging Facilities (HJ212 Integration with the Provincial Platform)](/images/plans-en/technical-plan-for-power-status-monitoring-of-pollution-control-equipment-at-pollutant-discharging-facilities-hj212-integration-with-the-provincial-platform/2az.png)
 
 *4.2 Supporting Construction of the Monitoring Station Room*
 
