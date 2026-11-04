@@ -1,6 +1,11 @@
 ---
-title: "Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform"
-summary: "Industrial IoT acquisition of water, electricity and gas consumption, with the data reported to government platforms through standard interfaces and analyzed on an energy management platform."
+title: Factory Water, Electricity and Gas Consumption Monitoring and Energy
+  Management Platform
+summary: Industrial IoT acquisition of water, electricity and gas consumption,
+  with the data reported to government platforms through standard interfaces and
+  analyzed on an energy management platform.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 Industrial IoT for water, electricity and gas data acquisition, connected directly to government platforms
 
@@ -12,32 +17,32 @@ As the global energy crisis deepens and environmental awareness grows, energy sa
 
 In recent years the Chinese government has issued the Energy Development Strategic Action Plan (2014–2020), the 14th Five-Year Comprehensive Work Plan for Energy Conservation and Emission Reduction and other policy documents, which explicitly call for stronger monitoring and management of energy consumption at key energy-using units. Under these policies, enterprises must upload water, electricity, gas and other consumption data to government platforms in real time so that the government can supervise and analyze it centrally.
 
-| Issue date | Policy | Scope |
-|---|---|---|
-| May 2024 | Energy Saving and Carbon Reduction Action Plan 2024–2025 | Sets out 27 tasks in 10 areas, including action to reduce and substitute fossil energy consumption and action to raise non-fossil energy consumption |
-| Feb 2024 | Green and Low-Carbon Transition Industry Guidance Catalogue (2024 Edition) | Guides industry toward a green, low-carbon transition and optimizes the energy consumption mix |
-| Mar 2024 | Work Plan for Accelerating Energy Saving and Carbon Reduction in the Building Sector | Advances energy saving and carbon reduction in buildings and the transition of construction methods |
-| Mar 2022 | 14th Five-Year Plan for Building Energy Efficiency and Green Buildings | Targets energy-efficiency retrofit of more than 350 million m² of existing buildings and more than 50 million m² of ultra-low-energy and near-zero-energy buildings by 2025 |
-| Aug 2021 | Report Card on Regional Completion of Dual Energy Control Targets for the First Half of 2021 | Issued by the NDRC; reports each region's progress on dual energy control targets and sets requirements for regions where energy intensity rose rather than fell |
-| Sep 2021 | Plan for Improving the Dual Control System for Energy Consumption Intensity and Total Volume | Requires strict provincial dual-control targets, a national reserve of targets, market trading of energy-use quotas and improved management and assessment |
+| Issue date | Policy                                                                                       | Scope                                                                                                                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| May 2024   | Energy Saving and Carbon Reduction Action Plan 2024–2025                                     | Sets out 27 tasks in 10 areas, including action to reduce and substitute fossil energy consumption and action to raise non-fossil energy consumption                        |
+| Feb 2024   | Green and Low-Carbon Transition Industry Guidance Catalogue (2024 Edition)                   | Guides industry toward a green, low-carbon transition and optimizes the energy consumption mix                                                                              |
+| Mar 2024   | Work Plan for Accelerating Energy Saving and Carbon Reduction in the Building Sector         | Advances energy saving and carbon reduction in buildings and the transition of construction methods                                                                         |
+| Mar 2022   | 14th Five-Year Plan for Building Energy Efficiency and Green Buildings                       | Targets energy-efficiency retrofit of more than 350 million m² of existing buildings and more than 50 million m² of ultra-low-energy and near-zero-energy buildings by 2025 |
+| Aug 2021   | Report Card on Regional Completion of Dual Energy Control Targets for the First Half of 2021 | Issued by the NDRC; reports each region's progress on dual energy control targets and sets requirements for regions where energy intensity rose rather than fell            |
+| Sep 2021   | Plan for Improving the Dual Control System for Energy Consumption Intensity and Total Volume | Requires strict provincial dual-control targets, a national reserve of targets, market trading of energy-use quotas and improved management and assessment                  |
 
 ### 1.2 Data Reporting Requirements
 
 Government platforms set strict requirements for energy data reporting, covering timeliness, accuracy and completeness. Enterprises must ensure that collected consumption data reaches the platform promptly and accurately and meets its data format and interface requirements.
 
-| Code | Name | Data type | Format |
-|---|---|---|---|
-| USCC | Unified social credit code | varchar |  |
-| YEAR | Year | varchar |  |
-| QUARTER | Quarter | varchar |  |
-| ENERGY_VARIETY_CODE | Energy variety code | varchar |  |
-| UNIT_CODE | Unit of measure code | varchar |  |
-| CONSUMPTION | Consumption | double |  |
-| CONVERSION_COEFFICIENT | Conversion coefficient | double |  |
-| CONVERSION_STANDARD_COAL | Standard coal equivalent | double |  |
-| DESCRIPTION_OFF_USE | Purpose description | varchar |  |
-| REMARK | Remarks | varchar |  |
-| PROCESS_TYPE | Request type | varchar |  |
+| Code                     | Name                       | Data type | Format |
+| ------------------------ | -------------------------- | --------- | ------ |
+| USCC                     | Unified social credit code | varchar   |        |
+| YEAR                     | Year                       | varchar   |        |
+| QUARTER                  | Quarter                    | varchar   |        |
+| ENERGY_VARIETY_CODE      | Energy variety code        | varchar   |        |
+| UNIT_CODE                | Unit of measure code       | varchar   |        |
+| CONSUMPTION              | Consumption                | double    |        |
+| CONVERSION_COEFFICIENT   | Conversion coefficient     | double    |        |
+| CONVERSION_STANDARD_COAL | Standard coal equivalent   | double    |        |
+| DESCRIPTION_OFF_USE      | Purpose description        | varchar   |        |
+| REMARK                   | Remarks                    | varchar   |        |
+| PROCESS_TYPE             | Request type               | varchar   |        |
 
 ### 1.3 Enterprise Responsibility
 
@@ -49,17 +54,17 @@ As major energy users, industrial enterprises have a responsibility to respond t
 
 The solution uses sensors, data acquisition devices and an IoT platform to collect, transmit and analyze water, electricity and gas consumption data in real time. It connects directly to the enterprise's existing production management systems and uploads the collected data to government platforms through standard interfaces, meeting the policy requirements.
 
-![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans/factory-utility-energy-management-platform/img-01.webp)
+![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans-en/factory-water-electricity-and-gas-consumption-monitoring-and-energy-management-platform/1qa.png)
 
 *Overall architecture*
 
 ### 2.2 Solution Flow
 
-![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans/factory-utility-energy-management-platform/img-02.webp)
+![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans-en/factory-water-electricity-and-gas-consumption-monitoring-and-energy-management-platform/2qa.png)
 
 *Electricity acquisition scheme*
 
-![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans/factory-utility-energy-management-platform/img-03.webp)
+![Factory Water, Electricity and Gas Consumption Monitoring and Energy Management Platform](/images/plans-en/factory-water-electricity-and-gas-consumption-monitoring-and-energy-management-platform/3qa.png)
 
 *Water consumption acquisition scheme*
 
