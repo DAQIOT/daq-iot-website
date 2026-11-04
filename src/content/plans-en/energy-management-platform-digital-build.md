@@ -4,7 +4,8 @@ summary: Local deployment of an energy data platform that acquires and monitors
   water, steam, chilled water and compressed air consumption together with PLC
   data from 13 types of production equipment.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
+image: /images/plans-en/technical-plan-for-digitalizing-an-enterprise-energy-management-platform/4ac.png
 ---
 ## Project Background
 
