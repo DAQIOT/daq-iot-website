@@ -6,6 +6,7 @@ summary: A SCADA-based energy monitoring system that turns water, electricity
   trend forecasting and alarm-driven O&M.
 category: 智能制造
 subcategory: Energy Consumption & Management
+image: /images/plans-en/factory-energy-monitoring-water-electricity-and-steam-meter-data-visualization/1xa.png
 ---
 Factory Energy Monitoring System
 
