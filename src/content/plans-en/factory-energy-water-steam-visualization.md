@@ -1,12 +1,17 @@
 ---
-title: "Factory Energy Monitoring: Water, Electricity and Steam Meter Data Visualization"
-summary: "A SCADA-based energy monitoring system that turns water, electricity and steam meter data into three-level energy dashboards, consumption ranking, trend forecasting and alarm-driven O&M."
+title: "Factory Energy Monitoring: Water, Electricity and Steam Meter Data
+  Visualization"
+summary: A SCADA-based energy monitoring system that turns water, electricity
+  and steam meter data into three-level energy dashboards, consumption ranking,
+  trend forecasting and alarm-driven O&M.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 Factory Energy Monitoring System
 
 Industrial transformation and smart manufacturing have made accurate collection, analysis and optimization of energy data central to cutting costs, raising efficiency and achieving sustainable growth. To give a plant a complete picture of how it consumes water, electricity and steam, and to warn of abnormal equipment operation in time, this solution builds on the DAQ-IOT technical framework and a dedicated data acquisition platform. It covers the full chain — data acquisition, dynamic monitoring, intelligent analysis, and alarm-driven O&M — and supports fine-grained energy management.
 
-![Factory Energy Monitoring: Water, Electricity and Steam Meter Data Visualization](/images/plans/factory-energy-water-steam-visualization/img-01.webp)
+![Factory Energy Monitoring: Water, Electricity and Steam Meter Data Visualization](/images/plans-en/factory-energy-monitoring-water-electricity-and-steam-meter-data-visualization/1xa.png)
 
 *1. System Objectives*
 
@@ -34,16 +39,16 @@ B/S layer: provides web and mobile access, so managers can check consumption tre
 
 To keep the system running reliably, hardware follows industrial-grade standards. Core equipment parameters:
 
-| Hardware | Model / spec | Qty | Function | Remarks |
-|---|---|---|---|---|
-| Industrial PC | 10th-gen Core i7-10700 / 32 GB RAM / 500 GB SSD + 2 TB HDD / discrete RTX 3060 with 12 GB VRAM | 1 set | Host system for data processing, screen display and command output |  |
-| Monitor | 21-inch industrial monitor | 1 set | Paired with the IPC for live on-site monitoring |  |
-| Input devices | Keyboard and mouse set | 1 set | Operator input |  |
-| Switch | Multi-port industrial switch | 1 set | Network link between field acquisition devices and the IPC |  |
+| Hardware      | Model / spec                                                                                   | Qty   | Function                                                           | Remarks |
+| ------------- | ---------------------------------------------------------------------------------------------- | ----- | ------------------------------------------------------------------ | ------- |
+| Industrial PC | 10th-gen Core i7-10700 / 32 GB RAM / 500 GB SSD + 2 TB HDD / discrete RTX 3060 with 12 GB VRAM | 1 set | Host system for data processing, screen display and command output |         |
+| Monitor       | 21-inch industrial monitor                                                                     | 1 set | Paired with the IPC for live on-site monitoring                    |         |
+| Input devices | Keyboard and mouse set                                                                         | 1 set | Operator input                                                     |         |
+| Switch        | Multi-port industrial switch                                                                   | 1 set | Network link between field acquisition devices and the IPC         |         |
 
 Information to be collected on site: the energy meters to be monitored (water, electricity, gas and similar) and the PLCs behind the terminal equipment.
 
-![Factory Energy Monitoring: Water, Electricity and Steam Meter Data Visualization](/images/plans/factory-energy-water-steam-visualization/img-02.webp)
+![Factory Energy Monitoring: Water, Electricity and Steam Meter Data Visualization](/images/plans-en/factory-energy-monitoring-water-electricity-and-steam-meter-data-visualization/2xa.png)
 
 *(3) System Function Modules*
 
