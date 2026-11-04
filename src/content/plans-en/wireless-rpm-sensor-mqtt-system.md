@@ -5,6 +5,7 @@ summary: A wireless sensor that streams rotational speed from motors, gearboxes,
   Ethernet, with MQTT publishing, threshold alarms and remote configuration.
 category: 智能制造
 subcategory: Condition Monitoring and Predictive Maintenance
+image: /images/plans-en/wireless-rpm-sensor-mqtt-online-measurement-and-monitoring-system/img-01.webp
 ---
 In industrial production, the operating status of rotating machinery directly determines both output and equipment safety. As a key tool in the industrial internet of things (IIoT), a wireless RPM sensor measures rotational speed in real time and sends the data to a remote monitoring system over wireless communication, giving users efficient, intelligent equipment management.
 
