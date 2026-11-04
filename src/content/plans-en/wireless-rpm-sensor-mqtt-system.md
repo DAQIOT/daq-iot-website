@@ -1,12 +1,16 @@
 ---
-title: "Wireless RPM Sensor + MQTT Online Measurement and Monitoring System"
-summary: "A wireless sensor that streams rotational speed from motors, gearboxes, fans, pumps and compressors to an IoT platform over 4G, WiFi, LoRa or Ethernet, with MQTT publishing, threshold alarms and remote configuration."
+title: Wireless RPM Sensor + MQTT Online Measurement and Monitoring System
+summary: A wireless sensor that streams rotational speed from motors, gearboxes,
+  fans, pumps and compressors to an IoT platform over 4G, WiFi, LoRa or
+  Ethernet, with MQTT publishing, threshold alarms and remote configuration.
+category: 智能制造
+subcategory: Condition Monitoring and Predictive Maintenance
 ---
 In industrial production, the operating status of rotating machinery directly determines both output and equipment safety. As a key tool in the industrial internet of things (IIoT), a wireless RPM sensor measures rotational speed in real time and sends the data to a remote monitoring system over wireless communication, giving users efficient, intelligent equipment management.
 
 ![Wireless RPM Sensor + MQTT Online Measurement and Monitoring System](/images/plans/wireless-rpm-sensor-mqtt-system/img-01.webp)
 
-![Wireless RPM Sensor + MQTT Online Measurement and Monitoring System](/images/plans/wireless-rpm-sensor-mqtt-system/img-02.webp)
+![Wireless RPM Sensor + MQTT Online Measurement and Monitoring System](/images/plans-en/wireless-rpm-sensor-mqtt-online-measurement-and-monitoring-system/7e2d641b-5f67-4127-a50b-6818e9dcc294.png)
 
 *1. Wireless RPM Sensor*
 
@@ -46,7 +50,7 @@ For key components such as gearboxes and bearings, the wireless RPM sensor track
 
 Mainstream protocol integration: efficient remote monitoring
 
-![Wireless RPM Sensor + MQTT Online Measurement and Monitoring System](/images/plans/img-03.webp)
+![Wireless RPM Sensor + MQTT Online Measurement and Monitoring System](/images/plans-en/wireless-rpm-sensor-mqtt-online-measurement-and-monitoring-system/88383f03-7ba7-4392-8c24-9d8417eb15b9.png)
 
 The wireless RPM sensor supports TCP/UDP/HTTP/MQTT protocols and connects easily to IoT platforms for efficient remote monitoring.
 
