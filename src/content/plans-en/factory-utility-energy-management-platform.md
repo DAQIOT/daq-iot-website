@@ -5,7 +5,7 @@ summary: Industrial IoT acquisition of water, electricity and gas consumption,
   with the data reported to government platforms through standard interfaces and
   analyzed on an energy management platform.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
 ---
 Industrial IoT for water, electricity and gas data acquisition, connected directly to government platforms
 
