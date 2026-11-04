@@ -1,10 +1,16 @@
 ---
-title: "Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)"
-summary: "A service-oriented, cloud-based energy management system that acquires consumption data from power distribution, lighting, HVAC, water supply and drainage, gas and key equipment, then reports it by category, sub-item, time period and area to expose savings opportunities."
+title: Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud
+  Platform (Online Energy Monitoring and Efficiency Analysis)
+summary: A service-oriented, cloud-based energy management system that acquires
+  consumption data from power distribution, lighting, HVAC, water supply and
+  drainage, gas and key equipment, then reports it by category, sub-item, time
+  period and area to expose savings opportunities.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 | Shanghai Daq IoT Technology Co., Ltd. — Energy Management System |
-|---|
-| Version: V 1.1 |
+| ---------------------------------------------------------------- |
+| Version: V 1.1                                                   |
 
 System Overview
 
@@ -18,8 +24,8 @@ The energy management system is built on a modern service-oriented, cloud and mo
 
 MAJOR FUNCTION
 
-| Energy data acquisition | Energy data statistics | Line loss analysis | Energy alerts |
-|---|---|---|---|
+| Energy data acquisition                                                                  | Energy data statistics                                                                                                                                                             | Line loss analysis                | Energy alerts                                                                          |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | -------------------------------------------------------------------------------------- |
 | Supports mainstream communication protocols and all common interfaces, wired or wireless | Automatic hourly / daily / monthly / annual statistics with year-on-year, period-on-period and share analysis; analysis by category, sub-item, area and group; consumption ranking | Detects leaks and losses promptly | Configurable safety and consumption thresholds with audible/visual, SMS and app alarms |
 
 ![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-02.webp)
@@ -52,7 +58,7 @@ APPLICATION SCENARIO
 
 The energy management system applies to industrial enterprises, commercial buildings, public buildings and other energy-using sites. It gives owners a complete picture of energy use, exposes unreasonable consumption, and provides optimization advice, so energy is finally used safely, economically and cleanly.
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-03.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/1av.png)
 
 *Customer Value*
 
@@ -82,9 +88,9 @@ PRODUCT CHARACTERISTICS
 
 Power monitoring and energy management combined in one system
 
-| More than a solution — industry experience as well | Energy management system | A strong ecosystem and shared capability center |
-|---|---|---|
-|  | Open system architecture, easy to integrate and be integrated |  |
+| More than a solution — industry experience as well | Energy management system                                      | A strong ecosystem and shared capability center |
+| -------------------------------------------------- | ------------------------------------------------------------- | ----------------------------------------------- |
+|                                                    | Open system architecture, easy to integrate and be integrated |                                                 |
 
 System Architecture — Local Deployment
 
@@ -154,9 +160,9 @@ Wireless electricity meters · Non-destructive pipeline water measurement · Clo
 
 Split-core transformers with inductive power harvesting need neither a power cable nor a communication cable.
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-06.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/2av.png)
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-07.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/3av.png)
 
 Clamp-on ultrasonic measurement delivers water volume statistics with no pipe cutting and no flow stoppage — a non-destructive installation.
 
@@ -166,11 +172,11 @@ Electricity acquisition approach for electricity meters
 
 Image recognition plus remote transmission needs no cabling and no meter replacement, and reads conventional water, gas and electricity meters of all kinds.
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-08.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/4av.png)
 
 *Non-destructive pipeline installation, water consumption acquisition*
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-09.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/5av.png)
 
 *Electricity data acquisition where no meter is installed*
 
@@ -190,7 +196,7 @@ Owner requirements:
 
 Implementation: all smart devices were connected to the cloud platform over fieldbus plus a fiber optic network. Managers monitor and control the site from a browser or the app. The platform monitors more than a thousand metering devices in total, with over 400,000 data points.
 
-![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans/integrated-energy-monitoring-cloud-platform/img-10.webp)
+![Integrated Water, Electricity, Gas and Heat Energy Monitoring Cloud Platform (Online Energy Monitoring and Efficiency Analysis)](/images/plans-en/integrated-water-electricity-gas-and-heat-energy-monitoring-cloud-platform-online-energy-monitoring-and-efficiency-analysis/6av.png)
 
 *Browser*
 
