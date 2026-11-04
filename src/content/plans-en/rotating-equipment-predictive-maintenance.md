@@ -1,13 +1,17 @@
 ---
-title: "Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant"
-summary: "A wireless vibration and temperature monitoring system that moves a chemical plant's motor and pump fleet from scheduled overhauls to predictive maintenance, with no signal cabling in Zone 1 and Zone 2 areas."
+title: Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant
+summary: A wireless vibration and temperature monitoring system that moves a
+  chemical plant's motor and pump fleet from scheduled overhauls to predictive
+  maintenance, with no signal cabling in Zone 1 and Zone 2 areas.
+category: 智能制造
+subcategory: Condition Monitoring and Predictive Maintenance
 ---
-| Project | Wireless monitoring system for predictive maintenance of the pump fleet |
-|---|---|
-| Document type | Construction and design plan |
-| Version | V1.0 |
-| Prepared by | Shanghai Daq IoT Technology Co., Ltd. |
-| Date | 2026 |
+| Project       | Wireless monitoring system for predictive maintenance of the pump fleet |
+| ------------- | ----------------------------------------------------------------------- |
+| Document type | Construction and design plan                                            |
+| Version       | V1.0                                                                    |
+| Prepared by   | Shanghai Daq IoT Technology Co., Ltd.                                   |
+| Date          | 2026                                                                    |
 
 ## 1. Project Overview
 
@@ -21,20 +25,20 @@ Wireless vibration and temperature sensors are installed at key points on the mo
 
 The on-site equipment survey list defines the following equipment types for this monitoring scope:
 
-| Tag No. | Description | Pump model | Motor power | Speed | Control |
-|---|---|---|---|---|---|
-| P-301B | Butyl acrylate transfer pump | XQ-8/25-200*2 | 11 kW | 2940 rpm | VFD |
-| P-301C | Butyl acrylate unloading/transfer pump | IMZ80-50-160 | 11 kW | 2940 rpm | VFD |
-| P-303B | Styrene transfer pump | IMZ65-40-315L | 37 kW | 2950 rpm | VFD |
-| P-303C | Styrene transfer pump | IMZ65-40-315L | 37 kW | 2950 rpm | VFD |
-| P-2104A | Butadiene canned-motor pump | PN50-300/A33B | 18.5 kW | 2900 rpm | VFD |
-| P-2104B | Butadiene canned-motor pump | PN50-300/A33B | 18.5 kW | 2900 rpm | VFD |
-| P-201A | Butadiene unloading pump | R0508V-516 | 18.5 kW |  | Fixed speed |
-| P-201B | Butadiene unloading pump | N72-412JBM | 18.5 kW |  | Fixed speed |
-| C-202 | Butadiene compressor | ZW-1.5/10-16 | 22 kW | 730 rpm | Fixed speed |
-| P-108B | Circulating water pump | 12SH-9 | 110 kW | 1490 rpm | VFD |
-| C-206 | Incinerator combustion air fan | YB3-132S2-2 | 7.5 kW | 2910 rpm | Fixed speed |
-| P-304 | Acrylic acid transfer pump | YBX3-132S2-2W | 7.5 kW | 2900 rpm | Fixed speed |
+| Tag No. | Description                            | Pump model    | Motor power | Speed    | Control     |
+| ------- | -------------------------------------- | ------------- | ----------- | -------- | ----------- |
+| P-301B  | Butyl acrylate transfer pump           | XQ-8/25-200*2 | 11 kW       | 2940 rpm | VFD         |
+| P-301C  | Butyl acrylate unloading/transfer pump | IMZ80-50-160  | 11 kW       | 2940 rpm | VFD         |
+| P-303B  | Styrene transfer pump                  | IMZ65-40-315L | 37 kW       | 2950 rpm | VFD         |
+| P-303C  | Styrene transfer pump                  | IMZ65-40-315L | 37 kW       | 2950 rpm | VFD         |
+| P-2104A | Butadiene canned-motor pump            | PN50-300/A33B | 18.5 kW     | 2900 rpm | VFD         |
+| P-2104B | Butadiene canned-motor pump            | PN50-300/A33B | 18.5 kW     | 2900 rpm | VFD         |
+| P-201A  | Butadiene unloading pump               | R0508V-516    | 18.5 kW     |          | Fixed speed |
+| P-201B  | Butadiene unloading pump               | N72-412JBM    | 18.5 kW     |          | Fixed speed |
+| C-202   | Butadiene compressor                   | ZW-1.5/10-16  | 22 kW       | 730 rpm  | Fixed speed |
+| P-108B  | Circulating water pump                 | 12SH-9        | 110 kW      | 1490 rpm | VFD         |
+| C-206   | Incinerator combustion air fan         | YB3-132S2-2   | 7.5 kW      | 2910 rpm | Fixed speed |
+| P-304   | Acrylic acid transfer pump             | YBX3-132S2-2W | 7.5 kW      | 2900 rpm | Fixed speed |
 
 (The table is longer; only the first 12 rows are shown here.)
 
@@ -56,12 +60,12 @@ Note: these units are spread across the latex pump shelter area, the latex unit 
 
 The system uses a four-layer wireless architecture: sensor → explosion-proof wireless gateway → 5G router → platform server. No signal cabling is needed at any layer, which keeps installation simple and minimizes disruption to production.
 
-| Layer | Core equipment | Location | Main function |
-|---|---|---|---|
-| Perception | Intrinsically safe wireless vibration and temperature sensor | Motor bearing housing / pump body | Vibration and temperature acquisition |
-| Aggregation | Explosion-proof wireless gateway (Exd IIC T4 Gb) | Wall-mounted near each pump area | Wireless data aggregation and forwarding |
-| Transport | 5G/LTE industrial router (wired Ethernet optional) | Near the electrical room or control room | Remote data transmission |
-| Platform | Predictive maintenance industrial equipment health management platform | Enterprise intranet or cloud | Data analysis and early warning display |
+| Layer       | Core equipment                                                         | Location                                 | Main function                            |
+| ----------- | ---------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| Perception  | Intrinsically safe wireless vibration and temperature sensor           | Motor bearing housing / pump body        | Vibration and temperature acquisition    |
+| Aggregation | Explosion-proof wireless gateway (Exd IIC T4 Gb)                       | Wall-mounted near each pump area         | Wireless data aggregation and forwarding |
+| Transport   | 5G/LTE industrial router (wired Ethernet optional)                     | Near the electrical room or control room | Remote data transmission                 |
+| Platform    | Predictive maintenance industrial equipment health management platform | Enterprise intranet or cloud             | Data analysis and early warning display  |
 
 ### 2.2 Wireless Communication
 
@@ -69,63 +73,63 @@ Sensors and the explosion-proof gateway communicate over a Sub-1GHz industrial w
 
 One gateway accepts up to 37 sensor nodes (this project plans 8–16 sensors per gateway), with a coverage radius of about 100–300 m depending on obstructions. Gateway count and position are adjusted to the actual site survey.
 
-![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans/rotating-equipment-predictive-maintenance/img-01.webp)
+![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans-en/wireless-predictive-maintenance-for-rotating-equipment-in-a-chemical-plant/0a49cfed-c137-440c-b86a-f11e5e316a06.png)
 
 *2.3 Explosion-Proof Zoning and Equipment Selection*
 
 The plant unit is an explosive gas atmosphere, hazardous area Zone 1/Zone 2, with gas group IIC predominant (butadiene, styrene, acrylic acid and similar).
 
-| Equipment | Model | Ex marking | Certificate No. | Protection type |
-|---|---|---|---|---|
-| Vibration and temperature sensor |  | Ex ia IIC Ga / Ex ia IIC T₄ₘ₁ Db | / | Intrinsic safety ib/ia |
-| Explosion-proof gateway enclosure | Ex junction box BJX | Ex db IIB T6 Gb / Ex db IIC T6 Gb | SYEx24.0303 | Flameproof d |
+| Equipment                         | Model               | Ex marking                        | Certificate No. | Protection type        |
+| --------------------------------- | ------------------- | --------------------------------- | --------------- | ---------------------- |
+| Vibration and temperature sensor  |                     | Ex ia IIC Ga / Ex ia IIC T₄ₘ₁ Db  | /               | Intrinsic safety ib/ia |
+| Explosion-proof gateway enclosure | Ex junction box BJX | Ex db IIB T6 Gb / Ex db IIC T6 Gb | SYEx24.0303     | Flameproof d           |
 
 ## 3. Equipment and Material List
 
 ### 3.1 Main Equipment
 
-| No. | Equipment / material | Brand / spec | Unit | Qty | Remarks |
-|---|---|---|---|---|---|
-| 1 | Wireless vibration and temperature sensor | Daq IoT | unit | 13+16+8=37 | Includes mounting magnet / stud base |
-| 2 | Explosion-proof wireless gateway (with enclosure) | Matching product | unit | 3 | Includes BJX Ex junction box, Exd IIC |
-| 3 | 5G industrial router | Matching product | unit | 1 | Includes antenna and SIM card |
-| 4 | Power cable (shielded) |  | m | As measured | ZR-KVVP 2×1.5 mm², flame-retardant, shielded |
-| 5 | Expansion bolt M10 |  | set | As required | For wall-mounting the gateway enclosure |
-| 6 | Stainless steel pipe clamp / cable tie |  | set | As required | Cable fixing |
-| 7 | Grounding copper conductor |  | m | As required | 4 mm² green/yellow insulated wire |
-| 8 | Cable conduit (KBG / galvanized) |  | m | As measured | DN20, for power cable protection |
-| 9 | Stainless steel tag plate |  | plate | 37 | Sensor tag identification |
+| No. | Equipment / material                              | Brand / spec     | Unit  | Qty         | Remarks                                      |
+| --- | ------------------------------------------------- | ---------------- | ----- | ----------- | -------------------------------------------- |
+| 1   | Wireless vibration and temperature sensor         | Daq IoT          | unit  | 13+16+8=37  | Includes mounting magnet / stud base         |
+| 2   | Explosion-proof wireless gateway (with enclosure) | Matching product | unit  | 3           | Includes BJX Ex junction box, Exd IIC        |
+| 3   | 5G industrial router                              | Matching product | unit  | 1           | Includes antenna and SIM card                |
+| 4   | Power cable (shielded)                            |                  | m     | As measured | ZR-KVVP 2×1.5 mm², flame-retardant, shielded |
+| 5   | Expansion bolt M10                                |                  | set   | As required | For wall-mounting the gateway enclosure      |
+| 6   | Stainless steel pipe clamp / cable tie            |                  | set   | As required | Cable fixing                                 |
+| 7   | Grounding copper conductor                        |                  | m     | As required | 4 mm² green/yellow insulated wire            |
+| 8   | Cable conduit (KBG / galvanized)                  |                  | m     | As measured | DN20, for power cable protection             |
+| 9   | Stainless steel tag plate                         |                  | plate | 37          | Sensor tag identification                    |
 
 ### 3.2 Sensor Specifications
 
-| Parameter | Value |
-|---|---|
-| Ex marking | Ex ia IIC Ga / Ex ia IIC T₄ₘ₁ Db |
-| Certificate | / |
-| Vibration range | 0–200 m/s² (acceleration), 0–10 mm/s (RMS velocity) |
-| Frequency response | 10–5000 Hz (−3 dB) |
-| Temperature range | 40 °C to +125 °C |
-| Temperature accuracy | ±1 °C |
-| Wireless | Sub-1GHz, 470–510 MHz |
-| Power supply | Built-in lithium thionyl chloride battery (>3-year life; 3.6 V external supply supported) |
-| Protection rating | IP68 |
-| Mounting | Magnetic base / M8 stud |
-| Dimensions | φ36 × 78 mm (approx.) |
-| Operating temperature | 40 °C to +85 °C (ambient) |
+| Parameter             | Value                                                                                     |
+| --------------------- | ----------------------------------------------------------------------------------------- |
+| Ex marking            | Ex ia IIC Ga / Ex ia IIC T₄ₘ₁ Db                                                          |
+| Certificate           | /                                                                                         |
+| Vibration range       | 0–200 m/s² (acceleration), 0–10 mm/s (RMS velocity)                                       |
+| Frequency response    | 10–5000 Hz (−3 dB)                                                                        |
+| Temperature range     | 40 °C to +125 °C                                                                          |
+| Temperature accuracy  | ±1 °C                                                                                     |
+| Wireless              | Sub-1GHz, 470–510 MHz                                                                     |
+| Power supply          | Built-in lithium thionyl chloride battery (>3-year life; 3.6 V external supply supported) |
+| Protection rating     | IP68                                                                                      |
+| Mounting              | Magnetic base / M8 stud                                                                   |
+| Dimensions            | φ36 × 78 mm (approx.)                                                                     |
+| Operating temperature | 40 °C to +85 °C (ambient)                                                                 |
 
 ### 3.3 Gateway Enclosure Specifications
 
-| Parameter | Value |
-|---|---|
-| Protection type | Exd flameproof (BJX) |
-| Ex marking | Ex db IIB T6 Gb / Ex db IIC T6 Gb / Ex tb IIIC T80 °C Db |
-| Rated voltage / current | AC 380 V / 220 V, 200 A |
-| Dimensions | 200 × 318.95 × 57.2 mm (W × H × D) |
-| Mounting hole spacing (width) | 155.6 mm, hole diameter φ4 mm |
-| Protection rating | IP66 |
-| Antenna ports | 3 × external SMA antennas (LoRa / Wi-Fi / 5G optional) |
-| Power supply | AC 220 V, tapped from the nearest existing supply point |
-| Certification standards | GB/T 3836.1-2021 / GB/T 3836.2-2021 / GB/T 3836.31-2021 |
+| Parameter                     | Value                                                    |
+| ----------------------------- | -------------------------------------------------------- |
+| Protection type               | Exd flameproof (BJX)                                     |
+| Ex marking                    | Ex db IIB T6 Gb / Ex db IIC T6 Gb / Ex tb IIIC T80 °C Db |
+| Rated voltage / current       | AC 380 V / 220 V, 200 A                                  |
+| Dimensions                    | 200 × 318.95 × 57.2 mm (W × H × D)                       |
+| Mounting hole spacing (width) | 155.6 mm, hole diameter φ4 mm                            |
+| Protection rating             | IP66                                                     |
+| Antenna ports                 | 3 × external SMA antennas (LoRa / Wi-Fi / 5G optional)   |
+| Power supply                  | AC 220 V, tapped from the nearest existing supply point  |
+| Certification standards       | GB/T 3836.1-2021 / GB/T 3836.2-2021 / GB/T 3836.31-2021  |
 
 ## 4. Sensor Installation Plan
 
@@ -175,26 +179,26 @@ For stainless steel equipment (canned-motor pump casings) or where magnetic hold
 
 ### 4.3 Installation Points by Equipment Type
 
-| Equipment type | Installation points |
-|---|---|
-| Centrifugal pumps (P-301/303/108/304/303A) | Single-side mounting on the drive-end bearing housing of the motor, horizontal; add a non-drive-end point where possible. Pump end mounted on the pump body near the bearing. |
-| Canned-motor pumps (P-2104A/B) | The closed construction leaves only the outer wall of the front and rear bearing end covers; use a magnetic base or an M8 stud. Vibration is relatively low, so raise the sensor sensitivity. |
-| Unloading pumps (P-201A/B) | Per the site photos, mount on the side of the pump body near the outlet, magnet-mounted. If the body is stainless steel, switch to stud mounting. |
-| Compressor (C-202) | Mount on the bearing housings at both ends of the crankcase. At 730 rpm, prioritize low-frequency vibration (10–1000 Hz). |
-| Fan (C-206) | Mount on the bearing housings at both ends of the motor and record the operating state (start/stop times). |
+| Equipment type                             | Installation points                                                                                                                                                                           |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Centrifugal pumps (P-301/303/108/304/303A) | Single-side mounting on the drive-end bearing housing of the motor, horizontal; add a non-drive-end point where possible. Pump end mounted on the pump body near the bearing.                 |
+| Canned-motor pumps (P-2104A/B)             | The closed construction leaves only the outer wall of the front and rear bearing end covers; use a magnetic base or an M8 stud. Vibration is relatively low, so raise the sensor sensitivity. |
+| Unloading pumps (P-201A/B)                 | Per the site photos, mount on the side of the pump body near the outlet, magnet-mounted. If the body is stainless steel, switch to stud mounting.                                             |
+| Compressor (C-202)                         | Mount on the bearing housings at both ends of the crankcase. At 730 rpm, prioritize low-frequency vibration (10–1000 Hz).                                                                     |
+| Fan (C-206)                                | Mount on the bearing housings at both ends of the motor and record the operating state (start/stop times).                                                                                    |
 
 ### 4.4 Number of Installation Points
 
 Based on the site equipment list (13 units in total) and the actual monitoring needs, the recommended points are:
 
-| Equipment type | Point description | Points | Area |
-|---|---|---|---|
-| Centrifugal pumps (5) | 2 per unit (motor drive end + pump end) | 10 | Latex pump shelter area / circulating water pump house |
-| Canned-motor pumps (4) | 2 per unit (front/rear bearing end covers) | 8 | Latex unit area / butadiene pump shelter area |
-| Unloading pumps (2) | 2 per unit (motor + pump body) | 4 | Butadiene pump shelter area |
-| Compressor (1) | 2 per unit (both ends of the crankcase) | 2 | Butadiene area |
-| Fan (1) | 2 per unit (both ends of the motor) | 2 | Incinerator area |
-| Total |  | 26 | Compared with the 37-point scheme; more can be added as needed |
+| Equipment type         | Point description                          | Points | Area                                                           |
+| ---------------------- | ------------------------------------------ | ------ | -------------------------------------------------------------- |
+| Centrifugal pumps (5)  | 2 per unit (motor drive end + pump end)    | 10     | Latex pump shelter area / circulating water pump house         |
+| Canned-motor pumps (4) | 2 per unit (front/rear bearing end covers) | 8      | Latex unit area / butadiene pump shelter area                  |
+| Unloading pumps (2)    | 2 per unit (motor + pump body)             | 4      | Butadiene pump shelter area                                    |
+| Compressor (1)         | 2 per unit (both ends of the crankcase)    | 2      | Butadiene area                                                 |
+| Fan (1)                | 2 per unit (both ends of the motor)        | 2      | Incinerator area                                               |
+| Total                  |                                            | 26     | Compared with the 37-point scheme; more can be added as needed |
 
 ## 5. Explosion-Proof Gateway Installation Plan
 
@@ -270,40 +274,40 @@ Grounding of explosion-proof equipment is essential to explosion safety and must
 
 ▶ 6.1.2 Tool list
 
-| Tool | Qty | Use |
-|---|---|---|
-| Hammer drill (with dust extraction) | 1 | Wall drilling |
-| Angle grinder (with grinding disc) | 1 | Surface preparation |
-| Torque wrench (5–50 N·m) | 1 | Bolt tightening |
-| Digital multimeter | 1 | Electrical measurement |
-| Ground resistance tester | 1 | Grounding verification |
-| Wireless signal tester / laptop | 1 | Gateway–sensor communication test |
-| Spirit level (magnetic) | 1 | Verticality check |
-| Heat-shrink tubing / Ex electrical tape | As needed | Insulation of connections |
-| Rope / safety harness | 1 set | Work at height |
-| "Do not switch on" warning tags | 2 | Lockout tagging |
+| Tool                                    | Qty       | Use                               |
+| --------------------------------------- | --------- | --------------------------------- |
+| Hammer drill (with dust extraction)     | 1         | Wall drilling                     |
+| Angle grinder (with grinding disc)      | 1         | Surface preparation               |
+| Torque wrench (5–50 N·m)                | 1         | Bolt tightening                   |
+| Digital multimeter                      | 1         | Electrical measurement            |
+| Ground resistance tester                | 1         | Grounding verification            |
+| Wireless signal tester / laptop         | 1         | Gateway–sensor communication test |
+| Spirit level (magnetic)                 | 1         | Verticality check                 |
+| Heat-shrink tubing / Ex electrical tape | As needed | Insulation of connections         |
+| Rope / safety harness                   | 1 set     | Work at height                    |
+| "Do not switch on" warning tags         | 2         | Lockout tagging                   |
 
 ### 6.2 Work Sequence
 
 Construction runs in three stages, preferably inside a short shutdown window during a planned maintenance outage. Where conditions allow, the sensor magnets can also be installed with the plant running (the part that does not involve power isolation).
 
-| Stage | Duration | Main work | Responsible |
-|---|---|---|---|
-| Stage 1 | Preparation (1 day) | Site induction, tool and material inspection, gateway siting survey, point marking | Project manager + safety officer |
-| Stage 2 | Installation (2–3 days) | Enclosure fixing, sensor surface preparation and mounting, power wiring (with isolation) | 2 installers + electrician |
+| Stage   | Duration                             | Main work                                                                                        | Responsible                              |
+| ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------- |
+| Stage 1 | Preparation (1 day)                  | Site induction, tool and material inspection, gateway siting survey, point marking               | Project manager + safety officer         |
+| Stage 2 | Installation (2–3 days)              | Enclosure fixing, sensor surface preparation and mounting, power wiring (with isolation)         | 2 installers + electrician               |
 | Stage 3 | Commissioning and acceptance (1 day) | Sensor pairing and network join, cloud data verification, grounding test, documentation handover | Project manager + commissioning engineer |
 
 ### 6.3 Staffing
 
-| Role | No. | Responsibility |
-|---|---|---|
-| Project manager | 1 | Overall coordination, safety management, owner liaison |
-| Safety officer | 1 | On-site safety supervision; qualified plant safety officer |
-| Installer | 2 | Mechanical installation of sensors and gateways; safety training completed |
-| Electrician | 1 | Power wiring (licensed electrician); temporary power management |
-| Commissioning engineer | 1 | Device configuration, system integration test, platform connection |
+| Role                   | No. | Responsibility                                                             |
+| ---------------------- | --- | -------------------------------------------------------------------------- |
+| Project manager        | 1   | Overall coordination, safety management, owner liaison                     |
+| Safety officer         | 1   | On-site safety supervision; qualified plant safety officer                 |
+| Installer              | 2   | Mechanical installation of sensors and gateways; safety training completed |
+| Electrician            | 1   | Power wiring (licensed electrician); temporary power management            |
+| Commissioning engineer | 1   | Device configuration, system integration test, platform connection         |
 
-![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans/rotating-equipment-predictive-maintenance/img-02.webp)
+![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans-en/wireless-predictive-maintenance-for-rotating-equipment-in-a-chemical-plant/24637f1f-59aa-47cb-9001-e9ee2092d980.png)
 
 *7 Safety and HSE Requirements*
 
@@ -381,22 +385,22 @@ The gateway sends data to the predictive maintenance platform over 5G or Etherne
 
 ● Historical data is stored and retrievable, and trend charts display correctly
 
-![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans/rotating-equipment-predictive-maintenance/img-03.webp)
+![Wireless Predictive Maintenance for Rotating Equipment in a Chemical Plant](/images/plans-en/wireless-predictive-maintenance-for-rotating-equipment-in-a-chemical-plant/eb080cfe-2ebf-419d-b25d-bb96a95352fe.png)
 
 *8.3 Acceptance Tests*
 
-| Item | Criterion | Method | Result |
-|---|---|---|---|
-| Sensor mounting security | No movement when pushed by hand | Visual + manual check | ☑ Pass □ Fail |
-| Magnet / stud contact | Ground bright, full face contact, no false hold | Visual + gauss meter | ☑ Pass □ Fail |
-| Wireless signal strength | RSSI ≥ −80 dBm | Gateway management UI | ☑ Pass □ Fail |
-| Data online rate | 100% (in normal operation) | Platform monitoring page | ☑ Pass □ Fail |
-| Temperature accuracy | Within ≤2 °C of the reference | Comparison with IR thermometer | ☑ Pass □ Fail |
-| Vibration baseline | Values in the normal range, no abnormal peaks | Platform vibration waveform | ☑ Pass □ Fail |
-| Grounding resistance | ≤4 Ω | Ground resistance tester | ☑ Pass □ Fail |
-| Ex sealing | Gland tight, no gaps | Visual | ☑ Pass □ Fail |
-| Tag plates | Tags legible and consistent with the list | Check against the list | ☑ Pass □ Fail |
-| System alarm integration | Over-threshold alarms pushed correctly | Test record | ☑ Pass □ Fail |
+| Item                     | Criterion                                       | Method                         | Result        |
+| ------------------------ | ----------------------------------------------- | ------------------------------ | ------------- |
+| Sensor mounting security | No movement when pushed by hand                 | Visual + manual check          | ☑ Pass □ Fail |
+| Magnet / stud contact    | Ground bright, full face contact, no false hold | Visual + gauss meter           | ☑ Pass □ Fail |
+| Wireless signal strength | RSSI ≥ −80 dBm                                  | Gateway management UI          | ☑ Pass □ Fail |
+| Data online rate         | 100% (in normal operation)                      | Platform monitoring page       | ☑ Pass □ Fail |
+| Temperature accuracy     | Within ≤2 °C of the reference                   | Comparison with IR thermometer | ☑ Pass □ Fail |
+| Vibration baseline       | Values in the normal range, no abnormal peaks   | Platform vibration waveform    | ☑ Pass □ Fail |
+| Grounding resistance     | ≤4 Ω                                            | Ground resistance tester       | ☑ Pass □ Fail |
+| Ex sealing               | Gland tight, no gaps                            | Visual                         | ☑ Pass □ Fail |
+| Tag plates               | Tags legible and consistent with the list       | Check against the list         | ☑ Pass □ Fail |
+| System alarm integration | Over-threshold alarms pushed correctly          | Test record                    | ☑ Pass □ Fail |
 
 ### 8.4 Handover Documentation
 
@@ -418,29 +422,29 @@ The gateway sends data to the predictive maintenance platform over 5G or Etherne
 
 ### 9.1 Routine Inspection
 
-| Interval | Scope |
-|---|---|
-| Weekly | Visual check of sensor mounting: no impact, shift or accidental detachment; gateway indicators normal |
-| Monthly | Log in to the predictive maintenance platform to check the online rate and look for sensors offline for long periods; check the power cable and terminals for looseness |
-| Quarterly | Check the Ex enclosure seal for aging or cracking and replace if needed; re-test that grounding resistance is still ≤4 Ω |
-| Annually | Confirm sensor battery level (for lithium thionyl chloride cells, replace preventively after 2 years); upgrade system software |
+| Interval  | Scope                                                                                                                                                                   |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Weekly    | Visual check of sensor mounting: no impact, shift or accidental detachment; gateway indicators normal                                                                   |
+| Monthly   | Log in to the predictive maintenance platform to check the online rate and look for sensors offline for long periods; check the power cable and terminals for looseness |
+| Quarterly | Check the Ex enclosure seal for aging or cracking and replace if needed; re-test that grounding resistance is still ≤4 Ω                                                |
+| Annually  | Confirm sensor battery level (for lithium thionyl chloride cells, replace preventively after 2 years); upgrade system software                                          |
 
 ### 9.2 Troubleshooting
 
-| Symptom | Likely cause | Action |
-|---|---|---|
-| Sensor offline | Weak signal or obstruction | Adjust the mounting angle or add a repeater gateway; check the battery |
-| Vibration reading abnormally high | Sensor loose or moved | Check the magnet / stud tightness; confirm the mounting surface is clean |
-| Large temperature deviation | High contact thermal resistance or poor probe position | Re-grind the surface to bare metal; move the sensor closer to the bearing |
-| Frequent gateway disconnects | Weak 4G signal or router fault | Check SIM signal strength; replace the router or antenna |
-| No data on the platform | Network or cloud platform issue | Check the 5G router status; contact the platform provider to investigate the access configuration |
+| Symptom                           | Likely cause                                           | Action                                                                                            |
+| --------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| Sensor offline                    | Weak signal or obstruction                             | Adjust the mounting angle or add a repeater gateway; check the battery                            |
+| Vibration reading abnormally high | Sensor loose or moved                                  | Check the magnet / stud tightness; confirm the mounting surface is clean                          |
+| Large temperature deviation       | High contact thermal resistance or poor probe position | Re-grind the surface to bare metal; move the sensor closer to the bearing                         |
+| Frequent gateway disconnects      | Weak 4G signal or router fault                         | Check SIM signal strength; replace the router or antenna                                          |
+| No data on the platform           | Network or cloud platform issue                        | Check the 5G router status; contact the platform provider to investigate the access configuration |
 
 ### 9.3 Spare Parts
 
-| Part | Suggested stock | Note |
-|---|---|---|
-| Wireless vibration and temperature sensor | 2 | Typical lead time 1–2 weeks |
-| Ex cable gland Pg16 | 6 | Seal is a wear item |
-| Antenna SMA 2.4G/Sub-GHz | 3 | Damaged easily outdoors |
-| MCB 6 A single-pole | 3 | Gateway supply protection |
-| Grounding wire 4 mm² green/yellow, 1 m | 5 | Grounding connections |
+| Part                                      | Suggested stock | Note                        |
+| ----------------------------------------- | --------------- | --------------------------- |
+| Wireless vibration and temperature sensor | 2               | Typical lead time 1–2 weeks |
+| Ex cable gland Pg16                       | 6               | Seal is a wear item         |
+| Antenna SMA 2.4G/Sub-GHz                  | 3               | Damaged easily outdoors     |
+| MCB 6 A single-pole                       | 3               | Gateway supply protection   |
+| Grounding wire 4 mm² green/yellow, 1 m    | 5               | Grounding connections       |
