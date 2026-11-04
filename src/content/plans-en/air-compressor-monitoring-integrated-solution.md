@@ -6,6 +6,7 @@ summary: An integrated hardware and software solution that converts proprietary
   energy efficiency analysis.
 category: 智能制造
 subcategory: Condition Monitoring and Predictive Maintenance
+image: /images/plans-en/air-compressor-monitoring-integrated-hardware-and-software-solution/924f1576-a518-44f4-a27c-aa4ffb421ef5.png
 ---
 Compressed Air Monitoring Hardware & Software Integrated Solution
 
