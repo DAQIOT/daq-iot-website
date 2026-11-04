@@ -5,7 +5,7 @@ summary: A SCADA-based energy monitoring system that turns water, electricity
   and steam meter data into three-level energy dashboards, consumption ranking,
   trend forecasting and alarm-driven O&M.
 category: 智能制造
-subcategory: EnergyConsumption & Management
+subcategory: Energy Consumption & Management
 ---
 Factory Energy Monitoring System
 
