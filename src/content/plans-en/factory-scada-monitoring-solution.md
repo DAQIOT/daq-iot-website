@@ -1,6 +1,12 @@
 ---
-title: "Factory Equipment Intelligent Monitoring SCADA System Technical Approach"
-summary: "As Industry 4.0 and smart manufacturing gain momentum, digital transformation has become a key path for enterprises to strengthen their core competitiveness and achieve sustainable development."
+title: Factory Equipment Intelligent Monitoring SCADA System Technical Approach
+summary: As Industry 4.0 and smart manufacturing gain momentum, digital
+  transformation has become a key path for enterprises to strengthen their core
+  competitiveness and achieve sustainable development.
+category: 其他
+subcategory: Equipment Connectivity and Data Acquisition | Photovoltaic Power
+  Plant Data Acquisition
+image: /images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p1.png
 ---
 ### Chapter 1. Project Overview and Requirements Analysis
 
@@ -12,20 +18,21 @@ As Industry 4.0 and smart manufacturing gain momentum, digital transformation ha
 
 List of monitored objects in this project
 
-| Monitored/Controlled Device | Acquisition/Control Parameters | Qty |
-|---|---|---|
-| Motor vibration sensor | Vibration velocity: 0~20 mm/s
-Vibration displacement: 0~200 μm | 3 |
-| Modulating air damper actuator | Signal type: analog signal
+| Monitored/Controlled Device      | Acquisition/Control Parameters | Qty |
+| -------------------------------- | ------------------------------ | --- |
+| Motor vibration sensor           | Vibration velocity: 0~20 mm/s  |     |
+| Vibration displacement: 0~200 μm | 3                              |     |
+| Modulating air damper actuator   | Signal type: analog signal     |     |
+
 Control type: electric control
 Torque: 15 NM | 7 |
 | Modulating water valve | Signal type: analog signal
 Control type: electric control | 80 |
-| Duct-type temperature and humidity sensor | Measuring range: 0~50 °C, 0~100 %RH;
+| Duct-type temperature and humidity sensor | Measuring range: 0\~50 °C, 0\~100 %RH;
 Signal type: analog signal; | 7 |
-| Duct-type differential pressure sensor | Measuring range: -2500~0 Pa;
+| Duct-type differential pressure sensor | Measuring range: -2500\~0 Pa;
 Signal type: analog signal; | 2 |
-| Duct-type pressure sensor | Measuring range: 0~1000 Pa;
+| Duct-type pressure sensor | Measuring range: 0\~1000 Pa;
 Signal type: analog signal; | 5 |
 | Air volume and velocity sensor | Signal type: analog signal + Modbus RTU; | 1 |
 | On/off air damper actuator | Signal type: digital signal
@@ -33,10 +40,10 @@ Control type: electric control
 Torque: 15 NM | 7 |
 | On/off water valve | Signal type: digital signal
 Control type: electric control | 2 |
-| Air-conditioning differential pressure switch | Measuring range: 0~500 Pa;
+| Air-conditioning differential pressure switch | Measuring range: 0\~500 Pa;
 Signal type: digital signal; | 42 |
 | Flow meter | Signal type: analog signal + Modbus RTU; | 5 |
-| Air-line dew point sensor | Measuring range: -80~20 °C DP;
+| Air-line dew point sensor | Measuring range: -80\~20 °C DP;
 Signal type: analog signal; | 1 |
 
 (The table has more rows; only the first 12 are shown here.)
@@ -119,7 +126,7 @@ Software platform: a high-performance, highly reliable SCADA platform (our in-ho
 
 #### 2.3 System Topology
 
-![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans/factory-scada-monitoring-solution/img-01.webp)
+![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p1.png)
 
 *Chapter 3. Detailed Hardware Design*
 
@@ -129,7 +136,7 @@ Shanghai Daq IoT supplies high-performance industrial IoT gateways and IO module
 
 IoT gateway: a multi-protocol gateway with at least one Ethernet port and multiple RS-485 ports, supporting edge computing and data buffering. Gateways are grouped by device location to keep cabling to a minimum.
 
-![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans/factory-scada-monitoring-solution/img-02.webp)
+![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p2.png)
 
 *IO modules:*
 
@@ -141,9 +148,9 @@ Analog input module: acquires 4-20 mA or 0-10 V standard signals from pressure, 
 
 Analog output module: controls modulating air damper and water valve actuators with a 4-20 mA output for precise valve position control.
 
-![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans/factory-scada-monitoring-solution/img-03.webp)
+![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p3.png)
 
-![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans/factory-scada-monitoring-solution/img-04.webp)
+![Factory Equipment Intelligent Monitoring SCADA System Technical Approach](/images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p4.png)
 
 *3.2 Monitoring Center Hardware Design*
 
