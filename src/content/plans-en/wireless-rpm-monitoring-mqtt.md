@@ -1,6 +1,10 @@
 ---
-title: "Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration"
-summary: "Motors, gearboxes, pumps and fans are the heart of industrial production, and whether their rotational speed stays stable directly affects production efficiency and equipment safety."
+title: Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration
+summary: Motors, gearboxes, pumps and fans are the heart of industrial
+  production, and whether their rotational speed stays stable directly affects
+  production efficiency and equipment safety.
+category: 智能制造
+subcategory: Device Connectivity and Data Acquisition
 ---
 ### How Do You Monitor Industrial RPM Wirelessly and Feed It into an MQTT Platform?
 
@@ -10,7 +14,7 @@ In industrial production, rotating machinery — motors, gearboxes, pumps, fans 
 
 The sensor used here, the SC-GP-RPM4G, is designed specifically for monitoring rotating industrial equipment. It suits a wide range of plant environments and supports wireless transmission and multi-protocol integration. Its key capabilities are:
 
-![Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration](/images/plans/wireless-rpm-monitoring-mqtt/img-01.webp)
+![Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration](/images/plans-en/wireless-rpm-monitoring-for-rotating-equipment-with-mqtt-platform-integration/6dcd5f99cb5e3272f7eca248ca5d9c96.png)
 
 *(1) Accurate real-time speed measurement*
 
@@ -36,7 +40,7 @@ Built to industrial grade, the sensor tolerates the temperature, humidity and el
 
 Thanks to its characteristics, this monitoring approach fits virtually any industrial site with rotating equipment. The main scenarios are:
 
-![Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration](/images/plans/wireless-rpm-monitoring-mqtt/img-02.webp)
+![Wireless RPM Monitoring for Rotating Equipment with MQTT Platform Integration](/images/plans-en/wireless-rpm-monitoring-for-rotating-equipment-with-mqtt-platform-integration/6843997c-d313-4306-a08e-83072922f1eb.png)
 
 *(1) Drive equipment on production lines*
 
