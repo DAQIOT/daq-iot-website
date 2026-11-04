@@ -1,11 +1,11 @@
 ---
-title: "DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案"
-summary: "需求：山东某东奥化工企业接监管园区通知，需要实现对DCS系统数据的实时采集和监控，将数据上传至园区监控平台。"
-category: "智能制造"
-subcategory: "设备联网与数据采集"
+title: DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案
+summary: 需求：山东某东奥化工企业接监管园区通知，需要实现对DCS系统数据的实时采集和监控，将数据上传至园区监控平台。
+category: 智能制造
+subcategory: 设备联网与数据采集
 order: 6
-sourceDoc: "DCS数据采集系统OPC UA协议数据采集实现MQTT转发.docx"
-image: "/images/plans/dcs-opc-ua-mqtt-forwarding/img-03.webp"
+sourceDoc: DCS数据采集系统OPC UA协议数据采集实现MQTT转发.docx
+image: public/images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png
 ---
 需求：山东某东奥化工企业接监管园区通知，需要实现对DCS系统数据的实时采集和监控，将数据上传至园区监控平台。从DCS系统采集实时数据，数据协议为OPC UA。将采集到的数据通过MQTT协议转发至监控平台。
 
@@ -13,20 +13,20 @@ image: "/images/plans/dcs-opc-ua-mqtt-forwarding/img-03.webp"
 
 DCS分布式控制系统是一种用于工业自动化的控制系统，通过多个分布式控制器实现对复杂生产过程的监控和管理，广泛应用于化工、电力、石油等行业。DCS数据采集面临的挑战：传统的DCS系统往往采用封闭的通信协议，数据难以与其他系统进行交互。生产数据、设备状态、能耗信息等分散在各个系统中，无法进行有效的整合和分析。另外其涉及的通信协议种类繁多，且不同厂商的设备协议各异（艾默生、西门子、横河、罗克韦尔、浙大中控、和利时、GE新华，正泰新华等），导致数据采集和系统集成难度大、周期长、成本高。其数据采集方式往往存在实时性差、数据传输延迟高等问题。
 
-| DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 序号 | 序号 | 企业名称 | DCS品牌 | DCS数量 | DCS数量 | DCS服务器 | DCS服务器 | DCS服务器 | DCS服务器 | 数据采集点数 | 数据采集点数 | 数据采集点数 | 数据采集点数 | 数据采集点数 | 备注 | 备注 |  |
-| 序号 | 序号 | 企业名称 | DCS品牌 | DCS数量 | DCS数量 | DCS服务器IP地址 | OPC接口授权 | 数采桥接程序允许 | 数采桥接程序允许 | 数量 | 数量 | 数量 | 是否有点位表 | 是否有点位表 | 备注 | 备注 |  |
-| 1 | 1 | 数采物联 | 浙大中控 | 1 | 1 | X.X.X.X | 有 | 是 | 是 | 70 | 70 | 70 | 是 | 是 |  |  |  |
-| 2 | 2 | 数采物联 | 和利时 | 1 | 1 | X.X.X.X | 有 | 是 | 是 | 100 | 100 | 100 | 是 | 是 |  |  |  |
-| 3 | 3 | 数采物联 | 罗克韦尔 | 1 | 1 | X.X.X.X | 无 | 否 | 否 | 50 | 50 | 50 | 否 | 否 |  |  |  |
-| 4 | 4 | 数采物联 | GE新华 | 1 | 1 | X.X.X.X | 有 | 否 | 否 | 80 | 80 | 80 | 是 | 是 |  |  |  |
-| DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 | DCS点表示例 |
-| 序号 | 序号 | 数据名称 | 数据名称 | 数据名称 | 数据名称 | 数据地址(OPC UA协议地址标签) | 数据地址(OPC UA协议地址标签) | 数据地址(OPC UA协议地址标签) | 数据地址(OPC UA协议地址标签) | 数据类型 | 数据类型 | 量程下限 | 量程上限 | 量程上限 | 单位 | 单位 | 备注 |
-| 1 | 1 | 6#苯溶液槽罐北侧浓度 | 6#苯溶液槽罐北侧浓度 | 6#苯溶液槽罐北侧浓度 | 6#苯溶液槽罐北侧浓度 | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型 | 整型 | 0 | 100 | 100 | mg/m3 | mg/m3 |  |
-| 2 | 2 | 1#盐酸贮槽南侧浓度 | 1#盐酸贮槽南侧浓度 | 1#盐酸贮槽南侧浓度 | 1#盐酸贮槽南侧浓度 | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型 | 整型 | 0 | 100 | 100 | mg/m3 | mg/m3 |  |
-| 3 | 3 | 1#浓硫酸槽液位 | 1#浓硫酸槽液位 | 1#浓硫酸槽液位 | 1#浓硫酸槽液位 | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型 | 整型 | 0 | 6 | 6 | m | m |  |
-| 4 | 4 | 罐区B#废水液位 | 罐区B#废水液位 | 罐区B#废水液位 | 罐区B#废水液位 | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型 | 整型 | 0 | 10 | 10 | m | m |  |
+| DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表                             | DCS控制系统数采调研表                             | DCS控制系统数采调研表                             | DCS控制系统数采调研表                             | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 | DCS控制系统数采调研表 |         |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------- |
+| 序号           | 序号           | 企业名称         | DCS品牌        | DCS数量        | DCS数量        | DCS服务器                                   | DCS服务器                                   | DCS服务器                                   | DCS服务器                                   | 数据采集点数       | 数据采集点数       | 数据采集点数       | 数据采集点数       | 数据采集点数       | 备注           | 备注           |         |
+| 序号           | 序号           | 企业名称         | DCS品牌        | DCS数量        | DCS数量        | DCS服务器IP地址                               | OPC接口授权                                  | 数采桥接程序允许                                 | 数采桥接程序允许                                 | 数量           | 数量           | 数量           | 是否有点位表       | 是否有点位表       | 备注           | 备注           |         |
+| 1            | 1            | 数采物联         | 浙大中控         | 1            | 1            | X.X.X.X                                  | 有                                        | 是                                        | 是                                        | 70           | 70           | 70           | 是            | 是            |              |              |         |
+| 2            | 2            | 数采物联         | 和利时          | 1            | 1            | X.X.X.X                                  | 有                                        | 是                                        | 是                                        | 100          | 100          | 100          | 是            | 是            |              |              |         |
+| 3            | 3            | 数采物联         | 罗克韦尔         | 1            | 1            | X.X.X.X                                  | 无                                        | 否                                        | 否                                        | 50           | 50           | 50           | 否            | 否            |              |              |         |
+| 4            | 4            | 数采物联         | GE新华         | 1            | 1            | X.X.X.X                                  | 有                                        | 否                                        | 否                                        | 80           | 80           | 80           | 是            | 是            |              |              |         |
+| DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例                                  | DCS点表示例                                  | DCS点表示例                                  | DCS点表示例                                  | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例      | DCS点表示例 |
+| 序号           | 序号           | 数据名称         | 数据名称         | 数据名称         | 数据名称         | 数据地址(OPC UA协议地址标签)                       | 数据地址(OPC UA协议地址标签)                       | 数据地址(OPC UA协议地址标签)                       | 数据地址(OPC UA协议地址标签)                       | 数据类型         | 数据类型         | 量程下限         | 量程上限         | 量程上限         | 单位           | 单位           | 备注      |
+| 1            | 1            | 6#苯溶液槽罐北侧浓度  | 6#苯溶液槽罐北侧浓度  | 6#苯溶液槽罐北侧浓度  | 6#苯溶液槽罐北侧浓度  | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型           | 整型           | 0            | 100          | 100          | mg/m3        | mg/m3        |         |
+| 2            | 2            | 1#盐酸贮槽南侧浓度   | 1#盐酸贮槽南侧浓度   | 1#盐酸贮槽南侧浓度   | 1#盐酸贮槽南侧浓度   | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型           | 整型           | 0            | 100          | 100          | mg/m3        | mg/m3        |         |
+| 3            | 3            | 1#浓硫酸槽液位     | 1#浓硫酸槽液位     | 1#浓硫酸槽液位     | 1#浓硫酸槽液位     | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型           | 整型           | 0            | 6            | 6            | m            | m            |         |
+| 4            | 4            | 罐区B#废水液位     | 罐区B#废水液位     | 罐区B#废水液位     | 罐区B#废水液位     | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | dongao_DaqOPC.1_PublicGroup.SubTag.Value | 整型           | 整型           | 0            | 10           | 10           | m            | m            |         |
 
 （表格内容较多，此处仅展示前 12 行）
 
@@ -34,7 +34,7 @@ DCS分布式控制系统是一种用于工业自动化的控制系统，通过�
 
 DAQ-IOT工业数采网关，DCS数据采集的利器，适用于各种复杂工业制造场景数据采集的需求，能够采集PLC设备、数控机床、检测仪表、普通机床、PC上位机等工业设备，与MES无缝对接。支持多种通信协议采集和传输
 
-![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/plans/dcs-opc-ua-mqtt-forwarding/img-01.webp)
+![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](public/images/2dde54ff-93e0-45b4-8576-5e5f31875e86.png)
 
 ![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/plans/dcs-opc-ua-mqtt-forwarding/img-02.webp)
 
@@ -44,20 +44,20 @@ DAQ-GP-IOTGW系列 DAQ-GP-DPU系列
 
 DAQ-IOT工业数采网关内置丰富的工业协议库，支持OPC UA、Modbus、HJ212、IEC等多种主流工业协议，可轻松对接国内外主流DCS系统，实现数据的无缝采集和传输。DAQ-IOT工业数采网关还支持协议自定义开发，可满足企业个性化需求。
 
-| 协议类型 | 主协议 | 子协议 | 备注 |
-|---|---|---|---|
-| PLC通信协议 | Modbus | Modbus-RTU |  |
-|  |  | Modbus-TCP |  |
-|  |  | Modbus-ASCII |  |
-|  | 西门子Siemens S7 |  |  |
-|  | 三菱MELSEC通信协议 | MELSEC-1E |  |
-|  |  | MELSEC-3C |  |
-|  |  | MELSEC-3E |  |
-|  |  | MELSEC-4C |  |
-|  |  | MELSEC-4D |  |
-|  |  | Mitsubishi-Fx |  |
-| OPC通信协议 | OPC-UA |  |  |
-|  | OPC-DA |  |  |
+| 协议类型    | 主协议           | 子协议           | 备注  |
+| ------- | ------------- | ------------- | --- |
+| PLC通信协议 | Modbus        | Modbus-RTU    |     |
+|         |               | Modbus-TCP    |     |
+|         |               | Modbus-ASCII  |     |
+|         | 西门子Siemens S7 |               |     |
+|         | 三菱MELSEC通信协议  | MELSEC-1E     |     |
+|         |               | MELSEC-3C     |     |
+|         |               | MELSEC-3E     |     |
+|         |               | MELSEC-4C     |     |
+|         |               | MELSEC-4D     |     |
+|         |               | Mitsubishi-Fx |     |
+| OPC通信协议 | OPC-UA        |               |     |
+|         | OPC-DA        |               |     |
 
 （表格内容较多，此处仅展示前 12 行）
 
@@ -75,7 +75,7 @@ DAQ-IOT工业数采网关采用多重安全机制，包括数据加密、身份�
 
 ### 2.5 采集方案
 
-![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](/images/plans/dcs-opc-ua-mqtt-forwarding/img-03.webp)
+![DCS 数据采集：OPC UA 协议采集与 MQTT 转发方案](public/images/6b4f482d-cb4b-4fb3-aba2-0af9972090df.png)
 
 DCS中控系统需要确认开放授权，根据企业要求追加网络安全中间件（网闸或防火墙等），确定企业DCS中控系统环境是否可以追加桥接程序，以便实现不同网络间的互通，然后通过网线形式连接DAQ数采网关，最终实现MQTT协议转发至监控平台。
 
