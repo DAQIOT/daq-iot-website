@@ -1,6 +1,11 @@
 ---
-title: "Energy Consumption and Operating Status Monitoring for Electrical Equipment"
-summary: "Distributed electrical loads spread across a site are hard to supervise by manual rounds, which are labor-intensive and cannot cover every hour; a 4G wireless acquisition solution collects energy data, determines operating status and feeds third-party platforms without complex cabling."
+title: Energy Consumption and Operating Status Monitoring for Electrical Equipment
+summary: Distributed electrical loads spread across a site are hard to supervise
+  by manual rounds, which are labor-intensive and cannot cover every hour; a 4G
+  wireless acquisition solution collects energy data, determines operating
+  status and feeds third-party platforms without complex cabling.
+category: 智能制造
+subcategory: EnergyConsumption & Management
 ---
 ## How Do You Monitor the Energy Use and Operating Status of Electrical Equipment?
 
@@ -18,7 +23,7 @@ The limits of the traditional approach are clear. Manual inspection means repeat
 
 The SC-GP-EM4G wireless power monitor is the core acquisition device. Designed for power monitoring on industrial sites, it handles single-phase and three-phase equipment, needs no on-site cabling and can be added at the key power feed of a unit quickly, which makes it a practical choice for distributed monitoring.
 
-![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans/electrical-equipment-energy-status-monitoring/img-01.webp)
+![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans-en/energy-consumption-and-operating-status-monitoring-for-electrical-equipment/1az.png)
 
 *(1) Core functions*
 
@@ -68,9 +73,9 @@ Unit and antenna: fix the acquisition unit in a suitable position inside the dis
 
 Power-up: connect the supply, check the wiring and switch on, confirming that the device starts normally.
 
-![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans/electrical-equipment-energy-status-monitoring/img-02.webp)
+![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans-en/energy-consumption-and-operating-status-monitoring-for-electrical-equipment/2az.png)
 
-![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans/electrical-equipment-energy-status-monitoring/img-03.webp)
+![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans-en/energy-consumption-and-operating-status-monitoring-for-electrical-equipment/3az.png)
 
 *(3) Remote Configuration and Data Integration*
 
@@ -96,7 +101,7 @@ After installation, run the system for 24 hours to check data transmission and a
 
 The cloud platform shows live power data for every monitoring point — voltage, current, power and energy. Each device carries a unique ID so points can be located precisely, and data refreshes in real time, so staff see the status of all distributed equipment from the back office without visiting site.
 
-![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans/electrical-equipment-energy-status-monitoring/img-04.webp)
+![Energy Consumption and Operating Status Monitoring for Electrical Equipment](/images/plans-en/energy-consumption-and-operating-status-monitoring-for-electrical-equipment/4az.png)
 
 *(2) Determining Operating Status*
 
