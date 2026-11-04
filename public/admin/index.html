@@ -115,6 +115,8 @@
     <!-- 媒体库排序：拦截 Git Trees API 响应，按上传时间/文件名重排（须在 CMS 初始化前加载） -->
     <script src="./media-sort.js?v=2"></script>
     <script src="./media-sort-ui.js?v=3"></script>
+    <!-- 媒体上传防覆盖：同名文件自动改名为 名称(1).ext 并提示，绝不覆盖旧文件 -->
+    <script src="./media-dedupe.js?v=1"></script>
     <!-- 媒体库轻量模式：把「整目录全量拉取」换成只分页（不做筛选，仅本地开发生效）；
          本地同时接管「排序 + 分页」统一工具条，避免两处重复注入把布局挤歪 -->
     <script src="./media-lite.js?v=6"></script>
