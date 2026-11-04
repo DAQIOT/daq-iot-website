@@ -5,7 +5,7 @@ summary: Motors, gearboxes, pumps and fans are the heart of industrial
   production efficiency and equipment safety.
 category: 智能制造
 subcategory: Condition Monitoring and Predictive Maintenance
-image: /images/plans-en/wireless-rpm-monitoring-for-rotating-equipment-with-mqtt-platform-integration/6843997c-d313-4306-a08e-83072922f1eb.png
+image: /images/plans-en/wireless-rpm-monitoring-for-rotating-equipment-with-mqtt-platform-integration/6dcd5f99cb5e3272f7eca248ca5d9c96.png
 ---
 ### How Do You Monitor Industrial RPM Wirelessly and Feed It into an MQTT Platform?
 
