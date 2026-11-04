@@ -1,6 +1,10 @@
 ---
-title: "SCADA Software Data Acquisition and Remote Monitoring System"
-summary: "The on-site industrial PC stays off the public network, while physical isolation and a local IoT module deliver secure data acquisition with remote monitoring from PC, web, mobile and WeChat."
+title: SCADA Software Data Acquisition and Remote Monitoring System
+summary: The on-site industrial PC stays off the public network, while physical
+  isolation and a local IoT module deliver secure data acquisition with remote
+  monitoring from PC, web, mobile and WeChat.
+category: 智能制造
+subcategory: Device Networking & Data Acquisition
 ---
 Key advantage: the on-site industrial PC does not need public network access. Physical isolation plus a local IoT module deliver secure data acquisition and convenient remote monitoring from multiple terminals.
 
@@ -8,7 +12,7 @@ Overall System Architecture (Field Side → Cloud → Monitoring Side)
 
 The system uses a three-layer architecture that separates functions and boundaries clearly to keep it secure and flexible. See the figure below.
 
-![SCADA software data acquisition and remote monitoring system](/images/plans/scada-software-remote-monitoring/img-01.webp)
+![SCADA software data acquisition and remote monitoring system](/images/plans-en/scada-software-data-acquisition-and-remote-monitoring-system/75ecbcf9-d228-45bb-b71d-6846b128086e.png)
 
 *Field Industrial PC Side (Data Source)*
 
