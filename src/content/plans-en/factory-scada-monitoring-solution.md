@@ -3,9 +3,8 @@ title: Factory Equipment Intelligent Monitoring SCADA System Technical Approach
 summary: As Industry 4.0 and smart manufacturing gain momentum, digital
   transformation has become a key path for enterprises to strengthen their core
   competitiveness and achieve sustainable development.
-category: 其他
-subcategory: Equipment Connectivity and Data Acquisition | Photovoltaic Power
-  Plant Data Acquisition
+category: Smart Manufacturing
+subcategory: Device Networking & Data Acquisition
 image: /images/plans-en/factory-equipment-intelligent-monitoring-scada-system-technical-approach/p1.png
 ---
 ### Chapter 1. Project Overview and Requirements Analysis
