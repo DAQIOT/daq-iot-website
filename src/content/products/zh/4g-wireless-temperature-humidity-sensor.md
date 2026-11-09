@@ -1,6 +1,6 @@
 ---
 title: 4G无线温湿度传感器
-summary: 本产品是一款多通信无线温湿度采集终端，高精度采集环境温湿度，适配工业、农业各类物联网环境监测场景。
+summary: 多通信无线温湿度采集终端，高精度采集环境温湿度，适配工业、农业各类物联网环境监测场景。
 image: /images/products/1692865652747656.jpg
 order: 213
 category: daq-sensor-env
