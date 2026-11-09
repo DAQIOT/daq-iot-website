@@ -1,7 +1,6 @@
 ---
 title: 4G无线工业测距传感器
-summary: 本产品是一款基于TOF 无线工业测距终端，单点雷达非侵入式测距，支持 4G/NB-IoT/LoRa/WiFi
-  多网络上云，远程运维，用于工业料位、液位、位移距离在线监测。
+summary: 基于TOF 无线工业测距终端，单点雷达非侵入式测距，支持 4G/NB-IoT/LoRa/WiFi 多网络上云，远程运维，用于工业料位、液位、位移距离在线监测。
 image: /images/products/1783317162909867.png
 order: 222
 category: daq-sensor-env
