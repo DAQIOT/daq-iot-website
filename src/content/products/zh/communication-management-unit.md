@@ -1,6 +1,6 @@
 ---
 title: 通讯管理机
-summary: 本产品是一款工业串口协议采集网关，可视化配置采集 Modbus 仪表与 DL/T645 电表数据，支持 Modbus 转 MQTT+JSON
+summary: 工业串口协议采集网关，可视化配置采集 Modbus 仪表与 DL/T645 电表数据，支持 Modbus 转 MQTT+JSON
   上传云端，兼具串口透传功能，适配工控能耗物联网采集场景。
 image: /images/products/1714360078902228.jpg
 order: 250
