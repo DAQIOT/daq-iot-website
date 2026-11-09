@@ -1,6 +1,6 @@
 ---
 title: 4G WIFI无线红外抄表器
-summary: 本产品是一款非侵入红外采集，不破铅封，多通信方式远程采集电表、燃气表数据，适配光伏、能耗、电力监控场景。
+summary: 非侵入红外采集，不破铅封，多通信方式远程采集电表、燃气表数据，适配光伏、能耗、电力监控场景。
 image: /images/products/1692783460789795.jpg
 order: 227
 category: daq-meter-electric
