@@ -1,6 +1,6 @@
 ---
 title: 空压机协议转换采集网关
-summary: 本产品是一款空压机专用协议转换网关，支持多台空压机联网采集与启停加载反控，输出 Modbus RTU，便捷对接 PLC、DCS 实现空压机远程监控与群控。
+summary: 空压机专用协议转换网关，支持多台空压机联网采集与启停加载反控，输出 Modbus RTU，便捷对接 PLC、DCS 实现空压机远程监控与群控。
 image: /images/products/1788232051956107.png
 order: 255
 category: daq-gateway
