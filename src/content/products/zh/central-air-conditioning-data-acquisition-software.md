@@ -1,6 +1,6 @@
 ---
 title: 格力美的海尔中央空调数据采集远程监控上位机软件
-summary: 本产品是一款基于 Modbus 和 SCADA 的中央空调上位机监控软件，图形化界面集中监测、远程管控多品牌空调机组，适用于工业场景空调集群运维管理。
+summary: 基于 Modbus 和 SCADA 的中央空调上位机监控软件，图形化界面集中监测、远程管控多品牌空调机组，适用于工业场景空调集群运维管理。
 image: /images/products/1766394220592015.png
 order: 262
 category: daq-software
