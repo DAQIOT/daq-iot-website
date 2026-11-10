@@ -1,8 +1,8 @@
 ---
-slug: plcacquisition
-name: PLC Acquisition
-description: PLC data acquisition and protocol communication managers
-order: 5
 lang: en
-path: PLC Acquisition
+slug: plcacquisition
+order: 5
+path: Data Acquisition & IoT Gateways
+name: Data Acquisition & IoT Gateways
+description: PLC data acquisition and protocol communication managers
 ---
