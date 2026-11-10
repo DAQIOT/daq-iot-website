@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: pressuresensors
+slug: currentsensors
 order: 0
 parent: wirelesssensor
-path: Pressure Sensors
-name: Pressure Sensors
+path: Current Sensors
+name: Current Sensors
 ---
