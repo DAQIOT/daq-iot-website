@@ -1,8 +1,8 @@
 ---
-slug: wirelesssensor
-name: Wireless Sensor
-description: Wireless sensors for temperature, vibration, level and more
-order: 3
 lang: en
-path: Wireless Sensor
+slug: wirelesssensor
+order: 3
+path: Wireless Sensors
+name: Wireless Sensors
+description: Wireless sensors for temperature, vibration, level and more
 ---
