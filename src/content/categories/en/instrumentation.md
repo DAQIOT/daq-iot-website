@@ -1,8 +1,8 @@
 ---
-slug: instrumentation
-name: Instrumentation
-description: Precision instruments and measurement modules for industrial data
-order: 1
 lang: en
-path: Instrumentation
+slug: instrumentation
+order: 1
+path: Energy Monitoring
+name: Energy Monitoring
+description: Precision instruments and measurement modules for industrial data
 ---
