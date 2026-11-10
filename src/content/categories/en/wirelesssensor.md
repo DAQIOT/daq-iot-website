@@ -1,7 +1,7 @@
 ---
 lang: en
 slug: wirelesssensor
-order: 3
+order: 2
 path: Wireless Sensors
 name: Wireless Sensors
 description: Wireless sensors for temperature, vibration, level and more
