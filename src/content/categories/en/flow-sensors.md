@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: flowsensors
+slug: distance-positionsensors
 order: 0
 parent: wirelesssensor
-path: Water Quality Sensors
-name: Water Quality Sensors
+path: Distance & Position Sensors
+name: Distance & Position Sensors
 ---
