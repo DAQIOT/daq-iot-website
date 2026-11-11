@@ -3,6 +3,6 @@ lang: en
 slug: iot-gateways
 order: 0
 parent: plcacquisition
-path: IoT Gateways
+path: Data Acquisition & IoT Gateways / IoT Gateways
 name: IoT Gateways
 ---

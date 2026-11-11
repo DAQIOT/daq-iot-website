@@ -3,6 +3,6 @@ lang: en
 slug: flowsensors
 order: 0
 parent: wirelesssensor
-path: Flow Sensors
+path: Wireless Sensors / Flow Sensors
 name: Flow Sensors
 ---

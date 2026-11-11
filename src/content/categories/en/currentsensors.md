@@ -3,6 +3,6 @@ lang: en
 slug: currentsensors
 order: 0
 parent: wirelesssensor
-path: Current Sensors
+path: Wireless Sensors / Current Sensors
 name: Current Sensors
 ---

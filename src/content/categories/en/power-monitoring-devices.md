@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: aivision-ocr
+slug: power-monitoring-devices
 order: 0
-parent: wirelesstimingphotography
-path: AI Vision & OCR
-name: AI Vision & OCR
+parent: instrumentation
+path: Energy Monitoring / Power Monitoring Devices
+name: Power Monitoring Devices
 ---

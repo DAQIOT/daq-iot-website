@@ -3,6 +3,6 @@ lang: en
 slug: dataacquisitionterminals
 order: 0
 parent: plcacquisition
-path: Data Acquisition Terminals
+path: Data Acquisition & IoT Gateways / Data Acquisition Terminals
 name: Data Acquisition Terminals
 ---
