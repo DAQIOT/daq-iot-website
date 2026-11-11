@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: energydataacquisition
+slug: aivision-ocr
 order: 0
-parent: instrumentation
-path: Energy Data Acquisition
-name: Energy Data Acquisition
+parent: wirelesstimingphotography
+path: AI Vision & OCR
+name: AI Vision & OCR
 ---
