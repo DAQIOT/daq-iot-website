@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: powermonitoringdevices
+slug: energydataacquisition
 order: 0
 parent: instrumentation
-path: Power Monitoring Devices
-name: Power Monitoring Devices
+path: Energy Data Acquisition
+name: Energy Data Acquisition
 ---
