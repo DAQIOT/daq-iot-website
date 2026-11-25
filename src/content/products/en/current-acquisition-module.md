@@ -1,9 +1,13 @@
 ---
-title: "Current Acquisition Module"
-summary: "Current Acquisition Module"
-image: "/images/products/1723616051127915.jpg"
+title: Current Acquisition Module
+summary: Clamp-on snap-fit installation, built-in high-precision metering chip.
+  It converts AC current signals into RS485 Modbus digital signals and connects
+  to PLCs and gateways for online current monitoring of motors, air compressors
+  and HVAC equipment, suitable for industrial energy collection and equipment
+  OEE statistics.
+image: /images/products/1723616051127915.jpg
 order: 233
-category: "instrumentation"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
