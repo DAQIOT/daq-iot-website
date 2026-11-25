@@ -1,10 +1,13 @@
 ---
-title: "Wireless Liquid Level Sensor"
-summary: >-
-  DAQ-GP-TLL4G wireless liquid level sensor terminal is a wireless liquid level measurement product launched by Shanghai DAQ IoT Technology Co., Ltd. Its principle uses a Wheatstone bridge on a diffused silicon wafer: the measured m…
-image: "/images/products/1692755369451955.jpg"
+title: Wireless Liquid Level Sensor
+summary: Submersible wireless liquid level monitoring terminal measures water
+  level based on piezoresistive principle. It supports multiple transmission
+  modes including 4G/NB-IoT/LoRa/WiFi, with remote configuration and FOTA
+  upgrade, suitable for online liquid level monitoring of water pools, water
+  tanks, sewage and other scenarios.
+image: /images/products/1692755369451955.jpg
 order: 210
-category: "wirelesssensor"
+category: level-sensors
 hidden: false
 ---
 **Product Details**
