@@ -1,6 +1,6 @@
 /**
  * 站内搜索索引：/<lang>/search-index.json（构建期静态生成）
- * 收录：产品（当前语言）+ 项目案例（当前语言）+ 方案库（三语共用中文内容）+ 资讯（当前语言）
+ * 收录：产品（当前语言）+ 项目案例（当前语言）+ 方案库（当前语言：zh/de 读中文稿，en 只读英文稿）+ 资讯（当前语言）
  * 搜索结果页 /<lang>/search 前端脚本按关键词在本索引里过滤，静态站点无需后端。
  */
 import type { APIRoute, GetStaticPaths } from 'astro';
@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ params }) => {
     y: 'case',
   }));
 
-  // 方案库：统一走 plans.ts（英文站含英文稿覆盖与英文独有方案），分类名按当前语言输出
+  // 方案库：统一走 plans.ts（严格分语言），分类名按当前语言输出
   const plans = (await getPlanCards(lang)).map((p) => ({
     t: p.title,
     d: p.summary || '',

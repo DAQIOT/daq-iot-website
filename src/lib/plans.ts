@@ -1,13 +1,13 @@
 /**
  * 方案库取数（中文库 plans + 英文库 plans-en）
  *
- * 规则：
- * - 中文站 / 德文站：只用 plans，行为与改造前完全一致
- * - 英文站：以 plans-en 为准
- *     · 与中文同 slug  → 英文版覆盖标题/摘要/封面/分类/排序；字段留空则继承中文
- *     · 中文没有该 slug → 英文独有方案，只在英文站出现
- *     · hidden: true    → 只在英文站隐藏（中文站不受影响）
- * - 图片：英文稿可写自己的路径（建议 /images/plans-en/<slug>/…），留空则沿用中文图
+ * 规则（严格分语言显示）：
+ * - 中文站 / 德文站：只用 plans，行为与改造前完全一致（德文站暂无德文稿，仍回退中文）
+ * - 英文站：只用 plans-en 生成卡片，中文稿不再出现在英文站
+ *     · 同 slug 的中文稿只作为「字段兜底」：英文稿的分类/二级分类/封面/排序留空时继承
+ *     · 中文没有的 slug 也能正常显示（纯英文方案）
+ *     · plansEn.hidden: true → 该篇不在英文站显示
+ * - 图片：英文稿可写自己的路径（建议 /images/plans-en/<slug>/…），留空则沿用同 slug 中文图
  */
 import { getCollection } from 'astro:content';
 import type { Lang } from '../i18n/config';
@@ -55,34 +55,31 @@ export async function getPlanCards(lang: Lang): Promise<PlanCard[]> {
     return zh.map((e) => toCard(e.id, e.data)).sort(sortCards(lang));
   }
 
-  const enAll = await getCollection('plansEn');
-  const enMap = new Map(enAll.map((e) => [e.id, e]));
-  const zhIds = new Set(zh.map((e) => e.id));
+  // 英文站：只展示 plans-en，中文库仅用于补齐英文稿留空的字段
+  const [enAll, zhAll] = await Promise.all([
+    getCollection('plansEn'),
+    getCollection('plans')
+  ]);
+  const zhMap = new Map(zhAll.map((e) => [e.id, e.data]));
   const cards: PlanCard[] = [];
 
-  for (const z of zh) {
-    const t = enMap.get(z.id);
-    if (t?.data.hidden) continue;
+  for (const t of enAll) {
+    if (t.data.hidden) continue;
+    const z = zhMap.get(t.id);
     cards.push(
       toCard(
-        z.id,
+        t.id,
         {
-          title: pick(t?.data.title, z.data.title),
-          summary: pick(t?.data.summary, z.data.summary),
-          image: pick(t?.data.image, z.data.image),
-          order: t?.data.order ?? z.data.order ?? 0,
-          category: pick(t?.data.category, z.data.category),
-          subcategory: pick(t?.data.subcategory, z.data.subcategory)
+          title: pick(t.data.title, z?.title),
+          summary: pick(t.data.summary, z?.summary),
+          image: pick(t.data.image, z?.image),
+          order: t.data.order ?? z?.order ?? 0,
+          category: pick(t.data.category, z?.category),
+          subcategory: pick(t.data.subcategory, z?.subcategory)
         },
-        Boolean(t)
+        true
       )
     );
-  }
-
-  // 英文独有方案（中文库没有对应 slug）
-  for (const t of enAll) {
-    if (zhIds.has(t.id) || t.data.hidden) continue;
-    cards.push(toCard(t.id, t.data, true));
   }
 
   return cards.sort(sortCards(lang));
@@ -94,21 +91,4 @@ const sortCards = (lang: Lang) => (a: PlanCard, b: PlanCard) =>
 /** 详情页用：id → 卡片（英文站含英文独有方案） */
 export async function getPlanCardMap(lang: Lang): Promise<Map<string, PlanCard>> {
   return new Map((await getPlanCards(lang)).map((c) => [c.id, c]));
-}
-
-/** 英文独有的方案 slug（只用于英文站路由，中文站不会生成这些页面） */
-export async function getEnglishOnlyPlanIds(): Promise<string[]> {
-  const zhIds = new Set((await getCollection('plans')).map((e) => e.id));
-  return (await getCollection('plansEn'))
-    .filter((e) => !zhIds.has(e.id) && !e.data.hidden)
-    .map((e) => e.id);
-}
-
-/** 英文站需要排除的 slug（英文稿显式 hidden） */
-export async function getHiddenEnPlanIds(): Promise<Set<string>> {
-  return new Set(
-    (await getCollection('plansEn'))
-      .filter((e) => e.data.hidden)
-      .map((e) => e.id)
-  );
 }

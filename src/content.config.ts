@@ -205,12 +205,14 @@ const resources = defineCollection({
 });
 
 /**
- * 英文方案库：src/content/plans-en/<slug>.md
- * - 与中文同名时（同 slug）作为该篇的英文版；中文站完全不受影响
- * - 中文里没有的 slug 视为「英文独有方案」，只在英文站出现
+ * 英文方案库：src/content/plans-en/<slug>.md（英文站唯一内容源）
+ * - 英文站只展示这里的文件；中文库里的方案不会再出现在英文站
+ * - 与中文同 slug 时，中文条目只用于补齐英文稿留空的字段（分类/二级分类/封面/排序）
+ * - 中文里没有的 slug 也可以正常发布，只在英文站出现
  * - category / subcategory / order / image / hidden 均可选：
  *     留空 → 继承同 slug 中文条目的值（老数据无需改）
  *     填写 → 以英文条目为准，可独立分类、独立排序、独立封面
+ * - hidden: true → 该篇不在英文站显示
  * - 分类名可写中文规范名、英文名或 key（如「智能制造」/ Smart Manufacturing / manufacturing）
  * - 独立图片建议放 public/images/plans-en/<slug>/，字段与正文都写 /images/plans-en/<slug>/xxx
  */

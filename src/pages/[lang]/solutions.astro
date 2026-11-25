@@ -17,8 +17,8 @@ const base = '/' + lang;
 // 页面横幅背景图（后台「网站基础文案 → 页面横幅背景图」配置，留空用默认渐变纹理）
 const bannerImage = ((site.banner?.solutionsImage as string) || (site.banner?.pageImage as string) || '');
 
-// 方案库：中文 plans + 英文 plans-en 统一取数（见 src/lib/plans.ts）
-// 英文站以英文稿为准，字段留空继承中文；英文独有方案也只出现在英文站
+// 方案库严格分语言：中文/德文站读 plans，英文站只读 plans-en（见 src/lib/plans.ts）
+// 英文稿里留空的分类/封面/排序会从同 slug 中文稿兜底，但中文稿本身不会出现在英文站
 const plans = await getPlanCards(lang);
 
 // ── 两级分类树（一级 = category，二级 = subcategory；顺序由 plan-cats.ts 固定，未登记的排后面）──
