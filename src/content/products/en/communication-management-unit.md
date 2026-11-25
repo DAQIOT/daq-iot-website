@@ -19,7 +19,7 @@ docs:
 
 **1 Product Overview**
 
-![](/images/products/1744268498133811.png)
+![](/images/分析图片.png)
 
 ![](/images/白底图.png)
 
