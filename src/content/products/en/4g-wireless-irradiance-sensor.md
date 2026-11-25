@@ -1,10 +1,13 @@
 ---
-title: "4G Wireless Irradiance Sensor"
-summary: >-
-  DAQ-GP-LR4G wireless irradiance sensor terminal is a wireless solar radiation measurement product launched by Shanghai DAQ IoT Technology Co., Ltd. The sensor uses the photoelectric principle and can measure solar radiation in the…
-image: "/images/products/1692842082968000.jpg"
+title: 4G Wireless Irradiance Sensor
+summary: Wireless Irradiance Sensor collects solar radiation data based on the
+  photoelectric induction principle. It supports wireless upload over
+  4G/NB-IoT/LoRa/WiFi and remote O&M with reliable protection, for solar radiant
+  energy measurement in photovoltaic power generation, meteorological
+  monitoring, smart agriculture, material aging and other scenarios.
+image: /images/products/1692842082968000.jpg
 order: 211
-category: "wirelesssensor"
+category: wirelesssensor
 hidden: false
 ---
 **Product Details**
