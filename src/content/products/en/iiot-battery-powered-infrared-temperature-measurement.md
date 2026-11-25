@@ -1,10 +1,11 @@
 ---
 title: IIOT Battery-Powered Infrared Temperature Measurement
-summary: >-
-  🌡️ IIoT Battery-Powered Infrared Temperature Measurement Sensor – Key Advantages
+summary: LoRaWAN low-power infrared temperature sensor, non-contact measurement,
+  battery powered and IP65 rated for remote temperature monitoring of power and
+  industrial equipment.
 image: /images/products/1780891030821962.png
 order: 35
-category: wirelesssensor
+category: temperature-vibration-sensors
 ---
 #  1 **Product Introduction**
 
