@@ -1,12 +1,11 @@
 ---
 title: FANUC CNC Machine Tool Data Acquisition PCMCIA Network Card
-summary: DAQ-SP-PCMCIA-FANUC is a PCMCIA network card from Shanghai Daq-IoT
-  Technology for FANUC CNC machine-tool data acquisition. It converts the serial
-  port of a FANUC machine tool into an RJ45 network port and communicates using
-  the FO…
+summary: PCMCIA network card for FANUC CNC data acquisition, converts serial to
+  Ethernet with FOCAS2 protocol, compatible with multiple FANUC systems for
+  machine tool data collection.
 image: /images/444.jpg
 order: 254
-category: plcacquisition
+category: data-acquisition-terminals
 hidden: false
 ---
 **Product Details**
