@@ -1,9 +1,11 @@
 ---
-title: "Wireless Vibration Sensor"
-summary: "RS485 vibration sensor:"
-image: "/images/products/1770791194327544.jpg"
+title: Wireless Vibration Sensor
+summary: RS485/LoRa vibration sensor for acceleration, velocity, displacement
+  and temperature, IP67, for online vibration monitoring of fans, pumps and
+  motors.
+image: /images/products/1770791194327544.jpg
 order: 218
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
