@@ -1,10 +1,14 @@
 ---
-title: "Multi-Circuit AC Wireless Voltage & Current Sensor / Energy Monitoring Meter"
-summary: >-
-  The multi-circuit AC wireless voltage & current sensor / energy acquisition monitor works with multiple split-core transformers to monitor and acquire three-phase voltage, current, power and energy information, and can be used for…
-image: "/images/products/1701831107581550.png"
+title: Multi-Circuit AC Wireless Voltage & Current Sensor / Energy Monitoring Meter
+summary: Multi-circuit electric energy acquisition monitor matched with
+  split-core current transformers, capable of collecting multi-channel voltage,
+  current, power and electric energy. It supports RS485 and 4G transmission,
+  enabling remote cloud access to power consumption data. Suitable for online
+  energy consumption monitoring of distribution boxes in parks, factories,
+  shopping malls and buildings.
+image: /images/products/1701831107581550.png
 order: 207
-category: "wirelesssensor"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
