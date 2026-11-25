@@ -1,10 +1,13 @@
 ---
-title: "Wireless Rotation Speed Monitor"
-summary: >-
-  SC-GP-RPM4G wireless rotation speed monitor is an instrument launched by Shanghai DAQ IoT Technology Co., Ltd. that measures rotation speed based on the principle of a Hall element sensing a magnetic conductor, processed by intern…
-image: "/images/products/1739265182586895.png"
+title: Wireless Rotation Speed Monitor
+summary: Hall-effect wireless rotation speed monitoring terminal, supporting
+  4G/LoRa/WiFi/Ethernet. It adopts non-invasive rotation speed data acquisition,
+  suitable for online speed monitoring of rotating equipment including fans,
+  pumps, motors and compressors in power, metallurgy, petrochemical and
+  papermaking industries.
+image: /images/products/1739265182586895.png
 order: 216
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
