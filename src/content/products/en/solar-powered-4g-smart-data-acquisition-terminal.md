@@ -1,6 +1,6 @@
 ---
 title: Solar-Powered 4G Smart Data Acquisition Terminal
-summary: dustrial 4G Cat1 RTU with solar and lithium battery power supply,
+summary: Industrial 4G Cat1 RTU with solar and lithium battery power supply,
   integrated analog, dry contact and RS485 acquisition as well as valve drive,
   supports encrypted cloud upload for remote monitoring of off-grid sites such
   as smart water conservancy, agriculture, environment, PV and energy storage.
