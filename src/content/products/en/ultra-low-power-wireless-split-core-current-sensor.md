@@ -1,10 +1,13 @@
 ---
-title: "Ultra-Low-Power Wireless Split-Core Current Sensor"
-summary: >-
-  SC-LP-CT01 wireless current acquisition sensor terminal is equipped with a low-power, high-sensitivity split-core transformer. Through the principle of electromagnetic induction, it converts the large current on the primary side i…
-image: "/images/products/1692864263788852.jpg"
+title: Ultra-Low-Power Wireless Split-Core Current Sensor
+summary: Micro-power battery-powered, paired with split-core current
+  transformers for non-invasive AC current acquisition. It supports
+  NB-IoT/LoRa/GPRS wireless transmission and data reporting by cycle or current
+  threshold, suitable for remote current monitoring of industrial circuits such
+  as motors, HVAC, lighting and rural power grid renovation.
+image: /images/products/1692864263788852.jpg
 order: 205
-category: "wirelesssensor"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
