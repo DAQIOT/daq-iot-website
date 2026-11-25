@@ -1,10 +1,13 @@
 ---
-title: "Solar-Powered Wireless Dissolved Oxygen & pH Remote Monitor"
-summary: >-
-  DAQ-SP-X4G is a solar-powered wireless dissolved oxygen & pH collector launched by Shanghai DAQ IoT Technology Co., Ltd. It supports 4G wireless communication by default and can be customized for other communication modes such as…
-image: "/images/products/1783331287352994.png"
+title: Solar-Powered Wireless Dissolved Oxygen & pH Remote Monitor
+summary: Self-powered by solar lithium battery, it adopts fluorescence method to
+  detect dissolved oxygen, pH and water temperature. It supports 4G/LoRa/WiFi
+  wireless upload, suitable for remote water quality monitoring in off-grid
+  field scenarios such as aquaculture, environmental water bodies, food and
+  pharmaceutical industries.
+image: /images/products/1783331287352994.png
 order: 223
-category: "wirelesssensor"
+category: wirelesssensor
 hidden: false
 ---
 **Product Details**
