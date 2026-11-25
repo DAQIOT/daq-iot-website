@@ -1,10 +1,12 @@
 ---
 title: Industrial PLC Edge Gateway for Multi-Protocol Communication & IoT Integration
-summary: >-
-  Multi-Protocol Communication;
+summary: DIN-rail multi-protocol industrial communication manager with optional
+  serial, Ethernet, 4G/WiFi interfaces and built-in edge DAQ software,
+  supporting collection, storage and cloud upload of PLC, meter, CNC and
+  injection molding machine data for factory IIoT access and control.
 image: /images/products/1780648808529009.png
 order: 21
-category: instrumentation
+category: iot-gateways
 ---
 **Multi-Protocol Industrial Communication Support**
 
