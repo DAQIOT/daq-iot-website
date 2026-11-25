@@ -2,15 +2,12 @@
 title: Industrial Communication Bridge Protocol Gateway for Multi‑brand PLC
   Convert Serial to Modbus TCP Server DIN Rail Mount Industrial IoT Data
   Acquisition Module
-summary: >-
-  Industrial communication bridge (bridge) supports industrial equipment
+summary: Industrial communication bridge (bridge) supports industrial equipment
   networking. It auto-detects point lists and collects data from PLC, CNC,
   instruments via Ethernet for analysis.
-
-  This manual is sorted by supported device types.
 image: /images/2ab.png
 order: 0
-category: plcacquisition
+category: iot-gateways
 docs: []
 ---
 #### **Product classification selection table**
@@ -37,7 +34,9 @@ CPU126	DAQ-Bridge-PPI
 
 Direct type / bridge type	Direct type: The PLC communication port is occupied by Siemens touch screen; Bridge type: The PLC communication port is occupied by non-Siemens touch screen.
 
-		S7200 Smart	CPU SR20/ST20,
+```
+	S7200 Smart	CPU SR20/ST20,
+```
 
 CPU SR30/ST30,
 
@@ -47,7 +46,9 @@ CPUSR60/ST60/ CR 60,	DAQ-Bridge-PPI
 
 Direct type / bridge type	Connect via the CPUs PPI port (DSUB9)
 
-		S7300	CPU312,
+```
+	S7300	CPU312,
+```
 
 CPU313/313C-2DP,
 
@@ -57,19 +58,25 @@ CPU315-2DP/315-2DP/ PN
 
 840D	DAQ-Bridge-MPI
 
-	1. Communication port MP I or DP;
+```
+1. Communication port MP I or DP;
+```
 
 2, DAQ-Bridge-MPI
 
 The Pro series supports ModbusRTU and Ethernet client functions.
 
-		S71200/1500/PN	CPU1200/1500/S7300PN/400PN	DAQ-Bridge50-PN	Siemens network port PLC to modbusTCP communication.
+```
+	S71200/1500/PN	CPU1200/1500/S7300PN/400PN	DAQ-Bridge50-PN	Siemens network port PLC to modbusTCP communication.
 
-		numerical control system	802C
+	numerical control system	802C
+```
 
 802D,802dsl
 
-	NET80-S7NC	
+```
+NET80-S7NC	
+```
 
 2	Mitsubishi	FX	FX1S/1N,
 
@@ -77,7 +84,9 @@ FX2N,
 
 FX3U/3S/3SA/3G	DAQ-Bridge--FX	Support for Mitsubishi compatible PLC such as Shilin, Hicon and Hechuan.
 
-		Q	Q00J/Q00/ Q 01
+```
+	Q	Q00J/Q00/ Q 01
+```
 
 Q02/ Q02H/Q06H/Q12H,
 
@@ -85,11 +94,13 @@ Q00U/01U/02U/06U,
 
 Q00UD/Q03UD,	DAQ-Bridge--Q	
 
-		A	A1SH,A2SH	DAQ-Bridge--A	
+```
+	A	A1SH,A2SH	DAQ-Bridge--A	
 
-		Q series Ethernet PLC	Q03UDE/Q03UDV/Q13UDE, etc	DAQ-Bridge50-CCL	
+	Q series Ethernet PLC	Q03UDE/Q03UDV/Q13UDE, etc	DAQ-Bridge50-CCL	
 
-		FX5U	FX5U	DAQ-Bridge50-ME L	
+	FX5U	FX5U	DAQ-Bridge50-ME L	
+```
 
 3	OMRON	CP/CJ	CP1E,CP1H,CP1L
 
@@ -103,7 +114,9 @@ CV1000,CV2000,CV500,CV1M;
 
 FQM1,NSJ,NX1P;	DAQ-Bridge-CS	
 
-		CPM/C200	C1000,C2000,C200;
+```
+	CPM/C200	C1000,C2000,C200;
+```
 
 CPM1,CPM2
 
@@ -135,7 +148,9 @@ DAQ-Bridge-TWD
 
 DAQ-Bridge-SC/RJ45
 
-	Provide a variety of interface types: MD8, Rj45, DIP
+```
+Provide a variety of interface types: MD8, Rj45, DIP
+```
 
 8	Huichuan	HnU/485	H1 S
 
@@ -169,7 +184,9 @@ XD3	DAQ-Bridge-XJ
 
 20	Yaskawa	YASKAWA	gorge line	DAQ-Bridge-MP	
 
-			internet access	DAQ-Bridge50-MP	
+```
+		internet access	DAQ-Bridge50-MP	
+```
 
 2 1	Inwitten	INVT		DAQ-Bridge-INVT	
 
@@ -567,7 +584,7 @@ Installation method: The bridge adapter is installed by standard 35mm rail and s
 
 Connection method: Connect LAN1 of the bridge adapter to the Ethernet port of Siemens S71200/1500 PLC and touch screen, and LAN2 of the bridge adapter to the Ethernet port of the computer or local network 
 
-![](/images/图片5英文.png)
+![](/images/f1f.png)
 
 **technical parameter:**
 
