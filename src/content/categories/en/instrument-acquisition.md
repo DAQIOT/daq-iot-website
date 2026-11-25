@@ -1,6 +1,6 @@
 ---
 lang: en
-slug: instrument-acquisition
+slug: smart-energy-meter
 order: 12
 parent: instrumentation
 path: Energy Monitoring / Smart Energy Meter
