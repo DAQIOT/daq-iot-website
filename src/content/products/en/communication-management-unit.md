@@ -1,10 +1,19 @@
 ---
-title: "Communication Management Unit"
-summary: "1 Product Overview"
-image: "/images/products/1714360078902228.jpg"
-order: 250
-category: "plcacquisition"
+summary: This industrial protocol conversion data acquisition gateway from
+  Shanghai Daq-IoT Technology features graphical web configuration, collects
+  Modbus meters and DLT645 smart meter data, converts to MQTT+JSON for cloud
+  upload, and supports serial transparent transmission and Modbus gateway mode,
+  equipped with 1×Ethernet port and RS232/485/422 serial ports.
 hidden: false
+title: Communication Management Unit
+image: /images/白底图.png
+order: 250
+category: communication-devices
+parameters: ""
+docs:
+  - type: pdf
+    url: https://www.daq-iot.com/en/solutions/sme-digital-transformation-iot/
+    title: Relevant Documents
 ---
 **Product Details**
 
@@ -12,7 +21,7 @@ hidden: false
 
 ![](/images/products/1744268498133811.png)
 
-![](/images/products/1714100730110294.jpg)
+![](/images/白底图.png)
 
 ![](/images/products/1726732652159013.png)
 
@@ -20,7 +29,13 @@ The IOT Gateway is an industrial protocol-conversion data-acquisition gateway fr
 
 2 Ordering Specifications and Selection
 
-![](/images/products/1692950215131586.png)
+DAQ-GP-GWLAN, Ethernet, Ethernet transmission
+
+DAQ-GP-GW4G, 4G, 4G transmission
+
+DAQ-GP-GWWiFi, WiFi, WiFi transmission
+
+DAQ-SW-MH, Unlimited, Multi-source heterogeneous data acquisition software, runs on PC. Supports customized OPC, PPI and many other protocols.
 
 4 Product Parameters
 
@@ -44,10 +59,10 @@ Temperature: -40 to 85 degC
 
 5 Core Advantages
 
-- Simple installation and fast deployment, helping IoT projects go live quickly
-- Compatible with any IoT cloud platform or SCADA configuration software, with data-protocol integration provided
-- Supports mainstream cloud platforms such as Alibaba Cloud
-- Supports multiple external sensors
+* Simple installation and fast deployment, helping IoT projects go live quickly
+* Compatible with any IoT cloud platform or SCADA configuration software, with data-protocol integration provided
+* Supports mainstream cloud platforms such as Alibaba Cloud
+* Supports multiple external sensors
 
 6 Data Reporting Communication Protocol
 
