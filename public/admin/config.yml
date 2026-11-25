@@ -407,7 +407,7 @@ collections:
         widget: string
         required: true
         pattern: ['^[a-z0-9-]+$', '只能小写字母、数字和连字符，例如 daq-meter-electric']
-        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（instrumentation/wirelesssensor/wirelesstimingphotography/plcacquisition/dataacquisitionsoftware）。二级分类用"父级slug-子级名"命名，如 daq-meter-electric、instrument-acquisition
+        hint: 中文分类 slug 用 daq- 开头（daq-meter/daq-sensor/daq-camera/daq-gateway/daq-software/daq-install）；英文/德文用英文 slug（如 wirelesssensor / environmental-sensors / iot-gateways / industrial-iot-platform）。二级分类用"父级slug-子级名"命名。注意：新增英文分类后，若要在后台产品列表的筛选/分组标题里显示新分类，还需同步 public/admin/init-cms.js 的 VIEW_FILTERS.en 与 CATEGORY_MAP.en（并把 index.html 里的 init-cms.js?v= 版本号 +1，强刷后台）
         i18n: duplicate
       - label: 排序(数字越小越靠前)
         name: order
@@ -424,7 +424,7 @@ collections:
         value_field: slug
         required: false
         i18n: true
-        hint: 二级分类必须选择父级。当前中文二级：电表采集/其他类仪表采集（父级=仪器仪表采集）、电力类传感器/环境类传感器（父级=无线传感器）；英文/德文二级：Instrument Acquisition / Instrumentenerfassung（父级=Instrumentation / Instrumentierung）
+        hint: 二级分类必须选择父级。中文二级：电表采集/其他类仪表采集（父级 daq-meter）、电力类/环境类传感器（父级 daq-sensor）；英文二级：各传感器子类（父级 wirelesssensor）、通讯设备/采集终端/IoT 网关（父级 plcacquisition）、能耗采集/电力监测/智能电表（父级 instrumentation）、软件子类（父级 dataacquisitionsoftware）、视觉子类（父级 wirelesstimingphotography）；德文二级：Instrumentenerfassung（父级 Instrumentierung）。新增英文分类后同步后台映射（见 slug 提示）
       - label: 分类显示路径（后台列表与下拉用）
         name: path
         widget: string

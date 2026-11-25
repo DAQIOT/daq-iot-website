@@ -45,21 +45,28 @@
     ],
     en: [
       { label: 'All', field: 'category', pattern: '.*' },
-      { label: 'Instrumentation (incl. sub)', field: 'category', pattern: '^(instrumentation|instrument-acquisition)$' },
-      { label: 'Instrument Acquisition', field: 'category', pattern: 'instrument-acquisition' },
-      { label: 'Wireless Sensor', field: 'category', pattern: 'wirelesssensor' },
-      { label: 'Wireless Timing Photography', field: 'category', pattern: 'wirelesstimingphotography' },
-      { label: 'PLC Acquisition', field: 'category', pattern: 'plcacquisition' },
-      { label: 'Data Acquisition Software', field: 'category', pattern: 'dataacquisitionsoftware' }
+      { label: 'Wireless Sensors (incl. sub)', field: 'category', pattern: '^(wirelesssensor|temperature-vibration-sensors|pressure-sensors|current-sensors|environmental-sensors|level-sensors|flow-sensors|water-quality-sensors|distance-position-sensors)$' },
+      { label: 'Environmental Sensors', field: 'category', pattern: 'environmental-sensors' },
+      { label: 'Temperature & Vibration Sensors', field: 'category', pattern: 'temperature-vibration-sensors' },
+      { label: 'Pressure Sensors', field: 'category', pattern: 'pressure-sensors' },
+      { label: 'Current Sensors', field: 'category', pattern: 'current-sensors' },
+      { label: 'Level Sensors', field: 'category', pattern: 'level-sensors' },
+      { label: 'Flow Sensors', field: 'category', pattern: 'flow-sensors' },
+      { label: 'Water Quality Sensors', field: 'category', pattern: 'water-quality-sensors' },
+      { label: 'Distance & Position Sensors', field: 'category', pattern: 'distance-position-sensors' },
+      { label: 'Data Acquisition & IoT Gateways (incl. sub)', field: 'category', pattern: '^(plcacquisition|communication-devices|data-acquisition-terminals|iot-gateways)$' },
+      { label: 'Energy Monitoring (incl. sub)', field: 'category', pattern: '^(instrumentation|energy-data-acquisition|power-monitoring-devices|smart-energy-meter|instrument-acquisition)$' },
+      { label: 'IoT Software (incl. sub)', field: 'category', pattern: '^(dataacquisitionsoftware|custom-iot-solution|data-visualization-system|industrial-iot-platform)$' },
+      { label: 'Vision & Recognition (incl. sub)', field: 'category', pattern: '^(wirelesstimingphotography|industrial-cameras|aivision-ocr|alarm-devices)$' }
     ],
     de: [
       { label: 'Alle', field: 'category', pattern: '.*' },
-      { label: 'Instrumentierung (inkl. Unterkategorie)', field: 'category', pattern: '^(instrumentierung|instrument-acquisition)$' },
+      { label: 'Instrumentierung (inkl. Unterkategorie)', field: 'category', pattern: '^(instrumentation|instrument-acquisition)$' },
       { label: 'Instrumentenerfassung', field: 'category', pattern: 'instrument-acquisition' },
-      { label: 'Funksensoren', field: 'category', pattern: 'funksensoren' },
-      { label: 'Drahtlose Intervallfotografie', field: 'category', pattern: 'drahtlose-intervallfotografie' },
-      { label: 'PLC-Erfassung', field: 'category', pattern: 'plc-erfasssung' },
-      { label: 'Datenerfassungssoftware', field: 'category', pattern: 'datenerfassungssoftware' }
+      { label: 'Funksensoren', field: 'category', pattern: 'wirelesssensor' },
+      { label: 'Drahtlose Intervallfotografie', field: 'category', pattern: 'wirelesstimingphotography' },
+      { label: 'PLC-Erfassung', field: 'category', pattern: 'plcacquisition' },
+      { label: 'Datenerfassungssoftware', field: 'category', pattern: 'dataacquisitionsoftware' }
     ]
   };
 
@@ -78,12 +85,32 @@
       'daq-install': '安装施工'
     },
     en: {
-      'instrumentation': 'Instrumentation',
-      'instrument-acquisition': 'Instrumentation / Instrument Acquisition',
-      'wirelesssensor': 'Wireless Sensor',
-      'wirelesstimingphotography': 'Wireless Timing Photography',
-      'plcacquisition': 'PLC Acquisition',
-      'dataacquisitionsoftware': 'Data Acquisition Software'
+      'wirelesssensor': 'Wireless Sensors',
+      'temperature-vibration-sensors': 'Wireless Sensors / Temperature & Vibration Sensors',
+      'pressure-sensors': 'Wireless Sensors / Pressure Sensors',
+      'current-sensors': 'Wireless Sensors / Current Sensors',
+      'environmental-sensors': 'Wireless Sensors / Environmental Sensors',
+      'level-sensors': 'Wireless Sensors / Level Sensors',
+      'flow-sensors': 'Wireless Sensors / Flow Sensors',
+      'water-quality-sensors': 'Wireless Sensors / Water Quality Sensors',
+      'distance-position-sensors': 'Wireless Sensors / Distance & Position Sensors',
+      'plcacquisition': 'Data Acquisition & IoT Gateways',
+      'communication-devices': 'Data Acquisition & IoT Gateways / Communication Devices',
+      'data-acquisition-terminals': 'Data Acquisition & IoT Gateways / Data Acquisition Terminals',
+      'iot-gateways': 'Data Acquisition & IoT Gateways / IoT Gateways',
+      'instrumentation': 'Energy Monitoring',
+      'energy-data-acquisition': 'Energy Monitoring / Energy Data Acquisition',
+      'power-monitoring-devices': 'Energy Monitoring / Power Monitoring Devices',
+      'smart-energy-meter': 'Energy Monitoring / Smart Energy Meter',
+      'instrument-acquisition': 'Energy Monitoring / Smart Energy Meter',
+      'dataacquisitionsoftware': 'IoT Software',
+      'custom-iot-solution': 'IoT Software / Custom IoT Solution',
+      'data-visualization-system': 'IoT Software / Data Visualization System',
+      'industrial-iot-platform': 'IoT Software / Industrial IoT Platform',
+      'wirelesstimingphotography': 'Vision & Recognition',
+      'industrial-cameras': 'Vision & Recognition / Industrial Cameras',
+      'aivision-ocr': 'Vision & Recognition / AI Vision & OCR',
+      'alarm-devices': 'Vision & Recognition / Alarm Devices'
     },
     de: {
       'instrumentation': 'Instrumentierung',
