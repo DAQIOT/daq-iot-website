@@ -1,10 +1,12 @@
 ---
-title: "AC/DC Current & Voltage Sensor"
-summary: >-
-  The DAQ-GP-A/DCT/VT series AC/DC current and voltage sensors are one-in-one-out industrial-grade signal transmitters produced by Shanghai DAQ IoT Technology Co., Ltd., used for real-time measurement of current and voltage in AC/DC…
-image: "/images/products/1783323697206735.png"
+title: AC/DC Current & Voltage Sensor
+summary: DIN-rail AC/DC current and voltage acquisition transmitter, true RMS
+  measurement, three-terminal isolation, with analog or RS485 output, suitable
+  for electrical parameter monitoring in industrial power distribution, computer
+  rooms and environmental protection systems.
+image: /images/products/1783323697206735.png
 order: 209
-category: "wirelesssensor"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
