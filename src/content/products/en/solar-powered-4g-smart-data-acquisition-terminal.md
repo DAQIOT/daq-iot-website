@@ -6,7 +6,7 @@ summary: dustrial 4G Cat1 RTU with solar and lithium battery power supply,
   as smart water conservancy, agriculture, environment, PV and energy storage.
 image: /images/f5f.png
 order: 220
-category: wirelesssensor
+category: data-acquisition-terminals
 hidden: false
 ---
 **Product Details**
