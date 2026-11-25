@@ -1,10 +1,12 @@
 ---
-title: "4G Wireless Industrial Distance Measurement Sensor"
-summary: >-
-  SC-GP-TF4G wireless industrial distance measurement transmitter terminal is a wireless distance measurement product for industrial fields launched by Shanghai DAQ IoT Technology Co., Ltd. This product is a single-point ranging rad…
-image: "/images/products/1783317162909867.png"
+title: 4G Wireless Industrial Distance Measurement Sensor
+summary: Industrial TOF Wireless Ranging Terminal, featuring single-point radar
+  non-intrusive distance measurement, supports cloud access over
+  4G/NB-IoT/LoRa/WiFi, remote operation and maintenance, for online monitoring
+  of industrial material level, liquid level and displacement.
+image: /images/products/1783317162909867.png
 order: 222
-category: "wirelesssensor"
+category: distance-position-sensors
 hidden: false
 ---
 **Product Details**
