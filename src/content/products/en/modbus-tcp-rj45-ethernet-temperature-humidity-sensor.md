@@ -1,9 +1,10 @@
 ---
-title: "Modbus TCP RJ45 Ethernet Temperature & Humidity Sensor"
-summary: "RJ45 Ethernet port temperature & humidity sensor"
-image: "/images/products/1764830558253165.jpg"
+title: Modbus TCP RJ45 Ethernet Temperature & Humidity Sensor
+summary: Ethernet temperature and humidity sensor with Modbus TCP, supports MQTT
+  and cloud access for industrial and agricultural environmental monitoring.
+image: /images/products/1764830558253165.jpg
 order: 243
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
