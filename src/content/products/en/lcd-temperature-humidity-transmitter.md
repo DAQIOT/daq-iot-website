@@ -1,10 +1,11 @@
 ---
-title: "LCD Temperature & Humidity Transmitter"
-summary: >-
-  This transmitter has an LCD display showing temperature and humidity in real time, screwless rear terminal wiring, and can be installed on a standard 86mm junction box. The device adopts the standard Modbus-RTU communication proto…
-image: "/images/products/1758268341134574.png"
+title: LCD Temperature & Humidity Transmitter
+summary: RS485 LCD temperature and humidity transmitter with Modbus-RTU,
+  built-in or external probe optional, 86-box mounting for monitoring in
+  computer rooms, warehouses and building automation.
+image: /images/products/1758268341134574.png
 order: 219
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
