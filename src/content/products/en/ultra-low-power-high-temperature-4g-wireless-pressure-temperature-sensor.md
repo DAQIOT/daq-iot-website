@@ -1,10 +1,14 @@
 ---
-title: "Ultra-Low-Power High-Temperature 4G Wireless Pressure & Temperature Sensor"
-summary: >-
-  SC-LP-PTNB is a high-temperature-resistant wireless temperature & pressure sensor terminal developed by Shanghai DAQ IoT Technology Co., Ltd. It is mainly used for temperature and pressure measurement of high-temperature pipelines…
-image: "/images/products/1776743186750698.jpg"
+title: Ultra-Low-Power High-Temperature 4G Wireless Pressure & Temperature Sensor
+summary: Micro-power battery-powered wireless temperature and pressure
+  acquisition terminal, supporting 4G/LoRaWAN transmission. The acquisition
+  cycle can be configured remotely, and temperature and pressure data is
+  reported by threshold or timing. Suitable for temperature and pressure
+  monitoring and leakage early warning of high-temperature pipelines, steam
+  pipelines and other scenarios.
+image: /images/products/1776743186750698.jpg
 order: 212
-category: "wirelesssensor"
+category: pressure-sensors
 hidden: false
 ---
 **Product Details**
