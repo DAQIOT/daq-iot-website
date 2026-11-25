@@ -1,7 +1,7 @@
 ---
 lang: en
-slug: levelsensors
-order: 0
+slug: level-sensors
+order: 4
 parent: wirelesssensor
 path: Wireless Sensors / Level Sensors
 name: Level Sensors
