@@ -1,10 +1,14 @@
 ---
-title: Industrial GPS NTP Time Server | Multi-GNSS Network Time Synchronization System (UTC Precision Clock)
-summary: >-
-  ⚙️ Product Specifications
+title: Industrial GPS NTP Time Server | Multi-GNSS Network Time Synchronization
+  System (UTC Precision Clock)
+summary: High-precision GNSS timing synchronization device supports
+  multi-satellite reception, multi-channel IRIG-B, NTP network and pulse timing
+  output, with holdover self-learning capability, suitable for industrial
+  scenarios requiring time synchronization such as power, communications,
+  transportation, national defense and new energy.
 image: /images/products/1755072189227191.png
 order: 28
-category: plcacquisition
+category: communication-devices
 ---
 # 1 **Product Overview**
 
