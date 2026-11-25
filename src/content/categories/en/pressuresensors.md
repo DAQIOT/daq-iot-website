@@ -1,7 +1,7 @@
 ---
 lang: en
-slug: pressuresensors
-order: 0
+slug: pressure-sensors
+order: 2
 parent: wirelesssensor
 path: Wireless Sensors / Pressure Sensors
 name: Pressure Sensors
