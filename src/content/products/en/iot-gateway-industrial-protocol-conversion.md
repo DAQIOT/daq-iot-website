@@ -1,14 +1,14 @@
 ---
-title: "IoT Gateway - Industrial Protocol Conversion Data Acquisition Gateway"
-summary: "1 Product Overview"
-image: "/images/products/1788330073300413.png"
+title: IoT Gateway - Industrial Protocol Conversion Data Acquisition Gateway
+summary: Industrial WiFi and Ethernet IoT Gateway supporting TCP, UDP, MQTT,
+  HTTP, ARP, ICMP, DHCP, and DNS protocols for remote monitoring, industrial
+  automation, PLC communication, SCADA integration and IIoT applications.
+image: /images/products/1788330073300413.png
 order: 256
-category: "plcacquisition"
+category: iot-gateways
 hidden: false
 ---
 **Product Details**
-
-#
 
 ![](/images/products/1780889620891756.jpg)
 
@@ -22,7 +22,7 @@ The IOT Gateway is an industrial protocol-conversion data-acquisition gateway fr
 
 **1.2 Protocol Support**
 
-![](/images/products/1780889239614871.png)
+![](/images/f2f.png)
 
 Note: the above is not the complete set of protocol drivers; new protocols are being developed continuously.
 
@@ -34,17 +34,17 @@ https://kdocs.cn/l/cddPp7qYeMXs
 
 # 3 Core Advantages
 
-- Simple installation and fast deployment, helping IoT projects go live quickly
-- Compatible with any IoT cloud platform or SCADA configuration software, with data-protocol integration provided
-- Supports mainstream cloud platforms such as Alibaba Cloud
-- Supports writing data directly to a database
+* Simple installation and fast deployment, helping IoT projects go live quickly
+* Compatible with any IoT cloud platform or SCADA configuration software, with data-protocol integration provided
+* Supports mainstream cloud platforms such as Alibaba Cloud
+* Supports writing data directly to a database
 
 # 4 Product Parameters
 
 Electrical characteristics:
 
-- Power supply: 9-24V wide voltage (center positive, standard power socket; two-wire terminal)
-- Operating power consumption: less than 5W
+* Power supply: 9-24V wide voltage (center positive, standard power socket; two-wire terminal)
+* Operating power consumption: less than 5W
 
 Communication protocol:
 
