@@ -1,21 +1,28 @@
 ---
-title: Industrial RS485 Modbus DC Current Sensor for Solar Battery and Energy Monitoring
-summary: >-
-  RS485 Modbus DC Current Sensor for precise and non-intrusive DC current monitoring. Ideal for solar energy, battery storage, energy management, and industrial automation applications. Supports Hall effect measurement, real-time data acquisition, and seamless integration with PLC, SCADA, and IoT systems. Industrial-grade design ensures reliable, continuous operation and easy installation without interrupting power circuits.
+title: Industrial RS485 Modbus DC Current Sensor for Solar Battery and Energy
+  Monitoring
+summary: RS485 Modbus DC Current Sensor for precise and non-intrusive DC current
+  monitoring. Ideal for solar energy, battery storage, energy management, and
+  industrial automation applications. Supports Hall effect measurement,
+  real-time data acquisition, and seamless integration with PLC, SCADA, and IoT
+  systems. Industrial-grade design ensures reliable, continuous operation and
+  easy installation without interrupting power circuits.
 image: /images/products/1780563677552065.png
 order: 33
-category: wirelesssensor
+category: current-sensors
 ---
 # 1 **Product Overview**
 
-#  DAQ-GP-DCHS485 transmitter and acquisition device is an industrial-grade compact, portable, fast, stable, and high-precision DC intelligent power transmitter launched by Shanghai Shucai Internet of Things Technology Co., Ltd. 
+### DAQ-GP-DCHS485 transmitter and acquisition device is an industrial-grade compact, portable, fast, stable, and high-precision DC intelligent power transmitter launched by Shanghai Shucai Internet of Things Technology Co., Ltd.
 
-# Application areas: Widely used in power, communication, transportation, environmental protection, petrochemical, steel and other fields to monitor the current or voltage consumption of AC and DC equipment. Standard RS-485 digital interface output to achieve interconnection with computers, PLCs, industrial gateways, touch screens and other host computers.
+### Application areas: Widely used in power, communication, transportation, environmental protection, petrochemical, steel and other fields to monitor the current or voltage consumption of AC and DC equipment. Standard RS-485 digital interface output to achieve interconnection with computers, PLCs, industrial gateways, touch screens and other host computers.
 
 # 2 Ordering specifications and selection
-#  Support special customization of three parameters: input range, output type, and working power supply.
+
+### Support special customization of three parameters: input range, output type, and working power supply.
 
 # 3 Service Concept
+
 **Our company solemnly promises:**
 
 You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
@@ -28,7 +35,7 @@ As an expert in industrial data collection, Shucai IoT provides free IoT solutio
 
 # 4 **Product characteristic parameters**
 
-##  4.1 **Communication characteristics**
+## 4.1 **Communication characteristics**
 
 Serial communication uses RS485. The default address is 1, the baud rate is 9600, 8, 1, and no checksum.
 
@@ -52,7 +59,7 @@ Working power supply: DC12- DC24V, DC
 
 Power consumption: less than 5W
 
-## 4.5 **Work****Environment**
+## 4.5 **Work\*\***Environment\*\*
 
 Working temperature: -20°~ 80°C
 
@@ -60,12 +67,10 @@ Working temperature: -20°~ 80°C
 
 Standard rail installation, flat screw fixing, detachable split structure, PCB welding installation, etc.
 
-**5**Core advantages of products****
+**5**Core advantages of products\*\*\*\*
 
-  * **Simple installation and quick deployment help IoT projects to be implemented quickly**
-
-  * **Support external multi-channel sensors**
-
-  * **Non-intrusive collection, does not affect the normal operation of the equipment**
+* **Simple installation and quick deployment help IoT projects to be implemented quickly**
+* **Support external multi-channel sensors**
+* **Non-intrusive collection, does not affect the normal operation of the equipment**
 
 **7 Application Cases**
