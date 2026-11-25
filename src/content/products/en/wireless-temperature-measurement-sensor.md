@@ -1,10 +1,11 @@
 ---
-title: "Wireless Temperature Measurement Sensor"
-summary: >-
-  SC-GP-PT100 wireless industrial temperature measurement sensor transmitter terminal is a wireless temperature measurement product for industrial fields launched by Shanghai DAQ IoT Technology Co., Ltd. This product converts thermo…
-image: "/images/products/1692944201865323.jpg"
+title: Wireless Temperature Measurement Sensor
+summary: PT100 wireless temperature transmitter with up to 8 channels,
+  4G/NB-IoT/LoRa, high precision for industrial temperature monitoring in
+  metallurgy, power and chemical industries.
+image: /images/products/1692944201865323.jpg
 order: 214
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
