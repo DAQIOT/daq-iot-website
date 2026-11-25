@@ -1,10 +1,11 @@
 ---
-title: "4G Wireless Temperature & Humidity Sensor"
-summary: >-
-  SC-GP-TH4G wireless temperature & humidity sensor terminal is a general-purpose wireless temperature & humidity sensor based on wireless transmission and wide DC voltage power supply, launched by Shanghai DAQ IoT Technology Co., L…
-image: "/images/products/1692865652747656.jpg"
+title: 4G Wireless Temperature & Humidity Sensor
+summary: Wireless temperature and humidity terminal with 4G/NB-IoT/LoRa
+  transmission, high-precision sensing and cloud upload for industrial and
+  agricultural environmental monitoring.
+image: /images/products/1692865652747656.jpg
 order: 213
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
