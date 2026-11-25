@@ -1,10 +1,14 @@
 ---
-title: "Passive Wireless Current Sensor (Three-Circuit)"
-summary: >-
-  SC-LP-3CTLoRa is a passive wireless current sensor integrating high-precision current measurement and temperature monitoring. It transmits data to a receiving device via wireless communication, enabling real-time remote monitoring…
-image: "/images/products/1789108234768969.jpg"
+title: Passive Wireless Current Sensor (Three-Circuit)
+summary: Passive wireless current and temperature sensor supports 3-channel
+  current and 1-channel temperature acquisition. It adopts dual power supply of
+  CT energy harvesting and battery, with 433MHz wireless transmission and
+  convenient magnetic installation. Paired with a receiver host, it realizes
+  remote monitoring of power consumption data for distribution circuits and
+  early detection of electrical safety hazards.
+image: /images/products/1789108234768969.jpg
 order: 242
-category: "instrumentation"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
