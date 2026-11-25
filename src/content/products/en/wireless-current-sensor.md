@@ -1,10 +1,13 @@
 ---
-title: "Wireless Current Sensor"
-summary: >-
-  SC-LP-CTLoRa wireless current & temperature acquisition sensor terminal is equipped with a low-power, high-sensitivity split-core transformer. Through the principle of electromagnetic induction, it converts the large current on th…
-image: "/images/products/1692942932388075.jpg"
+title: Wireless Current Sensor
+summary: Split-core wireless current and temperature acquisition terminal,
+  non-invasive live installation. It supports CT energy harvesting and low-power
+  battery power supply with multiple communication options, for online
+  monitoring of current and contact temperature of motors, HVAC, lighting
+  equipment, air compressors and urban-rural power grid renovation.
+image: /images/products/1692942932388075.jpg
 order: 206
-category: "wirelesssensor"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
