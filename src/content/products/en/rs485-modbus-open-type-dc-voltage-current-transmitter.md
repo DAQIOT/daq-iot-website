@@ -1,10 +1,12 @@
 ---
-title: "RS485 Modbus Open-Type DC Voltage & Current Transmitter"
-summary: >-
-  DAQ-GP-DCHS485 transmitter acquisition device is an industrial-grade, compact and portable DC intelligent power transmitter launched by Shanghai DAQ IoT Technology Co., Ltd., providing fast, stable and high-precision performance.
-image: "/images/products/1747808419800362.png"
+title: RS485 Modbus Open-Type DC Voltage & Current Transmitter
+summary: Adopting split-core structure and optoelectronic & electromagnetic
+  isolation design, it collects multi-channel DC voltage and current signals
+  based on RS485 Modbus protocol, for online energy consumption monitoring of DC
+  equipment in power, communication, petrochemical and other industries.
+image: /images/products/1747808419800362.png
 order: 208
-category: "wirelesssensor"
+category: current-sensors
 hidden: false
 ---
 **Product Details**
