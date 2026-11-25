@@ -1,10 +1,14 @@
 ---
-title: "Solar-Powered 4G Wireless Radar Level Sensor"
-summary: >-
-  DAQ-SP-RL4G solar-powered 4G wireless radar level sensor is a wireless liquid level measurement product launched by Shanghai DAQ IoT Technology Co., Ltd. It integrates a 79~81GHz millimeter-wave radar level sensing unit, a solar p…
-image: "/images/products/1783412901441941.png"
+title: Solar-Powered 4G Wireless Radar Level Sensor
+summary: Integrated with solar lithium battery power supply and 4G wireless
+  transmission, it adopts millimeter-wave radar for non-contact high-precision
+  liquid level collection. It supports cloud platform docking and remote
+  parameter configuration, suitable for remote liquid level monitoring in
+  off-grid field scenarios such as rivers, reservoirs, oil tanks and pipe
+  networks.
+image: /images/products/1783412901441941.png
 order: 225
-category: "wirelesssensor"
+category: level-sensors
 hidden: false
 ---
 **Product Details**
