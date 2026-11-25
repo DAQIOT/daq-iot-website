@@ -1,10 +1,13 @@
 ---
-title: "Tilt & Vibration Sensor"
-summary: >-
-  DAQ-LP-TVNB tilt & vibration sensor is an intelligent monitoring device launched by Shanghai DAQ IoT Technology Co., Ltd., specially designed for bridges, viaducts, roads and buildings. It adopts NB-IoT technology and integrates c…
-image: "/images/products/1783316769656567.png"
+title: Tilt & Vibration Sensor
+summary: Low-power battery-powered NB-IoT vibration and inclination monitoring
+  terminal with adaptive algorithms, collecting vibration and displacement data
+  in real time and triggering instant alarms for abnormal collision and damage.
+  Suitable for safety monitoring of municipal infrastructure such as bridges,
+  viaducts, roads and buildings.
+image: /images/products/1783316769656567.png
 order: 224
-category: "wirelesssensor"
+category: temperature-vibration-sensors
 hidden: false
 ---
 **Product Details**
