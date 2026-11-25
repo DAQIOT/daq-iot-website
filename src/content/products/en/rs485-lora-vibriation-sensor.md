@@ -1,9 +1,11 @@
 ---
 title: RS485 & Lora Vibriation Sensor
-summary: RS485  LoRa Wireless Temperature Vibration Sensor
+summary: RS485 / LoRa vibration sensor measures acceleration, velocity,
+  displacement and temperature, IP67 for online condition monitoring of motors,
+  fans and pumps.
 image: /images/微信图片_20261022112600_3215_31.png
 order: 11
-category: wirelesssensor
+category: temperature-vibration-sensors
 ---
 # 1 **Product Overview**
 
@@ -21,13 +23,17 @@ It can be applied to online measurement of vibration speed, acceleration, and te
 
 **Our company solemnly promises:**
 
-# What you have purchased is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= )
-# This product only requires ordinary workers to connect the power and install it on site! No debugging is needed!
-# We provide free remote guidance and remote configuration and debugging services, and send the data to the cloud platform specified by the user.
-# Free IoT solution consulting services!
-#  3 **Product Features**
+### What you have purchased is not just a product, but also meticulous and thoughtful technical support services!!! ( =^_^= )
 
-##  3.1 **RS485Vibration sensor characteristics**
+### This product only requires ordinary workers to connect the power and install it on site! No debugging is needed!
+
+### We provide free remote guidance and remote configuration and debugging services, and send the data to the cloud platform specified by the user.
+
+### Free IoT solution consulting services!
+
+# 3 **Product Features**
+
+## 3.1 **RS485Vibration sensor characteristics**
 
 Dedicated MEMS chip technology, precise integration calculation;
 
@@ -45,7 +51,7 @@ Standby current: ≤5mA
 
 Detection cycle: 800ms
 
-Measurement range: Acceleration: 0~10g; Speed: 0~60mm/s; Amplitude: 0~50000um; Frequency (effective value): 0~2000Hz
+Measurement range: Acceleration: 0\~10g; Speed: 0\~60mm/s; Amplitude: 0\~50000um; Frequency (effective value): 0\~2000Hz
 
 Ambient temperature: -40~85℃ (relative humidity: ≤90%)
 
@@ -89,12 +95,12 @@ Transmission mode: Wireless communication via LoRa at 433MHz
 
 # 4 **communication routine**
 
-##  4.1 **register address**
+## 4.1 **register address**
 
 Modbus Protocol 03 function code
 
 | register address | PLC or configuration address | content                       | operation | byte length |
-|------------------|------------------------------|-------------------------------|-----------|-------------|
+| ---------------- | ---------------------------- | ----------------------------- | --------- | ----------- |
 | 00 01            | 40001                        | Xpeak acceleration            | read-only | 2           |
 | 00 02            | 40002                        | Ypeak acceleration            | read-only | 2           |
 | 00 03            | 40003                        | Zpeak acceleration            | read-only | 2           |
@@ -110,13 +116,13 @@ Modbus Protocol 03 function code
 ## 4.2 **Description of the value in the baud rate register (0x0D):**
 
 | register address | register value | Attribute (Baud rate) |
-|------------------|----------------|-----------------------|
+| ---------------- | -------------- | --------------------- |
 | 0x0D             | 00 06          | 600                   |
-| 00 0C            | 1200           |
-| 00 18            | 2400           |
-| 00 30            | 4800           |
-| 00 60            | 9600           |
-| 00 C0            | 19200          |
+| 00 0C            | 1200           |                       |
+| 00 18            | 2400           |                       |
+| 00 30            | 4800           |                       |
+| 00 60            | 9600           |                       |
+| 00 C0            | 19200          |                       |
 
 Note: The setting value is the actual baud rate ÷ 100.
 
@@ -126,52 +132,52 @@ If you need to customize other communication protocols, please contact our busin
 
 # ❓ RS485 & LoRa Vibration Sensor – FAQ
 
-* * *
+- - -
 
-### 1\. What is this vibration sensor used for?
+### 1. What is this vibration sensor used for?
 
 It is used to monitor vibration speed and acceleration in industrial equipment, helping detect mechanical faults and prevent unexpected downtime.
 
-* * *
+- - -
 
-### 2\. What communication protocols does the sensor support?
+### 2. What communication protocols does the sensor support?
 
 It supports **RS485 for wired industrial networks** and **LoRa for long-range wireless monitoring** , offering flexible deployment options.
 
-* * *
+- - -
 
-### 3\. Can the sensor provide real-time monitoring?
+### 3. Can the sensor provide real-time monitoring?
 
 Yes. The sensor transmits vibration data in real time to a receiving terminal or IoT platform for centralized monitoring and analysis.
 
-* * *
+- - -
 
-### 4\. What environments is the sensor suitable for?
+### 4. What environments is the sensor suitable for?
 
 The stainless steel housing and industrial-grade components make it suitable for **factories, production lines, machinery, and harsh industrial environments**.
 
-* * *
+- - -
 
-### 5\. How accurate is the vibration measurement?
+### 5. How accurate is the vibration measurement?
 
 The sensor provides **high-precision vibration speed and acceleration measurements** , enabling reliable condition monitoring and predictive maintenance.
 
-* * *
+- - -
 
-### 6\. Can it integrate with existing industrial systems?
+### 6. Can it integrate with existing industrial systems?
 
 Yes. It is compatible with **PLCs, SCADA systems, and IoT monitoring platforms** , making integration into existing industrial networks seamless.
 
-* * *
+- - -
 
-### 7\. Does it support both wired and wireless deployment?
+### 7. Does it support both wired and wireless deployment?
 
 Yes. RS485 supports wired industrial network connections, while LoRa enables **long-range wireless monitoring** , suitable for remote or hard-to-reach equipment.
 
-* * *
+- - -
 
-### 8\. Can the sensor help reduce maintenance costs?
+### 8. Can the sensor help reduce maintenance costs?
 
 Absolutely. By providing **early vibration alerts and real-time monitoring** , it allows predictive maintenance, reduces unexpected downtime, and lowers maintenance costs.
 
-* * *
+- - -
