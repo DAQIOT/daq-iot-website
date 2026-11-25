@@ -1,10 +1,12 @@
 ---
-title: Rack Mount Industrial Protocol Gateway | 16-Port Serial + 4-Port Ethernet IoT Data Collector
-summary: >-
-  Rack Mount Industrial Protocol Gateway | 16-Port Serial + 4-Port Ethernet IoT Data Collector
+title: Rack Mount Industrial Protocol Gateway | 16-Port Serial + 4-Port Ethernet
+  IoT Data Collector
+summary: Industrial EMS energy management gateway supports multiple power
+  protocols, connects PCS, BMS, inverters and meters for energy collection and
+  cloud control in C&I energy storage and PV distribution.
 image: /images/products/1755076006514754.png
 order: 30
-category: plcacquisition
+category: iot-gateways
 ---
 # 1 **Product Overview**
 
