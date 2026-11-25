@@ -6,7 +6,7 @@ summary: RS485 multiplexing data-sharing processor solves dual-master
   data sharing.
 image: /images/总线共享器.png
 order: 239
-category: instrumentation
+category: communication-devices
 hidden: false
 ---
 **Product Details**
@@ -17,7 +17,7 @@ hidden: false
 
 RS485 bus sharer schematic
 
-![](/images/products/1721116092430268.png)
+![](/images/b1b.png)
 
 Function diagram
 
@@ -48,7 +48,7 @@ DAQ-GP-485HUB is an RS485 bus multiplexing data-sharing processor launched by Sh
 
 # 5 Usage & Software Configuration
 
-![](/images/products/1721116150140227.png)
+![](/images/b2b.png)
 
 Wiring diagram
 
@@ -60,7 +60,7 @@ Note: The module can only be configured within the first five seconds after powe
 
 2. Software page
 
-![](/images/products/1721116164144347.png)
+![](/images/b3b.png)
 
 3. Troubleshooting. There may be various reasons why the RS485 communication cannot connect. The following are some common problems that may cause connection failures and their troubleshooting methods:
 4. Wiring error: check whether the connection lines are correctly connected and whether there are wiring errors. Ensure the connection lines are not short-circuited.
