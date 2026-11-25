@@ -1,10 +1,13 @@
 ---
-title: "4G/WiFi Wireless Clamp-On Ultrasonic Flow Meter"
-summary: >-
-  DAQ-GP-UF4G wireless clamp-on ultrasonic flow meter is a general-purpose ultrasonic flow meter / heat meter launched by Shanghai DAQ IoT Technology Co., Ltd., based on 4G wireless transmission and AC/DC wide-voltage power supply…
-image: "/images/products/1692945398642998.jpg"
+title: 4G/WiFi Wireless Clamp-On Ultrasonic Flow Meter
+summary: Clamp-on Ultrasonic Heat Meter adopts non-intrusive measurement,
+  requires no pipe cutting for fast installation, supports multi-network cloud
+  access and remote parameter commissioning. It is widely used for flow and heat
+  data collection in heating billing, water supply, chemical water treatment and
+  other scenarios.
+image: /images/products/1692945398642998.jpg
 order: 215
-category: "wirelesssensor"
+category: flow-sensors
 hidden: false
 ---
 **Product Details**
