@@ -1,10 +1,12 @@
 ---
-title: "4G/WiFi Wireless Timed Photography Camera"
-summary: >-
-  The MV-CS050-L16 5-megapixel high-definition color camera is a 4G or Wi-Fi wireless camera for timed photography, snapshot video recording and FTP photo upload. It has a built-in white-light source and is widely used for capturing…
-image: "/images/products/1788232398519457.png"
+title: 4G/WiFi Wireless Timed Photography Camera
+summary: Industrial Wireless Timed Snapshot Camera, supports multi-network FTP
+  image upload, built-in white light supplement, outdoor rainproof, applied to
+  remote image monitoring for meter reading recognition, hydrology, geotechnical
+  engineering and cultural relics.
+image: /images/products/1788232398519457.png
 order: 249
-category: "wirelesstimingphotography"
+category: industrial-cameras
 hidden: false
 ---
 **Product Details**
