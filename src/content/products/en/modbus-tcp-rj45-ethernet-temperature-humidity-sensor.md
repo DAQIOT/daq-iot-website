@@ -2,7 +2,7 @@
 title: Modbus TCP RJ45 Ethernet Temperature & Humidity Sensor
 summary: Ethernet temperature and humidity sensor with Modbus TCP, supports MQTT
   and cloud access for industrial and agricultural environmental monitoring.
-image: /images/products/1764830558253165.jpg
+image: /images/a6a.jpg
 order: 243
 category: temperature-vibration-sensors
 hidden: false
@@ -11,9 +11,11 @@ hidden: false
 
 # 1 Product Overview
 
-![](/images/products/1764815455421068.png)
+![](/images/a6a.jpg)
 
-![](/images/products/1764815465125531.png)
+![](/images/a7a.png)
+
+![](/images/a8a.png)
 
 RJ45 Ethernet port temperature & humidity sensor
 
@@ -29,19 +31,15 @@ GB 5170.4-85 "Methods for verifying the basic parameters of environmental test e
 
 ## 4.1 Acquisition Characteristics
 
-- Temperature range: -40°C ~ 120°C
-
-- Temperature accuracy: ±0.5°C
-
-- Humidity range: 0 ~ 100% RH
-
-- Humidity accuracy: ±0.1 RH
+* Temperature range: -40°C ~ 120°C
+* Temperature accuracy: ±0.5°C
+* Humidity range: 0 ~ 100% RH
+* Humidity accuracy: ±0.1 RH
 
 ## 4.2 Electrical Characteristics
 
-- Power supply: 12V DC (power interface: DC5.5*2.1mm female socket, center positive, outer negative)
-
-- Operating power consumption: less than 5W
+* Power supply: 12V DC (power interface: DC5.5*2.1mm female socket, center positive, outer negative)
+* Operating power consumption: less than 5W
 
 ## 4.3 Communication Characteristics
 
@@ -59,23 +57,17 @@ Positioning: supports LBS base station positioning, making it easy to query devi
 
 ## 4.4 Operating Environment
 
-- Temperature -40°C ~ 75°C, humidity 0 ~ 95%
+* Temperature -40°C \~ 75°C, humidity 0 \~ 95%
 
 # 5 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive acquisition, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive acquisition, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 Multiple push methods such as UDP/TCP/MQTT/HTTP; users receiving data must provide the server IP address and port number.
 
@@ -83,10 +75,10 @@ Multiple push methods such as UDP/TCP/MQTT/HTTP; users receiving data must provi
 
 ## 6.1 Register Addresses
 
-| Register address | PLC or SCADA address | Content | Operation | Data type |
-| --- | --- | --- | --- | --- |
-| 0000H | 40001 | Humidity | Read only | Unsigned integer |
-| 0001H | 40002 | Temperature | Read only | Unsigned integer |
+| Register address | PLC or SCADA address | Content     | Operation | Data type        |
+| ---------------- | -------------------- | ----------- | --------- | ---------------- |
+| 0000H            | 40001                | Humidity    | Read only | Unsigned integer |
+| 0001H            | 40002                | Temperature | Read only | Unsigned integer |
 
 ## 6.2 Communication Protocol Example and Explanation
 
@@ -96,15 +88,15 @@ Example: use Modbus TCP debugging software to read the current temperature and h
 
 Send command:
 
-| MBAP header | Address | Function code | Start address | Register length |
-| --- | --- | --- | --- | --- |
-| 000000000006 | 01 | 03 | 00 00 | 00 02 |
+| MBAP header  | Address | Function code | Start address | Register length |
+| ------------ | ------- | ------------- | ------------- | --------------- |
+| 000000000006 | 01      | 03            | 00 00         | 00 02           |
 
 Receive command:
 
-| MBAP header | Address | Function code | Number of valid bytes returned | Humidity | Temperature |
-| --- | --- | --- | --- | --- | --- |
-| 000000000007 | 01 | 03 | 04 | 01F5 | 00FD |
+| MBAP header  | Address | Function code | Number of valid bytes returned | Humidity | Temperature |
+| ------------ | ------- | ------------- | ------------------------------ | -------- | ----------- |
+| 000000000007 | 01      | 03            | 04                             | 01F5     | 00FD        |
 
 Humidity: 01F5 (hex) → 501 (decimal) = 50.1%RH
 
@@ -136,4 +128,6 @@ If you need to customize other communication protocols, please contact our sales
 
 # 7 Application Cases
 
-![](/images/products/1764815483899790.png)
+![](/images/a9a.png)
+
+![](/images/a10a.png)
