@@ -8,7 +8,7 @@ summary: Landis E650 series high-end gateway settlement watt-hour meters feature
   and high-speed rail traction applications.
 image: /images/80da405313497767bc9ed204ee856bb4.png
 order: 9
-category: instrument-acquisition
+category: smart-energy-meter
 ---
 **1. Product Introduction**
 
