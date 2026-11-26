@@ -1,9 +1,9 @@
 ---
-title: "Instrument Local Recognition Installation Photo Case"
-summary: "Instrument Local Recognition Installation Photo Case"
-image: "/images/products/1765250347414772.png"
+title: Instrument Local Recognition Installation Photo Case
+summary: Instrument Local Recognition Installation Photo Case
+image: /images/products/1765250347414772.png
 order: 238
-category: "instrumentation"
+category: aivision-ocr
 hidden: false
 ---
 **Product Details**
