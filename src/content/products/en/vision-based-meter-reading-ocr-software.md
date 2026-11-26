@@ -1,10 +1,12 @@
 ---
 title: Vision-Based Meter Reading OCR Software
-summary: >-
-  📊 Vision-Based Meter Reading OCR Software – Product Specifications
+summary: Meter vision OCR recognition software for digital and pointer dials,
+  customizable recognition templates and sample training, with Modbus, MySQL,
+  FTP and multi-protocol docking for automatic meter reading in industrial
+  sites.
 image: /images/products/1755137746482795.png
 order: 4
-category: dataacquisitionsoftware
+category: aivision-ocr
 ---
 # 1 **illustrate**
 
