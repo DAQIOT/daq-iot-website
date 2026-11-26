@@ -6,7 +6,7 @@ summary: EDMI Mk6E Genius is a high-performance multifunction smart electricity
   profiling and anti-tamper functions for AMI and advanced power management.
 image: /images/products/1780901539583612.png
 order: 7
-category: instrument-acquisition
+category: smart-energy-meter
 ---
 ## Meta Description
 
