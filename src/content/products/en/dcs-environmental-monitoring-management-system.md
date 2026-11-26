@@ -1,10 +1,11 @@
 ---
-title: "DCS Environmental Protection Monitoring & Management System"
-summary: >-
-  DCS Environmental Protection Monitoring & Management System is a distributed control system (DCS) based platform for environmental protection monitoring and management. It collects data from environmental monitoring instruments an…
-image: "/images/products/1780628501220342.png"
+title: DCS Environmental Protection Monitoring & Management System
+summary: Distributed environmental monitoring and management platform collecting
+  data from environmental analyzers and production equipment for real-time
+  monitoring, alarm and report management of industrial plants.
+image: /images/products/1780628501220342.png
 order: 263
-category: "dataacquisitionsoftware"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
