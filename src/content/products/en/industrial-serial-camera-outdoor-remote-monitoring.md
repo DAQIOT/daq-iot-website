@@ -1,9 +1,12 @@
 ---
-title: "Industrial Serial Camera for Water Conservancy, Power, Transportation & Security Outdoor Remote Monitoring"
-summary: "HD serial camera"
-image: "/images/products/1780553059185460.png"
+title: Industrial Serial Camera for Water Conservancy, Power, Transportation &
+  Security Outdoor Remote Monitoring
+summary: HD serial camera outputting JPEG images over RS232/RS485, optimized for
+  low-speed narrowband channels for remote image monitoring in water
+  conservancy, power and transportation mobile scenarios.
+image: /images/products/1780553059185460.png
 order: 246
-category: "wirelesstimingphotography"
+category: industrial-cameras
 hidden: false
 ---
 **Product Details**
