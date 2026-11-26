@@ -1,9 +1,14 @@
 ---
-title: "Energy Monitoring Meter"
-summary: "Energy Monitoring Meter"
-image: "/images/products/1723703302355351.jpg"
+title: Energy Monitoring Meter
+summary: Multi-functional wireless power monitoring device supporting
+  4G/WiFi/LoRa transmission. It collects single-phase and three-phase voltage
+  and current, calculates electrical parameters including power, energy and
+  power factor, and supports power-off linkage upon overvoltage and overcurrent,
+  widely used for online power monitoring of environmental protection loads and
+  factory equipment.
+image: /images/products/1723703302355351.jpg
 order: 236
-category: "instrumentation"
+category: power-monitoring-devices
 hidden: false
 ---
 **Product Details**
