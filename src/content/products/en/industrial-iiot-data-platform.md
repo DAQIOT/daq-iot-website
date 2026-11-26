@@ -1,10 +1,10 @@
 ---
 title: Industrial IIOT data platform
-summary: >-
-  Industrial IoT Data Visualization Dashboard Software | Real-Time Data Monitoring & Reporting Platform with Drag-and-Drop Design (Private Deployment)
+summary: Industrial IoT Data Visualization Dashboard Software | Real-Time Data
+  Monitoring & Reporting Platform with Drag-and-Drop Design (Private Deployment)
 image: /images/products/1755137572660991.png
 order: 5
-category: dataacquisitionsoftware
+category: industrial-iot-platform
 ---
 # 1 **Product Overview**
 
