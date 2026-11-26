@@ -1,10 +1,11 @@
 ---
 title: Data Collection Dashboard - Data Visualization Software
-summary: >-
-  This product enables enterprise users to easily implement data visualization for scenarios such as report analysis, data reporting, leadership cockpit dashboards, IoT data display, industrial cloud configuration, and corporate promotion. It addresses the following pain points:
+summary: Multi-terminal visualization dashboard software with drag-and-drop
+  configuration, multi-source data access for privately deployed large-screen
+  cockpit display.
 image: /images/products/1755068175810044.jpg
 order: 1
-category: dataacquisitionsoftware
+category: data-visualization-system
 ---
 1 **Product Overview**  
 
