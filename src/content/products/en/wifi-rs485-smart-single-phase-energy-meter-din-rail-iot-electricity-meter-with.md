@@ -1,10 +1,14 @@
 ---
-title: WiFi + RS485 Smart Single Phase Energy Meter | DIN Rail IoT Electricity Meter with Modbus RTU/TCP
-summary: >-
-  High-Precision Energy Measurement
+title: WiFi + RS485 Smart Single Phase Energy Meter | DIN Rail IoT Electricity
+  Meter with Modbus RTU/TCP
+summary: DIN-rail single-phase energy monitoring terminal with WiFi and RS485
+  dual communication, supporting full electrical parameter acquisition, energy
+  consumption statistics and abnormal alarms for single-phase load monitoring in
+  residential, commercial & industrial, distributed photovoltaic and smart
+  building scenarios.
 image: /images/products/1780972505236180.jpg
 order: 23
-category: instrument-acquisition
+category: smart-energy-meter
 ---
 **Smart Single Phase Energy Meter WiFi RS485 DIN Rail******
 
