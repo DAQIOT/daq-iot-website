@@ -1,10 +1,14 @@
 ---
-title: Industrial Transformer Monitoring & Protection Terminal for PV & Wind Power Systems (Smart Measurement & Control Device)
-summary: >-
-  ⚙️ Product Specifications
+title: Industrial Transformer Monitoring & Protection Terminal for PV & Wind
+  Power Systems (Smart Measurement & Control Device)
+summary: Box-type transformer intelligent measurement and control terminal with
+  integrated protection, metering, control and fault recording functions,
+  supporting fiber optic ring network and multiple power protocols for grid
+  connection and operation of PV and wind booster stations to realize unattended
+  power station management.
 image: /images/products/1755075658553666.png
 order: 29
-category: plcacquisition
+category: power-monitoring-devices
 ---
 # 1 **Product Overview**
 
