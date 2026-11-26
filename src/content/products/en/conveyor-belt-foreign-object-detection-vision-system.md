@@ -1,10 +1,13 @@
 ---
-title: "Conveyor Belt Aggregate Foreign Object Detection Vision System"
-summary: >-
-  The Conveyor-Belt Aggregate Foreign-Object Detection System (DAQ-BFODS) is an industrial-grade foreign-object intelligent detection software platform developed by Shanghai Daq-IoT Technology. By connecting industrial cameras, the…
-image: "/images/products/1783303866478085.png"
+title: Conveyor Belt Aggregate Foreign Object Detection Vision System
+summary: AI foreign object detection platform for conveyor belts, connecting
+  industrial cameras to realize millisecond-level foreign object and defect
+  identification. It supports multi-camera synchronous acquisition and
+  multi-protocol upload, integrates with SCADA/MES, and applies to mine conveyor
+  belts, grain sorting and production line appearance inspection scenarios.
+image: /images/products/1783303866478085.png
 order: 265
-category: "dataacquisitionsoftware"
+category: aivision-ocr
 hidden: false
 ---
 **Product Details**
