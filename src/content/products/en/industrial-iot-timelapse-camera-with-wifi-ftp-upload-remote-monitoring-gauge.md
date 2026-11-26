@@ -1,10 +1,12 @@
 ---
-title: Industrial IoT Timelapse Camera with WiFi & FTP Upload | Remote Monitoring Gauge Reading Camera
-summary: >-
-  ⚡ Industrial IoT Timelapse Camera – Key Advantages
+title: Industrial IoT Timelapse Camera with WiFi & FTP Upload | Remote
+  Monitoring Gauge Reading Camera
+summary: IP65 waterproof industrial camera with WiFi/Ethernet, timed snapshot,
+  video capture and FTP upload for meter reading, cultural relic, geotechnical
+  and hydrological monitoring.
 image: /images/products/1780631429385198.png
 order: 41
-category: wirelesstimingphotography
+category: industrial-cameras
 ---
 # 1 **Productoverview**
 
