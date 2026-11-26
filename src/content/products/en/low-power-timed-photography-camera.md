@@ -1,12 +1,11 @@
 ---
 title: Low-Power Timed Photography Camera
-summary: DAQ-LP-CAM is a compact, intelligent AIoT timed-photography camera. It
-  pairs a 1920x1080 high-resolution lens with a small fill light, reliably
-  capturing high-quality images and transmitting them to a management platform.
-  Four dif…
+summary: Ultra-low-power WiFi / 4G Cat.1 timed snapshot camera, battery-powered
+  with MQTT upload for remote meter reading and equipment status monitoring in
+  factories.
 image: /images/products/1788166816672003.png
 order: 247
-category: wirelesstimingphotography
+category: industrial-cameras
 hidden: false
 ---
 **Product Details**
