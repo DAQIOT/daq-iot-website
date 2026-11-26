@@ -1,10 +1,12 @@
 ---
-title: Industrial IO Trigger Camera | WiFi & FTP Remote Snapshot Camera for Industrial Monitoring
-summary: >-
-  💡 Key Advantages
+title: Industrial IO Trigger Camera | WiFi & FTP Remote Snapshot Camera for
+  Industrial Monitoring
+summary: IO-triggered industrial camera with timed snapshot via Ethernet/WiFi,
+  supporting FTP & email upload for meter reading, geotechnical, hydrological,
+  agricultural and industrial automation monitoring.
 image: /images/products/1780641391255609.png
 order: 42
-category: wirelesstimingphotography
+category: industrial-cameras
 ---
 The SC-GP-CAMIO is a wireless camera based on LAN or WiFi, featuring switch signal relay-triggered timed photography and video capture with FTP and email photo upload, developed by Shanghai Data Acquisition IoT Technology Co., Ltd. It supports timed snapshots and event-triggered snapshots, making it widely applicable for instrument reading capture and recognition, as well as photo capture and video monitoring in agriculture, cultural relics, geotechnical, hydrology, and water conservancy fields.
 
