@@ -3,7 +3,7 @@ title: Wireless Temperature Measurement Sensor
 summary: PT100 wireless temperature transmitter with up to 8 channels,
   4G/NB-IoT/LoRa, high precision for industrial temperature monitoring in
   metallurgy, power and chemical industries.
-image: /images/products/1692944201865323.jpg
+image: /images/ms20.png
 order: 214
 category: temperature-vibration-sensors
 hidden: false
@@ -12,14 +12,22 @@ hidden: false
 
 # 1 Product Overview
 
+![](/images/ms20.png)
+
 SC-GP-PT100 wireless industrial temperature measurement sensor transmitter terminal is a wireless temperature measurement product for industrial fields launched by Shanghai DAQ IoT Technology Co., Ltd. This product converts thermocouple and thermal resistance signals into input electrical signals or measured temperature and periodically reports data via 4G. As a new-generation temperature measurement data-to-cloud product, it is widely used in industrial sectors such as metallurgy, petrochemical, electric power, light industry, textiles, food, national defense and scientific research.
+
+![](/images/ms21.png)
+
+![](/images/ms22.png)
 
 The sensor terminal supports 4G/NB-IoT/LoRa/WiFi communication (external power supply defaults to GPRS; battery power defaults to NB-IoT/LoRa), overcoming wireless communication obstruction caused by special on-site environments, greatly simplifying on-site deployment time and reducing construction costs. This terminal supports up to 8 channels of temperature acquisition. It comes with a rich variety of Pt100 temperature probes, has a wide temperature measurement range, high measurement accuracy and is easy to install.
 
-| Model | Description |
-| --- | --- |
-| SC-LP-PT100 | NB-IoT/LoRa communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply. |
+| Model       | Description                                                                                                                                                                                                                                                                                                      |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SC-LP-PT100 | NB-IoT/LoRa communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                    |
 | SC-GP-PT100 | GPRS communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
+
+![](/images/ms23.png)
 
 # 3 Product Features
 
@@ -71,23 +79,17 @@ Probe installation: adhesive or screw fixing, or cable-tie bundled installation
 
 ## 3.5 Operating Environment
 
-Ambient temperature -25°C ~ 75°C, humidity 0 ~ 95% (non-condensing)
+Ambient temperature -25°C \~ 75°C, humidity 0 \~ 95% (non-condensing)
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any private IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive measurement, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
