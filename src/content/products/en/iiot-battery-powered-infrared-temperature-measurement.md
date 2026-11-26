@@ -7,20 +7,26 @@ image: /images/products/1780891030821962.png
 order: 35
 category: temperature-vibration-sensors
 ---
-#  1 **Product Introduction**
+# 1 **Product Introduction**
 
 DAQ - LP - IRT LoRaWAN low-power wireless infrared temperature sensor is a wireless infrared temperature measurement product for the industrial field launched by Shanghai Shucai IoT Technology Co., Ltd. This product can calculate the surface temperature of an object by receiving the infrared radiation intensity emitted by the target without contacting the target , and report the data regularly through LoRaWAN and other methods. Non-contact acquisition is the biggest advantage of infrared temperature measurement, allowing users to easily measure targets that are difficult to approach or move. As a new generation of temperature measurement data cloud product, it can widely adapt to various industrial scene requirements.
 
+![](/images/ms17.png)
+
 The sensor terminal supports LoRaWAN/LoRa/WiFi communication , overcoming the wireless communication obstruction caused by the special environment on site, greatly simplifying the on-site deployment time and reducing construction costs . This terminal supports 12V voltage input , reverse connection protection , high measurement accuracy, and easy installation.
 
+![](/images/ms19.png)
+
+![](/images/ms18.png)
+
 | **model**                             | **Features**                                                                                                                                                                                                                                                                                                                |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| DAQ -LP- IRT LoRaDAQ -LP- IRT LoRaWAN |  loRa / LoRaWAN communication, long-life lithium battery power supply, suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                           |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ -LP- IRT LoRaDAQ -LP- IRT LoRaWAN | loRa / LoRaWAN communication, long-life lithium battery power supply, suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                            |
 | DAQ -GP- IRT LoRaWAN                  | LoRaWAN communication, 220V AC/12V DC power supply, suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online by default, it can support remote configuration parameter debugging, and only needs to be installed and connected to the power supply on site. |
 
 2 **Service Concept**
 
-******Our company solemnly promises:**
+**\*\***Our company solemnly promises:\*\*
 
 You buy not only the product, but also the meticulous and thoughtful technical support service **! ! ! (** =^_^= **)**
 
@@ -32,7 +38,7 @@ Free IoT solution consulting services!
 
 # 3 **Product Features**
 
-##  3.1 **Infrared****temperature****acquisition characteristics**
+## 3.1 **Infrared\*\***temperature***\*acquisition characteristics**
 
 Collection type: non-contact temperature measurement
 
@@ -44,7 +50,7 @@ Measurement error: ±1.5% of measured value or ±2.5°C whichever is greater
 
 Collection frequency: once every 12 hours by default, supports remote configuration
 
-## 3.2 **PT100****temperature****acquisition characteristics**
+## 3.2 **PT100\*\***temperature***\*acquisition characteristics**
 
 Acquisition type: pt100 temperature probe temperature measurement
 
@@ -62,7 +68,7 @@ Standby current: 4.17u A
 
 Standby power: 15.029u W
 
-## 3.4 **Communication****characteristics**
+## 3.4 **Communication\*\***characteristics\*\*
 
 Wireless transmission method: LoRaWAN/LoRa/WiFi
 
@@ -96,7 +102,7 @@ Probe installation method: Paste or screw fastening, cable tie binding installat
 
 # 4 **Data reporting communication protocol**
 
-##  4.1 **Protocol analysis instructions**
+## 4.1 **Protocol analysis instructions**
 
 There are multiple push methods such as UDP/TCP/MQTT/HTTP. To receive data, users need to provide the public IP (or domain name) address and port number of the cloud server.
 
@@ -120,7 +126,7 @@ If you need to customize other communication protocols, please contact our sales
 
 # 5 **Platform docking**
 
-##  5.1 **Default Platform**
+## 5.1 **Default Platform**
 
 The product is connected to our designated industrial Internet of Things platform by default when it leaves the factory. The platform interface is as follows:
 
@@ -142,74 +148,71 @@ DeviceSecret = y7MTCG6Gk33Ux26bbWSpANl4OaI0bg5Q
 
 # ❓ IIoT Battery-Powered Infrared Temperature Measurement Sensor – FAQ
 
- _(For Power Utilities / Factory / EPC / Industrial Projects)_
+ *(For Power Utilities / Factory / EPC / Industrial Projects)*
 
-* * *
+- - -
 
-### 1\. What is this infrared temperature sensor used for in industrial applications?
+### 1. What is this infrared temperature sensor used for in industrial applications?
 
 It is used for **non-contact temperature monitoring of electrical and mechanical equipment** , helping detect overheating risks in real time for safety and maintenance.
 
-* * *
+- - -
 
-### 2\. Can it be used for high-voltage equipment in power systems?
+### 2. Can it be used for high-voltage equipment in power systems?
 
 Yes. It is widely used in **power utilities, substations, and electrical cabinets** for safe non-contact temperature monitoring of high-voltage components.
 
-* * *
+- - -
 
-### 3\. Does the sensor require wiring or external power supply?
+### 3. Does the sensor require wiring or external power supply?
 
 No. It is **battery-powered and fully wireless** , making it ideal for remote, hard-to-access, or large-scale industrial deployments.
 
-* * *
+- - -
 
-### 4\. What communication methods does the sensor support?
+### 4. What communication methods does the sensor support?
 
 It supports **NB-IoT, LoRa, 4G, and WiFi (optional)** , ensuring flexible integration with IoT platforms, SCADA systems, and cloud monitoring systems.
 
-* * *
+- - -
 
-### 5\. Can it integrate with SCADA or EPC monitoring systems?
+### 5. Can it integrate with SCADA or EPC monitoring systems?
 
 Yes. The sensor can easily integrate into **SCADA, EMS, and EPC project platforms** for centralized temperature monitoring and data analysis.
 
-* * *
+- - -
 
-### 6\. Is it suitable for harsh industrial environments?
+### 6. Is it suitable for harsh industrial environments?
 
 Yes. It is designed for **high temperature, dust, vibration, and outdoor environments** , commonly found in factories, substations, and oil & gas facilities.
 
-* * *
+- - -
 
-### 7\. How does it help with predictive maintenance?
+### 7. How does it help with predictive maintenance?
 
 By continuously monitoring temperature trends, it can **detect abnormal heating early** , helping prevent equipment failure and reducing downtime.
 
-* * *
+- - -
 
-### 8\. What is the battery life of the sensor?
+### 8. What is the battery life of the sensor?
 
 Depending on the reporting interval, the battery can last **1–5 years** , making it ideal for long-term unattended monitoring.
 
-* * *
+- - -
 
-### 9\. Can it monitor multiple devices in a factory or EPC project?
+### 9. Can it monitor multiple devices in a factory or EPC project?
 
 Yes. It supports large-scale deployment, making it suitable for **multi-point temperature monitoring across factories, plants, and infrastructure projects**.
 
-* * *
+- - -
 
-### 10\. What industries typically use this infrared temperature sensor?
+### 10. What industries typically use this infrared temperature sensor?
 
 It is widely used in **power transmission systems, manufacturing plants, steel industry, oil & gas, EPC engineering projects, and smart factories**.
 
-## 💰 Inquiry & Purchase 
+## 💰 Inquiry & Purchase
 
-  * **📩 Get a Free Quote Now**
-
-  * **⚡ Request Project Pricing**
-
-  * **🧾 Get Bulk Order Offer**
-
-  * **💬 Ask for Best Price Today**
+* **📩 Get a Free Quote Now**
+* **⚡ Request Project Pricing**
+* **🧾 Get Bulk Order Offer**
+* **💬 Ask for Best Price Today**
