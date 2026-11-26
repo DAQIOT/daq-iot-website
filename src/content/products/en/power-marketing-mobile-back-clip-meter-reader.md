@@ -1,10 +1,12 @@
 ---
-title: "Power Marketing Mobile Phone Back-Clip Meter Reader"
-summary: >-
-  The Power Marketing mobile phone back-clip (meter reading manager) is a handheld intelligent device with an embedded security unit. It is fully featured and easy to operate, and can be used with Android devices. The product offers…
-image: "/images/products/1780899206531442.png"
+title: Power Marketing Mobile Phone Back-Clip Meter Reader
+summary: Power marketing mobile back-clip meter reading manager embedded with
+  national cryptographic security unit, supporting infrared, RS485, RFID,
+  barcode scanning and multi-network communication for on-site power meter
+  reading and maintenance with Android devices.
+image: /images/products/1780899206531442.png
 order: 241
-category: "instrumentation"
+category: aivision-ocr
 hidden: false
 ---
 **Product Details**
