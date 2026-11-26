@@ -1,10 +1,12 @@
 ---
-title: "Gree/Midea/Haier Central Air Conditioning Data Acquisition Remote Monitoring Software"
-summary: >-
-  The air-conditioning host software provides centralized monitoring of air-conditioning systems in industrial environments. Built on MODBUS/SCADA software, it uses a graphical interface to achieve remote centralized control of dist…
-image: "/images/products/1766394220592015.png"
+title: Gree/Midea/Haier Central Air Conditioning Data Acquisition Remote
+  Monitoring Software
+summary: Central air-conditioning monitoring software based on Modbus,
+  supporting remote centralized control, real-time parameter monitoring and
+  adjustment for multi-brand chiller units.
+image: /images/products/1766394220592015.png
 order: 262
-category: "dataacquisitionsoftware"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
