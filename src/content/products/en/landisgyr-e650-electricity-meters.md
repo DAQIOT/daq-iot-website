@@ -6,7 +6,7 @@ summary: Landis E650 series gateway settlement watt-hour meters with 0.2S
   cross-border power networks and high-speed rail traction settlement.
 image: /images/products/1755142585205824.png
 order: 19
-category: instrument-acquisition
+category: smart-energy-meter
 ---
 The Landis E650 series of high-end gateway settlement watt-hour meters are specially used for gateway settlement of regional power grids and power plants with high voltage levels, as well as large industrial and commercial users such as electrified railways with frequent load changes. With excellent measurement accuracy, significantly high refresh rate, and long-term stable and reliable operation, they have successfully won the unanimous praise and trust of users around the world.
 
