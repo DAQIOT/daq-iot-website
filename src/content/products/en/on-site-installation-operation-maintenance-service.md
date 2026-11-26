@@ -1,10 +1,11 @@
 ---
-title: "On-Site Installation, Operation & Maintenance Commissioning Service"
-summary: >-
-  We provide nationwide construction, installation, operation and commissioning services. Typical scopes include the installation, repair and on-site commissioning of matching sensors and gateway monitoring devices. Our services als…
-image: "/images/products/1739848999395416.png"
+title: On-Site Installation, Operation & Maintenance Commissioning Service
+summary: Nationwide weak-current construction, installation and commissioning
+  service for IoT acquisition, monitoring, large screen, access control and
+  network systems.
+image: /images/products/1739848999395416.png
 order: 201
-category: "instrumentation"
+category: custom-iot-solution
 hidden: false
 ---
 **Product Details**
