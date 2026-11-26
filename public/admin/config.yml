@@ -80,6 +80,8 @@ collections:
         display_fields: [path]
         search_fields: [name, path]
         value_field: slug
+        # relation 下拉默认只取前 20 个选项，英文分类已超 20，调高以免末尾分类（如 Environmental Sensors）消失
+        options_length: 100
         required: true
         i18n: true
         hint: 只显示当前语言的分类。带"父级名 / 分类名"（如"仪器仪表采集 / 电表采集"、"Instrumentation / Instrument Acquisition"）的是二级分类，有二级的一级分类请选到具体的二级分类
@@ -422,6 +424,7 @@ collections:
         display_fields: [path]
         search_fields: [name, path]
         value_field: slug
+        options_length: 100
         required: false
         i18n: true
         hint: 二级分类必须选择父级。中文二级：电表采集/其他类仪表采集（父级 daq-meter）、电力类/环境类传感器（父级 daq-sensor）；英文二级：各传感器子类（父级 wirelesssensor）、通讯设备/采集终端/IoT 网关（父级 plcacquisition）、能耗采集/电力监测/智能电表（父级 instrumentation）、软件子类（父级 dataacquisitionsoftware）、视觉子类（父级 wirelesstimingphotography）；德文二级：Instrumentenerfassung（父级 Instrumentierung）。新增英文分类后同步后台映射（见 slug 提示）
