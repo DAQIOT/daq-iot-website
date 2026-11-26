@@ -5,7 +5,7 @@ summary: Low-power battery-powered NB-IoT vibration and inclination monitoring
   in real time and triggering instant alarms for abnormal collision and damage.
   Suitable for safety monitoring of municipal infrastructure such as bridges,
   viaducts, roads and buildings.
-image: /images/products/1783316769656567.png
+image: /images/ms30.png
 order: 224
 category: temperature-vibration-sensors
 hidden: false
@@ -14,7 +14,7 @@ hidden: false
 
 # 1 Product Overview
 
-![](/images/products/1780995595698044.png)
+![](/images/ms30.png)
 
 DAQ-LP-TVNB tilt & vibration sensor is an intelligent monitoring device launched by Shanghai DAQ IoT Technology Co., Ltd., specially designed for bridges, viaducts, roads and buildings. It adopts NB-IoT technology and integrates core functions such as vibration monitoring and online warning, enabling real-time monitoring of safety status and timely detection of abnormal events such as damage and collision with alarms triggered, providing round-the-clock, all-dimensional intelligent protection for infrastructure safety.
 
@@ -34,49 +34,49 @@ Fast alarm response: abnormal events are reported in real time, and it supports 
 
 ## 4.1 Basic Parameters
 
-| Parameter category | Specific specification |
-| --- | --- |
-| Ambient temperature | Operating temperature: -40℃ ~ +80℃; storage temperature: -55℃ ~ +85℃ |
-| Relative humidity | 0 ~ 90% RH (at 20℃, non-condensing); 5% ~ 100% RH (operating) |
-| Device dimensions | 55mm × 120mm × 75mm |
-| Device weight | ≤0.5KG |
-| Protection rating | IP67 |
-| Power supply | Primary lithium-thionyl chloride battery (3.6V) |
-| Battery capacity | 6000mAh |
-| Max. continuous discharge current | ≥500mA |
-| Max. pulse discharge current | ≥1000mA |
-| Power consumption level | Whole device ≤50uA; vibration monitoring module ≤10uA; typical current in PSM mode 3.5μA |
+| Parameter category                | Specific specification                                                                   |
+| --------------------------------- | ---------------------------------------------------------------------------------------- |
+| Ambient temperature               | Operating temperature: -40℃ \~ +80℃; storage temperature: -55℃ \~ +85℃                   |
+| Relative humidity                 | 0 \~ 90% RH (at 20℃, non-condensing); 5% \~ 100% RH (operating)                          |
+| Device dimensions                 | 55mm × 120mm × 75mm                                                                      |
+| Device weight                     | ≤0.5KG                                                                                   |
+| Protection rating                 | IP67                                                                                     |
+| Power supply                      | Primary lithium-thionyl chloride battery (3.6V)                                          |
+| Battery capacity                  | 6000mAh                                                                                  |
+| Max. continuous discharge current | ≥500mA                                                                                   |
+| Max. pulse discharge current      | ≥1000mA                                                                                  |
+| Power consumption level           | Whole device ≤50uA; vibration monitoring module ≤10uA; typical current in PSM mode 3.5μA |
 
 ## 4.2 Monitoring Performance Parameters
 
-| Monitoring item | Technical specification |
-| --- | --- |
-| Vibration acceleration range | ±2g |
-| Vibration frequency range | 12.5Hz ~ 6.66KHz |
+| Monitoring item                    | Technical specification                               |
+| ---------------------------------- | ----------------------------------------------------- |
+| Vibration acceleration range       | ±2g                                                   |
+| Vibration frequency range          | 12.5Hz ~ 6.66KHz                                      |
 | Vibration monitoring communication | Interrupt-triggered mode, I2C interface communication |
-| False alarm rate | Below 1% |
+| False alarm rate                   | Below 1%                                              |
 
 ## 4.3 Communication Parameters
 
-| Communication category | Specific specification |
-| --- | --- |
-| Transmission mode | NB-IoT (compliant with the "NB-IoT Industry Application Specification Guide") |
-| Communication band | B1/2*/3/4*/5/8/12*/13*/17*/18*/19*/20/25*/26*/28*/66* |
-| Transmit power | 23±2dBm (max) |
-| Network protocol | MQTT |
-| Serial baud rate | 4800-921600bps (default 115200bps) |
-| USIM interface | eSIM card supported |
-| USB interface | Compliant with USB1.1, max transfer rate 12Mbps |
+| Communication category | Specific specification                                                        |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| Transmission mode      | NB-IoT (compliant with the "NB-IoT Industry Application Specification Guide") |
+| Communication band     | B1/2*/3/4*/5/8/12*/13*/17*/18*/19*/20/25*/26*/28*/66*                         |
+| Transmit power         | 23±2dBm (max)                                                                 |
+| Network protocol       | MQTT                                                                          |
+| Serial baud rate       | 4800-921600bps (default 115200bps)                                            |
+| USIM interface         | eSIM card supported                                                           |
+| USB interface          | Compliant with USB1.1, max transfer rate 12Mbps                               |
 
 ## 4.4 Main Control Parameters
 
-| Main control item | Technical specification |
-| --- | --- |
+| Main control item            | Technical specification            |
+| ---------------------------- | ---------------------------------- |
 | Main control clock frequency | ≥108MHz (independent main control) |
-| Core configuration | ARM® 32-bit Cortex®-M4 |
-| Program storage | 256kB + 64kB |
-| ADC resolution | 12bit |
-| Operating supply voltage | 1.8V ~ 3.63V |
+| Core configuration           | ARM® 32-bit Cortex®-M4             |
+| Program storage              | 256kB + 64kB                       |
+| ADC resolution               | 12bit                              |
+| Operating supply voltage     | 1.8V ~ 3.63V                       |
 
 # 5 Core Functions
 
