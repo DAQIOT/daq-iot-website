@@ -5,7 +5,7 @@ summary: Hall-effect wireless rotation speed monitoring terminal, supporting
   suitable for online speed monitoring of rotating equipment including fans,
   pumps, motors and compressors in power, metallurgy, petrochemical and
   papermaking industries.
-image: /images/products/1739265182586895.png
+image: /images/ms31.png
 order: 216
 category: temperature-vibration-sensors
 hidden: false
@@ -14,11 +14,13 @@ hidden: false
 
 # 1 Product Overview
 
-![](/images/products/1739259985479163.png)
+![](/images/ms31.png)
 
-![](/images/products/1739260335191802.png)
 
-![](/images/products/1739260336678699.png)
+
+![](/images/ms32.png)
+
+![](/images/ms34.png)
 
 SC-GP-RPM4G wireless rotation speed monitor is an instrument launched by Shanghai DAQ IoT Technology Co., Ltd. that measures rotation speed based on the principle of a Hall element sensing a magnetic conductor, processed by internal precision circuits. It can be used to detect the rotation speed of various rotating machines.
 
@@ -26,20 +28,20 @@ Application fields: the SC-GP-RPM4G wireless rotation speed detector can be wide
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Description |
-| --- | --- |
-| DAQ-GP-RPM4G | 4G transmission, conventional 12V DC power supply. Suitable for occasions with convenient power supply and high acquisition frequency. |
-| DAQ-LP-RPM4G | 4G transmission, 3.6V battery power supply, battery life 1~2 years depending on acquisition frequency. Suitable for occasions with low acquisition frequency and inconvenient power supply. |
-| DAQ-GP-RPMLoRa | LoRa transmission, 12V DC power supply |
-| ... | Customized (transmission via RS485, WiFi, Ethernet interface, etc.) |
+| Model          | Description                                                                                                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-GP-RPM4G   | 4G transmission, conventional 12V DC power supply. Suitable for occasions with convenient power supply and high acquisition frequency.                                                      |
+| DAQ-LP-RPM4G   | 4G transmission, 3.6V battery power supply, battery life 1~2 years depending on acquisition frequency. Suitable for occasions with low acquisition frequency and inconvenient power supply. |
+| DAQ-GP-RPMLoRa | LoRa transmission, 12V DC power supply                                                                                                                                                      |
+| ...            | Customized (transmission via RS485, WiFi, Ethernet interface, etc.)                                                                                                                         |
 
 # 4 Product Features & Parameters
 
 ## 4.1 Acquisition Characteristics
 
 Measurement range:
-0~15000 rpm (60 measuring points per revolution)
-0~30000 rpm (30 measuring points per revolution)
+0\~15000 rpm (60 measuring points per revolution)
+0\~30000 rpm (30 measuring points per revolution)
 0~9000000 rpm (1 measuring point per revolution)
 
 Measurement accuracy: 0.5%
@@ -58,7 +60,7 @@ Installation gap: 0.5 ~ 3mm recommended
 
 Installation diagram
 
-![](/images/products/1739260595151891.png)
+![](/images/ms35.png)
 
 ## 4.4 Communication Characteristics
 
@@ -80,29 +82,21 @@ Probe dimensions: M16*1*80mm
 
 ## 4.6 Operating Environment
 
-- Temperature -30°C ~ 75°C, humidity 0 ~ 95%
+* Temperature -30°C \~ 75°C, humidity 0 \~ 95%
 
 # 5 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive acquisition, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive acquisition, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 6 Typical Application Cases
 
-![](/images/products/1739260739614016.png)
-
-![](/images/products/1739260743371824.png)
+![](/images/ms33.png)
 
 # 7 Data Reporting Communication Protocol
 
@@ -162,4 +156,4 @@ Registration code: DGRUa7Vr9KYGunwJ
 
 # 9 Installation Notes
 
-1) The product has a built-in SIM card. The annual data traffic fee is about 10~20 RMB, depending on the reporting frequency. You may also use your own SIM card, which must be confirmed in advance.
+1. The product has a built-in SIM card. The annual data traffic fee is about 10~20 RMB, depending on the reporting frequency. You may also use your own SIM card, which must be confirmed in advance.
