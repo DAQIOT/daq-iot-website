@@ -6,7 +6,7 @@ summary: all-in-one 5MP industrial image recognition camera features polarizing
   room and industrial scenarios.
 image: /images/微信图片_20261027163244_208_133.png
 order: 12
-category: instrument-acquisition
+category: aivision-ocr
 ---
 # 1 Product Overview
 **DAQ-GP-OCR500 All-in-One Image Recognition Camera****** Launched by **Shanghai Data Acquisition IoT Technology Co., Ltd.** , the DAQ-GP-OCR500 is a 5-megapixel industrial-grade intelligent visual acquisition terminal. Integrating high-definition image capture, OCR character recognition, pointer dial identification, intelligent analysis, and wired network transmission, it provides an integrated solution for **non-contact automatic reading, remote monitoring, and anomaly alerting** tailored to scenarios such as **instruments & meters, power distribution cabinets, equipment in computer rooms, and industrial sites**.
