@@ -5,7 +5,7 @@ summary: The Mk30 is a compact DIN-rail single-phase electrical meter that
   power factor for residential, commercial and industrial applications.
 image: /images/products/1781081054381862.jpg
 order: 8
-category: instrument-acquisition
+category: smart-energy-meter
 ---
 The Mk30 is a compact, single-phase electrical meter designed for accurate energy and power monitoring in residential, commercial, and industrial environments. Its DIN rail mounting ensures easy installation, and it supports multiple measurement parameters including active/reactive energy, voltage, current, and power factor.
 
