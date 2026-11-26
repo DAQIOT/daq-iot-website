@@ -1,10 +1,11 @@
 ---
 title: Explosion-proof Timed Snapshot Camera for oil & gas
-summary: >-
-  Core Features & Design
+summary: Industrial camera with timed snapshot, video capture and FTP upload for
+  meter reading recognition and monitoring of cultural relics, geotechnical,
+  hydrological and water conservancy scenarios.
 image: /images/products/1755244811711967.png
 order: 39
-category: wirelesstimingphotography
+category: industrial-cameras
 ---
 1\. Product Overview
 
