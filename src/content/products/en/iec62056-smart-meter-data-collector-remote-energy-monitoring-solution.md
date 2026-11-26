@@ -1,10 +1,11 @@
 ---
 title: IEC62056 Smart Meter Data Collector | Remote Energy Monitoring Solution
-summary: >-
-  SC-LP-IRLoRaWAN
+summary: LoRaWAN wireless infrared meter reading terminal compatible with
+  IEC62056, DL/T645 and other protocols, low power and wiring-free for State
+  Grid meters, gas meter data acquisition and energy consumption monitoring.
 image: /images/products/1780651882140821.png
 order: 22
-category: instrument-acquisition
+category: energy-data-acquisition
 ---
 **IEC62056 Smart Meter Data Collector for Accurate Energy Monitoring**
 
