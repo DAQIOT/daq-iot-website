@@ -1,10 +1,11 @@
 ---
-title: "Low-Power Camera Mainboard"
-summary: >-
-  This mainboard uses an LTE Cat.1 bis communication module and is powered by a 3.6-4.2V lithium battery with a built-in chip antenna. It is mainly intended for battery-powered scenarios in which a camera photographs a dial to read…
-image: "/images/products/1788167858655832.png"
+title: Low-Power Camera Mainboard
+summary: Low-power 4G Cat.1 acquisition mainboard with battery supply,
+  supporting timed and Hall-triggered snapshot upload for remote meter dial
+  reading.
+image: /images/products/1788167858655832.png
 order: 248
-category: "wirelesstimingphotography"
+category: industrial-cameras
 hidden: false
 ---
 **Product Details**
