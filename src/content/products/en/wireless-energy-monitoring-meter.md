@@ -1,10 +1,14 @@
 ---
-title: "Wireless Energy Monitoring Meter"
-summary: >-
-  SC-GP-EM4G wireless energy monitoring meter is an intelligent power parameter monitoring device launched by Shanghai DAQ IoT Technology Co., Ltd., supporting transmission modes such as 4G/WiFi/LoRa. It can monitor the line voltage…
-image: "/images/products/1692863675208107.jpg"
+title: Wireless Energy Monitoring Meter
+summary: Multi-functional wireless power monitoring device supporting
+  4G/WiFi/LoRa transmission. It collects single-phase and three-phase voltage
+  and current, calculates electrical parameters including power, energy and
+  power factor, and supports power-off linkage upon overvoltage and overcurrent,
+  widely used for online power monitoring of environmental protection loads and
+  factory equipment.
+image: /images/products/1692863675208107.jpg
 order: 204
-category: "wirelesssensor"
+category: power-monitoring-devices
 hidden: false
 ---
 **Product Details**
