@@ -3,11 +3,17 @@ title: RS485 & Lora Vibriation Sensor
 summary: RS485 / LoRa vibration sensor measures acceleration, velocity,
   displacement and temperature, IP67 for online condition monitoring of motors,
   fans and pumps.
-image: /images/微信图片_20261022112600_3215_31.png
+image: /images/ms24.png
 order: 11
 category: temperature-vibration-sensors
 ---
 # 1 **Product Overview**
+
+![](/images/ms24.png)
+
+![](/images/ms25.png)
+
+![](/images/ms26.png)
 
 **RS485 vibration sensor：**
 
@@ -92,6 +98,12 @@ Installation method: magnetic attraction or screw hole M10×1.5×10 (deep)
 Transmission distance: ≥300 meters (up to 500 meters or more with an external suction cup antenna, depending on the site)
 
 Transmission mode: Wireless communication via LoRa at 433MHz
+
+![](/images/ms27.png)
+
+![](/images/ms29.jpg)
+
+![](/images/ms28.jpg)
 
 # 4 **communication routine**
 
