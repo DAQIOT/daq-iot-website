@@ -1,9 +1,9 @@
 ---
-title: "Timed Photography Camera"
-summary: "Timed Photography Camera"
-image: "/images/products/1723686919514972.jpg"
+title: Timed Photography Camera
+summary: Timed Photography Camera
+image: /images/products/1723686919514972.jpg
 order: 234
-category: "instrumentation"
+category: industrial-cameras
 hidden: false
 ---
 **Product Details**
