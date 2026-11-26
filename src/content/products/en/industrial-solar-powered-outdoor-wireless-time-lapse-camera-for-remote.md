@@ -1,10 +1,13 @@
 ---
-title: Industrial Solar-Powered Outdoor Wireless Time-Lapse Camera for Remote Monitoring
-summary: >-
-  The Industrial Solar Powered 4G Wireless Time-Lapse Camerais a next-generation remote monitoring solution designed for construction sites, infrastructure projects, solar farms, and other harsh outdoor environments where continuous human inspection is costly and inefficient.
+title: Industrial Solar-Powered Outdoor Wireless Time-Lapse Camera for Remote
+  Monitoring
+summary: The Industrial Solar Powered 4G Wireless Time-Lapse Camerais a
+  next-generation remote monitoring solution designed for construction sites,
+  infrastructure projects, solar farms, and other harsh outdoor environments
+  where continuous human inspection is costly and inefficient.
 image: /images/products/1755244606881004.png
 order: 38
-category: wirelesstimingphotography
+category: industrial-cameras
 ---
 1 Product Overview
 
