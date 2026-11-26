@@ -1,9 +1,9 @@
 ---
-title: "Photo Meter Reader"
-summary: "Photo Meter Reader"
-image: "/images/products/1723528770844667.gif"
+title: Photo Meter Reader
+summary: Photo Meter Reader
+image: /images/products/1723528770844667.gif
 order: 231
-category: "instrumentation"
+category: aivision-ocr
 hidden: false
 ---
 **Product Details**
