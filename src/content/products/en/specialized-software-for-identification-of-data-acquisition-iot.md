@@ -1,10 +1,13 @@
 ---
-title: Specialized Software for Identification of Data Acquisition & IoT Meters/Instruments
-summary: >-
-  Automatically Detect, Configure, and Monitor Your Industrial IoT Devices
+title: Specialized Software for Identification of Data Acquisition & IoT
+  Meters/Instruments
+summary: IoT data‑acquisition software compatible with diverse terminals and
+  mainstream industrial protocols, featuring real‑time monitoring and
+  threshold‑based alarms, capable of integrating with SCADA, EMS and cloud
+  platforms for large‑scale industrial device networking.
 image: /images/products/1755068889938831.jpg
 order: 3
-category: dataacquisitionsoftware
+category: aivision-ocr
 ---
 Click on the link to view the software details
 
