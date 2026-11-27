@@ -1,5 +1,5 @@
 ---
-title: Modbus TCP RJ45 Ethernet Temperature & Humidity Sensor
+title: Modbus TCP RJ45 Ethernet Temperature and Humidity Sensor for BMS and HVAC
 summary: Ethernet temperature and humidity sensor with Modbus TCP, supports MQTT
   and cloud access for industrial and agricultural environmental monitoring.
 image: /images/a6a.jpg
@@ -7,7 +7,9 @@ order: 243
 category: environmental-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Ethernet Temperature and Humidity Sensor; Modbus TCP Temperature and Humidity Sensor Modbus TCP; RJ45 Temperature and Humidity Sensor RJ45; Industrial Temperature and Humidity Sensor; Modbus TCP Humidity Sensor Modbus TCP; Network Temperature and Humidity Sensor; BMS Temperature and Humidity Sensor; HVAC Temperature and Humidity Sensor HVAC; Ethernet Environmental Monitoring Sensor; Modbus TCP Environmental Sensor Modbus TCP
 
 # 1 Product Overview
 
