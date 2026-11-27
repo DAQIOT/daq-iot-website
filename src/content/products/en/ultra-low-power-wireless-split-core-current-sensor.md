@@ -12,7 +12,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**Wireless Split Core Current Sensor; Split Core Current Sensor; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Low Power Wireless Current Sensor; Ultra Low Power Current Sensor; Wireless Current Transformer; LoRa Wireless Current Monitoring Sensor LoRa; NB-IoT Current Monitoring Device NB-IoT; Remote Current Monitoring Sensor**
+Wireless Split Core Current Sensor; Split Core Current Sensor; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Low Power Wireless Current Sensor; Ultra Low Power Current Sensor; Wireless Current Transformer; LoRa Wireless Current Monitoring Sensor LoRa; NB-IoT Current Monitoring Device NB-IoT; Remote Current Monitoring Sensor
 
 # 1 Product Overview
 
