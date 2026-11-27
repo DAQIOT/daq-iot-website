@@ -1,5 +1,6 @@
 ---
-title: Solar-Powered 4G Wireless Radar Level Sensor
+title: Solar-Powered 4G Wireless Radar Level Sensor (79-81GHz FMCW) for Tank
+  Monitoring
 summary: Integrated with solar lithium battery power supply and 4G wireless
   transmission, it adopts millimeter-wave radar for non-contact high-precision
   liquid level collection. It supports cloud platform docking and remote
@@ -11,7 +12,9 @@ order: 225
 category: level-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+80GHz Radar Level Sensor 80GHz; Wireless Radar Level Sensor; 4G Radar Level Sensor 4G; Solar Powered Radar Level Sensor; FMCW Radar Level Sensor FMCW; 79-81GHz Radar Level Sensor 79-81GHz; Non Contact Radar Level Sensor; Wireless Tank Level Sensor; Remote Tank Level Monitoring Sensor; Industrial Radar Level Transmitter
 
 # 1 Product Overview
 
@@ -27,58 +30,41 @@ The terminal has a built-in rechargeable lithium battery and is rainproof for ou
 
 ## 3.1 Acquisition Characteristics
 
-- Acquisition type: liquid level
-
-- Level range: 0 ~ 15m (other ranges customizable)
-
-- Liquid accuracy class: ±2mm
-
-- Acquisition frequency: 15 minutes / time (configurable)
+* Acquisition type: liquid level
+* Level range: 0 ~ 15m (other ranges customizable)
+* Liquid accuracy class: ±2mm
+* Acquisition frequency: 15 minutes / time (configurable)
 
 ## 3.2 Electrical Characteristics
 
-- Solar panel power: 1W
-
-- Operating voltage: DC12V
-
-- Battery capacity: 0.5Ah
+* Solar panel power: 1W
+* Operating voltage: DC12V
+* Battery capacity: 0.5Ah
 
 ## 3.3 Communication Characteristics
 
-- Supports 4G network by default
-
-- WiFi/LoRa and other communication modes customizable
+* Supports 4G network by default
+* WiFi/LoRa and other communication modes customizable
 
 ## 3.4 Structural Characteristics
 
-- Main body dimensions: 174.5mm × 90.60mm × 43mm
-
-- Sensor outer diameter: Ф39.5mm
-
-- Main body protection rating: IP65
-
-- Main body installation: wall-mounted or screw-fixed
-
-- Sensor installation: front/rear panel mounting
+* Main body dimensions: 174.5mm × 90.60mm × 43mm
+* Sensor outer diameter: Ф39.5mm
+* Main body protection rating: IP65
+* Main body installation: wall-mounted or screw-fixed
+* Sensor installation: front/rear panel mounting
 
 ## 3.5 Operating Environment
 
-- Temperature: -20°C ~ 85°C
-
-- Humidity: 0 ~ 95% (non-condensing, no dew)
+* Temperature: -20°C ~ 85°C
+* Humidity: 0 ~ 95% (non-condensing, no dew)
 
 # 4 Core Advantages
 
-- Low power consumption and self-powered, using clean energy for "zero carbon"
-
-- Elegant appearance, waterproof and dustproof, able to operate in various complex field environments
-
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any IoT cloud platform and configuration software, with data protocol integration
-
-- Supports battery voltage acquisition for easy viewing of battery level
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Low power consumption and self-powered, using clean energy for "zero carbon"
+* Elegant appearance, waterproof and dustproof, able to operate in various complex field environments
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any IoT cloud platform and configuration software, with data protocol integration
+* Supports battery voltage acquisition for easy viewing of battery level
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
