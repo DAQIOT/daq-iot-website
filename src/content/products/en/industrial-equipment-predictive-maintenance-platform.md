@@ -1,9 +1,9 @@
 ---
-title: "Industrial Equipment Predictive Maintenance Platform"
-summary: "Figure 1-1 Login screen"
-image: "/images/products/1780904434639071.png"
+title: Industrial Equipment Predictive Maintenance Platform
+summary: Figure 1-1 Login screen
+image: /images/products/1780904434639071.png
 order: 264
-category: "dataacquisitionsoftware"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
