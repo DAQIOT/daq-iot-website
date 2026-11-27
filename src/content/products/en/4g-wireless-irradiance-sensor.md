@@ -7,7 +7,7 @@ summary: Wireless Irradiance Sensor collects solar radiation data based on the
   monitoring, smart agriculture, material aging and other scenarios.
 image: /images/products/1692842082968000.jpg
 order: 211
-category: wirelesssensor
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
