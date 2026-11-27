@@ -5,7 +5,7 @@ summary: PT100 wireless temperature transmitter with up to 8 channels,
   metallurgy, power and chemical industries.
 image: /images/ms20.png
 order: 214
-category: temperature-vibration-sensors
+category: environmental-sensors
 hidden: false
 ---
 # **Keyword:**
