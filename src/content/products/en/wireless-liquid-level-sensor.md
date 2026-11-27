@@ -1,5 +1,5 @@
 ---
-title: Wireless Liquid Level Sensor
+title: Wireless Liquid Level Sensor with 4G, LoRa and MQTT for Tank Monitoring
 summary: Submersible wireless liquid level monitoring terminal measures water
   level based on piezoresistive principle. It supports multiple transmission
   modes including 4G/NB-IoT/LoRa/WiFi, with remote configuration and FOTA
@@ -10,7 +10,9 @@ order: 210
 category: level-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Wireless Liquid Level Sensor; 4G Liquid Level Sensor 4G; LoRa Liquid Level Sensor LoRa; Industrial Liquid Level Sensor; Wireless Tank Level Sensor; Remote Tank Level Monitoring Sensor; MQTT Liquid Level Sensor MQTT; Wireless Tank Monitoring System; 4G Tank Level Monitoring Device 4G; LoRa Wireless Level Monitoring Sensor LoRa**
 
 # 1 Product Overview
 
@@ -20,12 +22,12 @@ DAQ-GP-TLL4G wireless liquid level sensor terminal is a wireless liquid level me
 
 The sensor terminal supports 4G/WiFi/LoRa and other communication modes by default, and supports MQTT, HTTP and other communication methods. It can overcome wireless communication obstruction caused by special on-site environments, greatly simplifying on-site deployment time and reducing construction costs.
 
-| Model | Description |
-| --- | --- |
-| DAQ-GP-TLL4G | 4G communication, 12~36V DC power supply |
-| DAQ-GP-TLLWiFi | WiFi transmission |
-| DAQ-GP-TLLLoRa | LoRa transmission |
-| SDAQ-GP-TLLNB | NB transmission (customized, battery-powered) |
+| Model          | Description                                   |
+| -------------- | --------------------------------------------- |
+| DAQ-GP-TLL4G   | 4G communication, 12~36V DC power supply      |
+| DAQ-GP-TLLWiFi | WiFi transmission                             |
+| DAQ-GP-TLLLoRa | LoRa transmission                             |
+| SDAQ-GP-TLLNB  | NB transmission (customized, battery-powered) |
 
 # 3 Product Features
 
@@ -73,21 +75,16 @@ Probe installation: submersible type
 
 ## 3.5 Operating Environment
 
-Ambient temperature -20°C ~ 85°C, humidity 0 ~ 95% (non-condensing, no dew)
+Ambient temperature -20°C \~ 85°C, humidity 0 \~ 95% (non-condensing, no dew)
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- The probe is waterproof, dust-proof and anti-clogging
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* The probe is waterproof, dust-proof and anti-clogging
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any private IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
