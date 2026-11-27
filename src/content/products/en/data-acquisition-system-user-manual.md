@@ -4,7 +4,7 @@ summary: Industrial Data Acquisition System Solution | Real-Time IIoT Data
   Logging, SCADA Integration & Remote Monitoring Platform
 image: /images/products/1755140656339119.jpg
 order: 6
-category: data-acquisition-terminals
+category: industrial-iot-platform
 ---
 # 1 **System Overview**
 
