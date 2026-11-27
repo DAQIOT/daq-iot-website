@@ -1,5 +1,5 @@
 ---
-title: Ultra-Low-Power Wireless Split-Core Current Sensor
+title: Ultra-Low-Power Wireless Split-Core Current Sensor with LoRa and NB-IoT
 summary: Micro-power battery-powered, paired with split-core current
   transformers for non-invasive AC current acquisition. It supports
   NB-IoT/LoRa/GPRS wireless transmission and data reporting by cycle or current
@@ -10,7 +10,9 @@ order: 205
 category: current-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Wireless Split Core Current Sensor; Split Core Current Sensor; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Low Power Wireless Current Sensor; Ultra Low Power Current Sensor; Wireless Current Transformer; LoRa Wireless Current Monitoring Sensor LoRa; NB-IoT Current Monitoring Device NB-IoT; Remote Current Monitoring Sensor**
 
 # 1 Product Overview
 
@@ -86,7 +88,7 @@ Transformer probe installation: hanging installation
 
 ## 4.5 Operating Environment
 
-Temperature -25°C ~ 75°C, humidity 0 ~ 95% (non-condensing)
+Temperature -25°C \~ 75°C, humidity 0 \~ 95% (non-condensing)
 
 # 5 Ultra-Low-Power Working Mode
 
@@ -96,17 +98,12 @@ Daily power consumption calculation: the daily working states are divided into s
 
 # 6 Core Advantages
 
-- Built-in battery, no wiring required
-
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports any IoT cloud platform, with data integration
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- Fully sealed waterproof and moisture-proof design, meeting the needs of harsh environments
-
-- Supports remote configuration, minimizing on-site maintenance costs
+* Built-in battery, no wiring required
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports any IoT cloud platform, with data integration
+* Non-invasive measurement, without affecting the normal operation of equipment
+* Fully sealed waterproof and moisture-proof design, meeting the needs of harsh environments
+* Supports remote configuration, minimizing on-site maintenance costs
 
 # 7 Data Reporting Communication Protocol
 
