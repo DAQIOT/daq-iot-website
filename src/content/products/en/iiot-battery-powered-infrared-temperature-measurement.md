@@ -1,5 +1,5 @@
 ---
-title: IIOT Battery-Powered Infrared Temperature Measurement
+title: Battery-Powered Wireless Infrared Temperature Sensor with LoRaWAN
 summary: LoRaWAN low-power infrared temperature sensor, non-contact measurement,
   battery powered and IP65 rated for remote temperature monitoring of power and
   industrial equipment.
@@ -7,6 +7,10 @@ image: /images/products/1780891030821962.png
 order: 35
 category: temperature-vibration-sensors
 ---
+# Keyword:
+
+Wireless Infrared Temperature Sensor; Battery Powered Temperature Sensor; LoRaWAN Temperature Sensor; Wireless Infrared Temperature Monitor; Industrial Infrared Temperature Sensor; Battery Powered Wireless Temperature Sensor; Non-Contact Infrared Temperature Sensor; LoRaWAN Infrared Temperature Sensor LoRaWAN; Remote Temperature Monitoring Sensor; Wireless Industrial Temperature Monitoring
+
 # 1 **Product Introduction**
 
 DAQ - LP - IRT LoRaWAN low-power wireless infrared temperature sensor is a wireless infrared temperature measurement product for the industrial field launched by Shanghai Shucai IoT Technology Co., Ltd. This product can calculate the surface temperature of an object by receiving the infrared radiation intensity emitted by the target without contacting the target , and report the data regularly through LoRaWAN and other methods. Non-contact acquisition is the biggest advantage of infrared temperature measurement, allowing users to easily measure targets that are difficult to approach or move. As a new generation of temperature measurement data cloud product, it can widely adapt to various industrial scene requirements.
@@ -38,7 +42,7 @@ Free IoT solution consulting services!
 
 # 3 **Product Features**
 
-## 3.1 **Infrared\*\***temperature***\*acquisition characteristics**
+## 3.1 **Infrared\*\***temperature**\*\*acquisition characteristics**
 
 Collection type: non-contact temperature measurement
 
@@ -50,7 +54,7 @@ Measurement error: ±1.5% of measured value or ±2.5°C whichever is greater
 
 Collection frequency: once every 12 hours by default, supports remote configuration
 
-## 3.2 **PT100\*\***temperature***\*acquisition characteristics**
+## 3.2 **PT100\*\***temperature**\*\*acquisition characteristics**
 
 Acquisition type: pt100 temperature probe temperature measurement
 
