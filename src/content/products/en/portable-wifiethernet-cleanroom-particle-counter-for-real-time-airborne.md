@@ -1,10 +1,12 @@
 ---
-title: Portable WiFi/Ethernet Cleanroom Particle Counter for Real-time Airborne Particle Monitoring
-summary: >-
-  DAQ-GP-CL
+title: Portable WiFi/Ethernet Cleanroom Particle Counter for Real-time Airborne
+  Particle Monitoring
+summary: Multi-function cleanliness monitor with LoRa/LoRaWAN/WiFi/RJ45 output,
+  measuring particle count, temperature, humidity, dew point and wind data for
+  pharmaceutical and semiconductor cleanroom air quality monitoring.
 image: /images/products/1780565101321474.png
 order: 34
-category: wirelesssensor
+category: environmental-sensors
 ---
 # 1 **Product overview******
 
