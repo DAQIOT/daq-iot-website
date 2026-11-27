@@ -1,5 +1,5 @@
 ---
-title: Solar-Powered 4G Smart Data Acquisition Terminal
+title: Solar-Powered 4G RTU Data Acquisition Terminal with RS485, Analog I/O and MQTT
 summary: Industrial 4G Cat1 RTU with solar and lithium battery power supply,
   integrated analog, dry contact and RS485 acquisition as well as valve drive,
   supports encrypted cloud upload for remote monitoring of off-grid sites such
@@ -9,7 +9,9 @@ order: 220
 category: data-acquisition-terminals
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+4G RTU Data Acquisition Terminal 4G RTU; Solar Powered RTU RTU; Wireless RTU Data Logger RTU; 4G Remote Terminal Unit 4G; RS485 Data Acquisition Module RS485; Industrial Remote Data Acquisition Device; MQTT Data Acquisition Gateway MQTT; 4G Wireless Data Acquisition Terminal 4G; Analog I/O Data Acquisition Module; Solar Powered Remote Monitoring System
 
 ## 1 Product Overview
 
