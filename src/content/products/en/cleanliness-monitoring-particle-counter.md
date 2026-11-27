@@ -1,10 +1,11 @@
 ---
-title: "Cleanliness Monitoring Instrument - Particle Counter"
-summary: >-
-  DAQ-GP-CL4G cleanliness monitoring terminal is a multi-function particle counter based on 4G wireless transmission, launched by Shanghai DAQ IoT Technology Co., Ltd. It draws an air sample through a built-in air pump, and a built-…
-image: "/images/products/1739264797908525.png"
+title: Cleanliness Monitoring Instrument - Particle Counter
+summary: Multi-function cleanliness monitor with 4G/WiFi/RJ45 connectivity for
+  particle count, temperature, humidity, dew point and differential pressure
+  monitoring in pharmaceutical and semiconductor cleanrooms.
+image: /images/products/1739264797908525.png
 order: 217
-category: "wirelesssensor"
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
