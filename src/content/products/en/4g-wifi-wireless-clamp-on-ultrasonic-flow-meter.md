@@ -1,5 +1,5 @@
 ---
-title: 4G/WiFi Wireless Clamp-On Ultrasonic Flow Meter
+title: Clamp-On Ultrasonic Flow Meter with 4G, WiFi and Modbus RTU
 summary: Clamp-on Ultrasonic Heat Meter adopts non-intrusive measurement,
   requires no pipe cutting for fast installation, supports multi-network cloud
   access and remote parameter commissioning. It is widely used for flow and heat
@@ -10,7 +10,9 @@ order: 215
 category: flow-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Clamp On Ultrasonic Flow Meter; Portable Ultrasonic Flow Meter; Non Invasive Ultrasonic Flow Meter; 4G Ultrasonic Flow Meter 4G; Wireless Ultrasonic Flow Meter; Modbus Ultrasonic Flow Meter Modbus; WiFi Ultrasonic Flow Meter WiFi; Clamp On Water Flow Meter; Industrial Ultrasonic Flow Meter; Remote Flow Monitoring Meter
 
 # 1 Product Overview
 
@@ -24,83 +26,61 @@ The wireless clamp-on ultrasonic flow / heat meter supports 4G/WiFi/LoRa communi
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Transmission | Description |
-| --- | --- | --- |
-| DAQ-GP-UF4G | 4G wireless | 4G communication, 9-36V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging. |
-| DAQ-GP-UFLoRa | LoRa wireless | LoRa communication |
-| DAQ-GP-UFWiFi | WiFi wireless | WiFi communication |
+| Model         | Transmission  | Description                                                                                                                                                                                                                                             |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-GP-UF4G   | 4G wireless   | 4G communication, 9-36V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging. |
+| DAQ-GP-UFLoRa | LoRa wireless | LoRa communication                                                                                                                                                                                                                                      |
+| DAQ-GP-UFWiFi | WiFi wireless | WiFi communication                                                                                                                                                                                                                                      |
 
 # 4 Product Features & Parameters
 
 ## 4.1 Acquisition Characteristics
 
-- Measurement range: DN15~6000 (pipe diameter)
-
-- Measured medium: single, uniform liquids that can conduct ultrasound such as water, seawater, industrial sewage, acid/alkali liquids, alcohol, beer and various oils
-
-- Accuracy: ±1%
-
-- Display: 2×20 character LCD
+* Measurement range: DN15~6000 (pipe diameter)
+* Measured medium: single, uniform liquids that can conduct ultrasound such as water, seawater, industrial sewage, acid/alkali liquids, alcohol, beer and various oils
+* Accuracy: ±1%
+* Display: 2×20 character LCD
 
 ## 4.2 Electrical Characteristics
 
-- Power supply: 9-36V DC / 220V AC
-
-- Operating power consumption: 1~2W
+* Power supply: 9-36V DC / 220V AC
+* Operating power consumption: 1~2W
 
 ## 4.3 Communication Characteristics
 
-- Wireless transmission mode: GPRS / NB-IoT / LoRa / WiFi
-
-- Communication protocol: MQTT / TCP / UDP / HTTP / SSL / Modbus RTU; other protocols customizable
-
-- Data forwarding: any public network server
-
-- Number of server centers: supports reporting data to up to 7 cloud servers simultaneously
-
-- Heartbeat packet: supports custom heartbeat packets, which can be set to the signal strength
-
-- Registration packet: supports custom registration packets, which can be set to the IMEI code
-
-- Positioning: supports LBS base station positioning, making it easy to query device location
-
-- Signal output: 1 channel 4~20mA current output, impedance 0~1K; 1 channel OCT pulse output (default pulse width 200ms); 1 channel relay output
+* Wireless transmission mode: GPRS / NB-IoT / LoRa / WiFi
+* Communication protocol: MQTT / TCP / UDP / HTTP / SSL / Modbus RTU; other protocols customizable
+* Data forwarding: any public network server
+* Number of server centers: supports reporting data to up to 7 cloud servers simultaneously
+* Heartbeat packet: supports custom heartbeat packets, which can be set to the signal strength
+* Registration packet: supports custom registration packets, which can be set to the IMEI code
+* Positioning: supports LBS base station positioning, making it easy to query device location
+* Signal output: 1 channel 4\~20mA current output, impedance 0\~1K; 1 channel OCT pulse output (default pulse width 200ms); 1 channel relay output
 
 ## 4.4 Structural Characteristics
 
 Ultrasonic flow meter = main unit + ultrasonic sensor. Ultrasonic heat meter = main unit + ultrasonic sensor + temperature sensor.
 
-- Antenna type: external suction-cup antenna
-
-- Material: premium aluminum alloy housing
-
-- Main body protection rating: IP65
-
-- Sensor protection rating: IP68
-
-- Main body installation: wall-mounted
+* Antenna type: external suction-cup antenna
+* Material: premium aluminum alloy housing
+* Main body protection rating: IP65
+* Sensor protection rating: IP68
+* Main body installation: wall-mounted
 
 ## 4.5 Operating Environment
 
-- Temperature: main unit -20°C ~ +60°C; flow sensor -30°C ~ +160°C
-
-- Humidity: main unit 85% RH; flow sensor can work immersed in water, depth < 2m (after the sensor is potted)
+* Temperature: main unit -20°C \~ +60°C; flow sensor -30°C \~ +160°C
+* Humidity: main unit 85% RH; flow sensor can work immersed in water, depth < 2m (after the sensor is potted)
 
 # 5 Core Advantages
 
-- Simple and flexible installation, rapid deployment; the sensor can be pipe-section, insertion or clamp-on mounted
-
-- The probe attaches to the outer pipe wall, requiring no pipe cutting or flow stoppage
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Non-invasive acquisition, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple and flexible installation, rapid deployment; the sensor can be pipe-section, insertion or clamp-on mounted
+* The probe attaches to the outer pipe wall, requiring no pipe cutting or flow stoppage
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Non-invasive acquisition, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 6 Data Reporting Communication Protocol
 
