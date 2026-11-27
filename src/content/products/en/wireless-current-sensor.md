@@ -1,5 +1,5 @@
 ---
-title: Wireless Current Sensor
+title: Wireless Current & Temperature Sensor with RS485, LoRa and NB-IoT
 summary: Split-core wireless current and temperature acquisition terminal,
   non-invasive live installation. It supports CT energy harvesting and low-power
   battery power supply with multiple communication options, for online
@@ -10,7 +10,9 @@ order: 206
 category: current-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Wireless Current Sensor; Current Temperature Sensor; RS485 Current Sensor RS485; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Wireless Current Monitoring Sensor; Industrial Current Temperature Sensor; RS485 Current Monitoring Sensor RS485; LoRa Wireless Current Monitoring LoRa; Remote Current and Temperature Monitoring**
 
 # 1 Product Overview
 
@@ -110,21 +112,16 @@ Power-frequency magnetic field immunity test — Standard: GB/T 17626.8; IEC 610
 
 ## 3.8 Operating Environment
 
-Ambient temperature -25°C ~ 75°C, humidity 0 ~ 95% (non-condensing)
+Ambient temperature -25°C \~ 75°C, humidity 0 \~ 95% (non-condensing)
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports live-line lossless installation; user equipment does not need to be powered down during installation
-
-- The gateway supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- The gateway supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- The gateway supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports live-line lossless installation; user equipment does not need to be powered down during installation
+* The gateway supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* The gateway supports any private IoT cloud platform and configuration software, with data protocol integration
+* Non-invasive measurement, without affecting the normal operation of equipment
+* The gateway supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
@@ -184,12 +181,12 @@ Note: when the measured current is greater than the starting current of 1A, the 
 
 The sensor provides one indicator light, which flashes during wireless communication.
 
-| Possible problem | Possible cause | Possible solution |
-| --- | --- | --- |
-| Indicator does not flash after power-on | Insufficient battery power | Check whether the button battery has power; when powered by battery only, it takes 180 seconds for the indicator to flash |
-| | Measured current less than starting current | Check whether the measured current is greater than the starting current |
-| Inaccurate or zero measurement after applying signal | Incorrect temperature measurement | Check whether the temperature sensor is in close contact with the measured cable; check whether the temperature measurement signal is within the device's measurement range |
-| | Inaccurate current measurement | Check whether the transformer clip is fastened; check whether the current measurement signal is within the device's measurement range |
-| | Incorrect energized status | The live-detection electrode plate is too far from the measured cable; check whether the measured cable is energized; check whether the electrode plate is in contact with the cable |
-| Sensor cannot communicate with the receiving device | Incorrect communication parameters | Check whether the communication address is correct |
-| | Communication link affected | Check whether the signals on both the transmitting and receiving sides are shielded by metal; check whether the distance between the transmitting and receiving sides is too far |
+| Possible problem                                     | Possible cause                              | Possible solution                                                                                                                                                                    |
+| ---------------------------------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Indicator does not flash after power-on              | Insufficient battery power                  | Check whether the button battery has power; when powered by battery only, it takes 180 seconds for the indicator to flash                                                            |
+|                                                      | Measured current less than starting current | Check whether the measured current is greater than the starting current                                                                                                              |
+| Inaccurate or zero measurement after applying signal | Incorrect temperature measurement           | Check whether the temperature sensor is in close contact with the measured cable; check whether the temperature measurement signal is within the device's measurement range          |
+|                                                      | Inaccurate current measurement              | Check whether the transformer clip is fastened; check whether the current measurement signal is within the device's measurement range                                                |
+|                                                      | Incorrect energized status                  | The live-detection electrode plate is too far from the measured cable; check whether the measured cable is energized; check whether the electrode plate is in contact with the cable |
+| Sensor cannot communicate with the receiving device  | Incorrect communication parameters          | Check whether the communication address is correct                                                                                                                                   |
+|                                                      | Communication link affected                 | Check whether the signals on both the transmitting and receiving sides are shielded by metal; check whether the distance between the transmitting and receiving sides is too far     |
