@@ -1,5 +1,6 @@
 ---
-title: RS485 & Lora Vibriation Sensor
+title: Industrial Vibration & Temperature Sensor with RS485 Modbus and LoRa for
+  Motor Monitoring
 summary: RS485 / LoRa vibration sensor measures acceleration, velocity,
   displacement and temperature, IP67 for online condition monitoring of motors,
   fans and pumps.
@@ -7,6 +8,10 @@ image: /images/ms24.png
 order: 11
 category: temperature-vibration-sensors
 ---
+# Keyword:
+
+Industrial Vibration Sensor; Vibration Temperature Sensor; Wireless Vibration Sensor; Motor Vibration Sensor; RS485 Vibration Sensor RS485; Modbus Vibration Sensor Modbus; LoRa Vibration Sensor; Industrial Vibration Monitoring Sensor; Motor Vibration and Temperature Monitoring; Industrial Condition Monitoring Sensor
+
 # 1 **Product Overview**
 
 ![](/images/ms24.png)
