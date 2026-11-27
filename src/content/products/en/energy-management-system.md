@@ -1,9 +1,9 @@
 ---
-title: "Energy Management System"
-summary: "System Brief Introduction"
-image: "/images/products/1741850953375132.jpg"
+title: Energy Management System
+summary: System Brief Introduction
+image: /images/products/1741850953375132.jpg
 order: 260
-category: "dataacquisitionsoftware"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
