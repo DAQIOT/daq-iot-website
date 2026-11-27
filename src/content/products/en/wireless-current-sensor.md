@@ -12,7 +12,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**Wireless Current Sensor; Current Temperature Sensor; RS485 Current Sensor RS485; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Wireless Current Monitoring Sensor; Industrial Current Temperature Sensor; RS485 Current Monitoring Sensor RS485; LoRa Wireless Current Monitoring LoRa; Remote Current and Temperature Monitoring**
+Wireless Current Sensor; Current Temperature Sensor; RS485 Current Sensor RS485; LoRa Current Sensor LoRa; NB-IoT Current Sensor NB-IoT; Wireless Current Monitoring Sensor; Industrial Current Temperature Sensor; RS485 Current Monitoring Sensor RS485; LoRa Wireless Current Monitoring LoRa; Remote Current and Temperature Monitoring
 
 # 1 Product Overview
 
