@@ -6,7 +6,7 @@ summary: Solar powered wireless sensors for outdoor monitoring of liquid level,
   transmission, and reliable performance in harsh environments.
 image: /images/products/1755068622395710.png
 order: 26
-category: environmental-sensors
+category: data-acquisition-terminals
 ---
 # 1 **Product Overview**
 
