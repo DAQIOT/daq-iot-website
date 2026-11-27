@@ -7,7 +7,7 @@ summary: Self-powered by solar lithium battery, it adopts fluorescence method to
   pharmaceutical industries.
 image: /images/products/1783331287352994.png
 order: 223
-category: water-quality-sensors
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
