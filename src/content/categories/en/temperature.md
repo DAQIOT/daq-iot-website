@@ -1,8 +1,8 @@
 ---
 lang: en
-slug: temperature-vibration-sensors
+slug: condition-monitoring-sensors
 order: 0
 parent: wirelesssensor
-path: Wireless Sensors / Temperature & Vibration Sensors
-name: Temperature & Vibration Sensors
+path: Wireless Sensors / Condition Monitoring Sensors
+name: Condition Monitoring Sensors
 ---
