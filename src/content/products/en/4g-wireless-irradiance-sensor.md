@@ -12,7 +12,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**Solar Irradiance Sensor; Wireless Solar Irradiance Sensor; 4G Solar Irradiance Sensor 4G; RS485 Solar Irradiance Sensor RS485; Modbus Solar Irradiance Sensor Modbus; PV Monitoring Sensor; Solar Radiation Sensor; Remote Solar Irradiance Monitoring; Solar Power Monitoring Sensor; Photovoltaic Monitoring Sensor**
+Solar Irradiance Sensor; Wireless Solar Irradiance Sensor; 4G Solar Irradiance Sensor 4G; RS485 Solar Irradiance Sensor RS485; Modbus Solar Irradiance Sensor Modbus; PV Monitoring Sensor; Solar Radiation Sensor; Remote Solar Irradiance Monitoring; Solar Power Monitoring Sensor; Photovoltaic Monitoring Sensor
 
 # 1 Product Overview
 
