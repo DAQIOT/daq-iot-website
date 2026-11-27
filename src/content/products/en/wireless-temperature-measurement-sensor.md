@@ -1,5 +1,5 @@
 ---
-title: Wireless Temperature Measurement Sensor
+title: Wireless PT100 Industrial Temperature Sensor with LoRa and NB-IoT
 summary: PT100 wireless temperature transmitter with up to 8 channels,
   4G/NB-IoT/LoRa, high precision for industrial temperature monitoring in
   metallurgy, power and chemical industries.
@@ -8,7 +8,9 @@ order: 214
 category: temperature-vibration-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Wireless PT100 Temperature Sensor PT100; Industrial PT100 Temperature Sensor PT100; LoRa PT100 Temperature Sensor LoRa PT100; NB-IoT PT100 Temperature Sensor NB-IoT PT100; Wireless Industrial Temperature Sensor; PT100 RTD Temperature Sensor PT100; Remote PT100 Temperature Monitoring PT100; LoRa Wireless Temperature Sensor LoRa; NB-IoT Wireless Temperature Sensor NB-IoT; Industrial Wireless Temperature Monitoring
 
 # 1 Product Overview
 
