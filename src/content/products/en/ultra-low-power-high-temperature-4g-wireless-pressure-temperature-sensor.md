@@ -13,7 +13,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**Wireless Pressure and Temperature Sensor; High Temperature Pressure Sensor; Wireless Pressure Sensor; 4G Pressure Sensor 4G; LoRaWAN Pressure Sensor LoRaWAN; Industrial Pressure and Temperature Sensor; High Temperature Pressure Transmitter; Wireless Temperature Monitoring Sensor; Remote Pressure Monitoring Sensor; LoRaWAN Temperature and Pressure Monitoring LoRaWAN**
+Wireless Pressure and Temperature Sensor; High Temperature Pressure Sensor; Wireless Pressure Sensor; 4G Pressure Sensor 4G; LoRaWAN Pressure Sensor LoRaWAN; Industrial Pressure and Temperature Sensor; High Temperature Pressure Transmitter; Wireless Temperature Monitoring Sensor; Remote Pressure Monitoring Sensor; LoRaWAN Temperature and Pressure Monitoring LoRaWAN
 
 # 1 Product Overview
 
