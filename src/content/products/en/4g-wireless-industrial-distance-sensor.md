@@ -1,5 +1,6 @@
 ---
-title: 4G Wireless Industrial Distance Measurement Sensor
+title: 4G Wireless Industrial Distance Sensor with LoRa and NB-IoT for Position
+  Monitoring
 summary: Industrial TOF Wireless Ranging Terminal, featuring single-point radar
   non-intrusive distance measurement, supports cloud access over
   4G/NB-IoT/LoRa/WiFi, remote operation and maintenance, for online monitoring
@@ -9,7 +10,9 @@ order: 222
 category: distance-position-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Wireless Distance Sensor; Industrial Distance Sensor; 4G Distance Sensor 4G; LoRa Distance Sensor LoRa; NB-IoT Distance Sensor NB-IoT; Wireless Position Sensor; Industrial Position Monitoring Sensor; Remote Distance Monitoring Sensor; Wireless Displacement Sensor; Industrial Displacement Monitoring Sensor
 
 # 1 Product Overview
 
@@ -21,10 +24,10 @@ SC-GP-TF4G wireless industrial distance measurement transmitter terminal is a wi
 
 The sensor terminal supports GPRS/4G/NB-IoT/LoRa/WiFi communication (external power supply defaults to 4G; battery power defaults to NB-IoT/LoRa), overcoming wireless communication obstruction caused by special on-site environments, greatly simplifying on-site deployment time and reducing construction costs. This terminal supports 12V voltage input with reverse connection protection, high measurement accuracy and easy installation.
 
-| Model | Description |
-| --- | --- |
-| SC-LP-TFNB / SC-LP-TFLoRa | NB-IoT/LoRa communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply. |
-| SC-GP-TF4G | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
+| Model                     | Description                                                                                                                                                                                                                                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SC-LP-TFNB / SC-LP-TFLoRa | NB-IoT/LoRa communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                  |
+| SC-GP-TF4G                | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
 
 # 3 Product Features
 
@@ -32,9 +35,9 @@ The sensor terminal supports GPRS/4G/NB-IoT/LoRa/WiFi communication (external po
 
 Acquisition type: single-point ranging radar
 
-Measurement range: 0.1~40m @ 90% reflectivity; 0.1~13.5m @ 10% reflectivity; 0.1~40m @ 90% reflectivity (100Klux); 0.1~13.5m @ 10% reflectivity (100Klux)
+Measurement range: 0.1\~40m @ 90% reflectivity; 0.1\~13.5m @ 10% reflectivity; 0.1\~40m @ 90% reflectivity (100Klux); 0.1\~13.5m @ 10% reflectivity (100Klux)
 
-Measurement error: ±5cm (0.1~5m), ±1% (5~40m)
+Measurement error: ±5cm (0.1\~5m), ±1% (5\~40m)
 
 Acquisition frequency: 1 second ~ 24 hours, remotely configurable
 
@@ -88,19 +91,13 @@ Ambient temperature -20°C ~ 60°C
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any private IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive measurement, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
