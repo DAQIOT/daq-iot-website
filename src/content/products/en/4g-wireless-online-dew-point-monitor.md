@@ -1,10 +1,12 @@
 ---
-title: "4G Wireless Online Dew Point Monitor"
-summary: >-
-  SC-GP-DP4G wireless online dew point monitor is an industrial-grade, compact and portable online dew point transmitter launched by Shanghai DAQ IoT Technology Co., Ltd., providing fast, stable and repeatable temperature measuremen…
-image: "/images/products/1783317435726635.png"
+title: 4G Wireless Online Dew Point Monitor
+summary: Industrial-grade online dew point transmitter with multi-communication
+  transmission and high-precision gas monitoring. It measures dew point
+  temperature and is suitable for humidity control applications such as
+  compressed air, glove boxes, semiconductors, and drying equipment.
+image: /images/products/1783317435726635.png
 order: 221
-category: "wirelesssensor"
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
