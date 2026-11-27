@@ -6,7 +6,7 @@ summary: RS485 / LoRa vibration sensor measures acceleration, velocity,
   fans and pumps.
 image: /images/ms24.png
 order: 11
-category: temperature-vibration-sensors
+category: condition-monitoring-sensors
 ---
 # Keyword:
 
