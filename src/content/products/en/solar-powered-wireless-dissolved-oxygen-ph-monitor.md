@@ -1,5 +1,6 @@
 ---
-title: Solar-Powered Wireless Dissolved Oxygen & pH Remote Monitor
+title: Solar-Powered Wireless Dissolved Oxygen and pH Monitor with 4G for Water
+  Quality
 summary: Self-powered by solar lithium battery, it adopts fluorescence method to
   detect dissolved oxygen, pH and water temperature. It supports 4G/LoRa/WiFi
   wireless upload, suitable for remote water quality monitoring in off-grid
@@ -10,7 +11,9 @@ order: 223
 category: water-quality-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Dissolved Oxygen Sensor; Wireless Dissolved Oxygen Sensor; Water Quality Monitoring Sensor; 4G Dissolved Oxygen Sensor 4G; pH and Dissolved Oxygen Monitor pH; Wireless pH Sensor pH; Solar Powered Water Quality Monitor; 4G Water Quality Monitoring System 4G; Remote Dissolved Oxygen Monitoring; Solar Powered Water Quality Sensor
 
 # 1 Product Overview
 
@@ -24,14 +27,14 @@ The product has a built-in rechargeable lithium battery, is rainproof for outdoo
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Description |
-| --- | --- |
-| DAQ-SP-TLL4G | Solar-powered 4G wireless liquid level sensor |
-| DAQ-SP-LR4G | Solar-powered 4G wireless irradiance meter |
-| DAQ-SP-IL4G | Solar-powered 4G wireless tilt sensor |
+| Model        | Description                                              |
+| ------------ | -------------------------------------------------------- |
+| DAQ-SP-TLL4G | Solar-powered 4G wireless liquid level sensor            |
+| DAQ-SP-LR4G  | Solar-powered 4G wireless irradiance meter               |
+| DAQ-SP-IL4G  | Solar-powered 4G wireless tilt sensor                    |
 | DAQ-SP-WSD4G | Solar-powered 4G wireless wind speed & direction monitor |
-| DAQ-SP-IR4G | Solar-powered 4G wireless infrared meter reader |
-| ... | Other customized sensors |
+| DAQ-SP-IR4G  | Solar-powered 4G wireless infrared meter reader          |
+| ...          | Other customized sensors                                 |
 
 # 4 Product Features & Parameters
 
