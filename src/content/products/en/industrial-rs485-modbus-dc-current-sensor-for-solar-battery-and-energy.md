@@ -1,5 +1,5 @@
 ---
-title: Industrial RS485 Modbus DC Current Sensor for Solar Battery and Energy
+title: Industrial RS485 Modbus DC Current Sensor for Solar and Battery Energy
   Monitoring
 summary: RS485 Modbus DC Current Sensor for precise and non-intrusive DC current
   monitoring. Ideal for solar energy, battery storage, energy management, and
@@ -11,6 +11,10 @@ image: /images/products/1780563677552065.png
 order: 33
 category: current-sensors
 ---
+# Keyword:
+
+DC Current Sensor; Industrial DC Current Sensor; RS485 DC Current Sensor; Modbus DC Current Sensor; DC Current Transducer; Solar DC Current Sensor; Battery Current Sensor; DC Current Monitoring Sensor; Solar Energy Monitoring Sensor; Battery Energy Monitoring System
+
 # 1 **Product Overview**
 
 ### DAQ-GP-DCHS485 transmitter and acquisition device is an industrial-grade compact, portable, fast, stable, and high-precision DC intelligent power transmitter launched by Shanghai Shucai Internet of Things Technology Co., Ltd.
