@@ -1,10 +1,12 @@
 ---
 title: LoraWan Wireless Dew Point Transmitter
-summary: >-
-  ⚙️ Product Advantages – Dew point transmitter/meter
+summary: Industrial-grade wireless dew point monitor delivers high-precision dew
+  point, temperature and humidity measurement with multi-communication options
+  for humidity control of compressed air, glove boxes, semiconductors and drying
+  processes.
 image: /images/products/1780562922271143.png
 order: 32
-category: wirelesssensor
+category: environmental-sensors
 ---
 # 1 **Product Overview**
 
