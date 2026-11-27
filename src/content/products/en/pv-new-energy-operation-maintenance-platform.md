@@ -1,10 +1,12 @@
 ---
-title: "PV New Energy Operation & Maintenance Management Platform"
-summary: >-
-  PV New Energy Operation & Maintenance Management Platform is a software platform for the operation and maintenance management of photovoltaic power plants. It provides centralized monitoring of generation data, device status, alar…
-image: "/images/products/1743476961941204.jpg"
+title: PV New Energy Operation & Maintenance Management Platform
+summary: PV New Energy Operation & Maintenance Management Platform is a software
+  platform for the operation and maintenance management of photovoltaic power
+  plants. It provides centralized monitoring of generation data, device status,
+  alar…
+image: /images/products/1743476961941204.jpg
 order: 261
-category: "dataacquisitionsoftware"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
