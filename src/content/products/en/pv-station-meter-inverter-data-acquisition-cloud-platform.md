@@ -1,9 +1,10 @@
 ---
-title: "PV Power Station Grid-Connected Energy Data Acquisition - Meters & Inverters to Cloud Platform"
-summary: "Overall Data Acquisition Solution for PV Power Station Project Monitoring & O&M"
-image: "/images/products/1695884741452307.jpg"
+title: PV Power Station Grid-Connected Energy Data Acquisition - Meters &
+  Inverters to Cloud Platform
+summary: Overall Data Acquisition Solution for PV Power Station Project Monitoring & O&M
+image: /images/products/1695884741452307.jpg
 order: 230
-category: "instrument-acquisition"
+category: industrial-iot-platform
 hidden: false
 ---
 **Product Details**
