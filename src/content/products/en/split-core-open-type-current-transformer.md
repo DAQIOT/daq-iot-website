@@ -5,7 +5,7 @@ summary: Split-core digital current transformer converts AC current into RS485
   PLCs, gateways and other devices, and used for electromechanical, HVAC,
   building automation, rural power grid renovation and equipment OEE monitoring
   scenarios.
-image: /images/products/1692862738898923.jpg
+image: /images/ms40.png
 order: 203
 category: current-sensors
 hidden: false
@@ -20,7 +20,9 @@ DAQ-GP-CT485 open-type current transformer is a current sensor (transformer) lau
 
 This product is widely used for current monitoring and acquisition in scenarios such as AC motors, lighting equipment, air compressors, heating, ventilation and air conditioning units, building automatic control systems, equipment OEE availability, the industrial internet, and rural grid renovation projects.
 
-![](/images/products/1724222898864126.png)
+![](/images/ms40.png)
+
+![](/images/ms41.png)
 
 # 2 Ordering Specifications & Model Selection
 
@@ -71,9 +73,13 @@ Wire sequence definition — **Red**: +12V, **Black**: GND, **Yellow**: 485A, **
 * Open/close (split-core) design, easy to install
 * Simple installation and rapid deployment, helping IoT projects go live quickly
 
-![](/images/products/1724222899750592.png)
+![](/images/ms42.png)
 
-![](/images/products/1724222900203367.png)
+![](/images/ms43.png)
+
+![](/images/ms44.png)
+
+![](/images/ms45.png)
 
 Textile factory production equipment current data acquisition
 
