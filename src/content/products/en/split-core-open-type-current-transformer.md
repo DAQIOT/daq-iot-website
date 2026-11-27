@@ -10,11 +10,11 @@ order: 203
 category: current-sensors
 hidden: false
 ---
-**Keyword:**
+# **Keyword:**
 
-**Split Core Current Transformer; Open Type Current Transformer; RS485 Current Transformer RS485; Modbus Current Transformer Modbus; Split Core Current Sensor; Wireless Current Transformer; 4G Current Monitoring Sensor 4G; RS485 Current Sensor RS485; Remote Current Monitoring Device; Industrial Current Monitoring Sensor**
+Split Core Current Transformer; Open Type Current Transformer; RS485 Current Transformer RS485; Modbus Current Transformer Modbus; Split Core Current Sensor; Wireless Current Transformer; 4G Current Monitoring Sensor 4G; RS485 Current Sensor RS485; Remote Current Monitoring Device; Industrial Current Monitoring Sensor
 
-**Product Details**
+# 1 Product Introduction
 
 DAQ-GP-CT485 open-type current transformer is a current sensor (transformer) launched by Shanghai DAQ IoT Technology Co., Ltd. that converts AC analog signals into RS485 digital signals. The product integrates a 32-bit ARM series MCU and a high-precision metering chip, together with a multi-point calibrated current conversion module. It features high accuracy and fast response. SC-GP-CT485 can directly exchange data with common data acquisition gateways, DTUs, programmable logic controllers (PLC) and host computers.
 
