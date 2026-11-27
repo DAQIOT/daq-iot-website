@@ -1,9 +1,12 @@
 ---
-title: "Factory Production Number/Model/Actual-Target Output Electronic Kanban with Infrared Sensor Display"
-summary: "LED production board"
-image: "/images/products/1773280084587575.png"
+title: Factory Production Number/Model/Actual-Target Output Electronic Kanban
+  with Infrared Sensor Display
+summary: High-brightness LED production display board with infrared
+  auto-counting, supporting takt, output and completion rate monitoring for
+  visual workshop production management and MES/ERP integration.
+image: /images/products/1773280084587575.png
 order: 253
-category: "plcacquisition"
+category: alarm-devices
 hidden: false
 ---
 **Product Details**
