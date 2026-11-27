@@ -1,10 +1,12 @@
 ---
-title: "Low-Power Wireless 4G Stainless Steel UV Radiation Sensor / UV Index Transmitter / Solar Irradiance Meter"
-summary: >-
-  The low-power wireless UV sensor is a type of device launched by Shanghai DAQ IoT Technology Co., Ltd. specifically for detecting and quantifying ultraviolet radiation in different bands. Its core purpose is to achieve accurate se…
-image: "/images/products/1765442105547253.jpg"
+title: Low-Power Wireless 4G Stainless Steel UV Radiation Sensor / UV Index
+  Transmitter / Solar Irradiance Meter
+summary: Low-power wireless UV sensor provides multi-band UV intensity
+  measurement with 4G/LoRa/WiFi connectivity for industrial, medical and
+  environmental UV monitoring.
+image: /images/products/1765442105547253.jpg
 order: 244
-category: "wirelesssensor"
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
