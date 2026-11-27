@@ -1,5 +1,6 @@
 ---
-title: Tilt & Vibration Sensor
+title: Wireless Tilt and Vibration Sensor with NB-IoT and MQTT for Bridge
+  Structural Monitoring
 summary: Low-power battery-powered NB-IoT vibration and inclination monitoring
   terminal with adaptive algorithms, collecting vibration and displacement data
   in real time and triggering instant alarms for abnormal collision and damage.
@@ -10,7 +11,9 @@ order: 224
 category: condition-monitoring-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Wireless Tilt Sensor; Wireless Vibration Sensor; NB-IoT Tilt Sensor NB-IoT; Industrial Tilt and Vibration Sensor; Structural Health Monitoring Sensor; Bridge Monitoring Sensor; Bridge Tilt Monitoring Sensor; Wireless Structural Monitoring Sensor; Remote Tilt Monitoring System; NB-IoT Structural Health Monitoring NB-IoT
 
 # 1 Product Overview
 
