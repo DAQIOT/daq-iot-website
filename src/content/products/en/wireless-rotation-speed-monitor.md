@@ -1,5 +1,5 @@
 ---
-title: Wireless Rotation Speed Monitor
+title: Wireless Rotation Speed Monitor with 4G, LoRa and MQTT for Rotating Equipment
 summary: Hall-effect wireless rotation speed monitoring terminal, supporting
   4G/LoRa/WiFi/Ethernet. It adopts non-invasive rotation speed data acquisition,
   suitable for online speed monitoring of rotating equipment including fans,
@@ -10,13 +10,13 @@ order: 216
 category: temperature-vibration-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Wireless Speed Sensor; Industrial RPM Sensor; Wireless RPM Monitor; 4G Speed Monitoring Sensor 4G; LoRa Speed Sensor LoRa; Rotational Speed Sensor; Motor Speed Monitoring Sensor; Remote RPM Monitoring System; Wireless Rotation Speed Monitor; Industrial Rotating Equipment Monitoring
 
 # 1 Product Overview
 
 ![](/images/ms31.png)
-
-
 
 ![](/images/ms32.png)
 
