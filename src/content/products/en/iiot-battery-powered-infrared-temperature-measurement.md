@@ -5,7 +5,7 @@ summary: LoRaWAN low-power infrared temperature sensor, non-contact measurement,
   industrial equipment.
 image: /images/products/1780891030821962.png
 order: 35
-category: temperature-vibration-sensors
+category: condition-monitoring-sensors
 ---
 # Keyword:
 
