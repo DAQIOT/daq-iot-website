@@ -1,10 +1,11 @@
 ---
 title: RS485 Wind Speed Sensor
-summary: >-
-  ⚙️ Product Advantages – RS485 Wind Speed Sensor (Cup Anemometer)
+summary: Aluminum alloy three-cup wind speed sensor with RS485 Modbus RTU output
+  for reliable wind speed monitoring in weather stations, greenhouses, docks and
+  environmental scenarios.
 image: /images/products/1780553817199834.png
 order: 31
-category: wirelesssensor
+category: environmental-sensors
 ---
 **1\. Product Overview**
 
