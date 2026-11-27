@@ -1,5 +1,5 @@
 ---
-title: 4G Wireless Irradiance Sensor
+title: 4G Wireless Solar Irradiance Sensor with RS485 Modbus for PV Monitoring
 summary: Wireless Irradiance Sensor collects solar radiation data based on the
   photoelectric induction principle. It supports wireless upload over
   4G/NB-IoT/LoRa/WiFi and remote O&M with reliable protection, for solar radiant
@@ -10,7 +10,9 @@ order: 211
 category: environmental-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Solar Irradiance Sensor; Wireless Solar Irradiance Sensor; 4G Solar Irradiance Sensor 4G; RS485 Solar Irradiance Sensor RS485; Modbus Solar Irradiance Sensor Modbus; PV Monitoring Sensor; Solar Radiation Sensor; Remote Solar Irradiance Monitoring; Solar Power Monitoring Sensor; Photovoltaic Monitoring Sensor**
 
 # 1 Product Overview
 
@@ -22,10 +24,10 @@ DAQ-GP-LR4G can directly read the current solar radiation value, and the wiring 
 
 The sensor terminal supports 4G/WiFi/LoRa and other communication modes by default, and supports MQTT, HTTP and other communication methods. It can overcome wireless communication obstruction caused by special on-site environments, greatly simplifying on-site deployment time and reducing construction costs.
 
-| Model | Description |
-| --- | --- |
-| DAQ-GP-LR4G | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
-| DAQ-GP-LR485 | RS485 interface, Modbus communication protocol, 220V AC / 12V DC power supply |
+| Model        | Description                                                                                                                                                                                                                                                                                                    |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-GP-LR4G  | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
+| DAQ-GP-LR485 | RS485 interface, Modbus communication protocol, 220V AC / 12V DC power supply                                                                                                                                                                                                                                  |
 
 # 3 Product Features
 
@@ -77,23 +79,17 @@ Main body installation: wall-mounted or screw-fixed
 
 ## 3.5 Operating Environment
 
-Ambient temperature: -25℃ ~ 60℃, humidity 0% ~ 100% RH
+Ambient temperature: -25℃ \~ 60℃, humidity 0% \~ 100% RH
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Uses a waterproof breathable membrane to effectively prevent dust from entering while maintaining good air permeability
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Uses a waterproof breathable membrane to effectively prevent dust from entering while maintaining good air permeability
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any private IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Non-invasive measurement, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
