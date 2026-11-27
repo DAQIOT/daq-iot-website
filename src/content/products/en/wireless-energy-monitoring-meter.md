@@ -1,5 +1,5 @@
 ---
-title: Wireless Energy Monitoring Meter
+title: Wireless Energy Monitoring Meter with RS485 Modbus for 4G Power Metering
 summary: Multi-functional wireless power monitoring device supporting
   4G/WiFi/LoRa transmission. It collects single-phase and three-phase voltage
   and current, calculates electrical parameters including power, energy and
@@ -11,7 +11,9 @@ order: 204
 category: power-monitoring-devices
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Wireless Energy Meter; Wireless Energy Monitoring Meter; RS485 Energy Meter RS485; Modbus Energy Meter Modbus; 4G Power Meter 4G; Wireless Power Meter; 4G Energy Meter 4G; Remote Energy Monitoring Meter; RS485 Power Monitoring Meter RS485; Industrial Energy Monitoring Meter
 
 # 1 Product Overview
 
@@ -33,9 +35,9 @@ Weight: 200g
 
 Installation: wall-mounted
 
-Operating environment: -20°C ~ 70°C, 0 ~ 95% RH without condensation
+Operating environment: -20°C \~ 70°C, 0 \~ 95% RH without condensation
 
-Storage environment: -25°C ~ 85°C, 0 ~ 90% RH without condensation
+Storage environment: -25°C \~ 85°C, 0 \~ 90% RH without condensation
 
 ## 3.2 Functional Characteristics
 
@@ -71,13 +73,10 @@ Device address range: 1~255
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports external connection of multiple sensors
-
-- Non-invasive acquisition, without affecting the normal operation of equipment
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports external connection of multiple sensors
+* Non-invasive acquisition, without affecting the normal operation of equipment
 
 # 5 Data Reporting Communication Protocol
 
