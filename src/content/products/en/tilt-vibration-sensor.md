@@ -7,7 +7,7 @@ summary: Low-power battery-powered NB-IoT vibration and inclination monitoring
   viaducts, roads and buildings.
 image: /images/ms30.png
 order: 224
-category: temperature-vibration-sensors
+category: condition-monitoring-sensors
 hidden: false
 ---
 **Product Details**
