@@ -12,7 +12,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**DC Voltage and Current Transmitter; RS485 DC Voltage Sensor RS485; DC Current Transmitter; Open Type DC Current Sensor; Modbus DC Voltage and Current Sensor Modbus; RS485 DC Current Transmitter RS485; DC Power Monitoring Sensor; DC Voltage Monitoring Sensor; Industrial DC Power Monitoring; DC Voltage and Current Monitoring Device**
+DC Voltage and Current Transmitter; RS485 DC Voltage Sensor RS485; DC Current Transmitter; Open Type DC Current Sensor; Modbus DC Voltage and Current Sensor Modbus; RS485 DC Current Transmitter RS485; DC Power Monitoring Sensor; DC Voltage Monitoring Sensor; Industrial DC Power Monitoring; DC Voltage and Current Monitoring Device
 
 # 1 Product Overview
 
