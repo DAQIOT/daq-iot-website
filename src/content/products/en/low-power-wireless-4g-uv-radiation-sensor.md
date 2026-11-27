@@ -1,6 +1,5 @@
 ---
-title: Low-Power Wireless 4G Stainless Steel UV Radiation Sensor / UV Index
-  Transmitter / Solar Irradiance Meter
+title: Wireless UV Radiation Sensor with 4G and LoRa for UV Index Monitoring
 summary: Low-power wireless UV sensor provides multi-band UV intensity
   measurement with 4G/LoRa/WiFi connectivity for industrial, medical and
   environmental UV monitoring.
@@ -9,7 +8,9 @@ order: 244
 category: environmental-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+UV Radiation Sensor; Wireless UV Sensor; UV Index Sensor; 4G UV Radiation Sensor 4G; LoRa UV Sensor LoRa; Industrial UV Sensor; UV Monitoring Sensor; Wireless UV Monitoring System; Remote UV Radiation Monitoring; UV Index Monitoring Device
 
 # 1 Product Overview
 
@@ -21,11 +22,11 @@ The low-power wireless UV sensor is a type of device launched by Shanghai DAQ Io
 
 The sensor terminal supports 4G/LoRa/WiFi communication and is powered by a 3.6V lithium battery, overcoming wireless communication obstruction caused by special on-site environments, greatly simplifying on-site deployment time and reducing construction costs. This terminal also supports 12V voltage input with reverse connection protection, has high measurement accuracy and is easy to install.
 
-| Model | Description |
-| --- | --- |
-| DAQ-LP-UVLoRa / DAQ-LP-UV4G | LoRa/4G communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply. |
-| DAQ-GP-UV4G | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
-| DAQ-GP-UVWiFi | WiFi communication |
+| Model                       | Description                                                                                                                                                                                                                                                                                                    |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-LP-UVLoRa / DAQ-LP-UV4G | LoRa/4G communication, long-life lithium battery power supply. Suitable for occasions with low acquisition frequency and difficult external power supply.                                                                                                                                                      |
+| DAQ-GP-UV4G                 | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
+| DAQ-GP-UVWiFi               | WiFi communication                                                                                                                                                                                                                                                                                             |
 
 # 3 Product Features
 
@@ -33,7 +34,7 @@ The sensor terminal supports 4G/LoRa/WiFi communication and is powered by a 3.6V
 
 Acquisition type: simultaneously collects UVA (315-400nm) and UVC (200-280nm) ultraviolet radiation intensity, as well as the effective radiation intensity in a specific band of UV lamps
 
-Measurement range: UVA: 0~20000μW/cm²; UVC: 0~10000μW/cm²; UV lamp intensity: 0~50000μW/cm²
+Measurement range: UVA: 0\~20000μW/cm²; UVC: 0\~10000μW/cm²; UV lamp intensity: 0~50000μW/cm²
 
 Distance coefficient: for UV lamp monitoring scenarios, the distance coefficient is **1:10** (i.e., for every 10-fold increase in the distance between the sensor and the UV lamp, the radiation intensity theoretically attenuates to 1/100 of the original; the device has a built-in distance compensation algorithm that automatically corrects the measured value according to the actual installation distance); there is no fixed distance coefficient for ambient UV monitoring scenarios, and custom distance calibration is supported
 
@@ -77,19 +78,13 @@ Probe installation: wall-mounted or bracket
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any private IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive measurement, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any private IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive measurement, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Data Reporting Communication Protocol
 
