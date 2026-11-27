@@ -4,7 +4,7 @@ summary: Ethernet temperature and humidity sensor with Modbus TCP, supports MQTT
   and cloud access for industrial and agricultural environmental monitoring.
 image: /images/a6a.jpg
 order: 243
-category: temperature-vibration-sensors
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
