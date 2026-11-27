@@ -1,5 +1,5 @@
 ---
-title: Split-Core Open-Type Current Transformer
+title: Split-Core Open-Type Current Transformer with RS485 Modbus and 4G
 summary: Split-core digital current transformer converts AC current into RS485
   signal output, collects AC current data with high precision, compatible with
   PLCs, gateways and other devices, and used for electromechanical, HVAC,
@@ -10,6 +10,10 @@ order: 203
 category: current-sensors
 hidden: false
 ---
+**Keyword:**
+
+**Split Core Current Transformer; Open Type Current Transformer; RS485 Current Transformer RS485; Modbus Current Transformer Modbus; Split Core Current Sensor; Wireless Current Transformer; 4G Current Monitoring Sensor 4G; RS485 Current Sensor RS485; Remote Current Monitoring Device; Industrial Current Monitoring Sensor**
+
 **Product Details**
 
 DAQ-GP-CT485 open-type current transformer is a current sensor (transformer) launched by Shanghai DAQ IoT Technology Co., Ltd. that converts AC analog signals into RS485 digital signals. The product integrates a 32-bit ARM series MCU and a high-precision metering chip, together with a multi-point calibrated current conversion module. It features high accuracy and fast response. SC-GP-CT485 can directly exchange data with common data acquisition gateways, DTUs, programmable logic controllers (PLC) and host computers.
@@ -20,12 +24,12 @@ This product is widely used for current monitoring and acquisition in scenarios 
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Description |
-| --- | --- |
-| DAQ-GP-CT4G | 4G transmission, conventional 220V/12V power supply, default measurement range 0~100A, accuracy 0.01A. Suitable for occasions with convenient power supply and high acquisition frequency. |
-| DAQ-LP-CT4G | 4G transmission, long-life lithium battery power supply, battery life 1~3 years depending on acquisition frequency. Suitable for occasions with low acquisition frequency and inconvenient power supply. |
-| DAQ-GP-EM4G | 4G transmission, monitors the line voltage and current of single-phase and three-phase equipment, and can calculate active power, apparent power, power factor, operating frequency, active energy, etc. |
-| DAQ-GP-CTLoRa | No external power supply required, CT self-powered, starting current 1A, LoRa wireless transmission. |
+| Model         | Description                                                                                                                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-GP-CT4G   | 4G transmission, conventional 220V/12V power supply, default measurement range 0~100A, accuracy 0.01A. Suitable for occasions with convenient power supply and high acquisition frequency.               |
+| DAQ-LP-CT4G   | 4G transmission, long-life lithium battery power supply, battery life 1~3 years depending on acquisition frequency. Suitable for occasions with low acquisition frequency and inconvenient power supply. |
+| DAQ-GP-EM4G   | 4G transmission, monitors the line voltage and current of single-phase and three-phase equipment, and can calculate active power, apparent power, power factor, operating frequency, active energy, etc. |
+| DAQ-GP-CTLoRa | No external power supply required, CT self-powered, starting current 1A, LoRa wireless transmission.                                                                                                     |
 
 # 4 Product Features
 
@@ -35,43 +39,37 @@ Wire sequence definition — **Red**: +12V, **Black**: GND, **Yellow**: 485A, **
 
 **Acquisition characteristics**
 
-- Current detection range: AC 0.2A-100A; other large-range transformers can be customized
+* Current detection range: AC 0.2A-100A; other large-range transformers can be customized
 
 **Electrical characteristics**
 
-- Power supply: 5~24V DC
-
-- Operating power consumption: 0.5W
-
-- Operating frequency: 50-60Hz
+* Power supply: 5~24V DC
+* Operating power consumption: 0.5W
+* Operating frequency: 50-60Hz
 
 **Communication characteristics**
 
-- Transmission mode: RS485
-
-- Communication protocol: Modbus RTU
+* Transmission mode: RS485
+* Communication protocol: Modbus RTU
 
 **Structural characteristics**
 
-- Material: ABS plastic (housing)
-
-- Installation: clip-on mounting
+* Material: ABS plastic (housing)
+* Installation: clip-on mounting
 
 **Operating environment**
 
-- Temperature -20°C ~ 70°C
+* Temperature -20°C ~ 70°C
 
 **Storage environment**
 
-- Temperature -20°C ~ 80°C
+* Temperature -20°C ~ 80°C
 
 # 5 Core Advantages
 
-- High-precision metering chip for high measurement accuracy
-
-- Open/close (split-core) design, easy to install
-
-- Simple installation and rapid deployment, helping IoT projects go live quickly
+* High-precision metering chip for high measurement accuracy
+* Open/close (split-core) design, easy to install
+* Simple installation and rapid deployment, helping IoT projects go live quickly
 
 ![](/images/products/1724222899750592.png)
 
