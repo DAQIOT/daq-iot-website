@@ -1,5 +1,5 @@
 ---
-title: Ultra-Low-Power High-Temperature 4G Wireless Pressure & Temperature Sensor
+title: High-Temperature Wireless Pressure and Temperature Sensor with 4G and LoRaWAN
 summary: Micro-power battery-powered wireless temperature and pressure
   acquisition terminal, supporting 4G/LoRaWAN transmission. The acquisition
   cycle can be configured remotely, and temperature and pressure data is
@@ -11,7 +11,9 @@ order: 212
 category: pressure-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Wireless Pressure and Temperature Sensor; High Temperature Pressure Sensor; Wireless Pressure Sensor; 4G Pressure Sensor 4G; LoRaWAN Pressure Sensor LoRaWAN; Industrial Pressure and Temperature Sensor; High Temperature Pressure Transmitter; Wireless Temperature Monitoring Sensor; Remote Pressure Monitoring Sensor; LoRaWAN Temperature and Pressure Monitoring LoRaWAN**
 
 # 1 Product Overview
 
@@ -23,9 +25,9 @@ The terminal adopts 4G/LoRaWAN communication, overcoming wireless communication 
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Description |
-| --- | --- |
-| SC-LP-PINB | Battery-powered, suitable for occasions with low acquisition frequency and difficult external power supply. 4G/LoRaWAN transmission. |
+| Model        | Description                                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| SC-LP-PINB   | Battery-powered, suitable for occasions with low acquisition frequency and difficult external power supply. 4G/LoRaWAN transmission. |
 | SC-LP-PILoRa | Battery-powered, suitable for occasions with low acquisition frequency and difficult external power supply. 4G/LoRaWAN transmission. |
 
 # 4 Product Features
@@ -82,7 +84,7 @@ Probe installation: insertion type
 
 ## 4.5 Operating Environment
 
-Temperature -25°C ~ 75°C, humidity 0 ~ 95% (non-condensing)
+Temperature -25°C \~ 75°C, humidity 0 \~ 95% (non-condensing)
 
 # 5 Ultra-Low-Power Working Mode
 
@@ -92,15 +94,11 @@ Daily power consumption calculation: the daily working states are divided into s
 
 # 6 Core Advantages
 
-- Built-in battery, no wiring required
-
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports any IoT cloud platform, with data integration
-
-- Fully sealed waterproof and moisture-proof design, meeting the needs of harsh environments
-
-- Supports remote configuration, minimizing on-site maintenance costs
+* Built-in battery, no wiring required
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports any IoT cloud platform, with data integration
+* Fully sealed waterproof and moisture-proof design, meeting the needs of harsh environments
+* Supports remote configuration, minimizing on-site maintenance costs
 
 # 7 Data Reporting Communication Protocol
 
@@ -110,7 +108,7 @@ HTTP POST push method; users receiving data must provide an HTTP data receiving 
 
 **Example JSON data message:**
 
-{"serviceId":"UpdataToDev","serviceData":"{\"VoltageCur\":372,\"TmpWidth\":30,\"TimePeriod\":20,\"MinCntSet\":12,\"IntData3\":877,\"IntData2\":0,\"IntData1\":140,\"InfoId\":1,\"ICCID\":\"1120288018165436\",\"Extend2\":251,\"Extend1\":17}"}
+{"serviceId":"UpdataToDev","serviceData":"{"VoltageCur":372,"TmpWidth":30,"TimePeriod":20,"MinCntSet":12,"IntData3":877,"IntData2":0,"IntData1":140,"InfoId":1,"ICCID":"1120288018165436","Extend2":251,"Extend1":17}"}
 
 **Message parsing:**
 
