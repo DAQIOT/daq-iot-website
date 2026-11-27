@@ -1,5 +1,5 @@
 ---
-title: Cleanliness Monitoring Instrument - Particle Counter
+title: Online Cleanliness Monitoring Particle Counter with 4G, WiFi and RJ45
 summary: Multi-function cleanliness monitor with 4G/WiFi/RJ45 connectivity for
   particle count, temperature, humidity, dew point and differential pressure
   monitoring in pharmaceutical and semiconductor cleanrooms.
@@ -8,7 +8,9 @@ order: 217
 category: environmental-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+Online Particle Counter; Cleanroom Particle Counter; Airborne Particle Counter; Online Particle Monitoring System; 4G Particle Counter 4G; WiFi Particle Counter WiFi; Ethernet Particle Counter; Cleanroom Air Quality Monitor; Remote Particle Monitoring System; Industrial Particle Monitoring Device
 
 # 1 Product Overview
 
@@ -22,89 +24,65 @@ The cleanliness monitor supports 4G/WiFi/RJ45 communication. It is simple and co
 
 # 2 Ordering Specifications & Model Selection
 
-| Model | Transmission | Description |
-| --- | --- | --- |
-| DAQ-GP-CL4G | Wireless | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
-| DAQ-GP-CLWIFI | Wireless | WiFi communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Supports internal LAN data transmission only. |
-| DAQ-GP-CLRJ45 | Wired | RJ45 communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply and network port connection. |
+| Model         | Transmission | Description                                                                                                                                                                                                                                                                                                    |
+| ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DAQ-GP-CL4G   | Wireless     | 4G communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Because the device is online for a long time by default, it supports remote parameter configuration and debugging; on site you only need to install and power it. |
+| DAQ-GP-CLWIFI | Wireless     | WiFi communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply. Supports internal LAN data transmission only.                                                                                                                   |
+| DAQ-GP-CLRJ45 | Wired        | RJ45 communication, 220V AC / 12V DC power supply. Suitable for occasions with high acquisition frequency or convenient external power supply and network port connection.                                                                                                                                     |
 
 # 4 Product Features & Parameters
 
 ## 4.1 Acquisition Characteristics
 
-- Particle detection range: 0.3-10μm
-
-- Particle detection resolution: 1μg/m³
-
-- Particle range: 0~200000 particles/L
-
-- Pressure detection range: ±500 Pa
-
-- Pressure detection error range: 0~1%
-
-- Temperature measurement error range: ±0.5℃
-
-- Flow rate measurement error range: ±5% @2.83L
+* Particle detection range: 0.3-10μm
+* Particle detection resolution: 1μg/m³
+* Particle range: 0~200000 particles/L
+* Pressure detection range: ±500 Pa
+* Pressure detection error range: 0~1%
+* Temperature measurement error range: ±0.5℃
+* Flow rate measurement error range: ±5% @2.83L
 
 ## 4.2 Electrical Characteristics
 
-- Power supply: 12V DC (power interface: DC5.5*2.1mm female socket)
-
-- Charging: 5V DC (power interface: Type-C)
-
-- Battery capacity: 2000mA
-
-- Operating current: 550mA
-
-- Standby current: 200mA
+* Power supply: 12V DC (power interface: DC5.5*2.1mm female socket)
+* Charging: 5V DC (power interface: Type-C)
+* Battery capacity: 2000mA
+* Operating current: 550mA
+* Standby current: 200mA
 
 ## 4.3 Communication Characteristics
 
-- Transmission mode: 4G (default) / RJ45 / WiFi
-
-- Communication protocol: MQTT / TCP; other protocols customizable
-
-- Data forwarding: supports any public network server
-
-- Heartbeat packet: supports custom heartbeat packets
-
-- Registration packet: supports custom registration packets, which can be set to the IMEI code
+* Transmission mode: 4G (default) / RJ45 / WiFi
+* Communication protocol: MQTT / TCP; other protocols customizable
+* Data forwarding: supports any public network server
+* Heartbeat packet: supports custom heartbeat packets
+* Registration packet: supports custom registration packets, which can be set to the IMEI code
 
 ## 4.4 Structural Characteristics
 
-- Antenna type: rubber-rod external antenna
-
-- Screen: 480*480 color LCD (capacitive touch screen)
-
-- Material: ABS plastic (housing)
-
-- Weight: 800g
-
-- Main body dimensions: 215*114*48MM
+* Antenna type: rubber-rod external antenna
+* Screen: 480*480 color LCD (capacitive touch screen)
+* Material: ABS plastic (housing)
+* Weight: 800g
+* Main body dimensions: 215*114*48MM
 
 ![](/images/products/1739261692200263.png)
 
-- Main body installation: adhesive or screw fixing
+* Main body installation: adhesive or screw fixing
 
 ## 4.5 Operating Environment
 
-- Temperature: -10℃~60℃
-
-- Humidity: 0%~95%RH
+* Temperature: -10℃~60℃
+* Humidity: 0%~95%RH
 
 # 5 Core Advantages
 
-- Supports wireless transmission, simple installation, reducing cabling workload
-
-- Supports a built-in lithium battery and both handheld and online monitoring use modes
-
-- Supports any IoT cloud platform and third-party software such as MES, with data protocol integration
-
-- Over-limit alarm reminder, compliant with the ISO14644-1 international standard and GB/T16292-1996 national standard
-
-- Supports remote data viewing via mobile app and PC browser
-
-- Supports historical data query
+* Supports wireless transmission, simple installation, reducing cabling workload
+* Supports a built-in lithium battery and both handheld and online monitoring use modes
+* Supports any IoT cloud platform and third-party software such as MES, with data protocol integration
+* Over-limit alarm reminder, compliant with the ISO14644-1 international standard and GB/T16292-1996 national standard
+* Supports remote data viewing via mobile app and PC browser
+* Supports historical data query
 
 # 6 Communication Protocol
 
