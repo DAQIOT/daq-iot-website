@@ -1,5 +1,5 @@
 ---
-title: Multi-Circuit AC Wireless Voltage & Current Sensor / Energy Monitoring Meter
+title: Multi-Circuit AC Wireless Voltage and Current Sensor for Energy Monitoring
 summary: Multi-circuit electric energy acquisition monitor matched with
   split-core current transformers, capable of collecting multi-channel voltage,
   current, power and electric energy. It supports RS485 and 4G transmission,
@@ -11,7 +11,9 @@ order: 207
 category: current-sensors
 hidden: false
 ---
-**Product Details**
+# **Keyword:**
+
+**Wireless Voltage and Current Sensor; AC Voltage and Current Sensor; Multi-Circuit Current Sensor; Wireless AC Current Sensor; Multi-Circuit Energy Monitoring Sensor; Wireless Power Monitoring Sensor; AC Energy Monitoring Sensor; Multi-Channel Current Monitoring Sensor; Wireless Voltage Monitoring Sensor; Multi-Circuit Energy Monitoring System**
 
 # 1 Product Overview
 
@@ -27,67 +29,56 @@ The multi-circuit AC wireless voltage & current sensor / energy acquisition moni
 
 ## 3.1 Acquisition Characteristics
 
-- Voltage measurement range: 110 ~ 250VAC
-
-- Current measurement range: 0~120A (other ranges customizable)
-
-- Voltage accuracy: ±1V (default)
-
-- Current accuracy: ±0.1A (default)
-
-- Power accuracy: ±1W (default)
+* Voltage measurement range: 110 ~ 250VAC
+* Current measurement range: 0~120A (other ranges customizable)
+* Voltage accuracy: ±1V (default)
+* Current accuracy: ±0.1A (default)
+* Power accuracy: ±1W (default)
 
 When wiring the RS485 signal cable, note that the A and B wires must not be reversed, and device addresses on the bus must not conflict.
 
-| No. | Interface definition | Description |
-| --- | --- | --- |
-| 1 | A, B | RS485 communication interface A and B |
-| 2 | UA, N | Phase A voltage detection connected to live and neutral; device power interface |
-| 3 | UB | Phase B voltage detection connected to live wire |
-| 4 | UC | Phase C voltage detection connected to live wire |
-| 5 | I1+, I1- | Current transformer 1 connection |
-| 6 | I2+, I2- | Current transformer 2 connection |
-| 7 | I3+, I3- | Current transformer 3 connection |
-| 8 | I4+, I4- | Current transformer 4 connection |
-| 9 | I5+, I5- | Current transformer 5 connection |
-| 10 | I6+, I6- | Current transformer 6 connection |
-| 11 | K1+, K1- | Spare relay output interface |
+| No. | Interface definition | Description                                                                     |
+| --- | -------------------- | ------------------------------------------------------------------------------- |
+| 1   | A, B                 | RS485 communication interface A and B                                           |
+| 2   | UA, N                | Phase A voltage detection connected to live and neutral; device power interface |
+| 3   | UB                   | Phase B voltage detection connected to live wire                                |
+| 4   | UC                   | Phase C voltage detection connected to live wire                                |
+| 5   | I1+, I1-             | Current transformer 1 connection                                                |
+| 6   | I2+, I2-             | Current transformer 2 connection                                                |
+| 7   | I3+, I3-             | Current transformer 3 connection                                                |
+| 8   | I4+, I4-             | Current transformer 4 connection                                                |
+| 9   | I5+, I5-             | Current transformer 5 connection                                                |
+| 10  | I6+, I6-             | Current transformer 6 connection                                                |
+| 11  | K1+, K1-             | Spare relay output interface                                                    |
 
 ## 3.2 Electrical Characteristics
 
-- Power supply: 220VAC
-
-- Device power consumption: <=3W (default)
+* Power supply: 220VAC
+* Device power consumption: <=3W (default)
 
 ## 3.3 Communication Characteristics
 
-- Output signal: RS485 Modbus / 4G network
+* Output signal: RS485 Modbus / 4G network
 
 WiFi/LoRa and other communication modes can be customized
 
 ## 3.4 Structural Characteristics
 
-- Overall main unit dimensions: 110×115×60mm
+* Overall main unit dimensions: 110×115×60mm
 
 ## 3.5 Storage Environment
 
-- Temperature -40℃ ~ 80℃
+* Temperature -40℃ ~ 80℃
 
 # 4 Core Advantages
 
-- Simple installation and rapid deployment, helping IoT projects go live quickly
-
-- Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
-
-- Supports any IoT cloud platform and configuration software, with data protocol integration
-
-- Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
-
-- Supports external connection of multiple sensors
-
-- Non-invasive acquisition, without affecting the normal operation of equipment
-
-- Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
+* Simple installation and rapid deployment, helping IoT projects go live quickly
+* Supports custom registration and heartbeat packets, making it easy for the platform to distinguish devices
+* Supports any IoT cloud platform and configuration software, with data protocol integration
+* Supports mainstream cloud platforms such as Alibaba Cloud, Baidu Tiangong, OneNet and Tencent Cloud
+* Supports external connection of multiple sensors
+* Non-invasive acquisition, without affecting the normal operation of equipment
+* Supports remote parameter configuration and FOTA remote upgrade, minimizing on-site installation and maintenance labor costs
 
 # 5 Communication Protocol
 
