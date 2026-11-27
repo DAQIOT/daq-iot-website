@@ -5,7 +5,7 @@ summary: RS485 LCD temperature and humidity transmitter with Modbus-RTU,
   computer rooms, warehouses and building automation.
 image: /images/products/1758268341134574.png
 order: 219
-category: temperature-vibration-sensors
+category: environmental-sensors
 hidden: false
 ---
 **Product Details**
