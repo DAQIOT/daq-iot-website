@@ -6,7 +6,7 @@ summary: Micro-power battery-powered wireless temperature and pressure
   reported by threshold or timing. Suitable for temperature and pressure
   monitoring and leakage early warning of high-temperature pipelines, steam
   pipelines and other scenarios.
-image: /images/products/1776743186750698.jpg
+image: /images/ms36.png
 order: 212
 category: pressure-sensors
 hidden: false
@@ -17,7 +17,7 @@ Wireless Pressure and Temperature Sensor; High Temperature Pressure Sensor; Wire
 
 # 1 Product Overview
 
-![](/images/products/1776743210506188.jpg)
+![](/images/ms36.png)
 
 SC-LP-PTNB is a high-temperature-resistant wireless temperature & pressure sensor terminal developed by Shanghai DAQ IoT Technology Co., Ltd. It is mainly used for temperature and pressure measurement of high-temperature pipelines, and can periodically report data to a designated platform server in a wireless manner.
 
@@ -152,11 +152,13 @@ If you need to customize other integration protocols, such as MQTT or configurat
 
 At the factory, the product can be set to connect to our designated open industrial IoT platform, whose interface is shown below:
 
-![](/images/products/1692861049158668.png)
+![](/images/ms37.png)
+
+![](/images/ms38.png)
 
 PC browser interface
 
-![](/images/products/1692861133206043.png)
+![](/images/ms39.png)
 
 Mobile WeChat access interface
 
