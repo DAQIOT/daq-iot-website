@@ -7,7 +7,7 @@ summary: Hall-effect wireless rotation speed monitoring terminal, supporting
   papermaking industries.
 image: /images/ms31.png
 order: 216
-category: temperature-vibration-sensors
+category: condition-monitoring-sensors
 hidden: false
 ---
 # **Keyword:**
