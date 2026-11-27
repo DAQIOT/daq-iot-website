@@ -13,7 +13,7 @@ hidden: false
 ---
 # **Keyword:**
 
-**Wireless Voltage and Current Sensor; AC Voltage and Current Sensor; Multi-Circuit Current Sensor; Wireless AC Current Sensor; Multi-Circuit Energy Monitoring Sensor; Wireless Power Monitoring Sensor; AC Energy Monitoring Sensor; Multi-Channel Current Monitoring Sensor; Wireless Voltage Monitoring Sensor; Multi-Circuit Energy Monitoring System**
+Wireless Voltage and Current Sensor; AC Voltage and Current Sensor; Multi-Circuit Current Sensor; Wireless AC Current Sensor; Multi-Circuit Energy Monitoring Sensor; Wireless Power Monitoring Sensor; AC Energy Monitoring Sensor; Multi-Channel Current Monitoring Sensor; Wireless Voltage Monitoring Sensor; Multi-Circuit Energy Monitoring System
 
 # 1 Product Overview
 
