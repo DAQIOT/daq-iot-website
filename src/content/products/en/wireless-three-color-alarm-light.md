@@ -1,10 +1,11 @@
 ---
 title: wireless Andon tower alarm light
-summary: MQTT/http  WiFi Wireless Andon Tower Light Industrial Stack Light Andon
-  System for MES ERP Production Line Status Alarm
+summary: WiFi-enabled three-color tower light with HTTP API control for
+  equipment status indication on automated production lines, CNC machines and
+  MES/ERP integration.
 image: /images/products/1780562258728639.png
 order: 10
-category: instrumentation
+category: alarm-devices
 ---
 # 1 **Product Overview**
 
