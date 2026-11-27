@@ -1,6 +1,5 @@
 ---
-title: Portable WiFi/Ethernet Cleanroom Particle Counter for Real-time Airborne
-  Particle Monitoring
+title: Portable Cleanroom Particle Counter with WiFi and RJ45 Ethernet
 summary: Multi-function cleanliness monitor with LoRa/LoRaWAN/WiFi/RJ45 output,
   measuring particle count, temperature, humidity, dew point and wind data for
   pharmaceutical and semiconductor cleanroom air quality monitoring.
@@ -8,7 +7,11 @@ image: /images/products/1780565101321474.png
 order: 34
 category: environmental-sensors
 ---
-# 1 **Product overview******
+# Keyword:
+
+Portable Particle Counter; Cleanroom Particle Counter; Portable Cleanroom Particle Counter; Airborne Particle Counter; Cleanroom Air Particle Counter; WiFi Particle Counter; Ethernet Particle Counter; RJ45 Particle Counter; Cleanroom Air Quality Monitoring Device; Portable Air Particle Monitoring Device
+
+# 1 **Product overview**
 
 DAQ-GP-CL cleanliness monitor terminal is a multi-functional dust particle counting device based on wireless transmission launched by Shanghai Digital Mining Internet of Things Technology Co., LTD. It takes air samples through the built-in air pump, and then the number of particles of different sizes is calculated by the built-in microprocessor. It can collect the dust particle number, temperature and humidity, dew point, wind direction and wind speed data in the environment.
 
@@ -17,7 +20,7 @@ The cleanliness monitor supports Lora/Lorawan/ WIFI / RJ 45 network port communi
 **2 Order specifications and type selection**  
 
 | **model**             | **transmission mode** | **Characteristics of the description**                                                                                                                                                                                                                                                                                 |
-|-----------------------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DAQ-GP-CLLoRa/LoRaWAN | wireless              | LoRa communication, 220V AC / 12V DC power supply, suitable for high acquisition frequency or convenient external power supply occasions. Because the device is on line for a long time by default, it can support remote configuration parameter debugging, and the site only needs to install and connect the power. |
 | DAQ -GP-CLWIFI        | wireless              | WIFI communication, 220V AC / 12V DC power supply, suitable for high acquisition frequency or convenient external power supply occasions. Internal LAN data transfer is supported only.                                                                                                                                |
 | DAQ -GP-CLRJ45        | wired                 | RJ 45 communication, 20V AC / 12V DC power supply, suitable for high acquisition frequency or external power supply and network port connection convenient occasions.                                                                                                                                                  |
@@ -38,7 +41,7 @@ Free Internet of Things solution consulting services!
 
 ## 4..1 **Collect characteristics**
 
-##  Particulate matter detection range: 0.3-10 μ m
+## Particulate matter detection range: 0.3-10 μ m
 
 ## Particle detection resolution: 1 μ g / m³
 
@@ -54,47 +57,33 @@ Free Internet of Things solution consulting services!
 
 ## 4.2 **electrical character**
 
-- Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket)
-
-- Charging mode: 5V DC power supply (power interface: type-C)
-
-- Battery capacity: 2,000 mA
-
-- Operating current: 550 mA
-
-- Standby current: 200 mA
+* Power supply mode: 12V DC power supply (power interface: DC5.5*2.1mm master head socket)
+* Charging mode: 5V DC power supply (power interface: type-C)
+* Battery capacity: 2,000 mA
+* Operating current: 550 mA
+* Standby current: 200 mA
 
 ## 4.3 **Communication characteristics**
 
-- Transmission mode: LoRa/LoRaWAN/ RJ 45 / WiFi
-
-- Communication protocol: MQTT / TCP can customize other protocols
-
-- Data forwarding: support any public network server
-
-- Heartbeat packet: Support for a custom heartbeat packet.
-
-- Registration package: support custom registration package, can be set to IMEI code.
+* Transmission mode: LoRa/LoRaWAN/ RJ 45 / WiFi
+* Communication protocol: MQTT / TCP can customize other protocols
+* Data forwarding: support any public network server
+* Heartbeat packet: Support for a custom heartbeat packet.
+* Registration package: support custom registration package, can be set to IMEI code.
 
 ## 4.4 **structural property**
 
-- Antenna type: rubber rod type external antenna
-
-- Screen: 480 * 480 color LCD screen (capacitive touch screen)
-
-- Material: ABS plastic (enclosure)
-
-- Weight: 800g
-
-- Body size: 215 * 114 * 48MM
-
-- Main body installation method: paste, screw fastening and installation
+* Antenna type: rubber rod type external antenna
+* Screen: 480 * 480 color LCD screen (capacitive touch screen)
+* Material: ABS plastic (enclosure)
+* Weight: 800g
+* Body size: 215  *114*  48MM
+* Main body installation method: paste, screw fastening and installation
 
 ## 4.5 work environment
 
-- temperature:-10℃~60℃
-
-- Humidity: 0% ~ 95% RH
+* temperature:-10℃~60℃
+* Humidity: 0% ~ 95% RH
 
 # 5 **Product core advantages**
 
